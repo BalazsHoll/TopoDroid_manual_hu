@@ -1,7 +1,7 @@
 encoding utf-8
 symbol line
 name wall_flowstone1
-name-hu borsokoves fal
+name-hu borsokoves_fal
 th_name wall:flowstone1
 group wall
 color 0xff0000 0xff
