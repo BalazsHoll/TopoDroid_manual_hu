@@ -1,0 +1,78 @@
+<html><body>
+<h3>[5] DistoX KALIBRÁLÁSI ADATOK</h3>
+
+A <u>kalibrációs adatok ablak</u> megjeleníti a kalibrációs adatok listáját. Ha a kalibrálásnak nincsenek adatai, akkor az ablak üres, de a felső gomboknál. Minden kalibrációs adatsor a következő adatokat tartalmazza:
+<ul style = "margin-top = 0">
+<li>index: növekményes index, amely azonosítja az adatokat</li>
+<li>csoport: annak a csoportnak a száma, amelyhez az adatok tartoznak</li>
+<li>irány, dőlés és forgás, a nyers értékekből kiszámítva kalibrációs korrekció nélkül</li>
+<li> hiba: a kalibrációval korrigált irány és a csoport átlagos irányának különbsége, fokban</li>
+<li> opcionálisan a nyers kalibrálási adatok értékei, azaz a G és M komponensei a DistoX keretben, decimális vagy hexadecimális értékként</li>
+</ul><br><p>
+
+<h4>Színek</h4>
+A kalibrációs adatok sárga és kék színnel jelennek meg, váltakozva a páros és a páratlan csoportok között. A csoport nélküli adatok szürkék.<br><p>
+
+A háttér színe:
+<ul>
+<li> ibolya: hiányos adatok (a kalibrálásnál nem, de a csoportoknál használják)</li>
+<li> barna: telített adatok</li>
+<li> szürke: törölt adatok (csak akkor, ha törölt adatok megjelennek)</li>
+<li> piros: olyan adatok, amelyek hibája nagyobb, mint 1&deg;</li>
+<li> zöld: az adatok eltérnek a többi adattól, ha a csoport átlagosan meghaladja a <i>csoporttávolságot</i></li>
+</ul> <br> <p>
+
+<h4> AKCIÓK </h4>
+<ul style = "margin-top = 0">
+<li> adat megérintse: kalibrációs adatok szerkesztése párbeszédpanel </li>
+</ul> <br> <p>
+
+<h4>GOMBOK</h4>
+<ul style = "margin-top = 0">
+<li><img src = "btn_toggle.png"> be- és kikapcsolhatja a DistoX kalibrációs módot</li>
+<li> <img src = "btn_bluetooth.png"> visszaállítja  a BT-t, vagy távolról irányítja a DistoX-ot </li>
+<li> <img src = "btn_download.png"> kalibrációs adatok letöltése a DistoX-ről </li>
+<li> <img src = "btn_numbers.png"> rendeljen <a href="page_groups.htm">csoport</a> számokat az adatokhoz, vagy állítsa vissza a csoportok számát</li>
+<li> <img src = "btn_compute.png"> kiszámítja a <a href="page_calib_coeffs.htm">kalibrációs együtthatókat</a></li>
+<li> <img src = "btn_cover.png"> <a href="page_calib_distrib.htm">a kalibrációs adatok irányeloszlása ​</a></li>
+<li> <img src = "btn_read.png"> beolvassa és megjeleníti a DistoX-ben tárolt együtthatókat</li>
+<li> <img src = "btn_write.png"> beírja a kalibrációs együtthatókat a DistoX-be. Csak a kalibrációs együtthatók kiszámítása után engedélyezett. Az együtthatók írhatók közvetlenül a számítás eredményét megjelenítő párbeszédablakból is. Figyelmeztetést adnak ki, ha az adatirány lefedettség 95% alatt van, vagy az átlagos hiba meghaladja a 0.5&deg-ot</li>
+</ul><br><p>
+
+Jelenleg csak az igény szerinti adatletöltés aktív a kalibrációs adatokhoz. A letöltött adatok hozzáadódnak az aktuális kalibráláshoz. Ezért elvégezhet néhány kalibrációs mérést, letöltheti az adatokat, ellenőrizheti, hogy elégedett-e velük, ha nem, akkor további adatokat mérhet és tölthet le, és így tovább, amíg nem elégedett a kalibrációs adataival. A letöltött adatok "letilthatók" (a csoport számának "0" (nulla) beállításával;
+a letiltott adatokat nem használják a kalibrációs együtthatók kiszámításához), vagy törlik (általában nem jelennek meg az adatlistán).
+A törölt adatokat nem veszik figyelembe a csoporthoz való hozzárendelésnél és a kalibrálás kiszámításakor. <br> <p>
+
+<h4>Bluetooth</h4>
+Ez a gomb visszaállítja a TopoDroid bluetooth kapcsolatot.<br>
+Ez lehetővé teszi a felhasználó számára a DistoX távvezérlését is [A]: be- vagy kikapcsolhatja a lézert, és kalibrációs felvételt készíthet.
+Az adatok azonnal letöltődnek, ha a kapcsolódó beállítást választják.<br><p>
+
+A bluetooth gomb le van tiltva, amíg a TopoDroid kalibrációs mérést készít.<br><p>
+
+<h4>Kalibrációs számítás</h4>
+A "fogaskerék" gomb elindítja a kalibrációs együtthatók kiszámítását.<br>
+Amikor a számítás befejeződik, megjelenik az együttható párbeszédpanel.<br>
+Ha nincs elegendő adat vagy adatcsoport, akkor a számítást nem hajtják végre, és figyelmeztető üzenet jelenik meg.<br>
+A kalibrálás sikertelen, ha az iteráció határát a számítás vége előtt elérjük.
+Ez általában akkor történik, ha a csoportszámokat helytelenül állították be.
+Ebben az esetben üzenet jelenik meg.<br><p>
+
+<h4>Figyelmeztetések</h4>
+<ul style = margin-top = 0">
+<li><b>telített adatok</b>: abnormális mágneses tér értékű adatok. Ennek egyik lehetséges oka a zavaró mágneses mezők jelenléte. A telített adatok piros háttérrel rendelkeznek </li>
+<li><b>nulla adat</b>: helytelenül kapott kalibrációs adatok. Az adatok nulla értékkel rendelkeznek, és alapértelmezés szerint nincs hozzárendelve számhoz, bár a csoportok kiszámításához használják. A nulla adatok lila háttérrel rendelkeznek</li>
+</ul><br><p>
+
+<h4>MENÜ</h4>
+<ul style = "margin-top = 0">
+<li><u>Töröltek mutatása</u>: az összes adat megjelenítése, beleértve a törölt adatokat is </li>
+<li><u>Ellenőrzés</u>: <a href="page_validation.htm">összevetése</a> ennek a kalibrálásnak egy másikkal </li>
+<li><u>Beállítások</u>: ugyanaz, mint a <u>kalibrációs ablak</u> esetében</li>
+<li><u>Súgó</u></li>
+</ul> <br> <p>
+
+<a href="manual04.htm"> &lt;Kalibrációs ablak</a> |
+<a href="manual06.htm"> Felmérési adatok&gt;</a>
+
+</body></html>

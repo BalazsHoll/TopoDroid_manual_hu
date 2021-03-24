@@ -1,0 +1,30 @@
+<html><body>
+
+<h4>DistoX KALIBRÁLÁSI EGGYÜTTHATÓK</h4>
+
+Ez a párbeszédpanel megjeleníti a kalibrációs lineáris transzformációk 24 együtthatóját a <b>G</b> és a <b>M</b> vektorokhoz (egyenként 12 együtthatót) és a nemlineáris tagok 3 együtthatóját (csak a DistoX2 v. 2.3 vagy újabb).<br><p>
+
+Három különböző helyzetben használják:
+<ul>
+<li>Az <u>eszközablak</u> <i>Olvas</i> gombja megjeleníti a DistoX-ból leolvasott együtthatókat.</li>
+<li>A <u>kalibrációs ablak</u> <i>Olvas</i> gombja megjeleníti az adatbázisban tárolt együtthatókat</li>
+<li>A <u>kalibrációs adatablak</u> <i>Számítás</i> gombja a kiszámított együtthatókat jeleníti meg</li>
+</ul>
+
+Az utolsó esetben a párbeszédablak a kalibrációs adatok maradék hibáinak hisztogramját is megjeleníti,
+az átlagos hibát (és az eredeti algoritmus "delta" értékét), az átlagos eltérést, a maximális hibát és a kalibrációs számítással elvégzett iterációk számát.<br><p>
+
+A kalibrációs adatok hibája az adatirány és annak a csoportnak az átlagos iránya közötti szög, amelyhez az adatok tartoznak, miután figyelembe vették a kalibrálási korrekciót. A hibákat fokban jelentik.<br><p>
+
+A hisztogram vonalai a vízszintes tengelyen 0.5&deg;-on vannak; (sárga vonal), 1,0&deg; (piros vonal), és 1,5&deg;. <br>
+A függőleges tengelyen a pipa 10 és 20. <br> <p>
+
+Az eredeti algoritmus "delta" értéke a kalibrált G-M vektorok és a minimalizálási feltételeket kielégítő vektorok közötti maradványkülönbségek négyzetgyök átlaga.
+Becslést ad a kalibrálási pontosságról (a műszer pontosságáról):
+A "delta" nagyjából a pontosság 5/4-e, fokban.<br><p>
+
+Ebben a párbeszédpanelen van egy gomb az együtthatók <b>írásához</b> a DistoX-be.<br>
+Figyelmeztetés történik, ha az adatirány eloszlás 95% alatt van, vagy ha a kalibrálási átlaghiba meghaladja 0.5&deg;.
+<br><p>
+
+</body></html>

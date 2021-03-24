@@ -1,0 +1,31 @@
+<html><body>
+
+<h4>DistoX KALIBRÁLÁSI ADAT CSOPORTOK </h4>
+
+Ez a párbeszédablak a <u>kalibrációs adatok ablak</u> <i>Csoport</i> gombjával nyílik meg.<br><p>
+
+A kalibrációs együtthatók kiszámítása előtt a kalibrálási adatokat fel kell osztani ugyanazon azimut és dőlésszögű (de eltérő elforgatású) adatcsoportokra.<br>
+Vigyázzon, hogy egy helytelen csoport hozzárendelés a kalibrációs együtthatók kiszámításának hibájához vezethet (általában az algoritmus túl sok iterációja miatt).<br><p>
+
+A csoportokat egész számmal kezdjük azonosítani, kezdve 1-vel.<br>
+A 0-as adatok fel vannak sorolva, de ki vannak zárva az együtthatók számításából.<br>
+A törölt adatok negatív csoportszámmal rendelkeznek, ezért a -1-es csoportra úgy állítja be az adatokat, hogy "törölt".<br><p>
+
+Az egyes kalibrálási adatokhoz kézzel rendelheti a csoport számát (a <i>Kalibrációs adatok szerkesztése</i> párbeszédpanellel),
+vagy hagyja, hogy a TopoDroid hozzárendelje a csoportszámokat az Ön számára.
+Két automatikus csoport-hozzárendelési házirend létezik:
+<ol>
+<li><i>TopoDroid</i>: négy adat egyidejűleg minden csoport számára;</li>
+<li><i>PocketTopo</i>: az első 16 adat négyes csoportokban (négy csoport), a többi adat önmagában egy csoport;</li>
+<!-- li> csoportok a relatív szögtávolság (iránykülönbség) alapján. </ li -->
+</ol>
+<br> <p>
+
+Műveletek:
+<ul>
+<li><i>Csoportok visszaállítása</i>: az összes adatcsoport alaphelyzetbe áll</li>
+<li><i>OK</i>: csoportok hozzárendelése (csak a nem törölt csoport nélküli adatokhoz)</li>
+</ul>
+<br><p>
+
+</body></html>

@@ -1,0 +1,53 @@
+<html><body>
+
+<h4>TopoDroid ALKÖNYVTÁRAK</h4>
+
+Néhány információ a felmérési adatok, kalibrálási adatok és a vázlatok tárolásáról.<br><p>
+
+Az alkalmazás létrehozza az alapértelmezett "TopoDroid" nevű alapkönyvtárat az elsődleges külső memóriában (általában /sdcard),
+vagy az Android 11 óta az elsődleges nyilvános külső memóriában (általában /sdcard/Documents).
+Ez a könyvtár nem kerül eltávolításra az alkalmazás eltávolításakor. Ebben a könyvtárban az alkalmazás két SQLite adatbázist hoz létre. Az első a "device10.sqlite", ahol a kalibrációs adatokat, a DistoX információkat és egyéb adatokat tárolják. A második a "distox14.sqlite", amely a felmérések adatait tárolja. Az alkalmazás alkönyvtárakat is létrehoz a különböző típusú fájlok számára. Ezek az alkönyvtárak csak a "TopoDroid" alapkönyvtárban jönnek létre:
+<ul style = "margin-top: 0">
+<li><b>bin</b>: firmware fájlok (csak a DistoX2 esetén)</li>
+<li><b>ccsv</b>: exportált kalibrációk CSV szövegfájljai (csak a DistoX esetében)</li>
+<li><b>dump</b>: memória dump fájlok (csak a DistoX esetén)</li>
+<li><b>symbol</b>: a rajzeszközök fájljai (pontok, vonalak, területek)</li>
+<li>man: felhasználói kézikönyv fordítás</li>
+</ul>
+A "bin" a firmware fájlok tárolására szolgál, mind a TopoDroidban található gyári fájlok, mind a DistoX2-ből olvasott firmware-kiírások.<br><p>
+
+A következő alkönyvtárak hozhatók létre minden munkakönyvtárban (félkövérrel, amelyek mindig létrejönnek):
+<ul style = "margin-top: 0">
+<li><b>audio</b>: <i>hang</i> megjegyzések</li>
+<li>cave: <i>Polygon</i> fájlok</li>
+<li>cav: <i>Topo</i> fájlok</li>
+<li>csv: exportált felmérések CSV szöveges fájljai</li>
+<li>csx: <i>cSurvey</i> fájlok (exportált felmérések és vázlatok)</li>
+<li>dat: <i>Compass</i> fájlok (exportált felmérések)</li>
+<li>dxf: DXF (<i>LibreCAD</i>) fájlok (exportált felmérések és vázlatok)</li>
+<li>grt: <i>Grottolf</i> fájlok (exportált felmérések)</li>
+<li>gtx: <i>GHTopo</i> fájlok (exportált felmérések)</li>
+<li><b>import</b>: importálandó felmérési fájlok (<i>Therion</i>, <i>Compass</i>, <i>VisualTopo</i>, <i>Survex</i>, <i>PocketTopo</i> és <i>CaveSniper</i> formátum) </li>
+<li>kml: <i>GoogleEarth</i> exportok [A]</li>
+<li><b>note</b>: felmérési megjegyzések szövegfájljai</li>
+<li><b>photo</b>: felmérési képek (mindegyik felmérés saját alkönyvtárral)</li>
+<li>plt: <i>OziExplorer</i> track fájlok exportálása [A]</li>
+<li>png: PNG képfájlok (exportált vázlatok)</li>
+<li>shp: tömörített ESRI <i>shapefile</i> exportja [T]</li>
+<li>srv: <i>Walls</i> fájlok (exportált felmérések)</li>
+<li>svg: SVG fájlok (exportált vázlatok)</li>
+<li>sur: <i>WinKarst</i> fájlok (exportált felmérések)</li>
+<li>svx: <i>Survex</i> fájlok (exportált felmérések)</li>
+<li><b>tdr</b>: bináris vázlatfájlok</li>
+<li>th: <i>Therion</i> fájlok (exportált felmérések)</li>
+<li>th2: a <i>Therion</i> szint fájlokhoz (mentett vázlatok)</li>
+<!-- li> th3: 3D modell fájlokhoz </li-->
+<li>tmp: ideiglenes fájlokhoz. A könyvtárban maradt fájlok biztonságosan törölhetők.</li>
+<li>top: <i>PocketTopo</i> fájlok (exportált felmérések)</li>
+<li>tro: <i>VisualTopo</i> fájlok (exportált felmérések)</li>
+<li><b>zip</b>: felmérés ZIP archívumai (exportálható és importálható)</li>
+</ul>
+Ezen alkönyvtárak egy részét csak az exportált fájlok tárolására használják (cav, cave, csx, dat, dxf, png, svx, th, th2, top, tro). Mások az adatok tárolására szolgálnak (tdr, th3, note, photo).
+A "zip" alkönyvtár a zip-mentett archívumok tárolására is használható, hogy elolvassa és kicsomagolja a TopoDroid programmal. Ha egy másik programmal készített felmérést szeretne importálni (<i>Therion</i>, <i>Compass</i>, <i>VisualTopo</i>, <i>Survex</i>, <i > PocketTopo</i>, <i>CaveSniper</i>) az "import" alkönyvtárba kell helyeznie.<br><p>
+
+</body></html>

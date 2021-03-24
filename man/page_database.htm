@@ -1,0 +1,47 @@
+<html><test>
+<h4> TopoDroid ADATBÁZISOK</h4>
+
+Hasznos, ha van egy durva elképzelésünk az információk és az adatbázisok szervezéséről. A TopoDroid munkájának egységei a felmérések és a kalibrációk. A felmérés egy barlangdarab egyetlen felmérése. A kalibrálás egyetlen DistoX kalibrálás.<br>
+A felméréseket a "distox14.sqlite" adatbázis tárolja. Minden ilyen könyvtárban van egy ilyen adatbázis.<br>
+A kalibrációkat az eszközinformációkkal együtt az "device10.sqlite" adatbázisban tárolják. Ez az adatbázis globális, és csak a "TopoDroid" könyvtárban található.<br>
+<p>
+ 
+Ennek megfelelően a felmérési adatbázis legfontosabb táblázata a következő:
+<ul>
+<li><b>felmérések</b>: felmérési információk</li>
+</ul><br>
+A felmérések nyilvántartják a felmérés nevét, dátumát, csapatát, mágneses deklinációját, kezdeti állomásnevét és esetleg egy megjegyzését
+
+A felmérésekhez kapcsolódnak a következő táblázatok:
+<ul>
+<li><b>shots</b>: felmérési adatok</li>
+<li><b>stations</b>: mentett mérési pontok</li>
+<li><b>plots</b>: 2D vázlatok; tervek, profilok, keresztmetszetek</li>
+<li><b>photos</b>; felméréshez kapcsolódó képek</li>
+<li><b>audios</b>; felméréshez kapcsolódó hangos megjegyzések</li>
+<li><b>sensors</b>: a felméréshez kapcsolódó mérések</li>
+<li><b>fixeds</b>: (geolokalizált állomások)</li>
+<!-- li><b>sketches</b>: 3D modellek</li -->
+</ul><br><p>
+
+Az eszköz adatbázis legfontosabb táblázatai a következők
+<ul>
+<li><b>devices</b>: információk az eszközökről</li>
+<li><b>calibs</b>: kalibrációs információk</li>
+</ul><br>
+ 
+A calibs rekordok tartalmazzák a kalibrációs nevet, dátumot, DistoX eszközt, algoritmust és az utolsó számítás eredményeit: együtthatók, átlagos hiba, maximális hiba, iterációk száma.<br><p>
+
+A kalibrációkhoz kapcsolódik az adattábla
+<ul>
+<li><b>gms</b>: kalibrációs adatok</li>
+</ul><br><p>
+
+Végül minden adatbázisban megtalálható a táblázat
+<ul>
+<li><b>configs</b>: konfigurációs értékek</li>
+</ul><br><p>
+
+Az adatbázis adatszervezéséről többet tudhat meg, ha megnézi egy SQLite megjelenítővel.<br><p>
+
+</body></html>

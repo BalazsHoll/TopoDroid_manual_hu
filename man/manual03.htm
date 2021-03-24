@@ -1,0 +1,97 @@
+<html><body>
+<h3>[3] MŰSZER ablak</h3>
+
+Felmérés előtt össze kell kapcsolnia az Android készüléket a műszerével, és kalibrálnia kell.
+
+Érintse meg az <i>Műszer</i> gombot a <u>főablakban</u> az <i>Műszerablak</i> megnyitásához.
+Az ismert eszközök listája középen látható.
+A támogatott eszközök a következők: DistoX, DistoX2, SAP5 és BRIC4.<br><p>
+
+A TopoDroid egyszerre csak egy műszerrel működik.
+Kiválasztásához érintse meg a bejegyzést a listán. A kiválasztott műszer neve fent látható, közvetlenül a gombok alatt.
+Ha nincs kiválasztva műszer, piros üzenet jelenik meg, amely "Az műszer nincs kiválasztva".<br><p>
+
+Ha a műszerlista üres, akkor a műszert össze kell kapcsolni és párosítani kell az Androiddal.
+Ez a <i>Beállítások</i> alkalmazással végezhető el.<br>
+A DistoX esetében kipróbálhatja az <i>Műszerablak</i> menüket is: <i>Szkennelés</i> és <i>Párosítás</i>.<br><p>
+
+<b>Műszer beceneve</b><br>
+Alapértelmezés szerint a TopoDroid a Bluetooth MAC-címet használja az műszer neveként.
+A műszereknek beceneveket lehet adni, hogy könnyebben meg lehessen különböztetni őket több műszer között.<br><p>
+
+<i>Megjegyzés. A [*] -gal jelölt gombok és menük a DistoX-ra vonatkoznak, és be kell kapcsolniuk az eszközt.</i><br><p>
+
+<h4>AKCIÓK</h4>
+<ul style = "margin-top = 0">
+<li>megérintve az eszköz bejegyzését, az aktív eszköz lesz</li>
+<li>az eszköz bejegyzésének hosszú megérintésével beállíthatja a <a href="page_device_name.htm"> becenevet </a> vagy beállíthatja a "második" DistoX-ot</li>
+</ul><br><p>
+
+<h4> GOMBOK</h4>
+<ul style = "margin-top = 0">
+<li><img src = "btn_bluetooth.png"> a Bluetooth-kapcsolatot visszaállítása.</li>
+<li><img src = "btn_info.png"> eszközinformációk [N, *]</li>
+<li><img src = "btn_toggle.png"> be- és kikapcsolhatja a DistoX kalibrációs módot [*]</li>
+<li><img src = "btn_compute.png"><a href="page_calib_dialog.htm"> a DistoX kalibrációi</a>.</li>
+<li><img src = "btn_read.png"> beolvassa és megjeleníti a DistoX kalibrációs együtthatóit [A, *]</li>
+<li><img src = "btn_memory.png"> DistoX <a href="page_memory.htm"> memória</a> funkciók [*]</li>
+</ul><br><p>
+
+Ha az aktuális eszköz SAP vagy BRIC, csak az első gomb aktív.<br><p>
+
+<h4> MENÜ</h4>
+<ul style = "margin-top = 0">
+<!-- li><u>Keresés</u> új DistoX eszközök keresésére [N, *]. Lehet, hogy kétszer vagy háromszor meg kell próbálnia, mielőtt a DistoX megtalálható</ li -->
+<!-- li><u>BLE keresés</u> új BLE eszközökhöz [N, *].</ li-->
+<!-- li><u>Párosítsa</u> az aktív DistoX-ot az Androiddal, ha még nincs párosítva [N, *]</ li -->
+<li><u>Szétkapcsolás</u> törli az aktív eszközt [A]</li>
+<li>Lementeni és feltölteni a <a href="page_firmware.htm"> firmware-eket</a> a DistoX2-re [E, *]</li>
+<li>A DistoX csomagok naplójának megjelenítése [T]</li>
+<li><u>Beállítások</u></li>
+<li><u>Segítség</u></li>
+</ul><br>
+
+<h4> ESZKÖZBEÁLLÍTÁSOK</h4>
+<ul style = "margin-top = 0">
+<li><i>Bluetooth</i>: az indítás engedélyezése, letiltása vagy ellenőrzése [alapértelmezett "ellenőrzés"]</li>
+<li><i>Új adatok száma</i>: letöltés előtt szerezze be az új adatok számát (igény szerinti mód) [alapértelmezett "nem"]</li>
+</ul><br><p>
+
+A következő beállítások csak a DistoX-ra vonatkoznak (amely a klasszikus bluetooth-ot használja).
+<ul style = "margin-top = 0">
+<li><i>Csatlakozási mód</i>: "igény szerint", "folyamatos" vagy "több" [alapértelmezett "igény szerint"]</li>
+<! - li><i>Automatikus újracsatlakozás</i>: automatikusan újracsatlakozik, ha a kapcsolat megszakad "folyamatos" adatletöltési módban [alapértelmezett "nem"]</ li ->
+<li><i>Socket</i> típus: normál vagy "insecure" [az alapértelmezett eszközfüggő]</li>
+<li><i>Z6-megoldás</i> Javítja a letöltés időkorlátját egy Z6-os telefonon és esetleg más eszközökön. Biztonságosan hagyhatja ezt engedélyezve [alapértelmezett "be"]</li>
+<! - li><i>Automatikus párosítás</i>: megpróbálja-e a TopoDroid párosítani a szkennelésből kiválasztott DistoX-ot [alapértelmezett "nem"]</ li ->
+</ul><br><p>
+
+<b>DistoX csatlakozási módok</b><br>
+Három csatlakozási mód van a DistoX számára.
+<ul>
+<li><i>igény szerint</i> módban az adatok sorozatban kerülnek letöltésre, és amikor nincs több adat a kapcsolat letöltésére, a kapcsolat le van zárva.</li>
+<li><i>folyamatos</i> módban a TopoDroid kapcsolatban marad a DistoX-szal, és a felvételek azonnal elkészülnek.
+Amikor a DistoX és az Android megszakad, a TopoDroid ismételten megpróbálja újracsatlakozni.
+Ellenkező esetben a bluetooth kapcsolat megszakad.</li>
+<li>a <i>több</i> mód olyan, mint az „igény szerinti” mód, de hosszan koppintson a „letöltés” ​​gombra, a <i>Mérés</i> ablakban vagy a <i>Vázlat</i> ablakban,
+megváltoztatja a DistoX-et. Ha beállított egy "második" DistoX-ot (az <i>Műszer</i> ablakban), akkor felcseréli az aktuális DistoX-szal.
+Ellenkező esetben párbeszédpanelt kap, hogy kiválasszon egyet a párosított DistoX-ok közül.</li>
+</ul>
+<br>
+A "több" módban az aktuális DistoX a <i>Mérés</i> és a <i>Vázlat</i> ablakok címében jelenik meg.<br>
+A csatlakozási mód csak az adatok letöltésére vonatkozik. A DistoX egyéb funkciói egylépéses lekérdezési módot használnak.
+<br><p>
+
+Az SAP és a BRIC mindig <i>folyamatos</i> módban van összekapcsolva.<br><p>
+
+<a href="page_geek.htm"> Egyéni beállítások</a>: <i>Csatlakozási késleltetés</i>, <i>Második DistoX</i>, <i>Adatszünet</i>, <i>Adatkész várakozás</i>, <i>Lézeres-be szünet</i>, <i>Mérés szünet</i>.<br><p>
+
+<a href="page_device_select.htm">Műszerek</a><br>
+<a href="page_trouble.htm"> DistoX hibaelhárítás</a><br>
+<a href="page_distox.htm"> DistoX funkciók</a><br>
+<p>
+
+<a href="manual02.htm"> &lt; Főablak</a> |
+<a href="manual04.htm"> Kalibrációs ablak &gt;</a>
+
+</body></html>
