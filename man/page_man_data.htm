@@ -1,0 +1,55 @@
+<html><body>
+
+<h4>KÉZI ADATBEVITEL</h4>
+
+Ha nincs Bluetooth-eszköze, akkor manuálisan adja meg a mérés adatait.
+A <i>Hozzáadás</i> gomb megnyitja a párbeszédpanelt a felvett adatok beviteléhez.
+Meg kell adnia az állomások nevét és a mérés adatait (hossz, irány és lejtés).
+A <i>hátramenet</i> gomb felcseréli az állomásokat, azaz megfordítja a mérést.<br><p>
+
+Ha csak a vissza mezők vannak kitöltve (az előre mezők üresen maradnak)
+a mérést a visszamenőleges adatokkal adják meg.<br><p>
+
+Mérés hozzáadásához írja be a következőt: "." (pont) vagy "-" (kötőjel) a VÉG állomáson.
+Az BJFL hozzáadható egy méréshez, ezáltal további méréseket biztosítva.
+Ebben az esetben az BJFL a KEZDŐ állomásra hivatkozik.<br><p>
+
+Gombok:
+<ul>
+<li><b>Mentés</b> beszúrja a mérést a felmérésbe, és az állomásneveket úgy növeli, hogy azok
+a párbeszédablak készen áll a következő mérés bevitelére</li>
+<li><b>OK</b> beszúrja a mérést a felmérésbe, és bezárja a párbeszédpanelt.</li>
+</ul><br><p>
+
+<b>Az Android használata az irányhoz</b><br>
+Az irány és a lejtés az Android szenzorokkal [G] állítható be:<br>
+<img src = "btn_compass.png"> a vonatkoztatási tengely az eszköz hosszú oldalának iránya.
+Az időzítő (alapértelmezés szerint 10 másodperc) segítségével meg tudja mutatni az eszközt a mérés előtt.<br>
+<img src = "btn_photo.png"> a vonatkoztatási tengely a normális a kijelzőn:
+nézze meg a VÉG állomást a képernyőn, és indítsa el az időzítőt, amikor az állomás a
+a hajszál közepe.<br><p>
+
+<b>BJFL</b><br>
+Ha meg van adva az BJFL, akkor a megfelelő mérések is beszúrásra kerülnek.
+Ezenkívül kiválaszthatja, hogy ezek a KEZDŐ állomásra (alapértelmezett) vagy a VÉG állomásra vonatkoznak-e.<br><p>
+
+Ha a mérés klinó kisebb, mint a <i>v-küszöb</i> beállítás, az BJFL függőleges síkban van:
+F felfelé, L lefelé, B vízszintesen a mérés bal oldalán (vagyis a mérés irányjával mínusz 90&deg;-kal),
+és J vízszintesen a mérés jobb oldalán.<br><p>
+
+Ha a mérés lejtése nagyobb, mint a <i>v-küszöb</i> beállítás, az BJFL vízszintes síkban van:
+B nyugat, J keleti, F észak és L dél.<br><p>
+
+<b>Egységek</b><br>
+Az adatokat az aktuális egységekben kell megadni.
+Például, ha a hosszegység „láb”, a távolságot „láb” -ban kell megadni.<br><p>
+
+<div style = "font-size = 90%">
+<b>Búvár mód</b><br>
+Búvár módban a mérés adatai a mélység, irány és a távolság.
+Feltételezzük, hogy az irány normál iránytűvel történik, az osztás az óramutató járásával megegyező irányban növekszik.
+Az irány bejegyzéseket úgy konvertálják, mintha barlangtani (geológiai) iránytűvel vennék őket.
+Például egy 340&deg; átalakul 20&deg;-ra.
+</div><br><p>
+
+</body></html>

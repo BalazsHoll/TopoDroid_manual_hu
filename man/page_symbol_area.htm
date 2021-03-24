@@ -1,0 +1,58 @@
+<html><body>
+<h4>TERÜLET RAJZ ESZKÖZÖK</h4>
+
+A "terület" eszközöket szövegfájlok határozzák meg.<br><p>
+
+A programban két területi eszköz, a "felhasználó" és a "víz" van beépítve.
+A többi a TopoDroid <i>szimbólum/terület</i> alkönyvtárból töltődik be.
+Ez a könyvtár a területi eszközökkel van feltöltve, amelyek a terjesztési apk-ba vannak csomagolva.
+Törölheti a nem szükséges eszközöket, szerkesztheti a módosítani kívánt eszközöket és
+ hozzá adhat újakat, amelyek nem szerepelnek az apk-ban.<br><p>
+
+A terület eszközfájl olyan vonalakat tartalmaz, amelyek meghatározzák a rajzeszköz tulajdonságát.
+<ul>
+<li>"symbol area" [kötelező]</li>
+<li>"name NAME", ahol a NAME a terület alapértelmezett neve [kötelező]</li>
+<li>lefordított nevek, pl. "name-hu ..." [nem kötelező]</li>
+<li>"th_name NAME", ahol NAME a Therion név. A fájlnévnek meg kell egyeznie a Therion névvel, a lehetséges "u:" előtag nélkül [kötelező]</li>
+<li>"color rgb alpha" (rgb és alfa hex formátumban, például a "0x0000ff" kék, a "0x99" pedig félig átlátszó) [kötelező]</li>
+<li>"close-horizontal" [nem kötelező, hamis, ha hiányzik]</li>
+<li>"orientable" [nem kötelező, hamis, ha hiányzik]</li>
+<li>"level" view_flag [nem kötelező, 1, ha hiányzik]</li>
+<li>"bitmap WIDTH HEIGHT X_TILE Y_TILE" a bitkép minta kezdete. A csempemódok lehetnek M (tükrözött) vagy R (ismétlés). Ezt a sort követnie kell a WIDTH hosszúságú HEIGHT számú soroknak a bitkép pixelekkel (1: előtér, 0: háttér).</li>
+<li>"endbitmap" jelöli a bitkép végét</li>
+<li>"roundtrip VALUE" [nem kötelező, for SVG-roundtrip, VALUE can be 1 (walls_shp), 2 (walls_sym), 3 (detail_shp), 4 (detail_sym) - default 3]</li>
+<li>"endsymbol"</li>
+</ul>
+
+<b>Név</b><br>
+A nevek megadásának módját lásd a <a href="page_symbol_point.htm"> Pont eszközben</a>.
+<br><p>
+
+<b>close-horizontal</b><br>
+Ha ez az attribútum be van állítva, akkor a területhatár vízszintesen bezárul a profilnézetben
+és a keresztmetszetekben.<br>
+Ha a meghúzott vonal utolsó pontjának Y koordinátája közel áll az első ponthoz,
+a területhatár az első ponton megszakad, amelynek Y koordinátája közel áll az első ponthoz.
+Ezáltal lapos vízszintes felső (vagy alsó) profilú területeket rajzolhat meg.<br>
+Ha a megrajzolt vonal végpontok Y koordinátái túlságosan különböznek, akkor a határ ferde vonallal záródik.<br><p>
+
+Jelenleg ez az attribútum csak a beépített "víz" eszközhöz van beállítva.<br><p>
+
+<div style = "font-size = 90%">
+<b>Bitmap minta</b><br>
+Ezzel az opcióval megadhat egy háttérmintát, például a kőzet formációk megkülönböztetéséhez.<br><p>
+
+Ezt az attribútumot nem használja egyetlen, az apk-ba csomagolt eszköz sem.<br><p>
+
+<b>Tájolás</b><br>
+Ha az "orientable" attribútum be van állítva, akkor a területmintázat elforgatható a területszerkesztő párbeszédpanelen.<br>
+A területmintákat az alapértelmezett szimbólumkészlet nem használja. Az árnyékolást részesítik előnyben a teljesítmény érdekében.<br><p>
+
+<b>Szint</b><br>
+A "level" attribútum értéket ad az adott területelemeken engedélyezett nézetek jelzőjének.<br>
+A zászló 1 (alap), 2 (alljzat), 4 (kitöltések), 8 (plafon) és 16 (műtárgy) számösszege.
+<br><p>
+</div>
+
+</body></html>

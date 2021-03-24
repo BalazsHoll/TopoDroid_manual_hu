@@ -1,0 +1,54 @@
+<html>
+<body>
+
+<h4>VÁZLAT EXPORTOK</h4>
+
+A vázlatok TopoDroid bináris formátumban vannak tárolva, és exportálhatók az alábbi formátumokba:
+<ul>
+<li><i>Therion</i> ".th2" fájl</li>
+<li><i>cSurvey</i> ".csx" fájl</li>
+<li><i>Tunnel</i> ".xml" fájl</li>
+<li>2D DXF (<i>LibreCAD</i>)</li>
+<li>SVG (<i>Inkscape</i>)</li>
+<li>shapefile (<i>QGIS</i>)</li>
+<li><i>xtherion</i> ".xvi" kép</li>
+<li>PNG képfájl</li>
+</ul> <br> <p>
+
+
+Az export parancs mellett ott
+egy lehetőség arra, hogy a vázlatot automatikusan lezárja a támogatott exportformátumok egyikébe, ha bezárják. <br> <p>
+
+A <b>cSurvey</b> exportfájl a alaprajokat és az oldalnézet vázlatokat egyaránt tartalmazza. Ha a "metszet" pontok meg vannak határozva, akkor az metszetekkel is rendelkezik.
+Az metszeteket nem exportálják cSurvey fájlként.<br><p>
+
+A <b>PNG</b> képek felbontása állítható. A nagyobb és részletesebb kép azonban több CPU-időt igényel, és a memória korlátai miatt meghibásodhat. Ha ez nem sikerül, a TopoDroid megpróbálja csökkenteni a felbontást, amíg nem sikerül a vázlatot PNG képfájlként exportálni. <br><p>
+
+A vázlatok 2D <b>DXF</b> fájlként exportálhatók. A DXF exportálás tesztelése a <i>LibreCAD</i> szolgáltatással történik.
+Nem garantált, hogy az <i>AutoCAD</i> vagy más CAD programok megnyithatják.<br><p>
+
+A <b>shapefile</b> export mérési pontokat, poligonokat és rajzokat tartalmaz. Az összes rajzobjektum sokszögvonallá alakul.
+Az attribútum táblák tartalmazzák az objektum adatait (pl. Pont típusa, iránya stb.).
+A shapefile exportot tartalmazó fájlok tömörítve vannak egy zip archívumban.
+<br><p>
+
+Néhány, a kiválasztott formátumra jellemző exportbeállítás felülírható az exportálás párbeszédpanelen.<br><p>
+
+<b>áttekintő térkép exportálása</b><br>
+A vázlatok az "Áttekintő ablakból" is exportálhatók a következő formátumokban
+<ul>
+<li><i>Therion</i> ".th2" fájl</li>
+<li>2D DXF (<i>LibreCAD</i>)</li>
+<li>SVG</li>
+<li>shapefile (<i>QGIS</i>)</li>
+<li>".xvi" fájl (<i>xtherion</i>)</li>
+</ul>
+<br><p>
+
+Az <u>áttekintő ablak</u> exportálása tartalmazza az aktuális nézet összes vázlatát (akár alaprajzot, akár kiterített oldalnézetet).<br>
+Ha vannak "metszet" pontok, akkor a metszetek is szerepelnek benne.
+<br><p>
+
+
+</body>
+</html>

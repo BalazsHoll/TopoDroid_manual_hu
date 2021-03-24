@@ -1,0 +1,59 @@
+<html><body>
+<h4>VONAL RAJZ ESZKÖZÖK</h4>
+
+A "vonal" eszközöket szövegfájlok határozzák meg.<br><p>
+
+Két vonalos eszköz, a "felhasználó" és a "fal" van beépítve a programokba.
+A többi a TopoDroid <i>szimbólum/line</i> alkönyvtárból töltődik be.
+Ez a könyvtár a terjesztési apk-ba csomagolt vonalas eszközökkel van feltöltve.
+Törölheti a nem szükséges eszközöket, szerkesztheti a módosítani kívánt eszközöket és
+hozzá adhat újakat, amelyek nem szerepelnek az apk-ban. <br> <p>
+
+A vonalas eszközfájl olyan sorokat tartalmaz, amelyek meghatározzák a rajzeszköz tulajdonságát.
+<ul>
+<li>"symbol line" [kötelező]</li>
+<li>"name NAME", ahol a NAME a vonal alapértelmezett neve [kötelező]</li>
+<li>lefordított nevek, pl. "name-hu ..." [nem kötelező]</li>
+<li>"th_name NAME", ahol NAME a Therion név. A fájlnévnek meg kell egyeznie a Therion névvel, a lehetséges "u:" előtag nélkül [kötelező]</li>
+<lI>"group GROUP", megadja azt a csoportot, amelyhez ez a vonal tartozik [opcionális, alapértelmezés szerint nincs csoport]</li>
+<li>"color rgb alpha" (rgb és alfa hex formátumban, például a "0x00ff00" zöld, a "0xff" pedig teljesen átlátszatlan) [rgb kötelező, az alfa nem kötelező, ha nincs megadva, akkor a 0xff-et vesszük]</li>
+<li>"width SIZE", vonalvastagság a <i>vonalszélesség</i> beállítás egységeiben [nem kötelező, alapértelmezett 1]</li>
+<li>"dash PATTERN", példa "15 5" [nem kötelező szaggatási minta]</li>
+<li>"style STYLE" ahol a stílus lehet 'straight' vagy 'xN' [nem kötelező]</li>
+<li>"effect" elkezdi a vonal út-megadást, majd útparancsok követik, és lezárják</li>
+<li>"endeffect"</li>
+<li>"roundtrip VALUE" [nem kötelező, SVG-roundtrip esetén az VALUE lehet 1 (wall_shp), 2 (wall_sym), 3 (detail_shp), 4 (detail_sym) - alapértelmezett 3]</li>
+<li>"level" view_flag [nem kötelező, hiányzó esetben 1]</li>
+<li>"endsymbol"</li>
+</ul>
+
+<b>Név</b><br>
+A nevek megadásának módját lásd a <a href="page_symbol_point.htm"> Pont eszközben </a>.
+<br><p>
+
+<b>Csoport</b><br>
+Az ugyanabban a csoportban lévő vonalak "folytatással" összekapcsolhatók.<br><p>
+
+A "group" attribútum segítségével megadható, hogy a különféle "wall" vonaltípusok összekapcsolhatók.<br><p>
+
+<b>szaggatás</b><br>
+A "dash" irányelv meghatározza, hogy a vonal szaggatott sémával van rajzolva.
+Például a "dash 15 5" azt jelenti, hogy a vonal 15 egységnyi szegmensekből van, 5 egység szóközzel elválasztva.
+<br><p>
+
+<b>Stílus</b> <br>
+A "style" irányelvvel vonalak húzhatók ritka pontokkal. <br>
+Az "x3" azt jelenti, hogy a vonalat három pontonként megrajzolják. Ennek az a következménye, hogy a vonal kevésbé "kanyargós". <br>
+Ha egyenes szegmenseket szeretne, akkor "straight".
+<br> <p>
+
+<b>"effect"</b> <br>
+Ez az opció komplex stílusú vonalak meghatározására szolgál.<br><p>
+
+<div style = "font-size = 90%">
+<b>Szint</b><br>
+A "level" attribútum értéket ad az adott vonalelemeken engedélyezett nézetek jelzőjének.<br>
+A zászló 1 (alap), 2 (alljzat), 4 (kitöltések), 8 (plafon) és 16 (műtárgy) számösszege.<br><p>
+</div>
+
+</body></html>

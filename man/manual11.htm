@@ -1,0 +1,83 @@
+<html><body>
+<h3>[11] Keresztmetszetek</h3>
+
+Az keresztmetszetek különlegesek, mivel nem tartoznak a vázlathoz, hanem független vázlatok, amelyek a tervhez vagy a profilhoz kapcsolódnak.
+A TopoDroid kétféle keresztmetszettel rendelkezik: <u>poligon</u> keresztmetszet és <u>mérési pont</u> keresztmetszet. Az előbbiek keresztezik a poligont, az utóbbiak egy mérési ponton mennek keresztül.<br><p>
+
+Az alaprajz keresztmetszete mindig függőleges. Az oldalnézet kersztmetszete lehet "ferde",  "függőleges" vagy "vízszintes", attól függően, hogy a metszet síkja hogyan keresztezi a barlang átjáróját.<br><p>
+
+Megjegyzést rendelhet egy keresztmetszethoz.<br><p>
+
+
+<b>Poligon keresztmetszetek</b><p>
+Ha a TopoDroiddal keresztmetszetet szeretne rajzolni, akkor a "metszet" vonalat kell rajzolnia, akár az alaprajzban, akár az oldalnézetben. A szakaszvonal meghatározza az keresztmetszet helyzetét és tájolását.<br><p>
+
+Az keresztmetszet a barlang alakja egy síkban amely elvágja. Az keresztmetszet orientációja ennek a síknak az iránya, azaz a síkra merőleges és a látás irányába mutató egyenes iránya. Az keresztmetszet tájolását úgy határozza meg, hogy az követi a metszet-vonal irányát. Indikátorként a metszet vonalának pipája a vonaltól az keresztmetszet látóirányába mutat.<br>
+A "pipa" mérete a <i>beállítások</i> párbeszédpanelen állítható be.<br><p>
+
+Választhat egy fotó keresztmetszet és egy vázlat keresztmetszet között. Az első esetben csak készítsen egy fényképet, amely emlékeztet a galéria alakjára, amikor elkészíti a barlangtérképet. Ügyeljen arra, hogy a képen legyen egy barlangtárs, aki méretreferensként szolgál.<br><p>
+
+A második esetben az keresztmetszetet vászonra vázolja a TopoDroid szokásos rajzeszközeivel. Hivatkozásként a TopoDroid megjeleníti az x metszet által harántolt poligont és a sünöket a végpontjain. Az előtte lévő mérési pont (az, amely felé az keresztmetszet néz) a rács közepén helyezkedik el. Az sünök világoskékek. Az összes felvétel az keresztmetszet síkjára vetítve jelenik meg. Fehér pont jelzi, ahol a metszősík metszi a [T] poligont.<br><p>
+
+Az keresztmetszetek újból megnyithatók és módosíthatók úgy, hogy "szerkesztés" módban kiválasztják a metszetvonalat vagy a metszetpontot, és megérinti a <i>szerkesztés</i> gombot.<br><p>
+
+<b>keresztmetszetek a nézetben</b><br>
+A felülnézetben definiált keresztmetszetek mindig "függőlegesek" (nulla dőlésszögűek). Orientációjukat (azaz az keresztmetszetsík irányát) a metszésvonal szöge határozza meg. Nagyon gyakran a metszetsík merőleges a járatra, de bármely szükséges szögben lehet. Például egy balról jobbra (vízszintesen, a függőlegestől 90 ° -os szöget bezáró) metszésvonalnak észak irányú a látószöge (felfelé, 0 azimut). Ha kissé lefelé, 120 szögben húzza meg, akkor 30 ° -os lesz nézet iránya.<br>
+A keresztezett poligon függőlegesen jelenik meg, ha az keresztmetszetnek ugyanaz az iránya van, mint a poligonnak. Ellenkező esetben jobbra vagy balra billen.<br>
+
+<img src = "plan-xsection.png">
+<br><p>
+
+<b>keresztmetszetek az oldalnézetben</b><br>
+A oldalnézet keresztmetszetei lehetnek "vízszintesek" (aknákban lévő függőleges felvételeknél) vagy "függőlegesek" (többé-kevésbé vízszintes járatokon). Akkor tekintik "vízszintesnek", ha dőlésszögük meghaladja a H-küszöbérték értékét.<br>
+A függőleges keresztmetszetek irányát a keresztezett poligon iránya határozza meg.<br><p>
+
+A "vízszintes" keresztmetszetek mindig észak felfelé jelennek meg. Ezenkívül hozzáadódik hozzájuk egy 5 m hosszú, északra orientált referenciavonal.
+A "függőleges" keresztmetszetek mindig a keresztezett poligon irányával rendelkeznek (vagy az ellenkezőjével, ha a metszésvonal iránya ellentétes a poligon irányával). A keresztezett poligon függőlegesen jelenik meg, mivel az keresztmetszetnek ugyanaz az iránya mint a poligonnak.
+"ferde" ??<br><p>
+
+Ha a metszetvonalat jobbról balra követjük, akkor a keresztmetszet lefelé irányul és -90&deg; az iránya. Ez felülről nézve egy "vízszintes" keresztmetszet. Legtöbbször "vízszintes" keresztmetszeteket szeretne rajzolni így, mivel természetesebb, ha egy felületet térképet fektet és lefelé néz. Ha a metszetvonalat balról jobbra követi, az keresztmetszet felfelé (dőlésszög + 90&deg;) irányul.<br><p>
+ 
+<img src = "profile-xsection.png">
+<br><p>
+
+<b>Metszetpontok</b><br>
+Ha az "automatikus metszési pontok" be van jelölve, akkor a keresztmetszet beszúrásakor akár metszővonal rajzolásával, akár mérési ponton történő behelyezésével hozzáadódik a megfelelő metszetpont a vázlathoz.
+A metszetpontok fehér négyzetekként és narancssárga vonalként jelennek meg, amelyek összekapcsolják őket a metszet szakaszvonallal vagy mérési ponttal.<br>
+Az keresztmetszet törlése esetén a megfelelő metszetpont is törlődik.<br><p>
+
+<b>keresztmetszet fájlok</b><br>
+Minden keresztmetszet külön fájlba kerül a "tdr" almappába. A fájlok egymás után következő neveket kapnak: "MySurvey-xx0.tdr", "MySurvey-xx1.tdr" stb.t egy szakasz létrehozásakor vagy szerkesztésekor jelenik meg.<br>
+A fájl törlődik, amikor egy keresztmetszet töröl.<br><p>
+
+Az keresztmetszetek más formátumban is exportálhatók, csakúgy, mint a többi vázlat, kivéve a <i>cSurvey</i> formátumot.
+Az keresztmetszetek szerepelnek a DXF, SVG, <i>cSurvey</i> vázlatexportálásában, feltéve, hogy van hozzá társított szakaszpont.<br><p>
+
+<b>Mérési pontok keresztmetszetei</b> [E]<br>
+Ez egy másik módszer az keresztmetszetek beszúrására.
+A "Mérési pont" párbeszédpanelen, amelyet egy mérési pont megérintésével érhet el <i>Szerkesztés</i> módban, megjelennek a pont koordinátái
+és van néhány gombja:
+<ul style = "margin-top = 0">
+<li> "folytassa" a felmérést az mérési pontról. Állítsa be az mérési pontt "aktív mérési pontként", vagyis azt az mérési pontt, amelyhez a következő mérés kapcsolódik</li>
+<li> "Állítsa vissza" a poligon kijelzését az mérési pont után.</li>
+<li> A sünök kijelzésének be- és kikapcsolása az mérési ponton.</li>
+<li> A "Keresztmetszet" [E] megnyit egy <u>vázlatablakot</u>, amellyel keresztmetszetet rajzolhat az mérési ponton.</li>
+</ul>
+
+Ha a mérési ponton a poligonok átlagos lejtése kisebb, mint a "függőleges küszöb", akkor az mérési pont keresztmetszetét az mérési ponton áthaladó függőleges síkban rajzoljuk meg, különben vízszintes.
+Az mérési pont keresztmetszete akkor hasznos, ha több mérést készít az mérési pont körül, hogy leírja a járat alakját.
+Az keresztmetszetsík a <i>iránytű</i> gombbal orientálható.
+Ha az mérési pontnak csak két poligonja van, akkor a sík a poligonok (vízszintes vetületei) által képzett szögek felezőpontja mentén orientálható. Ha csak egy láb van, akkor az azzal merőleges lehet. Ha kettőnél több láb van, akkor a
+<i>iránytű</i> gomb.<br><p>
+
+Az keresztmetszetek újból megnyithatók és módosíthatók úgy, hogy "szerkesztés" módban kiválasztják az mérési pontt vagy a szakaszpontot, és megérinti a <i>szerkesztés</i> gombot.<br><p>
+
+Lásd még<br>
+<a href="page_sketch_station.htm"> Vázlatmérési pont szerkesztési párbeszédpanel</a>,<br>
+<a href="page_line_dialog.htm"> Vázlatvonal szerkesztési párbeszédpanel</a>.
+<br><p>
+
+<a href="manual10.htm"> &lt; Vázlatrajz</a> |
+<a href="manual12.htm"> Áttekintő ablak &gt;</a>
+
+</body></html>

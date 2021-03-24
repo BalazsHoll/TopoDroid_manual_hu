@@ -1,0 +1,55 @@
+<html><body>
+<h4>PONT RAJZ ESZKÖZÖK </h4>
+
+
+A "pont" eszközöket szövegfájlok határozzák meg. <br> <p>
+
+Két pontból álló eszköz, a "felhasználó" és a "címke" (szöveg) van beépítve a programban.
+A többiek a TopoDroid <i>symbol/point</i> alkönyvtárból kerülnek betöltésre.
+Ez a könyvtár a terjesztési apk-be csomagolt ponteszközökkel van feltöltve.
+Törölheti a nem szükséges eszközöket, szerkesztheti a módosítani kívánt eszközöket és
+adjon hozzá újakat, amelyek nem szerepelnek az apk-ban.<br><p>
+
+A ponteszköz fájl tartalmazza a rajzeszköz tulajdonságait meghatározó sorokat.
+<ul>
+<li>"symbol point" [kötelező]</li>
+<li>"name NAME", ahol a NAME a pont alapértelmezett neve [kötelező]</li>
+<li>lefordított nevek, pl. "name-hu ..." [a lefordított nevek nem kötelezőek]</li>
+<li>"th_name NAME", ahol NAME a Therion név. A fájlnévnek meg kell egyeznie a Therion névvel, a lehetséges "u:" előtag nélkül: [kötelező]</li>
+<li>"color rgb" (rgb hex formátumban, például a piros "0xff0000") [kötelező]</li>
+<li>"orientation FLAG" [nem kötelező, hamis, ha hiányzik, igaz, ha a FLAG értéke "1" vagy 'yes']</li>
+<li>"has_text FLAG" [nem kötelező, hamis, ha hiányzik, igaz, ha a FLAG értéke "1" vagy 'yes']</li>
+<li>"roundtrip VALUE" [nem kötelező, az SVG-roundtrip esetében az VALUE lehet 1 (walls_shp), 2 (walls_sym), 3 (detail_shp), 4 (detail_sym) - alapértelmezett 4]</li>
+<li>"level" view_flag [nem kötelező, a pont nézési szintje; ha a hiányzó szint értéke 1]</li>
+<li>"path" kezdi a pont szimbólum útvonalát. Ezt a következő parancsokkal lehet megadni
+<ul>
+<li>"moveTo X Y"</li>
+<li>"lineTo X Y"</li>
+<li>"cubicTo X1 Y1 X2 Y2 X Y"</li>
+<li>"addCircle X Y R": (X,Y) középpont, R sugár</li>
+<li>"arcTo X0 Y0 X1 Y1 FROM_ANGLE SPAN_ANGLE": (X0,Y0 - X1,Y1) határoló négyszög, szögek fokban, 0 az X-tengely mentén, az irány CW</li>
+</ul>
+<li>"endpath" jelöli az útvonal végét</li>
+<li>"endsymbol"</li>
+</ul>
+
+<b>Név</b> <br>
+Az angol pont "name" kötelező.<br>
+A név fordítása más nyelvekre nem kötelező.<br>
+A nevek nem tartalmazhatnak szóközt; a helyükön használja a „_” aláhúzást.<br>
+A Therion névnek egybe kell esnie a fájlnévvel. Ez problémát okozhat, ha a Therion név tartalmazza
+kötőjelet "-", és ez egy illegális karakter a fájlnevekben. Ebben az esetben használja a fájlnévben az '=' egyenlő karaktert,
+az a szkript, amely létrehozza a szimbólumfájlok zip archívumát, a fájlnevekben a '=' helyett '-' karakterre cseréli.<br>
+A Therion név és a fájlnév nem tartalmazhat szóközt.<br><p>
+
+<b>Tájolás</b><br>
+Ha be van állítva a "orientation" attribútum, akkor a pont szimbólum elforgatható.<br><p>
+
+<div style = "font-size = 90%">
+<b>Szint</b> <br>
+A "level" attribútum értéket ad az adott pontelemekre engedélyezett nézetek jelzőjének.<br>
+A zászló 1 (alap), 2 (alljzat), 4 (kitöltések), 8 (plafon) és 16 (műtárgy) számösszege.
+<br><p>
+</div>
+
+</body></html>

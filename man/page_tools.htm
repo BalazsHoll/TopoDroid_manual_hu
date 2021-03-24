@@ -1,0 +1,55 @@
+<html><body>
+
+<h4>RAJZESZKÖZ PALETTA</h4>
+
+A programba csomagolt rajzeszközök körülbelül 9 területet, 16 vonalat és 46 pontot tartalmaznak.<br><p>
+
+Amikor az alkalmazás először elindul, a rajzeszközök fájljait a "symbol" könyvtárba telepíti. Vannak fájlok pontokhoz (ikonikus szimbólumok, például "bejárat" vagy "sztalagmit"), vonalakhoz (például "fal" vagy "gödör") és területekhez (átlátszó színnel, mintázattal jelölt régiók).<br><p>
+
+A rajzeszközök új verziói nincsenek automatikusan telepítve, de van egy gomb a frissítéshez.
+Az elkövetkező párbeszédablak megmondja a telepített és az aktuális verziót, és megkérdezi, hogy frissíteni kell-e a rajzeszközöket.<br><p>
+
+Valószínűleg nincs szükségük sokra, esetleg másokra van szükségük. A rajzeszközöket és azok kiválasztásának módját négyféleképpen testreszabhatja:
+<ul>
+<li>a rajzeszköz kiválasztásával párbeszédpanellel</li>
+<li>a vázlat szintjén</li>
+<li>a projekt szintjén (könyvtár)</li>
+<li>a fájlrendszeren</li>
+</ul>
+
+<b>Rajzeszköz párbeszédpanel</b><br>
+
+Az eszközök gombsávja csak hat rajzeszközt tartalmaz (minden típushoz).
+Ha másik eszközre van szüksége, akkor fel kell lépnie a <a href="page_tools_list.htm"> rajzeszköz párbeszédpanelére</a>. Három különböző interfész létezik,
+<ul>
+<li>az eszközök táblázatos listája a nevükkel [alapértelmezett]</li>
+<li>az eszközök rácsban elrendezve</li>
+<li>minden eszköz hármas rácsba rendezve</li>
+</ul><br>
+
+Minden eszköznél megjelenik az ikonikus szimbólum, az eszköz neve és az eszközcsoport, ha van ilyen.
+<br><p>
+
+<b>Vázlat paletta</b><br>
+
+Minden vázlathoz saját paletta tartozik. Amikor bezárja a vázlatot, egy fejléc menti a palettáját. Amikor újra megnyitja, a paletta a vázlatok palettájára lesz állítva. Ha a vázlat olyan elemeket tartalmaz, amelyek nincsenek a palettán, azokat hozzáadják. Ha egy elem nem szerepel a rajzeszközök között, akkor a "felhasználó" eszközzel helyettesíti. A "felhasználói" eszközök (pont, vonal és terület) mindig a palettán vannak.<br><p>
+
+A vázlat palettát a <u>vázlatablak</u> <i>PALETTA</i> menüjében lehet megadni. Ez megnyit egy párbeszédablakot, amely lehetővé teszi annak eldöntését, hogy melyik eszköz legyen engedélyezve a vázlat palettán. Be- és kikapcsolja az eszközöket az igényeinek megfelelően, majd bezárja a párbeszédpanelt (a <i>VISSZA</i> gombbal) a változtatások mentéséhez. Ezt önállóan kell megtennie a pontok, vonalak és területek esetében.<br><p>
+
+<b>Globális paletta</b><br>
+
+A "rendszer" eszközök kivételével a TopoDroid a rajzeszközt az alap "TopoDroid" könyvtár "symbol" alkönyvtárában tárolt fájlokból tölti be. A rendszereszközök a "felhasználó" és a "címke" pontok, a "felhasználó" és a "fal" vonalak, a "felhasználó" és a "víz" területek. Ezek mindig engedélyezve vannak.<br><p>
+
+A <u>főablak</u> <i>paletta</i> gombja határozza meg a betöltendő rajzeszköz-fájlokat. A következő párbeszédpanelen válassza ki a betöltött eszközöket. A betöltendő fájlok listája a projekt adatbázisba kerül. Ami a vázlatszintű palettát illeti, ezt egymástól függetlenül kell elvégeznie a pontok, vonalak és területek esetében<br><p>
+
+A rajzeszközök frissítésekor a TopoDroid nem telepíti automatikusan az új eszközöket.<br><p>
+
+<b>Egyéni rajzeszközök</b><br>
+
+Még magasabb szinten, nevezetesen az alap "TopoDroid" könyvtárban testreszabhatja az eszközfájlokat.
+Módosíthatja őket, törölheti azokat, amelyekre nincs szüksége, és újakat adhat hozzá (a programban nem szereplő eszközökhöz).
+Még akkor is, ha a TopoDroidhoz számos rajzeszköz van előre telepítve, előfordulhat, hogy nem tartalmazza a szükséges eszközöket (vagy nem tetszenek a mellékeltek). Az eszközfájlok egyszerű szöveges fájlok, és megírhatja saját eszközfájljait. Miután feltette őket a szimbólum alkönyvtárakba, a TopoDroid látni fogja és használni fogja őket. Az eszközfájlok szintaxisa a weboldal egyik oldalán található.<br><p>
+
+A "rendszer" rajzeszközök nem módosíthatók, és nem is törölhetők.<br><p>
+
+</body></html>

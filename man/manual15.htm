@@ -1,0 +1,76 @@
+<html><body>
+<h3>[15] 3D NÉZŐ</h3>
+
+A <b>Cave3D</b> a Therion projektek, a Loch fájlok, az Compass fájlok vagy projektek és a VisualTopo fájlok 3D nézője.<br>
+A TopoDroid a felmérés 3D-s modelljének megjelenítésére használja.
+Ha a felmérés <a href="manual06.htm"> adatablakának</a> 3D menüjét választja, a felmérés adatait egy Therion fájlba menti,
+amely a 3D-s modellt megjelenítő Cave3D alkalmazásban nyílik meg.<br><p>
+
+A modell referenciarács (kék észak, zöld keleti) vagy koordinátakereszt (rózsaszín felfelé) látható.<br><p>
+
+
+<h4> GOMBOK</h4>
+<ul style = "margin-top: 0">
+<li><i>Döntés - Mozgás</i>: a zöld nyíl váltja a nézetet a forgatás és a mozgatás mód között.</li>
+<li><i>Állomások</i>: a gomb megjeleníti és elrejti az állomások számát.</li>
+<li><i>Sünök</i>: gomb megjeleníti és elrejti a sün felvételeket. A sünök vonalakként vagy végpontként jelennek meg.</li>
+<li><i>Falak</i>: gomb megjeleníti vagy elrejti a falmodelleket, ha vannak ilyenek.</li>
+<li><i>Vetítések</i>: a fal 3D rekonstrukciójából felépített, a rácssíkra vetített tervnézet és / vagy a profilfüggöny megjelenítése</li>
+<li><i>Felület</i>: gomb megjeleníti a felületet. Csak akkor működik, ha az ASCII felületi adatok meg vannak adva a. Fájlban.</li>
+<li><i>Szín</i>: a gomb megváltoztatja a középvonal színkódolását az összes szürkéről felmérésre és mélységre.</li>
+<li><i>Rács</i>: a gomb átválthat az alatta lévő rács vagy az X, Y, Z tengely között.</li>
+</ul><br><p>
+
+<h4> MENÜ</h4>
+<ul style = "margin-top: 0">
+<li><i>Fájl megnyitása</i>: megnyit egy párbeszédablakot. Top fájl kiválasztásához a TopoDroid munkakönyvtár almappájából.</li>
+<li><i>Export</i>: megnyitja az export párbeszédpanelt. A modell exportálható Therion, KML, STL vagy STL-bin formátumba, CGAL és LAS.
+Lehetőség van az oszlopok, a falak, az állomások és a felületek exportba való felvételére. A modell szöveges fájlban is sorosítható.</li>
+<li><i>Információ</i>: felmérési statisztikákat jelenít meg</li>
+<li><i>Rózsa diagram</i>: 2D azimut rózsa diagramot mutat</li>
+<li><i>3D rózsa diagram</i>: 3D iránydiagramot mutat</li>
+<li><i>Visszaállítás</i>: a 3D modell középre helyezése felülnézetben és nagyítás a képernyőn való elhelyezéshez</li>
+<li><i>Nézőpont</i>: lehetővé teszi a nézőpont kiválasztását</li>
+<li><i>DEM</i> Digitális terepmodell: fedettség, átfedés, fájlterhelés</li>
+<li><i>Falmodellek</i>: hozzon létre vagy töröljön egy fal 3D rekonstrukcióját.</li>
+<li><i>Opciók</i></li>
+<li><i>Segítség</i></li>
+</ul><br><p>
+
+<h4> OPCIÓK</h4>
+<ul style = "margin-top: 0">
+  <li><i>Alapútvonal</i>: A Therion / Loch fájlokat tartalmazó könyvtár</li>
+  <li><i>Szövegméret</i>: Az állomás címkéjének szövege</li>
+  <li><i>A gombok mérete</i>: A gombok mérete</li>
+  <li><i>Kiválasztási sugár</i>: A kiválasztás sugara</li>
+  <li><i>Felső rács</i>: A rács megjelenítése a tetején</li>
+  <li><i>DEM kiterjedés</i> a felmérés körül</li>
+  <li><i>Vetítések</i>: Előre kiszámított vetületek felhasználása</li>
+  <li><i>Minden sablon</i>: Az összes sablon felhasználása a falakhoz</li>
+  <li><i>Háromszögek hasítása</i>: a kereszteződő fal háromszögek felosztása</li>
+  <li><i>Pontok véletlenszerűsítése</i>: adjon hozzá egy kis véletlenszerű vektort a sablonokhoz</li>
+  <li><i>Feszített falak</i>: A falpontokat kis mértékben tolja el a láb mentén</li>
+</ul><br><p>
+
+<b>Fali modell</b><br>
+A fal boríték nem kerül automatikusan kiszámításra a fájl megnyitásakor, de ennek lennie kell
+a felhasználó a <i>Falmodellek</i> menüben kéri.
+Kétféle modell létezik: pseudo conevx-shell és powercrust. Az első akkor jó, ha a szórás nem sűrű. A második a sűrű fröccsökre vonatkozik.<br>
+A fal kiszámítása után a "fal" gombbal jeleníthető meg.<br><p>
+
+<b>Állomásműveletek</b><br>
+Amikor az állomások megjelennek, az állomáson megérintve kiválaszthatók.
+A kiválasztott állomás beállítható a modell kiindulópontjaként ("középre") vagy távolságra
+egy másik állomás mérhető.<br>
+Ha a modell DEM-ként jelenik meg, akkor a felszín alatti mélység látható.<br><p>
+
+<b>DEM (digitális magassági modell)</b><br>
+A Cave3D kezeli a Therion vagy loch fájlokban található DEM-et.<br>
+Ha a TopoDroid felmérésnek van georeferált állomása, akkor a DEM hozzáadható a modellhez, ha innen tölti be
+külső fájl (támogatott formátumok: ascii és therion rács). A földrajzilag elkerített állomásnak tartalmaznia kell a koordinátákat is
+átalakítva a DEM Koordinátarendszerben a Proj4 alkalmazáson keresztül.<br><p>
+
+<a href="manual14.htm"> &lt; Barlangprojektek</a> |
+<a href="manual16.htm"> Index &gt;</a> 
+
+</body></html>

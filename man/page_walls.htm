@@ -1,0 +1,41 @@
+<html><body>
+
+<h4>AUTOMATIKUS FALAK</h4>
+
+<div style = "font-size = 90%">
+Kísérleti szinten az <i>autofal</i> gomb megjelenik a <u>vázlatablak</u> mérésszerkesztő párbeszédpanelen.<br><p>
+
+Az automatikus falak olyan technika, amellyel gyorsan meg lehet kapni egy egyszerű barlang durva térképét, amely csak a falak körvonalából áll.
+Ez nem helyettesíti a barlang jó vázlatát.
+<br><p>
+
+Jobb eredmény érhető el a 3D-s modell rekonstrukciójával, feltéve, hogy sűrű sünpontjai vannak.
+Vetítse a vázlatot a vízszintes síkra az alaprajzhoz, és vetítse egy függőleges profilfüggönyre az oldalnézethez.
+<br><p>
+
+Az automatikus falak azt mondja a TopoDroidnak, hogy rajzoljon falakat jobbra és balra a sünök végpontjain keresztül interpoláló felvételeknél. A beállítások között ki kell választania egy automatikus fali mechanizmust.
+Jelenleg két automatikus fali algoritmus létezik: <i>konvex</i> és <i>Delaunay</i>.<br><p>
+
+A <i>domború</i> falakhoz egy vonalláncot követnek, amely összeköti a sünök legkülső végpontjait. Fal létrehozásához a mérés oldalán legalább egy sün végpontnak kell lennie. Ebben az esetben két falsor követhető, egy-egy lehetőség a mérés mindkét oldalán.<br><p>
+
+A <i>Delaunay</i> fal a sün végpontok (plusz a nyolcadik pont "a végtelenségnél") és a kapcsolódó Voronoi sejtek Delaunay háromszögelésén alapszik. Minden egyes sün végpont a sejtek legtávolabbi központjához kapcsolódik, amelyhez tartozik. A végtelen sejtekből domború héj épül fel. Ez aztán összezsugorodik azokkal a sün végpontokkal, amelyekhez a társított központ a hajótesten kívül található. Egyetlen zárt falhatár követhető, amely általában a mérést tartalmazza. <br> <p>
+
+Az automatikus falak egyszerre csak egy mérésre vonatkoznak, és nem veszik figyelembe a közeli felvételeket. Ezért valószínű, hogy egy automatikus fal "belép" a közeli járat darabjába, vagy kihagyja. Ezután meg kell szerkesztenie az automatikus falbeállítást ezekhez a hátrányokhoz, azaz be kell illesztenie a hiányzó darabok pontjait, és törölnie vagy áthelyeznie azokat a pontokat, amelyek a közeli járatokban találhatók.<br><p>
+
+A beállításokon keresztül megadhatja a falaknál figyelembe vett sünök felső lejtés határát a alaprajzban, és az alsó lejtés határértéket az oldalnézetben. Más beállítások segítségével kiválaszthatja a megengedett homorúság mennyiségét és a falon lévő sün pontok közötti minimális távolságot [m-ben]. <br> <p>
+
+<ul style = "margin-top: 0; margin-bottom: 0">
+    <li><i>Falak típusa</i>: az automatikus falak típusa. Alapértelmezés szerint "nincs" (letiltva).</li>
+    <li><i>Sün-alaprajz küszöbértéke</i>: az automatikus falakban használt sünök maximális dőlése az alaprajzban.</li>
+    <li><i>Sün oldalnézet küszöb</i>: az automatikus falaknál használt sünök minimális dőlése a oldalnézetben.</li>
+    <li><i>Pontelválasztás</i>: a méréspontok minimális elválasztása a mérés irányában. Ha két sün közelebb van ennél az értéknél, akkor csak azt a sünt használják, amelynek a távolsága a méréstől legnagyobb.</li>
+    <li><i>Pontlépés</i>: maximális távolság a falak mentén két vonalpont között. Ha a két osztást összekötő falszakasz túl hosszú, akkor interpolációs pontok vannak felosztva közöttük</li>
+    <li><i> konkávia</i>: az elfogadott fal homorúság.</li>
+</ul><br><p>
+
+<i>Figyelmeztetés</i><br>
+Ha kétszer rajzol automatikus falakat ugyanarra a felvételre, a falvonal(ak) két példányát kapja.
+<br><p>
+</div>
+
+</body></html>

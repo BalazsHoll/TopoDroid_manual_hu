@@ -1,0 +1,67 @@
+<html><body>
+<h3>[8] FELMÉRÉSI INFO ABLAK</h3>
+
+Az <u>adatablak</u> <i>felmérés</i>menüje megnyitja a felmérés <u>információs ablakát</u>. Alternatív megoldásként megnyithatja a
+hosszan koppintson a felmérés bejegyzésére a <u>főablakban</u>.<br><p>
+
+A megjelenített felmérési információk a következők:
+<ul>
+<li>név (nem szerkeszthető)</li>
+<li>dátum</li>
+<li>csapatok neve</li>
+<li>mágneses deklináció (ha be van állítva)</li>
+<li>felmérés leírása</li>
+<li>a keresztmetszetek <i>megosztva</i> vannak-e a vázlatok között, vagy sem</li>
+<li>az adatmód <i>normális</i>vagy <i>búvár</i>[T]</li>
+</ul>
+<br>
+
+A mágneses deklinációt tizedes fokokban kell megadni.
+A megengedett értéktartomány [-360 °, 360 °].
+Az ezen a tartományon kívül eső értékeket "nem állítottnak" tekintjük.<br><p>
+
+
+<h4>GOMBOK</h4>
+<ul style = "margin-top = 0">
+<li><img src = "btn_note.png"> felmérés megjegyzései</li>
+<li><img src = "btn_info.png"> felmérés <a href="page_stat1.htm">statisztika</a></li>
+<li><img src = "btn_3d.png"> 3D-s megjelenítés (Cave3D alkalmazás szükséges) [A]</li>
+<li><img src = "btn_gps.png"> <a href="page_fixed_list.htm">hely</a>[A]</li>
+<li><img src = "btn_photo.png"> fotólista. Érintse meg a bejegyzést a leírás szerkesztéséhez vagy a fénykép törléséhez [A]</li>
+<li><img src = "btn_sensor.png"> érzékelők mérései. Érintse meg a bejegyzést a megjegyzés szerkesztéséhez vagy a mérés törléséhez [T]</li>
+</ul><br><p>
+
+<h4>MENÜ</h4>
+<ul style = "margin-top = 0">
+<li><u>Bezárás</u></li>
+<li><u>Export</u></li>
+<li><u>Átnevezés</u>[T]</li>
+<li><u>Törlés</u>[A]</li>
+<li><u>Szín törlése</u>: törölje az egyedi színező lapokat [T]</li>
+<li>Műszer <a href="page_survey_calib.htm">kalibrálás</a>[E]</li>
+<li><a href="page_calib_check.htm">Kalibrálás-ellenőrzés</a> mérések [E]</li>
+<li><u>Beállítások</u>(ugyanazok, mint az <u>adatablak</u> beállítások)</li>
+<li><u>Súgó</u></li>
+</ul><br><p>
+
+<h4>Exportálás párbeszédpanel</h4>
+Az exportálás párbeszédpanelen az exportálási formátumok kiválasztási listája található: <i>Compass</i>, <i>cSurvey</i>, <i>Survex</i>, <i>PocketTopo</i>, <i>Polygon</i>, <i>GHTopo</i>, <i>Grottolf</i>, <i>Therion</i>, <i>Topo</i>, <i>VisualTopo</i>, <i>Walls</i>, és <i>WinKarst</i>. Ezenkívül az adatok exportálhatók <i>DXF (LibreCAD)</i>, <i>CSV</i> szövegfájlként és <i>shapefile (QGIS)</i> formátumban.
+Ha a felmérésnek van egy fix kezdőpontja, akkor az exportálható <i>KML (GoogleEarth)</i>, <i>GeoJSON</i>és <i>track</i>fájlként (PLT). Ez az export nem sikerül, ha nincs rögzítve a kezdőpont. Végül exportálhat egy <i>ZIP</i>archívumot, amely tartalmazza a felmérés összes adatait.<br><p>
+
+Számos exportálási beállítás szabályozza, hogy a TopoDroid hogyan írja a felmérési adatokat a különféle exportformátumokban.<br><p>
+
+<h4>Törlése párbeszédablak [A]</h4>
+A törlés párbeszédablak megerősítést kér a felmérés törléséhez. A felmérés törlése helyrehozhatatlan: a felmérés és az összes kapcsolódó adat (fotók, jegyzetek, vázlatfájlok stb.) A zip archívum kivételével törlődik. A felmérés törlése előtt győződjön meg róla, hogy exportál egy tartalék <i>ZIP</i> archívumot. <br><p>
+
+<div style = "font-size: 90%">
+<h4>Átnevezés párbeszédablak</h4>
+Ezzel a párbeszédpanellel átnevezheti a felmérést. Az átnevezés sikertelen, ha már van felmérés a megadott névvel.<br><p>
+Az adatbázisban található információk, a jegyzetek fájlja, a bináris vázlatfájl, valamint a kép- és hangkönyvtár átnevezésre kerül.
+A vázlatfájlokban a "szintek" szakaszra való hivatkozás azonban a fájlok újbóli megnyitásáig nem frissül.
+Ezért ajánlatos átnézni az összes vázlatot és "kinyitni és bezárni".
+</div><br><p>
+
+<a href="manual07.htm">&lt; Mérések</a>|
+<a href="manual09.htm">Vázlat ablak &gt;</a>
+
+</body></html>

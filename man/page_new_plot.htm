@@ -1,0 +1,58 @@
+<html>
+<body>
+
+<h3>ÚJ VÁZLAT</h3>
+
+Ez a párbeszédpanel az <i>Új vázlat</i> gombra kattintva nyílik meg a <i>Vázlatlista</i> párbeszédpanelen.<br><p>
+
+Két szövegmezővel és megerősítő gombbal rendelkezik.
+<ul>
+<li><b>név</b> a vázlathoz rendelt név.</li>
+<li><b>referenciapont</b></li>
+<!--li><b>fekvő</b> mód [T] [alapértelmezett nem]</li-->
+<li><b>kiterített</b> oldalnézet jelölőnégyzet és <b>vetítési irány</b></li>
+<li><b>lógó</b> vázlat (a kezdőpont nincs a poligonhoz csatolva)</li>
+</ul> <br> <p>
+
+Használhatja a TopoDroid által javasolt <b>nevet</b>
+(növekvő egész szám), vagy írjon be mnemonikus nevet. Minden vázlatot két fájlba menti, egyet a alaprajzhoz,
+a másikat az oldalnézethez. A fájlnevek a felmérés nevét, a vázlat nevét és az utótagot tartalmazzák
+("p" a alaprajzhoz, "s" a oldalnézethez). Például a "cave" felmérés "2" vázlata a két fájlba kerül
+"cave-2p.tdr" és "cave-2s.tdr".<br><p>
+
+<b>FIGYELEM. A vázlat neve nem tartalmazhatja a '/' (perjel) karaktert, amely az útvonal elválasztó.</b><br><p>
+
+<b>Kezdő poligon pont</b><br>
+A kezdő pont (referenciapont) (origó) határozza meg, hogyan kell elhelyezni a vázlatot a felmérés poligon vonalához képest.
+A felmérés poligon vonala meghatározza a vázlat méretarányát (a rajz méretaránya 40 rajzvászon egység / méter) és az elfordulását, de meghatározatlanul hagyja
+hogyan helyezzük el a rajzot a poligonhoz képest. Ezt a bizonytalanságot a oldja fel a
+referenciapont a (0,0) ponton lessz a vázlat koordináta-rendszerében.<br><p>
+
+A referencia pont meghatározza a vázlat felmérés poligonjának <b>adatcsökkentését</b> is.
+A vázlat szempontjából a poligon vonal a referencia ponttól kezdve és tovább folytatódik
+amíg adatok csatolhatók. Az így kapott poligon vonal
+fát alkot, a referenciaponton gyökerezik. Annak érdekében, hogy a vászon kevésbé legyen zsúfolt,
+el lehet rejteni a poligon vonal egy részének megjelenítését is
+egy pont után, vagy előtte (vagyis a referencia pont és a pont között).
+Ezt a "Vázlatpont" párbeszédpanel magyarázza.<br><p>
+
+Ha a felmérés "rögzített pont eredetű", a TopoDroid előretölti a "referencia pontot" az első felmérési ponttal.
+Ellenkező esetben az utolsó pontot vagy az aktív pontot használja, ha ez be van állítva.
+Megváltoztathatja, ha másik pontot szeretne vázlat referenciaként.<br><p>
+
+Az alkalmazás hibát jelez, ha a referenciapont nem létezik a felmérési adatokban.
+A "lógó" jelölőnégyzet bejelölésével kényszeríteni lehet egy nem létező pont használatára.<br>
+Ebben az esetben előfordulhat, hogy a vázlatnak nincs poligon vonal referenciája, sem sünöknél, sem pontoknál.<br><p>
+
+Ha be van jelölve a <b>kiterített</b> jelölőnégyzet, akkor az oldalnézet kiterül, és a <b>vetítési irány</b> nem jelenik meg.
+Ellenkező esetben a oldalnézet vázlat a vetítés irányában készül.<br><p>
+
+<!--
+<div style = "font-size = 90%">
+<b>fekvő</b> módban az északi és a függőleges a képernyő bal oldala felé mutat, alaprajz- és oldalnézetnézetben.
+Hasonlóképpen, az x szakaszok függőlegesek a bal oldalhoz.
+</div><br><p>
+-->
+
+</body>
+</html>

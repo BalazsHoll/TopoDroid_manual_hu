@@ -1,0 +1,304 @@
+<html><body>
+<h3>[9] VÁZLAT ABLAK</h3>
+
+Az <u>adatablak</u> <i>vázlat</i> gombja megnyitja a vázlatok listáját tartalmazó párbeszédpanelt az <i>Új vázlat</i> gombbal. Érintse meg ezt a gombot egy új felmérési vázlat létrehozásához.<br><p>
+
+Mindegyik vázlat két vázlatfájlból készül: az egyik az alaprajzhoz, a másik az oldalnézethez (akár kiterített, akár vetített). Az keresztmetszeteknek csak egy fájlja van. Új vázlat nyílik meg a vázlat nézetben. Utána a vázlat párbeszédpanel két oszlopot mutat, az egyik az alaprajz, a másik az oldalnézet, és kiválaszthatja, melyikből nyissa meg.<br>
+Minden vázlat többféle bejegyzést tartalmazhat.<br><p>
+
+A <u>kiterített</u> oldalnézet megjeleníti a középvonalat a balra vagy jobbra, vagy függőlegesen rajzolt poligonokkal, azok "kiterítésének" megfelelően. Ha egy poligonnál nincs beállítva a "kiterítés", akkor a középvonal nem jelenik meg attól a poligontól.
+A sünök annak a poligonnak a függőleges síkjára vetülnek, amely irányához a legközelebb áll, kivéve, ha a felhasználó a mérés szerkesztése párbeszédpanelen beállított egy adott "kiterítést".
+Például az ábrán látható sík nézetnél a világos tartományban lévő sünök az 1-2 poligon függőleges síkjára, a sötét tartományban pedig a 0-1 függőleges síkjára vetülnek.<br><p>
+
+A <u>kivetített</u> oldalnézet a poligont és a sünökat a vetítési irányra merőleges függőleges síkba vetíti.<br><p>
+
+
+<img src = "splay_extend.png"><br><p>
+
+<b>Poligon vonalak</b><br>
+
+A poligon színek
+<ul>
+<li> normál: fehér</li>
+<li> rendellenes mezőértékek: piros</li>
+<li> nincs összhangban a testvérekkel: narancssárga</li>
+</ul><br><p>
+
+<b>Részletpont mérések (sünök)</b><br>
+
+A sünök szegmensként vagy pontként jeleníthetők meg [G]. Ha pontként jelennek meg, akkor nem választhatók ki.<br>
+
+A sünök színei: [E/G]
+<ul>
+<li> kommentált: sötétzöld</li>
+<li> keresztmetszet (BJFL): zöld</li>
+<li> h-sün: mélykék (alaprajz), sötétkék (oldalnézet)</li>
+<li> v-sün: sötétkék (alaprajz), mélykék (oldalnézet)</li>
+<li> többi: világosszürke</li>
+</ul><br><p>
+
+Lehetőség van átlátszósági szint beállítására a sünökhöz [G].<br>
+A sünök különféle színekhez rendelhetők.<br>
+A sün nem jelenik meg, ha a mérés a terv vagy a profil nézetben nincs megjelenítésre jelölve.<br><p>
+
+Ha nincs tiltva [G], a sünök szaggatott vonallal jeleníthetők meg.<br>
+Ha a sün-szaggatás beállítása <i>irány</i>, akkor a sün szaggatott lessz, ha a
+a "legközelebbi" poligonnal bezárt szöge meghaladja a szaggatás irány küszöbét, [alapértelmezett 60&deg;]<br>
+Ha a sün-szaggatás beállítása <i>lejtés</i>, akkor a sün szaggatott lesz, ha a
+a sün lejtése meghaladja a kijelölt lejtés-küszöböt: pontozott (pozitív lejtés) és szaggatott (negatív lejtés).<br>
+Ha a sünt a <i>nézet</i>re állítja be, a lejtés által az alaprajzban szaggatott és
+az irány által az oldalnézetben.<br><p>
+
+Ezenkívül az <u>alaprajz</u> nézetben a splay nem jelenik meg
+ha a szórás hajlása meghaladja az alaprajzi küszöböt [alapértelmezett 80&deg;]<br>
+
+<u>keresztmetszetek</u> esetén:
+<ul>
+<li> a keresztmetszetek (BJFL) zöld</li>
+<li> a többi sün kék: sötét a CÉL ponton, világos a KEZDŐ ponton</li>
+<li> végül, ha a sün-szaggatás engedélyezve van, akkor pontok vagy szaggatottak
+ha a sün és az keresztmetszetsík közötti normál szöge a szaggatott szögküszöb alatt van
+[alapértelmezett 60&deg;] (pontozott, ha a normál irányába, szaggatott, ha ellentétes).</li>
+</ul><br>
+
+<b>Pontok</b><br>
+Az pontok színei
+<ul>
+<li> ibolya: alapértelmezett</li>
+<li> zöld: aktív állomás</li>
+<li> piros: azok a pontok, amelyeken túl a poligon el van rejtve</li>
+<li> kék: azok a pontok, amelyek előtt a poligon el van rejtve</li>
+<li> sárga: mentett állomások [T/G]</li>
+</ul><br><p>
+
+<b>Interakciós módok</b><br>
+A <u>vázlatablak</u> négy interakciós móddal rendelkezik:
+<ul style = "margin-top = 0">
+<li><b>mozgatás</b>: elmozdíthatja a vásznat, és nagyíthatja / kicsinyítheti. Ha a referenciák párbeszédpanel "fix hivatkozások" mezője be van állítva, akkor a váltások csak a rajzokat érintik [T]</li>
+<li><b>rajzolás</b>: ebben a módban ikonikus szimbólumokat (pontokat, beleértve a címkéket is), nyomvonalakat és területeket (színnel vagy mintával töltött zárt területek) ad hozzá.</li>
+<li><b>törlés</b>: elemek és vonalak / területek vagy részek törlése a vázlatból.</li>
+<li><b>szerkesztés</b> [A]: pontszerű változtatásokhoz és az elem tulajdonságainak szerkesztéséhez, ideértve az elem törlését is.</li>
+</ul><br><p>
+
+A váltás és a zoom még <b>rajzolás</b> ban és <b>törlés</b> módban is lehetséges két ujjal.
+Ha az "oldalsó húzás" engedélyezve van, akkor a vázlat a vászon bal, jobb és alsó oldaláról "húzva" eltolható.
+Az oldalsó sávok átlátszó szürke színnel jelennek meg.<br>
+A zoom vezérlés engedélyezhető (akár ideiglenesen, akár véglegesen). Ha ideiglenesek, akkor megjelennek, amikor megérinti az alját
+a vászon közepén.<br><p>
+
+
+<h4>GOMBOK</h4>
+Az üzemmódokat a bal oldali három zöld gomb képviseli: <i>rajzolás</i>, <i>törlés</i> és <i>szerkesztés</i>. Ha az egyikük be van kapcsolva, akkor a kiválasztott gomb élénkzöld színű. Ha egyik sincs a kiválasztva, akkor a program <i>mozgatás</i> módban van.<br><p>
+
+Ha egy zöld gomb be van kapcsolva, hosszan megérinti azt, és megnyílik a párbeszédpanel a gomb módjának megfelelő beállítások szerkesztéséhez.<br><p>
+
+<img src = "btn_draw_erase_edit.png">
+<br clear=all>
+
+A többi gomb különbözik a módválasztástól. <b>Mozgatás</b> módban vannak
+<ul style = "margin-top = 0">
+<li><img src = "btn_download.png"> adatok <i>letöltés</i>e. Ha nincs kiválasztva eszköz, akkor ez a gomb el van rejtve.
+Alapértelmezés szerint a sünök és a poligonok frissülnek, amikor egy poligont letöltenek (és azonosítanak).
+Használja a Frissítés gombot a poligon frissítésének kényszerítésére.
+Az utolsó letöltött mérések kék színnel kiemelhetők, hogy megkülönböztessék őket a többitől [G].
+</li>
+<li><img src = "btn_bluetooth.png"> <a href="page_bluetooth.htm">Bluetooth</a> visszaállítás / vezérlés</li>
+<li><img src = "btn_note.png"> felmérés <a href="page_survey_notes.htm"> jegyzetek</a></li>
+<li><img src = "btn_mode.png"> <a href="page_drawing_refs.htm">referenciák</a> rajzolása: poligonok, sünök, pontok, metrikus rács, skála és vázlat.</li>
+<li><img src = "btn_plan.png"><i>alaprajz / oldalnézet</i> kapcsoló. <i>Sün-megjelenítés mód</i>, keresztmetszetekhez</li>
+<li><img src = "btn_azimuth.png"> <a href="page_azimuth.htm">"kiterítés" hivatkozás</a></li>
+<li><img src = "btn_refresh.png"> frissítse a poligont</li>
+</ul><br><p>
+
+A <b>rajz</b> módban a zöldeken kívül négy gomb található:
+<ul style = "margin-top = 0">
+<li><img src = "btn_undo.png"> egyenként eltávolítja az utolsó rajzolt elemeket.</li>
+<li><img src = "btn_redo.png"> az eltávolított elemet egyenként helyezi vissza a vázlatba. Az eltávolított elemek listája kiürül, ha valami újat rajzol. A pontszerű szerkesztési műveletek szintén befolyásolhatják az átdolgozás listáját.</li>
+<li><img src = "btn_tools.png"> <a href="page_tools_list.htm">Rajzeszköz</a> váltó / választó</li>
+<li><img src = "btn_cont.png"> <i>sor csatlakozik</i> vagy folytatódik</li>
+</ul><br><p>
+
+A <b>törlés</b> módban a zöldeken kívül három gomb található:
+<ul style = "margin-top = 0">
+<li><img src = "btn_undo.png"><i>undo</i></li>
+<li><img src = "btn_redo.png"><i>redo</i></li>
+<li><img src = "btn_erase.png"> törölhető elemek típusa: minden, pont, vonal, terület</li>
+<li><img src = "btn_size.png"> radír mérete [S, M, L]</li>
+</ul><br><p>
+
+A <b>szerkesztés</b> [A] mód a zöld gombok mellett:
+<ul style = "margin-top = 0">
+<li><img src = "btn_edit.png"> választható elemek típusa: minden, pont, vonal, terület, mérés, pont</li>
+<li><img src = "btn_size.png"> a kiválasztó eszköz mérete [S, M, L]</li>
+<li><img src = "btn_point.png"> pontonk speciális műveletei</li>
+<li><img src = "btn_item.png"> elem tulajdonságainak szerkesztése</li>
+<li><img src = "btn_delete.png"> törölje az elemet a vázlatból (megerősítést kér, és visszavonható).</li>
+<li><img src = "btn_range.png"> tartományválasztás: akár pontonként, akár lokálisan (csak vonalakhoz és területekhez).
+</ul><br><p>
+Ha vannak kiválasztott elemek, akkor az első két gomb <i>előző/következő</i> navigációs gomb lesz a készletben
+a kijelölt elemek közül.<br><p>
+
+A gombok némileg eltérnek az keresztmetszet vázlatoknál.
+<b>Mozgatás</b> módban a "letöltés", "bluetooth", "kapcsoló" és "azimim" gombok nem jelennek meg, de ott
+egy gomb, amellyel kiválaszthatja, hogy melyik sünök jelenjenek meg. Négy állapotot vált ki: "mindkettő", "megtekintett állomás", "állomás mögött", "nincs".
+Ennek megfelelően a rajzhivatkozások párbeszédpanelen nincs doboz a sünökhöz.
+<br><p>
+
+<b>Hosszú érintési műveletek</b><br>
+<ul style = "margin-top = 0">
+<li> Az egyes <i>mód</i> gombok hosszú megérintésével megnyílik a vonatkozó beállítások párbeszédpanel [A].</li>
+<li> A <i>letöltés</i> gomb több eszköz módban [E] kapcsolja az eszközt.</li>
+<li> Alapnézetben a <i>kiterítés referencia</i> gomb hosszú megérintésével a referencia irány lesz
+grafikusan szerkeszthető lesz az ujját a kijelzőn csúsztatva. A gomb zöldre vált [E].</li>
+<li> A kiterített oldalnézetben a <i>megjelenítési mód</i> gomb hosszú megérintésével megfordíthatja a vázlatot [N].</li>
+<li> A keresztmetszetekkel átválthatja a hasítások megjelenítését, amelyek a metszetsíktól [T] vannak.</li>
+<li> Az <i>eszközök</i> gomb hosszú megérintésével visszaáll az alsó eszköztár forgási sorrendje. A háromszoros eszköztárra hatástalan.</li>
+<li> A <i>törlés</i> gomb hosszú megérintésével eltávolítja a kijelölt vonalat/területpontot [N].</li>
+</ul><br><p>
+
+
+<h4>MENÜ</h4>
+<ul style = "margin-top = 0">
+<li><u>Váltás</u> másik vázlatra vagy <u>bezárás</u>.</li>
+<li><u>Export</u>: a vázlat <a href="page_plot_export.htm"> exportálható</a> <i>Therion</i> th2, <i>cSurvey</i>, PNG, DXF (<i>LibreCAD</i>),
+SVG, xvi (<i>xtherion</i> és shapefile (<i>QGIS</i>) formátumba.
+Minden export két fájlt generál, az egyiket az alaprajzhoz másikat az oldalnézethez, kivéve a <i>cSurvey</i> t, amelynél mindkettő egy fájlban van.</li>
+<li><a href="page_stat2.htm"> Statisztika</a>. A keresztmetszetek esetében ez kiszámítja a szakasz területét.</li>
+<li><u>Újratölt</u> a vázlatot egy <a href="page_backup.htm"> biztonsági másolatból</a>.</li>
+<li><u>Ablak nagyítás</u>: párbeszédpanel a vázlat képernyőbe illesztéséhez, valamint az álló vagy fekvő megjelenítés kiválasztásához</li>
+<li><u>Átnevezheti / törölheti / megoszthatja</u> a vázlatot. A törölt vázlatok helyreállíthatók (<i>helyreállítás</i> menü az <u>adatablakban</u>)</li>
+<li><a href="page_plot_scraps.htm"> Szintek</a> párbeszédpanel [T]</li>
+<li><a href="page_tools.htm"> rajzeszközök</a> paletta</li>
+<li><u>Áttekintő ablak</u>, amely az összes felmérési vázlatot együtt mutatja. [Csak alaprajz és kiterített profilok esetén]</li>
+<li><u>Beállítások</u></li>
+<li><u>Súgó</u></li>
+</ul><br><p>
+
+
+<h4>VÁZLAT BEÁLLÍTÁSOK</h4>
+<ul style = "margin-top = 0">
+  <li><i>Rajzeszközválasztó</i>: lista, rács vagy háromrácsos nézet [alapértelmezett: lista]</li>
+  <li><i>Alsó eszköztár</i>: egy vagy háromsoros [alapértelmezett: egy]</li>
+  <li><i>Oldalsó húzás</i>: engedélyezze a mozgatást oldalhúzással</li>
+  <li><i>Zoomvezérlők</i>: meghatározza, hogy a zoomvezérlők hogyan jelenjenek meg többérintéses eszközökön [B]. A zoom vezérlők elrejthetők, csak rövid időtartamra jeleníthetők meg, amikor a felhasználó a képernyő alsó részét megérinti középen, vagy állandóan megjeleníti őket</li>
+  <li><i>Vízszintes keresztmetszetek</i> poligon-lejtés küszöb a vízszintes keresztmetszetekhez (oldalnézet).</li>
+  <li><i>Poligon ellenőrzése</i>: ellenőrizze, hogy az összes poligon csatlakozik-e a felméréshez [letiltva]</li>
+  <li><i>Kiterítés ellenőrzése</i>: ellenőrizze, hogy az összes poligonnál meg van-e határozva a "kiterítés" [engedélyezve]</li>
+  <!-- li><i>xtherion területek</i> th2 fájlok vázlatainak mentése egy plusz ponttal a terület határaiban</ li -->
+  <li><i>PONT ESZKÖZÖK</i>
+    <ul style = "margin-top: 0; margin-bottom: 0">
+    <li><i>Nem nagyított pont</i>: a pontok a nagyításkor rögzített méretűek maradnak</li>
+    <li><i>Egységek rajzolása</i> pontszimbólumokhoz</li>
+    <li> Címke <i>szövegméret</i> [24 pt]</li>
+   </ul>
+  <li><i>VONALI ESZKÖZÖK</i>
+    <ul style = "margin-top: 0; margin-bottom: 0">
+    <li> Vonal <i>tollszélesség</i> (az NB falvonalak kétszer olyan szélesek) [1 px]</li>
+    <li><i>Egységek rajzolása</i> az "úthatású" vonalakhoz</li>
+    <li> Vonal <i>stílus</i>: finom, normál, durva, "spline" (interpolált görbe), ritkított</li>
+    <li> Vonal <i>pontok távolsága</i>: a vonalpontok távolsága normál stílusban [5 px]</li>
+    <li><i>Irány pipa hossza</i> az keresztmetszet vonalakhoz [5 px]</li>
+    <li><i>Metszetpontok</i>: hozzáadja-e a "metszet" pontot automatikusan a "metszet" vonalakhoz [alapértelmezett igen]</li>
+    <li> Vonal <i>alapértelmezett csatlakozási mód</i>: nincs, kezdet, vég, mindkettő, "folytatás"</li>
+    <li> Terület <i>határ</i> alapértelmezett láthatóság</li>
+   </ul>
+ </li>
+  <li><i>VÁZLAT</i>
+    <ul style = "margin-top: 0; margin-bottom: 0">
+    <li>Poligonvonal <i>szélessége</i> (poligon/sün)</li>
+    <li>Pont neve <i>szövegméret</i> [18 pt] [N]</li>
+    <li> A <b>szerkesztés</b> módban megjelenített <i>zöld pontok</i> mérete [5 px] [A]</li>
+    <li><i>Kiválasztás</i> sugár a vázlat finomszerkesztéséhez; [16 px] [A]</li>
+    <li> A <i>radír</i> alapmérete</li>
+    <li><i>Váltási érzékenység</i>: maximális lépés a vázlat mozgatásakor [60 px] [E]. Növelje, ha a vázlatváltás szaggatott</li>
+    <li><i>Mutató sugara</i>: a kiválasztáshoz ennél többet nem szabad az újjat mozgatni [A]</li>
+    <li><i>A sün átlátszósága</i> (alfa) [0-100, alapértelmezett 80]</li>
+    <!--
+    <li><i>Sün alaprajz küszöb</i>: az e küszöb feletti dőlésszögű sünöket elrejti a alaprajznál [80 &deg;]</li>
+    <li><i>Keresztmetszet H-küszöb</i>: az a dőlésszög, amely felett egy keresztmetszet vízszintes. (Alatta a keresztmetszet függőleges).</li>
+    -->
+   </ul>
+ </li>
+</ul><br><p>
+
+<div style = "font-size: 90%">
+<a href="page_geek.htm"> Egyéni beállítások</a>:
+<i>Vázlateltolás / méretarány</i>,
+<i>Vázlat felosztás / egyesítés</i>,
+<i>Poligon vertikális küszöb (a küszöbértéket meghaladó BJFL NyKÉD lesz)</i>,
+<i>Mentett pontok színezése</i>,
+<i>A sarkok minimális szöge, ha egy vonal ki van simítva</i>,
+<i>Bezier interpolációs pontosság és sarokküszöb</i>,
+<i>Vonalegyszerűsítési távolság, hossz és pufferzóna</i>,
+<i>Pont műveletek jelzői (vonal / terület bepattanása, simítás / egyenesítés szakasz, többválasztásos, összetett műveletek)</i>,
+<i>Sün szaggatás (mód, lejtés küszöb, irány küszöbök)</i>,
+<i>Biztonsági másolat száma és intervallum</i>,
+<i>Biztonsági mentés törlése menü</i>,
+<i>automatikus keresztmetszet az exportban (csx, svg, dxf, xvi)</i>
+<i>Automatikus falak beállításai</i>.
+</div><br><p>
+
+<h4> Vázlat gyorsítótár</h4>
+Megnyitás után a vázlatok a memóriában vannak, egy gyorsítótárban. Ez felgyorsítja a váltást az <u>adatablak</u> között
+és a <u>vázlat ablak</u>, mivel a vázlatot nem kell fájlból olvasni.
+A vázlat gyorsítótár törlődik, amikor a felmérés lezárul.<br><p>
+
+<h4> Vázlatfájl-formátum</h4>
+Minden vázlatot fájlba menti, ha módosul, vagy amikor a <u>vázlatablak</u> más nézetre változik.
+A teljesítmény érdekében a TopoDroid bináris formátumban menti a vázlatokat.<br><p>
+
+<h4> Pontválasztás [A]</h4>
+Néhány szerkesztéshez ki kell választania egy pontot: vagy egy pontot, egy vonalat / területi pontot, egy állomást vagy egy felvett középpontot.<br>
+Ehhez érintse meg a kívánt pont közelében. Ha azonban több pont van közel a megérintéshez, akkor mindegyik kiválasztva van, de csak az egyiket szerkesztik. A <i>előző / következő</i> gombokkal módosíthatja a kiválasztott készlet "szerkesztési" pontját.<br><p>
+
+<h4> Vonalstílus</h4>
+A TopoDroid öt vonalstílust használ. A normál stílusban [alapértelmezett] a vonalak vonalláncként vannak megrajzolva. A finom stílusnál a vonalláncok rövidebbek, míg a durva stílusnál hosszabbak. A negyedik stílusban a vonaldarabok interpoláltak, a szegmenseket köbös Bezier-görbékkel (spline-okkal) helyettesítve. Ezek a szegmensek áthaladnak a két végponton, és két szabályozási pontjuk van, amelyek meghatározzák a görbületet.
+Az ötödik vonalstílussal a meghúzott vonalak egyszerűsödnek egy pont gyomláló algoritmus segítségével.
+Ha a rajzot dxf fájlban exportálja DXF 6-os verzióval, ne használjon spline-okat, mert vonalláncként exportálják őket.<br><p>
+
+<h4> Vonal csatlakozása</h4>
+A <i>csatlakozás</i> gomb többállapotú gomb.
+A vonalak összekapcsolása csak a maradék más soraival hajtható végre.
+Az egyesített vonalaknak ugyanahhoz a csoporthoz kell tartozniuk. Ha különböző csoportok vonalainak két pontjára kell "csatlakoznia"
+az egyik pontot úgy kell áthelyeznie, hogy egybeessen a másikkal.<br>
+<ul>
+<li><i>ki</i>: az aktuális sorok nem kapcsolhatók össze</li>
+<li><i>nem</i>: a jelenlegi típusú sor nem lesz összekapcsolva</li>
+<li><i>start</i>: az aktuális típusú vonal csatlakozik egy vonalhoz, ha a kezdőpontja közel áll az adott vonal végpontok egyikéhez</li>
+<li><i>vége</i>: az aktuális típusú sort a végpontja fogja összekapcsolni egy vonallal</li>
+<li><i>mindkettő</i>: az aktuális típusú sort mind a kezdete, mind a végpontja összekapcsolja egy vonallal</li>
+<li><i>folytatás</i>: az aktuális típusú vonal folytatja a vonalat, ha a kezdőpontja elég közel van az adott vonal végpontjához</li>
+</ul>
+<br>
+
+Ha az összekapcsolás "folytatásra" van állítva, akkor az utolsó lehúzott vonal módosítható az Adobe Illustrator programhoz hasonlóan, azaz a vonal egy részének újrarajzolása.
+<br><p>
+
+<div style = "font-size: 90%">
+<h4> Kompozit műveletek [T]</h4>
+Az összetett műveletek pontonként hosszan érinthető műveletek.<br>
+Jelenleg az egyetlen hosszan koppintható művelet az, ha <i>beilleszt egy pontot</i> egy vonalhoz/területhez, és egyidejűleg rápattan egy közeli pontra.
+A kiválasztott pontot először a közeli pontra helyezzük, majd megismételjük, és az új pont utána kerül a vonalon/területen.
+Ez lehetővé teszi az útvonal visszakeresését az utolsó pont kiválasztásával és a pontok hátrafelé történő beszúrásával.<br>
+Az előre vezető út visszakereséséhez minden beillesztés után váltson a kiválasztott pontra.
+</div><br><p>
+
+<h4> Álló / fekvő bemutatás</h4>
+Az álló tájolásnál  az északi és a függőleges felfelé néznek az alaprajzban és az oldalnézetében.
+Fekvőnél balra néznek, így a Kelet  van felfelé alaprajzban, a Jobb pedig oldalnézetben.<br>
+Alaprajzban az pont szimbólumok úgy vannak elforgatva, hogy természetesnek tűnjenek, miközben álló módban tartják a készüléket.<br>
+A vázlatokat mindig az északi és a függőleges felfelé menti és exportálja.<br><p>
+ 
+<b>Figyelmeztetés. Ha a vázlat eltűnik a kijelzőről, váltson a terv és a profil között a TopoDroid frissítésére kényszerítve.</b><br><p>
+
+
+<a href="page_tools.htm"> Rajzeszközök palettája</a><br>
+<a href="page_therion_stations.htm"> Therion állomáspontok</a><br>
+<a href="page_undo.htm"> Verem visszavonása</a><br>
+<a href="page_shift.htm"> Vázlateltolás és flip</a><br>
+<p>
+
+<a href="manual08.htm">&lt; Felmérési információk</a> |
+<a href="manual10.htm"> Vázlatrajz &gt;</a>
+
+</body></html>
