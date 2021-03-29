@@ -28,7 +28,7 @@ A poligon színek
 
 A sünök szegmensként vagy pontként jeleníthetők meg [G]. Ha pontként jelennek meg, akkor nem választhatók ki.<br>
 
-A sünök színei: [E/G]
+A sünök színei: [S / G]
 <ul>
 <li> kommentált: sötétzöld</li>
 <li> keresztmetszet (BJFL): zöld</li>
@@ -68,7 +68,7 @@ Az pontok színei
 <li> zöld: aktív állomás</li>
 <li> piros: azok a pontok, amelyeken túl a poligon el van rejtve</li>
 <li> kék: azok a pontok, amelyek előtt a poligon el van rejtve</li>
-<li> sárga: mentett állomások [T/G]</li>
+<li> sárga: mentett állomások [T / G]</li>
 </ul><br><p>
 
 <b>Interakciós módok</b><br>
@@ -77,7 +77,7 @@ A <u>vázlatablak</u> négy interakciós móddal rendelkezik:
 <li><b>mozgatás</b>: elmozdíthatja a vásznat, és nagyíthatja / kicsinyítheti. Ha a referenciák párbeszédpanel "fix hivatkozások" mezője be van állítva, akkor a váltások csak a rajzokat érintik [T]</li>
 <li><b>rajzolás</b>: ebben a módban ikonikus szimbólumokat (pontokat, beleértve a címkéket is), nyomvonalakat és területeket (színnel vagy mintával töltött zárt területek) ad hozzá.</li>
 <li><b>törlés</b>: elemek és vonalak / területek vagy részek törlése a vázlatból.</li>
-<li><b>szerkesztés</b> [A]: pontszerű változtatásokhoz és az elem tulajdonságainak szerkesztéséhez, ideértve az elem törlését is.</li>
+<li><b>szerkesztés</b> [H]: pontszerű változtatásokhoz és az elem tulajdonságainak szerkesztéséhez, ideértve az elem törlését is.</li>
 </ul><br><p>
 
 A váltás és a zoom még <b>rajzolás</b> ban és <b>törlés</b> módban is lehetséges két ujjal.
@@ -126,7 +126,7 @@ A <b>törlés</b> módban a zöldeken kívül három gomb található:
 <li><img src = "btn_size.png"> radír mérete [S, M, L]</li>
 </ul><br><p>
 
-A <b>szerkesztés</b> [A] mód a zöld gombok mellett:
+A <b>szerkesztés</b> [H] mód a zöld gombok mellett:
 <ul style = "margin-top = 0">
 <li><img src = "btn_edit.png"> választható elemek típusa: minden, pont, vonal, terület, mérés, pont</li>
 <li><img src = "btn_size.png"> a kiválasztó eszköz mérete [S, M, L]</li>
@@ -146,10 +146,10 @@ Ennek megfelelően a rajzhivatkozások párbeszédpanelen nincs doboz a sünökh
 
 <b>Hosszú érintési műveletek</b><br>
 <ul style = "margin-top = 0">
-<li> Az egyes <i>mód</i> gombok hosszú megérintésével megnyílik a vonatkozó beállítások párbeszédpanel [A].</li>
-<li> A <i>letöltés</i> gomb több eszköz módban [E] kapcsolja az eszközt.</li>
+<li> Az egyes <i>mód</i> gombok hosszú megérintésével megnyílik a vonatkozó beállítások párbeszédpanel [H].</li>
+<li> A <i>letöltés</i> gomb több eszköz módban [S] kapcsolja az eszközt.</li>
 <li> Alapnézetben a <i>kiterítés referencia</i> gomb hosszú megérintésével a referencia irány lesz
-grafikusan szerkeszthető lesz az ujját a kijelzőn csúsztatva. A gomb zöldre vált [E].</li>
+grafikusan szerkeszthető lesz az ujját a kijelzőn csúsztatva. A gomb zöldre vált [S].</li>
 <li> A kiterített oldalnézetben a <i>megjelenítési mód</i> gomb hosszú megérintésével megfordíthatja a vázlatot [N].</li>
 <li> A keresztmetszetekkel átválthatja a hasítások megjelenítését, amelyek a metszetsíktól [T] vannak.</li>
 <li> Az <i>eszközök</i> gomb hosszú megérintésével visszaáll az alsó eszköztár forgási sorrendje. A háromszoros eszköztárra hatástalan.</li>
@@ -180,7 +180,7 @@ Minden export két fájlt generál, az egyiket az alaprajzhoz másikat az oldaln
   <li><i>Rajzeszközválasztó</i>: lista, rács vagy háromrácsos nézet [alapértelmezett: lista]</li>
   <li><i>Alsó eszköztár</i>: egy vagy háromsoros [alapértelmezett: egy]</li>
   <li><i>Oldalsó húzás</i>: engedélyezze a mozgatást oldalhúzással</li>
-  <li><i>Zoomvezérlők</i>: meghatározza, hogy a zoomvezérlők hogyan jelenjenek meg többérintéses eszközökön [B]. A zoom vezérlők elrejthetők, csak rövid időtartamra jeleníthetők meg, amikor a felhasználó a képernyő alsó részét megérinti középen, vagy állandóan megjeleníti őket</li>
+  <li><i>Zoomvezérlők</i>: meghatározza, hogy a zoomvezérlők hogyan jelenjenek meg többérintéses eszközökön [H]. A zoom vezérlők elrejthetők, csak rövid időtartamra jeleníthetők meg, amikor a felhasználó a képernyő alsó részét megérinti középen, vagy állandóan megjeleníti őket</li>
   <li><i>Vízszintes keresztmetszetek</i> poligon-lejtés küszöb a vízszintes keresztmetszetekhez (oldalnézet).</li>
   <li><i>Poligon ellenőrzése</i>: ellenőrizze, hogy az összes poligon csatlakozik-e a felméréshez [letiltva]</li>
   <li><i>Kiterítés ellenőrzése</i>: ellenőrizze, hogy az összes poligonnál meg van-e határozva a "kiterítés" [engedélyezve]</li>
@@ -207,11 +207,11 @@ Minden export két fájlt generál, az egyiket az alaprajzhoz másikat az oldaln
     <ul style = "margin-top: 0; margin-bottom: 0">
     <li>Poligonvonal <i>szélessége</i> (poligon/sün)</li>
     <li>Pont neve <i>szövegméret</i> [18 pt] [N]</li>
-    <li> A <b>szerkesztés</b> módban megjelenített <i>zöld pontok</i> mérete [5 px] [A]</li>
-    <li><i>Kiválasztás</i> sugár a vázlat finomszerkesztéséhez; [16 px] [A]</li>
+    <li> A <b>szerkesztés</b> módban megjelenített <i>zöld pontok</i> mérete [5 px] [H]</li>
+    <li><i>Kiválasztás</i> sugár a vázlat finomszerkesztéséhez; [16 px] [H]</li>
     <li> A <i>radír</i> alapmérete</li>
-    <li><i>Váltási érzékenység</i>: maximális lépés a vázlat mozgatásakor [60 px] [E]. Növelje, ha a vázlatváltás szaggatott</li>
-    <li><i>Mutató sugara</i>: a kiválasztáshoz ennél többet nem szabad az újjat mozgatni [A]</li>
+    <li><i>Váltási érzékenység</i>: maximális lépés a vázlat mozgatásakor [60 px] [S]. Növelje, ha a vázlatváltás szaggatott</li>
+    <li><i>Mutató sugara</i>: a kiválasztáshoz ennél többet nem szabad az újjat mozgatni [H]</li>
     <li><i>A sün átlátszósága</i> (alfa) [0-100, alapértelmezett 80]</li>
     <!--
     <li><i>Sün alaprajz küszöb</i>: az e küszöb feletti dőlésszögű sünöket elrejti a alaprajznál [80 &deg;]</li>
@@ -247,7 +247,7 @@ A vázlat gyorsítótár törlődik, amikor a felmérés lezárul.<br><p>
 Minden vázlatot fájlba menti, ha módosul, vagy amikor a <u>vázlatablak</u> más nézetre változik.
 A teljesítmény érdekében a TopoDroid bináris formátumban menti a vázlatokat.<br><p>
 
-<h4> Pontválasztás [A]</h4>
+<h4> Pontválasztás [H]</h4>
 Néhány szerkesztéshez ki kell választania egy pontot: vagy egy pontot, egy vonalat / területi pontot, egy állomást vagy egy felvett középpontot.<br>
 Ehhez érintse meg a kívánt pont közelében. Ha azonban több pont van közel a megérintéshez, akkor mindegyik kiválasztva van, de csak az egyiket szerkesztik. A <i>előző / következő</i> gombokkal módosíthatja a kiválasztott készlet "szerkesztési" pontját.<br><p>
 

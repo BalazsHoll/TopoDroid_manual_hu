@@ -65,11 +65,11 @@ Egyes interfészbeállításokhoz (például a gombok méretéhez) újra kell in
 <li>Therion:<br>
   <ul>
   <li>Először térképek: exportálja a terion térképeket a felmérés adatai előtt. [nem]</li>
-  <li>Állomások: Adjon hozzá mérési pontokat a Therionszintekhez. [igen]</li>
+  <li>Pontok: Adjon hozzá mérési pontokat a Therionszintekhez. [igen]</li>
   <li>Sün: Add hozzá a sünöket a Therion szintekhez. [igen]</li>
   <li>BJFL. Az BJFL hozzáadása a Survex / Therion exportáláshoz. [nem]</li>
-  <li>méretarány. Export skála. [1: 100]</li>
-  <li>xvi hivatkozás: az xvi képre való hivatkozás beillesztése a th2 fájlokba</li>
+  <li>Méretarány export skála. [1: 100]</li>
+  <li>Xvi hivatkozás: az xvi képre való hivatkozás beillesztése a th2 fájlokba</li>
  </ul>
 </li>
 <li>Compass:<br>
@@ -89,18 +89,18 @@ Egyes interfészbeállításokhoz (például a gombok méretéhez) újra kell in
   <ul>
   <li>Rács. Rács hozzáadása az SVG exportálásához. [nem]</li>
   <li>Vonal tájolása. [nem]</li>
-  <li>Sünök. Tartalmazza a szórásokat. [nem]</li>
-  <li>Pontvonás. [0,1]</li>
-  <li>A címke vonása. [0,3]</li>
-  <li>Vonalvonás. [0,5]</li>
-  <li>Rácsütés. [0,5]</li>
-  <li>Mérés. [0,5]</li>
-  <li>Tájolás pipa. [2.0]</li>
+  <li>Sünök. Tartalmazza a sünöket. [nem]</li>
+  <li>Pont vastagság. [0.1]</li>
+  <li>Felirat vastagság. [0.3]</li>
+  <li>Vonal vastagság. [0.5]</li>
+  <li>Rács vastagság. [0.5]</li>
+  <li>Poligon vastagság. [0.5]</li>
+  <li>Pipa méret. [2.0]</li>
  </ul>
 </li>
 <li>DXF:<br>
   <ul>
-  <li>DXF splay végpontok. [igen]</li>
+  <li>DXF sün végpontok. [igen]</li>
   <li>DXF verzió {6,12,16}. [6]</li>
  </ul>
 </li>
@@ -155,34 +155,34 @@ EGYSÉGEK
 <li>Rácsegységek vázlata {m, yd, 2ft, dm}. [m]</li>
 </ul>
 
-LÖVETÉSI ADATOK
+MÉRÉSI ADATOK
 <ul>
-<li>Lábtűrés. Tolerancia ugyanazon láb lövései között &gt; 0%. [0,05, azaz 5%]</li>
-<li>Lövés maximális hossza [50 m]</li>
-<li>Minimális lövéshossz [30 cm]</li>
-<li>Lövések minimális száma lábonként. [3]</li>
-<li>Vissza a DistoX. [nem]</li>
-<li>Függőleges lövés. 90&deg körüli tartomány, ahol a felvételek "függőlegesen" vannak kinyújtva [0,90]. [10&deg;]</li>
-<li>A láb WENS küszöbértéke. V láb küszöbértéke [0,90]. [80&deg;]</li>
-<li>"kiterjesztés" hivatkozás. Beállítható vagy rögzített kiterjesztett L / R referencia. [nem]</li>
+<li>Poligonrés. Tolerancia ugyanazon poligon mérései között &gt; 0%. [0,05, azaz 5%]</li>
+<li>Mérés maximális hossza [50 m]</li>
+<li>Minimális méréshossz [30 cm]</li>
+<li>Mérések minimális száma poligononként. [3]</li>
+<li>DistoX visszamérés. [nem]</li>
+<li>Függőleges mérés. 90&deg körüli tartomány, ahol a poligonok "függőlegesen" vannak kiterítve [0,90]. [10&deg;]</li>
+<li>A poligon NyKÉD küszöbértéke. V poligon küszöbértéke [0,90]. [80&deg;]</li>
+<li>"kiterítés" hivatkozás. Beállítható vagy rögzített kiterjesztett B / J referencia. [nem]</li>
 <li>Előző / Következő gombok. [igen]</li>
-<li>Hátranézés a felhasználó belépett lövés párbeszédpanelen. [nem]</li>
-<li>A lövés irányának késleltetése (időzítő). [10 s]</li>
+<li>Hátramérés a kézi beírású mérés párbeszédpanelen. [nem]</li>
+<li>A mérés késleltetése (időzítő). [10 s]</li>
 <li>Egyéni beállítások:<br>
   <ul>
   <li>Búvár mód</li>
   <li>A legfrissebb adatok kiemelése</li>
   <li>Legutóbbi adatok időtúllépése</li>
-  <li>Sün órák</li>
+  <li>Sün osztályok</li>
   <li>Sün színezés</li>
-  <li>Törtrészes „kiterjesztés”</li>
+  <li>Törtrészes „kiterítés”</li>
   <li>Síkinterpoláció</li>
-  <li>Lábbal lőtt harang</li>
+  <li>Poligon mérés hangjelzése</li>
   <li>Érzékelők</li>
   <li>Hurokzárás. Alapértelmezett "nincs"</li>
   <li>Android iránytű / lejtés</li>
-  <li>Lövésirány időzítő visszaszámlálása. [10 s]</li>
-  <li>A lövés irányának időzítőjének hangjelzése [10,100]. [50%]</li>
+  <li>mérésirány időzítő visszaszámlálása. [10 s]</li>
+  <li>A mérés időzítőjének hangjelzése [10,100]. [50%]</li>
  </ul>
 </li>
 </ul>
@@ -205,9 +205,9 @@ PONTOSSÁG
 <li>Legutóbbi eszköz száma: {3, 4, 5, 6}. [4]</li>
 <li>Oldalsó húzás. Oldalsó húzás engedélyezése a <u>vázlatablakban</u>. [nem]</li>
 <li>A nagyítás vezérli a {ki, ideiglenes, állandó} beállítást. [ki]</li>
-<li>x-szakasz vízszintes küszöb</li>
-<li>Középvonalas ellenőrzés. Ellenőrizze, hogy az állomások csatlakoztak-e a középvonalhoz. [igen]</li>
-<li>A láb kiterjesztésének ellenőrzése. [igen]</li>
+<li>Keresztmetszet szakasz vízszintes küszöb</li>
+<li>Poligon ellenőrzés. Ellenőrizze, hogy az pontok csatlakoztak-e a poligonhoz. [igen]</li>
+<li>A poligon kiterítésének ellenőrzése. [igen]</li>
 </ul>
 
 <div style = "font-size: 90%">
@@ -229,10 +229,10 @@ PONTOSSÁG
   <li>Autófalak:<br>
     <ul>
     <li>Faltípus. [nincs]</li>
-    <li>Tervezze meg a klinót</li>
-    <li>Profilfüggetlen lejtés</li>
-    <li>Minimális távolság a lövés mentén</li>
-    <li>konkávia</li>
+    <li>Alaprajz sün lejtszög</li>
+    <li>Oldalnézet sün lejtszög</li>
+    <li>Minimális távolság a mérés mentén</li>
+    <li>Konkávia</li>
     <li>Pont elválasztás a falon</li>
    </ul>
  </li>
@@ -311,7 +311,7 @@ VÁZLAT ELEMEK
   <li>Adatszünet</li>
   <li>Az adatok készenléti késleltetése</li>
   <li>Lézeres szünet</li>
-  <li>Lövés szünet</li>
+  <li>mérés szünet</li>
  </ul>
 </li>
 </ul>
