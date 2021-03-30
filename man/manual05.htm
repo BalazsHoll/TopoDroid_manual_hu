@@ -1,7 +1,7 @@
 <html><body>
 <h3>[5] DistoX KALIBRÁLÁSI ADATOK</h3>
 
-A <u>kalibrációs adatok ablak</u> megjeleníti a kalibrációs adatok listáját. Ha a kalibrálásnak nincsenek adatai, akkor az ablak üres, de a felső gomboknál. Minden kalibrációs adatsor a következő adatokat tartalmazza:
+A <u>kalibrációs adatok ablak</u> megjeleníti a kalibrációs adatok listáját. Ha a kalibrálásnak nincsenek adatai, akkor az ablak üres, de a felső gombok megvannak. Minden kalibrációs adatsor a következő adatokat tartalmazza:
 <ul style = "margin-top = 0">
 <li>index: növekményes index, amely azonosítja az adatokat</li>
 <li>csoport: annak a csoportnak a száma, amelyhez az adatok tartoznak</li>
@@ -15,23 +15,23 @@ A kalibrációs adatok sárga és kék színnel jelennek meg, váltakozva a pár
 
 A háttér színe:
 <ul>
-<li> ibolya: hiányos adatok (a kalibrálásnál nem, de a csoportoknál használják)</li>
+<li> lila: hiányos adatok (a kalibrálásnál nem, de a csoportoknál használják)</li>
 <li> barna: telített adatok</li>
 <li> szürke: törölt adatok (csak akkor, ha törölt adatok megjelennek)</li>
 <li> piros: olyan adatok, amelyek hibája nagyobb, mint 1&deg;</li>
-<li> zöld: az adatok eltérnek a többi adattól, ha a csoport átlagosan meghaladja a <i>csoporttávolságot</i></li>
-</ul> <br> <p>
+<li> zöld: ha az adatok <i>csoporttávolságot</i> meghaladóan eltérnek a csoport többi adatának átlagától</li>
+</ul><br><p>
 
-<h4> AKCIÓK </h4>
+<h4>MŰVELETEK</h4>
 <ul style = "margin-top = 0">
-<li> adat megérintse: kalibrációs adatok szerkesztése párbeszédpanel </li>
-</ul> <br> <p>
+<li>adat megérintse: kalibrációs adatok szerkesztése párbeszédpanel</li>
+</ul><br><p>
 
 <h4>GOMBOK</h4>
 <ul style = "margin-top = 0">
 <li><img src = "btn_toggle.png"> be- és kikapcsolhatja a DistoX kalibrációs módot</li>
-<li> <img src = "btn_bluetooth.png"> visszaállítja  a BT-t, vagy távolról irányítja a DistoX-ot </li>
-<li> <img src = "btn_download.png"> kalibrációs adatok letöltése a DistoX-ről </li>
+<li> <img src = "btn_bluetooth.png"> visszaállítja  a BT-t, vagy távolról irányítja a DistoX-et</li>
+<li> <img src = "btn_download.png"> kalibrációs adatok letöltése a DistoX-ről</li>
 <li> <img src = "btn_numbers.png"> rendeljen <a href="page_groups.htm">csoport</a> számokat az adatokhoz, vagy állítsa vissza a csoportok számát</li>
 <li> <img src = "btn_compute.png"> kiszámítja a <a href="page_calib_coeffs.htm">kalibrációs együtthatókat</a></li>
 <li> <img src = "btn_cover.png"> <a href="page_calib_distrib.htm">a kalibrációs adatok irányeloszlása ​</a></li>
@@ -45,7 +45,7 @@ A törölt adatokat nem veszik figyelembe a csoporthoz való hozzárendelésnél
 
 <h4>Bluetooth</h4>
 Ez a gomb visszaállítja a TopoDroid bluetooth kapcsolatot.<br>
-Ez lehetővé teszi a felhasználó számára a DistoX távvezérlését is [A]: be- vagy kikapcsolhatja a lézert, és kalibrációs felvételt készíthet.
+Ez lehetővé teszi a felhasználó számára a DistoX távvezérlését is [H]: be- vagy kikapcsolhatja a lézert, és kalibrációs mérést készíthet.
 Az adatok azonnal letöltődnek, ha a kapcsolódó beállítást választják.<br><p>
 
 A bluetooth gomb le van tiltva, amíg a TopoDroid kalibrációs mérést készít.<br><p>
@@ -60,7 +60,7 @@ Ebben az esetben üzenet jelenik meg.<br><p>
 
 <h4>Figyelmeztetések</h4>
 <ul style = margin-top = 0">
-<li><b>telített adatok</b>: abnormális mágneses tér értékű adatok. Ennek egyik lehetséges oka a zavaró mágneses mezők jelenléte. A telített adatok piros háttérrel rendelkeznek </li>
+<li><b>telített adatok</b>: abnormális mágneses tér értékű adatok. Ennek egyik lehetséges oka a zavaró mágneses mezők jelenléte. A telített adatok piros háttérrel rendelkeznek</li>
 <li><b>nulla adat</b>: helytelenül kapott kalibrációs adatok. Az adatok nulla értékkel rendelkeznek, és alapértelmezés szerint nincs hozzárendelve számhoz, bár a csoportok kiszámításához használják. A nulla adatok lila háttérrel rendelkeznek</li>
 </ul><br><p>
 

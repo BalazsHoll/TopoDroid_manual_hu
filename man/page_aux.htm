@@ -6,9 +6,9 @@ A TopoDroid használatakor hasznos lehet néhány kiegészítő és kisegítő a
 <ul>
 <li><i>A Cave3D</i> egy 3D-s megjelenítő, amelyet a TopoDroid használ a 3D-s megjelenítéshez</li>
 <li><i>A Proj4</i> egy (nagyon egyszerű) koordináta-átalakító alkalmazás, amelyet a TopoDroid használ a hosszúság-szélesség értékeinek más koordináta-rendszerekké konvertálására.</li>
-<li><i>A MobileTopographer</i> egy geolokációs alkalmazás. Használhatja a pontkoordináták felvételére, és a TopoDroid beolvashatja őket a MobileTopographer pontlistájából a pontfájlból.</li>
+<li><i>A MobileTopographer</i> egy helymeghatározó alkalmazás. Pont koordináták felvételére lehet használni, és a TopoDroid be tudja ezeket olvasni a MobileTopographer pontfájlból.</li>
 <li><i>A CrowdMag</i> a NOAA Nemzeti Geofizikai Adatközpont által készített alkalmazás, amely hasznos információkat nyújt a Föld mágneses mezőének aktuális állapotáról.</li>
-<li>alkalmazás képek készítésére (általában van egy <i>Kamera</i> alkalmazás)</li>
+<li>Kép készítő alkalmazás (általában van egy <i>Kamera</i> alkalmazás)</li>
 <li>A fájlkezelő (pl. <i>MiXplorer</i>) feltétlenül hasznos a fájlok megtekintéséhez (és biztonsági másolatok készítéséhez)</li>
 <li><i>SQLiteViewer</i> (vagy bármely más SQLite kezelő alkalmazás) hasznos lehet a TopoDroid adatbázisok ellenőrzésében</li>
 </ul><br><p>
@@ -25,16 +25,16 @@ Ezenkívül a felmérések feldolgozásának módjától függően érdemes tele
 <li>track-fájl megjelenítő (pl. <i>Androzic</i>)</li>
 </ul><br><p>
 
-Végül egy <i>wakeup-touch</i> alkalmazás nagyon kényelmesnek bizonyul a barlangban végzett felmérés során. Az akkumulátor kímélése érdekében érdemes nagyon rövidre állítani a kijelző alvási időtúllépését (pl. Fél perc). Az ébresztő-érintéses alkalmazással nem kell megnyomnia a bekapcsológombot az android felébresztéséhez, de csak hozzá kell érnie a közelségérzékelőhöz. A készülékemet egy védődobozban tároltam, amely csak a fedél fedelét nyitotta meg. Az oldalsó bekapcsológomb tehát nem érhető el, ha az eszköz dobozban van, és az ébresztő-érintés alkalmazás nagyon hasznos. <br><p>
+Végül egy <i>wakeup-touch</i> alkalmazás nagyon kényelmesnek bizonyul a barlangban végzett felmérés során. Az akkumulátor kímélése érdekében érdemes nagyon rövidre állítani a kijelző alvási időtúllépését (pl. Fél perc). Az ébresztő-érintéses alkalmazással nem kell megnyomnia a bekapcsológombot az android felébresztéséhez, de csak hozzá kell érnie a közelségérzékelőhöz. A készülékemet egy védődobozban tároltam, amely csak a fedelét nyitotta fel. Az oldalsó bekapcsológomb tehát nem érhető el, ha az eszköz dobozban van, és az ébresztő-érintés alkalmazás nagyon hasznos.<br><p>
 
 <b>Proj4</b><br>
-A TopoDroid tárolja a koordinátákat a a földrajzi hosszúság-szélesség WGS-84 referenciarendszerben.
+A TopoDroid a koordinátákat a a földrajzi hosszúság-szélesség WGS-84 referenciarendszerben tárolja.
 A magasságok mind az ellipszoidra, mind a geoidra vonatkoznak.<br><p>
 
 A Proj4 alkalmazást a TopoDroid kétféle módon használja a koordináták átalakítására a WGS-84 és más koordinátarendszerek között.
 <ul>
-<li><a href="page_fixed.htm"> konvertálni</a> egy pont koordinátáit a hosszúság-szélesség (WGS-84) egy másik koordináta-rendszerré.</li>
-<li><a href="page_fixed_add.htm"> beírni</a> egy pont koordinátáit egy másik koordinátarendszerben.</li>
+<li><a href="page_fixed.htm"> konvertálja</a> egy pont hosszúság-szélesség (WGS-84) koordinátáit egy másik koordináta-rendszerbe.</li>
+<li><a href="page_fixed_add.htm"> beírja</a> egy pont koordinátáit egy másik koordinátarendszerben.</li>
 </ul><br><p>
 
 </body></html>

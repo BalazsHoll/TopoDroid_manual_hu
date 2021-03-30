@@ -51,7 +51,7 @@ Egyes interfészbeállításokhoz (például a gombok méretéhez) újra kell in
 <li>Importálás:<br>
   <ul>
   <li><a href="page_pt_cmap.htm"> PocketTopo színtérkép</a> A PocketTopo színeinek konvertálása TopoDroid típusokba</li>
-  <li>Becsülje meg az LR kiterjesztését az Compass és a VisualTopo fájlok importálásakor. [igen]</li>
+  <li>Becsülje meg az LR kiterítését az Compass és a VisualTopo fájlok importálásakor. [igen]</li>
   <li>Adatmód importálása: normál vagy merülés. A búvárkodás csak az Iránytűre vonatkozik. [normál]</li>
  </ul>
 </li>
@@ -68,7 +68,7 @@ Egyes interfészbeállításokhoz (például a gombok méretéhez) újra kell in
   <li>Pontok: Adjon hozzá mérési pontokat a Therionszintekhez. [igen]</li>
   <li>Sün: Add hozzá a sünöket a Therion szintekhez. [igen]</li>
   <li>BJFL. Az BJFL hozzáadása a Survex / Therion exportáláshoz. [nem]</li>
-  <li>Méretarány export skála. [1: 100]</li>
+  <li>Méretarány export skála. [1:100]</li>
   <li>Xvi hivatkozás: az xvi képre való hivatkozás beillesztése a th2 fájlokba</li>
  </ul>
 </li>
@@ -106,7 +106,7 @@ Egyes interfészbeállításokhoz (például a gombok méretéhez) újra kell in
 </li>
 <li>PNG:<br>
   <ul>
-  <li>Képfelbontás [0,5, 100]. Alapértelmezett 1,5 [x200 px]</li>
+  <li>Képfelbontás [0.5, 100]. Alapértelmezett 1.5 [x200 px]</li>
   <li>Háttérszín (RGB 0-100 között). [0 0 0, azaz fekete]</li>
   <li>Rács: metrikus rács hozzáadása</li>
   <li>Sünök: sünök hozzáadása</li>
@@ -148,26 +148,26 @@ Alapértelmezett "splash + fore".</li>
 <li>Megosztott x-szakaszok</li>
 </ul>
 
-EGYSÉGEK
+MÉRTÉKEGYSÉGEK
 <ul>
 <li>Hosszegységek {m, ft}. [m]</li>
 <li>Szögegységek {deg, grad}. [deg]</li>
-<li>Rácsegységek vázlata {m, yd, 2ft, dm}. [m]</li>
+<li>Rácsegységek a vázlatban {m, yd, 2ft, dm}. [m]</li>
 </ul>
 
 MÉRÉSI ADATOK
 <ul>
-<li>Poligonrés. Tolerancia ugyanazon poligon mérései között &gt; 0%. [0,05, azaz 5%]</li>
+<li>Poligonrés. Tolerancia ugyanazon poligon mérései között &gt; 0%. [0.05, azaz 5%]</li>
 <li>Mérés maximális hossza [50 m]</li>
 <li>Minimális méréshossz [30 cm]</li>
 <li>Mérések minimális száma poligononként. [3]</li>
 <li>DistoX visszamérés. [nem]</li>
 <li>Függőleges mérés. 90&deg körüli tartomány, ahol a poligonok "függőlegesen" vannak kiterítve [0,90]. [10&deg;]</li>
 <li>A poligon NyKÉD küszöbértéke. V poligon küszöbértéke [0,90]. [80&deg;]</li>
-<li>"kiterítés" hivatkozás. Beállítható vagy rögzített kiterjesztett B / J referencia. [nem]</li>
+<li>"kiterítés" hivatkozás. Beállítható rögzített kiterítés vagy B / J referencia. [nem]</li>
 <li>Előző / Következő gombok. [igen]</li>
 <li>Hátramérés a kézi beírású mérés párbeszédpanelen. [nem]</li>
-<li>A mérés késleltetése (időzítő). [10 s]</li>
+<li>Mérés késleltetése (időzítő). [10 s]</li>
 <li>Egyéni beállítások:<br>
   <ul>
   <li>Búvár mód</li>
@@ -175,18 +175,18 @@ MÉRÉSI ADATOK
   <li>Legutóbbi adatok időtúllépése</li>
   <li>Sün osztályok</li>
   <li>Sün színezés</li>
-  <li>Törtrészes „kiterítés”</li>
+  <li>Arányos „kiterítés”</li>
   <li>Síkinterpoláció</li>
   <li>Poligon mérés hangjelzése</li>
   <li>Érzékelők</li>
   <li>Hurokzárás. Alapértelmezett "nincs"</li>
   <li>Android iránytű / lejtés</li>
-  <li>mérésirány időzítő visszaszámlálása. [10 s]</li>
-  <li>A mérés időzítőjének hangjelzése [10,100]. [50%]</li>
+  <li>Mérési időzítő visszaszámlálása. [10 s]</li>
+  <li>A mérés időzítőjének hangereje [10,100]. [50%]</li>
  </ul>
 </li>
 </ul>
-ELHELYEZKEDÉS
+HELYMEGHATÁROZÁS
 <ul>
 <li>Helyegységek {ddmmss, dec.deg}. [ddmmss]</li>
 <li>CRS. A CRS neve, a Proj4-ben használtak szerint. [Long-Lat, azaz földrajzi WGS84]</li>
@@ -199,12 +199,12 @@ PONTOSSÁG
 </ul>
 <br><p>
 
-<b>VÉGZÉS</b><br>
+<b>VÁZLAT</b><br>
 <ul>
 <li>Rajzeszköz-választó {utoljára használt, lista, rács, hármas rács}. [utoljára használt]</li>
 <li>Legutóbbi eszköz száma: {3, 4, 5, 6}. [4]</li>
 <li>Oldalsó húzás. Oldalsó húzás engedélyezése a <u>vázlatablakban</u>. [nem]</li>
-<li>A nagyítás vezérli a {ki, ideiglenes, állandó} beállítást. [ki]</li>
+<li>Nagyítás vezérlés beállítás {ki, ideiglenes, állandó}. [ki]</li>
 <li>Keresztmetszet szakasz vízszintes küszöb</li>
 <li>Poligon ellenőrzés. Ellenőrizze, hogy az pontok csatlakoztak-e a poligonhoz. [igen]</li>
 <li>A poligon kiterítésének ellenőrzése. [igen]</li>
@@ -214,17 +214,17 @@ PONTOSSÁG
 <ul>
 <li>Egyéni beállítások:<br>
   <ul>
-  <li>Vázlateltolás / méretarány</li>
+  <li>Vázlat eltolás / méretarány</li>
   <li>Vázlat felosztás / egyesítés</li>
   <li>Sün alaprajz-nézet küszöbérték. [80&deg;]</li>
   <li>Sün szaggatásos mód: nincs, irány, lejtés, nézet szerint. [nincs]</li>
   <li>Sün szaggatás lejtés küszöb. [50&deg]</li>
   <li>Sün szaggatás irány küszöb. [60&deg]</li>
   <li>Sün szaggatás szögküszöb. [60&deg]</li>
-  <li>Biztonsági szám. [5]</li>
+  <li>Biztonsági mentés szám. [5]</li>
   <li>Biztonsági mentés intervalluma. [60s]</li>
-  <li>Automatikus x-szakaszok az exportban</li>
-  <li>Mentett állomásszínezés</li>
+  <li>Automatikus keresztmetszet szakaszok az exportban</li>
+  <li>Mentett poligon-pont színezés</li>
   <li>Rétegek. [nem]</li>
   <li>Autófalak:<br>
     <ul>
@@ -267,13 +267,13 @@ VONAL ESZKÖZÖK
   <li>Egyengető szög</li>
   <li>Interpolációs pontosság (Bezier)</li>
   <li>Cornet küszöb (Bezier)</li>
-  <li>Maximális pont / szegmens távolság az egyszerűsítés érdekében. [0,5 m]</li>
-  <li>Maximális szegmenshossz az egyszerűsítés érdekében. [2,0 m]</li>
+  <li>Maximális pont / szegmens távolság az egyszerűsítés érdekében. [0.5 m]</li>
+  <li>Maximális szegmenshossz az egyszerűsítés érdekében. [2.0 m]</li>
   <li>Pont gyomláló szegmens puffer</li>
   <li>Vonal / terület bepattan. [nem]</li>
   <li>A szegmensek simítása / kiegyenesítése</li>
   <li>Egyenesítse a vonalakat</li>
-  <li>Útvonal multiselection</li>
+  <li>Vonal többes választás</li>
  </ul>
 </li>
 </ul>
@@ -281,9 +281,9 @@ VONAL ESZKÖZÖK
 
 VÁZLAT ELEMEK
 <ul>
-<li>Felmérési vonal szélessége [0,5,10]. [1 pxl]</li>
+<li>Felmérési vonal szélessége [0.5,10]. [1 pxl]</li>
 <li>Állomásnév mérete. [24 pxl]</li>
-<li>Zöld pontok sugara [0,5, 100]. [5 pxl]</li>
+<li>Zöld pontok sugara [0.5, 100]. [5 pxl]</li>
 <li>Kiválasztási sugár. [24 pxl]</li>
 <li>Radír mérete. [36 pxl]</li>
 <li>Váltási érzékenység. [60 pxl]</li>
@@ -295,12 +295,12 @@ VÁZLAT ELEMEK
 <b>MŰSZER</b><br>
 <ul>
 <li>Bluetooth. Ellenőrizze, hogy a BT engedélyezve van-e indításkor. [igen]</li>
-<!-- li> Csatlakozási adatmód {igény szerint, folyamatos, több}. [igény szerint]</li-->
+<li>Adatkapcsolat típusa (csatlakozási mód) {igény szerint, folyamatos, több}. [igény szerint]</li>
 <!-- li> Automatikus újracsatlakozás (folyamatos üzemmódban). [nem]</li-->
 <li>Új adatszám: megkapja az új adatok számát a kötegelt letöltés előtt</li>
 <li>BT foglalat típusa {normál, bizonytalan}. [eszközfüggő alapértelmezett]</li>
 <li>Z6 megoldás. [igen]</li>
-<!-- li> Automatikus párosítás. [igen]</li-->
+<li> Automatikus párosítás. [igen]</li>
 </ul>
 
 <div style = "font-size: 90%">
