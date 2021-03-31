@@ -3,32 +3,32 @@
 <h4>HOGYAN KELL KALIBRÁLNI a DistoX-et</h4>
 
 Használat előtt a DistoX-ot kalibrálni kell. A kalibrálás a kiszámolt adatok átalakítása amiatt, hogy 
-az érzékelők tengelyének nem tökéletes a merőlegessége, a lézer irányával való eltérésük,
-és az elektronika hatása a mágneses mezőre.<br><p>
+az érzékelők tengelye nem tökéletesen a merőleges, nem párhutamos a lézer irányával
+és az elektronika hat a mágneses mezőre.<br><p>
 
 Az átalakítás együtthatóinak kiszámításához számos "pontos" kalibrációs adatot kell mérni
-az érzékelők nyers leolvasásának rögzítése. Ez akkor lehetséges, amikor a DistoX "kalibrációs módban" van.<br><p>
+az érzékelők nyers leolvasásának rögzítésére. Ez akkor lehetséges, amikor a DistoX "kalibrációs módban" van.<br><p>
 
-A kalibrációs adatokat mágneses hatásoktól mentes helyen kell megtenni, például barlangban vagy erdőben.
+A kalibrációs adatokat mágneses hatásoktól mentes helyen kell mérni, például barlangban vagy erdőben.
 Óvakodjon olyan fémtárgyaktól és elektronikus tárgyaktól, amelyek hatással lehetnek a DistoX-re.<br><p>
 
-Az adatoknak minden irányra ki kell terjedniük, és mindegyik irányhoz négy adatcsoportot kell vennie, a lézertengely körül különböző forgással.<br>
-A legjobb módszer az, ha 14 csoportból négy-négy adatot veszünk, nyolc csoportot egy kocka sarkai irányába, és hatot az lapok középpontjába. Az egyes csoportok négy adatait a DistoX 90&deg-os elforgatásával kell megmérni egymást követően. Több mint 14 adatcsoportot vehet fel; minél több, annál jobb.
-Legalább négy négy adatcsoportot (különböző elforgatásokkal) kell felvenni négy irányba, 90&deg-kal; a vízszintes síkban,
-mintha ezek az irányok egy kocka közepétől a négy oldalsó oldal közepe felé haladnának.
-A másik 40 adatot nem kell nagyon körültekintően venni, ha a <i>PocketTopo</i> csoportházirendet alkalmazzuk, mert ezeket egyedi adatokként kezeljük.
-Több egyéni kalibrációs adatot vehet fel.<br><p>
+Az adatoknak a tér minden irányára ki kell terjedniük, és mindegyik irányhoz négy adatcsoportot kell mérni, a lézertengely körül különböző forgással.<br>
+A legjobb módszer az, ha 14 csoportban négy-négy adatot mérünk, nyolc csoportot egy kocka sarkai irányába, és hatot az lapok középpontjába. Az egyes csoportok négy adatait a DistoX 90&deg;-os elforgatásával kell megmérni egymást követően. Több mint 14 adatcsoportot vehetsz fel; minél több, annál jobb.
+És legalább négy négy adatcsoportot (különböző elforgatásokkal) kell felvenni négy irányba, 90&deg;-kal a vízszintes síkban,
+mintha ezek az irányok egy kocka közepétől a négy oldalsó lap közepe felé haladnának.
+A másik 40 adatot nem kell nagyon körültekintően mérni, ha a <i>PocketTopo</i> csoportházirendet alkalmazzuk, mert ezeket egyedi adatokként kezeljük.
+Több egyéni kalibrációs adatot vehetsz fel.<br><p>
 
 A csoportot alkotó kalibrációs adatokat körültekintően kell mérni. A pontatlan csoportadatok rossz kalibrálást eredményeznek.
-Ezért használjon rögzített pontokat (pl. Egy pontot a falon vagy a fán) és egymástól távol (néhány méterre), hogy a lézer irányításának pontossága jobb legyen, mint a kívánt kalibrálási pontosság (2 cm 6 m-nél kb. 0,2&deg;).<br><p>
+Ezért használj rögzített pontokat (pl. Egy pontot a falon vagy a fán) és egymástól távol (néhány méterre), hogy a lézer irányításának pontossága jobb legyen, mint a kívánt kalibrálási pontosság (2 cm 6 m-nél kb. 0.2&deg;).<br><p>
 
-Miután elkészítette a kalibrációs méréseket, töltse le azokat a TopoDroid segítségével. Nem kell megvárnia az összes kalibrálást
+Miután elkészítetted a kalibrációs méréseket, töltsd le azokat a TopoDroid segítségével. Nem kell megvárnia az összes kalibrálási mérést az
 adatok a letöltéshez: amikor letöltesz néhány adatot, ezek hozzáadódnak a már kalibrálás alatt álló adatokhoz.
-Ezért, ha tévedésből négy helyett öt adatot vesz fel, töltse le az adatokat, és törölje egyiküket a TopoDroidban.<br><p>
+Ezért, ha tévedésből négy helyett öt adatot veszel fel, töltse le az adatokat, és töröld egyiküket a TopoDroidban.<br><p>
 
-A kalibrálás kiszámítása előtt meg kell adnia a TopoDroidnak, hogy a kalibrációs adatok hogyan oszlanak csoportokba, vagyis hogyan vannak hozzárendelve a csoportok az adatokhoz.
+A kalibrálás kiszámítása előtt meg kell adnod a TopoDroidnak, hogy a kalibrációs adatok hogyan oszlanak csoportokba, vagyis hogyan vannak hozzárendelve a csoportok az adatokhoz.
 A csoportokat pozitív számokkal jelöljük. A kalibrálás kiszámításához nem használunk nullás csoportot vagy csoporthoz nem tartozó adatot.
-A törölt adatok -1 csoporttal rendelkeznek, és általában nem jelennek meg a listában.<br><p>
+A törölt adatok -1-es csoporttal rendelkeznek, és általában nem jelennek meg a listában.<br><p>
 
 A TopoDroid két házirendet valósít meg a csoportok automatikus hozzárendeléséhez:
 <ul>
@@ -37,27 +37,27 @@ A TopoDroid két házirendet valósít meg a csoportok automatikus hozzárendel�
 <!-- li> "adatcsoport hozzárendelés az adatok szögeltérése alapján</ li-->
 </ul>
 <br>
-A csoporthoz tartozó számok hozzárendelhetők vagy módosíthatók a kalibrációs adatok szerkesztésével. Az adatszerkesztő párbeszédpanel megnyitásához érintse meg az adatok egyikét a listán.
+A csoporthoz tartozó számok hozzárendelhetők vagy módosíthatók a kalibrációs adatok szerkesztésével. Az adatszerkesztő párbeszédpanel megnyitásához érintsd meg az adatok egyikét a listán.
 <br>
 
-Ha a csoportok meg vannak határozva, kiszámíthatja a kalibrálást.
+Ha a csoportokat meghatároztad, kiszámíthatod a kalibrálást.
 A kalibrációs együtthatók mellett a párbeszédpanel megmutatja az átlagos hibát (és az eredeti algoritmus "delta" értékét),
-a hiba szórása és a maximális hiba.
+a hiba szórását és a maximális hibát.
 Ezen kívül van egy hisztogram a hibák eloszlásával a kalibrációs adatokhoz. Ennek a diagramnak két függőleges vonala van:
-sárga jel 0,5&deg-on; egy piros pedig 1,0&deg;<br><p>
+sárga jel 0.5&deg;-on egy piros pedig 1.0&deg;<br><p>
 
 <img src = "calib_data.png">
 <br>
 
 Összefoglalva, a DistoX kalibrálásához:
 <ul>
-<li>állítsa a DistoX-et kalibrációs módba</li>
-<li>mérje meg a kalibrációs adatokat</li>
-<li>töltse le az adatokat az alkalmazásba</li>
-<li>rendelje a csoportokat az adatokhoz (automatikusan vagy manuálisan)</li>
-<li>számítsa ki a kalibrációs együtthatókat</li>
-<li>töltse fel az együtthatókat a DistoX-be</li>
-<li>állítsa vissza a DistoX-et normál módba</li>
+<li>állítsd a DistoX-et kalibrációs módba</li>
+<li>mérd meg a kalibrációs adatokat</li>
+<li>töltsd le az adatokat az alkalmazásba</li>
+<li>rendelj a csoportokat az adatokhoz (automatikusan vagy manuálisan)</li>
+<li>számítsd ki a kalibrációs együtthatókat</li>
+<li>töltsd fel az együtthatókat a DistoX-be</li>
+<li>állítsd vissza a DistoX-et normál módba</li>
 </ul>
 <br><p>
 

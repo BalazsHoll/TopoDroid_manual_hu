@@ -4,15 +4,15 @@
 
 Ez a párbeszédablak a <u>kalibrációs adatok ablak</u> <i>Csoport</i> gombjával nyílik meg.<br><p>
 
-A kalibrációs együtthatók kiszámítása előtt a kalibrálási adatokat fel kell osztani ugyanazon azimut és dőlésszögű (de eltérő elforgatású) adatcsoportokra.<br>
-Vigyázzon, hogy egy helytelen csoport hozzárendelés a kalibrációs együtthatók kiszámításának hibájához vezethet (általában az algoritmus túl sok iterációja miatt).<br><p>
+A kalibrációs együtthatók kiszámítása előtt a kalibrálási adatokat fel kell osztani ugyanazon irányú és dőlésszögű (de eltérő elforgatású) adatcsoportokra.<br>
+Vigyázz, hogy egy helytelen csoport hozzárendelés a kalibrációs együtthatók kiszámításának hibájához vezethet (általában az algoritmus túl sok iterációja miatt).<br><p>
 
-A csoportokat egész számmal kezdjük azonosítani, kezdve 1-vel.<br>
+A csoportokat egész számmal azonosítjuk, 1-el kezdődően.<br>
 A 0-as adatok fel vannak sorolva, de ki vannak zárva az együtthatók számításából.<br>
-A törölt adatok negatív csoportszámmal rendelkeznek, ezért a -1-es csoportra úgy állítja be az adatokat, hogy "törölt".<br><p>
+A törölt adatok negatív csoportszámmal rendelkeznek, ezért a -1-es csoport úgy állítja be az adatokat, hogy "törölt".<br><p>
 
-Az egyes kalibrálási adatokhoz kézzel rendelheti a csoport számát (a <i>Kalibrációs adatok szerkesztése</i> párbeszédpanellel),
-vagy hagyja, hogy a TopoDroid hozzárendelje a csoportszámokat az Ön számára.
+Az egyes kalibrálási adatokhoz kézzel rendelhetsz a csoport számot (a <i>Kalibrációs adatok szerkesztése</i> párbeszédpanellel),
+vagy hagyd, hogy a TopoDroid hozzárendelje a csoportszámokat.
 Két automatikus csoport-hozzárendelési házirend létezik:
 <ol>
 <li><i>TopoDroid</i>: négy adat egyidejűleg minden csoport számára;</li>
