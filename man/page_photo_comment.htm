@@ -21,7 +21,17 @@ Ez egy kamera egyszerű megvalósítása.
 Egyedülálló tulajdonsága, hogy az eszköz irányát és dőlését exif címkékben tárolja a képfájlban.
 Az azimut GPS_LONGITUDE, a dőlés pedig GPS_LATITUDE (előjellel).
 <br>
-A dátum/idő az exif címkékben is tárolva van.
+A következő exif címkéket a TopoDroid állítja be:
+<ul>
+<li><i>Software</i>: "TopoDroid" és verzió, szóközzel elválasztva</li>
+<li><i>Orientation</i>: tájolás</li>
+<li><i>Datatime</i>: idő</li>
+<li><i>GPS latitude</i>: dőlés</li>
+<li><i>GPS latitude ref</i>: "N"</li>
+<li><i>GPS longitude</i>: irány</li>
+<li><i>GPS longitude ref</i>: "E"</li>
+<li><i>Image description</i>: irány és dőlés 1/100&deg;, szóközzel elválasztva</li>
+</ul>
 <br><p>
 
 A fényképezőgép jobb alsó sarkában három gomb található.
