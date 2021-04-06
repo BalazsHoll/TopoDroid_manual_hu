@@ -1,0 +1,112 @@
+<html>
+<body>
+
+<h4>BRIC4 HIVATKOZÁSI ÚTMUTATÓ</h4>
+
+<i>Itt található a BRIC4 funkcióinak összefoglalása.<br>
+A hivatalos felhasználói kézikönyvek a következő címen érhetők el: http://www.caveexploration.org/gear/bric4</i>
+<br><p>
+
+A BRIC4 bekapcsolásához nyomja meg egymás után háromszor a külső gombot.
+A kikapcsoláshoz tartsa lenyomva a külső gombot.
+A BRIC4 magától kikapcsol 90 másodperc után ha nincs használva.
+<br><p>
+
+<b>Menü funkciók</b><br>
+A főmenüt a négy belső gomb bármelyikének megnyomásával lehet végrehajtani.
+A külső gomb megnyomásával kilép a menüből és visszatér a normál üzemmódba.
+<br><p>
+
+Opciók:
+<ul>
+<li><i>Dist</i>: méter vagy láb</li>
+<li><i>Temp</i>: Celcius vagy Fahrenheit</li>
+<li><i>Shot delay</i>: <u>0</u> és 5 másodperc között</li>
+<li><i>Change curr(ent)</i>: 100 mA vagy <u>500</u> mA</li>
+<li><i>Err(or) sens(itivity)</i>: from 0.2&deg; to 2.8&deg; in steps of 0.2&deg; [1.0&deg;]</li>
+</ul><br><p>
+
+Hibainformációk: az elmúlt tíz mérés hibainformációit közli.<br><p>
+
+
+Calibráció:
+<ul>
+<li><i>Display report</i></li>
+<li><i>Loop test</i>: körzárás teszt</li>
+<li><i>CAL quick AZM</i>: gyors irány kalibráció</li>
+<li><i>CAL full INC&amp;AZM</i>: teljes kalibráció</li>
+<li><i>CAL range finder</i>: távolságmérő kaliráció</li>
+</ul><br><p>
+
+
+Óra beállítás (a megerősítéshez lapozzon lefelé <i>másodperc</i> után)
+<ul>
+<li><i>Year</i>: év</li>
+<li><i>Month</i>: hónap 01 és 12 között</li>
+<li><i>Date</i>: nap 00 és 31 között</li>
+<li><i>Hour</i>: óra 00 és 23 között</li>
+<li><i>Minute</i>: perc 00 és 59 között</li>
+<li><i>Second</i>: másodperc 00 és 59 között</li>
+</ul><br><p>
+
+Bluetooth
+<ul>
+<li><i>Name</i>: pl.: BRIC4_0039</li>
+<li><i>MAC address</i>: pl.: D52FDE2E98DE</li>
+<li><i>Connected to</i>: fogadó MAC address</li>
+<li><i>Reset BLE</i>: BLE újraindítás</li>
+<li><i>Advanced</i>: bővített</li>
+</ul><br><p>
+
+Három bővitett bluetooth lehetőség van:
+<ul>
+<li><i>RST to AT mode</i></li>
+<li><i>RST to Run Mode</i></li>
+<li><i>Curr Comm</i>: CPU</li>
+
+Kijelző
+<ul>
+<li><i>BL light</i>: 0 tól 5 ig</li>
+<li><i>Color</i>: white, red, blue, green, purple, cyan</li>
+<li><i>Contrast</i>: 0 (láthatatlan) to 30 (teljesen fekete) [16]</li>
+</ul><br><p>
+
+Speciális menü
+<ul>
+<li><i>Sersor Raw Data</i>: nyers szenzor adatok</li>
+<li><i>Firmware CPU</i>: firmware és hardware verzió - <i>Bootloader mode</i> opció</li>
+<li><i>Firmware BLE</i>: firmware verzió - <i>Update</i> opció</li>
+<li><i>Reprocess full Cal(ibration)</i>: teljes kalibráció újrafeldolgozás</li>
+<li><i>Reprocess AZM Cal(ibration)</i>: irány kalibráció újrafeldolgozás</li>
+<li><i>Backlight Manual</i>: kézikönv háttérszín váltás Red, Green, Blue között</li>
+<li><i>Charger info</i>: töltési információk (debug)</li>
+</ul><br><p>
+
+<b>Hiba kódok</b><br>
+A BRIC4 legfeljebb két hibát jelent a mérés adataival kapcsolatban.
+A hibakódot a felvett megjegyzések rögzítik a hibaértékkel együtt.
+Semmi sem kerül rögzítésre, ha nincs hiba (0 kód).
+<br><p>
+
+<ol>
+<li value="0">nincs hiba</li>
+<li value="1">első gyorsulásmérő magas <u>értéke</u> [normál 1]</li>
+<li value="2">második gyorsulásmérő magas <u>értéke</u> [normál 1]</li>
+<li value="3">első magnetométer magas <u>értéke</u> [normál 1]</li>
+<li value="4">második magnetométer magas <u>értéke</u> [normál 1]</li>
+<li value="5">gyorsulásmérők tengely <u>eltérése</u> (1:X, 2:Y, 3:Z)</li>
+<li value="6">magnetométerek tengely <u>eltérése</u> (1:X, 2:Y, 3:Z)</li>
+<li value="7">távolságmérő számítási hibája</li>
+<li value="8">távolságmérő gyenge jel</li>
+<li value="9">távolságmérő túl erős jel</li>
+<li value="10">távolságmérő minta hibája</li>
+<li value="11">távolságmérő <u>időtúllépés</u> válasza</li>
+<li value="12">távolságmérő <u>hiba</u></li>
+<li value="13">távolságmérő rossz <u>üzenet azonosító</u></li>
+<li value="14">lejtés <u>különbség</u></li>
+<li value="15">irány <u>különbség</u></li>
+</ol>
+
+
+</body>
+</html>

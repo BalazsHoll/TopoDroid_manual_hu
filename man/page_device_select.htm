@@ -17,7 +17,7 @@ Az adatok folyamatosan (<i>folyamatos</i> módban) vagy kötegelten (<i>igény s
 A két mód közötti különbség az, hogy a <i>folyamatos</i> mód aktív marad az adatok letöltésekor
 befejeződött, vagy megszakadt a kapcsolat az eszközzel, miközben a <i>on-demand</i> mód zárva van.<br><p>
 
-Az SAP5 és a BRIC csak folyamatos módban tölti le az adatokat.<br><p>
+Az SAP5 és a BRIC4 csak folyamatos módban tölti le az adatokat.<br><p>
 
 A DistoX segítségével a TopoDroid egyszerre több eszközzel is képes dolgozni
 az adatokat továbbra is csak egy eszközről töltik le egyszerre.<br>
@@ -51,11 +51,11 @@ Az SAP5 kalibrálását az eszköz végzi, és nem igényel külső programot.<b
 
 A TopoDroid támogatja a BRIC 4. verzióját.<br>
 Az eszköznek előzőleg "párosítva" kell lennie az Androiddal a <i>Beállítások</i> alkalmazás használatával.<br>
-Ezután a BRIC szerepel az ismert eszközök között az <i>Eszközablak</i> ban.
-"BRIC kód MAC-cím" néven jelenik meg, ahol a kód a BRIC négyjegyű kódja, például "0039".<br>
-A BRIC aktuális eszközként való kiválasztásához érintse meg a bejegyzést a listában.<br><p>
+Ezután a BRIC4 szerepel az ismert eszközök között az <i>Eszközablak</i> ban.
+"BRIC4 kód MAC-cím" néven jelenik meg, ahol a kód a BRIC4 négyjegyű kódja, például "0039".<br>
+A BRIC4 aktuális eszközként való kiválasztásához érintse meg a bejegyzést a listában.<br><p>
 
-Miután csatlakozott egy ügyfélhez, a BRIC emlékszik a kapcsolatra, még akkor is, ha ki van kapcsolva, ezért marad
+Miután csatlakozott egy ügyfélhez, a BRIC4 emlékszik a kapcsolatra, még akkor is, ha ki van kapcsolva, ezért marad
 "mindig kapcsolódva".<br>
 Ha a TopoDroid csatlakozik, a mérések értékei azonnal átkerülnek az alkalmazásba.
 Ha a TopoDroid nincs csatlakoztatva, akkor az adatokat a memóriában tárolja, és akkor továbbítja az alkalmazásba
@@ -69,11 +69,20 @@ Ezért
 az Android nyugtázza, de <u>nem továbbítja</u> az alkalmazásba.</li>
 </ul><br><p>
 
-A BRIC az adatokat a belső memóriában tárolja CSV fájlokban. Ha USB-n keresztül csatlakozik a számítógéphez, az eszközt
+A BRIC4 az adatokat a belső memóriában tárolja CSV fájlokban. Ha USB-n keresztül csatlakozik a számítógéphez, az eszközt
 külső memóriaként jelenik meg, és a CSV fájlok átmásolhatók a számítógépre.<br><p>
 
 A BRIC4 kalibrálását az eszköz végzi, és nem igényel külső programot.<br><p>
 
 A BRIC4 az alkalmazásból vezérelhető. Különösen lehetőség van a lézer be- és kikapcsolására és mérésre. A BRIC4 rendelkezik egy "szkennelési üzemmóddal" is, amelyben a méréseket folyamatosan, másodpercenként kb. kétszer végzi.<br><p>
+
+A TopoDroid két különböző adatprotokollt követhet (hozzáadódik az „saját” beállításokhoz).
+Csak az elsődleges adatokat kapja meg (távolság, irány és lejtés), vagy fogadja a teljes adatot.
+Az előbbiek nem tartalmazzák a BRIC adatazonosító számot, a TopoDroid pedig növekményes azonosítót rendel a felvételekhez.
+A teljes adat tartalmazza a BRIC azonosító számot, és a TopoDroid azonosítóként használja az adatbázisában.
+<br><p>
+
+A teljes adatok beérkezésekor a TopoDroid rögzíti a BRIC4 hibakódokat és értékeket a mérés megjegyzésében.
+<br><p>
 
 </body></html>
