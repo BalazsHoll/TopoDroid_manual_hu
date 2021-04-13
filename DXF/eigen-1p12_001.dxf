@@ -15006,6 +15006,12 @@ AcDb3dPolylineVertex
 SEQEND
   5
 2E2
+  330
+299
+  100
+AcDbEntity
+  8
+L_wall
   0
 POLYLINE
   5
@@ -16368,6 +16374,12 @@ AcDb3dPolylineVertex
 SEQEND
   5
 321
+  330
+2E3
+  100
+AcDbEntity
+  8
+L_wall
   0
 POLYLINE
   5
@@ -16894,6 +16906,12 @@ AcDb3dPolylineVertex
 SEQEND
   5
 33A
+  330
+322
+  100
+AcDbEntity
+  8
+L_wall
   0
 POLYLINE
   5
@@ -17464,6 +17482,12 @@ AcDb3dPolylineVertex
 SEQEND
   5
 355
+  330
+33B
+  100
+AcDbEntity
+  8
+L_wall
   0
 HATCH
   5
@@ -17472,10 +17496,12 @@ HATCH
 AcDbEntity
   8
 A_water
+  6
+ByLayer
+ 62
+  256
   100
 AcDbHatch
-  2
-_USER
   10
 0.00
   20
@@ -17488,6 +17514,8 @@ _USER
 0.00
   230
 1.00
+  2
+_USER
   70
 1
   71
@@ -17495,7 +17523,7 @@ _USER
   91
 1
   92
-2
+7
   72
 0
   73
@@ -17603,23 +17631,17 @@ _USER
   20
 -0.55
   97
-1
+0
   75
 0
   76
-1
-  52
-0.00
-  41
-1.00
-  77
-0
-  78
 1
   47
 0.02
   98
 0
+  0
+ENDSEC
   0
 POLYLINE
   5
@@ -20592,12 +20614,12 @@ ACAD_GROUP
 DICTIONARY
   5
 3DB
+  330
+3DA
   100
 AcDbDictionary
   281
 1
-  330
-3DA
   0
 ENDSEC
   0
