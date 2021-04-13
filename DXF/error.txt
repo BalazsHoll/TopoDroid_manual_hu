@@ -1,11 +1,9 @@
-2021 04 13 9:46
-
-Parancs: _-INSERT Adja meg a blokk nev√©t vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2).dxf"
-A k√∂vetkez≈ë hiba SEQEND olvas√°sa sor√°n a 15006. sort√≥l
-kezd≈ëd≈ëen tal√°lhat√≥:
-Hi√°nyzik az oszt√°lyelv√°laszt√≥ a(z) AcDbEntity oszt√°ly sz√°m√°ra
-√ârv√©nytelen vagy hi√°nyos DXF bemenet - rajz elvetve.
-*√ârv√©nytelen*
+Parancs: _-INSERT Adja meg a blokk nevÈt vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2).dxf"
+A kˆvetkezı hiba SEQEND olvas·sa sor·n a 15006. sortÛl
+kezdıdıen tal·lhatÛ:
+Hi·nyzik az oszt·lyelv·lasztÛ a(z) AcDbEntity oszt·ly sz·m·ra
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+*…rvÈnytelen*
 
   330
 299
@@ -14,34 +12,34 @@ AcDbEntity
   8
 L_wall
 
-Parancs: _-INSERT Adja meg a blokk nev√©t vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)01.dxf"
-A k√∂vetkez≈ë hiba SEQEND olvas√°sa sor√°n a 16374. sort√≥l
-kezd≈ëd≈ëen tal√°lhat√≥:
-Hi√°nyzik az oszt√°lyelv√°laszt√≥ a(z) AcDbEntity oszt√°ly sz√°m√°ra
-√ârv√©nytelen vagy hi√°nyos DXF bemenet - rajz elvetve.
-*√ârv√©nytelen*
+Parancs: _-INSERT Adja meg a blokk nevÈt vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)01.dxf"
+A kˆvetkezı hiba SEQEND olvas·sa sor·n a 16374. sortÛl
+kezdıdıen tal·lhatÛ:
+Hi·nyzik az oszt·lyelv·lasztÛ a(z) AcDbEntity oszt·ly sz·m·ra
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+*…rvÈnytelen*
 
 
-Parancs: _-INSERT Adja meg a blokk nev√©t vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)02.dxf"
-A k√∂vetkez≈ë hiba SEQEND olvas√°sa sor√°n a 16906. sort√≥l
-kezd≈ëd≈ëen tal√°lhat√≥:
-Hi√°nyzik az oszt√°lyelv√°laszt√≥ a(z) AcDbEntity oszt√°ly sz√°m√°ra
-√ârv√©nytelen vagy hi√°nyos DXF bemenet - rajz elvetve.
-*√ârv√©nytelen*
+Parancs: _-INSERT Adja meg a blokk nevÈt vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)02.dxf"
+A kˆvetkezı hiba SEQEND olvas·sa sor·n a 16906. sortÛl
+kezdıdıen tal·lhatÛ:
+Hi·nyzik az oszt·lyelv·lasztÛ a(z) AcDbEntity oszt·ly sz·m·ra
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+*…rvÈnytelen*
 
-Parancs: _-INSERT Adja meg a blokk nev√©t vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)03.dxf"
-A k√∂vetkez≈ë hiba SEQEND olvas√°sa sor√°n a 17482. sort√≥l
-kezd≈ëd≈ëen tal√°lhat√≥:
-Hi√°nyzik az oszt√°lyelv√°laszt√≥ a(z) AcDbEntity oszt√°ly sz√°m√°ra
-√ârv√©nytelen vagy hi√°nyos DXF bemenet - rajz elvetve.
-*√ârv√©nytelen*
+Parancs: _-INSERT Adja meg a blokk nevÈt vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)03.dxf"
+A kˆvetkezı hiba SEQEND olvas·sa sor·n a 17482. sortÛl
+kezdıdıen tal·lhatÛ:
+Hi·nyzik az oszt·lyelv·lasztÛ a(z) AcDbEntity oszt·ly sz·m·ra
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+*…rvÈnytelen*
 
-Parancs: _-INSERT Adja meg a blokk nev√©t vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)04.dxf"
-A k√∂vetkez≈ë hiba HATCH olvas√°sa sor√°n a 17492. sort√≥l
-kezd≈ëd≈ëen tal√°lhat√≥:
-Hiba: a sz√ºks√©ges csoport k√≥d: 10
-√ârv√©nytelen vagy hi√°nyos DXF bemenet - rajz elvetve.
-*√ârv√©nytelen*
+Parancs: _-INSERT Adja meg a blokk nevÈt vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)04.dxf"
+A kˆvetkezı hiba HATCH olvas·sa sor·n a 17492. sortÛl
+kezdıdıen tal·lhatÛ:
+Hiba: a sz¸ksÈges csoport kÛd: 10
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+*…rvÈnytelen*
 
   0
 HATCH 17492
@@ -94,7 +92,7 @@ AcDbHatch
   230
 1.00
   2
-_USER    ide √°thelyezve
+_USER    ide ·thelyezve
   70
 1
   71
@@ -104,12 +102,12 @@ _USER    ide √°thelyezve
   92
 2
 
-Parancs: _-INSERT Adja meg a blokk nev√©t vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)05.dxf"
-A k√∂vetkez≈ë hiba HATCH olvas√°sa sor√°n a 17492. sort√≥l
-kezd≈ëd≈ëen tal√°lhat√≥:
-Hiba: a sz√ºks√©ges csoport k√≥d: 330
-√ârv√©nytelen vagy hi√°nyos DXF bemenet - rajz elvetve.
-*√ârv√©nytelen*
+Parancs: _-INSERT Adja meg a blokk nevÈt vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)05.dxf"
+A kˆvetkezı hiba HATCH olvas·sa sor·n a 17492. sortÛl
+kezdıdıen tal·lhatÛ:
+Hiba: a sz¸ksÈges csoport kÛd: 330
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+*…rvÈnytelen*
 
 92 2->7
 
@@ -120,41 +118,41 @@ ByLayer
 
 97 1->0
 
-Parancs: _-INSERT Adja meg a blokk nev√©t vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)08.dxf"
-A k√∂vetkez≈ë hiba HATCH olvas√°sa sor√°n a 17492. sort√≥l
-kezd≈ëd≈ëen tal√°lhat√≥:
-Hiba: a sz√ºks√©ges csoport k√≥d: 47
-√ârv√©nytelen vagy hi√°nyos DXF bemenet - rajz elvetve.
-*√ârv√©nytelen*
+Parancs: _-INSERT Adja meg a blokk nevÈt vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)08.dxf"
+A kˆvetkezı hiba HATCH olvas·sa sor·n a 17492. sortÛl
+kezdıdıen tal·lhatÛ:
+Hiba: a sz¸ksÈges csoport kÛd: 47
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+*…rvÈnytelen*
 
-47 √°thelyezve
-
-
-Parancs: _-INSERT Adja meg a blokk nev√©t vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)09.dxf"
-A k√∂vetkez≈ë hiba HATCH olvas√°sa sor√°n a 17492. sort√≥l
-kezd≈ëd≈ëen tal√°lhat√≥:
-Hiba: a sz√ºks√©ges csoport k√≥d: 98
-√ârv√©nytelen vagy hi√°nyos DXF bemenet - rajz elvetve.
-*√ârv√©nytelen*
-
-98 √°thelyezve
+47 ·thelyezve
 
 
-Parancs: _-INSERT Adja meg a blokk nev√©t vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)10.dxf"
-A k√∂vetkez≈ë hiba HATCH olvas√°sa sor√°n a 17492. sort√≥l
-kezd≈ëd≈ëen tal√°lhat√≥:
-Id≈ë el≈ëtti objektumv√©g
-√ârv√©nytelen vagy hi√°nyos DXF bemenet - rajz elvetve.
-*√ârv√©nytelen*
+Parancs: _-INSERT Adja meg a blokk nevÈt vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)09.dxf"
+A kˆvetkezı hiba HATCH olvas·sa sor·n a 17492. sortÛl
+kezdıdıen tal·lhatÛ:
+Hiba: a sz¸ksÈges csoport kÛd: 98
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+*…rvÈnytelen*
 
-+ENDSEC
+98 ·thelyezve
 
-Parancs: _-INSERT Adja meg a blokk nev√©t vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)11.dxf"
-A k√∂vetkez≈ë hiba HATCH olvas√°sa sor√°n a 17492. sort√≥l
-kezd≈ëd≈ëen tal√°lhat√≥:
-Id≈ë el≈ëtti objektumv√©g
-√ârv√©nytelen vagy hi√°nyos DXF bemenet - rajz elvetve.
-*√ârv√©nytelen*
+
+Parancs: _-INSERT Adja meg a blokk nevÈt vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)10.dxf"
+A kˆvetkezı hiba HATCH olvas·sa sor·n a 17492. sortÛl
+kezdıdıen tal·lhatÛ:
+Idı elıtti objektumvÈg
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+*…rvÈnytelen*
+
++ENDSEC  NEM!!!
+
+Parancs: _-INSERT Adja meg a blokk nevÈt vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)11.dxf"
+A kˆvetkezı hiba HATCH olvas·sa sor·n a 17492. sortÛl
+kezdıdıen tal·lhatÛ:
+Idı elıtti objektumvÈg
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+*…rvÈnytelen*
 
   52
 0.00
@@ -166,10 +164,44 @@ Id≈ë el≈ëtti objektumv√©g
 1
 kiszedve
 
-Parancs: _-INSERT Adja meg a blokk nev√©t vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)12.dxf"
-A k√∂vetkez≈ë hiba DICTIONARY olvas√°sa sor√°n a 20614. sort√≥l
-kezd≈ëd≈ëen tal√°lhat√≥:
-Id≈ë el≈ëtti objektumv√©g
-√ârv√©nytelen vagy hi√°nyos DXF bemenet - rajz elvetve.
-*√ârv√©nytelen*
+Parancs: _-INSERT Adja meg a blokk nevÈt vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)12.dxf"
+A kˆvetkezı hiba DICTIONARY olvas·sa sor·n a 20614. sortÛl
+kezdıdıen tal·lhatÛ:
+Idı elıtti objektumvÈg
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+*…rvÈnytelen*
+
+
+A kˆvetkezı hiba INSERT olvas·sa sor·n a 19592. sortÛl
+kezdıdıen tal·lhatÛ:
+Hi·nyzik az oszt·lyelv·lasztÛ a(z) AcDbEntity oszt·ly sz·m·ra
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+
+ 330
+64
+999
+*Model_Space-handle
+  100
+AcDbEntity
+  8
+P_water-flow
+
+A kˆvetkezı hiba INSERT olvas·sa sor·n a 19646. sortÛl
+kezdıdıen tal·lhatÛ:
+Hi·nyzik az oszt·lyelv·lasztÛ a(z) AcDbEntity oszt·ly sz·m·ra
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+
+A kˆvetkezı hiba SEQEND olvas·sa sor·n a 20372. sortÛl
+kezdıdıen tal·lhatÛ:
+Hi·nyzik az oszt·lyelv·lasztÛ a(z) AcDbEntity oszt·ly sz·m·ra
+…rvÈnytelen vagy hi·nyos DXF bemenet - rajz elvetve.
+
+  330
+3AF
+  100
+AcDbEntity
+  8
+L_wall
+
+
 
