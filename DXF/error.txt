@@ -1,1 +1,175 @@
+2021 04 13 9:46
+
+Parancs: _-INSERT Adja meg a blokk nevét vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2).dxf"
+A következő hiba SEQEND olvasása során a 15006. sortól
+kezdődően található:
+Hiányzik az osztályelválasztó a(z) AcDbEntity osztály számára
+Érvénytelen vagy hiányos DXF bemenet - rajz elvetve.
+*Érvénytelen*
+
+  330
+299
+  100
+AcDbEntity
+  8
+L_wall
+
+Parancs: _-INSERT Adja meg a blokk nevét vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)01.dxf"
+A következő hiba SEQEND olvasása során a 16374. sortól
+kezdődően található:
+Hiányzik az osztályelválasztó a(z) AcDbEntity osztály számára
+Érvénytelen vagy hiányos DXF bemenet - rajz elvetve.
+*Érvénytelen*
+
+
+Parancs: _-INSERT Adja meg a blokk nevét vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)02.dxf"
+A következő hiba SEQEND olvasása során a 16906. sortól
+kezdődően található:
+Hiányzik az osztályelválasztó a(z) AcDbEntity osztály számára
+Érvénytelen vagy hiányos DXF bemenet - rajz elvetve.
+*Érvénytelen*
+
+Parancs: _-INSERT Adja meg a blokk nevét vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)03.dxf"
+A következő hiba SEQEND olvasása során a 17482. sortól
+kezdődően található:
+Hiányzik az osztályelválasztó a(z) AcDbEntity osztály számára
+Érvénytelen vagy hiányos DXF bemenet - rajz elvetve.
+*Érvénytelen*
+
+Parancs: _-INSERT Adja meg a blokk nevét vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)04.dxf"
+A következő hiba HATCH olvasása során a 17492. sortól
+kezdődően található:
+Hiba: a szükséges csoport kód: 10
+Érvénytelen vagy hiányos DXF bemenet - rajz elvetve.
+*Érvénytelen*
+
+  0
+HATCH 17492
+  5
+356
+  100
+AcDbEntity
+  8
+A_water
+  100
+AcDbHatch
+  2
+_USER
+  10
+0.00
+  20
+0.00
+  30
+0.00
+  210
+0.00
+  220
+0.00
+  230
+1.00
+  70
+
+
+
+  0
+HATCH
+  5
+356
+  100
+AcDbEntity
+  8
+A_water
+  100
+AcDbHatch
+  10
+0.00
+  20
+0.00
+  30
+0.00
+  210
+0.00
+  220
+0.00
+  230
+1.00
+  2
+_USER    ide áthelyezve
+  70
+1
+  71
+0
+  91
+1
+  92
+2
+
+Parancs: _-INSERT Adja meg a blokk nevét vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)05.dxf"
+A következő hiba HATCH olvasása során a 17492. sortól
+kezdődően található:
+Hiba: a szükséges csoport kód: 330
+Érvénytelen vagy hiányos DXF bemenet - rajz elvetve.
+*Érvénytelen*
+
+92 2->7
+
+  6
+ByLayer
+ 62
+  256
+
+97 1->0
+
+Parancs: _-INSERT Adja meg a blokk nevét vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)08.dxf"
+A következő hiba HATCH olvasása során a 17492. sortól
+kezdődően található:
+Hiba: a szükséges csoport kód: 47
+Érvénytelen vagy hiányos DXF bemenet - rajz elvetve.
+*Érvénytelen*
+
+47 áthelyezve
+
+
+Parancs: _-INSERT Adja meg a blokk nevét vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)09.dxf"
+A következő hiba HATCH olvasása során a 17492. sortól
+kezdődően található:
+Hiba: a szükséges csoport kód: 98
+Érvénytelen vagy hiányos DXF bemenet - rajz elvetve.
+*Érvénytelen*
+
+98 áthelyezve
+
+
+Parancs: _-INSERT Adja meg a blokk nevét vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)10.dxf"
+A következő hiba HATCH olvasása során a 17492. sortól
+kezdődően található:
+Idő előtti objektumvég
+Érvénytelen vagy hiányos DXF bemenet - rajz elvetve.
+*Érvénytelen*
+
++ENDSEC
+
+Parancs: _-INSERT Adja meg a blokk nevét vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)11.dxf"
+A következő hiba HATCH olvasása során a 17492. sortól
+kezdődően található:
+Idő előtti objektumvég
+Érvénytelen vagy hiányos DXF bemenet - rajz elvetve.
+*Érvénytelen*
+
+  52
+0.00
+  41
+1.00
+  77
+0
+  78
+1
+kiszedve
+
+Parancs: _-INSERT Adja meg a blokk nevét vagy [?]: "E:\TopoDroid_teljes\DXF\sample\10\eigen-1p12 (2)12.dxf"
+A következő hiba DICTIONARY olvasása során a 20614. sortól
+kezdődően található:
+Idő előtti objektumvég
+Érvénytelen vagy hiányos DXF bemenet - rajz elvetve.
+*Érvénytelen*
 
