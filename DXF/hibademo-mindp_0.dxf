@@ -43218,6 +43218,8 @@ ARC
 P_rimstone-dam
   5
 892
+  330
+1BC
   100
 AcDbEntity
   100
@@ -43232,6 +43234,8 @@ AcDbCircle
 0.00
   40
 0.20
+100
+AcDbArc
   50
 0.00
   51
@@ -43272,6 +43276,8 @@ ARC
 P_rimstone-pool
   5
 895
+  330
+1BC
   100
 AcDbEntity
   100
@@ -43286,6 +43292,8 @@ AcDbCircle
 0.00
   40
 0.00
+  100
+AcDbArc
   50
 0.00
   51
@@ -43296,6 +43304,8 @@ ARC
 P_rimstone-pool
   5
 896
+330
+1BC
   100
 AcDbEntity
   100
@@ -43310,6 +43320,8 @@ AcDbCircle
 0.00
   40
 0.40
+100
+AcDbArc
   50
 0.00
   51
