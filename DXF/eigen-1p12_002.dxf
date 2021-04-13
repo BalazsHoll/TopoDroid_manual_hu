@@ -16911,7 +16911,7 @@ SEQEND
   100
 AcDbEntity
   8
-L_wall
+L_u-user
   0
 POLYLINE
   5
@@ -17487,7 +17487,7 @@ SEQEND
   100
 AcDbEntity
   8
-L_wall
+A_water
   0
 HATCH
   5
@@ -17640,8 +17640,6 @@ _USER
 0.02
   98
 0
-  0
-ENDSEC
   0
 POLYLINE
   5
@@ -17882,6 +17880,12 @@ AcDb3dPolylineVertex
 SEQEND
   5
 362
+  330
+357
+  100
+AcDbEntity
+  8
+L_rock-border
   0
 POLYLINE
   5
@@ -18298,6 +18302,12 @@ AcDb3dPolylineVertex
 SEQEND
   5
 376
+  330
+363
+  100
+AcDbEntity
+  8
+L_border
   0
 POLYLINE
   5
@@ -18692,6 +18702,12 @@ AcDb3dPolylineVertex
 SEQEND
   5
 389
+  330
+377
+  100
+AcDbEntity
+  8
+L_rock-border
   0
 POLYLINE
   5
@@ -19394,6 +19410,12 @@ AcDb3dPolylineVertex
 SEQEND
   5
 3AA
+  330
+38A
+  100
+AcDbEntity
+  8
+A_clay
   0
 HATCH
   5
@@ -19404,8 +19426,6 @@ AcDbEntity
 A_clay
   100
 AcDbHatch
-  2
-_USER
   10
 0.00
   20
@@ -19418,6 +19438,8 @@ _USER
 0.00
   230
 1.00
+  2
+_USER
   70
 1
   71
@@ -19425,7 +19447,7 @@ _USER
   91
 1
   92
-2
+7
   72
 0
   73
@@ -19557,18 +19579,10 @@ _USER
   20
 -8.87
   97
-1
+0
   75
 0
   76
-1
-  52
-0.00
-  41
-1.00
-  77
-0
-  78
 1
   47
 0.02
@@ -19578,10 +19592,16 @@ _USER
 INSERT
   5
 3AC
+ 330
+64
+999
+*Model_Space-handle
   100
-AcDbBlockReference
+AcDbEntity
   8
 P_water-flow
+  100
+AcDbBlockReference
   2
 B_water-flow
   41
@@ -19600,10 +19620,14 @@ B_water-flow
 INSERT
   5
 3AD
+ 330
+64
   100
-AcDbBlockReference
+AcDbEntity
   8
 P_water-flow
+  100
+AcDbBlockReference
   2
 B_water-flow
   41
@@ -19622,10 +19646,16 @@ B_water-flow
 INSERT
   5
 3AE
+ 330
+64
+999
+*Model_Space-handle
   100
-AcDbBlockReference
+AcDbEntity
   8
 P_curtain
+  100
+AcDbBlockReference
   2
 B_curtain
   41
@@ -20342,14 +20372,26 @@ AcDb3dPolylineVertex
 SEQEND
   5
 3CF
+  330
+3AF
+  100
+AcDbEntity
+  8
+L_wall
   0
 INSERT
   5
 3D0
+ 330
+64
+999
+*Model_Space-handle
+  100
+AcDbEntity
+   8
+P_u-user
   100
 AcDbBlockReference
-  8
-P_u-user
   2
 B_u-user
   41
