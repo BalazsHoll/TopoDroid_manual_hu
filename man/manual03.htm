@@ -34,7 +34,7 @@ A műszereknek beceneveket lehet adni, hogy könnyebben meg lehessen különböz
 <li><img src = "btn_info.png"> eszközinformációk [N, *]</li>
 <li><img src="btn_memory.png"> <a href="page_memory.htm">DistoX</a> vagy <a href="page_bric_memory.htm">BRIC4</a> memória funkciók [*] </li>
 <li><img src = "btn_toggle.png"> be- és kikapcsolhatja a DistoX kalibrációs módot [*]</li>
-<li><img src = "btn_compute.png"><a href="page_calib_dialog.htm"> a DistoX kalibrációi</a>.</li>
+<li><img src = "btn_compute.png"> <a href="page_calib_dialog.htm">a DistoX kalibrációi</a>.</li>
 <li><img src = "btn_read.png"> beolvassa és megjeleníti a DistoX kalibrációs együtthatóit [H, *]</li>
 
 </ul><br><p>
@@ -51,7 +51,7 @@ Az SAP esetében csak az első gomb aktív.<br><p>
 <!-- li><u>Párosítsa</u> az aktív DistoX-et az Androiddal, ha még nincs párosítva [N, *]</ li -->
 <li><u>Szétkapcsolás</u> törli az aktív eszközt [H]</li>
 <li>Lementeni és feltölteni a <a href="page_firmware.htm"> firmware-eket</a> a DistoX2-re [S, *]</li>
-<li>A DistoX csomagok naplójának megjelenítése [T]</li>
+<li>A DistoX adatcsomagok naplójának megjelenítése [T]</li>
 <li><u>Beállítások</u></li>
 <li><u>Súgó</u></li>
 </ul><br>
@@ -59,7 +59,7 @@ Az SAP esetében csak az első gomb aktív.<br><p>
 <h4> ESZKÖZBEÁLLÍTÁSOK</h4>
 <ul style = "margin-top = 0">
 <li><i>Bluetooth</i>: az indítás engedélyezése, letiltása vagy ellenőrzése [alapértelmezett "ellenőrzés"]</li>
-<li><i>Új adatok száma</i>: letöltés előtt szerezze be az új adatok számát (igény szerinti mód) [alapértelmezett "nem"]</li>
+<li><i>Új adatok száma</i>: letöltés előtt olvassa ki az új adatok számát (igény szerinti mód) [alapértelmezett "nem"]</li>
 </ul><br><p>
 
 A következő beállítások csak a DistoX-ra vonatkoznak (amely a klasszikus bluetooth-ot használja).
@@ -74,13 +74,13 @@ A következő beállítások csak a DistoX-ra vonatkoznak (amely a klasszikus bl
 <b>DistoX csatlakozási módok</b><br>
 Három csatlakozási mód van a DistoX számára.
 <ul>
-<li><i>igény szerint</i> módban az adatok sorozatban kerülnek letöltésre, és amikor nincs több adat a kapcsolat letöltésére, a kapcsolat le van zárva.</li>
-<li><i>folyamatos</i> módban a TopoDroid kapcsolatban marad a DistoX-szal, és a felvételek azonnal elkészülnek.
-Amikor a DistoX és az Android megszakad, a TopoDroid ismételten megpróbálja újracsatlakozni.
-Ellenkező esetben a bluetooth kapcsolat megszakad.</li>
-<li>a <i>több</i> mód olyan, mint az „igény szerinti” mód, de hosszan koppintson a „letöltés” ​​gombra, a <i>Mérés</i> ablakban vagy a <i>Vázlat</i> ablakban,
-megváltoztatja a DistoX-et. Ha beállított egy "második" DistoX-et (az <i>Műszer</i> ablakban), akkor felcseréli az aktuális DistoX-szal.
-Ellenkező esetben párbeszédpanelt kap, hogy kiválasszon egyet a párosított DistoX-ok közül.</li>
+<li><i>igény szerint</i> módban az adatok sorozatban kerülnek letöltésre, és amikor nincs több adat letöltésére, a kapcsolat le van zárva.</li>
+<li><i>folyamatos</i> módban a TopoDroid kapcsolatban marad a DistoX-szal, és a mérések azonnal letöltődnek.
+Amikor a DistoX és az Android kapcsolata megszakad, a TopoDroid ismételten megpróbálja újracsatlakozni.
+Ellenkező esetben a bluetooth kapcsolat bezáródik.</li>
+<li>a <i>több</i> mód olyan, mint az „igény szerinti” mód, de hosszú érintés a „letöltés” ​​gombra, a <i>Mérés</i> ablakban vagy a <i>Vázlat</i> ablakban,
+megváltoztatja a DistoX-et. Ha beállítottál egy "második" DistoX-et (az <i>Műszer</i> ablakban), akkor felcseréli az aktuális DistoX-szal.
+Ellenkező esetben párbeszédpanelt kapsz, hogy kiválassz egyet a párosított DistoX-ek közül.</li>
 </ul>
 <br>
 A "több" módban az aktuális DistoX a <i>Mérés</i> és a <i>Vázlat</i> ablakok címében jelenik meg.<br>
