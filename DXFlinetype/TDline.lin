@@ -1,0 +1,10 @@
+*SLOPE,lejto
+A,.00032,[SLOPE,slope,s=1],-32
+*PIT,akna
+A,.00015,[PIT,pit,s=1],-15
+*WATER-FLOW,vízfolyás
+A,.00021,[WATER-FLOW,water-flow,s=1],-21
+*WALL_FLOWSTONE1,borsokoves fal
+A,.00012,[FLOWSTONE1,flowstone1,s=1],-12
+*ARROW,nyil
+A,.0002,[ARROW,arrow,s=1],-20
