@@ -1,0 +1,82 @@
+
+(defun c:a()
+  ;(setvar "blipmode" 0)
+  ;(setvar "cmdecho" 0)
+  (progn
+    (setq fn (getfiled "SYMBOL FILES" "" "" (+ 2 4))) 
+    (setq fp (open fn "r"))
+    (while (setq data (read-line fp))                 		;-Loop until the end of file Read the next data line
+      (progn						 
+	(setq data (vl-string-trim " " data))			; remove any spaces from both ends
+	(while (/= data (setq data (vl-string-subst " " "  " data))));remove duble space
+	;(princ (cdr (read (strcat "(" data ")"))))
+	(setq data1 (read (strcat "(" data ")")))
+	(if (= (car data1) 'MOVETO );"moveTo X Y"
+	    ;(mapcar 'set '(pd px1 py1) data1)
+	    (setq pt1 (list (cadr data1) (-(caddr data1))))
+	  )
+	(if (= (car data1) 'LINETO );"lineTo X Y"
+	    (progn
+	      ;(mapcar 'set '(pd px2 py2) data1)
+	      (setq pt2 (list (cadr data1) (-(caddr data1))))
+	      (command "_line" pt1 pt2 "")
+	      (setq pt1 pt2)
+	    )
+	  )
+	(if (= (car data1) 'ADDCIRCLE );"addCircle X Y R"
+	    (progn
+	      (setq pt1 (list (cadr data1) (-(caddr data1))) )
+	      (setq r (cadddr data1))
+	      (command "_circle" pt1 r )
+	    )
+	  )
+	(if (= (car data1) 'CUBICTO ); "cubicTo X1 Y1 X2 Y2 X Y"
+	    (progn
+	      (setq pt2 (list (cadr data1) (-(caddr data1))) )
+	      ;(princ data1)(princ pt1)(princ pt2)
+	      (setq data2 (cdddr data1))
+	      ;(princ data2)
+	      (setq pt3 (list (car data2) (-(cadr data2))) );(princ pt3)
+	      (setq data3 (cddr data2))
+	      ;(princ data3)
+	      (setq pt4 (list (car data3) (-(cadr data3))) );(princ pt4)
+	      (command "_pline" pt1 pt2 pt3 pt4 "")
+	      (setq pt1 pt4)
+	      (command "_pedit" "_last" "_spline" "_exit")
+	    )
+	  )
+	(if (= (car data1) 'ARCTO ); "arcTo X1 Y1 X2 Y2 A0 DA"
+	    (progn
+	      ;(setq pt2 (list (cadr data1) (-(caddr data1))) )
+	      (princ data1)
+	      (setq x1 (cadr data1))
+	      (setq y1 (-(caddr data1)))
+	      (princ data1)(princ pt1)(princ pt2)
+	      (setq data2 (cdddr data1))
+	      (princ data2)
+	      ;(setq pt3 (list (car data2) (-(cadr data2))) );(princ pt3)
+	      (setq x2 (cadr data2))
+	      (setq y2 (-(caddr data2)))
+	      (setq data3 (cddr data2))
+	      (setq a0 (cadr data3))
+	      (setq da (-(caddr data3)))
+	      (princ data3)
+	      (setq pt2 (list (/ (+ x1 x2) 2) (/(+ y1 y2) 2)) );(princ pt2)
+	      (setq rx (/ (- x2 x1) 2) );(princ rx)
+	      (setq ry (/ (- y2 y1) 2) );(princ ry)
+	      (command "_ellipse" "_a" "_c" pt2 (strcat "@" (rtos rx 2 2) ",0") (strcat "@0," (rtos rx 2 2)) (-(+ a0 da)) (- a0) )
+	      (setq pt1 pt4)
+	      (command "_pedit" "_last" "_spline" "_exit")
+	    )
+	  )
+        ;(princ data1)
+	;(princ pt1)
+	;(princ "\n\r")
+      )
+    )
+    (close fp)
+  )
+  (setvar "blipmode" 1)
+  (setvar "cmdecho" 1)
+  (princ)
+)
