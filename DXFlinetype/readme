@@ -1,1 +1,4 @@
 DXF vonaltípus definíciók
+
+A DXF fájl mellé a könyvtárba be kell másolni a .shx és .lin fájlokat.
+Az AutoCAD-ben meg lehet nyitni a .lin vonaltípus definíciós fájlt és be lehet tölteni a kívánt vonaltípusokat.
