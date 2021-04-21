@@ -1,5 +1,17 @@
+DXF linetype definitions
+
+In DXF (AutoCAD), there is an internal simple and an external more complex linetype definition. Simple (line-skip) lines in TopoDroid can be replaced with DXF internal linetypes, but for more complex ones, the pattern must be read from external files.
+Tdsym.LSP reads linetype definitions from the TopoDroid symbol library and creates AutoCAD SHP-SHX-LIN files to define linetypes.
+From already created files, you can call up linetype definitions in AutoCAD and set the lines for these patterns in the object properties.
+Linetype definitions work well if they are in the same directory as the drawing (DXF file).
+Not all programs can use linetype definitions that would otherwise read DXF without error, so there are no references to these in DXF files created by TopoDroid. If you want the lines to be included in the DXF files with these patterns, you need to set this up manually and save it as a new DXF file.
+Of the programs tested, in addition to AutoCAD, ODA Drawings Explorer and DWG FastView (Android) were able to use linetypes.
+
 DXF vonaltípus definíciók
 
-A DXF fájl mellé a könyvtárba be kell másolni a .shx és .lin fájlokat.
-Az AutoCAD-ben meg lehet nyitni a .lin vonaltípus definíciós fájlt és be lehet tölteni a kívánt vonaltípusokat.
-A TDsym.LSP -vel létre lehet hozni új vonaltípus definíciólat a vonal szimbólum fájlokból (azonos könyvtárban kell legyenek mind).
+A DXF-ben (AutoCAD-ben) létezik belső egyszerű, és külső bonyolultabb vonaltípus definíció. A TopoDroid egyszerű (vonal-kihagyás) vonalait lehet  helyettesíteni a DXF belső vonaltípusaival, de a bonyolultabbakhoz külső fájlokból kell beolvasni a mintázatot.
+A Tdsym.LSP  program beolvassa a TopoDroid szimbólum könyvtárából a vonaltípus definíciókat és elkészíti az AutoCAD SHP-SHX-LIN fájlokat a vonaltípusok definiálására.
+A már elkészített fájlokból behívhatók az AutoCAD-be vonaltípus definíciók és beállíthatók a vonalak ezekre a mintázatokra az objektum tulajdonságoknál.
+A vonaltípus definíciók akkor működnek jól, ha azonos könyvtárban vannak a rajzzal (DXF fájl).
+Nem tudja minden olyan program felhasználni a vonaltípus definíciókat ami a DXF-et egyébként hiba nélkül beolvassa, ezért a TopoDroid által készített DXF állományokban nincs hivatkozás ezekre. Ha azt akarjuk, hogy a vonalak ezekkel a mintázatokkal kerüljenek be a DXF állományokba akkor ezt kézzel kell beállítani és elmenteni új DXF fájlként.
+A tesztelt programok közül az AutoCAD-en kívül az ODA Drawings Explorer és a DWG FastView (Android) tudta használni a vonaltípusokat.
