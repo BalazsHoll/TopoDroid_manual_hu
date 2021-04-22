@@ -22,13 +22,15 @@
 	(if (= (car data1) 'SYMBOL );"symbol line"
 	    (progn
 	      (mapcar 'set '(pd pm) data1)
+	      (setq fo2 (open (strcat "S_" fn1 ".svg") "w"))
 	      (if (= pm 'LINE )
 	        (setq fo (open (strcat "L_" fn1 ".shp") "w"))
               )
+	      (setq svgl "")
 	      (setq shpl "")
 	      (setq shpn 0)
 	      (setq shpln 0)
-	      (princ 1)
+	      (princ " ")
 	    )
 	  )
 	(if (= (car data1) 'NAME );"name water-flow-intermittent"
@@ -39,12 +41,25 @@
               ;)
 	    )
 	  )
-	(if (= (car data1) 'DASH );"name water-flow-intermittent"
+	(if (= (car data1) 'DASH );"dash 17 15"
 	    (progn
 	      (mapcar 'set '(pd dd dn) data1)
 	      ;(if (= pm 'LINE )
 	        ;(princ data1)
               ;)
+	    )
+	  )
+	(if (= (car data1) 'COLOR );"color 0xffcc00 0xff"
+	    (progn
+	      (mapcar 'set '(pd color ca) data1)
+	      (setq color1 (substr (vl-princ-to-string color) 3 6))
+	      
+	      ;(if (= pm 'POINT )
+	       	;(mapcar 'set '(pd color) data1)
+	        ;(mapcar 'set '(pd color colora) data1)
+		;(set colora (substr
+	      ;)
+	      ;(princ color)
 	    )
 	  )
 	(if (= (car data1) 'MOVETO );"moveTo X Y"
@@ -53,6 +68,7 @@
  	      (if (> px xmax) (setq xmax px))
 	      (setq pxo (car pt1))
 	      (setq pyo (cadr pt1))
+	      (setq svgl (strcat svgl "M " (rtos px 2 0) " " (rtos py 2 0) " " ))
 	      (setq shpl (strcat shpl "2,8,(" (rtos (- px pxo) 2 0) "," (rtos (- (- py) pyo) 2 0) ")," ))
 	      (setq shpn (+ shpn 4))
 	      (setq shpln (+ shpln 12))
@@ -68,6 +84,7 @@
 	      (command "_line" pt1 pt2 "")
               (setq pxo (car pt1))
 	      (setq pyo (cadr pt1))
+	      (setq svgl (strcat svgl "L " (rtos px 2 0) " " (rtos py 2 0) " " ))
 	      (if (= pdo 'MOVETO )
 		(progn
 	          (setq shpl (strcat shpl "1,8,(" (rtos (- px pxo) 2 0) "," (rtos (- (- py) pyo) 2 0) ")," ))
@@ -122,6 +139,34 @@
 	;(princ "\n\r")
       )
     )
+    
+    (princ "<svg>" fo2)(princ "\n" fo2)
+    (princ "  <metadata id=\"1\">" fo2)(princ "\n" fo2)
+    (princ "  </metadata>" fo2)(princ "\n" fo2)
+    (if (= pm 'LINE )
+      (progn
+        (princ "  <g style=\"overflow:hidden;fill:#" fo2)
+	(princ color1 fo2)
+        (princ ";stroke:#" fo2)
+        (princ color1 fo2)
+        (princ ";stroke-width:0\" id=\"2\" >" fo2)(princ "\n" fo2)
+      )
+      (progn
+        (princ "  <g style=\"overflow:hidden;fill:none;stroke:#" fo2)
+        (princ color1 fo2)
+        (princ ";stroke-width:1\" id=\"2\" >" fo2)(princ "\n" fo2)
+      )
+    )
+    (princ "    <g id=\"3\">" fo2)(princ "\n" fo2)
+    (princ "		 <path d=\"" fo2)
+    (princ svgl fo2)
+    (princ "\" id=\"4\" />" fo2)(princ "\n" fo2)
+    (princ "    </g>" fo2)(princ "\n" fo2)
+    (princ "  </g>" fo2)(princ "\n" fo2)
+    (princ "</svg>" fo2)(princ "\n" fo2)
+    (close fo2)
+
+    
     (setq shpl (strcat shpl "0" ))
     (setq shpn (+ shpn 1))
     (setq shpl0 (strcat "*1," (rtos shpn 2 0) "," ) )
@@ -187,10 +232,11 @@
 	    (princ (+ dd dn) fo)	
 	    (princ "\n" fo)
 	    (close fo)
-          )
-	)
-      )
-    )
+          );progn
+	);if dd
+      );if xmax
+    );if line
+    
   )
   (setvar "blipmode" 1)
   (setvar "cmdecho" 1)
