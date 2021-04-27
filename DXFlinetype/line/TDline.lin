@@ -1,7 +1,7 @@
 *L_ABYSS-ENTRANCE,ABYSS-ENTRANCE
 A,.00015,[ABYSS-ENTRANCE,E:\TopoDroid_teljes\DXF\Sym\line0\L_abyss-entrance,s=1],-15
 *L_ANTICLINE,ANTICLINE
-A,.00052.5,[ANTICLINE,E:\TopoDroid_teljes\DXF\Sym\line0\L_anticline,s=1],-52.5
+A,.00053,[ANTICLINE,E:\TopoDroid_teljes\DXF\Sym\line0\L_anticline,s=1],-52.5
 *L_ARROW,ARROW
 A,.00020,[ARROW,E:\TopoDroid_teljes\DXF\Sym\line0\L_arrow,s=1],-20
 *L_WALL_BLOCKS,WALL_BLOCKS
@@ -37,7 +37,7 @@ A,.00012,[WALL_FLOWSTONE,E:\TopoDroid_teljes\DXF\Sym\line0\L_flowstone,s=1],-12
 *L_WALL_FLOWSTONE1,WALL_FLOWSTONE1
 A,.00012,[WALL_FLOWSTONE1,E:\TopoDroid_teljes\DXF\Sym\line0\L_flowstone1,s=1],-12
 *L_FOLD,FOLD
-A,.00052.5,[FOLD,E:\TopoDroid_teljes\DXF\Sym\line0\L_fold,s=1],-52.5
+A,.00053,[FOLD,E:\TopoDroid_teljes\DXF\Sym\line0\L_fold,s=1],-52.5
 *L_WALL_ICE,WALL_ICE
 A,.00027,[WALL_ICE,E:\TopoDroid_teljes\DXF\Sym\line0\L_ice,s=1],-27
 *L_WATER-FLOW-INTERMITTENT,WATER-FLOW-INTERMITTENT
@@ -83,9 +83,9 @@ A,.00012,[STEPS,E:\TopoDroid_teljes\DXF\Sym\line0\L_steps,s=1],-12
 *L_STREAM,STREAM
 A,.00020,[STREAM,E:\TopoDroid_teljes\DXF\Sym\line0\L_stream,s=1],-20
 *L_SYNCLINE,SYNCLINE
-A,.00052.5,[SYNCLINE,E:\TopoDroid_teljes\DXF\Sym\line0\L_syncline,s=1],-52.5
+A,.00053,[SYNCLINE,E:\TopoDroid_teljes\DXF\Sym\line0\L_syncline,s=1],-52.5
 *L_THRUST,THRUST
-A,.00052.5,[THRUST,E:\TopoDroid_teljes\DXF\Sym\line0\L_thrust,s=1],-52.5
+A,.00053,[THRUST,E:\TopoDroid_teljes\DXF\Sym\line0\L_thrust,s=1],-52.5
 *L_TRACK,TRACK
 A,.00052,[TRACK,E:\TopoDroid_teljes\DXF\Sym\line0\L_track,s=1],-52
 *L_WALL_BELOW,WALL_BELOW
