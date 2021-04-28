@@ -24,18 +24,21 @@ result
 result
 )
 
-(defun decimalToBase (base val / result tmp)
+(defun decimalToBase (base val / result tmp result1)
 (setq result "")
+(if (< val base) (setq result1 "0")(setq result1 ""));ff form
+(if (= val 0) (setq result "00" result1 ""))
 (while (> val 0)
-(setq result (strcat (if (> (setq tmp (rem val base)) 9)
-(chr (+ tmp 55))
-(itoa tmp)
+  (setq result (strcat (if (> (setq tmp (rem val base)) 9)
+                           (chr (+ tmp 55))
+                           (itoa tmp)
+                       )
+                 result
+               )
+       val (fix (/ val base))
+  )
 )
-result
-)
-val (fix (/ val base))
-)
-)
+(setq result (strcat result1 result))
 result
 )
 
@@ -102,9 +105,9 @@ result
               )
 	      (if (= pm 'AREA )
 		(progn
-	          (setq fo (open (strcat dir1 "\\" "A_" fn1 ".xpm") "w"))
-                  (princ "/* XPM */" fo)(princ "\n" fo)
-                  (princ "static char * XFACE[] = {" fo)(princ "\n" fo)
+	          ;(setq fo (open (strcat dir1 "\\" "A_" fn1 ".xpm") "w"))
+                  ;(princ "/* XPM */" fo)(princ "\n" fo)
+                  ;(princ "static char * XFACE[] = {" fo)(princ "\n" fo)
 		)
               )
 	      (setq svgl "")
@@ -124,6 +127,10 @@ result
 	  )
 	(if (= (car data1) 'BITMAP );bitmap 40 30
 	    (progn
+	      (setq fo (open (strcat dir1 "\\" "A_" fn1 ".xpm") "w"))
+              (princ "/* XPM */" fo)(princ "\n" fo)
+              (princ "static char * XFACE[] = {" fo)(princ "\n" fo)
+
 	      (mapcar 'set '(pd bx by) data1)
 	      (princ (strcat "\"" (rtos bx 2 0) " " (rtos by 2 0) " 2 1\"") fo)
 	      (princ "," fo)(princ "\n" fo)
@@ -137,6 +144,10 @@ result
 		  (princ (strcat "\"" data "\"") fo)
 		)		
               )
+	      (princ "\n" fo)
+              (princ "};" fo)
+              (princ "\n" fo)
+              (close fo)
 	    )
 	  )
 	(if (= (car data1) 'DASH );"dash 17 15"
@@ -278,10 +289,10 @@ result
     
     (if (= pm 'AREA )
       (progn
-        (princ "\n" fo)
-        (princ "};" fo)
-        (princ "\n" fo)
-        (close fo)
+        ;(princ "\n" fo)
+        ;(princ "};" fo)
+        ;(princ "\n" fo)
+        ;(close fo)
       )
       (progn
         ;SVG export
