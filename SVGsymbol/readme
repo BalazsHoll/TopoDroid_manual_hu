@@ -26,7 +26,11 @@ Symbol Selector – Symbol layer type: Raster Image fill – Select XPM File,
 	Image width=Original, Opacity=65%
 
 Station:
-Layer Properties – point – Labels: Single Labels, Value=name
+Layer Properties – station – Labels: Single Labels, Value=name
 
 Shot:
-Layer Properties – point – Symbology: Categorized, Value=type
+Layer Properties – shot – Symbology: Categorized, Value=type
+
+Save style settings:
+Layer Properties – xxx – Symbology – Style – Save style…
+This setting file – yyy.qml – constains a full path, but editable.
