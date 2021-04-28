@@ -1,3 +1,48 @@
+;Eamples: https://forums.autodesk.com/t5/visual-lisp-autolisp-and-general/hex-utilities/td-p/904865
+;(decimaltobase 16 32) returns "20"
+;(basetodecimal 16 "20") returns 32
+
+(defun baseToDecimal (base val / pos power result tmp)
+(setq pos (1+ (strlen val))
+power -1
+result 0
+val (strcase val)
+)
+(while (> (setq pos (1- pos)) 0)
+(setq result
+(+
+result
+(* (if (> (setq tmp (ascii (substr val pos 1))) 64)
+(- tmp 55)
+(- tmp 48)
+)
+(expt base (setq power (1+ power)))
+)
+)
+)
+)
+result
+)
+
+(defun decimalToBase (base val / result tmp result1)
+(setq result "")
+(if (< val base) (setq result1 "0")(setq result1 ""));ff form
+(if (= val 0) (setq result "00" result1 ""))
+(while (> val 0)
+  (setq result (strcat (if (> (setq tmp (rem val base)) 9)
+                           (chr (+ tmp 55))
+                           (itoa tmp)
+                       )
+                 result
+               )
+       val (fix (/ val base))
+  )
+)
+(setq result (strcat result1 result))
+result
+)
+
+
 (defun svgshp1 (fn dir1)
   (progn
     (print fn)
@@ -28,6 +73,7 @@
 
 (defun svgshp (fn dir1)
   (progn
+    (setq crd 1.5)   ;color reduction white background
     (setq erra "")
     (setq pt1 (list 0 0))
     (setq xmax 0)
@@ -45,10 +91,29 @@
 	(if (= (car data1) 'SYMBOL );"symbol line"
 	    (progn
 	      (mapcar 'set '(pd pm) data1)
-	      (setq fo2 (open (strcat dir1 "\\" "S_" fn1 ".svg") "w"))
+
+	      (if (= pm 'AUDIO );audio extra point
+		(setq pm 'POINT)
+	      )
+
+	      (if (= pm 'POINT )
+		(progn
+	          (setq fo2 (open (strcat dir1 "\\" "P_" fn1 ".svg") "w"))
+                  (setq fo (open (strcat dir1 "\\" "P_" fn1 ".shp") "w"))
+		)
+              )
 	      (if (= pm 'LINE )
-	        (setq fo (open (strcat dir1 "\\" "L_" fn1 ".shp") "w"))
-		(setq fo (open (strcat dir1 "\\" "P_" fn1 ".shp") "w"))
+		(progn
+	          (setq fo2 (open (strcat dir1 "\\" "L_" fn1 ".svg") "w"))
+                  (setq fo (open (strcat dir1 "\\" "L_" fn1 ".shp") "w"))
+		)
+              )
+	      (if (= pm 'AREA )
+		(progn
+	          ;(setq fo (open (strcat dir1 "\\" "A_" fn1 ".xpm") "w"))
+                  ;(princ "/* XPM */" fo)(princ "\n" fo)
+                  ;(princ "static char * XFACE[] = {" fo)(princ "\n" fo)
+		)
               )
 	      (setq svgl "")
 	      (setq shpl "")
@@ -65,6 +130,31 @@
               ;)
 	    )
 	  )
+	(if (= (car data1) 'BITMAP );bitmap 40 30
+	    (progn
+	      (setq fo (open (strcat dir1 "\\" "A_" fn1 ".xpm") "w"))
+              (princ "/* XPM */" fo)(princ "\n" fo)
+              (princ "static char * XFACE[] = {" fo)(princ "\n" fo)
+
+	      (mapcar 'set '(pd bx by) data1)
+	      (princ (strcat "\"" (rtos bx 2 0) " " (rtos by 2 0) " 2 1\"") fo)
+	      (princ "," fo)(princ "\n" fo)
+	      (princ (strcat "\"1 c #" color0 "\"") fo)
+	      (princ "," fo)(princ "\n" fo)
+              (princ (strcat "\"0 c #" color2 "\"") fo)
+	      (while (/= (setq data (read-line fp)) "endbitmap")
+		(progn
+                  (setq data (vl-string-trim " " data))
+		  (princ "," fo)(princ "\n" fo)
+		  (princ (strcat "\"" data "\"") fo)
+		)		
+              )
+	      (princ "\n" fo)
+              (princ "};" fo)
+              (princ "\n" fo)
+              (close fo)
+	    )
+	  )
 	(if (= (car data1) 'DASH );"dash 17 15"
 	    (progn
 	      (mapcar 'set '(pd dd dn) data1)
@@ -76,8 +166,24 @@
 	(if (= (car data1) 'COLOR );"color 0xffcc00 0xff"
 	    (progn
 	      (mapcar 'set '(pd color ca) data1)
-	      (setq color1 (substr (vl-princ-to-string color) 3 6))
+	      (setq color0 (substr (vl-princ-to-string color) 3 6))
+	      (setq cr (fix (/ (basetodecimal 16 (substr color0 1 2)) crd)) )
+	      (setq cg (fix (/ (basetodecimal 16 (substr color0 3 2)) crd)) )
+	      (setq cb (fix (/ (basetodecimal 16 (substr color0 5 2)) crd)) )
+	      (setq color1 (strcat (decimaltobase 16 cr) (decimaltobase 16 cg) (decimaltobase 16 cb)))
 	      
+	      (if (= pm 'AREA )
+		(progn
+                  ;(princ (strcat "\"1 c #" color1 "\"") fo)
+		  ;(princ "," fo)(princ "\n" fo)
+		  (setq bkg 3)
+		  (setq cr (fix (/ (basetodecimal 16 (substr color0 1 2)) bkg)) )
+		  (setq cg (fix (/ (basetodecimal 16 (substr color0 3 2)) bkg)) )
+		  (setq cb (fix (/ (basetodecimal 16 (substr color0 5 2)) bkg)) )
+		  (setq color2 (strcat (decimaltobase 16 cr) (decimaltobase 16 cg) (decimaltobase 16 cb)))
+		  ;(princ (strcat "\"0 c #" color2 "\"") fo)
+		)
+	      )
 	      ;(if (= pm 'POINT )
 	       	;(mapcar 'set '(pd color) data1)
 	        ;(mapcar 'set '(pd color colora) data1)
@@ -189,107 +295,116 @@
 	;(princ "\n\r")
       )
     )
-
-    ;SVG export
-    (princ "<svg>" fo2)(princ "\n" fo2)
-    ;(princ "  <metadata id=\"1\">" fo2)(princ "\n" fo2)
-    ;(princ "  </metadata>" fo2)(princ "\n" fo2)
-    (if (= pm 'LINE )
-      (progn
-        (princ "  <g style=\"overflow:hidden;fill:#" fo2)
-	(princ color1 fo2)
-        (princ ";stroke:#" fo2)
-        (princ color1 fo2)
-        (princ ";stroke-width:0\" id=\"2\" >" fo2)(princ "\n" fo2)
-      )
-      (progn
-        (princ "  <g style=\"overflow:hidden;fill:none;stroke:#" fo2)
-        (princ color1 fo2)
-        (princ ";stroke-width:1\" id=\"2\" >" fo2)(princ "\n" fo2)
-      )
-    )
-    (princ "    <g id=\"3\">" fo2)(princ "\n" fo2)
-    (princ "		 <path d=\"" fo2)
-    (princ svgl fo2)
-    (princ "\" id=\"4\" />" fo2)(princ "\n" fo2)
-    (princ "    </g>" fo2)(princ "\n" fo2)
-    (princ "  </g>" fo2)(princ "\n" fo2)
-    (princ "</svg>" fo2)(princ "\n" fo2)
-    (close fo2)
-
-    ;DWG SHP export
     
-    (setq shpl (strcat shpl "0" ))
-    (setq shpn (+ shpn 1))
-    (setq shpl0 (strcat "*1," (rtos shpn 2 0) "," ) )
-    (princ shpl0 fo)
-    (princ pn fo)
-    (princ "\n" fo)
-    (princ shpl fo)
-    (princ "\n" fo)
-    (close fo)
-    (close fp)
-    (if (= pm 'LINE ) (command "_compile" (strcat dir1 "\\" "L_" fn1 ".shp"))
-                      (command "_compile" (strcat dir1 "\\" "P_" fn1 ".shp"))
+    (if (= pm 'AREA )
+      (progn
+        ;(princ "\n" fo)
+        ;(princ "};" fo)
+        ;(princ "\n" fo)
+        ;(close fo)
       )
-    (if (= pm 'LINE )
-      (if (= xmax 0) 
-        (if (> dd 0)
+      (progn
+        ;SVG export
+        (princ "<svg>" fo2)(princ "\n" fo2)
+        ;(princ "  <metadata id=\"1\">" fo2)(princ "\n" fo2)
+        ;(princ "  </metadata>" fo2)(princ "\n" fo2)
+        (if (= pm 'POINT )
           (progn
-            (setq fo (open (strcat dir1 "\\" "TDline.lin") "a"))
-	    (princ "*L_" fo)
-	    (princ pn fo)
-	    (princ "," fo)
-	    (princ pn fo)
-	    (princ "\n" fo)
-	    (princ "A," fo)
-	    (princ dd fo)
-	    (princ ",-" fo)
-	    (princ dn fo)	
-	    (princ "\n" fo)
-	    (close fo)
-          )
-	)
-        (if (= dd 0)
-          (progn
-            (setq fo (open (strcat dir1 "\\" "TDline.lin") "a"))
-	    (princ "*L_" fo)
-	    (princ pn fo)
-	    (princ "," fo)
-	    (princ pn fo)
-	    (princ "\n" fo)
-	    (princ "A,.000" fo)
-	    (princ (rtos xmax 2 0) fo)
-	    (princ ",[" fo)
-	    (princ pn fo)
-	    (princ "," fo)
-	    (princ (strcat dir1 "\\" "L_" fn1) fo)
-	    (princ ",s=1],-" fo)
-	    (princ xmax fo)	
-	    (princ "\n" fo)
-	    (close fo)
+            (princ "  <g style=\"overflow:hidden;fill:none;stroke:#" fo2)
+            (princ color1 fo2)
+            (princ ";stroke-width:1\" id=\"2\" >" fo2)(princ "\n" fo2)
           )
           (progn
-            (setq fo (open (strcat dir1 "\\" "TDline.lin") "a"))
-	    (princ "*L_" fo)
-	    (princ pn fo)
-	    (princ "," fo)
-	    (princ pn fo)
-	    (princ "\n" fo)
-	    (princ "A,.000" fo)
-	    (princ (rtos (+ dd dn) 2 0) fo)
-	    (princ ",[" fo)
-	    (princ pn fo)
-	    (princ "," fo)
-	    (princ (strcat dir1 "\\" "L_" fn1) fo)
-	    (princ ",s=1],-" fo)
-	    (princ (+ dd dn) fo)	
-	    (princ "\n" fo)
-	    (close fo)
-          );progn
-	);if dd
-      );if xmax
-    );if line
+            (princ "  <g style=\"overflow:hidden;fill:#" fo2)
+	    (princ color1 fo2)
+            (princ ";stroke:#" fo2)
+            (princ color1 fo2)
+            (princ ";stroke-width:0\" id=\"2\" >" fo2)(princ "\n" fo2)
+          )
+        )
+        (princ "    <g id=\"3\">" fo2)(princ "\n" fo2)
+        (princ "		 <path d=\"" fo2)
+        (princ svgl fo2)
+        (princ "\" id=\"4\" />" fo2)(princ "\n" fo2)
+        (princ "    </g>" fo2)(princ "\n" fo2)
+        (princ "  </g>" fo2)(princ "\n" fo2)
+        (princ "</svg>" fo2)(princ "\n" fo2)
+        (close fo2)
+
+        ;DWG SHP export
+        (setq shpl (strcat shpl "0" ))
+        (setq shpn (+ shpn 1))
+        (setq shpl0 (strcat "*1," (rtos shpn 2 0) "," ) )
+        (princ shpl0 fo)
+        (princ pn fo)
+        (princ "\n" fo)
+        (princ shpl fo)
+        (princ "\n" fo)
+        (close fo)
+        (close fp)
+        (if (= pm 'LINE ) (command "_compile" (strcat dir1 "\\" "L_" fn1 ".shp"))
+                      (command "_compile" (strcat dir1 "\\" "P_" fn1 ".shp"))
+          )
+        (if (= pm 'LINE )
+          (if (= xmax 0) 
+            (if (> dd 0)
+              (progn
+                (setq fo (open (strcat dir1 "\\" "TDline.lin") "a"))
+	        (princ "*L_" fo)
+        	(princ pn fo)
+	        (princ "," fo)
+	        (princ pn fo)
+	        (princ "\n" fo)
+	        (princ "A," fo)
+	        (princ dd fo)
+	        (princ ",-" fo)
+	        (princ dn fo)	
+	        (princ "\n" fo)
+	        (close fo)
+              )
+	    )
+            (if (= dd 0)
+              (progn
+                (setq fo (open (strcat dir1 "\\" "TDline.lin") "a"))
+	        (princ "*L_" fo)
+	        (princ pn fo)
+	        (princ "," fo)
+	        (princ pn fo)
+	        (princ "\n" fo)
+	        (princ "A,.000" fo)
+	        (princ (rtos xmax 2 0) fo)
+	        (princ ",[" fo)
+	        (princ pn fo)
+	        (princ "," fo)
+	        (princ (strcat dir1 "\\" "L_" fn1) fo)
+	        (princ ",s=1],-" fo)
+	        (princ xmax fo)	
+	        (princ "\n" fo)
+	        (close fo)
+              )
+              (progn
+                (setq fo (open (strcat dir1 "\\" "TDline.lin") "a"))
+	        (princ "*L_" fo)
+	        (princ pn fo)
+	        (princ "," fo)
+	        (princ pn fo)
+	        (princ "\n" fo)
+	        (princ "A,.000" fo)
+	        (princ (rtos (+ dd dn) 2 0) fo)
+	        (princ ",[" fo)
+	        (princ pn fo)
+	        (princ "," fo)
+	        (princ (strcat dir1 "\\" "L_" fn1) fo)
+	        (princ ",s=1],-" fo)
+	        (princ (+ dd dn) fo)	
+	        (princ "\n" fo)
+	        (close fo)
+              );progn
+	    );if dd
+          );if xmax
+        );if line
+      );progn
+    );if area
     
   )
   (close ferr0)
