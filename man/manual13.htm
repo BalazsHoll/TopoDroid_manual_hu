@@ -1,6 +1,6 @@
 <html><body>
 <h3> [13] IMPORT EXPORT</h3>
-Ha végzett, exportálja a felmérést kedvenc formátumában, és készítsen ZIP-archívumot.<br>
+Ha végeztél, exportáld a felmérést kedvenc formátumodba, és készíts ZIP-archívumot.<br>
 Miután letöltötted a zip-et a számítógépedre és kibontottad, kitöltheted a barlangtérképet a megszokott programmal.<br><p>
 
 A zip archívum tartalmazza a felmérés adatainak és az adatbázisban lévő egyéb információk helyreállításának parancsát.
@@ -367,12 +367,13 @@ A Therion <i>scrap</i> nevek a felmérés nevéből, a vázlat nevéből és egy
 Többszörös szintű vázlatokhoz a szintek Therion <i>scrap</i> nevei az elsőn túl egy szintszámot is tartalmaznak, kezdve 1-el.<br>
 A keresztmetszet Therion <i>scrap</i> nevek a felmérés nevéből, egy kétbetűs kódból, 'xx' és egy számból állnak.<br><p>
 
-Ha egy metszetekkel rendelkező vázlatot exportál az <u>export</u> párbeszédpanelen keresztül, akkor a metszetpontok metszet-metszetai is
-exportálódnak.<br><p>
+Ha egy metszetekkel rendelkező vázlatot exportál az <u>export</u> párbeszédpanelen keresztül, akkor a metszetpontok metszet-metszetai is exportálódnak.<br><p>
+
+Ha a vázlat olyan szimbólumokat tartalmaz, amelyek nem szerepelnek a Therion készletben, akkor a th2 fájl használata előtt az "u:" előtagot kell beszúrni a nem támogatott szimbólumnevekhez.<br><p>
 
 Beállítások: <ul style = "margin-top = 0">
 <li>automatikus <u>felmérési-pontpontok</u>. [alapértelmezett: igen].</li>
-<li>adjon <u>részletméréseket</u> a szintekhez ("u: splay" típusú sorokként) [alapértelmezett: nem].</li>
+<li>adjon <u>részletméréseket</u> a szintekhez ("splay" típusú sorokként) [alapértelmezett: nem].</li>
 <li>adjon hozzá egy xtherion parancsot a vázlat <u>XVI</u> képének elolvasásához [alapértelmezett: nem].</li>
 <li><u>skála</u> exportálása. Alapértelmezett 1: 100</li>
 <li><u>pontok távolsága</u> minimális távolság a vonalláncok pontjai között. A köztes pontokat nem exportálják. Alapértelmezés szerint 20 cm</li>
@@ -531,13 +532,13 @@ A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importál
 
 <h4> IMPORT / EXPORT BEÁLLÍTÁSOK</h4>
 <ul style = "margin-top = 0">
-<li><b>PocketTopo</b><i>színtérkép importálása</i>: PocketTopo színek térképe az elemtípusok vázlatához.</li>
+<li><b>PocketTopo</b> <i>színtérkép importálása</i>: PocketTopo színek térképe az elemtípusok vázlatához.</li>
 <li><i>Becsülje az BJ kiterítést</i>: <b>Compass/VisualTopo</b> fájlok importálásakor [igen]</li>
 <li><i>Alapértelmezett adatexportálási formátum</i>: meghatározza az adatok alapértelmezett formátumát. Ezt a fájlt automatikusan létrehozza és beilleszti a ZIP exportba.</li>
 <li><i>Alapértelmezett vázlat exportálási formátum</i>: meghatározza az alapértelmezett formátumot, amelybe a vázlatokat exportálják. Ezeket a fájlokat automatikusan létrehozzák, ha egy vázlat bezárul. Ez némi extra terhet ró a rendszerre, ezért választhatja a vázlatok kifejezett exportálását a felmérés után.</li>
-<li><b>Therion</b><i>térképparancsok</i> a poligon blokk előtt vagy után [után]</li>
-<li><b>Therion</b><i>auto-pontok</i>: automatikusan hozzáadnak poligon pontokat a therion vázlatfájl (ok) hoz [igen]. Ha a vázlatfájlokat használni szeretné, méretarányuk meghatározásához poligon pontokkal kell rendelkezniük. Manuálisan kiválaszthatja, melyik pontot adja hozzá (a vázlatrajz szerkesztésével), vagy hagyhatja, hogy a TopoDroid hozzáadja az pontokat. A program hozzáadja az összes pontt, amely a rajzon belül van (a rajz domború testén belül).</li>
-<li><b>Therion</b><i>u:splays</i> sorokat a Therion-szintekben [igen]</li>
+<li><b>Therion</b> <i>térképparancsok</i> a poligon blokk előtt vagy után [után]</li>
+<li><b>Therion</b> <i>auto-pontok</i>: automatikusan hozzáadnak poligon pontokat a therion vázlatfájl (ok) hoz [igen]. Ha a vázlatfájlokat használni szeretné, méretarányuk meghatározásához poligon pontokkal kell rendelkezniük. Manuálisan kiválaszthatja, melyik pontot adja hozzá (a vázlatrajz szerkesztésével), vagy hagyhatja, hogy a TopoDroid hozzáadja az pontokat. A program hozzáadja az összes pontt, amely a rajzon belül van (a rajz domború testén belül).</li>
+<li><b>Therion</b> <i>splays</i> sorokat a Therion-szintekben [igen]</li>
 <li><b>cSurvey/Compass</b> <i>felmérés előtag</i> a pontokhoz [nem]</li>
 <li><b>Iránytű / TopoRobot / WinKarst / Polygon / VisualTopo</b>
   <ul>
@@ -547,7 +548,7 @@ A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importál
  </ul>
 </li>
 <li><b>Compass swap BJ</b>: Csere B és J az Iránytű exportálásakor.</li>
-<li><b>Survex / Topo</b><i>sorvég</i>: Unix vagy Windows [Unix]</li>
+<li><b>Survex / Topo</b> <i>sorvég</i>: Unix vagy Windows [Unix]</li>
 <li><b>Survex</b> exportálás a <i>elnevezett sünnel</i> VÉG pontokra [nem]</li>
 <li><b>Survex / Therion</b> exportálás <i>BJFL</i> sorokkal [nem]</li>
 <li><b>SVG</b> exportálás <i>rács</i> használatával [nem]</li>
