@@ -31,6 +31,17 @@ Layer Properties – station – Labels: Single Labels, Value=name
 Shot:
 Layer Properties – shot – Symbology: Categorized, Value=type
 
+Extar:
+Layer Properties – extar – Symbology: Categorized, Value=name
+Symbol Selector – Marker, Raster Image Marker – 
+  Edit file name expression, Experssion String Builder:
+concat('..path../', "file")
+Symbol Selector – Marker, Raster Image Marker – Width=20
+Layer Properties – ep – Actions:
+Open URL: Edit Action Type=Open, Canvas, Action Text= file:///E:/..path../[%file%]
+
 Save style settings:
 Layer Properties – xxx – Symbology – Style – Save style…
 This setting file – yyy.qml – constains a full path, but editable.
+
+
