@@ -3,12 +3,12 @@
 
 <h4>MÉRÉS SZERKESZTÉS</h4>
 
-Ez a párbeszédablak úgy nyílik meg, hogy megérint egy adatsort a felmérés <u>adatablakában</u>.<br><p>
+Ez a párbeszédablak úgy nyílik meg, hogy megérintesz egy adatsort a felmérés <u>adatablakában</u>.<br><p>
 
 Az ablakban megjelenik:
 <ul>
-<li><b>hossz, irány, lejtés</b>. Szerkeszthető kézzel beírt méréseknél; nem szerkeszthető letöltött adatoknál</li>
-<li> a gyorsulás, a mágneses tér és a mágneses inklináció különbségei a vonatkozó átlagértékektől. Csak DistoX2 méréseknél</li>
+<li><b>hossz, irány, lejtés</b>. Szerkeszthető a kézzel beírt méréseknél; nem szerkeszthető a letöltött adatoknál</li>
+<li> a gyorsulás, a mágneses tér és a mágneses inklináció különbségei a vonatkozó átlagértékektől. Csak DistoX2 méréseknél.</li>
 <li><b>pontok</b></li>
 <li><b>balra nyíl</b>: az előző poligon betöltése</li>
 <li><b>visszamérés</b>: pontok cseréje</li>
@@ -27,12 +27,12 @@ Gombok:
 <li><img src = "btn_backleg.png"> a mérés egy visszamérés.</li>
 <li><img src = "btn_renumber.png"> újraszámozza a felvételeket erről a szakaszról az aktuális pont elnevezési irányelvnek megfelelően. Mindkét pontot meg kell adni</li>
 <li><img src = "btn_splay_group.png"> alkalmazza az pontváltást a mérés csoportjának összes oszlopára. Csak azokra a sünökre vonatkozik, amelyek ugyanazzal az ponttal rendelkeznek, mint a poligon.
-Csak a KEZDŐ pontot kellett megadni. (A tömlők csoportja a két láb közötti osztások halmaza)</li>
+Csak a KEZDŐ pontot kellett megadni. (A sünök csoportja a két poligon mérés közötti sünök halmaza)</li>
 <li><img src = "btn_plan_profile.png"> elrejti a sünöket az alaprajzban, az oldalnézetben, vagy mindkettőben (csak a sünöket)</li>
 <li><img src = "btn_xsplay.png"> törölje (vagy állítsa be) a sün osztályt, és esetleg az előző sün-eket.</li>
 <li><b>OK</b>: mentse a módosításokat és zárja be a párbeszédpanelt</li>
 <li><b>Mentés</b>: a módosítások mentése a párbeszédpanel bezárása nélkül</li>
-<li><b>Tovább</b>: váltson a másodlagos <a href="page_shot_edit2.htm"> szerkesztési párbeszédpanelre</a></li>
+<li><b>Több</b>: váltson a másodlagos <a href="page_shot_edit2.htm"> szerkesztési párbeszédpanelre</a></li>
 <li><b>Mégse</b>: mentés nélkül zárja be a párbeszédpanelt</li>
 </ul>
 <br><p>
@@ -41,7 +41,7 @@ A beállított zászlók, a "duplikátum", a "felület" és a "megjegyzések" k�
 A zászlóval felvett mérések nem számítanak bele a felmérés statisztikájába.
 A mérés exportálását a mérés zászlója is befolyásolja, akár zászlóval, ha a formátum támogatja, akár megjegyzésként.<br><p>
 
-Figyelmeztetés kap, ha egy poligon-mérés szerkesztésekor a hossz negyedénél vagy a szögek 15&deg;-nál többel külömböznek azonos pontok közötti más poligonoktól.<br><p>
+Figyelmeztetés kapsz, ha egy poligon-mérés szerkesztésekor a hossz negyedénél vagy a szögek 15&deg;-nál többel külömböznek azonos pontok közötti más poligonoktól.<br><p>
 
 <b>Pont kivág-beilleszt</b><br>
 Az pontnevek „kivághatók”, „másolhatók” és „beilleszthetők” az alkalmazásban, minden olyan párbeszédablakban, ahol van pontbejegyzés
@@ -50,8 +50,8 @@ mező.<br><p>
 Az pontbeviteli mező hosszú megérintésével megnyílik a legördülő menü a három lehetőséggel
 <ul>
 <li> vágás</li>
-<li> másolat</li>
-<li> beillesztés</li>
+<li> másol</li>
+<li> beilleszt</li>
 </ul>
 
 <div style = "font-size = 90%">
@@ -64,16 +64,16 @@ A sün osztályok engedélyezése "egyedi beállítással" lehetséges. Négy os
 <li><i>függőleges</i>, profil-nézet, osztások. Ibolya</li>
 </ul>
 
-A <i>sün osztály</i> gomb végigvezetheti ezt a négy osztályt.
+A <i>sün osztály</i> gomb végiglépteti ezt a négy osztályt.
 Az adatok mentésekor a mérés a kiválasztott osztályra van állítva.
 Ha bejelöli az "minden sün" gombot, akkor az osztály az összes előző összefüggő "normális" sünre is beállítódik.<br><p>
 
 A sün záradékok a "speciális műveletek" gombbal is beállíthatók.
-A multiselectionben kiválaszthatja azokat a sablonokat, amelyek nem szomszédosak, és mindegyikhez besorolási osztályt rendelhet.<br><p>
+A többes kiválasztásban bejelölheted azokat a sablonokat, amelyek nem szomszédosak, és mindegyikhez besorolási osztályt rendelhetsz.<br><p>
 
-Ha következetes méréseket készít, akkor a sün osztályok beállíthatók a poligon mérés szerkesztésével és a
+Ha következetes méréseket készítesz, akkor a sün osztályok beállíthatók a poligon mérés szerkesztésével és a
 sün csoport gombbal.
-Először meg kell mérnie a kereszmetszet sablonokat, amelyek +90&deg;-al kezdődnek és körbe mennek.
+Először meg kell mérni a kereszmetszet sablonokat, amelyek +90&deg;-al kezdődnek és körbe mennek.
 Ezután vegye a H-sünöket. Végül a függőleges síkban lévő oszlopokat vesszük újra +90&deg;-al kezdve.<br><p> 
 </div>
 
