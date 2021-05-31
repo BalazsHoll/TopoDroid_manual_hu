@@ -2,15 +2,15 @@
 
 <h4>PONTELNEVEZÉSI HÁZIREND</h4>
 
-Adatok letöltésekor a TopoDroid automatikusan hozzájuk rendelheti az pontneveket. Az ismételt mérés poligonmérésnek minősül, a többi pedig részletpont (sün). Ha ragaszkodik a méréseket végző konvencióhoz, a TopoDroid automatikus pontnevezése nagyon hasznos lehet. A TopoDroid számos konvenciót támogat az pontok automatikus hozzárendeléséhez a felvételekhez. A beállítások segítségével kiválaszthatja azt, amely megfelel a szokásainak.
+Adatok letöltésekor a TopoDroid automatikusan hozzájuk rendelheti az pontneveket. Az ismételt mérés poligonmérésnek minősül, a többi pedig részletpont (sün). Ha ragaszkodsz a mérési konvencióhoz, a TopoDroid automatikus pontnevezése nagyon hasznos lehet. A TopoDroid számos konvenciót támogat az pontok automatikus hozzárendeléséhez a felvételekhez. A beállítások segítségével kiválaszthatod azt, amely megfelel a szokásaidnak.
 <ol>
-<li><b>sün + előremérés</b>. A KEZDŐ ponton: először részletpont méréseket készít, majd előremérést (poligon) végez. Ez az alapértelmezett konvenció.</li>
+<li><b>sün + előremérés</b>. A KEZDŐ ponton: először részletpont méréseket készíted, majd előremérést (poligon) végzed. Ez az alapértelmezett konvenció.</li>
 <li><b>sün + hátramérés</b>. A CÉL ponton: először részletpont méréseket készít, majd hátraméréseket készít</li>
 <li><b>visszaméréses ellenőrzés</b></li>
 <li><b>állvány</b> [H]</li>
 <li><b>mágneses rendellenesség</b> kompenzáció [S]</li>
-<li><b>előretekintés + feltörések</b>. A FROM ponton: először az elülső poligonméréseket készíted, majd a részletpont méréseket</li>
-<li><b>visszamérés + beillesztések</b>. A TO ponton: először hátrafelé poligonméréseket készít, majd a részletpont méréseket</li>
+<li><b>előremérés + sün</b>. A KEZDŐ ponton: először az előre poligonméréseket készíted, majd a részletpont méréseket</li>
+<li><b>visszamérés + sün</b>. A CÉL ponton: először hátrafelé poligonméréseket készíted, majd a részletpont méréseket</li>
 <li><b>TopoRobot</b> [T]</li>
 </ol><br><p>
 
@@ -39,7 +39,7 @@ A visszaméréseket "ismétlődő mérés" jelöléssel látja el.<br><p>
 <b>Állványra</b> vonatkozó irányelvek (ugrópontos mérés)<br>
 Az "1" ponton segédpont méréseket készít, majd poligonméréseket indít a "2" pontra. Ezután átmegy a "3" pontra, poligon méréseket készít a "2" pontra, majd segédpont méréseket, majd poligon méréseket a "4" pontra. Ugrás az "5" pontra és így tovább.<br><p>
 
-<b>Mágneses rendellenességek kompenzálása</b> [Tester szint]<br>
+<b>Mágneses rendellenességek kompenzálása</b> [Tesztelő szint]<br>
 A mágneses anomália kompenzációját az egyes pontokon becsüljük meg. A "helyi" mágneses deklináció a pontig eljutó előremérés és a hátramérés irányának összehasonlításával képződik. Ezután a ponton az összes mérés irányát korrigálják a "helyi" deklinációval. Átfogó deklinációs érték megmarad, mert az első pont deklinációja nem határozható meg. Továbbá a felmérés irány szögei viszonylagossá válnak, mint egy kereszhuzagolásnál, ezért a szöghibák kompenzálás helyett összeadódnak.<br>
 A mágneses anomália kompenzálásához visszaméréses felvételek készítése szükséges. A mágneses rendellenességek kompenzálása esetén azonban annak ellenőrzése, hogy a mérés hátranéz-e, nem veszi figyelembe az azimutot. A mágneses rendellenességek kompenzációja az adatfeldolgozás során történik (a vázlatoknál).<br><p>
 
@@ -47,13 +47,13 @@ A mágneses anomália kompenzálásához visszaméréses felvételek készítés
 A "TopoRobot" házirend ugyanolyan, mint az első, de a pontnevek követik a TopoRobot konvenciót.<br><p>
 </div>
 
-<b>Állomások elnevezésére vonatkozó irányelvek és tevékenységi szintek</b><br>
+<b>Pont elnevezésére vonatkozó irányelvek és tevékenységi szintek</b><br>
 Bizonyos pontelnevezési házirendekhez magas aktivitási szint szükséges:
 <ul>
-<li> Az "állvány" "emelt szintű" szintet igényel</li>
+<li> Az "állvány" "haladó szintű" beállítást igényel</li>
 <li> A "mágneses rendellenesség" "szakértői" szintet igényel</li>
 <li> A "TopoRobot" "tesztelő" szintet igényel</li>
 </ul><br>
-Ha csökkenti az aktivitási szintet miközben ezek egyike aktív, a pont házirendjét automatikusan az alapértelmezett házirendre állítja (sün + előremérés).
+Ha csökkented az aktivitási szintet miközben ezek egyike aktív, a pont házirendjét automatikusan az alapértelmezett házirendre állítja (sün + előremérés).
 A házirend automatikusan visszaáll, ha a tevékenység szintjét a kívánt értékre vagy magasabbra emelik.<br><p>
 </body></html>
