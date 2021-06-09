@@ -333,6 +333,7 @@ A TopoDroid a felmérési vázlatokat a következő formátumokba exportálja:
 <li><a href="#cave3d">Cave3D</a></li>
 <li><a href="#dxf2">DXF</a></li>
 <li><a href="#png">PNG image</a></li>
+<li><a href="#pdf">PDF file</a></li>
 <li><a href="#shp2">shapefile</a></li>
 <li><a href="#svg">SVG</a></li>
 </ul>
@@ -448,7 +449,7 @@ A PNG formátumú képfájl csak a vázlatok exportálásához használható.<br
 Beállítások: <ul style="margin-top=0">
 <li><u>képfelbontás</u> (1 azt jelenti, hogy 1 m = 40 képpont). A th2 exporthoz illeszkedő PNG felbontás 5,0.
 Ha a rendszer nem rendelkezik elegendő memóriával a kép elkészítéséhez a beállított felbontás mellett, a TopoDroid kisebb felbontást használ, amíg az export nem sikerül (vagy olyan kicsi lesz, hogy a program feladja a próbálkozást).
-<li><u>háttérszín</u>: három szám 0 (fekete) és 255 (telített) között a vörös, a zöld és a kék esetében.</li>
+<li><u>háttérszín</u>: hogy a háttérszínt átmenetileg fehérre állítsuk-e.</li>
 <li><u>rács</u>: hozzáadja vagy ne</li>
 <li><u>sünök</u>: hozzáadja vagy ne</li>
 <li><u>poligon pontok</u>: hozzáadja vagy ne</li>
@@ -456,6 +457,15 @@ Ha a rendszer nem rendelkezik elegendő memóriával a kép elkészítéséhez a
 
 Végül a "szint" beállítás hatással van a PNG-exportra: szintek használata esetén az export csak látható elemeket tartalmaz.
 <br><p>
+
+<b id="pdf">PDF</b> (.pdf)<br>
+A vázlat képernyő exportálható PDF fájlként.<br>
+A fájlnak egyetlen A2-e oldala van, ami a képernyőn megjelenő elemeket tartalmazza.<br><p>
+
+Beállítások:<ul style="margin-top=0">
+<li><u>háttérszín</u>: hogy a háttérszínt átmenetileg fehérre állítsuk-e.</li>
+<li><u>sünök</u>: belekerüljön vagy nem [ne használja]</li>
+</ul><p>
 
 <b id="shp2">Shapefile</b> (.shp)<br>
 A vázlatok shape fájlként exportálhatók pontokkal, mérésekkel és vonalakkal.
