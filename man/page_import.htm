@@ -4,39 +4,11 @@
 
 Ez a párbeszédpanel az <u>főablak</u> <i>Import</i> gombjával nyitható meg.<br><p>
 
-Megjeleníti az alkalmazásban importálható fájlok listáját.<br><p>
-
-A TopoDroid a következő formátumokban tudja importálni a felmérési fájlokat:
-<ul>
-<li><i>Therion</i>: ".th" adatfájlok, egyszerű adatformátummal ("normál a hosszúságig iránytű clino" és opcionálisan BJFL).
-A Therion törmeléket nem importálják.</li>
-<li><i>Compass</i> ".dat" fájlok (nincsenek teljesen tesztelve)</li>
-<li><i>Survex</i> ".svx" fájlok "normál", nem átlapolt adatformátummal (nincs teljesen tesztelve)</li>
-<li><i>VisualTopo</i> ".tro" fájlok (nincsenek teljesen tesztelve)</li>
-<li><i>PocketTopo</i> ".top" fájlok. Az adatok és a rajzok importálva vannak (nincsenek teljesen tesztelve)</li>
-<li><i>CaveSniper</i> ".csn" szövegfájlok (nem teszteltek).</li>
-<li> TopoDroid ZIP archívumok. Ezek speciális zip fájlok, amelyek tartalmazzák az adatbázis újratöltéséhez szükséges információkat, a rajzokat (".tdr" fájlokat), a kommentár fájlokat és a média fájlokat (fotó / hang).
-</ul><br>
-
-A zip archívumokat a <u>zip</u> könyvtárban keresik (a TopoDroid menti őket).
-A felmérési fájlokat az <u>import</u> könyvtárban keresik.
-Ezért át kell másolnia az importálni kívánt felmérési fájlt ebbe a könyvtárba.<br><p>
+Megjeleníti a zip könyvtárban található tömörített fájlok listáját.<br><p>
 
 Ha az importálandó fájl felmérési neve már létezik az adatbázisban, akkor a fájlt nem importálják.<br><p>
 
-<b>Therion importálás</b><br>
-Csak azok a Therion felmérési fájlok importálhatók, amelyek adatai "normál" adatmódban vannak.<br>
-A TopoDroid nem importálja a Therion szinteket.<br><p>
-
-<b>PocketTopo importálás</b><br>
-A TopoDroid mind a felmérés adatait, mind a vázlatokat importálja.
-Ez az import a PocketTopo színeket hozzárendeli a TopoDroid rajzeszközökhöz (pontok és vonalak).
-A leképezés egy beállítással módosítható.<br><p>
-
-<b>Compass importálása</b><br>
-A TopoDroid átalakítja az importált Compass felmérést a <i>normál</i> adatamódról <i>búvár</i> datamódra [T], ha a relatív beállítás engedélyezve van [G].<br><p>
-
-<b>N.B.</b>
+<b>Megjegyzés</b>
 Az importálás meghiúsulhat (és összeomolhat az alkalmazással) az adatbázis hibája miatt, amelyet a TopoDroid nem tud elfogadni.
 Ebben az esetben törölje a részben importált felmérést, és próbálja meg újra importálni.<br><p>
 

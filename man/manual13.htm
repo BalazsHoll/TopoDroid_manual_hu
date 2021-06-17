@@ -23,7 +23,12 @@ Ha az alapértelmezett vázlatexportálási formátum be van állítva, akkor a 
 A cSurvey esetében az x metszetok PNG-képekként kerülnek mentésre.<br><p>
 
 <h4> FELMÉRÉS ADAT IMPORTÁLÁSA</h4>
-A TopoDroid a következő formátumokból importálja a felmérés adatait:
+A TopoDroid felmérési adatokat tud importálni a TopoDroid zip archívumokból vagy külső fájlokból.<br>
+A ZIP-importálás kiválasztása a <i>Főablak</i> "Importálás" gombjának megérintésével történik.<br>
+A külső fájlon történő importálást az "Importálás" gomb hosszú megérintésével kezdeményezzük.
+A felmérés külső fájljaihoz a rendszer tartalomszolgáltatóján keresztül férhet hozzá.<br><p>
+
+A külső fájlok következő formátumai támogatottak:
 <ul>
 <li>Compass</li>
 <li>Survex</li>
@@ -31,6 +36,7 @@ A TopoDroid a következő formátumokból importálja a felmérés adatait:
 <li>VisualTopo</li>
 <li>CaveSniper</li>
 <li>PocketTopo, vázlatokkal együtt</li>
+<li>TopoDroid zip archívum</li>
 </ul>
 
 A fájlimportálás sikertelen, ha az azonos nevű felmérés már szerepel a TopoDroidban.<br><p>
@@ -39,6 +45,21 @@ A zip importálása sikertelen, ha a zip adatbázis-verziója túl régi, vagy �
 
 BJFL értékű fájlformátumokból történő importáláskor ezeket keresztmetszet sünökké alakítják (zöld színnel jelennek meg).<br><p>
 
+<b>Therion importálás</b><br>
+Csak azok a Therion felmérési fájlok importálhatók, amelyek adatai "normál" adatmódban vannak.<br>
+A TopoDroid nem importálja a Therion szinteket.<br><p>
+
+<b>PocketTopo importálás</b><br>
+A TopoDroid mind a felmérés adatait, mind a vázlatokat importálja.
+Ez az import a PocketTopo színeket hozzárendeli a TopoDroid rajzeszközökhöz (pontok és vonalak).
+A leképezés egy beállítással módosítható.<br><p>
+
+<b>Compass importálása</b><br>
+A TopoDroid átalakítja az importált Compass felmérést a <i>normál</i> adatamódról <i>búvár</i> datamódra [T], ha a relatív beállítás engedélyezve van [G].<br><p>
+
+<b>Megjegyzés:</b>
+Az importálás meghiúsulhat (és összeomolhat az alkalmazással) az adatbázis hibája miatt, amelyet a TopoDroid nem tud elfogadni.
+Ebben az esetben törölje a részben importált felmérést, és próbálja meg újra importálni.<br><p>
 
 <h4> FELMÉRÉSI ADAT EXPORTÁLÁS</h4>
 A TopoDroid a felmérés adatait a következő barlang-program formátumokba exportálja:
