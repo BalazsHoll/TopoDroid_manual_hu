@@ -2,14 +2,36 @@
 
 <h4>FELMÉRÉS IMPORTÁLÁS</h4>
 
-Ez a párbeszédpanel az <u>főablak</u> <i>Import</i> gombjával nyitható meg.<br><p>
 
-Megjeleníti a zip könyvtárban található tömörített fájlok listáját.<br><p>
+Ez a párbeszédpanel a <u>főablak</u> <i>Import</i> gombjának megérintésével nyílik meg.<br><p>
 
-Ha az importálandó fájl felmérési neve már létezik az adatbázisban, akkor a fájlt nem importálják.<br><p>
+Megjeleníti a zip archívumok listáját az alkalmazás "zip" mappájában.<br><p>
+
+A felmérés importálásához érintse meg a zip nevét.
+Ha a felmérés neve már létezik az adatbázisban, a felmérést nem importáljuk.<br><p>
 
 <b>Megjegyzés</b>
 Az importálás meghiúsulhat (és összeomolhat az alkalmazással) az adatbázis hibája miatt, amelyet a TopoDroid nem tud elfogadni.
 Ebben az esetben törölje a részben importált felmérést, és próbálja meg újra importálni.<br><p>
 
+Ha hosszan érint a <u>főablak</u> <i>Import</i> gombjára, importálhatja a felmérési adatokat
+a következő formátumú fájlból: dat (Compass), svx (Survex), th (Therion), tro és trox (VisualTopo),
+csn (CaveSniper), és a top (PocketTopo). Ezenkívül importálhat egy felmérést a TopoDroid ZIP 
+archívumból. <br>
+Az importálandó fájlt a rendszer tartalomszolgáltatójával választja ki.<br><p>
+
+
+<b>Compass (dat) importálási lehetőségek</b>
+<ul>
+<li><i>LRUD</i> ha engedélyezett akkor az LRUD értékeket importálja és átváltja sün mérésekké</li>
+<li><i>Poligon az első</i> ha engedélyezett LRUD sünt-t helyeznek a poligon után</li>
+<li><i>Búvár adatmód</i> engedélyezi az merülési adat módot az Compass fájlban [T]</li>
+</ul><br><p>
+
+
+<b>VisualTopo (tro, trox) importálási lehetőségek</b>
+<ul>
+<li><i>LRUD</i> ha engedélyezett akkor az LRUD értékeket importálja és átváltja sün mérésekké</li>
+<li><i>Poligon az első</i> ha engedélyezett LRUD sünt-t helyeznek a poligon után</li>
+</ul>
 </body></html>
