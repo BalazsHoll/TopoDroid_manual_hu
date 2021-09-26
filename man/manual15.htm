@@ -5,10 +5,10 @@ A TopoDroid 3D megjelenítőt barlangban való használatra tervezték, és nem 
 Más fájlformátumokat is betölthet: Therion (th, thconfig), Loch, Compass (dat, mak) és VisualTopo.<br><p>
 
 A 3D modell megnyitható az <i>Adatablak</i> menüjéből, vagy a
-<i>Felmérési információs ablak</i> gombjával.<br>
+ <i>Felmérési információs ablak</i> gombjával.<br>
 A barlangprojekt 3D-s modellje a <i>Projektablak</i> gombjával nyitható meg.
 <br>
-A modellt egy referenciarács (kék észak, zöld kelet) vagy tengelykereszt (piros felfelé) mutatja.
+A modellt egy referenciaráccsal (kék észak, zöld kelet) vagy tengelykereszt (piros felfelé) mutatja.
 <br><p>
 
 
@@ -30,7 +30,7 @@ A gombok ikonjai a program állapotához vannak igazítva.
 Néhány gombnak hosszú érintés funkciója van:
 <ul>
 <li><i>Nézet</i>: Perspektíva fókuszparaméter beállítása.</li>
-<li><i>Poligon pontok</i>: A pontválasztás be-/kikapcsolása.</li>
+<li><i>Poligon pontok</i>: A pontválasztás be-kikapcsolása.</li>
 <li><i>Sünök</i>: Poligon kézi behelyezése.</li>
 <li><i>Szín</i>: Válaszd ki a megjelenítendő vagy elrejtendő felméréseket.</li>
 <li><i>Keret</i>: Válaszd ki a felületi/ismétlődő/megjegyzett poligonok megjelenítését.</li>
@@ -56,16 +56,16 @@ Néhány gombnak hosszú érintés funkciója van:
 <h4>OPCIÓK</h4>
 <ul style = "margin-top: 0">
 <li><i>Alap könyvtár</i>: A felmérési fájlokat tartalmazó mappa</li>
-<li><i>Kiválasztási sugár</i>: az állomások kiválasztási sugara [1.0]</li>
-<li><i>Állomás párbeszédpanel</i>: megnyitja -e a kiválasztott állomás párbeszédpaneljét [n].</li>
-<li><i>Állomáspontok</i>: az állomáspontok megjelenítése mindig (zöld) [n].</li>
+<li><i>Kiválasztási sugár</i>: az pontok kiválasztási sugara [1.0]</li>
+<li><i>pont párbeszédpanel</i>: megnyitja-e a kiválasztott pont párbeszédpaneljét [n].</li>
+<li><i>pontpontok</i>: az pontpontok megjelenítése mindig (zöld) [n].</li>
 <li><i>Felső rács</i>: A rács megjelenítése felül [n].</li>
 <li><i>Rács kiterjedése</i>: a felmérés körüli rács kiterjedése [10 cella].</li>
-<li><i>A horizont alatti nézet</i>: engedélyezi -e a horizont alatti nézőpontokat [n].</li>
+<li><i>A horizont alatti nézet</i>: engedélyezi-e a horizont alatti nézőpontokat [n].</li>
 <li><i>DEM puffer</i>: A felszíni modell kiterjedése a felmérés körül a felületi modell DEM fájlból történő betöltésekor.</li>
 <li><i>DEM maximális méret</i>: a felszíni DEM maximális mérete minden irányban [400 cella].</li>
-<li><i>DEM csökkentés</i>: hogyan csökkenthető a DEM, ha túl nagy (alminta vagy klip) [részminta].</li>
-<li><i>Összes ömlesztés</i>: Az összes kiömlést használja -e a falakhoz</li>
+<li><i>DEM csökkentés</i>: hogyan csökkenthető a DEM, ha túl nagy (ritkítás vagy vágás) [ritkítás].</li>
+<li><i>Összes sün</i>: Az összes sünt használja-e a falakhoz</li>
 <li><i>Osztott háromszögek</i>: Fel kell-e osztani a metsző fal háromszögeket</li>
 <li><i>Pontok randomizálása</i>: Hozzá ad egy kis véletlenszerű vektort a sün-höz</li>
 <li><i>Feszített falak</i>: A fal pontjait kis mértékben eltolja a poligon mentén</li>
@@ -76,64 +76,64 @@ Néhány gombnak hosszú érintés funkciója van:
 <b>CÍM SOR</b><br>
 A címsor a megtekintési paramétereket mutatja:
 <ul>
-<li><i>C</i>és<i>A</i> a nézőpont dőlése és iránya.</li>
-<li><i>S</i>a zoom tényező.</li>
-<li><i>T</i>a modell X-Y eltolása.</li>
-<li><i>L</i>a fény dőlése és iránya.</li>
+<li><i>C</i> és <i>A</i> a nézőpont dőlése és iránya.</li>
+<li><i>S</i> a zoom tényező.</li>
+<li><i>T</i> a modell X-Y eltolása.</li>
+<li><i>L</i> a fény dőlése és iránya.</li>
 </ul>
 <br><p>
 
 <b>EXPORT</b><br>
 A modell exportálható DXF, KML, STL vagy STL bináris, CGAL, LAS bináris és Shape fájlba.
-Lehetőségek van a sünök, a falak, a pontok és a felszín exportálására.<br>
+ Lehetőségek van a sünök, a falak, a pontok és a felszín exportálására.<br>
 A modell menthető egy szöveges fájlba is.
 <br><p>
 
 <b>RÁCS/KERET</b><br>
-A rács/keretvonalak zöldek (nyugat-kelet), kékek (dél-észak) és pirosak (függőlegesek).<br>
-Perspektíva szerint a rács zöldesnek tűnik északra/délre, mert a zöld vonalak közelebb állnak egymáshoz.
-És nyugatra/keletre kékesnek tűnik.
-A kardinális irányok megkülönböztetése érdekében a rács enyhén vöröses lesz a nyugati-déli sarokban.<br>
-Alapértelmezés szerint a rács a felmérés alatt van, de beállítható felette (opcionálisan).
+A rács/keretvonalak zöldek (nyugat-kelet), kékek (dél-észak) és piros (függőleges).<br>
+Perspektíva szerint a rács zöldesnek tűnik északra/délre, mert a zöld vonalak közelebb állnak egymáshoz,
+ nyugatra/keletre kékesnek tűnik.
+ A kardinális irányok megkülönböztetése érdekében a rács enyhén vöröses lesz a nyugati-déli sarokban.<br>
+Alapértelmezés szerint a rács a felmérés alatt van, de beállítható felette is (opcionálisan).
 <br><p>
 
 <b>FELMÉRÉS</b><br>
 A felmérési adatok elrejthetők, vonalak vagy végpontok formájában jeleníthetők meg.<br>
 A felmérő poligonok színezetlenek vagy színezettek lehetnek felmérés szerint, mélység szerint (vöröstől a kékig) vagy
-a mélység a felszín alatt (kéktől a vörösig).<br>
+ a felszín alatt mélység szerint (kéktől a vörösig).<br>
 
 Amikor színtelen a felmérési poligonok fehérek, a felszíni részek zöldek, az ismétlődő poligonok narancssárgák,
-és a megjegyzett poligonok világoskék színűek.<br>
+ és a megjegyzett poligonok világoskék színűek.<br>
 
-A "felszíni", "duplikált" és "kommentált" poligonok be- és kikapcsolhatók a "poligonok" párbeszédpanelen
-megnyitásához nyomja meg hosszan a negyedik gombot.
+A "felszíni", "duplikált" és "kommentelt" poligonok be- és kikapcsolhatók a "poligonok" párbeszédpanelen.
+ Megnyitásához nyomja meg hosszan a negyedik gombot.
 <br><p>
 
 <b>FALAK</b><br>
 A falmodell nem kerül automatikusan kiszámításra a fájl megnyitásakor, de létrejön ha
-a felhasználó a "fal" menüben kéri.
-Három modell létezik:<i>egyszerű héj</i>,<i>pseudo conevx-héj</i>és<i>powercrust</i>.
-Az első kettő akkor alkalmas, ha a segédpontok nem sűrűk. A harmadik a sűrű sünökhöz való.<br>
+ a felhasználó a "fal" menüben kéri.
+ Három modell létezik:<i>egyszerű héj</i>, <i>pseudo conevx-héj</i> és <i>powercrust</i>.
+ Az első kettő akkor alkalmas, ha a segédpontok nem sűrűk. A harmadik a sűrű sünökhöz való.<br>
 
 A falmodell a sünök számától és minőségétől függ.
-Rossz sünök rossz modellt eredményeznek.<br>
+ Rossz sünök rossz modellt eredményeznek.<br>
 
 A számítás a háttérben történik.
-Ha kész, a fal megjeleníthető a "fal" gombbal.<br><p>
+ Ha kész, a fal megjeleníthető a "fal" gombbal.<br><p>
 
 A Powercrust modell tartalmazza a falak vízszintes síkra (felülnézet) és függőleges függönyre vetítését is
-a felmérés mentén (profilnézet). Megjelenítésük a "falak" menüben engedélyezett.
+ a felmérés mentén (profilnézet). Megjelenítésük a "falak" menüben engedélyezett.
 <br><p>
 
 <b>FELÜLET</b><br>
 Ha a (Therion vagy Loch) modell felületi adatokat tartalmaz (Digital Elevation Model), akkor a felület szürke vagy
-a textúrázott (ha rendelkezésre áll).<br>
+ a textúrázott (ha rendelkezésre áll).<br>
 A felület párbeszédpanelen van egy gomb, amellyel betölthet egy DEM fájlt. A támogatott formátumok az ascii (.asc vagy .ascii) és a Therion rács (.grid).
-A DEM fájlnak csak a megfelelő része van betöltve.<br>
+ A DEM fájlnak csak a megfelelő része van betöltve.<br>
 A felmérésnek és a DEM adatfájlnak ugyanabban a kartográfiai koordináta-rendszerben kell lennie.
-Ha a felmérés rögzített pont koordinátáit másik referenciarendszerré alakították át,
-az átalakított koordinátákat használják a modell hivatkozásához.
-ha csak long-lat (WGS84) koordinátákkal rendelkezik, akkor a WGS-84 rendszert használja.<br><p>
+ Ha a felmérés rögzített pont koordinátáit másik referenciarendszerré alakították át,
+ az átalakított koordinátákat használják a modell hivatkozásához.
+ ha csak long-lat (WGS84) koordinátákkal rendelkezik, akkor a WGS-84 rendszert használja.<br><p>
 
 A felület átlátszósága állítható. Ha teljesen átlátszatlan, akkor mások mögött a felület egyes részei el vannak rejtve.<br>
 A felmérési középvonal vetülete a felületen megjeleníthető (kék).<br>
@@ -141,55 +141,54 @@ Ha a modell rendelkezik felülettel, akkor a felület alatti mélység alapján 
 <br><p>
 
 Ha a modell DEM felülettel rendelkezik, akkor a felületi textúra fájlból tölthető be.
-A támogatott fájlformátumok a GeoTiff és az OSM.<br>
+ A támogatott fájlformátumok a GeoTiff és az OSM.<br>
 A GeoTiff fájlnak ugyanabban a térképészeti koordináta -referenciarendszerben kell lennie.
-[Technikai megjegyzés: ha a fájl 24 bites, nem tömörített, vagy színtérképet használ, a Cave3D csak a részt próbálja beolvasni
-amely lefedi a DEM területet, különben az egész képet
-beolvasásra kerül, és a részterület kivonásra kerül.]<br>
+ [Technikai megjegyzés: ha a fájl 24 bites, nem tömörített, vagy színtérképet használ, a Cave3D csak azt a részt próbálja beolvasni
+ amely lefedi a DEM területet, különben az egész kép
+ beolvasásra kerül, és a részterület kivonásra kerül.]<br>
 Az OSM textúra (WGS84) csak a TopoDroidból megnyitott felmérésekhez és barlangprojektekhez tölthető be.
-A textúra az OSM vonalakat jeleníti meg.
+ A textúra az OSM vonalakat jeleníti meg.
 <br><p>
 
 Lehetőség van egy pont (sárga pont) vizualizálására a felületen, ha beírja a keleti/északi koordinátákat a modell CRS -jébe.<br>
 
 A TopoDroid alkalmazásból betöltött modellek GPS -pontokat is kaphatnak.
-Ha az alkalmazás jogosult a "Helymeghatározás" szolgáltatás használatára, és ez a szolgáltatás engedélyezve van, akkor lehetséges
-felszíni pontot kaphat az Android GPS segítségével.<br>
-engedélyt kapott a használatára.<br>
+ Ha az alkalmazás jogosult a "Helymeghatározás" szolgáltatás használatára, és ez a szolgáltatás be van kapcsolva van, akkor lehetséges
+ felszíni pontot megadása az Android GPS segítségével.<br>
 Az alkalmazás megjeleníti az utolsó 10 pontot.
 <br><p>
 
 <b>PONT AKCIÓK</b><br>
-Alapértelmezés szerint az állomások megjelenítésekor az állomáspontra vagy a névre koppintva választhatók ki.<br>
-Az állomásválasztás ki- és bekapcsolható az "állomás" gomb hosszú megnyomásával. Amikor az állomások kiválaszthatók
-a gombon piros pont látható.<br><p>
+Alapértelmezés szerint a pontok megjelenítésekor a pontra vagy a névre koppintva választhatók ki.<br>
+Az pontválasztás ki- és bekapcsolható az "pont" gomb hosszú megnyomásával. Amikor az pontok kiválaszthatók
+ a gombon piros pötty látható.<br><p>
 
-A kiválasztott állomás piros színnel van kiemelve, és koordinátái az alsó kék sávban láthatók.
-Ha a modell DEM-el rendelkezik, akkor a felszín alatti állomás mélysége is benne van.<br>
-Az állomás kijelölésének megszüntetéséhez érintse meg ismét az állomást vagy a sávot.<br><p>
+A kiválasztott pont piros színnel van kiemelve, és koordinátái az alsó kék sávban láthatók.
+ Ha a modell DEM-el rendelkezik, akkor a felszín alatti pont mélysége is benne van.<br>
+Az pont kijelölésének megszüntetéséhez érintse meg ismét az pontot vagy a sávot.<br><p>
 
-A kiválasztott állomás és egy másik állomás közötti távolság méréséhez ellenőrizze az alsó sáv "mérés" gombját,
-és érintse meg a másik állomást.
-A két állomás, a keleti, az északi és a függőleges komponensek közötti 3D távolság és a síkbeli 2D távolság
-párbeszédpanelen jelenik meg.
-Ha a két állomás a poligonvonal mentén csatlakozik, akkor a "barlang" távolság is megjelenik
-és a köztük lévő barlang zöld színnel van kiemelve.<br>
-Optimális esetben az értékek párbeszédablak helyett rövid üzenetmezőben jeleníthetők meg.<br><p>
+A kiválasztott pont és egy másik pont közötti távolság méréséhez ellenőrizze az alsó sáv "mérés" gombját,
+ és érintse meg a másik pontt.
+ A két pont, a keleti, az északi és a függőleges komponensek közötti 3D távolság és a síkbeli 2D távolság
+ párbeszédpanelen jelenik meg.
+ Ha a két pont a poligonvonal mentén csatlakozik, akkor a "barlang" távolság is megjelenik
+ és a köztük lévő barlang zöld színnel van kiemelve.<br>
+Opcionálisan az értékek párbeszédablak helyett rövid üzenetmezőben jeleníthetők meg.<br><p>
 
-Ha az alsó állomás "állomás" gombja be van jelölve, az állomás pozíciója a képernyőn
-ha forgások alatt rögzítik és a
-a kiválasztott állomás narancssárgával van kiemelve.
+Ha az alsó pont "pont" gombja be van jelölve, az pont pozíciója a képernyőn
+ ha forgások alatt rögzítik és a
+ a kiválasztott pont narancssárgával van kiemelve.
 <br><p>
 
 <b>VÁZLATEMELÉS</b><br>
 A TopoDroid-ból megnyitott felmérésekkel és barlangprojektekkel lehetséges a 2D-s vázlatok "felemelése" a 3D-s modellre.
-A vázlatot exportálni kell (TopoDroidban) "Cave3D" formátumban. Az exportált fájl a "c3d" mappában található
-a TopoDroid. Ezután betölthet egy vázlatfájlt a Cave3D -ből, és a vázlatot felemeli, hogy alkalmazkodjon a
-3D -s modell.<br>
+ A vázlatot exportálni kell (TopoDroidban) "Cave3D" formátumban. Az exportált fájl a "c3d" mappában található
+ a TopoDroid mappában. Ezután betölthet egy vázlatfájlt a Cave3D -ből, és a vázlatot felemeli, hogy alkalmazkodjon a
+ 3D -s modellhez.<br>
 
 A vázlat párbeszédpanel megjeleníti a megnyitott vázlatok listáját.<br>
 Minden elemnek két jelölőnégyzete van: az első be- és kikapcsolás
-a vázlat megjelenítése, a második a vázlat eltávolítása. A választásokat az "OK" gombbal kell megerősíteni.<br>
+ a vázlat megjelenítése, a második a vázlat eltávolítása. A választásokat az "OK" gombbal kell megerősíteni.<br>
 Van egy gomb az új vázlat betöltéséhez.<br>
 Végül van egy gomb a pontikonok újrakötésére, ha feketék lesznek.
 <br><p>
