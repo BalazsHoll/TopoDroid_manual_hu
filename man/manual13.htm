@@ -138,12 +138,12 @@ Beállítások: <ul style="margin-top=0">
 <b id="therion"> Therion</b> (.th)<br>
 A felmérés adatait exportálni tudjuk <i>Therion</i> formátumban, "normál" adat formában.<br>
 Az adategységek követik a felhasználói opciókat.<br>
-A csapatok nevei fel vannak tüntetve, de a parancs megjegyzésre került.<br>
+A csapatok nevei fel vannak tüntetve, de a parancs megjegyzésbe került.<br>
 Az pont megjegyzései és jelölései (rögzített, festett) megelőzik a poligon adatait.<br>
 Az keresztmetszet segédpontok "-" (kötőjel) mérési ponttal exportálva, a többi "." (pont) mérési ponttal.<br>
 A megjegyzéseket a megjegyzés (#) alatt exportáljuk.<br><p>
 
-A rögzített pontok koordinátáit (hosszúsági szélesség és magasság tszf.) exportálják és kommentálják.
+A rögzített pontok koordinátáit (hosszúsági szélesség és magasság tszf.) exportálják és megjegyzéssel ellátják.
 Ha a pontnak egyedi CRS-koordinátái vannak, akkor ezek is szerepelnek, előtte a CRS neve.<br><p>
 
 Ezenkívül a végén hozzáadódik a th2 fájlok "bevitele" és az egyes selejtek térképeinek meghatározása, de megjegyzéseket kapunk.<br><p>
@@ -165,9 +165,9 @@ A TopoDroid felmérés nevét a Therion-barlang nevéhez használják, az '_' al
 A TopoDroid csapat karaktersorozata fel van osztva a Therion <i>team</i> parancsokkal: a csapat személyeit fel kell tüntetni
 a vezetéknevet esetleg megelőzi a vezetéknév kezdőbetűje (i). Például
 az "A.W. Smith, B. Ford" karakterláncból <i>team "A.W. Smith"</i> és <i>team "B. Ford"</i> lesz.<br>
-Mikor a thconfig engedélyezve van, a vázlatfájlok bevitelét nem kommentálják.<br><p>
+Mikor a thconfig engedélyezve van, a vázlatfájlok bevitelét nem kommentezik.<br><p>
 
-A kiterítéshez a "extend &lt;flag&gt;" szintaxis bármely poligon előtt használatos, a zászló egyenlő a "left", "right",
+A kiterítéshez a "extend &lt;flag&gt;" szintaxis bármely poligon előtt használatos, a flag egyenlő a "left", "right",
 vagy "vert"-el. A kiterítéssel nem rendelkező segédpontok esetében a TopoDroid "# expand auto" -ot ír megjegyzésként, mert ez nem az
 érvényes Therion parancs.<br>
 Az arányos kiterítést a Therion támogatja az 5.2.2 verzió óta, és exportálja, ha be van állítva.<br><p>
@@ -333,7 +333,7 @@ A "shots" DBF az alábbi mezőket tartalmazza:
 <li><i>típus</i>: vagy "leg" poligon, vagy "splay" sün</li>
 <li><i>a</i> pontról</li>
 <li><i>a</i> pontra ("-" a segédpontokhoz - sün)</li>
-<li>mérés <i>flag</i> hexadecimálisan: 1-felület, 2-duplikátum, 4-kommentált</li>
+<li>mérés <i>flag</i> hexadecimálisan: 1-felület, 2-duplikátum, 4-kizárt</li>
 <li>mérés <i>megjegyzés</i></li>
 </ul><br>
 
@@ -536,7 +536,7 @@ A "shot" DBF alábbi mezőket tartalmazza:
 <li><i>type</i>: "leg" poligon vagy "splay" részletpont</li>
 <li><i>from</i> kezdőpont</li>
 <li><i>to</i> végpont ("-" részletpontoknál)</li>
-<li>shot <i>flag</i> as hex: 1 felület, 2 duplikátum, 4 kommentált</li>
+<li>shot <i>flag</i> as hex: 1 felület, 2 duplikátum, 4 kizárt</li>
 </ul><br>
 
 
