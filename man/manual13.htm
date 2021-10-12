@@ -137,11 +137,24 @@ Beállítások: <ul style="margin-top=0">
 
 <b id="therion"> Therion</b> (.th)<br>
 A felmérés adatait exportálni tudjuk <i>Therion</i> formátumban, "normál" adat formában.<br>
-Az adategységek követik a felhasználói opciókat.<br>
-A csapatok nevei fel vannak tüntetve, de a parancs megjegyzésbe került.<br>
-Az pont megjegyzései és jelölései (rögzített, festett) megelőzik a poligon adatait.<br>
+A TopoDroid felmérés nevét használják a Therion barlang nevére, az "_" aláhúzást szóköz helyettesíti.<br>
+Az adategységek követik a felhasználói beállításokat. <br><p>
+
+A csapatnevek fel vannak sorolva, de a parancs megjegyzésbe kerül.<br>
+A TopoDroid csapat karakterlánc a Therion <i>team</i> parancsokra oszlik: a csapat személyeit fel kell tüntetni
+a vezetéknévvel esetleg a keresztnév kezdőbetű(k) előtt. Például
+az "A.W. Smith, B. Ford" csapatszövegből <i>team "A.W. Smith"</i> és <i>team "B. Ford"</i> lesz.<br><p>
+
+A poligon pont megjegyzései és jelei (rögzített, festett) megelőzik a poligon adatait.<br>
 Az keresztmetszet segédpontok "-" (kötőjel) mérési ponttal exportálva, a többi "." (pont) mérési ponttal.<br>
 A megjegyzéseket a megjegyzés (#) alatt exportáljuk.<br><p>
+
+A kiterjesztéshez a "extend &lt;flag&gt;" szintaxist minden poligon előtt használják, a zászló flag "left", "right",
+vagy "vert" lehet. A kiterjesztés nélküli sünökhöz a TopoDroid megjegyzést ír "# extend auto" mert ez nem
+érvényes Therion parancs.<br><p>
+
+A töredékes kiterjesztést a Therion támogatja az 5.2.2 verzió óta, és exportálva van, ha be van állítva. <br> <p>
+
 
 A rögzített pontok koordinátáit (hosszúsági szélesség és magasság tszf.) exportálják és megjegyzéssel ellátják.
 Ha a pontnak egyedi CRS-koordinátái vannak, akkor ezek is szerepelnek, előtte a CRS neve.<br><p>
@@ -151,30 +164,18 @@ Ezenkívül a végén hozzáadódik a th2 fájlok "bevitele" és az egyes selejt
 A <i>Therion</i> export tartalmazza a kalibráció-ellenőrző felvételeket megjegyzésként.<br><p>
 
 Beállítások: <ul style="margin-top=0">
-<li><u>Therion thconfig</u>: ha engedélyezve van, akkor egy "thconfig" fájl jön létre a "thconfig" mappában.</li>
-<li><u>Therion maps</u>: ha engedélyezve van, a "map" parancsok a felmérés poligona elé kerülnek.</li>
-<li>adja hozzá az <u>BJFL</u> t az exportáláshoz</li>
+<li><u>Therion thconfig</u>:ha engedélyezve van, akkor a felmérési adatok a Therion konfigurációs parancsok sorába kerülnek.</li>
+<li><u>Therion maps</u>: ha engedélyezve van, a "map" parancsok a poligonok elé kerülnek.</li>
+<li>adja hozzá a <u>BJFL</u>-t az exportáláshoz</li>
 </ul><p>
 
 <u>thconfig</u><br>
-A létrehozott "thconfig" fájl tartalmazza az alapparancsokat a alaprajz pdf és a kiterített oldalnézet térképek létrehozásához.<br>
-Alapvetően láthatja az Android "sdcard" -ját a számítógépéről, ezzel létrehozhatja a pdf végrehajtó műveletét
-a létrehozott <i>thconfig</i> fájl.<br><p>
-
-A TopoDroid felmérés nevét a Therion-barlang nevéhez használják, az '_' aláhúzást szóközzel helyettesítve.
-A TopoDroid csapat karaktersorozata fel van osztva a Therion <i>team</i> parancsokkal: a csapat személyeit fel kell tüntetni
-a vezetéknevet esetleg megelőzi a vezetéknév kezdőbetűje (i). Például
-az "A.W. Smith, B. Ford" karakterláncból <i>team "A.W. Smith"</i> és <i>team "B. Ford"</i> lesz.<br>
-Mikor a thconfig engedélyezve van, a vázlatfájlok bevitelét nem kommentezik.<br><p>
-
-A kiterítéshez a "extend &lt;flag&gt;" szintaxis bármely poligon előtt használatos, a flag egyenlő a "left", "right",
-vagy "vert"-el. A kiterítéssel nem rendelkező segédpontok esetében a TopoDroid "# expand auto" -ot ír megjegyzésként, mert ez nem az
-érvényes Therion parancs.<br>
-Az arányos kiterítést a Therion támogatja az 5.2.2 verzió óta, és exportálja, ha be van állítva.<br><p>
-
+A létrehozott fájl tartalmazza a konfigurációs parancsokat a alaprajz és a kiterített oldalnézet pdf térképek létrehozásához.<br>
+A therion futtatása az exportált fájlon egyszerű PDF térképet hoz létre.<br>
+Ha a thconfig engedélyezve van, a vázlatfájlok bemenete nem kerül megjegyzésbe.<br><p>
 
 A Therion fájlok importálásának ".th" kiterjesztéssel kell rendelkeznie.<br>
-A <i>Therion</i> adatszintaxis topoDroid-elemzése nagyon korlátozott. Alapvetően csak a "normál" formában lévő adatokat értjük. A Therion adatparancsok "egységek", "zászló", "kiterítés", "jelölés" és "pont" támogatottak.<br>
+A <i>Therion</i> adatszintaxis topoDroid-elemzése nagyon korlátozott. Csak a "normál" formában lévő adatokat érti. Csak az "units", "flag", "extend", "mark" és "station" Therion adatparancsok támogatottak.<br>
 A fix pontokat ("fix") elemezzük, de nem vesszük figyelembe, mivel a "cs" nem támogatott.<br><p>
 
 
