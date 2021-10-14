@@ -170,16 +170,17 @@ Beállítások: <ul style="margin-top=0">
 </ul><p>
 
 <u>thconfig</u><br>
-A létrehozott fájl tartalmazza a konfigurációs parancsokat a alaprajz és a kiterített oldalnézet pdf térképek létrehozásához.<br>
+Ezzel a lehetőséggel a TopoDroid exportál egy Therion konfigurációs fájlt a felmérési adatokkal.
+ Ez a fájl tartalmazza az alaprajz és a kiterjesztett oldalnézet pdf térképek létrehozásához szükséges konfigurációs parancsokat.<br>
 A therion futtatása az exportált fájlon egyszerű PDF térképet hoz létre.<br>
-Ha a thconfig engedélyezve van, a vázlatfájlok bemenete nem kerül megjegyzésbe.<br><p>
+A vázlatfájlok bemenetét továbbra is megjegyzésbe teszi, és módosítani kell a megfelelő "th2" fájlok összekapcsolásához.<br><p>
 
 A Therion fájlok importálásának ".th" kiterjesztéssel kell rendelkeznie.<br>
 A <i>Therion</i> adatszintaxis topoDroid-elemzése nagyon korlátozott. Csak a "normál" formában lévő adatokat érti. Csak az "units", "flag", "extend", "mark" és "station" Therion adatparancsok támogatottak.<br>
 A fix pontokat ("fix") elemezzük, de nem vesszük figyelembe, mivel a "cs" nem támogatott.<br><p>
 
 
-<b id="trobot"> TopoRobot</b> (.trb)<br>
+<b id="trobot">TopoRobot</b> (.trb)<br>
 A felmérés adatai exportálhatók <i>TopoRobot</i> fájlként. A <i>TopoRobot</i> pontok elnevezési házirendjét
 ki kell választani. Ha az pontnevek a TopoRobot "series.number" konvencióját követik, akkor azokat használják.<br><p>
 
