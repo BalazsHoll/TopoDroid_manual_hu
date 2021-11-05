@@ -13,12 +13,18 @@ A törölt adatok negatív csoportszámmal rendelkeznek, ezért a -1-es csoport 
 
 Az egyes kalibrálási adatokhoz kézzel rendelhetsz a csoport számot (a <i>Kalibrációs adatok szerkesztése</i> párbeszédpanellel),
 vagy hagyd, hogy a TopoDroid hozzárendelje a csoportszámokat.
+<br><p>
+
 Két automatikus csoport-hozzárendelési házirend létezik:
 <ol>
 <li><i>TopoDroid</i>: négy adat egyidejűleg minden csoport számára;</li>
 <li><i>PocketTopo</i>: az első 16 adat négyes csoportokban (négy csoport), a többi adat önmagában egy csoport;</li>
 <!-- li> csoportok a relatív szögtávolság (iránykülönbség) alapján. </ li -->
 </ol>
+<br>
+A két irányelv egyenértékű kalibrációt ad, de
+a <i>TopoDroid</i> házirenddel az alkalmazás ki tudja számítani a kalibrált adatok eltérését a várt értékektől,
+több adatra, és létre tud hozni egy jobban feltöltött hisztogramot a maradék hibákról.
 <br> <p>
 
 Műveletek:
