@@ -1,23 +1,34 @@
 <html><body>
 
-<h4>ADATLETÖLTÉS</h4>
+<h4>ADATOK LETÖLTÉSE</h4>
 
-A <i>Letöltés</i> gomb kapcsolatot létesít a műszerrel a mérési adatok letöltéséhez.
-Amíg a kapcsolat aktív, piros marad. Ha a <i>ha-szükséges</i> letöltési módot használod, akkor a kapcsolat megszűnik, amikor nincs több letölthető adat.
-A <i>folyamatos</i> letöltés módban a kapcsolat nyitva marad (és az adatokat folyamatosan letöltjük, amint elkészültek)
-amíg a műszer és az Android meg nem szakítja a Bluetooth kapcsolatot. Az, hogy melyik mód a legalkalmasabb a számodra, a szokásaidtól függ.
-A <i>ha-szükséges</i> üzemmóddal a rajzolásra és egyéb feladatokra koncentrálhatsz anélkül, hogy a bejövő adatok zavarnának, és az adatok letöltésekor
-rájuk összpontosíthatsz (kék színnel vannak kiemelve). Másrészt a <i>ha-szükséges</i> letöltés szüneteket igényel az adatok letöltéséhez,
-és ezek különösen hosszúak, ha közben több mérést készítettél.<br><p>
+A <i>Letöltés</i> gomb kapcsolatot létesít a műszerrel az adatok letöltéséhez.
+ Amíg a kapcsolat aktív, pirosan világít. Ha az <i>igény szerinti</i> letöltési módot használja, a kapcsolat megszakad, amikor nincs több letölthető adat.
+ <i>Folyamatos</i> letöltési módban a kapcsolat nyitva marad (és az adatok letöltése folyamatosan történik, amint elkészültek)
+ amíg az eszköz és az Android meg nem szakítja a Bluetooth-kapcsolatot. Az, hogy melyik mód a legalkalmasabb a számodra, a szokásaidtól függ.
+ Az <i>igény szerinti</i> móddal a vázlatkészítésre és egyéb feladatokra koncentrálhatsz anélkül, hogy zavarnának a bejövő adatok, és amikor letöltöd az adatokat
+ rájuk fókuszálhat (kék színnel vannak kiemelve). Másrészt az <i>igény szerinti</i> letöltés szüneteket igényel az adatok lekéréséhez,
+ és ezek különösen hosszúak, ha közben több mérést is készítettél.<br><p>
 
-Amikor megszakadt a Bluetooth-kapcsolat a műszerrel (pl. A műszer túl messze van az Android-tól, vagy ki van kapcsolva)
-<i>ha-szükséges</i> módban az adatletöltés megszakad.
-<i>folyamatos</i> módban a TopoDroid néhány másodpercenként megpróbál csatlakozni a műszerhez.<br><p>
+Ha megszakad a Bluetooth kapcsolat a műszerrel (pl. a műszer túl messze van az Androidtól, vagy ki van kapcsolva)
+ <i>igény szerinti</i> módban az adatletöltés megszakad.
+ <i>Folyamatos</i> módban a TopoDroid néhány másodpercenként újra megpróbál csatlakozni az eszközhöz.<br><p>
 
-Amikor a felmérés <u>adatablak</u> bezárul, az adatletöltési kapcsolat megszakad. A letöltési kapcsolat nem szakad meg, amikor a
-az ablak szünetel (a kijelző kikapcsol). Ha megnyitsz egy vázlatot, miközben a letöltési kapcsolat aktív <i>folyamatos</i> módban,
-a kapcsolat fennmarad, és az adatok letöltésre kerülnek (és a vázlatban megjelennek).<br><p>
+Amikor a felmérés <u>adatablakát</u> bezárod, az adatletöltési kapcsolat megszakad. A letöltési kapcsolat nem szakad meg, amikor az
+ ablak szünetel (a kijelző kikapcsol). Ha megnyitsz egy vázlatot, miközben a letöltési kapcsolat aktív <i>folyamatos</i> módban,
+ a kapcsolat megmarad és az adatok letöltődnek (és megjelennek a vázlatban).<br><p>
 
-A <i>SAP5</i> és a <i>BRIC4</i> adatok mindig letöltésre kerülnek <i>folyamatos</i> módban.<br><p>
+Az <i>SAP5</i> és <i>BRIC4</i> esetén az adatok mindig <i>folyamatos</i> módban töltődnek le.<br><p>
+
+<b>BRIC4</b><br>
+
+Az adatok letöltése a <i>BRIC4</i>-ről csak a lényeges értékekre korlátozható (távolság, irányszög, dőlésszög és még néhány), vagy
+ a teljes, a BRIC4 protokoll által továbbított összes információ.<br>
+A teljes protokoll tartalmazza a mérés "indexét". Alapértelmezés szerint a TopoDroid a <i>BRIC4</i> indexet használja adatindexként
+ az adatbázistáblában, ha megkapja. Mivel az adatindexnek egyedinek kell lennie, ha a TopoDroid olyan indexű mérést kap, amely
+ már szerepel az adatbázisban, a rendszer egy új értéket használ a <i>BRIC4</i> index helyett.<br>
+Letiltható a <i>BRIC4</i> index [G] használata, és a TopoDroid növekményes értékeket rendelhet az adatindexhez.<br><p>
+
+<u>FIGYELEM</u>. Az első mérés a BRIC4 „memória törlése” után nem érkezik meg a TopoDroidba!<br><p>
 
 </body></html>
