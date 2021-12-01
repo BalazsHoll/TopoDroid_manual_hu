@@ -1,23 +1,30 @@
 <html><body>
-<h4>3d mérés dialog</h4>
+<h4>3D mérés párbeszédpanel</h4>
 
-A mérési pont kiválasztásakor a koordinátái kék sávban jelennek meg
-a képernyő alján.<br>
-Ez a sáv két gombbal rendelkezik:
+A rögzített mérési pont kiválasztásakor a koordinátái egy kék sávban jelennek meg
+ a képernyő alján.<br>
+Ezen a sávon két gomb található:
 <ul>
-<li>az első a pontot a forgás középpontjába állítja</li>
-<li>a második "mérési módba" kapcsolja a programot: ha megérint egy másik pontot
- megjelenik a "mérés párbeszédablak"</li>
+<li>az első a mérési pontot állítja be a forgás középpontjaként</li>
+<li>a második a programot "mérési módba" kapcsolja: megérintve a másik
+ poligon pontot felfrissíti a "mérés párbeszédpanelt"</li>
 </ul><br><p>
 
-A mérés párbeszédablak a rögzített pont és egy másik pont közötti távolságot mutatja.<br>
+A mérési párbeszédablak mutatja a távolságot a rögzített mérési pont és egy másik mérési pont között.<br>
 <ul>
-<li>a két pont teljes neve</li>
-<li>a két pont közötti keleti, északi és függőleges távolság</li>
+<li>a két mérési pont teljes neve</li>
+<li>a keleti, északi és függőleges távolság a két mérési pont között</li>
 <li>a 3D távolság</li>
-<li>a távolság a vízszintes síkban</li>
-<li>a két pont közötti egyenes iránya és dőlése</li>
-<li>a barlang legrövidebb poligonjának hossza a két pont között (ha létezik)</li>
+<li>a távolság vízszintes síkban</li>
+<li>a két mérési pont közötti egyenes irányszöge és dőlésszöge</li>
+<li>ha létezik, a barlangban a két mérési pont közötti legrövidebb út hossza, valamint a pozitív és negatív szintkülönbségek</li>
 </ul><br><p>
+
+<b>Szintkülönbségek</b><br>
+A pozitív és a negatív szintkülönbségek a felfelé és lefelé haladó poligonok függőleges összetevőinek összegzésével számítjuk ki.
+ Csak a 10°-nál nagyobb hajlásszögű poligonok számítanak.
+ 30° felett a poligon függőleges komponensét teljes mértékben figyelembe veszük.
+ 10 és 30° között a függőleges komponenst lineárisan interpoláljuk, azaz megszorozzuk a (dőlés-10)/20-zal.<br><p>
+
 
 </body></html>
