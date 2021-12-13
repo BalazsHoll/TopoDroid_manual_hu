@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<h4>BRIC4 HIVATKOZÁSI ÚTMUTATÓ</h4>
+<h4>BRIC4 REFERENCIA KÉZIKÖNYV</h4>
 
 <i>Itt található a BRIC4 funkcióinak összefoglalása.<br>
 A hivatalos felhasználói kézikönyvek a következő címen érhetők el: http://www.caveexploration.org/gear/bric4</i>
@@ -9,13 +9,30 @@ A hivatalos felhasználói kézikönyvek a következő címen érhetők el: http
 
 A BRIC4 bekapcsolásához nyomja meg egymás után háromszor a külső gombot.
 A kikapcsoláshoz tartsa lenyomva a külső gombot.
-A BRIC4 magától kikapcsol 90 másodperc után ha nincs használva.
+A BRIC4 90 másodperces inaktivitás után magától kikapcsol.
 <br><p>
 
-<b>Menü funkciók</b><br>
-A főmenüt a négy belső gomb bármelyikének megnyomásával lehet végrehajtani.
-A külső gomb megnyomásával kilép a menüből és visszatér a normál üzemmódba.
+<b>Belső gombok</b><br>
+<ul>
+<li><i>Menu</i> belép a menüfunkciókba</li>
+<li><i>Up</i> görgeti előre az adatokat a kijelzőn</li>
+<li><i>Down</i> görgeti visszafelé az adatokat a kijelzőn</li>
+<li><i>Back</i> ...</li>
+</ul><br><p>
+
+<b>Menüfunkciók</b><br>
+A főmenübe a belső <i>Menu</i> gomb megnyomásával léphet be.
+A külső gomb megnyomásával kilép a menüből, és visszatér a normál üzemmódba.
+A normál módba a <i>Back</i> gomb ismételt megnyomásával is visszatérhet.
 <br><p>
+
+Menü módban a belső gombok
+<ul>
+<li><i>Enter</i> megerősíti a választást</li>
+<li><i>Up</i> gomb felfelé görget a lehetőségek között</li>
+<li><i>Down</i> görgeti lefelé a lehetőségeket</li>
+<li><i>Back</i> visszalép az előző képernyőre vagy normál módba</li>
+</ul><br><p>
 
 Opciók:
 <ul>
@@ -23,7 +40,7 @@ Opciók:
 <li><i>Temp</i>: Celcius vagy Fahrenheit</li>
 <li><i>Shot delay</i>: <u>0</u> és 5 másodperc között</li>
 <li><i>Change curr(ent)</i>: 100 mA vagy <u>500</u> mA</li>
-<li><i>Err(or) sens(itivity)</i>: from 0.2&deg; to 2.8&deg; in steps of 0.2&deg; [1.0&deg;]</li>
+<li><i>Err(or) sens(itivity)</i>: 0.2&deg;-tól 2.8&deg;-ig  0.2&deg;-os lépésekben [1.0&deg;]</li>
 </ul><br><p>
 
 Hibainformációk: az elmúlt tíz mérés hibainformációit közli.<br><p>
@@ -65,6 +82,13 @@ Három bővitett bluetooth lehetőség van:
 <li><i>Curr Comm</i>: CPU</li>
 </ul><br><p>
 
+A speciális <i>BLE menü</i>-ben:
+<ul>
+<li>a BLE küldi és fogadja a számokat</li>
+<li>az adatok szinkronizálási állapota: az összes elküldött mérési hálózat és BT-üzenetek</li>
+<li>az utolsó BLE távoli parancs</li>
+</ul><br><p>
+
 Kijelző
 <ul>
 <li><i>BL light</i>: 0 tól 5 ig</li>
@@ -74,14 +98,19 @@ Kijelző
 
 Speciális menü
 <ul>
+<li><i>Memory clear</i>: visszaállítja az adatindexet 0-ra (törli a kijelzőt)</li> 
 <li><i>Sersor Raw Data</i>: nyers szenzor adatok</li>
 <li><i>Firmware CPU</i>: firmware és hardware verzió - <i>Bootloader mode</i> opció</li>
 <li><i>Firmware BLE</i>: firmware verzió - <i>Update</i> opció</li>
 <li><i>Reprocess full Cal(ibration)</i>: teljes kalibráció újrafeldolgozás</li>
 <li><i>Reprocess AZM Cal(ibration)</i>: irány kalibráció újrafeldolgozás</li>
-<li><i>Backlight Manual</i>: kézikönv háttérszín váltás Red, Green, Blue között</li>
+<li><i>Backlight Manual</i>: háttérszín váltás Red, Green, Blue között</li>
 <li><i>Charger info</i>: töltési információk (debug)</li>
 </ul><br><p>
+
+A <i>Memória törlése</i> képernyő az összes mérést és a BT által küldött üzeneteket mutatja.
+Lehetősége van visszaállítani az adatindexet 0-ra.
+<br><p>
 
 <b>Hiba kódok</b><br>
 A BRIC4 legfeljebb két hibát jelent a mérés adataival kapcsolatban.

@@ -1,0 +1,18 @@
+<html><body>
+<h4>Android R párbeszédpanel</h4>
+
+Az Android-11-től kezdve a TopoDroid nem tud hozzáférni a fájlokhoz a szokásos módon, a Google követelményei miatt.<br>
+
+Az alkalmazás privát fájljai (eszközadatbázis, rajzszimbólumok, firmware-fájlok stb.) tárolásra kerülnek
+ az alkalmazás privát területén, „Android/data/com.topodroid.DistoX/files”, amihez más alkalmazások nem rendelkeznek
+ hozzáféréssel.<br>
+Ezt a mappát a rendszer törli az alkalmazás eltávolításakor.<br>
+
+A felmérés adatbázisa és a fájlok a „Dokumentumok/TDX/TopoDroid” alatt találhatók.<br>
+Ezt a mappát a rendszer nem törli az alkalmazás eltávolításakor,
+ de a <b>TopoDroid többé nem férhet hozzá, ha eltávolítja és újratelepíti az alkalmazást.</b><br>
+Ebben az esetben át kell nevezni a "Documents/TDX"-t, és hidegen kell indítani a TopoDroid-ot, hogy létrehozza
+ az új "TDX".<br>
+
+
+</body></html>
