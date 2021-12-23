@@ -1,6 +1,36 @@
 <html><body>
-<h4>3D felszín DEM</h4>
+<h4>3D NÉZŐ – Felszín DEM</h4>
 
-Ezt az oldalt meg kell írni.
+Felületi DEM (Digital Elevation Model) akkor jeleníthető meg, ha be van illesztve a modellfájlba (pl. egy lox fájlba),
+vagy hozzá lett adva a modellhez.<br><p>
+
+A <i>3D-s megtekintő</i> ablak <i>Felszín</i> gombja be- és kikapcsolja a DEM megjelenítést.<br><p>
+
+Ez a párbeszédpanel a <i>3D-s megtekintő</i> ablak <i>Felszín</i> menüjéből nyílik meg.<br><p>
+A DEM betöltésére, egy felületi textúra betöltésére szolgál, amely ráborít a DEM-re, és beállítja az átlátszatlanságát.<br>
+ 
+Tartalmaz
+<ul>
+<li>egy DEM-fájl kiválasztására szolgáló gomb</li>
+<li>egy textúrafájl kiválasztására szolgáló gomb, ha a modell rendelkezik DEM-mel</li>
+<li>csúszka az átlátszatlanság beállításához</li>
+<li>egy jelölőnégyzet a modell vetületének DEM-en való megjelenítésének aktiválásához</li>
+<li>jelölőnégyzet a felületi textúra megjelenítésének aktiválásához (ha van ilyen)</li>
+</ul><br>
+
+<b>DEM-fájl</b><br>
+
+A 3D-s megtekintő támogatja az ASCII vagy Therion grid formátumú DEM fájlokat.<br><p>
+
+<b>Textúrafájl</b><br>
+
+A 3D-s megtekintő támogatja a textúra GeoTIFF képfájlokat és az OSM térképfájlokat.<br><p>
+
+A DEM és a textúra X-Y koordinátáinak szerepelniük kell a modell koordináta-referenciarendszerében,
+mert a 3D-s megtekintő nem végez koordinátakonverziót.<br><p>
+
+Az OSM fájlok WGS84 földrajzi koordinátákkal vannak megadva. Az értékek modellekkel használhatók
+az UTM térképészetben, de az átváltás hozzávetőleges.<br><p>
+
 
 </body></html>

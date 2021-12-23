@@ -1,13 +1,36 @@
 <html><body>
-<h4>Fraktál Analízis</h4>
+<h4>3D NÉZŐ – Fraktálelemzés</h4>
 
-A fraktál analízis a 3D teret kockákra osztva veszi figyelembe, és számolja a kockák számát
-amelyek lefedik a barlangot (poligon és sünök).
-Háromdimenziós objektum esetén, amikor a kocka oldala felére csökken, azaz kettővel lesz osztva,
-a barlangot borító kockák száma 8 = 2<sup>3</sup>-sorosára nő.
-A fraktál kitevője egy adott oldalon a 2 hatványa (azaz a példában 3).<br><p>
+A fraktálanalízis a 3D teret kockákra bontva veszi figyelembe, és megszámolja a kockák számát
+ amelyek lefedik a barlangot (poligon és sünök).
+ Háromdimenziós objektum esetén, amikor a kocka oldala feleződik, azaz elosztjuk 2-vel,
+ a barlangot borító kockák száma 8 = 2<sup>3</sup>-kal nő.
+ A fraktál kitevő egy adott oldalon 2 hatványa (azaz a példában 3).<br><p>
 
 A fraktál analízis megkeresi ezt a kitevőt a kocka különböző hosszúságú oldalaira,
-és grafikonként jelenítse meg az eredményt. <br> <p>
+ és grafikonként jelenítse meg az eredményt.<br><p>
+
+A <i>Fraktál</i> párbeszédpanel a <i>3D-s megtekintő</i> ablak <i>Fractal</i> menüjéből nyílik meg.<br>
+Megjeleníti az utolsó fraktálszámítás eredményét, vagy új fraktálszámítást indít.<br><p>
+
+Az eredmény egy grafikon, amely a számított dimenzió változását ábrázolja, ahogy a kocka  mérete változik.<br><p>
+
+A számítás függ a
+<ul>
+<li><i>számláló</i> mód</li>
+<li>hogy a <i>sünöket</i> is figyelembe vegye, vagy csak a poligonokat</li>
+<li>a kezdő <i>cellaméret</i><li>
+</ul><br>
+
+<b>Számlálás</b><br>
+
+Három számlálási mód létezik:
+<ul>
+<li>a kitöltött dobozok számának számlálása</li>
+<li>a kitöltött dobozpárok számának számolása X, Y vagy Z irányban (6 pár)</li>
+<li>a kitöltött dobozpárok számának számolása X, Y vagy Z mentén az átlós irányok szerint (26 pár)</li>
+</ul><br>
+
+A cella (doboz) mérete minden lépésben sqrt(2)-vel nő.<br><p>
 
 </body></html>

@@ -1,14 +1,23 @@
 <html><body>
+<!-- ezt újra kell fordítani! -->
+
 <h3> [13] IMPORT EXPORT</h3>
-Ha végeztél, exportáld a felmérést kedvenc formátumodba, és készíts ZIP-archívumot.<br>
-Miután letöltötted a zip-et a számítógépedre és kibontottad, kitöltheted a barlangtérképet a megszokott programmal.<br><p>
+Ha végeztél, exportáld a felmérési adatokat és a vázlatokat kedvenc formátumodba, és vidd át a
+exportált fájlokat a számítógépére, hogy befejezd a barlangtérképek elkészítését.<br><p>
 
-A zip archívum tartalmazza a felmérés adatainak és az adatbázisban lévő egyéb információk helyreállításának parancsát.
-A zip archívum a biztonsági másolata a felmérésről és annak exportjáról. Használhatja a felmérés más Androidra történő áttöltésére.<br><p>
+A biztonság kedvéért készíts egy TopoDroid zip archívumot, és vidd át számítógépedre.
+ A zip-archívum a felmérés teljes biztonsági másolata, és
+ tartalmazza a parancsot a felmérési adatok és egyéb információk visszaállítására az adatbázisban.
+ Segítségével átviheted a felmérést egy másik Android rendszerű TopoDroidba.<br><p>
 
-A felmérés adatait és a zip archívumokat a felmérés <u>információs ablakából</u> exportálják.<br>
-A felmérési vázlatok az <u>vázlatablakból</u> (egyetlen vázlat) és az <u>áttekintő ablakból</u> (minden vázlat egy fájlban) kerülnek exportálásra.<br><p>
+A felmérés adatait és a tömörített archívumot a rendszer a felmérés <u>információs ablakából</u> exportálja.<br>
+A felmérési vázlatok a <u>vázlatablakból</u> (egyetlen vázlat) és az <u>áttekintő ablakból</u> (az összes vázlat egy fájlban) exportálhatók.<br><p>
 
+A TopoDroid zip archívumok a <i>zip</i> mappában tárolódnak.<br><p>
+
+Az exportált adatok és vázlatfájlok a „felmérés” mappa alatt, megfelelően elnevezett mappákban tárolódnak.<br><p>
+
+<!-- 
 A felmérés importálásához szükséges fájlokat az <i>import</i> mappában keresi.<br>
 Az importáláshoz szükséges ZIP-archívumokat a <i>zip</i> mappában keresi.<br><p>
 
@@ -21,6 +30,7 @@ Ha az alapértelmezett felmérési adatok exportálási formátuma be van állí
 
 Ha az alapértelmezett vázlatexportálási formátum be van állítva, akkor a vázlatokat ebben a formátumban exportálják, amikor bezárják a <u>vázlatablakból</u>.
 A cSurvey esetében az x metszetok PNG-képekként kerülnek mentésre.<br><p>
+-->
 
 <h4> FELMÉRÉS ADAT IMPORTÁLÁSA</h4>
 A TopoDroid felmérési adatokat tud importálni a TopoDroid zip archívumokból vagy külső fájlokból.<br>
@@ -98,7 +108,6 @@ A H / V-segédponokat az exportban normál segédponként kezeljük.<br><p>
 
 <b id="compass">Compass</b> (.dat)<br>
 A <i>Compass</i> adatfájlok importálásakor és exportálásakor egyaránt támogatottak.<br>
-A compass fájlok kiterjesztésének ".dat" vagy ".DAT" kiterjesztésűnek kell lennie.<br>
 A támogatott adatformátum a "normal" és a "diving".<br>
 Az adategységek „poligon” és „fok” (méterekre és fokra konvertálva a TopoDroid belsejében).<br><p>
 
@@ -127,7 +136,6 @@ Beállítások: <ul style="margin-top=0">
 <b id="survex"> Survex</b> (.svx)<br>
 A felmérés adatai exportálhatók <i>Survex</i> fájlként.<br>
 Az adategységek követik a felhasználói beállításokat.<br><p>
-A Survex fájlok importálásának ".svx" kiterjesztéssel kell rendelkeznie.<br>
 
 Beállítások: <ul style="margin-top=0">
 <li><u>sorvég</u> lehet Unix vagy Windows</li>
@@ -175,8 +183,7 @@ Ezzel a lehetőséggel a TopoDroid exportál egy Therion konfigurációs fájlt 
 A therion futtatása az exportált fájlon egyszerű PDF térképet hoz létre.<br>
 A vázlatfájlok bemenetét továbbra is megjegyzésbe teszi, módosítani kell a megfelelő "th2" fájlok összekapcsolásához.<br><p>
 
-A Therion fájlok importálásának ".th" kiterjesztéssel kell rendelkeznie.<br>
-A <i>Therion</i> adatszintaxis topoDroid-elemzése nagyon korlátozott. Csak a "normál" formában lévő adatokat érti. Csak az "units", "flag", "extend", "mark" és "station" Therion adatparancsok támogatottak.<br>
+A TopoDroid <i>Therion</i> feldolgozás adatszintaxisa nagyon korlátozott. Csak a "normál" formában lévő adatokat érti. Csak az "units", "flag", "extend", "mark" és "station" Therion adatparancsok támogatottak.<br>
 A fix pontokat ("fix") elemezzük, de nem vesszük figyelembe, mivel a "cs" nem támogatott.<br><p>
 
 
@@ -184,9 +191,8 @@ A fix pontokat ("fix") elemezzük, de nem vesszük figyelembe, mivel a "cs" nem 
 A felmérés adatai exportálhatók <i>TopoRobot</i> fájlként. A <i>TopoRobot</i> pontok elnevezési házirendjét
 ki kell választani. Ha az pontnevek a TopoRobot "series.number" konvencióját követik, akkor azokat használják.<br><p>
 
-<b id="vtopo"> VisualTopo</b> (.tro)<br>
+<b id="vtopo"> VisualTopo</b> (.tro, .trox)<br>
 A <i>VisualTopo</i> adatfájlok importálásakor és exportálásakor egyaránt támogatottak.<br>
-A VisualTopo fájlok importálásának ".tro" vagy ".TRO" kiterjesztéssel kell rendelkeznie.<br>
 A VisualTopo sablonok szerepelnek benne, ha engedélyezve vannak.<br>
 Alapértelmezés szerint az BJFL a CÉL ponton van, de a KEZDŐ pont beállítható.<br>
 Az adategységek „méterek” és „fokok”.<br><p>

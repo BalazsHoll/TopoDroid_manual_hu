@@ -1,22 +1,58 @@
 <html><body>
-<h4>TopoDroid Manager - Projektablak</h4>
+<h4>PROJEKT MENEDZSER – Projektablak</h4>
 
-A <i>Barlangprojekt ablak</i> megjeleníti a barlangprojekt felméréseinek listáját.
-<br><p>
+A barlang <i>Projektablak</i> megnyílik, és megérinti a projekt nevét a <i>kezelőablak</i> listájában.<br><p>
 
-<b>Gombok</b><br>
-További felmérések hozzáadása<br>
-Húzza ki a kiválasztott felméréseket<br>
-Válogatott felmérések megtekintése<br>
-Jelenítse meg a <i>kapcsolódó</i> pontok listáját<br>
-3D-s nézet megjelenítése (Cave3D-vel)<br>
-<p>
+Megjeleníti a projektet alkotó felmérések listáját. A lista üres, ha a projektben nincs
+felmérések.<br>
+Minden felmérés kiválasztható további műveletekhez a jelölőnégyzet megérintésével.<br><p>
 
 <b>Menük</b><br>
-Csukja be az ablakot<br>
-Exportálja a barlangprojektet (Therion vagy Survex)<br>
-Törölje a barlang projektet<br>
-Súgó<br>
-<p>
+<ul>
+<li>Csukja be az ablakot</li>
+<li>Exportálja a barlangprojektet (Therion vagy Survex)</li>
+<li>Törölje a barlangprojektet</li>
+<li>Súgó</li>
+</ul><br>
+
+<b>Gombok</b><br>
+<ul>
+<li><i>felmérések beszúrása</i></li>
+<li><i>távolítsa el</i> a kiválasztott felméréseket</li>
+A kiválasztott felmérések <li>2D <i>megjelenítése</i> alapnézetben</li>
+<li>sorolja fel a projektet <i>egyenlő</i></li>
+<li><i>3D nézet</i> a projektről</li>
+</ul><br>
+
+A <i>beszúrás</i> gomb megjeleníti a felmérések listáját a TopoDroid adatbázisban.
+A felmérések a jelölőnégyzetük megérintésével és a gombbal történő megerősítéssel adhatók hozzá a projekthez
+az <i>OK</i> gombot.<br><p>
+
+<b>3D nézet projekt</b><br>
+A projekt az első felméréstől kezdve megjelenik a 3D-s megtekintőben.<br>
+A következő felmérések csak akkor jelennek meg 3D-ben, ha (közvetlenül vagy közvetve) kapcsolódnak hozzájuk
+az első felmérés.<br><p>
+
+Ha több felmérés georeferált, akkor mindegyik megjeleníthető 3D-ben, együtt a
+kapcsolódó felmérések.<br><p>
+
+
+<b>2D nézet felmérések</b><br>
+
+A kiválasztott felmérés felülnézetben, középvonal- és állomásnevekkel együtt jelenik meg.
+Minden felmérésnek más színe van. Egy idő után a színek ismétlődnek, ezért érdemes megjeleníteni
+egyszerre csak két-három felmérés.<br>
+Az egyenletek szaggatott piros vonalakként jelennek meg, az egyenlített állomások háttere pedig kerek.<br><p>
+
+A nézet pásztázható és nagyítható.<br>
+Egy felmérés megragadható (érintsen meg egy állomást: körbekerül) és húzható, miközben a többi felmérés nem mozdul.
+Ily módon átfedheti a különböző felmérések állomásait, amelyeket egyenlővé szeretne tenni.
+Ha átfedik egymást, karikázza be mindkettőt a pont megérintésével: ezután beszúrhatja közéjük az egyenletet az "egyenlítés hozzáadása" menüvel.<br><p>
+
+<b>Gombok</b>
+<ul style="margin-top:0">
+<li><i>Egyenlítés hozzáadása</i>: megnyit egy párbeszédablakot, ahol manuálisan adhat hozzá egyenletet a barlangprojekt felmérései között.</li>
+<li><i>A lista egyenlő</i> a barlangprojekt felmérései között</li>
+</ul><br><p>
 
 </body></html>
