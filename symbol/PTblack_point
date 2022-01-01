@@ -1,0 +1,12 @@
+encoding utf-8
+symbol point
+name PTblack_point
+name-hu PT fekete pont
+th_name PTblack_point
+orientation no
+color 0xf8f8f8
+path
+  moveTo 0 0
+  lineTo 0.04 0.01
+endpath
+endsymbol

@@ -1,0 +1,12 @@
+encoding utf-8
+symbol point
+name PTblue_point
+name-hu PT kék pont
+th_name PTblue_point
+orientation no
+color 0x0000f8
+path
+  moveTo 0 0
+  lineTo 0.04 0.01
+endpath
+endsymbol

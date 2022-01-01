@@ -1,0 +1,12 @@
+encoding utf-8
+symbol point
+name PTorange_point
+name-hu PT narancs pont
+th_name PTorange_point
+orientation no
+color 0xf87800
+path
+  moveTo 0 0
+  lineTo 0.04 0.01
+endpath
+endsymbol

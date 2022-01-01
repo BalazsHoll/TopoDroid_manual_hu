@@ -1,0 +1,12 @@
+encoding utf-8
+symbol point
+name PTgray_point
+name-hu PT szürke pont
+th_name PTgray_point
+orientation no
+color 0xb8b8b8
+path
+  moveTo 0 0
+  lineTo 0.04 0.01
+endpath
+endsymbol

@@ -1,0 +1,12 @@
+encoding utf-8
+symbol point
+name PTgreen_point
+name-hu PT zöld pont
+th_name PTgreen_point
+orientation no
+color 0x00b800
+path
+  moveTo 0 0
+  lineTo 0.04 0.01
+endpath
+endsymbol

@@ -1,0 +1,12 @@
+encoding utf-8
+symbol point
+name PTbrown_point
+name-hu PT barna pont
+th_name PTbrown_point
+orientation no
+color 0x780000
+path
+  moveTo 0 0
+  lineTo 0.04 0.01
+endpath
+endsymbol

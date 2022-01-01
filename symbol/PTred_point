@@ -1,0 +1,12 @@
+encoding utf-8
+symbol point
+name PTred_point
+name-hu PT piros pont
+th_name PTred_point
+orientation no
+color 0xf80000
+path
+  moveTo 0 0
+  lineTo 0.04 0.01
+endpath
+endsymbol
