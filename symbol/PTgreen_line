@@ -1,0 +1,9 @@
+encoding utf-8
+symbol line
+name PTgreen_line
+name-hu PT zöld
+th_name PTgreen_line
+group border
+color 0x00b800 0xff
+width 1
+endsymbol

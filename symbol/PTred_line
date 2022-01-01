@@ -1,0 +1,9 @@
+encoding utf-8
+symbol line
+name PTred_line
+name-hu PT piros
+th_name PTred_line
+group border
+color 0xf80000 0xff
+width 1
+endsymbol

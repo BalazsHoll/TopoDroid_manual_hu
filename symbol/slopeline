@@ -1,0 +1,12 @@
+encoding utf-8
+symbol line
+name slopeline
+name-hu esésvonal
+th_name slopeline
+style straight x0
+color 0xccccc1 0xff
+width 1
+effect
+ 
+endeffect
+endsymbol

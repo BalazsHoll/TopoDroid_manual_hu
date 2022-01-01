@@ -1,0 +1,9 @@
+encoding utf-8
+symbol line
+name PTorange_line
+name-hu PT narancs
+th_name PTorange_line
+group border
+color 0xf87800 0xff
+width 1
+endsymbol

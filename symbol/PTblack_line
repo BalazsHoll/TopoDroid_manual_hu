@@ -1,0 +1,9 @@
+encoding utf-8
+symbol line
+name PTblack_line
+name-hu PT fekete
+th_name PTblack_line
+group border
+color 0xf8f8f8 0xff
+width 1
+endsymbol

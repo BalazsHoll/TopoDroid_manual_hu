@@ -1,0 +1,9 @@
+encoding utf-8
+symbol line
+name PTgray_line
+name-hu PT szürke
+th_name PTgray_line
+group border
+color 0xb8b8b8 0xff
+width 1
+endsymbol

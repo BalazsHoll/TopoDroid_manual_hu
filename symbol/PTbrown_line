@@ -1,0 +1,9 @@
+encoding utf-8
+symbol line
+name PTbrown_line
+name-hu PT barna
+th_name PTbrown_line
+group border
+color 0x780000 0xff
+width 1
+endsymbol

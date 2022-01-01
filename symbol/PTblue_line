@@ -1,0 +1,9 @@
+encoding utf-8
+symbol line
+name PTblue_line
+name-hu PT kék
+th_name u:PTblue_line
+group border
+color 0x0000f8 0xff
+width 1
+endsymbol
