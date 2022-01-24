@@ -23,9 +23,12 @@ A névnek egyedinek kell lennie az adatbázisban. Azok a nevek, amelyek csak kis
 a fájlrendszer nem különbözteti meg a kis- és nagybetûket. A TopoDroid figyelmeztetést ad, ha az új felmérés neve egybeesik egy meglévő felmérés nevével kivéve a kis-nagybetűk esetét.<br><p>
 
 <b> FIGYELEM </b>.
-A felmérés neve nem tartalmazhatja a '/' (perjel) karaktert, amely az útvonal elválasztó.
-A perjeleket kötőjelekkel '-' váltja fel.<br><p>
-
+A felmérés neve nem tartalmazhat szóközt, és nem tartalmazhat „/” (perjel, amely az elérési út elválasztója), „:” (kettőspont),
+ „*” (csillag) és „\” (fordított perjel).
+ A fordított perjelek megszűnnek.
+ A szóközöket '_' (aláhúzás), a perjeleket és kettőspontokat kötőjellel '-', a csillagokat pedig '+' (plusz) helyettesíti.<br><p>
+ 
+ 
 A <i>dátum</i> "éééé.hh.np" formátumú. Például 2015. január 6-a "2015.01.06". Ez az aktuális dátumra van előre beállítva.<br><p>
 
 A <i>csapat</i> és a <i>leírás</i> üres (hacsak nem állított be alapértelmezett csapatot az alkalmazás beállításaiban). Nyugodtan hagyhatják őket, bár jó gyakorlat időt szakítani a kitöltésre.<br><p>
