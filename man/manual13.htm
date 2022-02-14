@@ -113,8 +113,8 @@ A támogatott adatformátum a "normal" és a "diving".<br>
 Az adategységek „poligon” és „fok” (méterekre és fokra konvertálva a TopoDroid belsejében).<br><p>
 
 Beállítások: <ul style="margin-top=0">
-<li><u>pont előtag</u></li>
-<li><u>részletpont</u></li>
+<li><u>Pont előtag</u>: ha meg van adva, akkor a mérési pont neve elé kerül.</li>
+<li><u>Részletpontok (sünök)</u></li>
 <li><u>B/J csere</u></li>
 </ul>
 <br><p>
@@ -130,7 +130,7 @@ A <i>cSurvey</i> export magában foglalja a kalibráció-ellenőrző méréseket
 (hang és fotó).<br><p>
 
 Beállítások: <ul style="margin-top=0">
-<li><u>pont előtag</u> adjon-e előtagot az pontnevekhez</li>
+<li><u>pont előtag</u>: adja-e előtagnak a mérési pont nevekhez a felmérés nevét</li>
 </ul><p>
 
 
@@ -199,8 +199,10 @@ Alapértelmezés szerint az BJFL a CÉL ponton van, de a KEZDŐ pont beállítha
 Az adategységek „méterek” és „fokok”.<br><p>
 
 Beállítások: <ul style="margin-top=0">
-<li><u>játszik</u></li>
+<li><u>Trox</u> formátumban. Alapértelmezés szerint az adatok "tro" formátumban kerülnek mentésre</li>
+<li><u>Sünök</u></li>
 <li><u>BJFL a Kezdő</u></li> oldalon
+<li><u>Pont utótag</u>: ha meg van adva, akkor a mérési pont nevéhez fűződik.</li>
 </ul>
 <br><p>
 
@@ -209,8 +211,12 @@ A felmérés adatai exportálhatók <i>Walls</i> fájlként (részben tesztelve)
 Az adategységek követik a felhasználói beállításokat.<br><p>
 
 <b id="winkarst"> WinKarst</b> (.sur)<br>
-A felmérés adatai exportálhatók <i>WinKarst</i> fájlként (nem tesztelve).<br><p>
+A felmérés adatai exportálhatók <i>WinKarst</i> fájlként (nincs tesztelve).<br><p>
 
+Beállítások:<ul style="margin-top=0">
+<li><u>Pont előtag</u>: ha meg van adva, akkor a mérési pont neve elé kerül.</li>
+</ul>
+<br><p>
 
 <b id="ptopo"> PocketTopo</b> (.top)<br>
 A TopoDroid mind az importálás, mind az exportálás során támogatja a <i>PocketTopo</i> t.<br><p>
@@ -571,14 +577,14 @@ A Sün-osztályok nem támogatottak az "round-trip" exportálás során.
 Beállítások: <ul style="margin-top=0">
 <li>Rajz <u>metszet-pont</u>: ha a metszetek automatikusan hozzáadódnak a metszetok vonalához,
 a metszetrajz beillesztésre kerül az exportálásba, a "metszet" pontba</li>
-<li>automatikus <u>pontpontok</u>: ha engedélyezve van, akkor az összes pont szerepel az exportálásban,
+<li>automatikus <u>poligon-pontok</u>: ha engedélyezve van, akkor az összes pont szerepel az exportálásban,
 egyébként csak a felhasználó által kiválasztott pontok szerepelnek</li>
 <li><u>pontok távolsága</u> az interpolációs pontok közötti maximális távolság a sima vonalakon</li>
-<li><u>oda-vissza</u>: a vázlatok készen vannak exportálva a Walls / Compass oda-vissza útra. Alapértelmezett nem</li>
+<li><u>oda-vissza</u>: a vázlatok készen vannak exportálva a Walls/Compass oda-vissza útra. Alapértelmezett nem</li>
 <li><u>rács</u> sorok hozzáadva az exportáláshoz (cellaméret a jelenlegi rácsegységekben). Alapértelmezett nem</li>
 <li><u>vonal tájolása</u> pipa. Alapértelmezett nem</li>
 <li><u>vonalak szélessége</u>: címkék, ikonok, vonalak (és területhatárok), rácsvonalak, felvételek, tájolásvonal</li>
-<li><u>pontméret</u>: az pont megnevezi a szöveg méretét. Alapértelmezett 20</li>
+<li><u>pontméret</u>: a pont megnevezés a szöveg méret. Alapértelmezett 20</li>
 </ul><p>
 
 
@@ -595,15 +601,15 @@ A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importál
 <li><b>Therion</b> <i>térképparancsok</i> a poligon blokk előtt vagy után [után]</li>
 <li><b>Therion</b> <i>auto-pontok</i>: automatikusan hozzáadnak poligon pontokat a therion vázlatfájl (ok) hoz [igen]. Ha a vázlatfájlokat használni szeretné, méretarányuk meghatározásához poligon pontokkal kell rendelkezniük. Manuálisan kiválaszthatja, melyik pontot adja hozzá (a vázlatrajz szerkesztésével), vagy hagyhatja, hogy a TopoDroid hozzáadja az pontokat. A program hozzáadja az összes pontt, amely a rajzon belül van (a rajz domború testén belül).</li>
 <li><b>Therion</b> <i>splays</i> sorokat a Therion-szintekben [igen]</li>
-<li><b>cSurvey/Compass</b> <i>felmérés előtag</i> a pontokhoz [nem]</li>
-<li><b>Iránytű / TopoRobot / WinKarst / Polygon / VisualTopo</b>
+<li><b>cSurvey</b> <i>felmérés előtag</i> a pontokhoz [nem]</li>
+<li><b>Compass / TopoRobot / WinKarst / Polygon / VisualTopo</b>
   <ul>
   <li>minimális <i>töredezett poligonszög</i> az BJFL számításához [0.0] Ezt a <b>Survex / Therion</b> -ban is használják, ha BJFL-ra van szükség.</li>
   <li>az BJFL felfelé / lefelé történő felhasználásához használt minimális dőlés a sablonokhoz [0]</li>
   <li>a bal / jobb oldali BJFL-hez használt sablonok maximális lejtése [90]</li>
  </ul>
 </li>
-<li><b>Compass swap BJ</b>: Csere B és J az Iránytű exportálásakor.</li>
+<li><b>Compass swap BJ</b>: Csere B és J az Compass exportálásakor.</li>
 <li><b>Survex / Topo</b> <i>sorvég</i>: Unix vagy Windows [Unix]</li>
 <li><b>Survex</b> exportálás a <i>elnevezett sünnel</i> VÉG pontokra [nem]</li>
 <li><b>Survex / Therion</b> exportálás <i>BJFL</i> sorokkal [nem]</li>
