@@ -14,9 +14,12 @@ A cím színe az aktuális pont-hozzárendelési házirendtől függ:
 <li>narancs: "toporobot" irányelv</li>
 </ul><br><p>
 
-A TopoDroid négyféle mérést különböztet meg (különféle színnel): "poligon", "ismételt poligon", "sün" és "üres".
-A mérés fontos tulajdonságai a mérés adatainak és pontneveinek háttérszínén keresztül jelennek meg.
+A mérés tulajdonságai a mérés adatainak és pontneveinek háttérszínén keresztül jelennek meg.
 <br><p>
+
+A TopoDroid négyféle mérést különböztet meg (különféle színnel): "poligon", "ismételt poligon", "sün" és "üres".
+A sünök tovább osztályozhatók: „kereszt” (X), vízszintes (H), függőleges (V) és „szkennelés” (letapogatási módban készített mérések).
+A <a href="page_shot_edit1.htm">Sün osztályok</a> az X-H-V alapértelmezés szerint le vannak tiltva [G].<br><p>
 
 Mérés adatainak előtér színe:
 <ol>
@@ -30,16 +33,16 @@ Mérés adatainak előtér színe:
 <li>[ibolya]: üres poligon</li>
 </ol><p>
 
-Állomás neve előtér színe:
-<ul>
-<li>[világoszöld] aktuális pont</li>
-</ul><p>
-
 A mérés adatainak háttérszíne:
 <ul>
 <li>[vöröses] <a href="page_accuracy.htm"> megbízhatatlan</a> mérések, azaz "rendellenes" mezőintenzitású mérések (csak DistoX2)</li>
 <li>[narancssárga] rövid poligon</li>
-<li>[szürke] kizárt mérés</li>
+<li>[szürke] kommentált mérés</li>
+</ul><p>
+
+A pontnevek előtér színe:
+<ul>
+<li>[világoszöld] aktuális pont</li>
 </ul><p>
 
 Az pontnevek háttérszíne:
@@ -50,6 +53,16 @@ Az pontnevek háttérszíne:
 </ul><p>
 
 <img src = "shots_list.png" alt = "mérések listája" /><p>
+
+<h4>Mérési pontok nevei</h4>
+A mérési pont nevek a mérés tulajdonságai, mint például az azimut vagy a távolság.
+Ezekkel ellentétben azonban a pontok nevei arra szolgálnak, hogy a méréseket "összekapcsolják" a poligonban.
+Ez a poligont és a vázlatokat is érinti.<br>
+Ha egy mérés pontjainak neve megváltozik, a poligon megváltozhat.
+Ha a ponthoz keresztmetszetet csatoltál, akkor ez nem kapcsolódik a poligonhoz (és később összekapcsolható egy másik
+ponttal).
+Egy vázlat (alaprajz vagy oldalnézet) leválasztható a poligonról, ha a referenciapont neve (az eredet)
+módosult.<br><p> 
 
 <h4>AKCIÓK</h4>
 <ul style = "margin-top: 0">
@@ -88,8 +101,7 @@ Többlválasztásos lehetőségek:<br>
 <li>a mérések kiterítésének megfordítása</li>
 <li>a beállított mérések <i>jobb</i>ra legyenek kiterítve</li>
 <li>különleges akciók [T]</li>
-<li><i>kivágja</i> a méréseket, és beteszi a mérés pufferbe</li>
-<li><i>másolja</i> a méréseket a mérés pufferbe</li>
+<li><i>törölje</i> a méréseket</li>
 <li><i>bezárja</i> a többes választást</li>
 </ul><br><p>
 
@@ -105,7 +117,7 @@ Ha a 3D modellezés engedélyezve van, akkor egy gomb is létrehozhat egy új 3D
 <li><u>Helyreállítás</u>: törölt elem (mérés vagy vázlat) <a href="page_undelete.htm"> helyreállítása</a></li>
 <li><u>Fotó</u>: ehhez a felméréshez készített képek</li>
 <li><u>Hang</u>: ehhez a felméréshez felvett hang jegyzetek</li>
-<li><u>3D</u>: 3D felmérés megjelenítése (<a href="manual14.htm"> Cave3D-val</a>)</li>
+<li><u>3D</u>: 3D felmérés megjelenítése (<a href="manual14.htm"> Cave3D szükséges</a>)</li>
 <li><u>Eszköz</u>: átvált az eszközablakra</li>
 <li><u>Beállítások</u></li>
 <li><u>Súgó</u></li>
