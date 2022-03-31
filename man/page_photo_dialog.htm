@@ -1,16 +1,57 @@
-<html><body>
+<html>
+<test>
 
-<h4>FOTÓ JEL RAJZOLÁS</h4>
+<h4>MÉRÉS/VÁZLAT FOTÓ</h4>
 
 <div style="font-size=90%">
-Ez a párbeszédablak nyílik meg ha fényképet illesztünk be rajzolás módban a <u>vázlatba</u>.<br><p>
+Ez a párbeszédpanel a másodlagos <i>Mérés szerkesztés</i> párbeszédpanel <i>Fotó</i> gombjával nyílik meg, vagy amikor egy "fotó" pont 
+vagy egy fénykép keresztmetszet kerül beillesztésre 
+a <u>vázlat ablakban</u>.<br><p>
 
-Fotó tulajdonságok:
+Szövegmezővel rendelkezik az elkészítendő fényképhez fűzött <b>megjegyzés</b> számára.<br><p>
+
+Töröld a jelölést a <b>TopoDroid kamera</b> négyzetből, ha a TopoDroid kamera helyett a Kamera alkalmazást szeretnéd használni.<br><p>
+
+Gombok:
 <ul>
-<li><b>megjegyzés</b></li>
+<li><b>OK</b> bezárja a párbeszédpanelt, és elkezdi a fényképezést.</li>
+<li><b>Mégse</b> bezárja a párbeszédpanelt.</li>
+</ul><br><p>
+
+<b>TopoDroid kamera</b><br>
+Ez a kamera egyszerű megvalósítása. 
+Egyedülálló tulajdonsága, hogy a képfájlban exif tagokban tárolja az kép irányát és dőlésszögét. 
+Az irányt GPS_LONGITUDE, a dőlésszöget pedig GPS_LATITUDE (előjellel).
+<br>
+A TopoDroid a következő exif címkéket állítja be:
+<ul>
+<li><i>Szoftver</i>: "TopoDroid" és verziója, szóközzel elválasztva</li>
+<li><i>Tájolás</i>:</li>
+<li><i>Adatidő</i>: időbélyeg</li>
+<li><i>GPS szélesség</i>: dőlésszög</li>
+<li><i>GPS szélességi ref</i>: "N" vagy "S"</li>
+<li><i>GPS hosszúság</i>: irány</li>
+<li><i>GPS hosszúsági ref</i>: "E"</li>
+<li><i>Kép leírása</i>: irány és dőlésszög 1/100&deg;-ben, szóközzel elválasztva</li>
 </ul>
+<br><p>
+
+A "fotó" ponthoz vagy a fénykép részhez a TopoDroid kamera kijelzőjén egy középre igazított hajszálkereszt található.<br><p>
+
+A TopoDroid kamerán három gomb található a jobb alsó sarokban.
+<ul>
+<li><b>kamera</b>. Piros: készen áll, koppintson a kép elkészítéséhez. Kék: tartásban, érintse meg a kamera aktiválásához.</li>
+<li><b>mentés</b> elmenti a képet</li>
+<li><b>vissza</b> bezárja az ablakot</li>
+</ul>
+
+Ha a képernyő felfelé néz, a kép álló formátumú.
+Ha a képernyőt balra vagy jobbra fordítja, a kép fekvő.<br><p>
+
+A zoom gombok a képernyő alsó részének megérintésével jelennek meg.
+A nagyítási lépések végrehajtásához koppintson gyorsan és ismételten a zoom gombokra.
 </div><br><p>
 
-Egyéb tulajdonságok a képfájl <a href="page_photo_comment.htm"> exif címkéiben</a> vannak tárolva.
 
-</body></html>
+</body>
+</html>
