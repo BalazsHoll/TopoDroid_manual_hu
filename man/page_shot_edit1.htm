@@ -8,31 +8,31 @@ Ez a párbeszédablak úgy nyílik meg, hogy megérintesz egy adatsort a felmér
 Az ablakban megjelenik:
 <ul>
 <li><b>hossz, irány, lejtés</b>. Szerkeszthető a kézzel beírt méréseknél; nem szerkeszthető a letöltött adatoknál</li>
-<li> a gyorsulás, a mágneses tér és a mágneses inklináció különbségei a vonatkozó átlagértékektől. Csak DistoX2 méréseknél.</li>
+<li>a gyorsulás, a mágneses tér és a mágneses inklináció különbségei a vonatkozó átlagértékektől. Csak DistoX2 méréseknél.</li>
 <li><b>pontok</b></li>
 <li><b>balra nyíl</b>: az előző poligon betöltése</li>
 <li><b>visszamérés</b>: pontok cseréje</li>
 <li><b>jobbra nyíl</b>: a következő poligon betöltése</li>
-<li> mérés <b>megjegyzés</b></li>
-<li> oldalnézet "kiterítése" választás: "bal", "függőleges", "jobb". "nem beállított", ha egyik sincs bejelölve</li>
+<li>mérés <b>megjegyzés</b></li>
+<li>oldalnézet <b>kiterítése</b>: "bal", "függőleges", "jobb". A kiterítés "nem beállított", ha egyik sincs bejelölve</li>
 </ul><br><p>
 
 Gombok:
 <ul>
-<li><img src = "btn_duplicate.png"> "duplikátum" zászló</li>
-<li><img src = "btn_surface.png"> "felszíni" zászló</li>
-<li><img src = "btn_comment.png"> "kizárt" zászló</li>
+<li><img src = "btn_duplicate.png"> "duplikátum" zászló [H]</li>
+<li><img src = "btn_surface.png"> "felszíni" zászló [H]</li>
+<li><img src = "btn_comment.png"> "kizárt" zászló [H]</li>
 <li><img src = "btn_leg_after.png"> a mérés a közvetlenül megelőző poligonhoz tartozik.</li>
 <li><img src = "btn_leg_before.png"> a mérés a közvetlenül következő poligonhoz tartozik.</li>
 <li><img src = "btn_backleg.png"> a mérés egy visszamérés.</li>
 <li><img src = "btn_renumber.png"> újraszámozza a felvételeket erről a szakaszról az aktuális pont elnevezési irányelvnek megfelelően. Mindkét pontot meg kell adni</li>
 <li><img src = "btn_splay_group.png"> alkalmazza az pontváltást a mérés csoportjának összes oszlopára. Csak azokra a sünökre vonatkozik, amelyek ugyanazzal az ponttal rendelkeznek, mint a poligon.
 Csak a KEZDŐ pontot kellett megadni. (A sünök csoportja a két poligon mérés közötti sünök halmaza)</li>
-<li><img src = "btn_plan_profile.png"> elrejti a sünöket az alaprajzban, az oldalnézetben, vagy mindkettőben (csak a sünöket)</li>
-<li><img src = "btn_xsplay.png"> törölje (vagy állítsa be) a sün osztályt, és esetleg az előző sün-eket.</li>
+<li><img src = "btn_plan_profile.png"> elrejti a sünöket az alaprajzban, az oldalnézetben, vagy mindkettőben (csak a sünöket) [H]</li>
+<li><img src = "btn_xsplay.png"> törölje (vagy állítsa be) a sün osztályt, és esetleg az előző sün-eket. [H]</li>
 <li><b>OK</b>: mentse a módosításokat és zárja be a párbeszédpanelt</li>
 <li><b>Mentés</b>: a módosítások mentése a párbeszédpanel bezárása nélkül</li>
-<li><b>Több</b>: váltson a másodlagos <a href="page_shot_edit2.htm"> szerkesztési párbeszédpanelre</a></li>
+<li><b>Több</b>: váltson a másodlagos <a href="page_shot_edit2.htm"> szerkesztési párbeszédpanelre [H]</a></li>
 <li><b>Mégse</b>: mentés nélkül zárja be a párbeszédpanelt</li>
 </ul>
 <br><p>
@@ -49,31 +49,31 @@ mező.<br><p>
 
 Az pontbeviteli mező hosszú megérintésével megnyílik a legördülő menü a három lehetőséggel
 <ul>
-<li> vágás</li>
-<li> másol</li>
-<li> beilleszt</li>
+<li>vágás</li>
+<li>másol</li>
+<li>beilleszt</li>
 </ul>
 
 <div style = "font-size = 90%">
-<b>Sün osztályok</b><br>
+<b>Sün (segédmérés) osztályok</b><br>
 A sün osztályok engedélyezése "egyedi beállítással" lehetséges. Négy osztály van:
 <ul>
-<li><i>normális</i>, általános, töredezett. Kék</li>
-<li><i>keresztmetszet</i> sablonok. Zöld</li>
-<li><i>vízszintes</i>, terv-nézet, osztások. Sötétkék</li>
-<li><i>függőleges</i>, profil-nézet, osztások. Ibolya</li>
+<li><i>normális</i>, általános, sünök. Kék</li>
+<li><i>keresztmetszet</i> sünök. Zöld</li>
+<li><i>vízszintes</i>, alaprajz-nézet, sünök. Sötétkék</li>
+<li><i>függőleges</i>, oldalnézet, sünök. Ibolya</li>
 </ul>
 
-A <i>sün osztály</i> gomb végiglépteti ezt a négy osztályt.
-Az adatok mentésekor a mérés a kiválasztott osztályra van állítva.
+A <i>sün osztály</i> gomb végiglépteti ezt a négy osztályt. 
+Az adatok mentésekor a mérés a kiválasztott osztályra van állítva. 
 Ha bejelöli az "minden sün" gombot, akkor az osztály az összes előző összefüggő "normális" sünre is beállítódik.<br><p>
 
-A sün záradékok a "speciális műveletek" gombbal is beállíthatók.
-A többes kiválasztásban bejelölheted azokat a sablonokat, amelyek nem szomszédosak, és mindegyikhez besorolási osztályt rendelhetsz.<br><p>
+A sün osztályok a "speciális műveletek" gombbal is beállíthatók. 
+A többes kiválasztásban bejelölheted azokat a sünöket, amelyek nem szomszédosak, és mindegyikhez besorolási osztályt rendelhetsz.<br><p>
 
-Ha következetes méréseket készítesz, akkor a sün osztályok beállíthatók a poligon mérés szerkesztésével és a
-sün csoport gombbal.
-Először meg kell mérni a kereszmetszet sablonokat, amelyek +90&deg;-al kezdődnek és körbe mennek.
+Ha következetes méréseket készítesz, akkor a sün osztályok beállíthatók a poligon mérés szerkesztésével és a 
+sün csoport gombbal. 
+Először meg kell mérni a kereszmetszet sablonokat, amelyek +90&deg;-al kezdődnek és körbe mennek. 
 Ezután vegye a H-sünöket. Végül a függőleges síkban lévő oszlopokat vesszük újra +90&deg;-al kezdve.<br><p> 
 </div>
 
