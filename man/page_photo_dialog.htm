@@ -8,7 +8,7 @@ Ez a párbeszédpanel a másodlagos <i>Mérés szerkesztés</i> párbeszédpanel
 vagy egy fénykép keresztmetszet kerül beillesztésre 
 a <u>vázlat ablakban</u>.<br><p>
 
-Szövegmezővel rendelkezik az elkészítendő fényképhez fűzött <b>megjegyzés</b> számára.<br><p>
+Szövegmezővel rendelkezik az elkészítendő fényképhez fűzött <b>megjegyzés</b> számára, és egy jelölőnégyzettel a kamera megvalósításának kiválasztásához.<br><p>
 
 Gombok:
 <ul>
@@ -23,12 +23,12 @@ Az irányt GPS_LONGITUDE, a dőlésszöget pedig GPS_LATITUDE (előjellel).
 <br>
 A TopoDroid a következő exif címkéket állítja be:
 <ul>
-<li><i>Szoftver</i>: "TopoDroid" és verziója, szóközzel elválasztva</li>
-<li><i>Tájolás</i>:</li>
-<li><i>Adatidő</i>: időbélyeg</li>
-<li><i>GPS szélesség</i>: dőlésszög</li>
+<li><i>Szoftver</i>: "TopoDroid" és verziója, szóközzel elválasztva [Android 7 és magasabb]</li>
+<li><i>Tájolás</i></li>
+<li><i>Adatidő</i>: [yyyy.MM.dd]</li>
+<li><i>GPS szélesség</i>: dőlésszög [1/100&deg;]</li>
 <li><i>GPS szélességi ref</i>: "N" vagy "S"</li>
-<li><i>GPS hosszúság</i>: irány</li>
+<li><i>GPS hosszúság</i>: irány [1/100&deg;]</li>
 <li><i>GPS hosszúsági ref</i>: "E"</li>
 <li><i>Kép leírása</i>: irány és dőlésszög 1/100&deg;-ben, szóközzel elválasztva</li>
 </ul>
@@ -42,15 +42,25 @@ Figyelmeztetés jelenik meg, ha az érzékelő pontossága alacsony.<br><p>
 A TopoDroid kamerán három gomb található a jobb alsó sarokban.
 <ul>
 <li><b>kamera</b>. Piros: készen áll, koppintson a kép elkészítéséhez. Kék: tartásban, érintse meg a kamera aktiválásához.</li>
-<li><b>mentés</b> elmenti a képet</li>
-<li><b>vissza</b> bezárja az ablakot</li>
+<li><b>mentés</b> elmenti a képet. A kép elkészítéséig szürkén jelenik meg.</li>
+<li><b>vissza</b> bezárja az ablakota kép mentése nélkül</li>
 </ul>
 
-Ha a képernyő felfelé néz, a kép álló formátumú.
+Ha a képernyő felfelé néz, a kép álló formátumú. 
 Ha a képernyőt balra vagy jobbra fordítja, a kép fekvő.<br><p>
 
-A zoom gombok a képernyő alsó részének megérintésével jelennek meg.
-A nagyítási lépések végrehajtásához koppintson gyorsan és ismételten a zoom gombokra.
+A zoom gombok a képernyő alsó részének megérintésével jelennek meg. 
+A nagyítási lépések végrehajtásához koppintson gyorsan és ismételten a zoom gombokra.<br><p>
+
+<b>Kamera megvalósítás</b><br>
+A TopoDroidnak két kameramegvalósítása van: az első a régi Android kamera API-t használja, 
+a második az új Android camera2 API-t használja.<br>
+Az alapértelmezett a régi kamera.<br><p>
+
+Az új camera2 API-val legfeljebb öt kísérletet lehet rögzíteni, 
+ami után a <i>kamera</i> gomb már nem érhető el.<br><p>
+
+Figyelmeztetés jelenik meg, ha a JPEG kép mentése sikertelen.<br><p>
 </div><br><p>
 
 
