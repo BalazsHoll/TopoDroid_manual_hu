@@ -42,7 +42,8 @@ Egyes interfészbeállításokhoz (például a gombok méretéhez) újra kell in
   <ul>
   <li>Alapértelmezett adatexport típus: {cave,cav,csv,csx,dat,dxf,grt,gtx,srv,sur,svg,svx,th,top,tro} [nincs]</li>
   <li>Alapértelmezett vázlat exportálás típusa: {none, th, csx, dxf, svg, png, xvi} [nincs]</li>
-  <li>Iránytű a BJFL sün szögét. BJFL minimális sün-poligon szög.</li>
+  <li>Vázlat auto-export formátum [nincs]</li>
+  <li>Compass a BJFL sün szögét. BJFL minimális sün-poligon szög.</li>
   <li>Fel / le minimális sün lejtés. [0&deg;]</li>
   <li>Bal / Jobb maximális sün lejtés. [90&deg]</li>
   <li>Pontok távolsága: a vonalpontok közötti távolság</li>
@@ -137,15 +138,15 @@ Egyes interfészbeállításokhoz (például a gombok méretéhez) újra kell in
 <b>FELMÉRÉSI ADATOK</b><br>
 <ul>
 <li>Csapat. Alapértelmezett felmérési csoport. Alapértelmezett "unset"</li>
-<li>Állomások házirendje: Felmérési állomások elnevezési politikája: {none, splay + fore, splay + back, fore + splay, back + splay, back + splay + fore, tripod, magn.anomaly}.
+<li>Pontok házirendje: Felmérési pontok elnevezési szabálya: {nincs, sün + előre, sün + vissza, előre + sün, vissza + sün, vissza + sün + előre, állvány, mágn.anomália}.
 Az opciók száma a tevékenység szintjétől függően változik.
-Alapértelmezett "splash + fore".</li>
-<li>Állomásnevek {alfanumerikus, numerikus}. [alfanumerikus]</li>
-<li>Kezdeti állomás neve. Alapértelmezett "unset"</li>
+Alapértelmezett "sün + előre".</li>
+<li>Pontnevek {alfanumerikus, numerikus}. [alfanumerikus]</li>
+<li>Kezdő pont neve. Alapértelmezett "0"</li>
 <li>Fotó bélyegképek mérete [80 400]. [200 pxl]</li>
-<li>Adatok automatikus exportálása</li>
-<li>vázlat eredete</li>
-<li>Megosztott x-szakaszok</li>
+<li>Adatok alapértelmezett exportálása</li>
+<li>Vázlat kezdőpontja</li>
+<li>Megosztott keresztmetszetek</li>
 </ul>
 
 MÉRTÉKEGYSÉGEK
@@ -208,7 +209,8 @@ PONTOSSÁG
 <li>Keresztmetszet szakasz vízszintes küszöb</li>
 <li>Poligon ellenőrzés. Ellenőrizze, hogy az pontok csatlakoztak-e a poligonhoz. [igen]</li>
 <li>A poligon kiterítésének ellenőrzése. [igen]</li>
-</ul>
+<li>Vázlat alapértelmezett export formátum</li>
+</ul><br>
 
 <div style = "font-size: 90%">
 <ul>
@@ -223,6 +225,7 @@ PONTOSSÁG
   <li>Sün szaggatás szögküszöb. [60&deg]</li>
   <li>Biztonsági mentés szám. [5]</li>
   <li>Biztonsági mentés intervalluma. [60s]</li>
+  <li>Vázlat alapértelmezett export formátum</li>
   <li>Automatikus keresztmetszet szakaszok az exportban</li>
   <li>Mentett poligon-pont színezés</li>
   <li>Rétegek. [nem]</li>
