@@ -57,11 +57,11 @@ A felmérési adatok és vázlatok a TDX "TopoDroid" almappájába kerülnek men
 Minden felmérésnek van egy almappája a "TopoDroid" alatt.
  A felmérési mappák nem törlődnek, ha egy felmérést törlünk a TopoDroidból.<br>
 A "TopoDroid" mappa tartalmazza a "distox14.sqlite" adatbázist, a felmérés mappáit,
-és a barlangprojektek "thconfig" mappáját.<br><p>
+ és a barlangprojektek "thconfig" mappáját.<br><p>
 
 <h4>Hozzáférési engedélyek megadása</h4>
 Előfordulhat, hogy Android 11 és újabb rendszereken a TopoDroid nem tudja létrehozni a "TDX" alapmappát, vagy abban néhány almappát vagy fájlt,
-mert nincs elegendő engedélye a külső tároló eléréséhez.<br>
+ mert nincs elegendő engedélye a külső tároló eléréséhez.<br>
 Ebben az esetben az "adb" (Android Debug Bridge) használatával adja meg az engedélyeket.<br>
 <ol>
 <li>töltse le az „adb” elemet a számítógépére</li>
@@ -78,7 +78,16 @@ Ebben az esetben az "adb" (Android Debug Bridge) használatával adja meg az eng
 </li>
 </ol>
 <br><p>
- 
+
+<h4>Régi felmérések importálása</h4>
+A TopoDroidX (v.6) a régi 5.1.40-es verzióval együtt telepíthető, mert különböző alapmappákat használnak.<br>
+A régi, 5.1.40-es verziójú felmérések a 6-os verzióba importálhatók a régi TopoDroiddal létrehozott zip-archívumaikból.<br>
+Ezek létrehozhatók a
+<a href="http://marcocorvi.altervista.org/caving/speleoapps/speleoapks/TopoDroidZipScript.html">zip_script</a>-el is.
+<br><p>
+
+<b>Megjegyzés</b> A TopoDroid v.5.1.40 nem tudja importálni a v.6 zip archívumokat az adatbázisban bekövetkezett változások miatt.<br><p>
+
 <h4>Hardverfunkciók</h4>
 A TopoDroid a következő hardverfunkciókat használja: "bluetooth", "camera", "mikrofon", "GPS", "multitouch".
  A TopoDroid azon funkciói, amelyek nem szerepelnek az adott Android-eszközön, automatikusan kikapcsolódnak.
