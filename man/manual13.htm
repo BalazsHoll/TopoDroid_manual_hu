@@ -100,7 +100,7 @@ Ezenkívül exportálja a felmérés adatait
 <li><a href="#plt">trackfile</a></li>
 <li><a href="#shp">shapefile</a></li>
 </ul>
-Ha a felmérés nem georeferált, a felmérés adata nem exportálható az utolsó négy exportálási formátumba.
+formátumokba is exportálhatod. Ha a felmérés nem georeferált, a felmérés adata nem exportálható az utolsó négy exportálási formátumba.
 <br><p>
 
 A georeferencia pontokat szélességi hosszúság [tizedes fok] és a átlagos tengerszint feletti magasság [m] koordinátákkal exportálják.<br>
@@ -353,7 +353,7 @@ A "shots" DBF az alábbi mezőket tartalmazza:
 </ul><br>
 
 Beállítások: <ul style="margin-top=0">
-<li><u>pontok</u>: az pontok exportálása</li>
+<li><u>pontok</u>: a pontok exportálása</li>
 <li><u>segédpontok</u>: fel kell-e venni a segédpontokat</li>
 </ul><br><p>
 
@@ -369,7 +369,7 @@ A TopoDroid a felmérési vázlatokat a következő formátumokba exportálja:
 <li><a href="#xvi">xtherion</a></li>
 <li><a href="#cave3d">Cave3D</a></li>
 <li><a href="#dxf2">DXF</a></li>
-<li><a href="#png">PNG image</a></li>
+<!-- li><a href="#png">PNG image</a></li -->
 <li><a href="#pdf">PDF file</a></li>
 <li><a href="#shp2">shapefile</a></li>
 <li><a href="#svg">SVG</a></li>
@@ -480,8 +480,9 @@ a metszet rajza beillesztésre kerül az exportálásba, a "metszet" pontba</li>
 <li>DXF verzió: 9 (dxf-9), 12 (dxf-13) vagy 14 (dxf-14). Alapértelmezett "9"</li>
 </ul><p>
 
-<b id="png">PNG</b> (.png)<br>
-A PNG formátumú képfájl csak a vázlatok exportálásához használható.<br><p>
+<!-- b id="png">PNG</b> (.png)<br>
+A PNG formátumú képfájl csak a vázlatok exportálásához használható.<br>
+A "szint" beállítás hatással van a PNG-exportra: szintek használata esetén az export csak látható elemeket tartalmaz.<br><p>
 
 Beállítások: <ul style="margin-top=0">
 <li><u>képfelbontás</u> (1 azt jelenti, hogy 1 m = 40 képpont). A th2 exporthoz illeszkedő PNG felbontás 5,0.
@@ -491,9 +492,7 @@ Ha a rendszer nem rendelkezik elegendő memóriával a kép elkészítéséhez a
 <li><u>sünök</u>: hozzáadja vagy ne</li>
 <li><u>poligon pontok</u>: hozzáadja vagy ne</li>
 </ul><p>
-
-Végül a "szint" beállítás hatással van a PNG-exportra: szintek használata esetén az export csak látható elemeket tartalmaz.
-<br><p>
+<br><p -->
 
 <b id="pdf">PDF</b> (.pdf)<br>
 A vázlat képernyő exportálható PDF fájlként.<br>
@@ -624,8 +623,8 @@ A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importál
 <li><b>SVG</b> vonalvastagságok (címkék, ikonok, vonalak, rácsok, mérések, irány pipák)</li>
 <li><b>KML / GeoJSON</b> exportálás <i>pontokkal</i> [igen]</li>
 <li><b>KML / GeoJSON</b> exportálás <i>sünökkel</i> [nem]</li>
-<li><b>PNG</b><i>felbontás</i> [1.5]. Lehet 1 és 10 közötti szám. Minél nagyobb, annál nagyobb a kép (ha túl magasra állítja, akkor a rendszer nem biztos, hogy elegendő memóriával rendelkezik a PNG létrehozásához).</li>
-<li><b>PNG</b><i>háttérszín</i>: beállíthatja a PNG képek háttérszínét az RGB-értékek megadásával (három egész szám 0 és 255 között).</li>
+<!-- li><b>PNG</b><i>felbontás</i> [1.5]. Lehet 1 és 10 közötti szám. Minél nagyobb, annál nagyobb a kép (ha túl magasra állítja, akkor a rendszer nem biztos, hogy elegendő memóriával rendelkezik a PNG létrehozásához).</li>
+<li><b>PNG</b><i>háttérszín</i>: beállíthatja a PNG képek háttérszínét az RGB-értékek megadásával (három egész szám 0 és 255 között).</li -->
 <li><b>DXF</b> vázlat exportálás <i>méretarány</i> [1.0]</li>
 <li><b>DXF</b> exportálás <i>sün végpontokkal</i> [nem]</li>
 <li><i>DXF verzió</i> a DXF exportáláshoz: 6, 12 vagy 16. A 6. változatban a DXF export bezier görbéit vonalláncok helyettesítik, és a területeken nincsenek sraffozás. A DXF 12. és 16. verziója spline-okat és sraffozásokat használ, de még mindig hibásak.</li>

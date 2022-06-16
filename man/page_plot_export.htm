@@ -10,9 +10,10 @@ A vázlatok TopoDroid bináris formátumban vannak tárolva, és exportálhatók
 <li><i>Tunnel</i> ".xml" fájl</li>
 <li>2D DXF (<i>LibreCAD</i>)</li>
 <li>SVG (<i>Inkscape</i>)</li>
+<li>PDF</li>
 <li>shapefile (<i>QGIS</i>)</li>
 <li><i>xtherion</i> ".xvi" kép</li>
-<li>PNG képfájl</li>
+<!-- li>PNG képfájl</li -->
 </ul> <br> <p>
 
 
@@ -21,11 +22,10 @@ egy lehetőség arra, hogy a vázlatot automatikusan lezárja a támogatott expo
 
 A <b>cSurvey</b> exportfájl a alaprajokat és az oldalnézet vázlatokat egyaránt tartalmazza. Ha a "metszet" pontok meg vannak határozva, akkor az metszetekkel is rendelkezik.
 Az metszeteket nem exportálják cSurvey fájlként.<br><p>
+<!--
+A <b>PNG</b> képek felbontása állítható. A nagyobb és részletesebb kép azonban több CPU-időt igényel, és a memória korlátai miatt meghibásodhat. Ha ez nem sikerül, a TopoDroid megpróbálja csökkenteni a felbontást, amíg nem sikerül a vázlatot PNG képfájlként exportálni. <br><p -->
 
-A <b>PNG</b> képek felbontása állítható. A nagyobb és részletesebb kép azonban több CPU-időt igényel, és a memória korlátai miatt meghibásodhat. Ha ez nem sikerül, a TopoDroid megpróbálja csökkenteni a felbontást, amíg nem sikerül a vázlatot PNG képfájlként exportálni. <br><p>
-
-A vázlatok 2D <b>DXF</b> fájlként exportálhatók. A DXF exportálás tesztelése a <i>LibreCAD</i> szolgáltatással történik.
-Nem garantált, hogy az <i>AutoCAD</i> vagy más CAD programok megnyithatják.<br><p>
+A vázlatok 2D <b>DXF</b> fájlként exportálhatók. A támogatott DXF verziók a 9, 12 és 14.<br><p>
 
 A <b>shapefile</b> export mérési pontokat, poligonokat és rajzokat tartalmaz. Az összes rajzobjektum sokszögvonallá alakul.
 Az attribútum táblák tartalmazzák az objektum adatait (pl. Pont típusa, iránya stb.).
@@ -41,6 +41,7 @@ A vázlatok az "Áttekintő ablakból" is exportálhatók a következő formátu
 <li>2D DXF (<i>LibreCAD</i>)</li>
 <li>SVG</li>
 <li>shapefile (<i>QGIS</i>)</li>
+<li>PDF</li>
 <li>".xvi" fájl (<i>xtherion</i>)</li>
 </ul>
 <br><p>
