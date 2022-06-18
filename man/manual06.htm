@@ -4,7 +4,7 @@
 A felmérés <u>adatablak</u> megjeleníti a mérési jegyzőkönyv listáját.<br><p>
 
 A cím megjeleníti a felmérés nevét, és többes/dupla eszköz módban az aktív műszert.
-A cím színe az aktuális pont-hozzárendelési házirendtől függ:
+ A cím színe az aktuális pont-hozzárendelési házirendtől függ:
 <ul>
 <li>kék: előremérési irányelvek</li>
 <li>sötétkék: visszamérés irányelvek</li>
@@ -14,12 +14,9 @@ A cím színe az aktuális pont-hozzárendelési házirendtől függ:
 <li>narancs: "toporobot" irányelv</li>
 </ul><br><p>
 
-A mérés tulajdonságai a mérés adatainak és pontneveinek színén és háttérszínén keresztül jelennek meg.
-<br><p>
-
 A TopoDroid négyféle mérést különböztet meg (különféle színnel): "poligon", "ismételt poligon", "sün" és "üres".
-A sünök tovább osztályozhatók: „kereszt” (X), vízszintes (H), függőleges (V) és „szkennelés” (letapogatási módban készített mérések).
-A <a href="page_shot_edit1.htm">Sün osztályok</a> az X-H-V alapértelmezés szerint le vannak tiltva [G].<br><p>
+ A mérés fontos tulajdonságai a mérés adatainak és pontneveinek háttérszínén keresztül jelennek meg.
+<br><p>
 
 Mérés adatainak előtér színe:
 <ol>
@@ -33,16 +30,16 @@ Mérés adatainak előtér színe:
 <li>[ibolya]: üres poligon</li>
 </ol><p>
 
+Állomás neve előtér színe:
+<ul>
+<li>[világoszöld] aktuális pont</li>
+</ul><p>
+
 A mérés adatainak háttérszíne:
 <ul>
 <li>[vöröses] <a href="page_accuracy.htm"> megbízhatatlan</a> mérések, azaz "rendellenes" mezőintenzitású mérések (csak DistoX2)</li>
 <li>[narancssárga] rövid poligon</li>
 <li>[szürke] kizárt mérés</li>
-</ul><p>
-
-A pontnevek előtér színe:
-<ul>
-<li>[világoszöld] aktuális pont</li>
 </ul><p>
 
 Az pontnevek háttérszíne:
@@ -53,16 +50,6 @@ Az pontnevek háttérszíne:
 </ul><p>
 
 <img src = "shots_list.png" alt = "mérések listája" /><p>
-
-<h4>Mérési pontok nevei</h4>
-A mérési pont nevek a mérés tulajdonságai, mint például az irány vagy a távolság.
-Ezekkel ellentétben azonban a pontok nevei arra szolgálnak, hogy a méréseket "összekapcsolják" a poligonban.
-Ez a poligont és a vázlatokat is érinti.<br>
-Ha egy mérés pontjainak neve megváltozik, a poligon megváltozhat.
-Ha a ponthoz keresztmetszetet csatoltál, akkor ez nem kapcsolódik a poligonhoz (és később összekapcsolható egy másik
-ponttal).
-Egy vázlat (alaprajz vagy oldalnézet) leválasztható a poligonról, ha a referenciapont neve (a kezdőpont)
-módosult.<br><p> 
 
 <h4>AKCIÓK</h4>
 <ul style = "margin-top: 0">
@@ -131,8 +118,8 @@ Ha a 3D modellezés engedélyezve van, akkor egy gomb is létrehozhat egy új 3D
   <li><i>Állomásnevek</i> meghatározzák az pontok nevének típusát, akár alfanumerikus, akár numerikus [alapértelmezett "alfanumerikus"]</li>
   <li><i>Kezdő pont</i>: az alapértelmezett első pontnév az új felmérésekhez. Felülírható az <i>Új felmérés</i> párbeszédpanelen. [alapértelmezett nincs beállítva]</li>
   <li><i>Miniatűr mérete</i>: a fénykép indexképének mérete [alapértelmezett 200, min 80, max 400]</li>
-  <li><i>Adatok alapértelmezett exportálása</i>: alapértelmezett adat export formátum [alapértelmezett nincs]</li>
-  <!-- <li><i>Átírható pontszám</i>: ?</li> -->
+  <li><i>Adatok automatikus exportálása</i>: a felmérési adatok exportálása, ha az adatablak bezárul [alapértelmezett nem]</li>
+  <li><i>Átírható pontszám</i>: ?</li>
   <li><i>Vázlat kezdőpont</i>: hogy mindig ugyanazt a kezdőpontot javasoljuk-e vagy sem [alapértelmezett nem]</li>
   <li><i>Megosztott keresztmetszetek</i>: meg kell-e osztani alapértelmezés szerint az ponton lévő keresztmetszeteket [alapértelmezett nem]</li>
   <li><i>ADAT MÉRTÉKEGYSÉGEK</i>
@@ -168,7 +155,8 @@ Ha a 3D modellezés engedélyezve van, akkor egy gomb is létrehozhat egy új 3D
 </div><br><p>
 
 A felmérési adatok ablakból való kilépéshez koppintson duplán eszközének <i>VISSZA</i> gombra.<br>
-Ha az automatikus biztonsági mentés engedélyezve van, és az alapértelmezett adatfájl-formátum van beállítva, akkor az adatokat exportáljuk, amikor az adatablak bezárul.<br><p>
+Ha az automatikus biztonsági mentés engedélyezve van, és az alapértelmezett adatfájl-formátum van beállítva, akkor az adatokat exportáljuk, amikor az
+ adatablak bezárul.<br><p>
 
 
 <a href="manual05.htm"> &lt; Kalibrálási adatok</a> |
