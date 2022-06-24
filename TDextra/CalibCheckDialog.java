@@ -93,7 +93,8 @@ public class CalibCheckDialog extends MyDialog
     // setTitle( R.string.title_calib_check );
     // NOTE no calib check for DATAMODE_DIVING
     for ( DBlock blk : mShots ) {
-      array_adapter.add( blk.toShortStringNormal(true) );
+      //array_adapter.add( blk.toShortStringNormal(true) );
+      array_adapter.add( blk.toShortStringRoll(true) );
     }
   }
 

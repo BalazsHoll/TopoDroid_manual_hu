@@ -996,7 +996,7 @@ public class DataHelper extends DataSetObservable
    * @param decl         declination
    * @param comment      survey comment
    * @param init_station initial station
-   * @param xections     xsection mode (private or shared)
+   * @param xsections     xsection mode (private or shared)
    */
   private ContentValues makeSurveyInfoCcontentValues( String date, String team, double decl, String comment,
                                 String init_station, int xsections ) // datamode cannot be updated
@@ -1017,7 +1017,7 @@ public class DataHelper extends DataSetObservable
    * @param decl         declination
    * @param comment      survey comment
    * @param init_station initial station
-   * @param xections     xsection mode (private or shared)
+   * @param xsections     xsection mode (private or shared)
    */
   void updateSurveyInfo( long sid, String date, String team, double decl, String comment,
                          String init_station, int xsections )
@@ -3468,7 +3468,7 @@ public class DataHelper extends DataSetObservable
   /** select all the shots at one or two stations
    * @param sid        survey id
    * @param stations   stations names (must be unique)
-   * @param with_leg   whether to include legs or not
+   * @param with_legs   whether to include legs or not
    * @return list of shots
    */
   List< DBlock > selectAllShotsAtStations( long sid, List< String > stations, boolean with_legs )
