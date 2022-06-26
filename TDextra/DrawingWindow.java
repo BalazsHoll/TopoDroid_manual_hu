@@ -899,7 +899,7 @@ public class DrawingWindow extends ItemDrawer
     // TDLog.v( "zoom " + mZoom );
     mOffset.x -= mDisplayCenter.x*(1/zoom-1/mZoom);
     mOffset.y -= mDisplayCenter.y*(1/zoom-1/mZoom);
-    // TDLog.v( "change zoom " + mOffset.x + " " + mOffset.y + " " + mZoom );
+     //TDLog.v( " HBX change zoom " + mOffset.x + " " + mOffset.y + " " + mZoom );
     mDrawingSurface.setTransform( this, mOffset.x, mOffset.y, mZoom, mLandscape );
     // mZoomCtrl.hide();
     // if ( mZoomBtnsCtrlOn ) mZoomBtnsCtrl.setVisible( false );
@@ -914,17 +914,22 @@ public class DrawingWindow extends ItemDrawer
     mDrawingSurface.setFixedZoom( mFixedZoom > 0 );
     if ( mFixedZoom > 0 ) {
       //int dpi = TopoDroidApp.getDisplayDensityDpi();
-      int dpi =  (int) TopoDroidApp.getDisplayDensityXY();
+      //float dpi_ref =  TopoDroidApp.getDisplayDensityXY() / (float) dpi;
+      float dpi =  TopoDroidApp.getDisplayDensityXY();
       // 1 in = 2.54 cm
       // float dp2mm = dpi / (mFixedZoom * 25.4f); // 25.4 is a scale of 2 cm : 10 m (1:500)
       //float dp2mm = dpi * mFixedZoom / 127.0f; // 50.8 is a scale of 2 cm : 2 m (1:100)
-      float dp2mm = dpi * (float) mFixedZoom / 35.0f; //HBX 9 (287): 50.4, 3 (518): 160, 1 (247): 35
-      float zoom = 32 / dp2mm; // 32 = 40 / 1.25
+      //float dp2mm = dpi * (float) mFixedZoom / 160.0f; //HBX 9 (287): 50.4, 3 (518): 160, 1 (247): 35, 6 (441): 120
+      //float zoom = 32 / dp2mm; // 32 = 40 / 1.25
+      //float zoom = 0.02f * ((float) dpi) * dpi_ref / ((float) mFixedZoom ) / 1.015f; // HBX 1.015 correction
+      float zoom = 0.02f * dpi / ((float) mFixedZoom ) / 1.015f; // HBX 1.015 correction
       // TDLog.v("set zoom " + mZoom + " -> " + zoom + " dpi " + dpi );
-      //mOffset.x *= mZoom / zoom;
-      //mOffset.y *= mZoom / zoom;
-      TDLog.v( " HBX mFixedZoom  " + mFixedZoom + " mZoom " + mZoom + " zoom " + zoom  ); //1 9.92 9.922481
+      mOffset.x *= zoom / mZoom;// fixme
+      mOffset.y *= zoom / mZoom;
+      //mOffset.x -= mDisplayCenter.x*(1/zoom-1/mZoom);
+      //mOffset.y -= mDisplayCenter.y*(1/zoom-1/mZoom);
 
+      //TDLog.v( " HBX mFixedZoom  " + mFixedZoom + " mZoom " + mZoom + " zoom " + zoom  ); //1 9.92 9.922481
       mZoom = zoom;
       // TDLog.v( "fixed zoom " + mOffset.x + " " + mOffset.y + " " + mZoom );
       mDrawingSurface.setTransform( this, mOffset.x, mOffset.y, mZoom, mLandscape ); //commandManager.setTransform( act, dx, dy, s, landscape ); DrawingCommandManager.java 767
@@ -1172,7 +1177,7 @@ public class DrawingWindow extends ItemDrawer
   public void onConfigurationChanged( Configuration new_cfg )
   {
     super.onConfigurationChanged( new_cfg );
-    TDLog.v( "PLOT config changed " + mOffset.x + " " + mOffset.y + " " + mZoom + " orientation " + new_cfg.orientation );
+    TDLog.v( " HBX PLOT config changed " + mOffset.x + " " + mOffset.y + " " + mZoom + " orientation " + new_cfg.orientation );
     TDLocale.resetTheLocale();
     mDrawingSurface.setTransform( this, mOffset.x, mOffset.y, mZoom, mLandscape );
     // setMenuAdapter( getResources(), mType );
@@ -7357,7 +7362,7 @@ public class DrawingWindow extends ItemDrawer
       // moveTo( mPlot1.type, station );
       // moveTo( mPlot2.type, station );
       moveTo( (int)mType, station );
-      // TDLog.v( "PLOT center station " + mOffset.x + " " + mOffset.y + " " + mZoom );
+      TDLog.v( " HBX PLOT center station " + mOffset.x + " " + mOffset.y + " mZoom " + mZoom );
       mDrawingSurface.setTransform( this, mOffset.x, mOffset.y, mZoom, mLandscape );
     }
   }

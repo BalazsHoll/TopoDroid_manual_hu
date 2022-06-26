@@ -787,7 +787,7 @@ public class DrawingCommandManager
       hh = pt.y;
       ww = pt.x;
     // }
-     TDLog.v( " HBX R " + r + " W " + ww + " H " + hh + " dx " + dx + " dy " + dy + " s " + s );
+     //TDLog.v( " HBX DrawingCommandManager 790 R " + r + " W " + ww + " H " + hh + " dx " + dx + " dy " + dy + " s " + s );
 
     mLandscape = landscape;
     mScale  = 1 / s;
@@ -1355,33 +1355,32 @@ public class DrawingCommandManager
     synchronized( TDPath.mGridsLock ) {
       if( grids && mGridStack1 != null ) {
         if ( mFixedZoom ) {
-          // 1 in = 2.54 cm
-           //float step = 0.9f * TopoDroidApp.getDisplayDensityDpi() / 25.4f; // pixel/mm //0.81f
-          //float step = 1.0f * TopoDroidApp.getDisplayDensityXY() / 25.4f; // pixel/mm // HBX
-          float xstep = 1.0f * TopoDroidApp.getDisplayDensityX() / 25.4f; // pixel/mm // HBX
-          float ystep = 1.0f * TopoDroidApp.getDisplayDensityY() / 25.4f; // pixel/mm // HBX
-          //TDLog.v( "DisplayDensityDpi  " + TopoDroidApp.getDisplayDensityDpi() + " D " + TopoDroidApp.getDisplayDensity() + " x " + Resources.getSystem().getDisplayMetrics().xdpi + " y " + Resources.getSystem().getDisplayMetrics().ydpi + " " + step + " " + 0.81f  + " s " + scale );
-          //TDLog.v( " HBX DisplayDensityDpi  " +  " x " + Resources.getSystem().getDisplayMetrics().xdpi +  " zoom " + zoom);// miért fut ez folyamatosan?
-          int i = (int)( mOffx / xstep );
-          float x = mOffx - ( i * xstep );
-          i = -i;
-          for ( ; x<TopoDroidApp.mDisplayWidth; x += xstep ) {
-            DrawingPath dpath = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
-            if ( i % 10 == 0 ) { 
-              dpath.setPathPaint( BrushManager.fixedGrid10Paint );
-            } else {
+          boolean true_density= false; //HBX
+          if ( true_density ) { // HBX
+            float xstep = 1.0f * TopoDroidApp.getDisplayDensityX() / 25.4f; // pixel/mm // HBX
+            float ystep = 1.0f * TopoDroidApp.getDisplayDensityY() / 25.4f; // pixel/mm // HBX
+            //TDLog.v( "DisplayDensityDpi  " + TopoDroidApp.getDisplayDensityDpi() + " D " + TopoDroidApp.getDisplayDensity() + " x " + Resources.getSystem().getDisplayMetrics().xdpi + " y " + Resources.getSystem().getDisplayMetrics().ydpi + " " + step + " " + 0.81f  + " s " + scale );
+            //TDLog.v( " HBX DisplayDensityDpi  " +  " x " + Resources.getSystem().getDisplayMetrics().xdpi +  " zoom " + zoom);// miért fut ez folyamatosan?
+            int i = (int)( mOffx / xstep );
+            float x = mOffx - ( i * xstep );
+            i = -i;
+            for ( ; x<TopoDroidApp.mDisplayWidth; x += xstep ) {
+              DrawingPath dpath = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
+              if ( i % 10 == 0 ) {
+                dpath.setPathPaint( BrushManager.fixedGrid10Paint );
+              } else {
               dpath.setPathPaint( BrushManager.fixedGrid0Paint );
-            }
-            ++i;
-            dpath.mPath  = new Path();
-            dpath.mPath.moveTo( x, 0 );
-            dpath.mPath.lineTo( x, TopoDroidApp.mDisplayHeight );
-            dpath.draw( canvas );
-          }
-          int j = (int)( mOffy / ystep );
-          float y = mOffy - ( j * ystep );
-          j = - j;
-          for ( ; y<TopoDroidApp.mDisplayHeight; y += ystep ) {
+              }
+              ++i;
+              dpath.mPath  = new Path();
+              dpath.mPath.moveTo( x, 0 );
+              dpath.mPath.lineTo( x, TopoDroidApp.mDisplayHeight );
+              dpath.draw( canvas );
+             }
+             int j = (int)( mOffy / ystep );
+           float y = mOffy - ( j * ystep );
+           j = - j;
+           for ( ; y<TopoDroidApp.mDisplayHeight; y += ystep ) {
             DrawingPath dpath = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
             if ( j % 10 == 0 ) { 
               dpath.setPathPaint( BrushManager.fixedGrid10Paint );
@@ -1393,6 +1392,54 @@ public class DrawingCommandManager
             dpath.mPath.moveTo( 0, y );
             dpath.mPath.lineTo( TopoDroidApp.mDisplayWidth, y );
             dpath.draw( canvas );
+           }
+          } else { //original
+            // 1 in = 2.54 cm
+            //int dpi = TopoDroidApp.getDisplayDensityDpi();
+            //float dpi_ref =  TopoDroidApp.getDisplayDensityXY() / (float) dpi;
+            //float step = 1.000f * ((float)dpi) * dpi_ref / 25.4f; // pixel/mm //0.81f
+            float dpi =  TopoDroidApp.getDisplayDensityXY(); // HBX
+            float step = dpi / 25.4f; // pixel/mm  HBX
+            /* TDLog.v( " HBX DisplayDensityDpi  " + TopoDroidApp.getDisplayDensityDpi()
+                    + " D " + TopoDroidApp.getDisplayDensity()
+                    + " x " + Resources.getSystem().getDisplayMetrics().xdpi
+                    + " y " + Resources.getSystem().getDisplayMetrics().ydpi
+                    + " step " + step
+                    + " scaled " + Resources.getSystem().getDisplayMetrics().scaledDensity
+                    + " s " + scale ); */
+            //TDLog.v( " HBX DisplayDensityDpi  " +  " x " + Resources.getSystem().getDisplayMetrics().xdpi +  " zoom " + zoom);// miért fut ez folyamatosan?
+            int i = (int)( mOffx / step );
+            float x = mOffx - ( i * step );
+            i = -i;
+            for ( ; x<TopoDroidApp.mDisplayWidth; x += step ) {
+              DrawingPath dpath = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
+              if ( i % 10 == 0 ) {
+                dpath.setPathPaint( BrushManager.fixedGrid10Paint );
+              } else {
+                dpath.setPathPaint( BrushManager.fixedGrid0Paint );
+              }
+              ++i;
+              dpath.mPath  = new Path();
+              dpath.mPath.moveTo( x, 0 );
+              dpath.mPath.lineTo( x, TopoDroidApp.mDisplayHeight );
+              dpath.draw( canvas );
+            }
+            int j = (int)( mOffy / step );
+            float y = mOffy - ( j * step );
+            j = - j;
+            for ( ; y<TopoDroidApp.mDisplayHeight; y += step ) {
+              DrawingPath dpath = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
+              if ( j % 10 == 0 ) {
+                dpath.setPathPaint( BrushManager.fixedGrid10Paint );
+              } else {
+                dpath.setPathPaint( BrushManager.fixedGrid0Paint );
+              }
+              ++j;
+              dpath.mPath  = new Path();
+              dpath.mPath.moveTo( 0, y );
+              dpath.mPath.lineTo( TopoDroidApp.mDisplayWidth, y );
+              dpath.draw( canvas );
+            }
           }
         } else {
           if ( scale < 1 ) {
