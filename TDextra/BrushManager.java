@@ -253,7 +253,7 @@ public class BrushManager
   public static final Paint fixedGrid10Paint  = makePaint( TDColor.GRID,        WIDTH_FIXED, Paint.Style.STROKE);
   public static final Paint fixedGrid100Paint = makePaint( TDColor.LIGHT_GRID,  WIDTH_FIXED, Paint.Style.STROKE);
   public static final Paint fixedGrid101Paint = makePaint( TDColor.REDDISH,  3, Paint.Style.STROKE);
-  public static final Paint fixedGrid0Paint = makePaint( TDColor.DARK_GRID,  0, Paint.Style.STROKE, 1); // HBX
+  public static final Paint fixedGrid0Paint = makePaint( TDColor.DARK_GRID,  0, Paint.Style.STROKE, 6,3); // HBX
 
   public static Paint fixedStationPaint = makePaint( TDColor.REDDISH,     WIDTH_FIXED, Paint.Style.FILL_AND_STROKE);
   public static Paint fixedStationSavedPaint   = makePaint( TDColor.ORANGE, WIDTH_FIXED, Paint.Style.FILL_AND_STROKE);
@@ -388,7 +388,7 @@ public class BrushManager
    * @param style   paint type (STROKE, FILL, or FILL_AND_STROKE)
    * @return the paint
    */
-  static private Paint makePaint( int color, int width, Paint.Style style, int dit ) // HBX
+  static Paint makePaint( int color, int width, Paint.Style style, float dit , float phase) // HBX
   {
     Paint paint = new Paint();
     paint.setDither(true);
@@ -398,7 +398,8 @@ public class BrushManager
     paint.setStrokeCap(Paint.Cap.ROUND);
     paint.setStrokeWidth( width );
     //paint.setAlpha(125);
-    paint.setPathEffect(new DashPathEffect(new float[] {2,4}, 0));
+    float ds = 2.0f;
+    paint.setPathEffect(new DashPathEffect(new float[] {dit/ds,dit-dit/ds}, phase+(dit/ds/2.0f)));
     return paint;
   }
 

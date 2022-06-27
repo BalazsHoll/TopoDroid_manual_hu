@@ -11,6 +11,7 @@
  */
 package com.topodroidhb.TDXHB;
 
+import com.topodroidhb.utils.TDColor;
 import com.topodroidhb.utils.TDLog;
 import com.topodroidhb.ui.TDGreenDot;
 import com.topodroidhb.num.TDNum;
@@ -1357,19 +1358,24 @@ public class DrawingCommandManager
         if ( mFixedZoom ) {
           boolean true_density= false; //HBX
           if ( true_density ) { // HBX
-            float xstep = 1.0f * TopoDroidApp.getDisplayDensityX() / 25.4f; // pixel/mm // HBX
-            float ystep = 1.0f * TopoDroidApp.getDisplayDensityY() / 25.4f; // pixel/mm // HBX
-            //TDLog.v( "DisplayDensityDpi  " + TopoDroidApp.getDisplayDensityDpi() + " D " + TopoDroidApp.getDisplayDensity() + " x " + Resources.getSystem().getDisplayMetrics().xdpi + " y " + Resources.getSystem().getDisplayMetrics().ydpi + " " + step + " " + 0.81f  + " s " + scale );
+            float ystep = 1.0f * TopoDroidApp.getDisplayDensityX() / 25.4f; // pixel/mm // HBX
+            float xstep = 1.0f * TopoDroidApp.getDisplayDensityY() / 25.4f; // pixel/mm // HBX
+            //TDLog.v( "DisplayDensityDpi  " + TopoDroidApp.getDisplayDensityDpi() + " D " + TopoDroidApp.getDisplayDensity() + " x " + Resources.getSystem().getDisplayMetrics().xdpi + " y " + Resources.getSystem().getDisplayMetrics().ydpi + " " + xstep + " " + 0.81f  + " s " + scale );
             //TDLog.v( " HBX DisplayDensityDpi  " +  " x " + Resources.getSystem().getDisplayMetrics().xdpi +  " zoom " + zoom);// miért fut ez folyamatosan?
             int i = (int)( mOffx / xstep );
             float x = mOffx - ( i * xstep );
+            int j = (int)( mOffy / ystep );
+            float y = mOffy - ( j * ystep );
+            Paint fixedGridStepyPaint = BrushManager.makePaint( TDColor.DARK_GRID,  0, Paint.Style.STROKE, ystep,-x);
+            Paint fixedGridStepxPaint = BrushManager.makePaint( TDColor.DARK_GRID,  0, Paint.Style.STROKE, xstep,-y);
+            //TDLog.v( " HBX grid " +  " mOffx " + mOffx +  " x " + x +  " step " + xstep);// HBX
             i = -i;
             for ( ; x<TopoDroidApp.mDisplayWidth; x += xstep ) {
               DrawingPath dpath = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
               if ( i % 10 == 0 ) {
                 dpath.setPathPaint( BrushManager.fixedGrid10Paint );
               } else {
-              dpath.setPathPaint( BrushManager.fixedGrid0Paint );
+                dpath.setPathPaint( fixedGridStepxPaint );
               }
               ++i;
               dpath.mPath  = new Path();
@@ -1377,46 +1383,54 @@ public class DrawingCommandManager
               dpath.mPath.lineTo( x, TopoDroidApp.mDisplayHeight );
               dpath.draw( canvas );
              }
-             int j = (int)( mOffy / ystep );
-           float y = mOffy - ( j * ystep );
-           j = - j;
-           for ( ; y<TopoDroidApp.mDisplayHeight; y += ystep ) {
-            DrawingPath dpath = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
-            if ( j % 10 == 0 ) { 
-              dpath.setPathPaint( BrushManager.fixedGrid10Paint );
-            } else {
-              dpath.setPathPaint( BrushManager.fixedGrid0Paint );
+            //int j = (int)( mOffy / ystep );
+            //float y = mOffy - ( j * ystep );
+            //Paint fixedGridStepyPaint = BrushManager.makePaint( TDColor.DARK_GRID,  0, Paint.Style.STROKE, ystep,x/2.0f);
+            j = - j;
+            for ( ; y<TopoDroidApp.mDisplayHeight; y += ystep ) {
+              DrawingPath dpath = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
+              if ( j % 10 == 0 ) {
+                dpath.setPathPaint( BrushManager.fixedGrid10Paint );
+              } else {
+                //dpath.setPathPaint( BrushManager.fixedGrid0Paint );
+                dpath.setPathPaint( fixedGridStepyPaint );
+              }
+              ++j;
+              dpath.mPath  = new Path();
+              dpath.mPath.moveTo( 0, y );
+              dpath.mPath.lineTo( TopoDroidApp.mDisplayWidth, y );
+              dpath.draw( canvas );
             }
-            ++j;
-            dpath.mPath  = new Path();
-            dpath.mPath.moveTo( 0, y );
-            dpath.mPath.lineTo( TopoDroidApp.mDisplayWidth, y );
-            dpath.draw( canvas );
-           }
           } else { //original
             // 1 in = 2.54 cm
             //int dpi = TopoDroidApp.getDisplayDensityDpi();
+      //      float dpi = TopoDroidApp.getDisplayDensityDpi();
             //float dpi_ref =  TopoDroidApp.getDisplayDensityXY() / (float) dpi;
             //float step = 1.000f * ((float)dpi) * dpi_ref / 25.4f; // pixel/mm //0.81f
             float dpi =  TopoDroidApp.getDisplayDensityXY(); // HBX
             float step = dpi / 25.4f; // pixel/mm  HBX
-            /* TDLog.v( " HBX DisplayDensityDpi  " + TopoDroidApp.getDisplayDensityDpi()
-                    + " D " + TopoDroidApp.getDisplayDensity()
-                    + " x " + Resources.getSystem().getDisplayMetrics().xdpi
-                    + " y " + Resources.getSystem().getDisplayMetrics().ydpi
-                    + " step " + step
-                    + " scaled " + Resources.getSystem().getDisplayMetrics().scaledDensity
-                    + " s " + scale ); */
+             TDLog.v( " HBX DisplayDensityDpi  " + TopoDroidApp.getDisplayDensityDpi()
+                    + " Density " + TopoDroidApp.getDisplayDensity()
+                    + " xdpi " + Resources.getSystem().getDisplayMetrics().xdpi
+                    + " ydpi " + Resources.getSystem().getDisplayMetrics().ydpi
+                    + " scaledDensity " + Resources.getSystem().getDisplayMetrics().scaledDensity
+                   );
             //TDLog.v( " HBX DisplayDensityDpi  " +  " x " + Resources.getSystem().getDisplayMetrics().xdpi +  " zoom " + zoom);// miért fut ez folyamatosan?
             int i = (int)( mOffx / step );
             float x = mOffx - ( i * step );
+            int j = (int)( mOffy / step );
+            float y = mOffy - ( j * step );
+            Paint fixedGridStepyPaint = BrushManager.makePaint( TDColor.DARK_GRID,  0, Paint.Style.STROKE, step, -x);
+            Paint fixedGridStepxPaint = BrushManager.makePaint( TDColor.DARK_GRID,  0, Paint.Style.STROKE, step, -y);
+            //TDLog.v( " HBX grid " +  " mOffx " + mOffx +  " x " + x +  " y " + y +  " step " + step);// HBX
             i = -i;
             for ( ; x<TopoDroidApp.mDisplayWidth; x += step ) {
               DrawingPath dpath = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
               if ( i % 10 == 0 ) {
                 dpath.setPathPaint( BrushManager.fixedGrid10Paint );
               } else {
-                dpath.setPathPaint( BrushManager.fixedGrid0Paint );
+                dpath.setPathPaint( fixedGridStepxPaint );
+                //dpath.setPathPaint( BrushManager.fixedGrid0Paint );
               }
               ++i;
               dpath.mPath  = new Path();
@@ -1424,15 +1438,14 @@ public class DrawingCommandManager
               dpath.mPath.lineTo( x, TopoDroidApp.mDisplayHeight );
               dpath.draw( canvas );
             }
-            int j = (int)( mOffy / step );
-            float y = mOffy - ( j * step );
             j = - j;
             for ( ; y<TopoDroidApp.mDisplayHeight; y += step ) {
               DrawingPath dpath = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
               if ( j % 10 == 0 ) {
                 dpath.setPathPaint( BrushManager.fixedGrid10Paint );
               } else {
-                dpath.setPathPaint( BrushManager.fixedGrid0Paint );
+                dpath.setPathPaint( fixedGridStepyPaint );
+                //dpath.setPathPaint( BrushManager.fixedGrid0Paint );
               }
               ++j;
               dpath.mPath  = new Path();
