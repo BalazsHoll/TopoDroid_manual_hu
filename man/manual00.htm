@@ -23,7 +23,7 @@ A TopoDroidot a DistoX, a Sap5 és a Bric4 térképező műszerek használatára
 
 <i>
 Az Android robotot a Google által létrehozott és megosztott munkából reprodukálják vagy módosítják, és a feltételeknek megfelelően használják
-a Creative Commons 3.0 Nevezési Licencben leírtak szerint.
+ a Creative Commons 3.0 Attribution Licence-ben leírtak szerint.
 </i><br><p>
 
 <b><a href="page_quick.htm"> TopoDroid gyors útmutató </a></b><br><br><p>
@@ -71,14 +71,14 @@ A "TopoDroid" mappa tartalmazza a "distox14.sqlite" adatbázist, a felmérés ma
 <h4>Hozzáférési engedélyek megadása</h4>
 Előfordulhat, hogy Android 11 és újabb rendszereken a TopoDroid nem tudja létrehozni a "TDX" alapmappát, vagy abban néhány almappát vagy fájlt,
  mert nincs elegendő engedélye a külső tároló eléréséhez.<br>
-Ebben az esetben az "adb" (Android Debug Bridge) használatával adja meg az engedélyeket.<br>
+Ebben az esetben az "adb" (Android Debug Bridge) használatával add meg az engedélyeket.<br>
 <ol>
-<li>töltse le az „adb” elemet a számítógépére</li>
-<li>Androidon engedélyezze a „Fejlesztői beállítások” lehetőséget (menjen a beállításokhoz „A telefonról”, koppintson hétszer a „Build number”-re)</li>
-<li>engedélyezze az „USB-hibakeresést” a „Fejlesztői beállítások” részben</li>
-<li>indítsa el az adb-kiszolgálót a számítógépen. Írja be az „adb start-server” parancsot</li>
-<li>csatlakoztassa az Androidot a számítógéphez USB-kábellel. Lehetséges, hogy engedélyeznie kell az adb-kapcsolatot a számítógépről az Android-on</li>
-<li>a számítógépen írja be a három parancsot:
+<li>töltsd le az "adb" programot a számítógépedre</li>
+<li>Androidon engedélyezd a "Fejlesztői beállítások" lehetőséget (menj a beállításokban "A telefonról" részbe és koppints hétszer a "Build-szám"-ra)</li>
+<li>engedélyezd az "USB-hibakeresést" a "Fejlesztői beállítások" részben</li>
+<li>indítsd el az adb-kiszolgálót a számítógépen. Írd be az "adb start-server" parancsot</li>
+<li>csatlakoztasd az Androidot a számítógéphez USB-kábellel. Lehetséges, hogy engedélyezned kell az adb-kapcsolatot a számítógépről az Android-on</li>
+<li>a számítógépen írd be a három parancsot:
 <ul>
 <li>adb shell appops set com.topodroid.TDX READ_EXTERNAL_STORAGE allow</li>
 <li>adb shell appops set com.topodroid.TDX WRITE_EXTERNAL_STORAGE allow</li>
@@ -92,7 +92,7 @@ Ebben az esetben az "adb" (Android Debug Bridge) használatával adja meg az eng
 A TopoDroidX (v.6) a régi 5.1.40-es verzióval együtt telepíthető, mert különböző alapmappákat használnak.<br>
 A régi, 5.1.40-es verziójú felmérések a 6-os verzióba importálhatók a régi TopoDroiddal létrehozott zip-archívumaikból.<br>
 Ezek létrehozhatók a
-<a href="http://marcocorvi.altervista.org/caving/speleoapps/speleoapks/TopoDroidZipScript.html">zip_script</a>-el is.
+ <a href="http://marcocorvi.altervista.org/caving/speleoapps/speleoapks/TopoDroidZipScript.html">zip_script</a>-el is.
 <br><p>
 
 <b>Megjegyzés</b> A TopoDroid v.5.1.40 nem tudja importálni a v.6 zip archívumokat az adatbázisban bekövetkezett változások miatt.<br><p>
@@ -111,7 +111,7 @@ A korlátozott erőforrások miatt a teljes programcsomag (apk. application pack
 <ul style = "margin-top = 0">
 <li> Kérjük, állítsd be az Androidot az összeomlások automatikus jelentésére (részletek weboldalakon).</li>
 <li> A nyelvi opciók választása után történt összeomlások a lista hiányos fordításainak tudhatók be.
-Futtassd az alkalmazást angol nyelven, ha az összeomlás megszűnik, vedd fel a kapcsolatot a fordítás fenntartóival.
+ Futtassd az alkalmazást angol nyelven, ha az összeomlás megszűnik, vedd fel a kapcsolatot a fordítás fenntartóival.
 <li> Ha hibát találsz, vagy az alkalmazás nem úgy viselkedik mint vártad, küldj egy e-mailt a hibáról, amely <b>tartalmazza az alkalmazás verzió számát</b> is.</li>
 <li> Általános jellegű kérdéseid vagy szolgáltatás kérésed van, küldj egy e-mailt a TopoDroid levelezőlistára.</li>
 </ul><br><p>
