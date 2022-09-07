@@ -25,9 +25,8 @@ Gombok:
 <li><img src = "btn_leg_after.png"> a mérés a közvetlenül megelőző poligonhoz tartozik.</li>
 <li><img src = "btn_leg_before.png"> a mérés a közvetlenül következő poligonhoz tartozik.</li>
 <li><img src = "btn_backleg.png"> a mérés egy visszamérés.</li>
-<li><img src = "btn_renumber.png"> újraszámozza a felvételeket erről a szakaszról az aktuális pont elnevezési irányelvnek megfelelően. Mindkét pontot meg kell adni</li>
-<li><img src = "btn_splay_group.png"> alkalmazza az pontváltást a mérés csoportjának összes oszlopára. Csak azokra a sünökre vonatkozik, amelyek ugyanazzal az ponttal rendelkeznek, mint a poligon.
-Csak a KEZDŐ pontot kellett megadni. (A sünök csoportja a két poligon mérés közötti sünök halmaza)</li>
+<li><img src="btn_renumber.png" > a kezdőpontok újbóli hozzárendelése ettől a szakasztól kezdve az aktuális állomáselnevezési szabályzat szerint. A KEZDŐ és VÉG pontokat is meg kell adni</li>
+<li><img src="btn_splay_group.png" > alkalmazza a pont módosítást a felvétel csoportjában lévő összes sünre.</li>
 <li><img src = "btn_plan_profile.png"> elrejti a sünöket az alaprajzban, az oldalnézetben, vagy mindkettőben (csak a sünöket) [H]</li>
 <li><img src = "btn_xsplay.png"> törölje (vagy állítsa be) a sün osztályt, és esetleg az előző sün-eket. [H]</li>
 <li><b>OK</b>: mentse a módosításokat és zárja be a párbeszédpanelt</li>
@@ -54,6 +53,32 @@ Az pontbeviteli mező hosszú megérintésével megnyílik a legördülő menü 
 <li>beilleszt</li>
 </ul>
 
+<div style="font-size=90%">
+<b>Pont áthelyezése</b><br>
+Az pont átcsoportosítása csak poligon mérésről kezdeményezhető.
+Alapértelmezés szerint az átcsoportosítás a szakaszt követő összes mérést a végéig érinti.
+Ha az <i>Sün pont újbóli hozzárendelése</i> egyéni beállítás le van tiltva, a sün kezdőpontok nem kerülnek kiosztásra.
+<br><p>
+
+A normál átcsoportosítást csak az utolsó néhány poligonnál szabad használni, abban az esetben, ha egy poligon
+ nem észlelhető (pl. csak két adat), vagy hibásan észlelték (nagyon közeli sünöket poligonnak vettük).<br><p>
+
+A „többmérés” kiválasztásával nagyobb irányítás érhető el az újra kiosztott méréseken,
+ ahol a felhasználó kiválaszthatja a méréseket, hogy egyedileg hozzárendelje őket.
+<br><p>
+</div>
+
+<div style="font-size=90%">
+<b>Sün csoport</b><br>
+A sünök csoportja a két poligon közötti összes sünből áll.
+A sün csoport pont váltása csak a szerkesztett poligonnal azonos pontttal rendelkező, egymást követő sorozatokra vonatkozik.
+Csak a KEZDŐ pontot kell megadni.
+<br><p>
+
+Ha a "Sün csoport" egyéni beállítás be van állítva, akkor csak a szerkesztési mérés utáni sünök módosulnak.
+<br><p>
+</div>
+
 <div style = "font-size = 90%">
 <b>Sün (segédmérés) osztályok</b><br>
 A sün osztályok engedélyezése "egyedi beállítással" lehetséges. Négy osztály van:
@@ -68,8 +93,8 @@ A <i>sün osztály</i> gomb végiglépteti ezt a négy osztályt.
 Az adatok mentésekor a mérés a kiválasztott osztályra van állítva. 
 Ha bejelöli az "minden sün" gombot, akkor az osztály az összes előző összefüggő "normális" sünre is beállítódik.<br><p>
 
-A sün osztályok a "speciális műveletek" gombbal is beállíthatók. 
-A többes kiválasztásban bejelölheted azokat a sünöket, amelyek nem szomszédosak, és mindegyikhez besorolási osztályt rendelhetsz.<br><p>
+A sün osztályok a "többméréses" kiválasztással is beállíthatók. 
+A többméréses kiválasztásban bejelölheted azokat a sünöket, amelyek nem szomszédosak, és mindegyikhez sün osztályt rendelhetsz.<br><p>
 
 Ha következetes méréseket készítesz, akkor a sün osztályok beállíthatók a poligon mérés szerkesztésével és a 
 sün csoport gombbal. 
