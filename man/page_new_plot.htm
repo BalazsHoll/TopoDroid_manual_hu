@@ -10,7 +10,8 @@ Két szövegmezővel és megerősítő gombbal rendelkezik.
 <li><b>név</b> a vázlathoz rendelt név.</li>
 <li><b>referenciapont</b></li>
 <!--li><b>fekvő</b> mód [T] [alapértelmezett nem]</li-->
-<li><b>kiterített</b> oldalnézet jelölőnégyzet és <b>vetítési irány</b></li>
+<li><b>vetített</b> oldalnézet jelölőnégyzet (alapértelmezett a kiterített oldalnézet) [S]</li> 
+<li><b>vetítési irány</b>, a vetített oldalnézethez</li>
 <li><b>lógó</b> vázlat (a kezdőpont nincs a poligonhoz csatolva)</li>
 </ul> <br> <p>
 
@@ -42,7 +43,7 @@ el lehet rejteni a poligon vonal egy részének megjelenítését is
 egy pont után, vagy előtte (vagyis a referencia pont és a pont között).
 Ezt a "Vázlatpont" párbeszédpanel magyarázza.<br><p>
 
-Ha a felmérés "rögzített pont eredetű", a TopoDroid előretölti a "referencia pontot" az első felmérési ponttal.
+Ha a felmérés "rögzített pont eredetű" [beállítás], a TopoDroid előretölti a "referencia pontot" az első felmérési ponttal.
 Ellenkező esetben az utolsó pontot vagy az aktív pontot használja, ha ez be van állítva.
 Megváltoztathatja, ha másik pontot szeretne vázlat referenciaként.<br><p>
 
@@ -50,9 +51,10 @@ Az alkalmazás hibát jelez, ha a referenciapont nem létezik a felmérési adat
 A "lógó" jelölőnégyzet bejelölésével kényszeríteni lehet egy nem létező pont használatára.<br>
 Ebben az esetben előfordulhat, hogy a vázlatnak nincs poligon vonal referenciája, sem sünöknél, sem pontoknál.<br><p>
 
-Ha be van jelölve a <b>kiterített</b> jelölőnégyzet, akkor az oldalnézet kiterül, és a <b>vetítési irány</b> nem jelenik meg.
-Ellenkező esetben a oldalnézet vázlat a vetítés irányában készül.<br><p>
-
+Ha a <b>vetített</b> jelölőnégyzet be van jelölve, az oldalnézet kivetítésre kerül,
+A nézet irányát, azaz a vetítési azimutot egy grafikus párbeszédpanel választja ki, amely lehetővé teszi a poligon elforgatását
+felmérés középvonala egy függőleges tengely körül.<br><p>
+Ellenkező esetben az oldalnézet kiterített, és a <b>vetítési azimut</b> nem jelenik meg.<br><p>
 <!--
 <div style = "font-size = 90%">
 <b>fekvő</b> módban az északi és a függőleges a képernyő bal oldala felé mutat, alaprajz- és oldalnézetnézetben.
