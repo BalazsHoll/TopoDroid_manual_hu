@@ -21,7 +21,7 @@ A poligon színek
 <ul>
 <li> normál: fehér</li>
 <li> rendellenes mezőértékek: piros</li>
-<li> nincs összhangban a testvérekkel: narancssárga</li>
+<li> nincs összhangban a testvérekkel: narancssárga. Ezeket is hullámvonallal áthúzzák.</li>
 </ul><br><p>
 
 <b>Részletpont mérések (sünök)</b><br>
@@ -133,9 +133,9 @@ A <b>szerkesztés</b> [H] mód a zöld gombok mellett:
 <ul style = "margin-top = 0">
 <li><img src = "btn_edit.png"> választható elemek típusa: minden, pont, vonal, terület, mérés, pont</li>
 <li><img src = "btn_size.png"> a kiválasztó eszköz mérete [S, M, L]</li>
+<li><img src = "btn_delete.png"> törölje az elemet a vázlatból (megerősítést kér, és visszavonható).</li>
 <li><img src = "btn_point.png"> pontonk speciális műveletei</li>
 <li><img src = "btn_item.png"> elem tulajdonságainak szerkesztése</li>
-<li><img src = "btn_delete.png"> törölje az elemet a vázlatból (megerősítést kér, és visszavonható).</li>
 <li><img src = "btn_range.png"> tartományválasztás: akár pontonként, akár lokálisan (csak vonalakhoz és területekhez).
 </ul><br><p>
 Ha vannak kiválasztott elemek, akkor az első két gomb <i>előző/következő</i> navigációs gomb lesz a készletben
@@ -151,8 +151,8 @@ Ennek megfelelően a rajzhivatkozások párbeszédpanelen nincs doboz a sünökh
 <ul style = "margin-top = 0">
 <li> Az egyes <i>mód</i> gombok hosszú megérintésével megnyílik a vonatkozó beállítások párbeszédpanel [H].</li>
 <li> A <i>letöltés</i> gomb több műszer módban [S] váltja a műszert.</li>
-<li> Alaprajzi nézetben a <i>kiterítés referencia</i> gomb hosszú megérintésével a referencia irány lesz
-grafikusan szerkeszthető lesz az ujját a kijelzőn csúsztatva. A gomb zöldre vált [S].</li>
+<li> Alaprajzi nézetben a <i>kiterítés referencia</i> gomb hosszú megérintésével a referencia irány
+ grafikusan szerkeszthető lesz az ujjadat a kijelzőn csúsztatva. A gomb zöldre vált. [S].</li>
 <li> A kiterített oldalnézetben a <i>megjelenítési mód</i> gomb hosszú megérintésével megfordíthatja a vázlatot [N].</li>
 <li> A keresztmetszeteknél átválthatja a sünök megjelenítését, amelyek a metszetsíkon kívül vannak [T].</li>
 <li> Az <i>eszközök</i> gomb hosszú megérintésével visszaáll az alsó eszköztár forgási sorrendje. A háromszoros eszköztárra hatástalan.</li>
@@ -297,7 +297,38 @@ Fekvőnél balra néznek, így a Kelet  van felfelé alaprajzban, a Jobb pedig o
 Alaprajzban az pont szimbólumok úgy vannak elforgatva, hogy természetesnek tűnjenek, miközben álló módban tartják a készüléket.<br>
 A vázlatokat mindig az északi és a függőleges felfelé menti és exportálja.<br><p>
  
-<b>Figyelmeztetés. Ha a vázlat eltűnik a kijelzőről, váltson a terv és a profil között a TopoDroid frissítésére kényszerítve.</b><br><p>
+<b>Figyelmeztetés. Ha a vázlat eltűnik a kijelzőről, váltson az alaprajz és az oldalnézet között a TopoDroidot frissítésére kényszerítve.</b><br><p>
+
+
+<h4>Vázlatszerkesztő</h4>
+A TopoDroid képes szerkeszteni (egyszerű) Therion th2 fájlokat.<br>
+A Therion th2 fájlok szintaxisa nem támogatott teljes mértékben.
+Egyes területeken a többsoros szegély nem támogatott, mivel a TopoDroidnak csak egysoros határterületei vannak.<br><p>
+
+Amikor a <i>vázlatablak</i> szerkesztőként megnyílik, a gombok és a menük megváltoznak.
+A menük a következők:<br>
+<ul>
+<li><i>Zárja be</i> az ablakot</li>
+<li><i>Mentsd el</i> a th2 fájlt a módosításokkal</li>
+<li><i>Nyisson meg</i> egy th2 fájlt</li>
+<li><i>Nagyítási illesztés</i></li>
+<li><i>Szintek</i></li>
+<li><i>Paletta</i></li>
+<li><i>Beállítások</i></li>
+<li><i>Súgó</i></li>
+</ul><br><p>
+
+<i>mozgatás</i> módban csak a három zöld gomb van a többi módhoz.<br>
+A <i>rajzolás</i> mód a következő gombokkal rendelkezik: <i>visszavonás</i>, <i>újra</i>, <i>eszközök</i> és <i>sor folytatása</i> >.<br>
+A <i>törlés</i> és <i>szerkesztés</i> mód a szokásos gombokkal rendelkezik.<br><p>
+
+A th2 fájl egynél több bejegyzést is tartalmazhat.
+Mivel a vázlat nincs felméréshez kötve, nincs mérés hivatkozás, azaz nincsenek poligonok és nincsenek sünök.
+Az poligon pontok csak akkor jelennek meg, ha a th2 fájl "állomás" pontokat tartalmaz.
+Ebben az esetben pontokként jelennek meg az állomás nevével a közelben.<br><p>
+
+A metrikus rács csak akkor jelenik meg, ha a grafikonpapír mérete be van állítva (a <i>nagyítás-illesztés</i> párbeszédpanelen).<br><p>
+
 
 
 <a href="page_tools.htm"> Rajzeszközök palettája</a><br>

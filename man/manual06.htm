@@ -14,9 +14,12 @@ A cím megjeleníti a felmérés nevét, és többes/dupla eszköz módban az ak
 <li>narancs: "toporobot" irányelv</li>
 </ul><br><p>
 
-A TopoDroid négyféle mérést különböztet meg (különféle színnel): "poligon", "ismételt poligon", "sün" és "üres".
- A mérés fontos tulajdonságai a mérés adatainak és pontneveinek háttérszínén keresztül jelennek meg.
+A mérés tulajdonságai a mérési adatok és az pontnevek elő- és háttérszínén keresztül jelennek meg.
 <br><p>
+
+A TopoDroid négyféle mérést különböztet meg (különféle színnel): "poligon", "ismételt poligon", "sün" és "üres".
+A sünök tovább osztályozhatók: „kereszt” (X), vízszintes (H), függőleges (V) és „szkennelés” (letapogatási módban készített felvételek).
+A <a href="page_shot_edit1.htm">Sün osztályok</a> az X-H-V alapértelmezés szerint le van tiltva [G].<br><p>
 
 Mérés adatainak előtér színe:
 <ol>
@@ -30,16 +33,16 @@ Mérés adatainak előtér színe:
 <li>[ibolya]: üres poligon</li>
 </ol><p>
 
-Állomás neve előtér színe:
-<ul>
-<li>[világoszöld] aktuális pont</li>
-</ul><p>
-
 A mérés adatainak háttérszíne:
 <ul>
 <li>[vöröses] <a href="page_accuracy.htm"> megbízhatatlan</a> mérések, azaz "rendellenes" mezőintenzitású mérések (csak DistoX2)</li>
 <li>[narancssárga] rövid poligon</li>
 <li>[szürke] kizárt mérés</li>
+</ul><p>
+
+Mérési pont név színe:
+<ul>
+<li>[világoszöld] aktuális pont</li>
 </ul><p>
 
 Az pontnevek háttérszíne:
@@ -50,6 +53,15 @@ Az pontnevek háttérszíne:
 </ul><p>
 
 <img src = "shots_list.png" alt = "mérések listája" /><p>
+
+<h4>Mérési pontok nevei</h4>
+A pontnevek a mérés tulajdonságai, mint például az irány vagy a távolság.
+ Ezekkel ellentétben azonban a pontok nevei arra szolgálnak, hogy a méréseket "összekapcsolják" a poligonban.
+Ez a poligont és a vázlatokat is érinti.<br>
+Ha egy mérés pontjának neve megváltozik, a poligon megváltozhat.
+ Ha a ponthoz keresztmetszet csatolt, akkor ez nem kapcsolódik a poligonhoz (és később összekapcsolható egy másik mérési ponttal).
+Egy vázlat (alaprajz vagy oldalnézet) leválasztható a poligonról, ha a referenciapont neve (a kezdőpont)
+ módosult.<br><p>
 
 <h4>AKCIÓK</h4>
 <ul style = "margin-top: 0">
@@ -158,6 +170,22 @@ A felmérési adatok ablakból való kilépéshez koppintson duplán eszközéne
 Ha az automatikus biztonsági mentés engedélyezve van, és az alapértelmezett adatfájl-formátum van beállítva, akkor az adatokat exportáljuk, amikor az
  adatablak bezárul.<br><p>
 
+<b>Figyelem</b>
+Előfordulhat, hogy a lista első bejegyzése nem frissül szerkesztés vagy érintés után az Android problémája miatt.
+A "Frissítés" gombbal kérheti a lista újratöltését, ha ez megtörténik.
+<br><p>
+
+<b>Hurokhiba kompenzáció</b><br>
+A kompenzációt nem célszerű elvégezni, mert így grafikusan láthatóak a félreértések, és kiszűrhetők az esetleges felmérési hibák.
+Ez az alapértelmezett viselkedés.<br><p>
+
+Ennek ellenére a TopoDroid végrehajt néhány "hurokhiba-kompenzációs" szabályzatot.<br>
+A <i>normál</i> szabályzat [E] elosztja el a zárási hibát a hurkokat alkotó hálózati ágakon.<br>
+A <i>súlyozott</i> irányelvben [E] a hurkok tévedései az "ágazati relevancia" szerint vannak súlyozva.<br>
+<!-- nem emlékszem pontosan, hogyan működik ez -->
+A "szelektív" [T] kompenzáció csak a bizonyos százaléknál kisebb záródású (a "hurokküszöb" beállítás) hurkok korrekcióit alkalmazza.<br>
+Végül a "háromszögeken" alapuló speciális hurokkompenzáció a <a href="page_trilateration.htm">háromszögelésre</a> [T].
+<br><p>
 
 <a href="manual05.htm"> &lt; Kalibrálási adatok</a> |
 <a href="manual07.htm"> Mérés lista &gt;</a>

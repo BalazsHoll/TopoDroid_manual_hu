@@ -5,16 +5,17 @@ A <u>kalibrációs adatok ablak</u> megjeleníti a kalibrációs adatok listáj�
 <ul style = "margin-top = 0">
 <li>index: növekményes index, amely azonosítja az adatokat</li>
 <li>csoport: annak a csoportnak a száma, amelyhez az adatok tartoznak</li>
+<li>hiba: a kalibrációval korrigált irány és a csoport átlagos irányának különbsége, fokban</li>
 <li>irány, dőlés és forgás, a nyers értékekből kiszámítva kalibrációs korrekció nélkül</li>
-<li> hiba: a kalibrációval korrigált irány és a csoport átlagos irányának különbsége, fokban</li>
-<li> opcionálisan a nyers kalibrálási adatok értékei, azaz a G és M komponensei a DistoX keretben, decimális vagy hexadecimális értékként</li>
+<li>opcionálisan a nyers kalibrálási adatok értékei, azaz a G és M komponensei a DistoX keretben, decimális vagy hexadecimális értékként</li>
 </ul><br><p>
 
 <h4>Színek</h4>
 A kalibrációs adatok sárga és kék színnel jelennek meg, váltakozva a páros és a páratlan csoportok között. A csoport nélküli adatok szürkék.<br><p>
 
-A háttér színe:
+Az adatértékek háttérszíne a következő:
 <ul>
+<li> fekete: normál értékek</li>
 <li> lila: hiányos adatok (a kalibrálásnál nem, de a csoportoknál használják)</li>
 <li> barna: telített adatok</li>
 <li> szürke: törölt adatok (csak akkor, ha törölt adatok megjelennek)</li>
@@ -37,6 +38,7 @@ A háttér színe:
 <li> <img src = "btn_cover.png"> <a href="page_calib_distrib.htm">a kalibrációs adatok irányeloszlása ​</a></li>
 <li> <img src = "btn_read.png"> beolvassa és megjeleníti a DistoX-ben tárolt együtthatókat</li>
 <li> <img src = "btn_write.png"> beírja a kalibrációs együtthatókat a DistoX-be. Csak a kalibrációs együtthatók kiszámítása után engedélyezett. Az együtthatók írhatók közvetlenül a számítás eredményét megjelenítő párbeszédablakból is. Figyelmeztetést adnak ki, ha az adatirány lefedettség 95% alatt van, vagy az átlagos hiba meghaladja a 0.5&deg-ot</li>
+<li><img src="btn_search.png">megnyitja a keresési párbeszédpanelt</li>
 </ul><br><p>
 
 Jelenleg csak az igény szerinti adatletöltés aktív a kalibrációs adatokhoz. A letöltött adatok hozzáadódnak az aktuális kalibráláshoz. Ezért elvégezhet néhány kalibrációs mérést, letöltheti az adatokat, ellenőrizheti, hogy elégedett-e velük, ha nem, akkor további adatokat mérhet és tölthet le, és így tovább, amíg nem elégedett a kalibrációs adataival. A letöltött adatok "letilthatók" (a csoport számának "0" (nulla) beállításával;

@@ -1,334 +1,407 @@
 <html><body>
 <h4>TopoDroid BEÁLLÍTÁSOK</h4>
 
-<b>ÁLTALÁNOS BEÁLLÍTÁSOK</b><br>
+<b>Általános beállítások</b><br>
 <ul>
-<li><a href="page_cwd.htm"> Munkakönyvtár.</a> Alapértelmezett "nem beállított" (azaz "TopoDroid")</li>
-<li>Szövegméret: a listák szövegének mérete. &gt; = 1. [14]</li>
-<li>Gombok mérete {kicsi, normál, közepes, nagy, hatalmas}. [normál]</li>
-<li>Tevékenységi szint {alapszintű, normál, haladó, szakértő}. [normál]</li>
-<li>Billentyűzet. Engedélyezze az <a href="page_keypad.htm"> egyéni billentyűzeteket</a> az Android alapértelmezett billentyűzete helyett.</li>
+<li><a href="page_cwd.htm">Munkakönyvtár.</a> Alapértelmezett "nem beállított" (azaz "TopoDroid")</li>
+<li>Szöveg mérete: a listákban szereplő szöveg mérete. &gt;= 1. [14]</li>
+<li>A gombok mérete {kicsi, normál, közepes, nagy, hatalmas}. [normál] </li>
+<li>Tevékenységi szint {alap, normál, haladó, szakértő}. [normál] </li>
+<li>Billentyűzet. Engedélyezze az <a href="page_keypad.htm">egyéni billentyűzeteket</a> az Android alapértelmezett billentyűzete helyett.</li>
 <li>Egyéni billentyűzet kurzor</li>
-<!-- li> Kozmetikai szolgáltatás. Alapértelmezett KI</li-->
+<!-- li>Közmérési szolgáltatás. Alapértelmezett KI</li -->
 <li>Felhasználói kézi fordítás</li>
-<li>Alkalmazás <a href="page_language.htm"> nyelv</a> {default, bg, cn, de, fr, en, es, hu, it, pg, pl, ro, ru, sk}. Alapértelmezett "default" (azaz területi beállítás)</li>
-<li>Képernyő tájolása (meghatározatlan, álló, fekvő) [nincs megadva]</li>
-<li>A beállítások exportálása és importálása a TopoDroid mappában található "settings.txt" fájlba.</li>
-</ul>
+<li>Az alkalmazás <a href="page_language.htm">nyelve</a> {default,cn,en,es,hu,it,ru}. Alapértelmezett "default" (azaz nyelvi beállítás)</li>
+<li>Képernyő tájolása (meghatározatlan, álló, fekvő) [nem meghatározott]</li>
+<!-- li>Biztonsági mentés törlése menü</li -->
+</ul><br>
 
-<div style = "font-size: 90%">
+<div style="font-size:90%">
+Egyéni Általános beállítások
 <ul>
-<li>Egyéni beállítások:<br>
-  <ul>
-  <li>További paletták menü</li>
-  <li>Biztonsági mentés törlése menü</li>
-  <li>Csomagok naplózása</li>
- </ul>
-</li>
+<li>További paletták menü</li>
+<li>Csomagnaplózás</li>
+<li>Therion th2 szerkesztése</li>
 </ul>
 </div><br><p>
 
 <b>Beállítások importálása és exportálása</b><br>
 A beállítások exportálhatók a "settings.txt" fájlba (a TopoDroid mappában).
 Ez egy szöveges fájl, amely felsorolja az összes beállítás értékét.<br>
-A beállításokat ugyanabból a fájlból lehet importálni. Kiválasztható, hogy
-az összes vagy csak a funkcionális beállítások importálásához.<br>
-Ha probléma merül fel a fájl elemzése során, a beállítások nem változnak.<br>
-Egyes interfészbeállításokhoz (például a gombok méretéhez) újra kell indítani az alkalmazást.<br><p>
+A beállítások ugyanabból a fájlból importálhatók. Lehet választani, hogy
+hogy az összes beállítást vagy csak a funkcionálisakat importálja.<br>
+Ha probléma adódik a fájl elemzése során, a beállítások nem változnak.<br>
+Egyes felületbeállításokhoz (például a gombok méretéhez) újra kell indítani az alkalmazást.<br><p>
 
-<b>IMPORT / EXPORT</b><br>
+<b>Importálás/exportálás</b><br>
 <ul>
-<li>Általános:<br>
+<li>Általános
   <ul>
-  <li>Alapértelmezett adatexport típus: {cave,cav,csv,csx,dat,dxf,grt,gtx,srv,sur,svg,svx,th,top,tro} [nincs]</li>
-  <li>Alapértelmezett vázlat exportálás típusa: {none,th,csx,dxf,svg,xvi} [nincs]</li>
-  <li>Vázlat auto-export formátum [nincs]</li>
-  <li>Compass a BJFL sün szögét. BJFL minimális sün-poligon szög.</li>
-  <li>Fel / le minimális sün lejtés. [0&deg;]</li>
-  <li>Bal / Jobb maximális sün lejtés. [90&deg]</li>
-  <li>Pontok távolsága: a vonalpontok közötti távolság</li>
- </ul>
+  <li>Alapértelmezett adatexportálási típus {cave,cav,csv,csx,dat,dxf,grt,gtx,srv,sur,svg,svx,th,top,tro} [nincs]</li>
+  <li>Alapértelmezett vázlatexportálási típus {none,th,csx,dxf,svg,xvi} [nincs]</li>
+  <li>Vázlat automatikus exportálási formátuma [nincs]</li>
+  <li>Compass BJFL szöge. Az BJFL minimális kinyúlási szöge.</li>
+  <li>Fel/Le minimális Sün lejtés. [0&deg;]</li>
+  <li>Bal/Jobb maximális elosztási lejtés. [90&deg;]</li>
+  <li>Ponttávolság: a vonalpontok közötti távolság</li>
+  </ul>
 </li>
 <li>Importálás:<br>
   <ul>
-  <li><a href="page_pt_cmap.htm"> PocketTopo színtérkép</a> A PocketTopo színeinek konvertálása TopoDroid típusokba</li>
-  <li>Becsülje meg az LR kiterítését az Compass és a VisualTopo fájlok importálásakor. [igen]</li>
-  <li>Adatmód importálása: normál vagy merülés. A búvárkodás csak az Iránytűre vonatkozik. [normál]</li>
- </ul>
+  <li><a href="page_pt_cmap.htm">PocketTopo színtérkép</a> A PocketTopo színeinek térképe TopoDroid típusokra</li>
+  <li>Becsülje meg az LR kiterjesztést a Compass és a VisualTopo fájlok importálásakor. [igen]</li>
+  <li>Adatmód importálása: normál vagy búvárkodás. A búvárkodás csak az Compass-ra vonatkozik. [normál] </li>
+  </ul>
 </li>
-<li>Survex:<br>
+<li>cSurvey export:<br>
   <ul>
-  <li>Survex / Topo vonalvezetés {Linux, Windows}. [Linux]</li>
+  <li>A mérési pont előtagja [nincs]</li>
+  </ul>
+</li>
+<li>Survex export:<br>
+  <ul>
+  <li>Sorvég {Linux, Windows}. [Linux] </li>
   <li>Sünök VÉG pont. [nem]</li>
-  <li>BJFL. Az BJFL hozzáadása a Survex / Therion exportáláshoz. [nem]</li>
- </ul>
+  <li>BJFL hozzáadása az exportáláshoz. [nem]</li>
+  </ul>
 </li>
-<li>Therion:<br>
+<li>Therion export:<br>
   <ul>
-  <li>Először térképek: exportálja a terion térképeket a felmérés adatai előtt. [nem]</li>
-  <li>Pontok: Adjon hozzá mérési pontokat a Therionszintekhez. [igen]</li>
-  <li>Sün: Add hozzá a sünöket a Therion szintekhez. [igen]</li>
-  <li>BJFL. Az BJFL hozzáadása a Survex / Therion exportáláshoz. [nem]</li>
-  <li>Méretarány export skála. [1:100]</li>
-  <li>Xvi hivatkozás: az xvi képre való hivatkozás beillesztése a th2 fájlokba</li>
- </ul>
+  <li>Hozza létre a thconfig fájlt [nem]</li>
+  <li>Tegye a Therion térképparancsait a felmérési adatok elé. [nem]</li>
+  <li>Sünök: adjon hozzá sünöket a Therion-bejegyzésekhez. [igen]</li>
+  <li>BJFL. Adja hozzá az BJFL-t az exporthoz. [nem]</li>
+  <li>Skála. Export skála. [1:100]</li>
+  <li>xvi hivatkozás: hivatkozás beszúrása az xvi képre a th2 fájlokban</li>
+  </ul>
 </li>
-<li>Compass:<br>
+<li>Compass exportálása:<br>
   <ul>
-  <li>Compass állomás előtagja. [nem]</li>
-  <li>Compass sablonok: sablonok hozzáadása az Iránytű fájlokhoz</li>
-  <li>Compass csere LR. Cserélje az L és R elemeket az Iránytű exportjára. [nem]</li>
- </ul>
+  <li>Az Compass mérési pont előtagja. [nem]</li>
+  <li>Sünök hozzáadása az Compass fájlokhoz</li>
+  <li>Csere balra és jobbra az Compass exportálásakor. [nem]</li>
+  </ul>
 </li>
-<li>VisualTopo:<br>
+<li>VisualTopo exportálás:<br>
   <ul>
-  <li>VisualTopo sablonok: sablonok hozzáadása a VisualTopo fájlokhoz</li>
-  <li>BJFL a FROM állomáson</li>
- </ul>
+  <li>Sünök hozzáadása a VisualTopo-fájlokhoz</li>
+  <li>BJFL a FROM mérési ponton</li>
+  <li>Fájlformátum, tro vagy trox</li>
+  </ul>
 </li>
-<li>SVG:<br>
+<li>SVG-exportálás:<br>
   <ul>
-  <li>Rács. Rács hozzáadása az SVG exportálásához. [nem]</li>
-  <li>Vonal tájolása. [nem]</li>
-  <li>Sünök. Tartalmazza a sünöket. [nem]</li>
-  <li>Pont vastagság. [0.1]</li>
-  <li>Felirat vastagság. [0.3]</li>
-  <li>Vonal vastagság. [0.5]</li>
-  <li>Rács vastagság. [0.5]</li>
-  <li>Poligon vastagság. [0.5]</li>
-  <li>Pipa méret. [2.0]</li>
- </ul>
+  <li>SVG vágógörbe [nem]</li>
+  <li>Rács hozzáadása az SVG-exportáláshoz. [nem]</li>
+  <li>Vonal irányítottsága. [nem]</li>
+  <li>Tegye bele a sünöket. [nem]</li>
+  <li>Pont körvonal. [0,5] </li>
+  <li>Címke körvonal. [1.5] </li>
+  <li>Vonal körvonal. [2.5] </li>
+  <li>Rács körvonal. [2.5] </li>
+  <li>mérés körvonal. [2.5] </li>
+  <li>Tájolás pipa mérete. [12] </li>
+  <li>A mérési pontok mérete. [32] </li>
+  <li>Címkék mérete. [48] ​​</li>
+  <li>Cél SVG program. Inkscape vagy Illustrator</li>
+  </ul>
 </li>
-<li>DXF:<br>
+<li>DXF export:<br>
   <ul>
   <li>DXF sün végpontok. [igen]</li>
-  <li>DXF verzió {6,12,16}. [6]</li>
- </ul>
+  <li>DXF verzió: {6,12,16}. [6] </li>
+  <li>Használjon spline-t Bezier-szegmensekhez</li>
+  <li>DXF referencia</li>
+  </ul>
 </li>
 <!-- li>PNG:<br>
   <ul>
-  <li>Képfelbontás [0.5, 100]. Alapértelmezett 1.5 [x200 px]</li>
+  <li>Képfelbontás [0,5, 100]. Alapértelmezett 1,5 [x200 px]</li>
   <li>Háttérszín (RGB 0-100 között). [0 0 0, azaz fekete]</li>
   <li>Rács: metrikus rács hozzáadása</li>
-  <li>Sünök: sünök hozzáadása</li>
-  <li>Pontok: pontok hozzáadása</li>
- </ul>
+  <li>Sünök: húzóvonalak hozzáadása</li>
+  <li>mérési pontok: mérési pontok hozzáadása</li>
+  </ul>
 </li -->
-<li>KML / GeoJSON:<br>
+<li>KML/GeoJSON export:<br>
   <ul>
-  <li>Pontok. Pontok hozzáadása a KML / GeoJSON exportáláshoz. [igen]</li>
-  <li>Sünök. Adjon hozzá sünöket a KML / GeoJSON exportáláshoz. [nem]</li>
- </ul>
+  <li>Adjon mérési pontokat a KML/GeoJSON exporthoz. [igen]</li>
+  <li>Sünök hozzáadása a KML/GeoJSON exporthoz. [nem]</li>
+  </ul>
 </li>
-<li>CSV:<br>
+<li>Shapefile export:<br>
+  <ul>
+  <li>A georeferált alaprajz-vázlat exportálása [nem]</li>
+  </ul>
+</li>
+<li>CSV-exportálás:<br>
   <ul>
   <li>Nyers adatok: nyers adatok exportálása csv-be. [nem]</li>
-  <li>mezőelválasztó</li>
-  <li>vonalelválasztó</li>
- </ul>
+  <li>mezőelválasztó [pipe]</li>
+  <li>sorelválasztó [soremelés]</li>
+  </ul>
 </li>
-<li>Egyéni beállítások:<br>
-  <ul>
-  <li>Zip-szimbólumok a zip archívumokban</li>
-  <li>Búvár mód</li>
- </ul>
-</li>
-</ul><br><p>
-
-<b>FELMÉRÉSI ADATOK</b><br>
-<ul>
-<li>Csapat. Alapértelmezett felmérési csoport. Alapértelmezett "unset"</li>
-<li>Pontok házirendje: Felmérési pontok elnevezési szabálya: {nincs, sün + előre, sün + vissza, előre + sün, vissza + sün, vissza + sün + előre, állvány, mágn.anomália}.
-Az opciók száma a tevékenység szintjétől függően változik.
-Alapértelmezett "sün + előre".</li>
-<li>Pontnevek {alfanumerikus, numerikus}. [alfanumerikus]</li>
-<li>Kezdő pont neve. Alapértelmezett "0"</li>
-<li>Fotó bélyegképek mérete [80 400]. [200 pxl]</li>
-<li>Adatok alapértelmezett exportálása</li>
-<li>Vázlat kezdőpontja</li>
-<li>Megosztott keresztmetszetek</li>
-</ul>
-
-MÉRTÉKEGYSÉGEK
-<ul>
-<li>Hosszegységek {m, ft}. [m]</li>
-<li>Szögegységek {deg, grad}. [deg]</li>
-<li>Rácsegységek a vázlatban {m, yd, 2ft, dm}. [m]</li>
-</ul>
-
-MÉRÉSI ADATOK
-<ul>
-<li>Poligonrés. Tolerancia ugyanazon poligon mérései között &gt; 0%. [0.05, azaz 5%]</li>
-<li>Mérés maximális hossza [50 m]</li>
-<li>Minimális méréshossz [30 cm]</li>
-<li>Mérések minimális száma poligononként. [3]</li>
-<li>DistoX visszamérés. [nem]</li>
-<li>Függőleges mérés. 90&deg körüli tartomány, ahol a poligonok "függőlegesen" vannak kiterítve [0,90]. [10&deg;]</li>
-<li>A poligon NyKÉD küszöbértéke. V poligon küszöbértéke [0,90]. [80&deg;]</li>
-<li>"kiterítés" hivatkozás. Beállítható rögzített kiterítés vagy B / J referencia. [nem]</li>
-<li>Előző / Következő gombok. [igen]</li>
-<li>Hátramérés a kézi beírású mérés párbeszédpanelen. [nem]</li>
-<li>Mérés késleltetése (időzítő). [10 s]</li>
-<li>Egyéni beállítások:<br>
-  <ul>
-  <li>Búvár mód</li>
-  <li>A legfrissebb adatok kiemelése</li>
-  <li>Legutóbbi adatok időtúllépése</li>
-  <li>Sün osztályok</li>
-  <li>Sün színezés</li>
-  <li>Arányos „kiterítés”</li>
-  <li>Síkinterpoláció</li>
-  <li>Poligon mérés hangjelzése</li>
-  <li>Érzékelők</li>
-  <li>Hurokzárás. Alapértelmezett "nincs"</li>
-  <li>Android iránytű / lejtés</li>
-  <li>Mérési időzítő visszaszámlálása. [10 s]</li>
-  <li>A mérés időzítőjének hangereje [10,100]. [50%]</li>
- </ul>
-</li>
-</ul>
-HELYMEGHATÁROZÁS
-<ul>
-<li>Helyegységek {ddmmss, dec.deg}. [ddmmss]</li>
-<li>CRS. A CRS neve, a Proj4-ben használtak szerint. [Long-Lat, azaz földrajzi WGS84]</li>
-</ul>
-PONTOSSÁG
-<ul>
-<li>Gyorsulási tűrés &gt; 0. [1%]</li>
-<li>Mágneses tér tolerancia &gt; 0. [1%]</li>
-<li>Mágneses merülési tűrés &gt; 0. [2.0&deg;]</li>
-</ul>
-<br><p>
-
-<b>VÁZLAT</b><br>
-<ul>
-<!-- li>Rajzeszköz-választó {utoljára használt, lista, rács, hármas rács}. [utoljára használt]</li -->
-<li>Legutóbbi eszköz száma: {3, 4, 5, 6}. [4]</li>
-<li>Sarok vonszolás. Sarok vonszolás engedélyezése a <u>vázlatablakban</u> és az <u>áttekintő ablakban</u>. [nem]</li>
-<li>Nagyítás vezérlés beállítás {ki, ideiglenes, állandó}. [ki]</li>
-<li>Keresztmetszet szakasz vízszintes küszöb</li>
-<li>Poligon ellenőrzés. Ellenőrizze, hogy az pontok csatlakoztak-e a poligonhoz. [igen]</li>
-<li>A poligon kiterítésének ellenőrzése. [igen]</li>
-<li>Vázlat alapértelmezett export formátum</li>
 </ul><br>
 
-<div style = "font-size: 90%">
+<div style="font-size:90%">
+Egyéni importálási/exportálási beállítások
 <ul>
-<li>Egyéni beállítások:<br>
-  <ul>
-  <li>Vázlat eltolás / méretarány</li>
-  <li>Vázlat felosztás / egyesítés</li>
-  <li>Sün alaprajz-nézet küszöbérték. [80&deg;]</li>
-  <li>Sün szaggatásos mód: nincs, irány, lejtés, nézet szerint. [nincs]</li>
-  <li>Sün szaggatás lejtés küszöb. [50&deg]</li>
-  <li>Sün szaggatás irány küszöb. [60&deg]</li>
-  <li>Sün szaggatás szögküszöb. [60&deg]</li>
-  <li>Biztonsági mentés szám. [5]</li>
-  <li>Biztonsági mentés intervalluma. [60s]</li>
-  <li>Vázlat alapértelmezett export formátum</li>
-  <li>Automatikus keresztmetszet szakaszok az exportban</li>
-  <li>Mentett poligon-pont színezés</li>
-  <li>Rétegek. [nem]</li>
-  <li>Autófalak:<br>
-    <ul>
-    <li>Faltípus. [nincs]</li>
-    <li>Alaprajz sün lejtszög</li>
-    <li>Oldalnézet sün lejtszög</li>
-    <li>Minimális távolság a mérés mentén</li>
-    <li>Konkávia</li>
-    <li>Pont elválasztás a falon</li>
-   </ul>
- </li>
- </ul>
-</li>
-</ul>
-</div><br>
-
-PONT ESZKÖZÖK
-<ul>
-<li>Nem nagyított pont ikonok. [nem]</li>
-<li>A ponteszközök skálája. [1.2]</li>
-<li>Címkék mérete. [24 pxl]</li>
-</ul><br>
-
-VONAL ESZKÖZÖK
-<ul>
-<li>Vonalszélesség (az NB falvonala ennek kétszerese). [1 pxl]</li>
-<li>Vonalstílus léptéktényező</li>
-<li>Vonalstílus {Bezier, finom, normál, durva, egyszerűsített}. [normál]</li>
-<li>Vonal-pont távolság. Minimális távolság a vonalpontok között. [10 pxl]</li>
-<li>Szakaszvonalak "irány pipa" méret [1,20]. Alapértelmezett 8 [x egység]</li>
-<li>Szakaszpontok. Adja hozzá a Therion metszési pontot a metszetsorhoz. [igen]</li>
-<li>Vonal alapértelmezett csatlakozása {nincs, kezdet, vég, mindkettő, folytatás}. [nincs]</li>
-<li>A terület alapértelmezett láthatósága. [igen]</li>
-</ul>
-
-<div style = "font-size: 90%">
-<ul>
-<li>Egyéni megállapodások:<br>
-  <ul>
-  <li>Egyengető szög</li>
-  <li>Interpolációs pontosság (Bezier)</li>
-  <li>Cornet küszöb (Bezier)</li>
-  <li>Maximális pont / szegmens távolság az egyszerűsítés érdekében. [0.5 m]</li>
-  <li>Maximális szegmenshossz az egyszerűsítés érdekében. [2.0 m]</li>
-  <li>Pont gyomláló szegmens puffer</li>
-  <li>Vonal / terület bepattan. [nem]</li>
-  <li>A szegmensek simítása / kiegyenesítése</li>
-  <li>Egyenesítse a vonalakat</li>
-  <li>Vonal többes választás</li>
- </ul>
-</li>
-</ul>
-</div><br>
-
-VÁZLAT ELEMEK
-<ul>
-<li>Felmérési vonal szélessége [0.5,10]. [1 pxl]</li>
-<li>Állomásnév mérete. [24 pxl]</li>
-<li>Zöld pontok sugara [0.5, 100]. [5 pxl]</li>
-<li>Kiválasztási sugár. [24 pxl]</li>
-<li>Radír mérete. [36 pxl]</li>
-<li>Váltási érzékenység. [60 pxl]</li>
-<li>Mutatósugár. [16 pxl]</li>
-<li>A sün átlátszósága. [80% fedett]</li>
-</ul>
-<br><p>
-
-<b>MŰSZER</b><br>
-<ul>
-<li>Bluetooth. Ellenőrizze, hogy a BT engedélyezve van-e indításkor. [igen]</li>
-<li>Adatkapcsolat típusa (csatlakozási mód) {igény szerint, folyamatos, több}. [igény szerint]</li>
-<!-- li> Automatikus újracsatlakozás (folyamatos üzemmódban). [nem]</li-->
-<li>Új adatszám: megkapja az új adatok számát a kötegelt letöltés előtt</li>
-<li>BT foglalat típusa {normál, bizonytalan}. [eszközfüggő alapértelmezett]</li>
-<li>Z6 megoldás. [igen]</li>
-<li> Automatikus párosítás. [igen]</li>
-</ul>
-
-<div style = "font-size: 90%">
-<ul>
-<li>Egyéni megállapodások:<br>
-  <ul>
-  <li>Csatlakozási késés</li>
-  <li>Adatszünet</li>
-  <li>Az adatok készenléti késleltetése</li>
-  <li>Lézeres szünet</li>
-  <li>mérés szünet</li>
- </ul>
-</li>
+<li>Tömörített szimbólumok a zip archívumban</li>
+<li>Importálási adatmód</li>
+<li>Keresztmetszetek beszúrása</li>
+<li>Mérési pontok beillesztése</li>
 </ul>
 </div><br><p>
 
-<b>DistoX KALIBRÁLÁS</b><br>
+<!-- =========================================== -->
+
+<b>Felmérés adatai</b><br>
 <ul>
-<li>Alapértelmezett csoportházirend {TopoDroid, PocketTopo). [TopoDroid]</li>
-<li>Csoporttűrés. [40&deg;]</li>
-<li>Kalibrációs algoritmushiba. [0.000001]</li>
-<li>A maximális iterációk kalibrálása. [200]</li>
-<li>Töltse le azonnal a távoli kalibrációs adatokat</li>
-<li>A kalibrálási nyers adatok megjelenítése. [nem]</li>
-<li>Alapértelmezett kalibrációs algoritmus {auto,linear,non-linear}. [auto]</li>
+<li>Csapat. Alapértelmezett felmérési csapat. Alapértelmezett "nincs beállítva"</li>
+<li>A felmérési mérési pontok név-hozzárendelési szabályzata {nincs, sün+előre, sün+vissza, előre+sün, vissza+sün, vissza+sün+előre, állvány, mágn.anomália}.
+A választási lehetőségek száma az aktivitási szinttől függően változik.
+Alapértelmezett „sün+előre”.</li>
+<li>A mérési pontok nevei {alfanumerikus, számok}. [alfanumerikus]</li>
+<li>A mérési pont kezdeti neve. Alapértelmezett "nincs"</li>
+<li>A fényképek indexképei mérete [80 400]. [200 pxl]</li>
+<li>Táblázatban szerkeszthető mérési pontok [nem]</li>
+<li>Vázlat kezdőpontja</li>
+<li>Megosztott keresztmetszetek</li>
+</ul><br>
+
+Egységek
+<ul>
+<li>Hosszság mértékegységei {m, láb}. [m] </li>
+<li>Szög mértékegységei {deg, grad}. [deg]</li>
+<li>Vázolja fel a rács mértékegységeit {m, yd, 2ft, dm}. [m] </li>
+<li>A vonalzó mértékegységei {cella, m, ft}.</li>
+</ul><br>
+
+Mérésadatok
+<ul>
+<li>Láb tolerancia. Az azonos lábon végzett Mérések közötti tolerancia &gt; 0%. [0,05, azaz 5%]</li>
+<li>Mérés maximális hossza [50 m]</li>
+<li>Mérés minimális hossza [30 cm]</li>
+<li>Lábonkénti Mérések minimális száma. [3] </li>
+<li>Mérés függőleges küszöb. 90° körüli régió, ahol a felvételek „függőlegesen” vannak kiterjesztve [0,90]. [10&deg;]</li>
+<li>Láb WENS küszöb. V. láb küszöbértéke [0,90]. [80&deg;]</li>
+<li>"kiterjesztés" hivatkozás. Beállítható vagy fix kiterjesztett bal/jobb referencia. [nem]</li>
+<li>Előző/Következő gombok. [igen]</li>
+<li>Visszatekintés a felhasználó által beírt felvétel párbeszédpanelen. [nem]</li>
+<li>Lábazonosító visszajelzés [nem]</li>
+</ul><br>
+
+Elhelyezkedés
+<ul>
+<li>Helyegységek {ddmmss, dec.deg}. [ddmmss]</li>
+<li>CRS. A CRS neve a Proj4-ben használt módon. [Long-Lat, azaz földrajzi WGS84]</li>
+</ul><br>
+
+Pontosság
+<ul>
+<li>Gyorsulástűrés &gt; 0. [1%] </li>
+<li>Mágneses tér tűrés &gt; 0. [1%] </li>
+<li>Mágneses merülés tolerancia &gt; 0. [2,0&deg;]</li>
+<li>Testvértűrés &gt; 0. [10%] </li>
+</ul><br>
+
+<div style="font-size:90%">
+Egyéni adatbeállítások
+<ul>
+<li>Búvár mód</li>
+<li>A legutóbbi adatok kiemelése</li>
+<li>Legutóbbi adatidő túllépés</li>
+<li>Tört "kiterítés"</li>
+<li>A DistoX visszamérés. [nem]</li>
+<li>Síkinterpoláció</li>
+<li>Android-érzékelők [nem]</li>
+<li>Hurokzárás. [nem]</li>
+<li>Android iránytű/lejtszögmérő</li>
+<li>Mérés iránya időzítő visszaszámlálás. [10 s]</li>
+<li>Mérés iránya időzítő hangereje [10 100]. [50%] </li>
+<li>Baklövés mérés észlelése</li>
+<li>A hozzárendelt sün mérési pontok fenntartása az újraszámozáskor</li>
+<li>Sün csoport mérésipont-hozzárendelés csak előreméréskor</li>
 </ul>
+</div><br><p>
+
+<!-- =========================================== -->
+
+<b>Vázlatkészítés</b><br>
+<ul>
+<!-- li>Rajzeszköz-választó {recent,list,grid,triple grid}. [legújabb] </li -->
+<li>Sarok húzás. Engedélyezze a sarokhúzást a <u>vázlat ablakban</u> és az <u>áttekintő ablakban</u>. [nem]</li>
+<li>Nagyításvezérlők {off,temporary,permanent}. [ki] </li>
+<li>x-szelvényű vízszintes küszöb</li>
+<li>Poligon ellenőrzés. Ellenőrizze, hogy a mérési pontok csatlakoznak-e a poligonhoz. [igen]</li>
+<li>Poligon "kiterítés" ellenőrzése. [igen]</li>
+<li>A legutóbbi szerszámszám: {3, 4, 5, 6}. [4] </li>
+</ul><br>
+
+Vázlatelemek
+<ul>
+<li>A felmérés vonalszélessége [0,5,10]. [1 pxl]</li>
+<li>A mérési pontnév mérete. [24 pxl]</li>
+<li>Zöld pontok sugara [0,5 100]. [5 pxl]</li>
+<li>Kiválasztási sugár. [24 pxl]</li>
+<li>A radír mérete. [36 pxl]</li>
+<li>Shift érzékenység. [60 pxl]</li>
+<li>Mutatási sugár. [16 pxl]</li>
+<li>Átlátszóság. [80%-os átlátszatlanság]</li>
+</ul><br>
+
+Pont Eszközök
+<ul>
+<li>Nem nagyított pont ikonok. [nem]</li>
+<li>A ponteszközök skálája. [1.2] </li>
+<li>Címkék mérete. [24 pxl]</li>
+</ul><br>
+
+Vonaleszközök
+<ul>
+<li>A vonalak szélessége (N.B. a falvonal ennek kétszerese). [1 pxl]</li>
+<li>Vonalstílus léptéktényező</li>
+<li>Vonalstílus {Bezier, finom, normál, durva, egyszerűsített}. [normál] </li>
+<li>Vonalpont távolság. Minimális távolság a vonalpontok között. [10 pxl]</li>
+<li>A metszetvonalak "irány pipa" mérete [1,20]. Alapértelmezett 8 [x egység]</li>
+<li>Szakaszpontok. Adja hozzá a Therion szakaszpontot a szakaszvonalhoz. [igen]</li>
+<li>A vonal alapértelmezett csatlakozása {none, start, end, both, folytatás}. [nincs] </li>
+<li>A terület határának alapértelmezett láthatósága. [igen]</li>
+</ul><br>
+
+<div style="font-size:90%">
+Egyéni vázlatbeállítások
+<ul>
+<li>Vázlat eltolás/méretezés</li>
+<li>Vázlat felosztása/egyesítése</li>
+<li>Biztonsági mentés szám. [5]</li>
+<li>Biztonsági mentési időköz. [60 mp]</li>
+<li>Elmentett mérési pont színezés</li>
+<li>Csak az új szakaszokon frissítse a poligont</li>
+<li>Teljes affin vázlatátalakítások</li>
+<li>Rétegek. [nem]</li>
+<li>Milliméterpapír léptéke</li>
+</ul>
+</div><br>
+
+<div style="font-size:90%">
+Egyedi sün beállítások
+<ul>
+<li>Sün osztályok</li>
+<li>Sün színezés</li>
+<li>Sün alaprajzi küszöb. [80&deg;]</li>
+<li>Sün szaggatási mód: nincs, irány szerint, lejtés szerint, nézet szerint. [nincs]</li>
+<li>A sün szaggatás lejtszög küszöb. [50&deg;]</li>
+<li>A sün szaggatás irány küszöbée. [60&deg;]</li>
+<li>A sün szaggatás szögének küszöbértéke metszeteknél. [60&deg;]</li>
+<li>Szaggatott sün színe</li>
+<li>Pontozott sün színe</li>
+</ul>
+</div><br>
+
+<div style="font-size:90%">
+Automatikus falak
+<ul>
+<li>Faltípus. [nincs]</li>
+<li>Alaprajz sün lejtés</li>
+<li>Sün clino profil</li>
+<li>Minimális távolság a mérés mentén</li>
+<li>Homborság</li>
+<li>Pontok elválasztása a falon</li>
+</ul>
+</div><br>
+
+<div style="font-size:90%">
+Egyéni vonal beállításai
+<ul>
+<li>Egyenesítő szög</li>
+<li>Interpolációs pontosság (Bezier)</li>
+<li>Kornet küszöb (Bezier)</li>
+<li>Maximális pont/szegmens távolság a gyomláláshoz. [0,5 m]</li>
+<li>Maximális szegmenshossz a gyomláláshoz. [2,0 m]</li>
+<li>Pont gyomlálás szegmens puffer</li>
+<li>Vonal/terület illesztés. [nem]</li>
+<li>Szegmensek simítása/kiegyenesítése</li>
+<li>A vonalak megfeszítése</li>
+<li>Útvonal többszörös kiválasztása</li>
+<li>Összetett műveletek</li>
+</ul>
+</div><br><p>
+
+<!-- =========================================== -->
+
+<b>3D-s megtekintő</b><br>
+<ul>
+<li>Negatív lejtésű nézetek</li>
+<li>mérési pontok</li>
+<li>A mérési pontok mérete</li>
+<li>A mérési pont szövegének mérete</li>
+<li>Kiválasztási sugár</li>
+<li>Mérés párbeszédpanel</li>
+<li>A mérési pont üzenete</li>
+<li>Rács a 3D modell felett vagy alatt</li>
+<li>Rács kiterjedése</li>
+</ul><br>
+
+Felületi DEM
+<ul>
+<li>DEM-puffer mérete a modell körül</li>
+<li>DEM maximális méret</li>
+<li>DEM-csökkentési mód</li>
+</ul><br>
+
+Fal modell
+<ul>
+<li>Sünök használata</li>
+<li>Minden sün</li>
+<li>Vetített sünök</li>
+<li>Sün küszöb</li>
+<li>Osztott háromszögek</li>
+<li>Véletlenszerű felosztás</li>
+<li>Nyújtó felosztás</li>
+<li>Powercrust paraméter</li>
+</ul><br><p>
+
+<!-- =========================================== -->
+
+<b>Eszköz</b><br>
+<ul>
+<li>Bluetooth. Indításkor ellenőrizze, hogy a BT engedélyezve van-e. [igen]</li>
+<li>Kapcsolat adatmódja {igény szerinti, folyamatos, több}. [igény szerint]</li>
+<!-- li>Automatikus újracsatlakozás (folyamatos módban). [igen] </li -->
+<li>Új adatszám: az új adatok számának lekérése a kötegelt letöltés előtt</li>
+<li>BT kapcsolat típusa {normal, insecure}. [eszközfüggő alapértelmezett] </li>
+<li>A Z6 megoldása. [igen]</li>
+<li>Automatikus párosítás. [igen]</li>
+<li>Kapcsolat állapotáról szóló visszajelzések</li>
+</ul><br>
+
+<div style="font-size:90%">
+Egyéni eszközbeállítások
+<ul>
+<li>Kapcsolódási késleltetés</li>
+<li>Második DistoX</li>
+<li>Adatszünet</li>
+<li>Az adatok készenléti várakozási késleltetése</li>
+<li>Lézeres szünet</li>
+<li>Mérés szünet</li>
+<li>Firmware-ellenőrzés</li>
+<li>BRIC4 adatmód</li>
+<li>BRIC4 nulla hosszúságú felvételek</li>
+</ul>
+</div><br><p>
+
+<b>DistoX kalibrálás</b><br>
+<ul>
+<li>Alapértelmezett csoportházirend {TopoDroid, PocketTopo). [TopoDroid] </li>
+<li>Csoport tolerancia. [40&deg;]</li>
+<li>Kalibrációs algoritmus hiba. [0,000001]</li>
+<li>Maximális iterációk kalibrálása. [200]</li>
+<li>Azonnal töltse le a távoli kalibrálási adatokat</li>
+<li>A kalibrációs nyers adatok megjelenítése. [nem]</li>
+<li>Alapértelmezett kalibrációs algoritmus {auto,linear,non-linear}. [automatikus]</li>
+<!-- li>A min-algo paraméterei: alfa, béta, gamma, delta</li -->
+</ul>
+<br><p>
 
 </body></html>
