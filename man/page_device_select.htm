@@ -57,28 +57,25 @@ A BRIC4 aktuális eszközként való kiválasztásához érintse meg a bejegyzé
 
 Miután csatlakozott egy ügyfélhez, a BRIC4 emlékszik a kapcsolatra, még akkor is, ha ki van kapcsolva, ezért marad
 "mindig kapcsolódva".<br>
-Ha a TopoDroid csatlakozik, a mérések értékei azonnal átkerülnek az alkalmazásba.
+Ha a TopoDroid csatlakozik, a mérések értékei azonnal átkerülnek az Androidra.
 Ha a TopoDroid nincs csatlakoztatva, akkor az adatokat a memóriában tárolja, és akkor továbbítja az alkalmazásba
 amikor legközelebb csatlakozik.<br><p>
 
-A BRIC4 adatátviteli protokoll magában foglalja az Android nyugtázását,
-de ez <u>nem</u> tartalmazza az alkalmazás által az adatok vételének nyugtázását.
-Ezért
-<ul>
-<li> újracsatlakozás után a BRIC4 az összes adatot sorozatban küldi el, és lehetséges, hogy a legelső adatot
-az Android nyugtázza, de <u>nem továbbítja</u> az alkalmazásba.</li>
-</ul><br><p>
+A Bric4 adatátviteli protokoll tartalmazza az Android általi nyugtázást, de <u>nem</u> tartalmazza az adatok alkalmazás általi fogadásának nyugtázását.
+ A protokollnak néhány másodperces késleltetése van a kapcsolat és az első adatátvitel között, a TopoDroid pedig egy másodperces késleltetéssel rendelkezik az utolsó adatok után, a kapcsolat lezárása előtt.
+ Ezáltal általában egyetlen mérés sem vész el, bár ez nem garantált, és a mérések <u>elvesznek</u>
+ ha az alkalmazást nem értesíti az Android a következő mérés megérkezése előtt.<br><p>
 
 A BRIC4 az adatokat a belső memóriában tárolja CSV fájlokban. Ha USB-n keresztül csatlakozik a számítógéphez, az eszközt
-külső memóriaként jelenik meg, és a CSV fájlok átmásolhatók a számítógépre.<br><p>
+ külső memóriaként jelenik meg, és a CSV fájlok átmásolhatók a számítógépre.<br><p>
 
 A BRIC4 kalibrálását az eszköz végzi, és nem igényel külső programot.<br><p>
 
 A BRIC4 az alkalmazásból vezérelhető. Különösen lehetőség van a lézer be- és kikapcsolására és mérésre. A BRIC4 rendelkezik egy "szkennelési üzemmóddal" is, amelyben a méréseket folyamatosan, másodpercenként kb. kétszer végzi.<br><p>
 
 A TopoDroid három különböző adatprotokollt követhet (az "egyéni" készlet beállításának megfelelően).
-Az első csak az elsődleges adatokat (távolság, irányszög és lejtés) kapja meg, amelyek nem tartalmazzák a Bric4 által hozzárendelt adatazonosító számot.
-A másik kettő megkapja a teljes adatot. Különböznek abban, hogy a TopoDroid a megadott azonosítószámot használja, vagy saját számokat rendel hozzá.
+ Az első csak az elsődleges adatokat (távolság, irányszög és lejtés) kapja meg, amelyek nem tartalmazzák a Bric4 által hozzárendelt adatazonosító számot.
+ A másik kettő megkapja a teljes adatot. Különböznek abban, hogy a TopoDroid a megadott azonosítószámot használja, vagy saját számokat rendel hozzá.
 <br>
 
 A teljes adatok beérkezésekor a TopoDroid rögzíti a BRIC4 hibakódokat és értékeket a mérés megjegyzésében.
