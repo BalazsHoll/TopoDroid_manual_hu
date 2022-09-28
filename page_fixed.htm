@@ -1,0 +1,40 @@
+<html>
+<body>
+
+<h4>HELYSZERKESZTÉS</h4>
+
+Ez a párbeszédablak egy fixpont bejegyzés megérintésével nyílik meg a <a href="page_fixed_list.htm"> Helymeghatározások</a> párbeszédpanelen.<br><p>
+
+A párbeszédablakban megjelenik:
+<ul>
+<li>hosszúság, szélesség és geoid magasság. WGS84 ellipszoid magasság szögletes zárójelben</li>
+<li>pont <b>név</b> és <b>megjegyzés</b></li>
+<li>mágneses <b>deklináció</b> a pontban (az aktuális dátumkor)</li>
+</ul><br><p>
+
+Gombok
+<ul>
+<li><b>Megtekint</b>: megmutatja a helyet egy térképes alkalmazásban (feltéve, hogy telepítve van)</li>
+<li><b>Átal. törlés</b> konvertált koordinátákat törli. Ez a művelet azonnali.</li>
+<li><b>Átalakít</b>: konvertálja a pozíciót egy másik referenciarendszerré (a Proj4 alkalmazás segítségével)</li>
+<li><b>Töröl</b>: törli a helyrekordot</li>
+</ul>
+
+Ha a rögzített pont koordinátáit kézzel adtuk meg, akkor azok szerkeszthetők.
+A GNSS-sel vett vagy a <i>MobileTopographer</i> ből importált koordinátákat nem lehet megváltoztatni.<br><p>
+
+Az ortometrikus magasságot az ellipszoid magasságból számoljuk ki az EGM2008 geoid modell segítségével.<br><p>
+
+A <b>Átalakít</b> gomb kiszámítja a koordinátákat egy másik koordináta-referenciarendszerben,
+a Proj4 alkalmazás használatával. Az átalakított koordináták a rögzített ponttal jelennek meg és tárolódnak az adatbázisban.<br><p>
+
+A mágneses deklinációt a 2015–2020 közötti mágneses világmodell segítségével számítja ki (ezt lecseréltük
+ a WMM 2020-2025-vel 2020 januárjában).
+ A WMM modell deklinációjának bizonytalansága mérsékelt égövi régiókban akár 0,4 fok is lehet.<br>
+Jelöld be a <b>mentés</b> négyzetet a felméréshez való beállításhoz.<br><p>
+
+A <b>Mentés</b> gomb végrehajtja a módosításokat az adatbázisban.<br><p>
+
+
+</body>
+</html>
