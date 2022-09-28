@@ -1,0 +1,68 @@
+<html><body>
+
+<h4>ÚJ FELMÉRÉS</h4>
+
+Ez a párbeszédpanel a <u>főablak</u> <i>Hozzáadás</i> gombjával nyílik meg.<br><p>
+
+Információk az új felméréshez:
+<ul>
+<li><i>név</i></li>
+<li><i>dátum</i></li>
+<li><i>csapat</i></li>
+<li><i>kezdőpont</i></li>
+<li>mágneses <i>deklináció</i></li>
+<li>felmérés <i>leírás</i></li>
+<li>ponton lévő <i>keresztmetszetek</i>, megosztott vagy privát</li>
+<li>búvárkodás <i>adatmód</i> [T]</li>
+</ul>
+<br><p>
+
+A <i>név</i> kötelező kitölteni.
+A felmérés nevei a felmérések felsorolására szolgálnak a <u>főablak</u>-ban és a TopoDroid megkülönbözteti a felméréseket a nevük alapján (bár minden felmérés egyedi számmal rendelkezik az adatbázisban).<br>
+A névnek egyedinek kell lennie az adatbázisban. Azok a nevek, amelyek csak kisbetű-nagybetű karakterekben különböznek egymástól, nem különböznek,
+a fájlrendszer nem különbözteti meg a kis- és nagybetûket. A TopoDroid figyelmeztetést ad, ha az új felmérés neve egybeesik egy meglévő felmérés nevével kivéve a kis-nagybetűk esetét.<br><p>
+
+<b> FIGYELEM </b>.
+A felmérés neve nem tartalmazhat szóközt, és nem tartalmazhat „/” (perjel, amely az elérési út elválasztója), „:” (kettőspont),
+ „*” (csillag) és „\” (fordított perjel).
+ A fordított perjelek megszűnnek.
+ A szóközöket '_' (aláhúzás), a perjeleket és kettőspontokat kötőjellel '-', a csillagokat pedig '+' (plusz) helyettesíti.<br><p>
+ 
+ 
+A <i>dátum</i> "éééé.hh.nn" formátumú. Például 2015. január 6-a "2015.01.06". Ez az aktuális dátumra van előre beállítva.<br><p>
+
+A <i>csapat</i> kötelező, és nem lehet üresen hagyni.<br><p>
+
+A <i>leírás</i> üres. Nyugodtan hagyhatjuk így is, bár célszerű időt szánni a felmérés leírására.<br><p>
+A <i>mágneses deklináció</i> alapértelmezés szerint "nincs beállítva". Ha tudja, itt beírhatja, különben megkeresheti az interneten, miután megtalálta a GNSS [A] segítségével egy fix pont (például a barlang bejárata) koordinátáit.
+A deklinációt tizedes fokokban kell megadni.
+Az elfogadott értéktartomány [-360&deg;, 360&deg;].
+Az ezen időintervallumon kívül eső értékeket "nem állítottnak" tekintjük.<br><p>
+
+A mérési pontok <i>keresztmetszetei</i> vagy megoszthatók a felmérési vázlatok között, vagy privát módon az egyes vázlatokhoz tartoznak.
+Ezt a választást a felmérés létrehozásakor kell megtenni, és később nem módosítható
+mivel ez hatással van a meglévő vázlatokra.<br><p>
+
+<b>Gombok</b><br>
+<i>Mentés</i>: az új felmérés neve felkerül az adatbázisba.<br>
+<i>Megnyitás</i>: menti és azonnal elindítja a <i>Mérés lista</i> tevékenységet.<br><p>
+
+<b>Búvár adatmód</b><br>
+A búvár adat-mód kísérleti jellegű.
+Az adatokat csak manuálisan lehet bevinni, a következő formátumban:
+<ul>
+<li>KEZDŐ pont</li>
+<li>CÉL pont</li>
+<li>mélység a KEZDŐ ponton</li>
+<li>a KEZDŐ-CÉL vonal iránya</li>
+<li>távolság a KEZDŐ és a CÉL pont között</li>
+<li>BJFL a KEZDŐ ponton (opcionális)</li>
+</ul>
+<br><p>
+
+A visszalépés adatai nem támogatottak a "merülés" adatmódban.
+<br><p>
+
+
+
+</body></html>
