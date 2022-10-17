@@ -128,15 +128,16 @@ A Powercrust modell tartalmazza a falak vízszintes síkra (felülnézet) és f�
  a felmérés mentén (profilnézet). Megjelenítésük a "falak" menüben engedélyezett.
 <br><p>
 
-<b>FELÜLET</b><br>
-Ha a (Therion vagy Loch) modell felületi adatokat tartalmaz (Digital Elevation Model), akkor a felület szürke vagy
+<b>FELSZÍN</b><br>
+Ha a (Therion vagy Loch) modell felszín adatokat tartalmaz (Digital Elevation Model), akkor a felület szürke vagy
  a textúrázott (ha rendelkezésre áll).<br>
 A felület párbeszédpanelen van egy gomb, amellyel betölthet egy DEM fájlt. A támogatott formátumok az ascii (.asc vagy .ascii) és a Therion rács (.grid).
  A DEM fájlnak csak a megfelelő része van betöltve.<br>
-A felmérésnek és a DEM adatfájlnak ugyanabban a kartográfiai koordináta-rendszerben kell lennie.
+A felmérésnek és a DEM adatfájlnak ugyanabban a (térképészeti) koordináta-rendszerben kell lennie.
  Ha a felmérés rögzített pont koordinátáit másik referenciarendszerré alakították át,
- az átalakított koordinátákat használják a modell hivatkozásához.
- ha csak long-lat (WGS84) koordinátákkal rendelkezik, akkor a WGS-84 rendszert használja.<br><p>
+ a transzformált koordinátákat használjuk a modell hivatkozására, és a DEM adatoknak abban a modellben kell lenniük.
+Ha a felmérés csak hosszúság-szélesség (WGS84) koordinátákkal rendelkezik, akkor a WGS-84 rendszert használjuk.<br>
+A DEM kiterjedésének le kell fednie a modell területét.<br><p>
 
 A felület átlátszósága állítható. Ha teljesen átlátszatlan, akkor mások mögött a felület egyes részei el vannak rejtve.<br>
 A felmérési középvonal vetülete a felületen megjeleníthető (kék).<br>
