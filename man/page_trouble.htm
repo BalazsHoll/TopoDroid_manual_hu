@@ -16,13 +16,20 @@ Az Androidot az aktív DistoX-el párosíthatja a <i>pair</i> menüben, vagy a <
 
 Ha az Android kéri a DistoX PIN kódot, írja be a 0000 értéket (négy nulla).<br>
 Az SAP5 PIN-kódhoz írja be a 000000 értéket (hat nulla).<br>
-Az Androidnak nem szabad kérnie a BRIC4 PIN-kódot.<br><p>
+Az Android nem kérheti a Bric4 PIN-kódot, sem a DistoXBLE PIN-kódot.<br><p>
 
 Miután párosította a DistoX-el, az Android-nak meg kell őriznie a párosítást, és nem kell újra kérnie a PIN-kódot. Ha folyamatosan kéri a PIN-kódot, amikor adatokat tölt le a DistoX-ből,
 próbálkozzon a <i>nem biztonságos</i> socket beállításával.<br><p>
 
 Ha problémája van az adatok DistoX eszközzel történő összekapcsolásával és letöltésével, próbálja meg engedélyezni a <i>Z6 megoldás</i> beállítást.<br>
 <p>
+
+<b>A DistoXBLE csatlakozik, de nem töltődik le</b><br>
+
+Ez azonnal megtörténhet az Android Bluetooth engedélyezése után.
+A megoldás a DistoXBLE ki- és bekapcsolása.
+A TopoDroidnak automatikusan újra fel kell vennie a kapcsolatot, és el kell kezdenie az adatok letöltését.
+<br><p>
 
 
 </body></html>
