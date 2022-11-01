@@ -1,0 +1,21 @@
+encoding utf-8
+symbol line
+name slopex
+name-hu lejtőx
+th_name slopex
+group slope
+color 0xffcc00 0xff
+width 1
+dash 17 15
+effect
+  moveTo 0 0
+  lineTo 0 -8
+  lineTo 1 -8
+  lineTo 1 0
+  moveTo 16 0
+  lineTo 16 -18
+  lineTo 17 -18
+  lineTo 17 0
+  moveto 0 0
+endeffect
+endsymbol
