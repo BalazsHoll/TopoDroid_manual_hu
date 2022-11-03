@@ -1,10 +1,9 @@
 <html><body>
 <h4>PROJEKT MENEDZSER – Projektablak</h4>
 
-A <i>Projektablak</i> megnyílik ha megérinted a projekt nevét a <i>kezelőablak</i> listájában.<br><p>
+A <i>Projektablak</i> megnyílik ha megérinted a projekt nevét a <i>Projekt Menedzser Ablak</i> listájában.<br><p>
 
-Megjeleníti a projektet alkotó felmérések listáját. A lista üres, ha a projektben nincsenek
-felmérések.<br>
+Megjeleníti a projektet alkotó felmérések listáját. A lista üres, ha a projektben nincsenek felmérések.<br>
 Minden felmérés kiválasztható további műveletekhez a jelölőnégyzet megérintésével.<br><p>
 
 <b>Menük</b><br>
@@ -20,12 +19,13 @@ Minden felmérés kiválasztható további műveletekhez a jelölőnégyzet meg�
 <li>felmérések <i>beszúrása</i></li>
 <li>a kiválasztott felmérések <i>eltávolítása</i></li>
 <li>a kiválasztott felmérések 2D <i>megjelenítése</i> alaprajzi nézetben</li>
+<li>Megmutatja a felmérések <i>geo-pontjait</i></li>
 <li>felsorolja a projekt <i>kapcsolódásait</i></li>
 <li><i>3D nézet</i> a projektről</li>
 </ul><br>
 
 A <i>beszúrás</i> gomb megjeleníti a felmérések listáját a TopoDroid adatbázisban.
-A felmérések a jelölőnégyzetük megérintésével és az <i>OK</i> gombbal történő megerősítéssel adhatók hozzá a projekthez.<br><p>
+ A felmérések a jelölőnégyzetük megérintésével és az <i>OK</i> gombbal történő megerősítéssel adhatók hozzá a projekthez.<br><p>
 
 <b>3D nézet projekt</b><br>
 A projekt az első felméréstől kezdve megjelenik a 3D-s megjelenítőben.<br>
@@ -34,21 +34,26 @@ A következő felmérések csak akkor jelennek meg 3D-ben, ha (közvetlenül vag
 Ha több felmérés georeferált, akkor mindegyik megjeleníthető 3D-ben, együtt a kapcsolódó felmérésekkel.<br><p>
 
 
-<b>2D nézet felmérések</b><br>
+<b>Felmérések 2D alaprajz nézet</b><br>
 
-A kiválasztott felmérés felülnézetben, poligonnal és pontnevekkel együtt jelenik meg.
-Minden felmérésnek más színe van. Egy idő után a színek ismétlődnek, ezért érdemes egyszerre csak két-három felmérést megjeleníteni.<br>
-A kapcsolódások szaggatott piros vonalakként jelennek meg, a kapcsolt pontok háttere pedig kerek.<br><p>
+Ez az ablak felülnézetben jeleníti meg a felméréseket, poligonvonallal és pontnevekkel.
+<br>
+Minden felmérésnek más színe lehet. Egy idő után a színek ismétlődnek, ezért érdemes egyszerre csak két-három felmérést megjeleníteni.
+ A kapcsolódások szaggatott piros vonalakként jelennek meg, a kapcsolt pontok mögött pedig kör van.
+ A pontnevek mérete megegyezik a vázlat ablakban látható mérettel.
+<br>
+A nézet eltólható és nagyítható.
+ Egy felmérés megragadható (érintsd meg egy pontját: egy kör jelenik meg) és húzható, miközben a többi felmérés nem mozdul.
+ Ezzel átfedheted a különböző felmérések pontjait, amelyeket szeretnél összekapcsolni.
+ Ha átfedik egymást, karikázd be mindkettőt a pont megérintésével: ezután beszúrhatod közéjük az kapcsolódást az "kapcsolódás hozzáadása" menüvel.<br><p>
 
-A nézet eltólható és nagyítható.<br>
-Egy felmérés megragadható (érintsd meg egy pontját: kör jelenik meg) és húzható, miközben a többi felmérés nem mozdul.
-Ezzel átfedheted a különböző felmérések pontjait, amelyeket szeretnél összekapcsolni.
-Ha átfedik egymást, karikázd be mindkettőt a pont megérintésével: ezután beszúrhatod közéjük az kapcsolódást az "kapcsolódás hozzáadása" menüvel.<br><p>
-
-<b>Gombok</b>
+<b>Két gomb van:</b>
 <ul style="margin-top:0">
-<li><i>Kapcsolódás hozzáadása</i>: megnyit egy párbeszédablakot, ahol manuálisan adhatsz hozzá kapcsolódást a barlangprojekt felmérései között.</li>
+<li><i>Kapcsolódás hozzáadása</i>: megnyit egy párbeszédablakot, ahol manuálisan adhatsz hozzá kapcsolódást a barlangprojekt felmérései között. A barlangprojekt felmérései közötti kapcsolódás manuális hozzáadásához érintsd meg az "OK" gombot.</li>
 <li><i>Kapcsolódási lista</i> a barlangprojekt felmérései között</li>
 </ul><br><p>
+
+<b>Kapcsolódások</b><br>
+Eldobhatsz egy kapcsolatot, ha megérinted a bejegyzését a barlangprojekt kapcsolódásait listázó párbeszédablakban.<br><p>
 
 </body></html>
