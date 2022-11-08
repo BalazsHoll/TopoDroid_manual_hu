@@ -1354,13 +1354,15 @@ public class DrawingCommandManager
     float  scale = mScale;
     RectF  bbox  = mBBox;
     boolean sidebars = true;
-    if ( zoom < 0 ) {
+    if ( zoom < 0 ) {  // PDF
       mm = new Matrix();
-      scale = 1.0f; // getBitmapScale();
+      scale = 2.0f; // getBitmapScale(); // HBX 1.0->2.0
       bbox  = getBitmapBounds();
+      bbox = new  RectF(bbox.left*2, bbox.top*2, bbox.right*2,bbox.bottom*2); // HBX
       // float sca = 1 / scale
-      mm.postTranslate( 20 - bbox.left, 20 - bbox.top );
       // mm.postScale( scale, scale );
+      mm.postScale( scale, scale ); // HBX
+      mm.postTranslate( 20 - bbox.left, 20 - bbox.top ); // HBX
       zoom = -zoom;
       sidebars = false; // do not draw sidebars
     }
@@ -1430,7 +1432,7 @@ public class DrawingCommandManager
           Paint fixedGridStepyPaint = BrushManager.makePaintmm( TDColor.DARK_GRID,  0, Paint.Style.STROKE, step, -x); // HBX
           Paint fixedGridStepxPaint = BrushManager.makePaintmm( TDColor.DARK_GRID,  0, Paint.Style.STROKE, step, -y); // HBX
 
-          for ( ; x<TopoDroidApp.mDisplayWidth; x += step ) {
+          for ( ; x<(TopoDroidApp.mDisplayWidth+400); x += step ) { // HBX
             DrawingPath dpath = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
             //DrawingPath dpath2 = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
             if ( i % 10 == 0 ) {
@@ -1442,12 +1444,12 @@ public class DrawingCommandManager
             ++i;
             dpath.mPath  = new Path();
             dpath.mPath.moveTo( x, 0 );
-            dpath.mPath.lineTo( x, TopoDroidApp.mDisplayHeight );
+            dpath.mPath.lineTo( x, TopoDroidApp.mDisplayHeight +400); // HBX
             dpath.draw( canvas );
           }
           //HBX int j = - (int)( mOffy / step );
           //HBX float y = mOffy + j * step;
-          for ( ; y<TopoDroidApp.mDisplayHeight; y += step ) {
+          for ( ; y<(TopoDroidApp.mDisplayHeight+400); y += step ) { //HBX
             DrawingPath dpath = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
             //DrawingPath dpath2 = new DrawingPath( DrawingPath.DRAWING_PATH_GRID, null, -1 );
             if ( j % 10 == 0 ) { 
@@ -1459,7 +1461,7 @@ public class DrawingCommandManager
             ++j;
             dpath.mPath  = new Path();
             dpath.mPath.moveTo( 0, y );
-            dpath.mPath.lineTo( TopoDroidApp.mDisplayWidth, y );
+            dpath.mPath.lineTo( TopoDroidApp.mDisplayWidth+400, y ); // HBX
             dpath.draw( canvas );
           }
         } else {
