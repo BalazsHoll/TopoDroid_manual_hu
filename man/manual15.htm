@@ -2,7 +2,7 @@
 <h3>[15] 3D MEGJELENÍTŐ</h3>
 
 A TopoDroid 3D megjelenítőt barlangban való használatra tervezték, és nem igényel internetkapcsolatot.<br>
-Más fájlformátumokat is betölthet: Therion (th, thconfig), Loch, Compass (dat, mak) és VisualTopo.<br><p>
+Más fájlformátumokat is betölthet: Therion (th, thconfig), Loch (lox), Compass (dat, mak), Survex (3d) és VisualTopo (tro, trox).<br><p>
 
 A 3D modell megnyitható az <i>Adatablak</i> menüjéből, vagy a
  <i>Felmérési információs ablak</i> gombjával.<br>
@@ -17,8 +17,8 @@ A modellt egy referenciaráccsal (kék észak, zöld kelet) vagy tengelykereszt 
 <ul style = "margin-top: 0">
 <li><i>Mozgatás - Fény</i>: A modell vagy a fény mozgatása. A kétujjas érintés mindig méretezi és eltólja a modellt.</li>
 <li><i>Nézet</i>: perspektív vagy merőleges.</li>
-<li><i>Poligon pontok</i>: a pontszámok megjelenítése/elrejtése. Zöld pontok vagy nevek.</li>
-<li><i>Sünök</i>: Segédmérések megjelenítése/elrejtése. Vonalak vagy végpontok.</li>
+<li><i>Poligon pontok</i>: a pontszámok megjelenítése/elrejtése. Zöld pontként vagy névvel.</li>
+<li><i>Sünök</i>: Segédmérések megjelenítése/elrejtése. Vonalakkal vagy végpontokkal.</li>
 <li><i>Falak</i>: Falak megjelenítése/elrejtése (ha létrejött).</li>
 <li><i>Felület</i>: Felületi DEM megjelenítése/elrejtése (ha van).</li>
 <li><i>Szín</i>: poligon színkódolása. Fehér, felmérés vagy mélység.</li>
@@ -33,7 +33,7 @@ Néhány gombnak hosszú érintés funkciója van:
 <li><i>Poligon pontok</i>: A pontválasztás be-kikapcsolása.</li>
 <!-- <li><i>Sünök</i>: Poligon kézi behelyezése.</li> -->
 <li><i>Szín</i>: Válaszd ki a megjelenítendő vagy elrejtendő felméréseket.</li>
-<li><i>Keret</i>: Válaszd ki a felületi/ismétlődő/megjegyzett poligonok megjelenítését.</li>
+<li><i>Keret</i>: Megnyitja a <i>poligon párbeszédpanelt</i> a felülszíni/ismétlődő/kizárt poligonok megjelenítéséhez.</li>
 </ul>
 <br><p>
 
@@ -103,12 +103,12 @@ Alapértelmezés szerint a rács a felmérés alatt van, de beállítható felet
 <b>FELMÉRÉS</b><br>
 A felmérési adatok elrejthetők, vonalak vagy végpontok formájában jeleníthetők meg.<br>
 A felmérő poligonok színezetlenek vagy színezettek lehetnek felmérés szerint, mélység szerint (vöröstől a kékig) vagy
- a felszín alatt mélység szerint (kéktől a vörösig).<br>
+ a felszín alatt mélység szerint (kéktől a vörösig) ha van a modellben DEM felszín.<br>
 
 Amikor színtelen a felmérési poligonok fehérek, a felszíni részek zöldek, az ismétlődő poligonok narancssárgák,
  és a megjegyzett poligonok világoskék színűek.<br>
 
-A "felszíni", "duplikált" és "kizárt" poligonok be- és kikapcsolhatók a "poligonok" párbeszédpanelen.
+A "felszíni", "duplikált" és "kizárt" poligonok be- és kikapcsolhatók a <i>poligonok párbeszédpanelen</i>.
  Megnyitásához nyomja meg hosszan a negyedik gombot.
 <br><p>
 

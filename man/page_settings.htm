@@ -148,26 +148,36 @@ Egyéni importálási/exportálási beállítások
 <ul>
 <li>Tömörített szimbólumok a zip archívumban</li>
 <li>Importálási adatmód</li>
-<li>Keresztmetszetek beszúrása</li>
-<li>Mérési pontok beillesztése</li>
+
 <li>BJFL szám: a BJFL-hez használt segédmérések száma</li>
-</ul>
+
+<li>Keresztmetszetek beszúrása a vázlat exportálásba</li>
+<li>Mérési pontok felvétele a vázlat exportálásba</li>
+<li>BJFL-szám: az BJFL-hoz használt splayek száma [alapértelmezett hamis]</li>
+</ul><br>
+Ha az BJFL-szám hamis, minden (tűréshatáron belüli) sünt-t használ az BJFL kiszámításához. 
+A keresztirányú méret a sün vetületek maximális értékére van beállítva a vízszintes vagy függőleges tengelyeken.
+ A tűréshatáron belüli sün vízszintes és függőleges méreteknél is figyelembe vehető.<br>
+Ha az BJFL-szám igaz, akkor csak az első négy sünt használjuk, amelyek kielégítik a tűréseket, és a tűréshatáron belüli sünt csak a függőleges vagy a vízszintes méreteknél használjuk.
+ Minden irány az első elfogadható sün értékére van beállítva.
+ Egy irány nulla értékkel hagyható, ha egy sün egy már beállított irányba mér.
+ Alapértelmezés szerint a tűréshatárok nagyon megengedők: 0&deg; függőleges irányokhoz és 90&deg; vízszinteshez.</ul>
 </div><br><p>
 
 <!-- =========================================== -->
 
 <b>Felmérés adatai</b><br>
 <ul>
-<li>Csapat. Alapértelmezett felmérési csapat. Alapértelmezett "nincs beállítva"</li>
+<li>Csapat. Alapértelmezett felmérési csapat. Alapértelmezett nincs beállítva. Ha egy új felmérést készítessz kötelező beírni egy csapatot.</li>
 <li>A felmérési mérési pontok név-hozzárendelési szabályzata {nincs, sün+előre, sün+vissza, előre+sün, vissza+sün, vissza+sün+előre, állvány, mágn.anomália}.
 A választási lehetőségek száma az aktivitási szinttől függően változik.
 Alapértelmezett „sün+előre”.</li>
 <li>A mérési pontok nevei {alfanumerikus, számok}. [alfanumerikus]</li>
-<li>A mérési pont kezdeti neve. Alapértelmezett "nincs"</li>
-<li>A fényképek indexképei mérete [80 400]. [200 pxl]</li>
+<li>A mérési pont kezdeti neve. Ha alapértelmezett nincs akkor a program nullát használ.</li>
+<li>A fényképek indexképei mérete [80, 400]. [200 pxl]</li>
 <li>Táblázatban szerkeszthető mérési pontok [nem]</li>
-<li>Vázlat kezdőpontja</li>
-<li>Megosztott keresztmetszetek</li>
+<li>Vázlat kezdőpontja legyen közös mindegyikben vagy nem.</li>
+<li>Megosztott keresztmetszetek a vázlatok között</li>
 </ul><br>
 
 Mértékgységek
@@ -187,9 +197,9 @@ Mérésadatok
 <li>Mérés függőleges küszöb. 90° körüli régió, ahol a felvételek „függőlegesen” vannak kiterjesztve [0,90]. [10&deg;]</li>
 <li>Láb WENS küszöb. V. láb küszöbértéke [0,90]. [80&deg;]</li>
 <li>"kiterjesztés" hivatkozás. Beállítható vagy fix kiterjesztett bal/jobb referencia. [nem]</li>
-<li>Előző/Következő gombok. [igen]</li>
-<li>Visszatekintés a felhasználó által beírt felvétel párbeszédpanelen. [nem]</li>
-<li>Lábazonosító visszajelzés [nem]</li>
+<li>Előző/Következő gombok a mérés szerkesztés ablakban. [igen]</li>
+<li>Visszamérés a felhasználó által beírt mérési párbeszédpanelen. [nem]</li>
+<li>Poligon visszajelzés [nem]</li>
 </ul><br>
 
 Helymegadás
