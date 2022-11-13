@@ -855,7 +855,7 @@ public class OverviewWindow extends ItemDrawer
 
       float scale = TDSetting.mToPdf;
       RectF bnds = manager.getBitmapBounds( scale );
-      int margin_left = 40, margin_right=60, margin_top=40,margin_bottom=60;  //HBX sketch unit * 20, 2m=40
+      int margin_left = 40, margin_right=40, margin_top=40,margin_bottom=40;  //HBX sketch unit * 20, 2m=40
       bnds = new  RectF((bnds.left-margin_left*scale)/1, (bnds.top-margin_top*scale)/1,
               (bnds.right+margin_right*scale)/1,(bnds.bottom+margin_bottom*scale)/1); // HBX
       int zw = (int)(bnds.right - bnds.left); // margin 40 + 80 6.1.76 HBX
@@ -869,7 +869,7 @@ public class OverviewWindow extends ItemDrawer
 
       // page.getCanvas().drawColor( 0 ); // TDSetting.mBitmapBgcolor );
       // page.getCanvas().drawRect( new RectF(0,0,zw,zh), BrushManager.blackPaint ); // TDSetting.mBitmapBgcolor );
-      manager.executeAll( page.getCanvas(), -1.0f, null, false ); // zoom is 1.0, false = no inverted_color
+      manager.executeAll( page.getCanvas(), -1.0f, null, true ); // zoom is 1.0, false = no inverted_color
       // manager.executeAll( page.getCanvas(), -1.0f, null ); // zoom is 1.0
       pdf.finishPage( page );
       pdf.writeTo( fos );
