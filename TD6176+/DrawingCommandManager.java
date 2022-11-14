@@ -1398,10 +1398,10 @@ public class DrawingCommandManager
 
     float pscale = TDSetting.mToPdf; // HBX scale conflict width grid
     if ( zoom < 0 ) { // PDF print
-      PDF_page = true; // HBX
+      PDF_page = true; // HBX0
       mm = new Matrix();
       // scale = 1.0f; // getBitmapScale();
-      scale = TDSetting.mToPdf;
+//      scale = TDSetting.mToPdf; // HBX
       bbox  = getBitmapBounds( pscale ); // HBX
       // float sca = 1 / scale
       int margin_left = 40, margin_right=40, margin_top=40,margin_bottom=40; // HBX
