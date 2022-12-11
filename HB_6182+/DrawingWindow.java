@@ -4260,7 +4260,6 @@ public class DrawingWindow extends ItemDrawer
     return true;
   }
 
-  boolean HBXP_PointDown = false; // HBXP
   /** react to a touch-up event
    * @param xc   canvas X coord 
    * @param yc   canvas Y coord
@@ -4540,7 +4539,7 @@ public class DrawingWindow extends ItemDrawer
         else
         { // SymbolType.POINT
           mLastLinePath = null;
-          if ( (! mPointerDown) && (!HBXP_PointDown)) { // HBXP
+          if ( ! mPointerDown ) {
             float radius = ( ( BrushManager.isPointOrientable( mCurrentPoint ) )? 6 : 2 ) * TDSetting.mPointingRadius;
 	    float shift = Math.abs( x_shift ) + Math.abs( y_shift );
 	    if ( shift < radius ) {
@@ -4677,7 +4676,6 @@ public class DrawingWindow extends ItemDrawer
    */
   private boolean onTouchDown( float xc, float yc, float xs, float ys )
   {
-    HBXP_PointDown = false; // HBXP
     mDrawingSurface.endEraser();
     float d0 = TDSetting.mCloseCutoff + mSelectSize / mZoom;
     // TDLog.v( "on touch down. mode " + mMode + " " + mTouchMode );
@@ -4845,85 +4843,7 @@ public class DrawingWindow extends ItemDrawer
           // if ( squared_shift > TDSetting.mLineSegment2 ) {
           //   mPointerDown = 0;
           // }
-
-          // HBXP copy and modification from onTouchUp
-          if (true) // HBXP geek settings enable
-          { // SymbolType.POINT
-            mLastLinePath = null;
-            if ( ! mPointerDown ) {
-              float angle = 0;
-              float radius = ( ( BrushManager.isPointOrientable( mCurrentPoint ) )? 6 : 2 ) * TDSetting.mPointingRadius;
-              float shift = Math.abs( x_shift ) + Math.abs( y_shift );
-              if ( shift > radius ) { // HBXP if big move, short move is original function
-                xs = mSaveX/mZoom - mOffset.x;
-                ys = mSaveY/mZoom - mOffset.y;
-                if ( BrushManager.isPointLabel( mCurrentPoint ) ) {
-                  //new DrawingLabelDialog( mActivity, this, xs, ys ).show(); // HBXP ? dummy text create
-                } else if ( BrushManager.isPointPhoto( mCurrentPoint ) ) {
-                  //new DrawingPhotoDialog( mActivity, this, xs, ys ).show(); // HBXP
-                } else if ( BrushManager.isPointAudio( mCurrentPoint ) ) {
-                  if ( audioCheck ) {
-                    //addAudioPoint( xs, ys ); // HBXP
-                  } else {
-                    TDToast.makeWarn( R.string.no_feature_audio );
-                  }
-                } else {
-                  if ( mLandscape ) {
-                    DrawingPointPath point = new DrawingPointPath( mCurrentPoint, -ys, xs, mPointScale, mDrawingSurface.scrapIndex() );
-                    if ( BrushManager.isPointOrientable( mCurrentPoint ) ) {
-                      if ( shift > TDSetting.mPointingRadius ) {
-                        angle = TDMath.atan2d( x_shift, -y_shift );
-                        point.setOrientation( angle );
-                        //TDLog.v(" HBXP L orientation " + angle + " shift " + shift + " radius " + radius );
-                      }
-                      if ( ! BrushManager.isPointLabel( mCurrentPoint ) ) point.rotateBy( 90 );
-                    }
-                    if ( !HBXP_PointDown ){ // HBXP To put it down just once
-                      mDrawingSurface.addDrawingPath( point );
-                      HBXP_PointDown = true;
-                      mHotPath = point;
-                    } else {
-                      if ( mHotPath != null )
-                        if ( mHotPath instanceof DrawingPointPath ) {
-                          int scale = (int) (shift / 150) - 2; if (scale>2)scale =2;// HBXP ?150
-                          //TDLog.v(" HBXP orientation " + angle + " shift " + shift + " radius " + radius + " scale " + scale );
-                          ((DrawingPointPath) mHotPath).setScale(scale);
-                          ((DrawingPointPath) mHotPath).setOrientation( angle );
-                        }
-                    }
-                  } else {
-                    DrawingPointPath point = new DrawingPointPath( mCurrentPoint, xs, ys, mPointScale, mDrawingSurface.scrapIndex() ); // no text, no options
-                    if ( BrushManager.isPointOrientable( mCurrentPoint ) ) {
-                      if ( shift > TDSetting.mPointingRadius ) {
-                        angle = TDMath.atan2d( x_shift, -y_shift );
-                        point.setOrientation( angle );
-                        // TDLog.v("P orientation " + angle + " shift " + shift + " radius " + radius );
-                      }
-                    }
-                    if ( !HBXP_PointDown ){
-                      mDrawingSurface.addDrawingPath( point );
-                      HBXP_PointDown = true;
-                      mHotPath = point;
-                    } else {
-                      if ( mHotPath != null )
-                        if ( mHotPath instanceof DrawingPointPath ) {
-                          int scale = (int) (shift / 150) - 2; if (scale>2) scale = 2;// HBXP ?150
-                          //TDLog.v(" HBXP 2 orientation " + angle + " shift " + shift + " radius " + radius + " scale " + scale );
-                          ((DrawingPointPath) mHotPath).setScale(scale);
-                          ((DrawingPointPath) mHotPath).setOrientation( angle );
-                        }
-                    }
-                  }
-                  // undoBtn.setEnabled(true);
-                  // redoBtn.setEnabled(false);
-                  // canRedo = false;
-                }
-              }
-            }
-          }
-          // HBXP
-
-          save = false;
+	  save = false;
         }
       } else if (  mMode == MODE_MOVE && mRotateAzimuth ) {
         TDAzimuth.mRefAzimuth = TDMath.in360( TDAzimuth.mRefAzimuth + x_shift/2 );
@@ -5018,8 +4938,7 @@ public class DrawingWindow extends ItemDrawer
     currentLine.addOption("-direction both");
     currentLine.makeStraight( );
     boolean h_section = PlotType.isProfile( mType );
-    boolean h_section_projected = PlotType.isProjected( mType ); // HBXx
-
+    
     // NOTE here l1 is the end-point and l2 the start-point (not considering the tick)
     //         |
     //         L2 --------- L1
@@ -5068,36 +4987,27 @@ public class DrawingWindow extends ItemDrawer
       from = blk.mFrom;
       to   = blk.mTo;
       if ( h_section ) { // xsection in profile view
-        if (h_section_projected) { // HBXx
-          if (azimuth < 180) {
-            clino = 90 - azimuth;
-          } else {
-            clino = azimuth - 270;
-          }
-          azimuth = (int)TDMath.add90(mPlot2.azimuth); //HBXx
+        int extend = 1;
+        if ( azimuth < 180 ) {
+          clino = 90 - azimuth;
+          // extend = 1;
         } else {
-          int extend = 1;
-          if (azimuth < 180) {
-            clino = 90 - azimuth;
-            // extend = 1;
-          } else {
-            clino = azimuth - 270;
-            extend = -1;
-          }
-
-          float dc = TDMath.in360((extend == blk.getIntExtend()) ? clino - blk.mClino : 180 - clino - blk.mClino);
-          if (dc > 90 && dc <= 270) { // exchange FROM-TO
-            azimuth = TDMath.add180(blk.mBearing);
-            from = blk.mTo;
-            to = blk.mFrom;
-            tt = 1 - tt;
-          } else {
-            azimuth = blk.mBearing;
-          }
-          // if ( extend != blk.getIntExtend() ) {
-          //   azimuth = TDMath.add180( blk.mBearing );
-          // }
-        } //HBXx
+          clino = azimuth - 270;
+          extend = -1;
+        }
+    
+        float dc = TDMath.in360( (extend == blk.getIntExtend())? clino - blk.mClino : 180 - clino - blk.mClino );
+        if ( dc > 90 && dc <= 270 ) { // exchange FROM-TO 
+          azimuth = TDMath.add180( blk.mBearing );
+          from = blk.mTo;
+          to   = blk.mFrom;
+          tt   = 1 - tt;
+        } else {
+          azimuth = blk.mBearing;
+        }
+        // if ( extend != blk.getIntExtend() ) {
+        //   azimuth = TDMath.add180( blk.mBearing );
+        // }
       } else { // xsection in plan view ( clino = 0 )
         float da = TDMath.in360( azimuth - blk.mBearing );
         if ( da > 90 && da <= 270 ) { // exchange FROM-TO 
@@ -5108,82 +5018,41 @@ public class DrawingWindow extends ItemDrawer
       }
       // TDLog.v( "new leg xsection " + from + " - " + to + " intercept " + tt );
     } else if ( nr_legs > 1 ) {
-        if ( h_section ) { // FAILURE: xsection in profile view and many legs
-          if (!h_section_projected) { //original HBXx
-            TDToast.makeWarn(R.string.too_many_leg_intersection);
-            return;
-          } else { // HBX xsection on projected profile
-            if (azimuth < 180) {
-              clino = 90 - azimuth;
-            } else {
-              clino = azimuth - 270;
-            }
-            azimuth = (int)TDMath.add90(mPlot2.azimuth); //HBX
-            //TDToast.makeWarn(" x_section in projected profile " + azimuth); //HBXx
+      if ( h_section ) { // FAILURE: xsection in profile view and many legs
+        TDToast.makeWarn( R.string.too_many_leg_intersection );
+        return;
+      }
+      StringBuilder sb = new StringBuilder();
 
-            StringBuilder sb = new StringBuilder();
-
-            double x = 0; // FIXME the centroid is not used yet
-            double y = 0;
-            double z = 0;
-            int cnt = 0;
-            for (DrawingPathIntersection path : paths) {
-              DBlock b = path.path.mBlock;
-              float t = path.tt;
-              NumStation st_f = mNum.getStation(b.mFrom);
-              NumStation st_t = mNum.getStation(b.mTo);
-              if (st_f != null && st_t != null) {
-                if (cnt > 0) sb.append(" ");
-                sb.append(Long.toString(b.mId));
-                x += st_f.e + t * (st_t.e - st_f.e); // eastward
-                y += st_f.s + t * (st_t.s - st_f.s); // southward
-                z += st_f.v + t * (st_t.v - st_f.v); // downward
-                cnt++;
-              }
-            }
-            if (cnt > 0) {
-              tt = 2; // multileg intercept
-              center = new Vector3D(x / cnt, y / cnt, z / cnt); // 3D (E,S,V) centroid of the intersections
-              from = sb.toString();
-              // TDLog.v( "new multileg xsection " + from + " " + center.x + " " + center.y + " " + center.z );
-            } else {
-              TDToast.makeWarn(R.string.too_many_leg_intersection); // FIXME bad intersections
-              return;
-            }
-          }
-        } else { // if plan view
-          StringBuilder sb = new StringBuilder();
-
-          double x = 0; // FIXME the centroid is not used yet
-          double y = 0;
-          double z = 0;
-          int cnt = 0;
-          for (DrawingPathIntersection path : paths) {
-            DBlock b = path.path.mBlock;
-            float t = path.tt;
-            NumStation st_f = mNum.getStation(b.mFrom);
-            NumStation st_t = mNum.getStation(b.mTo);
-            if (st_f != null && st_t != null) {
-              if (cnt > 0) sb.append(" ");
-              sb.append(Long.toString(b.mId));
-              x += st_f.e + t * (st_t.e - st_f.e); // eastward
-              y += st_f.s + t * (st_t.s - st_f.s); // southward
-              z += st_f.v + t * (st_t.v - st_f.v); // downward
-              cnt++;
-            }
-          }
-          if (cnt > 0) {
-            tt = 2; // multileg intercept
-            center = new Vector3D(x / cnt, y / cnt, z / cnt); // 3D (E,S,V) centroid of the intersections
-            from = sb.toString();
-            // TDLog.v( "new multileg xsection " + from + " " + center.x + " " + center.y + " " + center.z );
-          } else {
-            TDToast.makeWarn(R.string.too_many_leg_intersection); // FIXME bad intersections
-            return;
-          }
+      double x = 0; // FIXME the centroid is not used yet
+      double y = 0;
+      double z = 0;
+      int cnt = 0;
+      for ( DrawingPathIntersection path : paths ) {
+        DBlock b = path.path.mBlock;
+        float t   = path.tt;
+        NumStation st_f = mNum.getStation( b.mFrom );
+        NumStation st_t = mNum.getStation( b.mTo );
+        if ( st_f != null && st_t != null ) {
+          if ( cnt > 0 ) sb.append(" ");
+          sb.append( Long.toString(b.mId) );
+          x += st_f.e + t * ( st_t.e -  st_f.e ); // eastward
+          y += st_f.s + t * ( st_t.s -  st_f.s ); // southward
+          z += st_f.v + t * ( st_t.v -  st_f.v ); // downward
+          cnt ++;
         }
       }
-      // cross-section does not exist yet
+      if ( cnt > 0 ) {
+        tt = 2; // multileg intercept
+        center = new Vector3D( x/cnt, y/cnt, z/cnt ); // 3D (E,S,V) centroid of the intersections
+        from = sb.toString();
+        // TDLog.v( "new multileg xsection " + from + " " + center.x + " " + center.y + " " + center.z );
+      } else {
+        TDToast.makeWarn( R.string.too_many_leg_intersection ); // FIXME bad intersections
+        return;
+      }
+    }
+    // cross-section does not exist yet
     String section_id = mApp_mData.getNextSectionId( TDInstance.sid );
     currentLine.addOption( "-id " + section_id );
     mDrawingSurface.addDrawingPath( currentLine );
