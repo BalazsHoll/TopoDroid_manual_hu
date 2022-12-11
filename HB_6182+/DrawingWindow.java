@@ -4260,6 +4260,7 @@ public class DrawingWindow extends ItemDrawer
     return true;
   }
 
+  boolean HBXP_PointDown = false; // HBXP
   /** react to a touch-up event
    * @param xc   canvas X coord 
    * @param yc   canvas Y coord
@@ -4539,7 +4540,7 @@ public class DrawingWindow extends ItemDrawer
         else
         { // SymbolType.POINT
           mLastLinePath = null;
-          if ( ! mPointerDown ) {
+          if ( (! mPointerDown) && (!HBXP_PointDown)) { // HBXP
             float radius = ( ( BrushManager.isPointOrientable( mCurrentPoint ) )? 6 : 2 ) * TDSetting.mPointingRadius;
 	    float shift = Math.abs( x_shift ) + Math.abs( y_shift );
 	    if ( shift < radius ) {
@@ -4676,6 +4677,7 @@ public class DrawingWindow extends ItemDrawer
    */
   private boolean onTouchDown( float xc, float yc, float xs, float ys )
   {
+    HBXP_PointDown = false; // HBXP
     mDrawingSurface.endEraser();
     float d0 = TDSetting.mCloseCutoff + mSelectSize / mZoom;
     // TDLog.v( "on touch down. mode " + mMode + " " + mTouchMode );
@@ -4843,7 +4845,85 @@ public class DrawingWindow extends ItemDrawer
           // if ( squared_shift > TDSetting.mLineSegment2 ) {
           //   mPointerDown = 0;
           // }
-	  save = false;
+
+          // HBXP copy and modification from onTouchUp
+          if (true) // HBXP geek settings enable
+          { // SymbolType.POINT
+            mLastLinePath = null;
+            if ( ! mPointerDown ) {
+              float angle = 0;
+              float radius = ( ( BrushManager.isPointOrientable( mCurrentPoint ) )? 6 : 2 ) * TDSetting.mPointingRadius;
+              float shift = Math.abs( x_shift ) + Math.abs( y_shift );
+              if ( shift > radius ) { // HBXP if big move, short move is original function
+                xs = mSaveX/mZoom - mOffset.x;
+                ys = mSaveY/mZoom - mOffset.y;
+                if ( BrushManager.isPointLabel( mCurrentPoint ) ) {
+                  //new DrawingLabelDialog( mActivity, this, xs, ys ).show(); // HBXP ? dummy text create
+                } else if ( BrushManager.isPointPhoto( mCurrentPoint ) ) {
+                  //new DrawingPhotoDialog( mActivity, this, xs, ys ).show(); // HBXP
+                } else if ( BrushManager.isPointAudio( mCurrentPoint ) ) {
+                  if ( audioCheck ) {
+                    //addAudioPoint( xs, ys ); // HBXP
+                  } else {
+                    TDToast.makeWarn( R.string.no_feature_audio );
+                  }
+                } else {
+                  if ( mLandscape ) {
+                    DrawingPointPath point = new DrawingPointPath( mCurrentPoint, -ys, xs, mPointScale, mDrawingSurface.scrapIndex() );
+                    if ( BrushManager.isPointOrientable( mCurrentPoint ) ) {
+                      if ( shift > TDSetting.mPointingRadius ) {
+                        angle = TDMath.atan2d( x_shift, -y_shift );
+                        point.setOrientation( angle );
+                        //TDLog.v(" HBXP L orientation " + angle + " shift " + shift + " radius " + radius );
+                      }
+                      if ( ! BrushManager.isPointLabel( mCurrentPoint ) ) point.rotateBy( 90 );
+                    }
+                    if ( !HBXP_PointDown ){ // HBXP To put it down just once
+                      mDrawingSurface.addDrawingPath( point );
+                      HBXP_PointDown = true;
+                      mHotPath = point;
+                    } else {
+                      if ( mHotPath != null )
+                        if ( mHotPath instanceof DrawingPointPath ) {
+                          int scale = (int) (shift / 150) - 2; if (scale>2)scale =2;// HBXP ?150
+                          //TDLog.v(" HBXP orientation " + angle + " shift " + shift + " radius " + radius + " scale " + scale );
+                          ((DrawingPointPath) mHotPath).setScale(scale);
+                          ((DrawingPointPath) mHotPath).setOrientation( angle );
+                        }
+                    }
+                  } else {
+                    DrawingPointPath point = new DrawingPointPath( mCurrentPoint, xs, ys, mPointScale, mDrawingSurface.scrapIndex() ); // no text, no options
+                    if ( BrushManager.isPointOrientable( mCurrentPoint ) ) {
+                      if ( shift > TDSetting.mPointingRadius ) {
+                        angle = TDMath.atan2d( x_shift, -y_shift );
+                        point.setOrientation( angle );
+                        // TDLog.v("P orientation " + angle + " shift " + shift + " radius " + radius );
+                      }
+                    }
+                    if ( !HBXP_PointDown ){
+                      mDrawingSurface.addDrawingPath( point );
+                      HBXP_PointDown = true;
+                      mHotPath = point;
+                    } else {
+                      if ( mHotPath != null )
+                        if ( mHotPath instanceof DrawingPointPath ) {
+                          int scale = (int) (shift / 150) - 2; if (scale>2) scale = 2;// HBXP ?150
+                          //TDLog.v(" HBXP 2 orientation " + angle + " shift " + shift + " radius " + radius + " scale " + scale );
+                          ((DrawingPointPath) mHotPath).setScale(scale);
+                          ((DrawingPointPath) mHotPath).setOrientation( angle );
+                        }
+                    }
+                  }
+                  // undoBtn.setEnabled(true);
+                  // redoBtn.setEnabled(false);
+                  // canRedo = false;
+                }
+              }
+            }
+          }
+          // HBXP
+
+          save = false;
         }
       } else if (  mMode == MODE_MOVE && mRotateAzimuth ) {
         TDAzimuth.mRefAzimuth = TDMath.in360( TDAzimuth.mRefAzimuth + x_shift/2 );
