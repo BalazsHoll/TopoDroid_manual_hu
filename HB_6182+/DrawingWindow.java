@@ -5069,12 +5069,19 @@ public class DrawingWindow extends ItemDrawer
       to   = blk.mTo;
       if ( h_section ) { // xsection in profile view
         if (h_section_projected) { // HBXx
+          int extend = 1;
           if (azimuth < 180) {
             clino = 90 - azimuth;
+            // extend = 1;
           } else {
             clino = azimuth - 270;
+            extend = -1;
           }
-          azimuth = (int)TDMath.add90(mPlot2.azimuth); //HBXx
+          if (extend == 1) {
+            azimuth = (int) TDMath.add90(mPlot2.azimuth); //HBXx
+          } else {
+            azimuth = (int) TDMath.sub90(mPlot2.azimuth); //HBXx
+          }
         } else {
           int extend = 1;
           if (azimuth < 180) {
@@ -5113,12 +5120,19 @@ public class DrawingWindow extends ItemDrawer
             TDToast.makeWarn(R.string.too_many_leg_intersection);
             return;
           } else { // HBX xsection on projected profile
+            int extend = 1;
             if (azimuth < 180) {
               clino = 90 - azimuth;
+              // extend = 1;
             } else {
               clino = azimuth - 270;
+              extend = -1;
             }
-            azimuth = (int)TDMath.add90(mPlot2.azimuth); //HBX
+            if (extend == 1) {
+              azimuth = (int) TDMath.add90(mPlot2.azimuth); //HBXx
+            } else {
+              azimuth = (int) TDMath.sub90(mPlot2.azimuth); //HBXx
+            }
             //TDToast.makeWarn(" x_section in projected profile " + azimuth); //HBXx
 
             StringBuilder sb = new StringBuilder();
