@@ -5018,7 +5018,8 @@ public class DrawingWindow extends ItemDrawer
     currentLine.addOption("-direction both");
     currentLine.makeStraight( );
     boolean h_section = PlotType.isProfile( mType );
-    
+    boolean h_section_projected = PlotType.isProjected( mType ); // HBXx
+
     // NOTE here l1 is the end-point and l2 the start-point (not considering the tick)
     //         |
     //         L2 --------- L1
@@ -5067,27 +5068,36 @@ public class DrawingWindow extends ItemDrawer
       from = blk.mFrom;
       to   = blk.mTo;
       if ( h_section ) { // xsection in profile view
-        int extend = 1;
-        if ( azimuth < 180 ) {
-          clino = 90 - azimuth;
-          // extend = 1;
+        if (h_section_projected) { // HBXx
+          if (azimuth < 180) {
+            clino = 90 - azimuth;
+          } else {
+            clino = azimuth - 270;
+          }
+          azimuth = (int)TDMath.add90(mPlot2.azimuth); //HBXx
         } else {
-          clino = azimuth - 270;
-          extend = -1;
-        }
-    
-        float dc = TDMath.in360( (extend == blk.getIntExtend())? clino - blk.mClino : 180 - clino - blk.mClino );
-        if ( dc > 90 && dc <= 270 ) { // exchange FROM-TO 
-          azimuth = TDMath.add180( blk.mBearing );
-          from = blk.mTo;
-          to   = blk.mFrom;
-          tt   = 1 - tt;
-        } else {
-          azimuth = blk.mBearing;
-        }
-        // if ( extend != blk.getIntExtend() ) {
-        //   azimuth = TDMath.add180( blk.mBearing );
-        // }
+          int extend = 1;
+          if (azimuth < 180) {
+            clino = 90 - azimuth;
+            // extend = 1;
+          } else {
+            clino = azimuth - 270;
+            extend = -1;
+          }
+
+          float dc = TDMath.in360((extend == blk.getIntExtend()) ? clino - blk.mClino : 180 - clino - blk.mClino);
+          if (dc > 90 && dc <= 270) { // exchange FROM-TO
+            azimuth = TDMath.add180(blk.mBearing);
+            from = blk.mTo;
+            to = blk.mFrom;
+            tt = 1 - tt;
+          } else {
+            azimuth = blk.mBearing;
+          }
+          // if ( extend != blk.getIntExtend() ) {
+          //   azimuth = TDMath.add180( blk.mBearing );
+          // }
+        } //HBXx
       } else { // xsection in plan view ( clino = 0 )
         float da = TDMath.in360( azimuth - blk.mBearing );
         if ( da > 90 && da <= 270 ) { // exchange FROM-TO 
@@ -5098,41 +5108,82 @@ public class DrawingWindow extends ItemDrawer
       }
       // TDLog.v( "new leg xsection " + from + " - " + to + " intercept " + tt );
     } else if ( nr_legs > 1 ) {
-      if ( h_section ) { // FAILURE: xsection in profile view and many legs
-        TDToast.makeWarn( R.string.too_many_leg_intersection );
-        return;
-      }
-      StringBuilder sb = new StringBuilder();
+        if ( h_section ) { // FAILURE: xsection in profile view and many legs
+          if (!h_section_projected) { //original HBXx
+            TDToast.makeWarn(R.string.too_many_leg_intersection);
+            return;
+          } else { // HBX xsection on projected profile
+            if (azimuth < 180) {
+              clino = 90 - azimuth;
+            } else {
+              clino = azimuth - 270;
+            }
+            azimuth = (int)TDMath.add90(mPlot2.azimuth); //HBX
+            //TDToast.makeWarn(" x_section in projected profile " + azimuth); //HBXx
 
-      double x = 0; // FIXME the centroid is not used yet
-      double y = 0;
-      double z = 0;
-      int cnt = 0;
-      for ( DrawingPathIntersection path : paths ) {
-        DBlock b = path.path.mBlock;
-        float t   = path.tt;
-        NumStation st_f = mNum.getStation( b.mFrom );
-        NumStation st_t = mNum.getStation( b.mTo );
-        if ( st_f != null && st_t != null ) {
-          if ( cnt > 0 ) sb.append(" ");
-          sb.append( Long.toString(b.mId) );
-          x += st_f.e + t * ( st_t.e -  st_f.e ); // eastward
-          y += st_f.s + t * ( st_t.s -  st_f.s ); // southward
-          z += st_f.v + t * ( st_t.v -  st_f.v ); // downward
-          cnt ++;
+            StringBuilder sb = new StringBuilder();
+
+            double x = 0; // FIXME the centroid is not used yet
+            double y = 0;
+            double z = 0;
+            int cnt = 0;
+            for (DrawingPathIntersection path : paths) {
+              DBlock b = path.path.mBlock;
+              float t = path.tt;
+              NumStation st_f = mNum.getStation(b.mFrom);
+              NumStation st_t = mNum.getStation(b.mTo);
+              if (st_f != null && st_t != null) {
+                if (cnt > 0) sb.append(" ");
+                sb.append(Long.toString(b.mId));
+                x += st_f.e + t * (st_t.e - st_f.e); // eastward
+                y += st_f.s + t * (st_t.s - st_f.s); // southward
+                z += st_f.v + t * (st_t.v - st_f.v); // downward
+                cnt++;
+              }
+            }
+            if (cnt > 0) {
+              tt = 2; // multileg intercept
+              center = new Vector3D(x / cnt, y / cnt, z / cnt); // 3D (E,S,V) centroid of the intersections
+              from = sb.toString();
+              // TDLog.v( "new multileg xsection " + from + " " + center.x + " " + center.y + " " + center.z );
+            } else {
+              TDToast.makeWarn(R.string.too_many_leg_intersection); // FIXME bad intersections
+              return;
+            }
+          }
+        } else { // if plan view
+          StringBuilder sb = new StringBuilder();
+
+          double x = 0; // FIXME the centroid is not used yet
+          double y = 0;
+          double z = 0;
+          int cnt = 0;
+          for (DrawingPathIntersection path : paths) {
+            DBlock b = path.path.mBlock;
+            float t = path.tt;
+            NumStation st_f = mNum.getStation(b.mFrom);
+            NumStation st_t = mNum.getStation(b.mTo);
+            if (st_f != null && st_t != null) {
+              if (cnt > 0) sb.append(" ");
+              sb.append(Long.toString(b.mId));
+              x += st_f.e + t * (st_t.e - st_f.e); // eastward
+              y += st_f.s + t * (st_t.s - st_f.s); // southward
+              z += st_f.v + t * (st_t.v - st_f.v); // downward
+              cnt++;
+            }
+          }
+          if (cnt > 0) {
+            tt = 2; // multileg intercept
+            center = new Vector3D(x / cnt, y / cnt, z / cnt); // 3D (E,S,V) centroid of the intersections
+            from = sb.toString();
+            // TDLog.v( "new multileg xsection " + from + " " + center.x + " " + center.y + " " + center.z );
+          } else {
+            TDToast.makeWarn(R.string.too_many_leg_intersection); // FIXME bad intersections
+            return;
+          }
         }
       }
-      if ( cnt > 0 ) {
-        tt = 2; // multileg intercept
-        center = new Vector3D( x/cnt, y/cnt, z/cnt ); // 3D (E,S,V) centroid of the intersections
-        from = sb.toString();
-        // TDLog.v( "new multileg xsection " + from + " " + center.x + " " + center.y + " " + center.z );
-      } else {
-        TDToast.makeWarn( R.string.too_many_leg_intersection ); // FIXME bad intersections
-        return;
-      }
-    }
-    // cross-section does not exist yet
+      // cross-section does not exist yet
     String section_id = mApp_mData.getNextSectionId( TDInstance.sid );
     currentLine.addOption( "-id " + section_id );
     mDrawingSurface.addDrawingPath( currentLine );
