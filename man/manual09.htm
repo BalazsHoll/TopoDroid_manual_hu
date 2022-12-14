@@ -10,7 +10,7 @@ A <u>kiterített</u> oldalnézet megjeleníti a poligon-vonalat a balra, jobbra 
 A sünök annak a poligonnak a függőleges síkjára vetülnek, amely irányához a legközelebb áll, kivéve, ha a felhasználó a mérés szerkesztése párbeszédpanelen beállított egy adott "kiterítést".
 Például az ábrán látható alaprajz nézetnél a világos tartományban lévő sünök az 1-2 poligon függőleges síkjára, a sötét tartományban pedig a 0-1 függőleges síkjára vetülnek.<br><p>
 
-A <u>vetített</u> oldalnézet a poligont és a sünökat a vetítési irányra merőleges függőleges síkba vetíti.<br><p>
+A <u>vetített</u> oldalnézet a poligont és a sünöket a vetítési irányra merőleges függőleges síkba vetíti.<br><p>
 
 
 <img src = "splay_extend.png"><br><p>
@@ -45,7 +45,7 @@ A sünök színei választhatók egy színpaletta közül vagy egy színválaszt
 A sün nem jelenik meg, ha a mérés az alaprajz vagy az oldalnézetben nincs megjelenítésre jelölve.<br><p>
 
 Ha nincs tiltva [G], a sünök szaggatott vonallal jeleníthetők meg.<br>
-Ha a sün-szaggatás beállítása <i>irány</i>, akkor a sün szaggatott lessz, ha a
+Ha a sün-szaggatás beállítása <i>irány</i>, akkor a sün szaggatott lesz, ha a
 a "legközelebbi" poligonnal bezárt szöge meghaladja a szaggatás irány küszöbét, [alapértelmezett 60&deg;]<br>
 Ha a sün-szaggatás beállítása <i>lejtés</i>, akkor a sün szaggatott lesz, ha a
 a sün lejtése meghaladja a kijelölt lejtés-küszöböt: pontozott (pozitív lejtés) és szaggatott (negatív lejtés).<br>
@@ -85,15 +85,14 @@ A <u>vázlatablak</u> négy interakciós móddal rendelkezik:
 <li><b>szerkesztés</b> [H]: pontszerű változtatásokhoz és az elem tulajdonságainak szerkesztéséhez, ideértve az elem törlését is.</li>
 </ul><br><p>
 
-A váltás és a zoom még <b>rajzolás</b> ban és <b>törlés</b> módban is lehetséges két ujjal.
-Ha az "sarok húzás" engedélyezve van, akkor a vázlat a vászon sarkairól "húzva" eltólható.
+A váltás és a zoom még <b>rajzolás</b>ban és <b>törlés</b> módban is lehetséges két ujjal.
+Ha az "sarok húzás" engedélyezve van, akkor a vázlat a vászon sarkairól "húzva" eltolható.
 Az sarkok átlátszó szürke színnel jelennek meg.<br>
 A zoom vezérlés engedélyezhető (akár ideiglenesen, akár véglegesen). Ha ideiglenesek, akkor megjelennek, amikor megérinti az alját
 a vászon közepén.<br>
 A „rajz módban” van egy alsó eszköztár a legutóbb használt eszközökkel, valamint egy „nyíl” gomb a többi eszköz kiválasztásához.<br>
 "Szerkesztési módban", amikor a kiválasztott elem egy pont, van egy alsó csúszka a pontskálához. Ha a sarok vonszolás engedélyezett
- és a pont jel elforgatható, akkor annak forgatását az óramitató járásának irányába a jobb felső sarok lefelé vonszolásával, ellenkező irányban a bal felső sarok
- lefelé vonszolásával lehet elérni.<br><p>
+ és a pont jel elforgatható, akkor annak forgatását az óramitató járásának irányába a jobb felső sarok lefelé vonszolásával, ellenkező irányban a bal felső sarok lefelé vonszolásával lehet elérni.<br><p>
 
 
 <h4>GOMBOK</h4>
@@ -141,7 +140,7 @@ A <b>szerkesztés</b> [H] mód a zöld gombok mellett:
 <li><img src = "btn_select_all.png" width="36" border="1"> választható elemek típusa: minden, pont, vonal, terület, mérési pont</li>
 <li><img src = "btn_size.png" width="36" border="1"> a kiválasztó eszköz mérete [S, M, L]</li>
 <li><img src = "btn_delete.png" width="36" border="1"> törölje az elemet a vázlatból (megerősítést kér, és visszavonható).</li>
-<li><img src = "btn_point.png" width="36" border="1"> pontonk speciális műveletei</li>
+<li><img src = "btn_point.png" width="36" border="1"> pontok speciális műveletei</li>
 <li><img src = "btn_item.png" width="36" border="1"> elem tulajdonságainak szerkesztése</li>
 <li><img src = "btn_range.png" width="36" border="1"> tartományválasztás: akár pontonként, akár lokálisan (csak vonalakhoz és területekhez).
 </ul><br><p>
@@ -149,7 +148,7 @@ Ha vannak kiválasztott elemek, akkor az első két gomb <i>előző/következő<
 a kijelölt elemek közül.<br><p>
 
 A gombok némileg eltérnek az keresztmetszet vázlatoknál.
-<b>Mozgatás</b> módban a "letöltés", "bluetooth", "kapcsoló" és "azimim" gombok nem jelennek meg, de ott
+<b>Mozgatás</b> módban a "letöltés", "bluetooth", "kapcsoló" és "azimut" gombok nem jelennek meg, de ott
 egy gomb, amellyel kiválaszthatja, hogy melyik sünök jelenjenek meg. Négy állapotot vált ki: "mindkettő", "megtekintett állomás", "állomás mögött", "nincs".
 Ennek megfelelően a rajzhivatkozások párbeszédpanelen nincs doboz a sünökhöz.
 <br><p>
@@ -287,7 +286,7 @@ az egyik pontot úgy kell áthelyeznie, hogy egybeessen a másikkal.<br>
 
 Ha az összekapcsolás "folytatásra" van állítva, az utolsó megrajzolt vonal <i>módosítható</i>, mint az Adobe Illustratorban,
  azaz a vonal egy darabjának visszakövetése a kezdőponttól.<br>
-A "folytatés" hatással van a verem visszavonására, mivel a folytatott vonal áthelyeződik a verem tetejére.
+A "folytatás" hatással van a verem visszavonására, mivel a folytatott vonal áthelyeződik a verem tetejére.
 <br><p>
 
 <div style = "font-size: 90%">

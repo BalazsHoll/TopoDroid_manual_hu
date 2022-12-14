@@ -23,7 +23,7 @@ Alapértelmezés szerint a zászlók le vannak tiltva.
 <li><i>A legújabb felvételek</i> kék színnel emelhetők ki, és szelektíven jeleníthetők meg </li>
 <li> Legutóbbi felvételek időtúllépése: az az idő, amely után a lövés már nem "legutóbbi" </li>
 <li><i>Arányos kiterítés</i> a kiterített oldalnézet poligonok számára </li>
-<li> Cserélje le az állomásokat a<i> DistoX visszmérés</i> adatokra </li>
+<li> Cserélje le az állomásokat a<i> DistoX visszamérés</i> adatokra </li>
 <li><i>sünök halmazának síkjának iránya és dip</i></li>
 <li><i>Szenzor</i> mérések [H]</li>
 <li><i>Hurokzárás</i> [S] </li>
@@ -60,22 +60,28 @@ Alapértelmezés szerint a zászlók le vannak tiltva.
 <li><i>Csak a poligonok frissítése</i> csak akkor számolja át (és újrarajzolja) a poligont, ha egy alappont mérés letöltésre kerül (folyamatos adatletöltési módban) [nem T] </li>
 <li><i>Affin transzformáció</i> lehetővé teszi az affin transzformáció vázlatát </li>
 <li><i>Vászonszintek</i>: nincs, tételenként, típus szerint [nincs] </li>
+<li><i>Döntött keresztmetszetek</i>: engedélyezi-e a döntött keresztmetszeteket az oldalnézeteknél [nem]</li>
 </ul>
 <br><p>
 
 A <i>Csak poligonok</i> frissítés nem befolyásolja az <i>igény szerinti</i> adatletöltési módot.
 Tesztelői szinten sem használják, mert ezen a szinten kísérleti inkrementális frissítés történik.<br><p>
 
+Ha a <i>döntött keresztmetszetek</i> be van kapcsolva, akkor az oldalnézetekben a keresztmetszetek síkja dőlhet.
+Csak a 10-es többszörös dőlésszöget használja.
+Ha a <i>döntött keresztmetszetek</i> nincs engedélyezve, és a metszetvonalak 45°-nál (a <i>HThreshold</i> értéke) meredekebbek függőleges,
+ egyébként vízszintes keresztmetszetek keletkeznek.<br><p>
+ 
 <b> Vonalbeállítások </b><br>
 <ul>
-<li> Minimális <i>sarokszög</i> a vonalak egyenesbe állításakor (a vonal szerkesztési párbeszédablakjának negyedik gombja) [45&deg;] </li>
+<li> Minimális <i>sarokszög</i> a vonalak egyenesbe állításakor (a vonal szerkesztési párbeszédablakának negyedik gombja) [45&deg;] </li>
 <li><i>Interpolációs pontosság</i> köbös Bezier-szegmensekhez [1.0] </li>
 <li><i>Sarokküszöb</i> köbös Bezier-szegmensekhez [20.0] </li>
 <li> Maximális <i>pont/szegmens távolság</i> a pont ritkítások számára [0,5 m] </li>
 <li> Maximális <i>szegmenshossz</i> a ritkításhoz [2,0 m] </li>
 <li><i>Vonal/terület raszter</i> műveletek </li>
 <li><i>Szegmens simítása/kiegyenesítése</i> műveletek </li>
-<li> egész vonal <i>kirgyenesítő</i> akció </li>
+<li> egész vonal <i>kiegyenesítő</i> akció </li>
 <li><i>Többutas</i> műveletek </li>
 <li><i>Kompozit műveletek</i></li>
 </ul>

@@ -29,7 +29,7 @@ Alapértelmezés szerint mindkettő "nincs", azaz nincs exportálás.
 Ha az alapértelmezett felmérési adatok exportálási formátuma be van állítva, akkor a TopoDroid a felmérés adatait ebben a formátumban exportálja a ZIP-archívum létrehozása előtt, hogy az export az archívumba kerüljön.<br><p>
 
 Ha az alapértelmezett vázlatexportálási formátum be van állítva, akkor a vázlatokat ebben a formátumban exportálják, amikor bezárják a <u>vázlatablakból</u>.
-A cSurvey esetében az x metszetok PNG-képekként kerülnek mentésre.<br><p>
+A cSurvey esetében az x metszetek PNG-képekként kerülnek mentésre.<br><p>
 -->
 
 <h4> FELMÉRÉS ADAT IMPORTÁLÁSA</h4>
@@ -254,7 +254,7 @@ Az pontok profilját úgy számolják, hogy a sün felvételeket egy a poligonra
 A felmérés adatai exportálhatók <i>Topo</i> fájlként.<br><p>
 
 Beállítások (a "Survex" beállítások alatt): <ul style="margin-top=0">
-<li><u>vonalbontás</u> lehet Unix vagy Windows</li>
+<li><u>sorvég</u> lehet Unix vagy Windows</li>
 </ul><p>
 
 
@@ -315,7 +315,7 @@ Beállítások: <ul style="margin-top=0">
 <br><p>
 
 <b id="geojson"> GeoJSON</b> (.json)<br>
-A felmérés adatai exportálhatók GeoJSON fájlként (<i>RFC 7946</i>), ha legalább egy pontt georeferált.
+A felmérés adatai exportálhatók GeoJSON fájlként (<i>RFC 7946</i>), ha legalább egy pont georeferált.
 A mérések exportálása <i>LineString</i>, a pontok <i>Point</i>.
 Ha a felmérés különálló darabokat tartalmaz, akkor a GeoJSON export tartalmazza az összes darabot egy georeferált ponttal.
 Az adatokat a mágneses deklinációval korrigáljuk.<br><p>
@@ -416,7 +416,7 @@ Beállítások: <ul style="margin-top=0">
 <li><u>pontok távolsága</u> minimális távolság a vonalláncok pontjai között. A köztes pontokat nem exportálják. Alapértelmezés szerint 20 cm</li>
 </ul><p>
 
-Az XVI képeket nem exportálják automatikusan a Therion "th2" fájlhoz, még akkor sem, ha egy xtherion parancsot annak hozzáadásához tartalmaz a therion fájl, mert nem tartalmazna több információt, mint a therion fájl.
+Az XVI képeket nem exportálják automatikusan a Therion "th2" fájlhoz, még akkor sem, ha egy xtherion parancsot annak hozzáadásához tartalmaz a Therion fájl, mert nem tartalmazna több információt, mint a Therion fájl.
 A paranccsal be lehet tölteni egy másik program által létrehozott XVI képet xtherionba.
 <br><p>
 
@@ -463,7 +463,7 @@ A vázlatok 2D DXF fájlként exportálhatók, rétegenként az egyes pontokhoz,
 vonal és terület típusa a felmérési adatok rétegein kívül.
 A 2D DXF vázlatelemei a Z=0 síkban helyezkednek el.<br><p>
 
-A vázlatok exportálhatók DXF <i>9</i> AC1009, <i>12</i> (R13) AC1012, and <i>14</i> (R14) AC1014 formátumokba.
+A vázlatok exportálhatók DXF <i>9</i> AC1009, <i>12</i> (R13) AC1012, és <i>14</i> (R14) AC1014 formátumokba.
 A DXF-9 a területeknek csak a határvonalait exportálja kitöltés nélkül.
 <br><p>
 
@@ -472,7 +472,7 @@ A DXF fájlba be lehet illeszteni a keresztmetszeteket (amelyekhez a vázlat "me
 <br><p>
 
 Beállítások: <ul style="margin-top=0">
-<li><u>metszet-pont</u>: ha egy metszetnak megvan a relatív metszet pontja,
+<li><u>metszet-pont</u>: ha egy metszetnek megvan a relatív metszet pontja,
 a metszet rajza beillesztésre kerül az exportálásba, a "metszet" pontba</li>
 <!-- li><u>sün végpontok</u></ li-->
 <li><u>pontok távolsága</u> az interpolációs pontok közötti maximális távolság a sima vonalakon. Alapértelmezés szerint 20 cm</li>
@@ -584,7 +584,7 @@ a „Vonal irány” beállítás engedélyezésével.<br><p>
 
 Beállítások: <ul style="margin-top=0">
 <li>SVG <u>program</u>: Inkscape vagy Illustrator. Ez befolyásolja az export léptéktényezőjét.</li>
-<li>Rajz <u>metszet-pont</u>: ha a metszetek automatikusan hozzáadódnak a metszetok vonalához,
+<li>Rajz <u>metszet-pont</u>: ha a metszetek automatikusan hozzáadódnak a metszetek vonalához,
 a metszetrajz beillesztésre kerül az exportálásba, a "metszet" pontba</li>
 <li>automatikus <u>poligon-pontok</u>: ha engedélyezve van, akkor az összes pont szerepel az exportálásban,
 egyébként csak a felhasználó által kiválasztott pontok szerepelnek</li>
@@ -609,7 +609,7 @@ A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importál
 <li><i>Alapértelmezett vázlatexportálási formátum</i>: meghatározza az exportálási párbeszédpanelen megjelenítendő alapértelmezett vázlatexportálási formátumot. [ nincs ]</li>
 <li><i>Vázlat automatikus exportálása</i>. Ha a beállított vázlatok a kiválasztott formátumban kerülnek exportálásra, amikor bezárják őket. Az exportált fájlok a felmérés mappa "out" almappájában tárolódnak. A Vázlat automatikus exportálása extra terhelést jelent az alkalmazásra, és alapértelmezés szerint nincs beállítva.[G]</li>
 <li><b>Therion</b> <i>térképparancsok</i> a poligon blokk előtt vagy után [után]</li>
-<li><b>Therion</b> <i>auto-pontok</i>: automatikusan hozzáadnak poligon pontokat a therion vázlatfájl (ok) hoz [igen]. Ha a vázlatfájlokat használni szeretné, méretarányuk meghatározásához poligon pontokkal kell rendelkezniük. Manuálisan kiválaszthatja, melyik pontot adja hozzá (a vázlatrajz szerkesztésével), vagy hagyhatja, hogy a TopoDroid hozzáadja az pontokat. A program hozzáadja az összes pontt, amely a rajzon belül van (a rajz domború testén belül).</li>
+<li><b>Therion</b> <i>auto-pontok</i>: automatikusan hozzáadnak poligon pontokat a Therion vázlatfájl(ok) hoz [igen]. Ha a vázlatfájlokat használni szeretné, méretarányuk meghatározásához poligon pontokkal kell rendelkezniük. Manuálisan kiválaszthatja, melyik pontot adja hozzá (a vázlatrajz szerkesztésével), vagy hagyhatja, hogy a TopoDroid hozzáadja az pontokat. A program hozzáadja az összes pontot, amely a rajzon belül van (a rajz domború testén belül).</li>
 <li><b>Therion</b> <i>splays</i> sorokat a Therion-szintekben [igen]</li>
 <li><b>cSurvey</b> <i>felmérés előtag</i> a pontokhoz [nem]</li>
 <li><b>Compass / TopoRobot / WinKarst / Polygon / VisualTopo</b>
