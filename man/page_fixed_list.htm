@@ -12,22 +12,47 @@ A párbeszédpanelen megjelenik a helyek listája, és három gombja van egy új
 <ul>
 <li><a href="page_fixed_GNSS.htm">GNSS</a> meghatározza a helyzetet a GNSS-el (ha a "Location" elérést engedélyezték)</li>
 <li><a href="page_fixed_add.htm">Hozzáadás</a> adja meg kézzel a koordinátákat</li>
-<li><a href="page_fixed_import.htm">Importálja</a> a pozíciót a <i>MobileTopographer</i>-ből (csak Android 10-ig)</li>
+<li><a href="page_fixed_import.htm">Importálja</a> a pozíciót GNSS applikációval készített pont fájlból</li>
+<li><i>GpsTest</i> app indítás</li>
 </ul>
+<br><p>
 
-Ha megérinti a helybejegyzést a listában, megnyílik a <a href="page_fixed.htm">Helymeghatározás szerkesztése</a> párbeszédpanel.<br><p>
+<b>Menük</b>:<br>
+<ul>
+<li>Csukja be az ablakot</li>
+<li>Módosítsa a külső geopont alkalmazást</li>
+<li>Súgó</li>
+</ul>
+<br><p>
 
-Belsőleg a TopoDroid tizedes fokokban tárolja a koordinátákat.
-A koordináta párbeszédablakokban tizedes fokokban vagy "dd:mm:ss.ss" formában beírhatja őket.
+<b>Külső GNSS-alkalmazások</b><br>
+A TopoDroid képes importálni a geopont koordinátákat
+<ul>
+<li><i>MobileTopographer</i> pontfájlok. Megnyílik egy párbeszédpanel a geopont kiválasztásához.</li>
+<li><i>GPX recorder</i> track (gpx) fájl. Az utolsó nyomvonalat használja.</li>
+<li><i>GPX position</i> pozíció (csv) fájl. A TopoDroid kiszámítja a pozíciók átlagát.</li>
+</ul><br>
+
+A <i>GPX recorder</i>-ből és a <i>GPX position</i>-ból importált geopont állomásnevét a TopoDroid állítja be
+ automatikusan „#” előtaggal ellátott számként.<br><p>
+
+A <i>GpsTest</i> alkalmazással a vágólapra mentett további geopont-koordináták átvihetők a
+ <i>beszúrás</i> párbeszédpanelen. Ügyeljen arra, hogy bejelölje a jelölőnégyzetet, hogy a magasságot is tárolja a vágólapon.<br><p>
+
+A listában egy földrajzi pont bejegyzésre koppintva megnyílik a <a href="page_fixed.htm">Földrajzi pont szerkesztése</a> párbeszédpanel.<br><p>
+
+A TopoDroid belsőleg tizedes fokban tárolja a koordinátákat.
+A koordináta párbeszédablakban beírhatja őket tizedes fokban vagy "dd:mm:ss.ss" formában.
 A TopoDroid billentyűzet speciális gombokkal rendelkezik a "fok" és a "perc" számára.
-Ha olyan billentyűzetet használ, amely nem tartalmaz pontosvesszőt ';', akkor inkább használja a szóközt.
-Ha a billentyűzeten nincs tizedespont '.' használja inkább a perjelet vagy a vesszőt. <br><p>
+Ha olyan billentyűzetet használ, amelyen nincs kettőspont ":" használja helyette a szóközt.
+Ha a billentyűzeten nincs tizedespont "." használja helyette a perjelet vagy a vesszőt.<br><p>
 
-<h4>Területi beállítások</h4>
+<h4>Helybeállítások</h4>
 
-<ul style = "margin-top: 0; margin-bottom: 0">
-<li><i>Koordináta egységek</i>: dd.mm.ss vagy tizedes fok [H]</li>
-<li><i>Koordinátarendszer</i> [az alapértelmezett hosszúság-szélesség (long-lat)] (letiltva)</li>
+<ul style="margin-top:0; margin-bottom:0">
+<li><i>Koordináta egységek</i>: dd.mm.ss vagy decimális fok [A]</li>
+<li><i>Koordinátarendszer</i>: koordináta-referenciarendszer [alapértelmezett hosszúság-szélesség (long-lat)] (nincs beállítva)</li>
+<li><i>Geopoint alkalmazás</i> [alapértelmezett nincs]</li>
 </ul>
 </body>
 </html>
