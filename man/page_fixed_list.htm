@@ -13,14 +13,22 @@ A párbeszédpanelen megjelenik a helyek listája, és három gombja van egy új
 <li><a href="page_fixed_GNSS.htm">GNSS</a> meghatározza a helyzetet a GNSS-el (ha a "Location" elérést engedélyezték)</li>
 <li><a href="page_fixed_add.htm">Hozzáadás</a> adja meg kézzel a koordinátákat</li>
 <li><a href="page_fixed_import.htm">Importálja</a> a pozíciót GNSS applikációval készített pont fájlból</li>
-<li><i>GpsTest</i> app indítás</li>
+<li><i>GPSTest</i> app indítás</li>
 </ul>
 <br><p>
+<b>Figyelem! A telefonnal kapott geopont pontossága legjobb esetben 15-20 m.</b><br><p>
 
+A listában egy földrajzi pont bejegyzésre koppintva megnyílik a <a href="page_fixed.htm">Földrajzi pont szerkesztése</a> párbeszédpanel.<br><p>
+
+A TopoDroid belsőleg decimális fokban tárolja a koordinátákat.
+A koordináta párbeszédablakban beírhatja őket decimális fokban vagy "nn:mm:ss.ss" formában.
+A TopoDroid billentyűzet speciális gombokkal rendelkezik a "fok" és a "perc" számára.
+Ha olyan billentyűzetet használ, amelyen nincs kettőspont „:”, használja a szóközt.
+Ha a billentyűzeten nincs tizedespont "." használja helyette a perjelet vagy a vesszőt.<br><p>
 <b>Menük</b>:<br>
 <ul>
 <li>Csukja be az ablakot</li>
-<li>Módosítsa a külső geopont alkalmazást</li>
+<<li>Váltogassa a külső GNSS-alkalmazásokat. Ha csak egy GNSS-alkalmazás van, ennek a menünek nincs hatása.</li>
 <li>Súgó</li>
 </ul>
 <br><p>
@@ -29,23 +37,45 @@ A párbeszédpanelen megjelenik a helyek listája, és három gombja van egy új
 A TopoDroid képes importálni a geopont koordinátákat
 <ul>
 <li><i>MobileTopographer</i> pontfájlok. Megnyílik egy párbeszédpanel a geopont kiválasztásához.</li>
-<li><i>GPX recorder</i> track (gpx) fájl. Az utolsó nyomvonalat használja.</li>
-<li><i>GPX position</i> pozíció (csv) fájl. A TopoDroid kiszámítja a pozíciók átlagát.</li>
+<li><i>GPX Recorder</i> track (gpx) fájl. Az utolsó nyomvonalat-pontot használja.</li>
+<li><i>GPX Position</i> pozíció (csv) fájl. A TopoDroid kiszámítja a pozíciók átlagát.</li>
+<li><i>GPSTest</i> fix a log fájlból. TopoDroid az utolsó fixet használja.</li> 
+<li>A <i>GPS Logger</i> track fájl "csv" formátumban van. A TopoDroid az utolsó trcak-pontot használja.</li>
 </ul><br>
 
-A <i>GPX recorder</i>-ből és a <i>GPX position</i>-ból importált geopont állomásnevét a TopoDroid állítja be
+A <i>GPX Recorder</i>-ből <i>GPX position</i>-ból és a <i>GPSTest</i>-ből importált geopont állomásnevét a TopoDroid állítja be
  automatikusan „#” előtaggal ellátott számként.<br><p>
 
-A <i>GpsTest</i> alkalmazással a vágólapra mentett további geopont-koordináták átvihetők a
- <i>beszúrás</i> párbeszédpanelen. Ügyeljen arra, hogy bejelölje a jelölőnégyzetet, hogy a magasságot is tárolja a vágólapon.<br><p>
+A <i>MobileTopographer</i> pontlista fájlok a <i>MobileTopographer/pointlists</i> mappában tárolódnak.<br><p>
 
-A listában egy földrajzi pont bejegyzésre koppintva megnyílik a <a href="page_fixed.htm">Földrajzi pont szerkesztése</a> párbeszédpanel.<br><p>
+A <i>GPS Recorder</i> nyomkövetési fájljai a <i>gpx_recorder</i> mappában tárolódnak.<br><p>
+
+A <i>GPS Position</i> fájlok a külső tárolóban tárolódnak.<br><p>
+
+A <i>GPSTest</i> naplózást engedélyezni kell az alkalmazás beállításainál. Elég naplózni a fixeket.
+A naplófájl az alkalmazás bezárásakor kerül mentésre, és a <i>gnss_log</i> mappában tárolódik.<br>
+A <i>GPSTest</i> alkalmazással a vágólapra mentett további geopont koordináták átvihetők a
+ <i>földrajzi pont beszúrása</i> párbeszédpanelen. Ügyeljen arra, hogy bejelölje a jelölőnégyzetet, hogy a magasságot is tárolja a vágólapon.<br><p>
+ 
+A <i>GPS Logger</i> track fájljait "csv" formátumban kell exportálni. A TopoDroid az ellipszoid magasságot és a pontosságot használja.<br><p>
 
 A TopoDroid belsőleg tizedes fokban tárolja a koordinátákat.
 A koordináta párbeszédablakban beírhatja őket tizedes fokban vagy "dd:mm:ss.ss" formában.
 A TopoDroid billentyűzet speciális gombokkal rendelkezik a "fok" és a "perc" számára.
 Ha olyan billentyűzetet használ, amelyen nincs kettőspont ":" használja helyette a szóközt.
 Ha a billentyűzeten nincs tizedespont "." használja helyette a perjelet vagy a vesszőt.<br><p>
+
+<b>GNSS-alkalmazás-tanácsok</b> (a részletekért és a teendőkért keressen az interneten)<br>
+<ul>
+<li>A „teljes GNSS-mérés kényszerítése” ("force full GNSS measurement") engedélyezése</li>
+<li>Ha elérhető, tiltsa le a „kinematikus Kalman-szűrést”</li>
+<li>Ha elérhető, állítsa be a „statikus módot”</li>
+<li>Ha elérhető, tiltsa le az "A-GSP"-t. Tiltsa le a „mobil adatátvitelt”, és törölje az A-GPS-adatokat</li>
+<li>A „wi-fi és bluetooth fix” helymeghatározás letiltása</li>
+</ul><br>
+
+Jegyzet. Az alkalmazás akkumulátor-optimalizálásának letiltása csak akkor szükséges, ha meg akarja akadályozni a
+rendszer bezárja az alkalmazást, ha az nincs előtérben.<br><p>
 
 <h4>Helybeállítások</h4>
 
