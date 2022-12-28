@@ -1,0 +1,10 @@
+DXF layer -> linetype
+
+old:
+line pattern, color=layer setting (linetype, color), bylayer
+scrap=z
+
+new:
+scrap=layer
+line pattern=linetype
+line color=color
