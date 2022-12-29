@@ -12,15 +12,15 @@
 package com.topodroidhb.io.dxf;
 
 import com.topodroidhb.utils.TDString;
-// import com.topodroid.math.Point2D;
-// import com.topodroid.math.BezierCurve;
-// import com.topodroid.prefs.TDSetting;
-// import com.topodroid.common.PlotType;
+// import com.topodroidhb.math.Point2D;
+// import com.topodroidhb.math.BezierCurve;
+// import com.topodroidhb.prefs.TDSetting;
+// import com.topodroidhb.common.PlotType;
 
-// import com.topodroid.utils.TDMath;
-// import com.topodroid.utils.TDLog;
-// import com.topodroid.utils.TDVersion;
-// import com.topodroid.num.TDNum;
+// import com.topodroidhb.utils.TDMath;
+// import com.topodroidhb.utils.TDLog;
+// import com.topodroidhb.utils.TDVersion;
+// import com.topodroidhb.num.TDNum;
 
 import java.util.Locale;
 
@@ -359,6 +359,16 @@ public class DXF
     out.write( SPACE + code + EOL + val + EOL );
   }
 
+  /** write an float number
+   * @param out      output writer
+   * @param code     string code
+   * @param val      integer value
+   */
+  static void writeFloat(  BufferedWriter out, int code, float val ) throws IOException
+  {
+    out.write(  code + EOL + val + EOL );
+  }
+
   /** write an integer number
    * @param pw       output printer
    * @param code     string code
@@ -515,7 +525,7 @@ public class DXF
    * @param linetype line type
    * @param color    color
    */
-  static int printLinePoint( PrintWriter pw, float scale, int handle, int ref, String layer, float x, float y, float z , String linetype, int color) // HBX_DXF
+  static int printLinePoint( PrintWriter pw, float scale, int handle, int ref, String layer, float x, float y, float z, String linetype, int color )
   {
     if ( mVersion14 ) {
       printXY( pw, x * scale, -y * scale, 0 );
@@ -558,6 +568,7 @@ public class DXF
     printXYZ( pw, x2*scale, y2*scale, z, 1 );
     return handle;
   }
+
 // HBX_DXF
   /** write a polyline header
    * @param pw       output printer
@@ -571,7 +582,7 @@ public class DXF
   {
     String linetype = lt_byLayer;
     int color = BY_LAYER;
-    return printPolylineHeader( pw, handle, ref, layer, closed, npt, linetype, color );
+    return printPolylineHeader( pw, handle, ref, layer, closed, npt, linetype, color, 0 );
   }
 
   /** write a polyline header
@@ -584,17 +595,19 @@ public class DXF
    * @param linetype line type
    * @param color    color
    */
-  static int printPolylineHeader( PrintWriter pw, int handle, int ref, String layer, boolean closed, int npt, String linetype, int color ) // HBX_DXF
+  static int printPolylineHeader( PrintWriter pw, int handle, int ref, String layer, boolean closed, int npt, String linetype, int color, float z )
   {
     if ( mVersion14 ) {
       printString( pw, 0, "LWPOLYLINE" );
       handle = printAcDb( pw, handle, AcDbEntity, AcDbPolyline );
       printString( pw, 8, layer );
-      printString( pw, 6, linetype );// HBX_DXF
+      printString( pw, 6, linetype ); // lt_byLayer );
       printInt( pw, 62, color );// HBX_DXF
       printInt( pw, 43, 0 ); // width 0: constant
-      printInt( pw, 70, (closed? 1:0) ); // polyline flag 8 = 3D polyline, 1 = closed  // inlined close in 5.1.20
+      printFloat( pw, 38, z ); // elevation
+      // printInt( pw, 62, BY_LAYER );
       printInt( pw, 90, npt );
+      printInt( pw, 70, (closed? 1:0)+128 ); // polyline flag 8 = 3D polyline, 1 = closed  // inlined close in 5.1.20 // HBX_DXF 128= linetype generated
     } else {
       printString( pw, 0, "POLYLINE" );
       if ( mVersion13 ) {
@@ -603,8 +616,10 @@ public class DXF
         printString( pw, 6, linetype );// HBX_DXF
         printInt( pw, 62, color );// HBX_DXF
         printString( pw, 100, AcDb3dPolyline );
+        // printInt( pw, 62, BY_LAYER );
         printInt( pw, 66, 1 ); // group 1
-        printInt( pw, 70, 8 + (closed? 1:0) ); // polyline flag 8 = 3D polyline, 1 = closed  // inlined close in 5.1.20
+        printXYZ(pw,0f, 0f, z, 0);
+        printInt( pw, 70, 8 + (closed? 1:0)+128 ); // polyline flag 8 = 3D polyline, 1 = closed  // inlined close in 5.1.20 // HBX_DXF 128 linetype generated
       } else { // mVersion9 
         printString( pw, 8, layer );
         printString( pw, 6, linetype );// HBX_DXF
@@ -613,13 +628,13 @@ public class DXF
         // printInt(  pw, 40, 1 ); // start width
         // printInt(  pw, 41, 1 ); // end width
         printInt( pw, 66, 1 ); // group 1
-        printInt( pw, 70, 8 + (closed? 1:0) ); // polyline flag 8 = 3D polyline, 1 = closed  // inlined close in 5.1.20
+        printXYZ(pw,0f, 0f, z, 0);
+        printInt( pw, 70, 8 + (closed? 1:0)+128 ); // polyline flag 8 = 3D polyline, 1 = closed  // inlined close in 5.1.20 // HBX_DXF linetype gen enable
         // printInt( pw, 75, 0 ); // 6 cubic spline, 5 quad spline, 0 (optional, default 0) // commented in 5.1.20
       }
     }
     return handle;
   }
-// HBX_DXF
 
   /** write a polyline footer
    * @param pw       output printer
@@ -693,8 +708,8 @@ public class DXF
       handle = printAcDb( pw, handle, AcDbEntity );
       // printString( pw5, 8, "AREA" );  // layer (color BYLAYER)
       printString( pw, 8, layer );      // layer (color BYLAYER)
-      printString( pw, 6, linetype ); // line color BYLAYER
-      printInt( pw, 62, color );
+      printString( pw, 6, linetype ); // lt_byLayer ); // line color BYLAYER
+      printInt( pw, 62, color ); // BY_LAYER );
       printAcDb( pw, -1, AcDbHatch );
 
       printXYZ( pw, 0f, 0f, 0f, 0 );
@@ -774,9 +789,11 @@ public class DXF
    * @param xoff     X offset
    * @param yoff     Y offset
    * @param z        Z level
+   * @param s          flag, scrap
+   * @param color    color
    */
   static int printText( PrintWriter pw, int handle, int ref, String label, float x, float y, float angle, float scale,
-                        String layer, String style, float xoff, float yoff, float z )
+                        String layer, String style, float xoff, float yoff, float z, int s, int color )
   {
     // if ( false && mVersion13_14 ) { // FIXME TEXT in AC1012
     //   // int idx = 1 + point.mPointType;
@@ -793,6 +810,8 @@ public class DXF
       // printString( pw, 2, block );
       handle = printAcDb( pw, handle, ref, AcDbEntity );
       printString( pw, 8, layer );
+      //printString( pw, 6, linetype ); // lt_byLayer ); // line color BYLAYER
+      printInt( pw, 62, color ); // BY_LAYER );
       printAcDb( pw, -1, AcDbText );
       
       // printString( pw, 7, style_dejavu ); // style (optional)
@@ -885,7 +904,7 @@ public class DXF
     if ( mVersion13_14 ) {
       writeString( out, 9, "$DIMSCALE" );    writeString( out, 40, "1.0" ); // 
       writeString( out, 9, "$DIMTXT" );      writeString( out, 40, "2.5" ); // 
-      writeString( out, 9, "$LTSCALE" );     writeInt( out, 40, 1 ); // 
+      writeString( out, 9, "$LTSCALE" );     writeFloat( out, 40, 0.2f ); //
       writeString( out, 9, "$LIMCHECK" );    writeInt( out, 70, 0 ); // 
       writeString( out, 9, "$ORTHOMODE" );   writeInt( out, 70, 0 ); // 
       writeString( out, 9, "$FILLMODE" );    writeInt( out, 70, 1 ); // 
@@ -1018,7 +1037,7 @@ public class DXF
   static int writeLTypesTable( BufferedWriter out, int handle ) throws IOException
   {
     if ( mVersion9 ) { handle = 5; } // necessary ???
-    int l_type_nr    = mVersion13_14 ? 5 : 1; // linetype number  //HBX_DXF !
+    int l_type_nr    = mVersion13_14 ? 5 : 1; // linetype number
     handle = writeBeginTable( out, "LTYPE", handle, l_type_nr );
     int l_type_owner = handle;
     // FIXME this line might be a problem with AutoCAD
@@ -1128,7 +1147,7 @@ public class DXF
   }
 
 // HBX_DXF
-  static int writeLTypesTableheader( BufferedWriter out, int handle, int ltnr) throws IOException
+  static int writeLTypesTableheader( BufferedWriter out, int handle, int ltnr, int p1_style) throws IOException
   { // HBX_DXF header and standard linetypes
     if ( mVersion9 ) { handle = 5; } // necessary ???
     int l_type_nr    = mVersion13_14 ? 1 : 1; // linetype number  //HBX_DXF !
@@ -1138,7 +1157,7 @@ public class DXF
     // writeInt( out, 330, 0 ); // table has no owner
     {
       // int flag = 64;
-      if ( mVersion13_14 ) {
+      if ( mVersion14 ) { // R14
         writeString( out, 0, "LTYPE" );
         handle = writeAcDb( out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord" );
         writeString( out, 2, lt_byBlock );
@@ -1164,12 +1183,12 @@ public class DXF
         writeString( out, 2, lt_continuous );
         writeInt( out, 330, l_type_owner );
         writeInt( out, 70, 0 );
-        writeString( out, 3, "Solid line ------" );
+        writeString( out, 3, "Solid line _________" );
         writeInt( out, 72, 65 );
         writeInt( out, 73, 0 );
         writeStringZero( out, 40 );
-/*
-        if ( mVersion13 ) { // kell-e?
+
+
           writeString( out, 0, "LTYPE" );
           handle = writeAcDb( out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord" );
           writeString( out, 2, lt_center );
@@ -1187,45 +1206,91 @@ public class DXF
           writeString( out, 0, "LTYPE" );
           handle = writeAcDb( out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord" );
           writeString( out, 2, lt_ticks );
-          writeInt( out, 330, l_type_owner );
-          writeInt( out, 70, 0 );
+          writeInt   ( out, 330, l_type_owner );
+          writeInt   ( out, 70, 0 );
           writeString( out, 3, "Ticks ____|____|____|____" ); // description
-          writeInt( out, 72, 65 );
-          writeInt( out, 73, 3 );        // number of elements
-          writeStringOne( out, 40 ); // pattern length
+          writeInt   ( out, 72, 65 );
+          writeInt   ( out, 73, 3 );        // number of elements
+          writeString( out, 40, "1.0" ); // pattern length
           writeString( out, 49, "0.5" );  writeInt( out, 74, 0 ); // segment
           writeString( out, 49, "-0.2" ); writeInt( out, 74, 2 ); // embedded text
-          writeInt( out, 75, 0 );   // SHAPE number must be 0
-          writeInt( out, 340, p_style );  // STYLE pointer FIXME
+          writeInt   ( out, 75, 0 );   // SHAPE number must be 0
+          writeInt   ( out, 340, p1_style );  // STYLE pointer
           writeString( out, 46, "0.1" );  // scale
-          writeStringZero( out, 50 );   // rotation
+          writeString( out, 50, "0.0" );   // rotation
           writeString( out, 44, "-0.1" ); // X offset
           writeString( out, 45, "-0.1" ); // Y offset
           writeString( out, 9, "|" ); // text
-          writeString( out, 49, "-0.25" ); writeInt( out, 74, 0 ); // gap
-        }
+          writeString( out, 49, "-0.25" );
+          writeInt   ( out, 74, 0 ); // gap
 
-        // writeString( out, 0, "LTYPE" );
-        // handle = writeAcDb( out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord" );
-        // writeString( out, 2, lt_tick );
-        // writeInt( out, 330, l_type_owner );
-        // writeInt( out, 70, 0 );
-        // writeString( out, 3, "Ticks ____|____|____|____" ); // description
-        // writeInt( out, 72, 65 );
-        // writeInt( out, 73, 4 );
-        // writeString( out, 40, "1.45" ); // pattern length
-        // writeString( out, 49, "0.25" ); writeInt( out, 74, 0 ); // segment
-        // writeString( out, 49, "-0.1" ); writeInt( out, 74, 4 ); // embedded shape
-        //   writeInt( out, 75, 1 );   // SHAPE number
-        //   writeInt( out, 340, 1 );  // STYLE pointer
-        //   writeString( out, 46, "0.1" );  // scale
-        //   writeStringZero( out, 50 );   // rotation
-        //   writeString( out, 44, "-0.1" ); // X offset
-        //   writeStringZero( out, 45 );   // Y offset
-        // writeString( out, 49, "-0.1" ); writeInt( out, 74, 0 );
-        // writeString( out, 49, "1.0" );  writeInt( out, 74, 0 );
-*/
-      } else { // dxf9
+        writeString( out, 0, "LTYPE" );
+        handle = writeAcDb( out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord" );
+        writeString( out, 2, "L_CHIMNEY" );
+        writeInt   ( out, 330, l_type_owner );
+        writeInt   ( out, 70, 0 );
+        writeString( out, 3, "CHIMNEY _|_ _|_ _|_" ); // description
+        writeInt   ( out, 72, 65 );
+        writeInt   ( out, 73, 3 );      // number of elements
+        writeString( out, 40, "1.0" ); // pattern length
+        writeString( out, 49, "1.0" ); //1
+        writeInt   ( out, 74, 0 ); // segment
+        writeString( out, 49, "-0.3" ); // dash 2
+        writeInt   ( out, 74, 2 ); // embedded text
+        writeInt   ( out, 75, 0 );   // SHAPE number must be 0
+        writeInt   ( out, 340, p1_style );  // STYLE pointer
+        writeString( out, 46, "0.7" );  // scale
+        writeString( out, 50, "0.0" );   // rotation
+        writeString( out, 44, "-1.0" ); // X offset
+        writeString( out, 45, "-0.7" ); // Y offset
+        writeString( out, 9, "|" ); // text
+        writeString( out, 49, "-0.25" ); // dash 3
+        writeInt   ( out, 74, 0 ); // gap
+
+        writeString( out, 0, "LTYPE" );
+        handle = writeAcDb( out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord" );
+        writeString( out, 2, "L_PIT" );
+        writeInt   ( out, 330, l_type_owner );
+        writeInt   ( out, 70, 0 );
+        writeString( out, 3, "PIT __|__|__|__" ); // description
+        writeInt   ( out, 72, 65 );
+        writeInt   ( out, 73, 3 );      // number of elements
+        writeString( out, 40, "1.0" ); // pattern length
+        writeString( out, 49, "1.0" ); //1
+        writeInt   ( out, 74, 0 ); // segment
+        writeString( out, 49, "-0.0" ); // dash 2
+        writeInt   ( out, 74, 2 ); // embedded text
+        writeInt   ( out, 75, 0 );   // SHAPE number must be 0
+        writeInt   ( out, 340, p1_style );  // STYLE pointer
+        writeString( out, 46, "0.7" );  // scale
+        writeString( out, 50, "0.0" );   // rotation
+        writeString( out, 44, "-1.0" ); // X offset
+        writeString( out, 45, "0.2" ); // Y offset
+        writeString( out, 9, "|" ); // text
+        writeString( out, 49, "-0.0" ); // dash 3
+        writeInt   ( out, 74, 0 ); // gap
+
+        writeString( out, 0, "LTYPE" );
+        handle = writeAcDb( out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord" );
+        writeString( out, 2, lt_ticks+"2" );
+        writeInt( out, 330, l_type_owner );
+        writeInt( out, 70, 0 );
+        writeString( out, 3, "Ticks2 ____|____|____|____" ); // description
+        writeInt( out, 72, 65 );
+        writeInt( out, 73, 4 );
+        writeString( out, 40, "1.45" ); // pattern length
+        writeString( out, 49, "0.25" ); writeInt( out, 74, 0 ); // segment
+        writeString( out, 49, "-0.1" ); writeInt( out, 74, 4 ); // embedded shape
+        writeInt( out, 75, 1 );   // SHAPE number
+        writeInt( out, 340, p1_style );  // STYLE pointer
+        writeString( out, 46, "0.1" );  // scale
+        writeStringZero( out, 50 );   // rotation
+        writeString( out, 44, "-0.1" ); // X offset
+        writeStringZero( out, 45 );   // Y offset
+        writeString( out, 49, "-0.1" ); writeInt( out, 74, 0 );
+        writeString( out, 49, "1.0" );  writeInt( out, 74, 0 );
+
+      } else { // dxf9-12 (R12, R13)
         writeString( out, 0, "LTYPE" );
         /* handle = */ writeAcDb( out, 14, AcDbSymbolTR, "AcDbLinetypeTableRecord" ); // unnecessary
         writeString( out, 2, lt_continuous );

@@ -17,7 +17,7 @@ import com.topodroidhb.utils.TDUtil;
 import com.topodroidhb.math.Point2D;
 import com.topodroidhb.math.BezierCurve;
 import com.topodroidhb.prefs.TDSetting;
-// import com.topodroid.common.PlotType;
+// import com.topodroidhb.common.PlotType;
 import com.topodroidhb.utils.TDMath;
 import com.topodroidhb.utils.TDLog;
 import com.topodroidhb.utils.TDVersion;
@@ -48,7 +48,7 @@ import com.topodroidhb.TDXHB.SymbolPoint;
 import com.topodroidhb.TDXHB.SymbolPointLibrary;
 import com.topodroidhb.TDXHB.SymbolLineLibrary;
 import com.topodroidhb.TDXHB.SymbolAreaLibrary;
-// import com.topodroid.TDX.DrawingPath;
+// import com.topodroidhb.TDXHB.DrawingPath;
 
 // import java.util.Locale;
 
@@ -199,7 +199,7 @@ public class DrawingDxf
                                     String layer, boolean closed, float xoff, float yoff, float z, String linetype, int color )
   {
     int npt = countInterpolatedPolylinePoints( line, closed );
-    handle = DXF.printPolylineHeader( pw, handle, ref, layer, closed, npt, linetype, color );
+    handle = DXF.printPolylineHeader( pw, handle, ref, layer, closed, npt, linetype, color, z );
     int polyline_handle = handle;
     handle = printInterpolatedPolyline( pw, line, scale, handle, handle, layer, closed, xoff, yoff, z, linetype, color );
     handle = DXF.printPolylineFooter( pw, handle, polyline_handle, layer );
@@ -238,6 +238,7 @@ public class DrawingDxf
     }
     return false;
   }
+
   /** print a spline line path
    * @param pw     output writer
    * @param line   line path
@@ -274,7 +275,7 @@ public class DrawingDxf
     DXF.printString( pw, 0, "SPLINE" );
     handle = DXF.printAcDb( pw, handle, DXF.AcDbEntity, "AcDbSpline" );
     DXF.printString( pw, 8, layer );
-    DXF.printString( pw, 6, linetype );
+    DXF.printString( pw, 6, linetype ); // DXF.lt_continuous );
     DXF.printInt( pw, 62, color ); // 256 = bylayer
     DXF.printFloat( pw, 48, 1.0f ); // scale 
     DXF.printInt( pw, 60, 0 ); // visibility (0: visible, 1: invisible)
@@ -430,8 +431,9 @@ public class DrawingDxf
       // handle = DXF.writeVportTable( out, handle, xmin, -ymax, xmax, -ymin );
       handle = DXF.writeVportTable( out, handle, 0, 0, 1, 1 ); // AutoCAD always uses 0,0 1,1
       handle = DXF.writeStylesTable( out, handle );
-      //HBX_DXF handle = DXF.writeLTypesTable( out, handle );
-// HBX_DXF
+      int p1_style = handle; // HBX_DXF pointer to linetype character style
+      // HBX_DXF handle = DXF.writeLTypesTable( out, handle );
+      // HBX_DXF
       {
         int nr_ltypes = 0;
         if (TDSetting.mAcadLayer) {
@@ -439,22 +441,21 @@ public class DrawingDxf
         } else {
           nr_ltypes = 0;
         }
-        handle = DXF.writeLTypesTableheader(out, handle, nr_ltypes);// HBX_DXF
+        handle = DXF.writeLTypesTableheader(out, handle, nr_ltypes, p1_style);// HBX_DXF
         if (TDSetting.mAcadLayer){
 
           if ( line_lib != null ) { // always true
             for ( Symbol line : line_lib.getSymbols() ) {
               String l_name = "L_" + replaceColon( line.getThName() );
               String l_type = DXF.lt_continuous;
-              if ( DXF.mVersion13 ) {
-                if ( l_name.equals("L_pit") ) {
-                  l_type = DXF.lt_ticks;
-                } else if ( l_name.equals("L_border" ) ) {
-                  l_type = DXF.lt_center;
-                }
+              if ( DXF.mVersion14 &&
+                      ( l_name.equals("L_pit")
+                      || l_name.equals("L_chimney" )
+                      )) {
+              } else {
+                //color = DxfColor.rgbToIndex( line.getColor() );
+                handle = DXF.printLtype(out, handle, l_name);
               }
-              //color = DxfColor.rgbToIndex( line.getColor() );
-              handle = DXF.printLtype( out, handle, l_name );
             }
           }
 
@@ -468,13 +469,13 @@ public class DrawingDxf
 
         }
         //handle = DXF.printLtype(out, handle, "LEG");
-        DXF.writeEndTable(out);// HBX_DXF
+        DXF.writeEndTable(out); // HBX_DXF
       }
-// HBX_DXF
+      // END HBX_DXF
 
       int nr_layers = 7;
       // nr_layers += 1 + line_lib.size() + area_lib.size();
-      // TDSetting.mAcadLayer
+      // nr_layers += 1 + BrushManager.getLineLibSize() + BrushManager.getAreaLibSize();
       if (TDSetting.mAcadLayer) { // HBX_DXF linetype separated
         nr_layers += 1 + plot.scrapMaxIndex();
       } else { // HBX_DXF original layer separated
@@ -505,47 +506,47 @@ public class DrawingDxf
           for (int scrap=0; scrap< plot.scrapMaxIndex(); scrap++){
             String l_name = "SCRAP_" + Integer.toString(scrap);
             String l_type = DXF.lt_continuous;
+            color = 7; // black
             handle = DXF.printLayer(pw2, handle, l_name, flag, color, l_type);
           };
         } else { // HBX_DXF original layer separated
-          if (line_lib != null) { // always true
-            for (Symbol line : line_lib.getSymbols()) {
-              String l_name = "L_" + replaceColon(line.getThName());
+          if ( line_lib != null ) { // always true
+            for ( Symbol line : line_lib.getSymbols() ) {
+              String l_name = "L_" + replaceColon( line.getThName() );
               String l_type = DXF.lt_continuous;
-              //if ( DXF.mVersion13 ) {// HBX_DXF nem, vagy máshogy kell
+              // if ( DXF.mVersion13 ) {
               //   if ( l_name.equals("L_pit") ) {
               //     l_type = DXF.lt_ticks;
-              //  } else if ( l_name.equals("L_border" ) ) {
-              //    l_type = DXF.lt_center;
+              //   } else if ( l_name.equals("L_border" ) ) {
+              //     l_type = DXF.lt_center;
+              //   }
               // }
-              //}
-              color = DxfColor.rgbToIndex(line.getColor());
-              handle = DXF.printLayer(pw2, handle, l_name, flag, color, l_type);
+              color = DxfColor.rgbToIndex( line.getColor() );
+              handle = DXF.printLayer( pw2, handle, l_name, flag, color, l_type );
             }
           }
-
-          if (area_lib != null) { // always true
-            for (Symbol area : area_lib.getSymbols()) {
-              String a_name = "A_" + replaceColon(area.getThName());
-              color = DxfColor.rgbToIndex(area.getColor());
-              handle = DXF.printLayer(pw2, handle, a_name, flag, color, DXF.lt_continuous);
+          if ( area_lib != null ) { // always true
+            for ( Symbol area : area_lib.getSymbols() ) {
+              String a_name = "A_" + replaceColon( area.getThName() );
+              color = DxfColor.rgbToIndex( area.getColor() );
+              handle = DXF.printLayer( pw2, handle, a_name, flag, color, DXF.lt_continuous );
             }
           }
-          if (point_lib != null) { // always true
-            for (Symbol point : point_lib.getSymbols()) {
-              String p_name = "P_" + replaceColon(point.getThName());
-              color = DxfColor.rgbToIndex(point.getColor());
-              handle = DXF.printLayer(pw2, handle, p_name, flag, color, DXF.lt_continuous);
+          if ( point_lib != null ) { // always true
+            for ( Symbol point : point_lib.getSymbols() ) {
+              String p_name = "P_" + replaceColon( point.getThName() );
+              color = DxfColor.rgbToIndex( point.getColor() );
+              handle = DXF.printLayer( pw2, handle, p_name, flag, color, DXF.lt_continuous );
             }
           }
-          out.write(sw2.getBuffer().toString());
         }
+        out.write( sw2.getBuffer().toString() );
       }
       DXF.writeEndTable( out );
 
       handle = DXF.writeExtraTables( out, handle );
       handle = DXF.writeDimstyleTable( out, handle );
-// HBX Block begin
+      // HBX Block begin
       if ( DXF.mVersion13_14 ) {
         handle = DXF.writeBeginTable( out, "BLOCK_RECORD", handle, BrushManager.getPointLibSize() );
         {
@@ -555,19 +556,13 @@ public class DrawingDxf
 
           for (int n = 0; n < BrushManager.getPointLibSize(); ++n) {
             String th_name = replaceColon( BrushManager.getPointThName(n) );
-// HBX_DXF
-            String layer2;
-            if ( TDSetting.mAcadLayer ) {
-              layer2 = "0"; // block
-              //TDLog.v( "HBX_DXF <" + line.getThName() + "> " + String.format("%X %X ", ref_handle, color) + layer + layer2+" "+color);
-            } else {
-              layer2 = "P_" + th_name;
-            }
-// HBX_DXF
+            // HBX_DXF
+            String layer2 = TDSetting.mAcadLayer?  "0" // by-block
+                                                : "P_" + th_name;
             DXF.writeString(out, 0, "BLOCK_RECORD");
             handle = DXF.writeAcDb(out, handle, DXF.AcDbSymbolTR, "AcDbBlockTableRecord");
             point_record_handle[n] = handle;
-            DXF.writeString(out, 8, layer2);
+            DXF.writeString(out, 8, layer2 );
             DXF.writeString(out, 2, "B_" + th_name); // block name
             DXF.writeInt(out, 70, 0);                // block insertion units
           }
@@ -598,16 +593,9 @@ public class DrawingDxf
             block_handle = handle;
           }
           String th_name = replaceColon( pt.getThName() );
-// HBX_DXF
-          String layer2;
-          int color;
-          if ( TDSetting.mAcadLayer ) {
-            layer2 = "0"; // block
-            //TDLog.v( "HBX_DXF <" + line.getThName() + "> " + String.format("%X %X ", ref_handle, color) + layer + layer2+" "+color);
-          } else {
-            layer2 = "P_" + th_name;
-          }
-// HBX_DXF
+          // HBX_DXF
+          String layer2 = TDSetting.mAcadLayer?  "0" // by-block
+                                              : "P_" + th_name;
           // DXF.writeString( out, 8, "P_" + th_name );
           DXF.writeString( out, 2, "B_" + th_name ); // block name, can be repeated with '3'
           DXF.writeInt( out, 70, 0 );       // flag 0=none, 1=anonymous, 2=non-const attr, 4=xref, 8=xref overlay,
@@ -628,19 +616,20 @@ public class DrawingDxf
       }
       DXF.writeEndSection( out );
       out.flush();
-// HBX Block end
+      // HBX Block end
 
       DXF.writeSection( out, "ENTITIES" );
       {
-	    String scale_len = TDString.TWENTY;
+	String scale_len = TDString.TWENTY;
         float sc1 = 20; // DrawingUtil.SCALE_FIX / 2 = 10;
 
         // reference
         float z = -1.0f; // Z level
+        int s = -1; //flag, level
         if ( TDSetting.mDxfReference ) {
           StringWriter sw9 = new StringWriter();
           PrintWriter pw9  = new PrintWriter(sw9);
-	      float sc2 = sc1 / 2;
+	  float sc2 = sc1 / 2;
           handle = DXF.printLine( pw9, 1.0f, handle, "REF", xmin,     -ymax,     xmin+sc1,  -ymax,      z );
           handle = DXF.printLine( pw9, 1.0f, handle, "REF", xmin,     -ymax,     xmin,      -ymax+sc1,  z );
           handle = DXF.printLine( pw9, 1.0f, handle, "REF", xmin+sc2, -ymax,     xmin+sc2,  -ymax+0.5f, z ); // 10 m ticks
@@ -671,8 +660,8 @@ public class DrawingDxf
 	  // offset axes legends by 1
           // StringWriter sw7 = new StringWriter();
           // PrintWriter pw7  = new PrintWriter(sw7);
-          handle = DXF.printText( pw9, handle, model_block_handle, scale_len, xmin+sc1, -ymax+1, 0, AXIS_SCALE, "REF", DXF.style_dejavu, xoff, yoff, z );
-          handle = DXF.printText( pw9, handle, model_block_handle, scale_len, xmin+1, -ymax+sc1, 0, AXIS_SCALE, "REF", DXF.style_dejavu, xoff, yoff, z );
+          handle = DXF.printText( pw9, handle, model_block_handle, scale_len, xmin+sc1, -ymax+1, 0, AXIS_SCALE, "REF", DXF.style_dejavu, xoff, yoff, z, s, DXF.BY_LAYER );
+          handle = DXF.printText( pw9, handle, model_block_handle, scale_len, xmin+1, -ymax+sc1, 0, AXIS_SCALE, "REF", DXF.style_dejavu, xoff, yoff, z, s, DXF.BY_LAYER );
           out.write( sw9.getBuffer().toString() );
           out.flush();
         }
@@ -766,7 +755,8 @@ public class DrawingDxf
         for ( ICanvasCommand cmd : plot.getCommands() ) {
           if ( cmd.commandType() != 0 ) continue;
           DrawingPath path = (DrawingPath)cmd;
-          z = path.mScrap;
+          z = TDSetting.mAcadLayer? path.mLevel : path.mScrap;
+          s = TDSetting.mAcadLayer? path.mScrap : path.mLevel;
 
           StringWriter sw5 = new StringWriter();
           PrintWriter pw5  = new PrintWriter(sw5);
@@ -775,15 +765,15 @@ public class DrawingDxf
           {
             DrawingStationUser sp = (DrawingStationUser)path;
             handle = DXF.printText( pw5, handle, model_block_handle, sp.name(), (sp.cx+xoff) * scale, -(sp.cy+yoff) * scale,
-                                0, LABEL_SCALE, "STATION", DXF.style_dejavu, xoff, yoff, z );
+                                0, LABEL_SCALE, "STATION", DXF.style_dejavu, xoff, yoff, z, s , DXF.BY_LAYER);
           }
           else if ( path.mType == DrawingPath.DRAWING_PATH_LINE )
           {
-            handle = toDxf(pw5, handle, model_record_handle, (DrawingLinePath) path, scale, xoff, yoff, z, TDSetting.mAcadLayer);
+            handle = toDxf( pw5, handle, model_record_handle, (DrawingLinePath)path, scale, xoff, yoff, z, s );
           }
           else if ( path.mType == DrawingPath.DRAWING_PATH_AREA )
           {
-            handle = toDxf(pw5, handle, model_record_handle, (DrawingAreaPath) path, scale, xoff, yoff, z, TDSetting.mAcadLayer);
+            handle = toDxf( pw5, handle, model_record_handle, (DrawingAreaPath)path, scale, xoff, yoff, z, s );
           }
           else if ( path.mType == DrawingPath.DRAWING_PATH_POINT )
           {
@@ -792,15 +782,9 @@ public class DrawingDxf
 	        String th_name = replaceColon( point.getThName() );
             // int idx = 1 + point.mPointType;
 	        if ( name.equals("label") ) {
-// HBX_DXF
-              String layer2;
-              if ( TDSetting.mAcadLayer ) {
-                layer2 = "SCRAP_" + Integer.toString(path.mScrap); //z
-                //TDLog.v( "HBX_DXF <" + line.getThName() + "> " + String.format("%X %X ", ref_handle, color) + layer + layer2+" "+color);
-              } else {
-                layer2 = "P_" + th_name;
-              }
-// HBX_DXF
+                // HBX_DXF
+                String layer2 = TDSetting.mAcadLayer?  "SCRAP_" + Integer.toString( path.mScrap ) // z
+                                                    : "P_" + th_name;
               DrawingLabelPath label = (DrawingLabelPath)point;
               DXF.printString(pw5, 0, "TEXT");
               if ( DXF.mVersion13_14 ) {
@@ -809,7 +793,9 @@ public class DrawingDxf
                 DXF.printHex(pw5, 330, model_block_handle );
                 DXF.printString(pw5, 100, "AcDbEntity" );
               }
-              DXF.printString(pw5, 8, layer2);
+              DXF.printString( pw5, 8, layer2 );
+
+
               if ( DXF.mVersion13_14 ) {
                 DXF.printString(pw5, 100, "AcDbText" );
               }
@@ -831,25 +817,19 @@ public class DrawingDxf
                   String scrapfile = scrapname + ".tdr";
                   if ( DXF.mVersion13_14 ) {
                     handle = tdrToDxf( pw5, handle, model_record_handle, model_record_handle, scrapfile,
-                                       scale, point.cx, point.cy, -DrawingUtil.CENTER_X, -DrawingUtil.CENTER_Y, z );
+                                       scale, point.cx, point.cy, -DrawingUtil.CENTER_X, -DrawingUtil.CENTER_Y, z, s );
                     done_point = true;
                   } else { // mVersion9 - TRY
                     handle = tdrToDxf( pw5, handle, model_record_handle, model_record_handle, scrapfile,
-                                       scale, point.cx, point.cy, -DrawingUtil.CENTER_X, -DrawingUtil.CENTER_Y, z );
+                                       scale, point.cx, point.cy, -DrawingUtil.CENTER_X, -DrawingUtil.CENTER_Y, z, s );
                     done_point = true;
                   }
                   IDrawingLink link = point.mLink;
                   if ( link != null ) {
-                    // TODO line connecting point and link5
-// HBX_DXF
-                    String layer2;
-                    if ( TDSetting.mAcadLayer ) {
-                      layer2 = "SCRAP_" + Integer.toString(path.mScrap); //z
-                      //TDLog.v( "HBX_DXF <" + line.getThName() + "> " + String.format("%X %X ", ref_handle, color) + layer + layer2+" "+color);
-                    } else {
-                      layer2 = "LINK";
-                    }
-// HBX_DXF
+                    // TODO line connecting point and link
+                    // HBX_DXF
+                    String layer2 = TDSetting.mAcadLayer?  "SCRAP_" + Integer.toString( path.mScrap ) // z
+                                                        : "LINK";
                     StringWriter sw4l = new StringWriter();
                     PrintWriter pw4l  = new PrintWriter(sw4l);
                     DXF.printString( pw4l, 0, "LINE" );
@@ -865,17 +845,11 @@ public class DrawingDxf
               }
               if ( ! done_point ) {
                 if ( DXF.mVersion13_14 ) {
-                  handle = toDxf( pw5, handle, model_block_handle, model_record_handle, point, scale, xoff, yoff, z, TDSetting.mAcadLayer );
+                  handle = toDxf( pw5, handle, model_block_handle, model_record_handle, point, scale, xoff, yoff, z, s );
                 } else {
-// HBX_DXF
-                  String layer2;
-                  if ( TDSetting.mAcadLayer ) {
-                    layer2 = "SCRAP_" + Integer.toString(path.mScrap); //z
-                    //TDLog.v( "HBX_DXF <" + line.getThName() + "> " + String.format("%X %X ", ref_handle, color) + layer + layer2+" "+color);
-                  } else {
-                    layer2 = ("P_"+th_name);
-                  }
-// HBX_DXF
+                    // HBX_DXF
+                    String layer2 = TDSetting.mAcadLayer?  "SCRAP_" + Integer.toString( path.mScrap ) // z
+                                                        : "P_" + th_name;
                   // String th_name = replaceColon( point.getThName() );
                   DXF.printString( pw5, 0, "INSERT" );
                   DXF.printString( pw5, 8, layer2 );
@@ -883,7 +857,7 @@ public class DrawingDxf
                   DXF.printFloat( pw5, 41, point.getScaleValue()*1.4f ); // FIX Asenov
                   DXF.printFloat( pw5, 42, point.getScaleValue()*1.4f );
                   DXF.printFloat( pw5, 50, 360.0f-(float)(point.mOrientation) );
-                  DXF.printXYZ( pw5, (point.cx+xoff)*scale, -(point.cy+yoff)*scale, 0, 0 );
+                  DXF.printXYZ( pw5, (point.cx+xoff)*scale, -(point.cy+yoff)*scale, z, 0 );
                 }
               }
             }
@@ -896,16 +870,17 @@ public class DrawingDxf
         if ( TDSetting.mAutoStations ) {// whether to add stations automatically to scrap therion files
           z = -1.0f;
           for ( DrawingStationName st : plot.getStations() ) { // auto-stations
-            handle = toDxf( pw6, handle, model_block_handle, st, scale, xoff+1.0f, yoff-1.0f, z );
-	        float len = 2.0f + st.getName().length() * 5.0f; // FIXME fonts ?
+            handle = toDxf( pw6, handle, model_block_handle, st, scale, xoff+1.0f, yoff-1.0f, z, s );
+	    float len = 2.0f + st.getName().length() * 5.0f; // FIXME fonts ?
             handle = DXF.printLine( pw6,scale,handle,"STATION", xoff+st.cx, -(yoff+st.cy), xoff+st.cx+len, -(yoff+st.cy), z );
           }
           out.write( sw6.getBuffer().toString() );
           out.flush();
         } else {
           for ( DrawingStationUser st_path : plot.getUserStations() ) { // user-chosen
-            z = st_path.mScrap;
-            handle = toDxf( pw6, handle, model_block_handle, st_path, scale, xoff, yoff, z );
+            z = TDSetting.mAcadLayer? st_path.mLevel : st_path.mScrap;
+            s = st_path.mLevel;
+            handle = toDxf( pw6, handle, model_block_handle, st_path, scale, xoff, yoff, z, s );
           }
           out.write( sw6.getBuffer().toString() );
           out.flush();
@@ -932,12 +907,13 @@ public class DrawingDxf
    * @param xoff       X offset
    * @param yoff       Y offset
    * @param z          Z "level"
+   * @param s          flag, scrap
    */
-  static private int toDxf( PrintWriter pw, int handle, int ref_handle, DrawingStationName sn, float scale, float xoff, float yoff, float z )
+  static private int toDxf( PrintWriter pw, int handle, int ref_handle, DrawingStationName sn, float scale, float xoff, float yoff, float z, int s )
   { // FIXME point scale factor is 0.3
     if ( sn == null ) return handle;
     return DXF.printText( pw, handle, ref_handle, sn.getName(),  (sn.cx+xoff)*scale, -(sn.cy+yoff)*scale, 0,
-                        STATION_SCALE, "STATION", DXF.style_dejavu, xoff, yoff, z );
+                        STATION_SCALE, "STATION", DXF.style_dejavu, xoff, yoff, z, s , DXF.BY_LAYER);
   }
 
   /** write a station point to DXF format
@@ -949,12 +925,13 @@ public class DrawingDxf
    * @param xoff       X offset
    * @param yoff       Y offset
    * @param z          Z "level"
+   * @param s          flag, scrap
    */
-  static private int toDxf( PrintWriter pw, int handle, int ref_handle, DrawingStationUser sp, float scale, float xoff, float yoff, float z )
+  static private int toDxf( PrintWriter pw, int handle, int ref_handle, DrawingStationUser sp, float scale, float xoff, float yoff, float z, int s )
   { // FIXME point scale factor is 0.3
     if ( sp == null ) return handle;
     return DXF.printText( pw, handle, ref_handle, sp.name(),  (sp.cx+xoff)*scale, -(sp.cy+yoff)*scale, 0,
-                        STATION_SCALE, "STATION", DXF.style_dejavu, xoff, yoff, z );
+                        STATION_SCALE, "STATION", DXF.style_dejavu, xoff, yoff, z, s, DXF.BY_LAYER );
   }
 
   /** write a point item to DXF format
@@ -967,34 +944,24 @@ public class DrawingDxf
    * @param xoff       X offset
    * @param yoff       Y offset
    * @param z          Z "level"
+   * @param s          flag, scrap
    */
-  static private int toDxf( PrintWriter pw, int handle, int ref_handle, int model_record_handle, DrawingPointPath point, float scale, float xoff, float yoff, float z, boolean DXFlayer )
+  static private int toDxf( PrintWriter pw, int handle, int ref_handle, int model_record_handle, DrawingPointPath point, float scale, float xoff, float yoff, float z, int s )
   { // FIXME point scale factor is 0.3
     if ( point == null ) return handle;
     String th_name = replaceColon( point.getThName() );
-    String layer2;
-// HBX_DXF
-    if (DXFlayer) {
-      layer2 = "SCRAP_" + Integer.toString((int)z); //z
-      //TDLog.v( "HBX_DXF <" + line.getThName() + "> " + String.format("%X %X ", ref_handle, color) + layer + layer2+" "+color);
-    } else {
-      layer2 = ("P_"+th_name);
-    }
-// HBX_DXF
+    // HBX_DXF
+    String layer2 = TDSetting.mAcadLayer?  "SCRAP_" + Integer.toString(s) // z
+                            : "P_"+th_name;
     if ( BrushManager.isPointLabel( point.mPointType ) ) {
       DrawingLabelPath label = (DrawingLabelPath)point;
       // TDLog.v( "LABEL PATH label <" + label.mPointText + ">" );
-// HBX_DXF
-      if (DXFlayer) {
-        layer2 = "SCRAP_" + Integer.toString((int)z); //z
-        //TDLog.v( "HBX_DXF <" + line.getThName() + "> " + String.format("%X %X ", ref_handle, color) + layer + layer2+" "+color);
-      } else {
-        layer2 = "POINT";
-      }
-// HBX_DXF
+      // HBX_DXF
+      layer2 = TDSetting.mAcadLayer?  "SCRAP_" + Integer.toString(s) // z
+                       : "POINT";
       return DXF.printText( pw, handle, ref_handle, label.mPointText,
          (point.cx+xoff)*scale, -(point.cy+yoff)*scale, 360.0f-(float)label.mOrientation,
-         LABEL_SCALE, layer2, DXF.style_dejavu, xoff, yoff, z );
+         LABEL_SCALE, layer2, DXF.style_dejavu, xoff, yoff, z, s , DXF.BY_LAYER);
     }
 
     // TDLog.v( "POINT PATH <" + th_name + "> " + String.format("%X %X", ref_handle, model_record_handle) );
@@ -1005,7 +972,7 @@ public class DrawingDxf
     DXF.printFloat( pw, 41, point.getScaleValue()*1.4f ); // FIX Asenov
     DXF.printFloat( pw, 42, point.getScaleValue()*1.4f );
     DXF.printFloat( pw, 50, 360.0f-(float)(point.mOrientation) );
-    DXF.printXYZ( pw, (point.cx+xoff)*scale, -(point.cy+yoff)*scale, 0, 0 );
+    DXF.printXYZ( pw, (point.cx+xoff)*scale, -(point.cy+yoff)*scale, z, 0 );
     return handle;
   }
 
@@ -1018,45 +985,43 @@ public class DrawingDxf
    * @param xoff       X offset
    * @param yoff       Y offset
    * @param z          Z "level"
+   * @param s          flag, level
    */
-  static private int toDxf( PrintWriter pw, int handle, int ref_handle, DrawingLinePath line, float scale, float xoff, float yoff, float z, boolean DXFLayer )
+  static private int toDxf( PrintWriter pw, int handle, int ref_handle, DrawingLinePath line, float scale, float xoff, float yoff, float z, int s )
   {
     if ( line == null ) return handle;
     String layer = "L_" + replaceColon( line.getThName( ) );
     // int flag = 0;
-// HBX_DXF
+    // HBX_DXF
     String linetype, layer2;
     int color;
-    if (DXFLayer) {
+    if (TDSetting.mAcadLayer) {
       linetype = layer;
-      layer2 = "SCRAP_" + Integer.toString((int)z); //
+      layer2 = "SCRAP_" + Integer.toString(s); //
       //layer = inttostr(z);
       Symbol line2 = BrushManager.getLineByIndex(BrushManager.getLineIndexByThName(line.getThName()));
       color = DxfColor.rgbToIndex(line2.getColor());
       //color = 1;
-       TDLog.v( "HBX_DXF <" + line.getThName() + "> " + String.format("%X %X ", ref_handle, color) + layer + layer2+" "+color);
+      // TDLog.v( "HBX_DXF <" + line.getThName() + "> " + String.format("%X %X ", ref_handle, color) + layer + layer2+" "+color);
     } else {
       linetype = DXF.lt_byLayer;
       layer2 = layer;
       color = DXF.BY_LAYER;
     }
-// HBX_DXF
+    // END HBX_DXF
     if ( DXF.mVersion13_14 && checkSpline( line ) ) {
       if ( TDSetting.mAcadSpline ) {
         int npt = countInterpolatedPolylinePoints( line, line.isClosed() );
-        handle = DXF.printPolylineHeader(pw, handle, ref_handle, layer2, line.isClosed(), npt, linetype, color);
+        handle = DXF.printPolylineHeader( pw, handle, ref_handle, layer2, line.isClosed(), npt, linetype, color, z );
         int polyline_handle = handle;
         handle = printInterpolatedPolyline( pw, line, scale, handle, handle, layer2, line.isClosed(), xoff, yoff, z, linetype, color );
         handle = DXF.printPolylineFooter( pw, handle, polyline_handle, layer2 );
-        TDLog.v( "HBX_DXF 1");
       } else {
         handle = printSpline( pw, line, scale, handle, layer2, line.isClosed(), xoff, yoff, z, linetype, color );
-        TDLog.v( "HBX_DXF 2");
       }
     } else {
       // handle = printLWPolyline( pw5, line, scale, handle, layer, false );
       handle = printPolyline( pw, line, scale, handle, ref_handle, layer2, line.isClosed(), xoff, yoff, z, linetype, color );
-      TDLog.v( "HBX_DXF 3");
     }
     return handle;
   }
@@ -1070,19 +1035,20 @@ public class DrawingDxf
    * @param xoff       X offset
    * @param yoff       Y offset
    * @param z          Z "level"
+   * @param s          flag, level
    */
-  static private int toDxf( PrintWriter pw, int handle, int ref_handle, DrawingAreaPath area, float scale, float xoff, float yoff, float z , boolean DXFLayer)
+  static private int toDxf( PrintWriter pw, int handle, int ref_handle, DrawingAreaPath area, float scale, float xoff, float yoff, float z, int s )
   {
     if ( area == null ) return handle;
     // float bezier_step = TDSetting.getBezierStep();
     // TDLog.v( "area size " + area.size() );
     String layer = "A_" + replaceColon( area.getThName( ) );
-// HBX_DXF
+    // HBX_DXF
     String linetype, layer2;
     int color;
-    if (DXFLayer) {
+    if (TDSetting.mAcadLayer) {
       linetype = layer;
-      layer2 = "SCRAP_" + Integer.toString((int)z); //
+      layer2 = "SCRAP_" + Integer.toString(s); //
       //layer = inttostr(z);
       Symbol area2 = BrushManager.getAreaByIndex(BrushManager.getAreaIndexByThName(area.getThName()));
       color = DxfColor.rgbToIndex(area2.getColor());
@@ -1092,11 +1058,11 @@ public class DrawingDxf
       layer2 = layer;
       color = DXF.BY_LAYER;
     }
-// HBX_DXF
+    // END HBX_DXF
     if ( DXF.mVersion13_14 && checkSpline( area ) ) {
       if ( TDSetting.mAcadSpline ) {
         int npt = countInterpolatedPolylinePoints( area, true );
-        handle = DXF.printPolylineHeader(pw, handle, ref_handle, layer2, true, npt, linetype, color);
+        handle = DXF.printPolylineHeader( pw, handle, ref_handle, layer2, true, npt, linetype, color, z );
         int polyline_handle = handle;
         handle = printInterpolatedPolyline( pw, area, scale, handle, handle, layer2, true, xoff, yoff, z, linetype, color );
         handle = DXF.printPolylineFooter( pw, handle, polyline_handle, layer2 );
@@ -1129,9 +1095,10 @@ public class DrawingDxf
    * @param xoff       X offset
    * @param yoff       Y offset
    * @param z          Z "level"
+   * @param s          flag, level, layer?
    */
   static private int tdrToDxf( PrintWriter pw, int handle, int ref_handle, int model_record_handle, String scrapfile,
-                               float scale, float dx, float dy, float xoff, float yoff, float z )
+                               float scale, float dx, float dy, float xoff, float yoff, float z, int s )
   {
     try {
       // TDLog.Log( TDLog.LOG_IO, "tdr to dxf. scrapfile " + scrapfile );
@@ -1143,25 +1110,26 @@ public class DrawingDxf
       // TDLog.v( "tdr to svg delta " + dx + " " + dy + " Offset " + xoff + " " + yoff );
 
       DrawingPath path; // = null;
+
       boolean done = false;
       while ( ! done ) {
         int what = dis.read();
         switch ( what ) {
           case 'P':
             path = DrawingPointPath.loadDataStream( version, dis, dx, dy /*, null */ );
-            handle = toDxf( pw, handle, ref_handle, model_record_handle, (DrawingPointPath)path, scale, xoff, yoff, z, TDSetting.mAcadLayer );
+            handle = toDxf( pw, handle, ref_handle, model_record_handle, (DrawingPointPath)path, scale, xoff, yoff, z, s );
             break;
           case 'T':
             path = DrawingLabelPath.loadDataStream( version, dis, dx, dy );
-            handle = toDxf( pw, handle, ref_handle, model_record_handle, (DrawingLabelPath)path, scale, xoff, yoff, z, TDSetting.mAcadLayer );
+            handle = toDxf( pw, handle, ref_handle, model_record_handle, (DrawingLabelPath)path, scale, xoff, yoff, z, s );
             break;
           case 'L':
             path = DrawingLinePath.loadDataStream( version, dis, dx, dy /*, null */ );
-            handle = toDxf( pw, handle, ref_handle, (DrawingLinePath)path, scale, xoff, yoff, z , TDSetting.mAcadLayer); // HBX_DXF
+            handle = toDxf( pw, handle, ref_handle, (DrawingLinePath)path, scale, xoff, yoff, z, s );
             break;
           case 'A':
             path = DrawingAreaPath.loadDataStream( version, dis, dx, dy /*, null */ );
-            handle = toDxf( pw, handle, ref_handle, (DrawingAreaPath)path, scale, xoff, yoff, z, TDSetting.mAcadLayer); // HBX_DXF
+            handle = toDxf( pw, handle, ref_handle, (DrawingAreaPath)path, scale, xoff, yoff, z, s );
             break;
           case 'U':
             /* path = */ DrawingStationUser.loadDataStream( version, dis ); // consume DrawingStationName data
