@@ -48,6 +48,7 @@ public class DXF
 
   final static int BY_BLOCK = 0;
   final static int BY_LAYER = 256;
+  final static int LNK_color = 15; // HBX_DXF link layer fix color=brown 15
 
   public static int inc( int h ) { ++h; if ( h == 0x0105 ) ++h; return h; }
 
@@ -1288,6 +1289,17 @@ public class DXF
         {
           writeString(out, 0, "LTYPE");
           handle = writeAcDb(out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord");
+          writeString(out, 2, "L_LINK");//b
+          writeInt(out, 330, l_type_owner);
+          writeInt(out, 70, 0);
+          writeString(out, 3, "LINK _________");
+          writeInt(out, 72, 65);
+          writeInt(out, 73, 0);
+          writeStringZero(out, 40);
+        } // link
+        {
+          writeString(out, 0, "LTYPE");
+          handle = writeAcDb(out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord");
           writeString(out, 2, "L_CHIMNEY");//3
           writeInt(out, 330, l_type_owner);
           writeInt(out, 70, 0);
@@ -1461,7 +1473,6 @@ public class DXF
           writeString(out, 49, "-0.3"); //2
           writeInt(out, 74, 0); // segment
         } // wall-presumed 5
-
         /*{
           writeString(out, 0, "LTYPE");
           handle = writeAcDb(out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord");
@@ -1502,10 +1513,17 @@ public class DXF
         {
           writeString(out, 0, "LTYPE");
           handle = writeAcDb(out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord");
+          writeString(out, 2, "L_LINK");//b
+          writeInt(out, 70, 0);
+          writeString(out, 3, "LINK _________");
+          writeInt(out, 72, 65);
+          writeInt(out, 73, 0);
+          writeStringZero(out, 40);
+        } // link
+        {
+          writeString(out, 0, "LTYPE");
+          handle = writeAcDb(out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord");
           writeString(out, 2, "L_USER");//a
-          if (mVersion14) {
-            writeInt(out, 330, l_type_owner);
-          }
           writeInt(out, 70, 0);
           writeString(out, 3, "USER _________");
           writeInt(out, 72, 65);
@@ -1516,9 +1534,6 @@ public class DXF
           writeString(out, 0, "LTYPE");
           handle = writeAcDb(out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord");
           writeString(out, 2, "L_WALL");//b
-          if (mVersion14) {
-            writeInt(out, 330, l_type_owner);
-          }
           writeInt(out, 70, 0);
           writeString(out, 3, "WALL _________");
           writeInt(out, 72, 65);
@@ -1529,9 +1544,6 @@ public class DXF
           writeString(out, 0, "LTYPE");
           handle = writeAcDb(out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord");
           writeString(out, 2, "L_SECTION");//c
-          if (mVersion14) {
-            writeInt(out, 330, l_type_owner);
-          }
           writeInt(out, 70, 0);
           writeString(out, 3, "Section _  _  _  _  _");
           writeInt(out, 72, 65);
@@ -1613,10 +1625,17 @@ public class DXF
         {
           writeString(out, 0, "LTYPE");
           handle = writeAcDb(out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord");
+          writeString(out, 2, "L_LINK");//b
+          writeInt(out, 70, 0);
+          writeString(out, 3, "LINK _________");
+          writeInt(out, 72, 65);
+          writeInt(out, 73, 0);
+          writeStringZero(out, 40);
+        } // link
+        {
+          writeString(out, 0, "LTYPE");
+          handle = writeAcDb(out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord");
           writeString(out, 2, "L_USER");//a
-          if (mVersion14) {
-            writeInt(out, 330, l_type_owner);
-          }
           writeInt(out, 70, 0);
           writeString(out, 3, "USER _________");
           writeInt(out, 72, 65);
@@ -1627,9 +1646,6 @@ public class DXF
           writeString(out, 0, "LTYPE");
           handle = writeAcDb(out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord");
           writeString(out, 2, "L_WALL");//b
-          if (mVersion14) {
-            writeInt(out, 330, l_type_owner);
-          }
           writeInt(out, 70, 0);
           writeString(out, 3, "WALL _________");
           writeInt(out, 72, 65);
@@ -1640,9 +1656,6 @@ public class DXF
           writeString(out, 0, "LTYPE");
           handle = writeAcDb(out, handle, AcDbSymbolTR, "AcDbLinetypeTableRecord");
           writeString(out, 2, "L_SECTION");//c
-          if (mVersion14) {
-            writeInt(out, 330, l_type_owner);
-          }
           writeInt(out, 70, 0);
           writeString(out, 3, "Section _  _  _  _  _");
           writeInt(out, 72, 65);
@@ -1689,7 +1702,6 @@ public class DXF
           writeInt(out, 74, 0); // segment
           //writeStringZero(out, 40);
         } // wall-presumed 5
-
       }
     }
     //writeEndTable( out );

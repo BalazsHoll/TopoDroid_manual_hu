@@ -517,7 +517,7 @@ public class DrawingDxf
         handle = DXF.printLayer( pw2, handle, "POINT",   flag, color, l_type ); ++color; // blue
         handle = DXF.printLayer( pw2, handle, "AREA",    flag, color, l_type ); ++color; // magenta
         handle = DXF.printLayer( pw2, handle, "REF",     flag, color, l_type ); ++color; // white
-        handle = DXF.printLayer( pw2, handle, "LINK",    flag, color, l_type ); ++color; // ??? Link
+        handle = DXF.printLayer( pw2, handle, "LINK",    flag, DXF.LNK_color, l_type ); // ??? Link brown
 
         // HBX_DXF if TDSetting.mAcadLayer then you need a layer for each scrap
         if ( TDSetting.mAcadLayer ) { // HBX_DXF linetype separated
@@ -831,7 +831,6 @@ public class DrawingDxf
               }
               DXF.printString( pw5, 8, layer2 );
 
-
               if ( DXF.mVersion13_14 ) {
                 DXF.printString(pw5, 100, "AcDbText" );
               }
@@ -871,6 +870,8 @@ public class DrawingDxf
                     DXF.printString( pw4l, 0, "LINE" );
                     handle = DXF.printAcDb( pw4l, handle, DXF.AcDbEntity, DXF.AcDbLine );
                     DXF.printString( pw4l, 8, layer2 );
+                    DXF.printString( pw4l, 6, TDSetting.mAcadLayer? "L_LINK":DXF.lt_byLayer ); // lt_byLayer );// HBX_DXF
+                    DXF.printInt( pw4l, 62, TDSetting.mAcadLayer? DXF.LNK_color:DXF.BY_LAYER );// HBX_DXF
                     // DXF.printInt( pw4l, 39, 1 );         // line thickness
                     DXF.printXYZ( pw4l, scale*(xoff + point.cx), -scale*(yoff + point.cy), z, 0 );
                     DXF.printXYZ( pw4l, scale*(xoff + link.getLinkX()), -scale*(yoff + link.getLinkY()), z, 1 );
