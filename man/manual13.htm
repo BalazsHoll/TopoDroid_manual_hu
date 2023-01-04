@@ -409,7 +409,7 @@ Ha egy metszetpontokat tartalmazó vázlatot exportálsz az <u>exportálás</u> 
 Ha a vázlat olyan szimbólumokat tartalmaz, amelyek nem szerepelnek a Therion készletben, akkor a th2 fájl használata előtt az "u:" előtagot kell beszúrni a nem támogatott szimbólumnevekhez.<br><p>
 
 Beállítások: <ul style="margin-top=0">
-<li>automatikus <u>felmérési-pontpontok</u>. [alapértelmezett: igen].</li>
+<li>automatikus <u>felmérési-pontok</u>. [alapértelmezett: igen].</li>
 <li>adjon <u>részletméréseket</u> a szintekhez ("splay" típusú sorokként) [alapértelmezett: nem].</li>
 <li>adjon hozzá egy xtherion parancsot a vázlat <u>XVI</u> képének elolvasásához [alapértelmezett: nem].</li>
 <li><u>skála</u> exportálása. Alapértelmezett 1: 100</li>
@@ -459,9 +459,8 @@ A "c3d" formátumban exportált vázlat megjeleníthető a 3D-s modellben a Cave
 <br><p>
 
 <b id="dxf2"> DXF</b> (.dxf)<br>
-A vázlatok 2D DXF fájlként exportálhatók, rétegenként az egyes pontokhoz,
-vonal és terület típusa a felmérési adatok rétegein kívül.
-A 2D DXF vázlatelemei a Z=0 síkban helyezkednek el.<br><p>
+A vázlatok 2D DXF fájlként exportálhatók. Rétegeket az egyes szimbólum (pont, vonal, terület) típusokhoz vagy a szintekhez rendelhet.
+A Z koordinátát a szintek (scraps) vagy a rétegek (level) elkülönítésére használja. A DXF fájl csak néhány alap vonaltípust tartalmaz.<br><p>
 
 A vázlatok exportálhatók DXF <i>9</i> AC1009, <i>12</i> (R13) AC1012, és <i>14</i> (R14) AC1014 formátumokba.
 A DXF-9 a területeknek csak a határvonalait exportálja kitöltés nélkül.
@@ -472,11 +471,11 @@ A DXF fájlba be lehet illeszteni a keresztmetszeteket (amelyekhez a vázlat "me
 <br><p>
 
 Beállítások: <ul style="margin-top=0">
-<li><u>metszet-pont</u>: ha egy metszetnek megvan a relatív metszet pontja,
-a metszet rajza beillesztésre kerül az exportálásba, a "metszet" pontba</li>
-<!-- li><u>sün végpontok</u></ li-->
-<li><u>pontok távolsága</u> az interpolációs pontok közötti maximális távolság a sima vonalakon. Alapértelmezés szerint 20 cm</li>
-<li>DXF verzió: 9 (dxf-9), 12 (dxf-13) vagy 14 (dxf-14). Alapértelmezett "9"</li>
+<li>DXF verzió: 9 (R12), 12 (R13) vagy 14 (R14). Alapértelmezett "9"</li>
+<li><u>metszet rajz</u>: ha egy metszetnek megvan a relatív metszet pontja,
+a metszet rajza beillesztésre kerül az exportálásba, a "metszet" pontba Alapértelmezett "igen"</li>
+<li><u>XY skála</u>: Exportálja-e az XY vonalas léptéket Alapértelmezett "nem"</li>
+<li><u>Szint réteg</u>: DXF rétegek szint vagy típus szerint. Alapértelmezett "szint"</li>
 </ul><p>
 
 <!-- b id="png">PNG</b> (.png)<br>
