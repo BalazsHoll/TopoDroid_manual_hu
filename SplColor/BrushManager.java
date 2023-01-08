@@ -253,6 +253,7 @@ public class BrushManager
   public static final Paint paintSplayXBdot   = makePaint( TDColor.SPLAY_LIGHT,   WIDTH_CURRENT, Paint.Style.STROKE);
   public static final Paint paintSplayXVdash  = makePaint( TDColor.SPLAY_NORMAL,  WIDTH_CURRENT, Paint.Style.STROKE);
   public static final Paint paintSplayXVdot   = makePaint( TDColor.SPLAY_NORMAL,  WIDTH_CURRENT, Paint.Style.STROKE);
+  public static final Paint paintSplayLatest   = makePaint( 0xff66ccff,      WIDTH_CURRENT, Paint.Style.STROKE); // HBX_ls
 
   public static final Paint fixedGridPaint    = makePaint( TDColor.DARK_GRID,   WIDTH_FIXED, Paint.Style.STROKE);
   public static final Paint fixedGrid10Paint  = makePaint( TDColor.GRID,        WIDTH_FIXED, Paint.Style.STROKE);
@@ -434,6 +435,19 @@ public class BrushManager
       paintSplayXBdot.setAlpha( mAlpha );
     // } else {
     //   TDLog.v("Warning: null splay dot paint");
+    // }
+  }
+
+  /** set the color of splay latest lines
+   * @param color   color (rrggbb)
+   */
+  static public void setSplayLatestColor( int color ) // HBX_ls
+  {
+    // if ( paintSplayXBdash != null ) { // always true
+    paintSplayLatest.setColor( color );
+    paintSplayLatest.setAlpha( mAlpha );
+    // } else {
+    //   TDLog.v("Warning: null splay dash paint");
     // }
   }
 

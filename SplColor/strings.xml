@@ -1524,7 +1524,9 @@ There are other settings for the presentation of the sketchs (icon size, label s
   <string name="pref_splay_dash_color_summary">Color of dashed lines</string>
   <string name="pref_splay_dot_color_title">Splay dot color</string>
   <string name="pref_splay_dot_color_summary">Color of dotted lines</string>
-  
+    <string name="pref_splay_latest_color_title">Splay latest color</string> <!--// HBX_ls -->
+    <string name="pref_splay_latest_color_summary">Color of latest lines</string> <!--// HBX_ls -->
+
   <!-- UNUSED string name="pref_data_backup_title">Data auto-export</string -->
   <!-- UNUSED string name="pref_data_backup_summary">Automatic data export (need default format)</string -->
   <string name="pref_editable_stations_title">Editable stations</string>
