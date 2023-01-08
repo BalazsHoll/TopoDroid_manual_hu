@@ -701,8 +701,9 @@ public class TDExporter
       lat = origin.cs_lat;
       lng = origin.cs_lng;
       h_geo = origin.cs_h_geo;
-      mERadius = 1.0;
-      mSRadius = 1.0;
+      mERadius = origin.mToUnits; // HBX_mc
+      mSRadius = origin.mToUnits; // HBX_mc
+      h_geo_factor *= origin.mToVUnits; // HBX_mc
     } else {
       lat = origin.lat;
       lng = origin.lng;
@@ -989,11 +990,19 @@ public class TDExporter
             //   }
             // }
             // if ( ! found ) {
-                 NumStation ns2 = new NumStation( fi.name ); // SHP export uses only name and (e,s,v) of NumStation 
-                 ns2.e = fi.lng;
-                 ns2.s = fi.lat;
-                 ns2.v = fi.h_geo;
-                 fst.add( new FixedStation( fi, ns2 ) );
+            if (  fi.hasCSCoords() ) { // HBX_mc
+              NumStation ns2 = new NumStation(fi.name); // SHP export uses only name and (e,s,v) of NumStation Cs
+              ns2.e = fi.cs_lng;
+              ns2.s = fi.cs_lat;
+              ns2.v = fi.cs_h_geo;
+              fst.add(new FixedStation(fi, ns2));
+            } else {
+              NumStation ns2 = new NumStation(fi.name); // SHP export uses only name and (e,s,v) of NumStation WGS84
+              ns2.e = fi.lng;
+              ns2.s = fi.lat;
+              ns2.v = fi.h_geo;
+              fst.add(new FixedStation(fi, ns2));
+            }
             // }
           }
           // if ( fst.size() > 0 ) {

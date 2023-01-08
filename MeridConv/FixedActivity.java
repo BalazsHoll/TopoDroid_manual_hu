@@ -657,8 +657,8 @@ public class FixedActivity extends Activity
 	    double m_to_units = bundle.containsKey( "meterstounits" )? bundle.getDouble( "meterstounits" ) : 1; // meters to CS units
 	    double m_to_vunits = bundle.containsKey( "meterstovunits" )? bundle.getDouble( "meterstovunits" ) : 1; // meters to CS vert units
             // FIXME M_TO_UNITS
-            lng /= m_to_units; // convert CS units to meters
-            lat /= m_to_units; 
+            // HBX_mc lng /= m_to_units; // convert CS units to meters
+            // HBX_mc lat /= m_to_units;
             TopoDroidApp.mData.updateFixedCS(  mFixedDialog.getFixedId(), TDInstance.sid, cs, lng, lat, h_geo, n_dec, conv, m_to_units, m_to_vunits );
             mFixedDialog.setConvertedCoords( cs, lng, lat, h_geo, n_dec, conv, m_to_units, m_to_vunits );
           }

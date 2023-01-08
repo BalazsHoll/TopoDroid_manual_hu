@@ -84,6 +84,8 @@ public class FixedInfo extends MagLatLong
    * @param h_geo_cs  CS altitude (geoid) [m]
    * @param n_dec     numer of decimals
    * @param conv      convergence
+   * @param m_to_units  meters to units
+   * @param m_to_vunits meters to vert units
    */
   FixedInfo( long _id, String n, double longitude, double latitude, double h_ellip, double h_geoid,
              String cmt, long src, String name_cs, double lng_cs, double lat_cs, double h_geo_cs, long n_dec, double conv, double accur, double accur_v,
@@ -128,6 +130,8 @@ public class FixedInfo extends MagLatLong
       cs_h_geo = h_geo_cs;
       cs_n_dec = (n_dec >= 0)? n_dec : 0;
       convergence = conv;
+      mToUnits   = m_to_units; // HBX_mc
+      mToVUnits  = m_to_vunits; // HBX_mc
     }
   }
 
@@ -183,7 +187,8 @@ public class FixedInfo extends MagLatLong
   {
     StringBuilder fmt = new StringBuilder();
     fmt.append("%.").append( cs_n_dec ).append("f %.").append( cs_n_dec ).append("f %.0f");
-    return String.format(Locale.US, fmt.toString(), cs_lng*mToUnits, cs_lat*mToUnits, cs_h_geo*mToVUnits );
+    // HBX_mc return String.format(Locale.US, fmt.toString(), cs_lng*mToUnits, cs_lat*mToUnits, cs_h_geo*mToVUnits );
+    return String.format(Locale.US, fmt.toString(), cs_lng, cs_lat, cs_h_geo ); // HBX_mc
     // return String.format(Locale.US, "%s %.2f %.2f %.0f", name, cs_lng, cs_lat, cs_h_geo );
   }
 
