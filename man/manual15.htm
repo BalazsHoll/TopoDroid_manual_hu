@@ -9,8 +9,8 @@ A 3D modell megnyitható az <i>Adatablak</i> menüjéből, vagy a
 A barlangprojekt 3D-s modellje a <i>Projektablak</i> gombjával nyitható meg.
 <br>
 A modellt egy referenciaráccsal (kék észak, zöld kelet) vagy tengelykereszt (piros felfelé) mutatja.<br>
-Ha az adatok (felmérés vagy barlangprojekt) fix pontokat tartalmaznak, akkor ezeket a modellben lévő pontok koordinátáinak kiszámításához használják. Ha a fixpont koordinátákat   térképészeti (vetített) koordinátarendszerré alakítottuk át, akkor ezt használjuk. Ellenkező esetben a fix pont az egyenlítőtől és a főmeridiántól egyenlő távolságra van beállítva,  amely egyenlő a szélességi fok szorzata a meridián sugarával, a hosszúság pedig a párhuzamos sugárral.<br>
-A térképészeti referenciarendszerekben a koordináták nem veszik figyelembe a meridiánkonvergenciát. Ezért az észak nem a térképészeti észak, hanem a meridián iránya.
+Ha az adatok (felmérés vagy barlangprojekt) fix pontokat tartalmaznak, akkor ezeket a modellben lévő pontok koordinátáinak kiszámításához használják. Ha a fixpont koordinátákat   térképészeti (vetített) koordináta-rendszerré alakítottuk át, akkor ezt használjuk. Ellenkező esetben a fix pont az egyenlítőtől és a főmeridiántól egyenlő távolságra van beállítva,  amely egyenlő a szélességi fok szorzata a meridián sugarával, a hosszúság pedig a párhuzamos sugárral.<br>
+A térképészeti referencia-rendszerekben a koordináták nem veszik figyelembe a meridiánkonvergenciát. Ezért az észak nem a térképészeti észak, hanem a meridián iránya.
 <br><p>
 Nincs koordináta-átalakítás. Ezért egy barlangprojektben minden felmérésnek ugyan olyannak kell lennie, ugyanabban a koordináta-rendszerben georeferáltnak.
 <br><p>
@@ -58,9 +58,9 @@ Néhány gombnak hosszú érintés funkciója van:
 <h4>OPCIÓK</h4>
 <ul style = "margin-top: 0">
 <li><i>Alap könyvtár</i>: A felmérési fájlokat tartalmazó mappa</li>
-<li><i>Kiválasztási sugár</i>: az pontok kiválasztási sugara [1.0]</li>
+<li><i>Kiválasztási sugár</i>: a pontok kiválasztási sugara [1.0]</li>
 <li><i>pont párbeszédpanel</i>: megnyitja-e a kiválasztott pont párbeszédpaneljét [n].</li>
-<li><i>pontpontok</i>: a pontpontok megjelenítése mindig (zöld) [n].</li>
+<li><i>mérési pontok</i>: a mérési pontok megjelenítése mindig (zöld) [n].</li>
 <li><i>Felső rács</i>: A rács megjelenítése felül [n].</li>
 <li><i>Rács kiterjedése</i>: a felmérés körüli rács kiterjedése [10 cella].</li>
 <li><i>A horizont alatti nézet</i>: engedélyezi-e a horizont alatti nézőpontokat [n].</li>
@@ -69,7 +69,7 @@ Néhány gombnak hosszú érintés funkciója van:
 <li><i>DEM csökkentés</i>: hogyan csökkenthető a DEM, ha túl nagy (ritkítás vagy vágás) [ritkítás].</li>
 <li><i>Összes sün</i>: Az összes sünt használja-e a falakhoz</li>
 <li><i>Osztott háromszögek</i>: Fel kell-e osztani a metsző fal háromszögeket</li>
-<li><i>Pontok randomizálása</i>: Hozzá ad egy kis véletlenszerű vektort a sün-höz</li>
+<li><i>Pontok randomizálása</i>: Hozzá ad egy kis véletlenszerű vektort a sünhöz</li>
 <li><i>Feszített falak</i>: A fal pontjait kis mértékben eltolja a poligon mentén</li>
 <li><i>Powercrust</i>: algoritmus "delta" paramétere</li>
 <li><i>Bluetooth-eszköz</i>: a Bluetooth-eszköz neve.</li>
@@ -148,7 +148,7 @@ Ha a modell rendelkezik felülettel, akkor a felület alatti mélység alapján 
 
 Ha a modell DEM felülettel rendelkezik, akkor a felületi textúra fájlból tölthető be.
  A támogatott fájlformátumok a GeoTiff és az OSM.<br>
-A GeoTiff fájlnak ugyanabban a térképészeti koordináta -referenciarendszerben kell lennie.
+A GeoTiff fájlnak ugyanabban a térképészeti koordináta-referencia-rendszerben kell lennie.
  [Technikai megjegyzés: ha a fájl 24 bites, nem tömörített, vagy színtérképet használ, a Cave3D csak azt a részt próbálja beolvasni
  amely lefedi a DEM területet, különben az egész kép
  beolvasásra kerül, és a részterület kivonásra kerül.]<br>
@@ -156,10 +156,10 @@ Az OSM textúra (WGS84) csak a TopoDroidból megnyitott felmérésekhez és barl
  A textúra az OSM vonalakat jeleníti meg.
 <br><p>
 
-Lehetőség van egy pont (sárga pont) vizualizálására a felületen, ha beírja a keleti/északi koordinátákat a modell CRS -jébe.<br>
+Lehetőség van egy pont (sárga pont) vizualizálására a felületen, ha beírja a keleti/északi koordinátákat a modell CRS-ébe.<br>
 
 A TopoDroid alkalmazásból betöltött modellek GNSS -pontokat is kaphatnak.
- Ha az alkalmazás jogosult a "Helymeghatározás" szolgáltatás használatára, és ez a szolgáltatás be van kapcsolva van, akkor lehetséges
+ Ha az alkalmazás jogosult a "Helymeghatározás" szolgáltatás használatára, és ez a szolgáltatás be van kapcsolva, akkor lehetséges
  felszíni pontot megadása az Android GNSS segítségével.<br>
 Az alkalmazás megjeleníti az utolsó 10 pontot.
 <br><p>
