@@ -5,18 +5,79 @@
 
 Ez a párbeszédpanel a <a href="page_fixed_list.htm"> Helymeghatározás</a> párbeszédpanel <i>Importálás</i> gombjával nyílik meg.<br><p>
 
-Ezzel a párbeszédpanellel importálhat
-TopoDroid egy pont koordinátáit egy <i>MobileTopographer</i> pontlista fájlból.<br><p>
+Ezzel a párbeszédpanellel importálhatsz a TopoDroidba az egyik támogatott GNSS-alkalmazással mért pont koordinátáit.
+<br>
+<img src="gnss_apps.png">
+<br><p>
 
+<b>MobileTopographer</b><br>
+A TopoDroid beolvassa a pontkoordinátákat egy <i>MobileTopographer</i> pontlista fájlból.<br>
+Ha nem választasz ki egy <i>MobileTopographer</i> pontlista fájlt, az alkalmazás viselkedése meghatározatlan.
+<br><p>
 <ol>
-<li><img src="mobiletopographer_flag.png"> Nyissa meg a <i> MobileTopographer </i>-t, és keresse meg a pont koordinátáit.</li>
-<li><img src="mobiletopographer_plus.png"> Ha elérte a koordináták megfelelő pontosságát, mentse el a pontot.</li>
-<li><img src="mobiletopographer_points.png"> A pont koordinátáit kézzel is megadhatja (és mentheti a pontot).</li>
-<li><img src="mobiletopographer_disk.png"> Mentse a listát. A fájlt a "MobileTopographer/pointlist" mappába menti</li>
-<li>Importálja a koordinátákat a TopoDroid alkalmazásba. A mentett pontok listában jelennek meg; érintse meg az importálni kívánt pontot.</li>
-</ol>
+<li><img src="mobiletopographer_flag.png"> Nyisd meg a <i> MobileTopographer </i>-t, és mérd meg a pont koordinátáit.</li>
+<li><img src="mobiletopographer_plus.png"> Ha elérte a koordináták megfelelő pontosságát, mentsd el a pontot.</li>
+<li><img src="mobiletopographer_points.png"> A pont koordinátáit kézzel is megadhatod (és mentheted a pontot).</li>
+<li><img src="mobiletopographer_disk.png"> Mentsd a listát. A fájlt a "MobileTopographer/pointlist" mappába menti</li>
+<li>Importáld a koordinátákat a TopoDroid alkalmazásba. A mentett pontok listában jelennek meg; érintsd meg az importálni kívánt pontot.</li>
+</ol><br>
 
 <img src="mobiletopographer_updown.png"> Lehetőség van a mentett pontok listájában a <i>MobileTopographer</i> menüben mozgatni a pontot a zöld nyilakkal a lista tetejére.<br><p>
+
+<b>GPS Logger</b><br>
+Az alkalmazás megjeleníti a pont koordinátáit és egyéb információkat. 
+A track logok a "gnss_log" mappába kerülnek mentésre. Van egy fejlécük az eszközinformációkkal és a pontadatokkal a CSV-rekordokban:
+műholdak, szélesség, hosszúság, magasság, sebesség, pontosság és idő.<br>
+A napló tartalmazhat nyers GNSS méréseket, navigációs üzeneteket és NMEA mondatokat is.<br>
+<ol>
+<li><img src="gpslogger_btn1.png"> Kezdje el rögzíteni a nyomvonalpontokat.</li>
+<li><img src="gpslogger_btn2.png"> A műsorszám rögzítésének leállítása.</li>
+<li>Végezze le a számot. A szám hozzáadásra kerül a "számlistához".</li>
+</ol>
+<br><p>
+
+<b>GPSTest</b><br>
+Az alkalmazás megjeleníti a pont koordinátáit és a műholdak adatait: fix, konstelláció, vivőfrekvenciák, vivő/zaj arány, zászlók, magasság, azimut.
+A pont megjeleníthető a térképen (opció a "beállításokban").
+<ol>
+<li><img src="gpstest_btn1.png"> Nyisd meg a megosztás/exportálás párbeszédpanelt.</li>
+<li><img src="gpstest_btn2.png"> A pont koordinátái a vágólapra másolhatók</li>
+<li><img src="gpstest_btn3.png"> vagy fájlba mentve. Fontos, hogy jelöld be a "Include altitude" négyzetet.</li>
+</ol>
+<br><p>
+
+<b>GPX Recorder</b><br>
+A pontok koordinátái a TopoDroid által olvasható track fájlba vannak mentve.
+A track fájlok a „gpx_recorder” mappában találhatók.
+A formátum xml, a pontadatok pedig: szélesség, hosszúság, magasság és idő.<br>
+<ol>
+<li><img src="gpxrecorder_start.png"> Indítsd el a pontkoordináták rögzítését</li>
+<li><img src="gpxrecorder_stop.png"> Állítsd le a felvételt.</li>
+<li>A pontok koordinátáit a rendszer egy nyomvonalfájlba menti, amelyet a TopoDroid olvashat</li>
+</ol>
+<br><p>
+
+<b>GPS Point</b><br>
+A TopoDroid beolvassa a pontfájlba exportált koordinátákat: szélesség, hosszúság, magasság és pontosság.<br><p>
+<ol>
+<li>Az alkalmazás megjeleníti a mentett pontok listáját</li>
+<li><img src="gpspoint_btn1.png"> Nyisd meg a GNSS felületet</li>
+<li><img src="gpspoint_btn2.png"> GNSS pozíció mérése</li>
+<li>Az alkalmazás a pontot a bizonytalansági körrel együtt megjeleníti a térképen. A pont koordinátái és egyéb információk egy dobozban jelennek meg.</li>
+<li>Ha kész, mentsd a pontot.</li>
+<li>Válaszd ki a pontot a listából, és exportáld (szöveg) fájlba.</li>
+</ol>
+<img src="gpspoint_point.png"><br><p>
+
+<b>GPS Position</b><br>
+Az alkalmazás megjeleníti a pont koordinátáit és a műholdadatokat.<br>
+<ol>
+<li><img src="gpsposition_btn1.png"></li>
+<li><img src="gpsposition_btn3.png"> A műholdak adatainak megjelenítése: fix, azimut, magasság, vivő/zaj arány és zászlók (almanach, epherids)</li>
+<li><img src="gpsposition_btn2.png"> A pozíció a vágólapra másolható</li>
+<li>vagy fájlba menthető.</li>
+</ol>
+<br><p>
 
 </body>
 </html>

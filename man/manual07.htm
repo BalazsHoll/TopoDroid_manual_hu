@@ -3,16 +3,16 @@
 
 A mérések listában jelennek meg. A listának nincs helytakarékosságból fejléce. A mérések adatai:
 <ul style = "margin-top = 0">
-<li> Index (nem kötelező: csak akkor jelenik meg, ha a kapcsolódó választás a <i>megjelenítési mód</i> párbeszédpanelen be van jelölve)</li>
+<li> Index (nem kötelező: csak akkor jelenik meg, ha a <i>megjelenítési mód</i> a párbeszédpanelen be van jelölve)</li>
 <li> Kezdőpont</li>
 <li> Végpont</li>
 <li> Távolság</li>
 <li> Irány</li>
 <li> Lejtszög</li>
-<li> Kiterítési irány: balra (&lt;), jobbra (&gt;), függőlegesen (|) vagy mellőzve (üres). A sünök "kiterítése" csak akkor van jelen, ha a felhasználó kifejezetten beállítja az egyik mérésszerkesztő párbeszédablakban.</li>
+<li> Kiterítési irány: balra (&lt;), jobbra (&gt;), függőlegesen (|) vagy nincs (üres). A sünök "kiterítése" csak akkor van, ha a felhasználó kifejezetten beállítja az egyik mérésszerkesztő párbeszédablakban.</li>
 </ul>
 Lehetnek további karakterek a zászlóhoz, valamint egy fénykép (#) jelenléte. Végül a megjegyzés kezdete, ha van ilyen.
-A zászló lehet: ismétlődő mérés (&#x00b2;), felszíni mérés (&#x00f7;), csak oldalnézet (&#x00a7;), csak alaprajz (_).<br><p>
+ A zászló lehet: ismétlődő mérés (&#x00b2;), felszíni mérés (&#x00f7;), csak oldalnézet (&#x00a7;), csak alaprajz (_).<br><p>
 
 Üres mérések és ismételt poligonok elrejthetők. A sün mérések el is rejthetők, hogy a mérések listáját ne zavarják. Azonban még akkor is, ha a mérések nem jelennek meg, a ponton lévőket úgy is láthatod, hogy egy poligonmérésben megérinted a pont nevét. Ha el akarod rejteni őket, koppints ismét a pont nevére (akár egy sünben is megérintheted a nevet).<br><p>
 
@@ -21,8 +21,8 @@ A TopoDroid automatikusan beállíthatja az pontneveket az <a href="page_station
 <b>Mérések megérintései</b>
 <ul style = "margin-top = 0">
 <li>Ha megérinti az állomás nevét, az <i>szerkesztési módba</i> kerül, és a pont nevét aláhúzza.
-Ha az állomáson belüli szerkesztés engedélyezve van, akkor az állomás neve szerkeszthető.
-Az állomásnév szerkesztését az ENTER gombbal kell befejezni, hogy érvénybe lépjen.</li>
+ Ha az állomáson belüli szerkesztés engedélyezve van, akkor az állomás neve szerkeszthető.
+ A pontnév szerkesztését az ENTER gombbal kell befejezni, hogy érvénybe lépjen.</li>
 <li>amikor az állomás alá van húzva, néhány érintéssel átkapcsolható az adott állomáson lévő sünök megjelenítése (csak akkor, ha a sünök globálisan el vannak rejtve).</li>
 <li> a mérés adatainak megérintésével megnyílik a <a href="page_shot_edit1.htm"> mérés szerkesztése</a> párbeszédpanel, amelyben beállíthatja az pontokat és a mérés egyéb attribútumait.</li>
 <li> a pont nevének hosszú megérintésével <a href="page_current.htm"> aktív</a> pont lesz (zöld színnel kiemelve)</li>
@@ -34,15 +34,17 @@ Ha a TopoDroid automatikus <a href="page_station_policy.htm"> pontelnevezést</a
 
 
 A kiválasztott mérések szürke háttérrel rendelkeznek (esetleg
-csak a pont nevek mögött). Egy mérés megérintésével hozzáadódik/eltávolításra kerül a kiválasztásból.
-A gombsáv a több-kiválasztásos műveleteknél:
+ csak a pont nevek mögött). Egy mérés megérintésével hozzáadódik/eltávolításra kerül a kiválasztásból.
+ Ha egy mérés nincs kiválasztva, a mérés hosszan történő megérintése hozzáadja azt és az összes előző ki nem választott mérést a kijelöléshez.
+ A gombsáv a több-kiválasztásos műveleteknél:
 <ul>
-<li> állítsa a mérések kiterítését "balra"</li>
-<li> fordítsa meg a mérések kiterítését</li>
-<li> állítsa a mérések kiterítését "jobbra"</li>
-<li> speciális műveletek párbeszédpanel [T]</li>
-<li> törölje a kijelölt méréseket. Figyelem: a rejtett másodlagos mérések törlődnek a megfelelő poligonmérések törlésekor</li>
-<li> zárja be a több-kiválasztást</li>
+<li><img src="btn_left.png"     width="36" border="1"> állítsa a mérések kiterítését "balra"</li>
+<li><img src="btn_multishot_flip_extend.png"     width="36" border="1"> fordítsa meg a mérések kiterítését</li>
+<li><img src="btn_right.png"    width="36" border="1"> állítsa a mérések kiterítését "jobbra"</li>
+<li><img src="btn_multishot_special_actions.png" width="36" border="1"> speciális műveletek párbeszédpanel [T]</li>
+<li><img src="btn_delete.png"          width="36" border="1"> törölje a kijelölt méréseket. Figyelem: a rejtett másodlagos mérések törlődnek a megfelelő poligonmérések törlésekor</li>
+<li><img src="btn_copy.png" width="36" border="1"> a mérést a vágólapra másolja</li>
+<li><img src="btn_clear.png" width="36" border="1"> zárja be a többes-kiválasztást</li>
 </ul>
 <br><p>
 
@@ -56,14 +58,14 @@ A speciális műveletek párbeszédpanel tartalmazza a [T]:
 </ul>
 
 Az első mérés pontjait használják az újraszámozás alapjául. A párbeszédpanelen ezek megváltoztathatók.
-Ha mindkét pontot beírják, az első kiválasztott mérés egy poligon, és a következő kiválasztott mérések következetesen újraszámozódnak.
-Ha csak a KEZDŐ pontot adja meg (és a CÉL pont üres marad), akkor az összes mérést sünként számozza át.
+ Ha mindkét pontot beírják, az első kiválasztott mérés egy poligon, és a következő kiválasztott mérések következetesen újraszámozódnak.
+ Ha csak a KEZDŐ pontot adja meg (és a CÉL pont üres marad), akkor az összes mérést sünként számozza át.
 <br><p>
 
 <div style = "font-size: 90%">
 A felosztások színének beállítása akkor engedélyezett, ha csak a sünöket választották, különben le van tiltva.<br>
 Az kőzet sík csapásának és dőlésének kiszámításához az kell, hogy az összes kiválasztott mérés azonos KEZDŐ ponttal rendelkezzen. Ellenkező esetben le van tiltva.
-Az eredmény megjelenik a párbeszédpanelen, és hozzáadódik (ha már van ilyen) az első kiválasztott mérés megjegyzéséhez.
+ Az eredmény megjelenik a párbeszédpanelen, és hozzáadódik (ha már van ilyen) az első kiválasztott mérés megjegyzéséhez.
 </div><br><p>
 
 <a href="manual06.htm"> &lt; Felmérési adatok</a> |
