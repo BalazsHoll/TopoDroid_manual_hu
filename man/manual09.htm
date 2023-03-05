@@ -3,14 +3,14 @@
 
 Az <u>adatablak</u> <i>vázlat</i> gombja megnyitja a vázlatok listáját tartalmazó párbeszédpanelt az <i>Új vázlat</i> gombbal. Érintsd meg ezt a gombot egy új felmérési vázlat létrehozásához.<br><p>
 
-Mindegyik vázlat két vázlatfájlból készül: az egyik az alaprajzhoz, a másik az oldalnézethez (akár kiterített, akár vetített). Az keresztmetszeteknek csak egy fájlja van. Az új vázlat alaprajz nézetben nyílik meg. Utána a vázlat párbeszédpanel két oszlopot mutat, az egyik az alaprajz, a másik az oldalnézet, és kiválaszthatod, melyiket nyissa meg.<br>
+Mindegyik vázlat két vázlatfájlból készül: az egyik az alaprajzhoz, a másik az oldalnézethez (akár kiterített, akár vetített). Az keresztmetszetek mindeggyikének csak egy fájlja van. Az új vázlat alaprajz nézetben nyílik meg. Utána a vázlat párbeszédpanel két oszlopot mutat, az egyik az alaprajz, a másik az oldalnézet, és kiválaszthatod, melyiket nyissa meg.<br>
 Minden vázlat több szintet tartalmazhat.<br><p>
 
 A <u>kiterített</u> oldalnézet megjeleníti a poligon-vonalat a balra, jobbra vagy függőlegesen rajzolt poligonokkal, azok "kiterítésének" megfelelően. Ha egy poligonnál nincs beállítva a "kiterítés", akkor a poligon-vonal nem jelenik meg attól a poligon-ponttól kezdve.
 A sünök annak a poligonnak a függőleges síkjára vetülnek, amely irányához a legközelebb áll, kivéve, ha a felhasználó a mérés szerkesztése párbeszédpanelen beállított egy adott "kiterítést".
 Például az ábrán látható alaprajz nézetnél a világos tartományban lévő sünök az 1-2 poligon függőleges síkjára, a sötét tartományban pedig a 0-1 függőleges síkjára vetülnek.<br><p>
 
-A <u>vetített</u> oldalnézet a poligont és a sünöket a vetítési irányra merőleges függőleges síkba vetíti.<br><p>
+A <u>vetített</u> oldalnézet a poligont és a sünöket a vetítési irányra merőleges függőleges síkba vetíti, melyet a létrehozáskor lehet beállítani.<br><p>
 
 
 <img src = "splay_extend.png"><br><p>
@@ -20,7 +20,7 @@ A <u>vetített</u> oldalnézet a poligont és a sünöket a vetítési irányra 
 A poligon színek
 <ul>
 <li> normál: fehér</li>
-<li> rendellenes mezőértékek: piros</li>
+<li> rendellenes mezőértékek (csak DistoX2): piros</li>
 <li> nincs összhangban a testvérekkel: narancssárga. Ezek cikk-cakk vonallal vannak megrajzolva, az alábbiak szerint.</li>
 </ul><br>
 
@@ -124,6 +124,7 @@ A <b>rajz</b> módban a zöldeken kívül négy gomb található:
 <li><img src = "btn_undo.png" width="36" border="1"> egyenként eltávolítja az utolsó rajzolt elemeket.</li>
 <li><img src = "btn_redo.png" width="36" border="1"> az eltávolított elemet egyenként helyezi vissza a vázlatba. Az eltávolított elemek listája kiürül, ha valami újat rajzol. A pontszerű szerkesztési műveletek szintén befolyásolhatják az átdolgozás listáját.</li>
 <li><img src = "btn_tools.png" width="36" border="1"> <a href="page_tools_list.htm">Rajzeszköz</a> váltó / választó</li>
+<li><img src="btn_splay_display_mode.png" width="36" border="1"> sün képernyő mód: vonal vagy pont.</li>
 <li><img src = "btn_cont.png" width="36" border="1"> <i>vonal csatlakozás</i> vagy folytatás</li>
 </ul><br><p>
 
@@ -168,8 +169,8 @@ Ennek megfelelően a rajzhivatkozások párbeszédpanelen nincs doboz a sünökh
 
 
 <h4>MENÜ</h4>
-Ha a program rendellenességet észlel a felmérési adat redukálásban, a "menü" gombon (három pont a függőlegesen) piros felkiáltójel látható. 
-Érintsd meg hosszan a gombot az anomáliákról szóló párbeszédpanel megjelenítéséhez.<br><p>
+<p><img src="btn_sketch_anomalies.png" width="36" border="1" style="float:left;margin:5px 10px 0 0;"> Ha a program rendellenességet észlel a felmérési adat redukálásban, a "menü" gombon (három pont a függőlegesen) piros felkiáltójel látható. 
+Érintsd meg hosszan a gombot az anomáliákról szóló párbeszédpanel megjelenítéséhez.<br></p>
 
 <ul style = "margin-top = 0">
 <li><u>Váltás</u> másik vázlatra vagy <u>bezárás</u>.</li>
@@ -179,7 +180,7 @@ Minden export két fájlt generál, az egyiket az alaprajzhoz másikat az oldaln
 <li><a href="page_stat2.htm"> Statisztika</a>. A keresztmetszetek esetében ez kiszámítja a szakasz területét.</li>
 <li><u>Újratölt</u> a vázlatot egy <a href="page_backup.htm"> biztonsági másolatból</a>.</li>
 <li><u>Ablak nagyítás</u>: párbeszédpanel a vázlat képernyőbe illesztéséhez, valamint az álló vagy fekvő megjelenítés kiválasztásához</li>
-<li><u>Átnevezheted/törölheted/megoszthatod</u> a vázlatot. Az átnevezés és a törlés egyszerre érinti az alaprajzot és az oldalnézetet. A törölt vázlatok helyreállíthatók (<i>helyreállítás</i> menü az <u>adatablakban</u>). A felosztás csak az aktuális nézetet érinti.</li>
+<li><u>Átnevezheted/törölheted</u> a vázlatot. Az átnevezés és a törlés egyszerre érinti az alaprajzot és az oldalnézetet. A törölt vázlatok helyreállíthatók (<i>helyreállítás</i> menü az <u>adatablakban</u>).</li>
 <li><a href="page_plot_scraps.htm"> Szintek</a> párbeszédpanel [T]</li>
 <li><a href="page_tools.htm"> rajzeszközök</a> paletta</li>
 <li><u>Áttekintő ablak</u>, amely az összes felmérési vázlatot együtt mutatja. [Csak alaprajz és kiterített oldalnézetek esetén]</li>
@@ -197,11 +198,12 @@ Minden export két fájlt generál, az egyiket az alaprajzhoz másikat az oldaln
   <li><i>Vízszintes keresztmetszetek</i> poligon-lejtés küszöb a vízszintes keresztmetszetekhez (oldalnézet).</li>
   <li><i>Poligon ellenőrzése</i>: ellenőrizze, hogy az összes poligon csatlakozik-e a felméréshez [letiltva]</li>
   <li><i>Kiterítés ellenőrzése</i>: ellenőrizze, hogy az összes poligonnál meg van-e határozva a "kiterítés" [engedélyezve]</li>
+  <li><i>Eszköztár mérete</i>: a rajzelemek eszköztárának mérete [alapértelmezett 8]</li>
   <!-- li><i>xtherion területek</i> th2 fájlok vázlatainak mentése egy plusz ponttal a terület határaiban</ li -->
   <li><i>PONT ESZKÖZÖK</i>
     <ul style = "margin-top: 0; margin-bottom: 0">
     <li><i>Nem nagyított pont</i>: a pontok a nagyításkor rögzített méretűek maradnak</li>
-    <li><i>Egységek rajzolása</i> pontszimbólumokhoz</li>
+    <li><i>Pont eszközök</i> skála a pontszimbólumokhoz</li>
     <li> Címke <i>szövegméret</i> [24 pt]</li>
    </ul>
   <li><i>VONALI ESZKÖZÖK</i>
@@ -239,6 +241,7 @@ Minden export két fájlt generál, az egyiket az alaprajzhoz másikat az oldaln
 <i>Vázlateltolás / méretarány</i>,
 <i>Vázlat felosztás / egyesítés</i>,
 <i>Poligon vertikális küszöb (a küszöbértéket meghaladó BJFL NyKÉD lesz)</i>,
+<i>stylus only drawing</i>,
 <i>Mentett pontok színezése</i>,
 <i>A sarkok minimális szöge, ha egy vonal ki van simítva</i>,
 <i>Bezier interpolációs pontosság és sarokküszöb</i>,
@@ -261,8 +264,12 @@ Minden vázlatot fájlba menti, ha módosul, vagy amikor a <u>vázlatablak</u> m
 A teljesítmény érdekében a TopoDroid bináris formátumban menti a vázlatokat.<br><p>
 
 <h4> Pontválasztás [H]</h4>
-Néhány szerkesztéshez ki kell választania egy pontot: vagy egy pontot, egy vonalat / területi pontot, egy mérési pontot vagy egy felvett középpontot.<br>
-Ehhez érintse meg a kívánt pont közelében. Ha azonban több pont van közel a megérintéshez, akkor mindegyik kiválasztva van, de csak az egyiket szerkesztik. A <i>előző / következő</i> gombokkal módosíthatja a kiválasztott készlet "szerkesztési" pontját.<br><p>
+Néhány szerkesztéshez ki kell választania egy pontot: vagy egy pontot, egy vonalat/területi pontot, egy mérési pontot vagy egy felvett középpontot.<br>
+Ehhez érintse meg a kívánt pont közelében. Ha azonban több pont van közel a megérintéshez, akkor mindegyik kiválasztva van, de csak az egyiket szerkesztik. A <i>előző/következő</i> gombokkal módosíthatja a kiválasztott készlet "szerkesztési" pontját.<br><p>
+
+<p><img src="btn_multiselection_previous.png" width="36" border="1"><img 
+  src="btn_multiselection_next.png" width="36" border="1">
+</p>
 
 <h4> Vonalstílus</h4>
 A TopoDroid öt vonalstílust használ. A normál stílusban [alapértelmezett] a vonalak vonalláncként vannak megrajzolva. A finom stílusnál a vonalláncok rövidebbek, míg a durva stílusnál hosszabbak. A negyedik stílusban a vonaldarabok interpoláltak, a szegmenseket köbös Bezier-görbékkel (spline-okkal) helyettesítve. Ezek a szegmensek áthaladnak a két végponton, és két szabályozási pontjuk van, amelyek meghatározzák a görbületet.
@@ -275,12 +282,12 @@ A vonalak összekapcsolása csak a szint más vonalaival hajtható végre.
 Az egyesített vonalaknak ugyanahhoz a csoporthoz kell tartozniuk. Ha különböző csoportok vonalainak két pontjára kell "csatlakoznia"
 az egyik pontot úgy kell áthelyeznie, hogy egybeessen a másikkal.<br>
 <ul>
-<li><i>ki</i>: az aktuális típusú vonalak nem kapcsolódnak össze</li>
-<li><i>nem</i>: a jelenlegi típusú vonal nem lesz összekapcsolva</li>
-<li><i>start</i>: az aktuális típusú vonal csatlakozik egy vonalhoz, ha a kezdőpontja közel áll az adott vonal végpontok egyikéhez</li>
-<li><i>vége</i>: az aktuális típusú vonalat a végpontja fogja összekapcsolni egy vonallal</li>
-<li><i>mindkettő</i>: az aktuális típusú vonalat mind a kezdete, mind a végpontja összekapcsolja egy vonallal</li>
-<li><i>folytatás</i>: az aktuális típusú vonal folytatja a vonalat, ha a kezdőpontja elég közel van az adott vonal végpontjához</li>
+<li><img src="btn_line_join_off.png" width="36" border="1"> <i>ki</i>: az aktuális típusú vonalak nem kapcsolódnak össze</li>
+<li><img src="btn_line_join_none.png" width="36" border="1"> <i>nem</i>: a jelenlegi típusú vonal nem lesz összekapcsolva</li>
+<li><img src="btn_line_join_start.png" width="36" border="1"> <i>kezdő</i>: az aktuális típusú vonal csatlakozik egy vonalhoz, ha a kezdőpontja közel áll az adott vonal végpontok egyikéhez</li>
+<li><img src="btn_line_join_end.png" width="36" border="1"> <i>vége</i>: az aktuális típusú vonalat a végpontja fogja összekapcsolni egy vonallal</li>
+<li><img src="btn_line_join_both.png" width="36" border="1"> <i>mindkettő</i>: az aktuális típusú vonalat mind a kezdete, mind a végpontja összekapcsolja egy vonallal</li>
+<li><img src="btn_line_join_continue.png" width="36" border="1"> <i>folytatás</i>: az aktuális típusú vonal folytatja a vonalat, ha a kezdőpontja elég közel van az adott vonal végpontjához</li>
 </ul>
 <br>
 
