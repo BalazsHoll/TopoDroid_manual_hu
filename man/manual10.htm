@@ -73,43 +73,46 @@ Forgatható pont szerkesztésekor az ikont a felső sarkok húzásával is el le
 
 Egy felmérési vonal (poligon vagy sün) közepén egy zöld pont látható. Ha egy poligont választunk, akkor egy vízszintes sárga szegmens is megjelenik a poligonnal szemben lévő oldalon "kinyúl", vagy mindkét oldalon, ha a poligont függőlegesen terítjük ki. A poligon kiterítést úgy állíthatjuk be, hogy megérintjük a szegmens bal vagy jobb végét, vagy a közepét.<br><p>
 
-<h4> Pontos szerkesztési műveletek [H]</h4>
+<h4> Precíz szerkesztési műveletek [H]</h4>
 
 Jobbról a negyedik gomb csak a rajzelemekre vonatkozik, és rendelkezik egy speciális szerkesztési műveletek legördülő menüvel, minden pontra [P],
-vagy vonalakra (kivéve a "keresztmetszet" vonalakat) [L] vagy területekre [A].
+vagy vonalakra (kivéve a "keresztmetszet" vonalakat) [V] vagy területekre [F].
 <ul style = "margin-top = 0">
-<li><i>Kapcsolás közeli pontra</i> [P, L, A]: mozgasd a pontot, hogy egybeessen az aktuális réteg legközelebbi pontjával. Nincs intézkedés, ha nincs közeli pont</li>
-<li><i>Kapcsolás közeli segédpontra/vonalra</i> [L, A: T]. A vonalak deformálódnak, hogy áthaladjanak a sün végpontokon, amelyek elég közel vannak. Ha egy területpont egy vonalpont közelében van, és a területhatár előtti és utáni részeket a vonalutat követő darabokra cseréljük. Ehhez a funkcióhoz engedélyezni kell a megfelelő beállítást</li>
-<li><i>Beszúrás</i> pont (ok) [L: A]. Egyetlen pont kiválasztásakor az új pont a kiválasztott pont után kerül beillesztésre, és hozzáadódik a kiválasztási halmazhoz, és a Előző-Következő gombokkal választhatod ki. Ha kiválasztasz egy tartományt, a pont két pontja közé új pontok kerülnek. Egy <u>hosszú érintéssel</u> a kiválasztott pont a legközelebbi pontra kerül, és beszúr egy másik pontot, a kiválasztott pont „után” [T / G]</li>
-<li><i>Elmetszi</i> [L] a vonalat a ponton, így két vonal keletkezik</li>
-<li><i>Kiegyenesítés</i> [L: T] a vonalszakaszról eltávolítja a vezérlőpontokat</li>
-<li><i>Simítás</i> [L: T] a vonalkeresztmetszet beillesztése vezérlőpontokat a keresztmetszet 1/3-án és 2/3-án. További szerkesztés mozgathatja őket, és bármilyen kívánt görbületet adhat a szegmensnek</li>
-<li><i>Távolítsa el</i> [L: A] a vonal/terület pontot. A kiválasztott vonal/terület pont a „törlés” gomb hosszú megérintésével is eltávolítható.</li>
-<li><i>Hozzáfűz</i> [L: T, kivéve a "keresztmetszet"] egy másik, ugyanolyan vonalhoz. Csak a vonal végpontjainak és a másik vonal végpontjának közel kell lennie a kiválasztott ponthoz.</li>
-<li> lépj be a <i>többválasztásos</i> módba [P, L, A: T]
+<li><i>Kapcsolás közeli pontra</i> [P,V,F]: mozgasd a pontot, hogy egybeessen az aktuális réteg legközelebbi pontjával. Nincs intézkedés, ha nincs közeli pont</li>
+<li><i>Kapcsolás közeli segédpontra/vonalra</i> [V,F:T]. A vonalak deformálódnak, hogy áthaladjanak a sün végpontokon, amelyek elég közel vannak. Ha egy területpont egy vonalpont közelében van, a kijelöléshatár közötti részeket a vonalat követő darabokra cseréljük. Ehhez a funkcióhoz engedélyezni kell a megfelelő beállítást</li>
+<li><i>Beszúrás</i> pont (ok) [V:H]. Egyetlen pont kiválasztásakor az új pont a kiválasztott pont után kerül beillesztésre, és hozzáadódik a kiválasztási halmazhoz, és a Előző-Következő gombokkal választhatod ki. Ha kiválasztasz egy tartományt, a pont két pontja közé új pontok kerülnek. Egy <u>hosszú érintéssel</u> a kiválasztott pont a legközelebbi pontra kerül, és beszúr egy másik pontot, a kiválasztott pont „után” [F/G]</li>
+<li><i>Elmetszi</i> [V] a vonalat a ponton, így két vonal keletkezik</li>
+<li><i>Kiegyenesítés</i> [V:H] a vonalszakaszról eltávolítja a vezérlőpontokat</li>
+<li><i>Simítás</i> [V:H] a vonalkeresztmetszet beillesztése vezérlőpontokat a keresztmetszet 1/3-án és 2/3-án. További szerkesztés mozgathatja őket, és bármilyen kívánt görbületet adhat a szegmensnek</li>
+<li><i>Távolítsa el</i> [V:H] a vonal/terület pontot. A kiválasztott vonal/terület pont a „törlés” gomb hosszú megérintésével is eltávolítható.</li>
+<li><i>Hozzáfűz</i> [V:T, kivéve a "keresztmetszet"] egy másik, ugyanolyan vonalhoz. Csak a vonal végpontjainak és a másik vonal végpontjának közel kell lennie a kiválasztott ponthoz.</li>
+<li> lépj be a <i>többválasztásos</i> módba [P,V,F:T]
 </ul><br><p>
 
 <h4> Többválasztási mód [T]</h4>
 Ez az üzemmód lehetővé teszi több azonos típusú objektum (pont/vonal/terület) kiválasztását és mindegyikre való hatást:
 <ul style = "margin-top = 0">
-<li><i>Törölje</i> a kijelölt elemeket [P, L, A]</li>
-<li><i>Csökkentse</i> a kijelölt elemek pontjainak számát [L, A]</li>
-<li><i>Kapcsolja</i> a kijelölt elemeket [L, A]</li>
+<li><i>Törölje</i> a kijelölt elemeket [P,V,F]</li>
+<li><i>Csökkentse</i> a kijelölt elemek pontjainak számát [V,F]</li>
+<li><i>Kapcsolja</i> a kijelölt elemeket [V,F]</li>
 <li><i>Kilépés</i> többes választás módból</li>
 </ul><br><p>
 
 <h4> Tartományválasztás</h4>
-A vonalak és területek pontjai választhatók külön-külön (pontválasztási mód) vagy tartományként.
-Távolság kiválasztásához egy vonalon a "szerkesztés" gombsor utolsó gombjának "puha" vagy "kemény" tartománynak kell lennie.
-Válassza ki a tartomány első végpontját, majd a másik végpontot.
+A vonalak és területek pontjai választhatók külön-külön (pontválasztási mód) vagy tartományként is.
+<ul>
+<li><img src="btn_range.png" width="36" border="1"> egypontos kijelölés</li>
+<li><img src="btn_range_soft.png" width="36" border="1"> "lágy" tartománykiválasztás</li>
+<li><img src="btn_range_hard.png" width="36" border="1"> "kemény" tartomány kiválasztása</li>
+<li><img src="btn_range_itemwise.png" width="36" border="1"> teljes vonal/terület kijelölése</li>
+</ul><br>
+Tartomány megadásához először válaszd ki a tartomány egyik végpontját, majd a másik végpontot.
+A tartomány narancssárgával van kiemelve. A felezőpontja kap egy nagy zöld pontot, és ez szabályozza, hogy a vonaltartomány hogyan deformálódjon.
+A tartománynak lehet kemény vagy lágy határa. Kemény határok esetén a tartomány egészét mozgatja.
+Lágy határoknál a tartomány végeihez közeli pontok a végétől való távolságukkal arányos mértékben elmozdulnak.
 <br>
-
-A tartomány narancssárgával van kiemelve. Középpontja megkapja a nagy zöld pontot, és szabályozza, hogyan deformálódik a vonaltartomány.
-A tartománynak lehetnek kemény vagy lágy határai. Kemény határok mellett a tartomány egészét mozgatja. Lágy határokkal a tartomány végén lévő pontokat a végétől számított távolságukkal arányos mértékben mozgatják.
-<br><p>
-
-A tartomány lehet "tételenkénti", azaz az egész elem.
-Ebben az esetben kiválaszt egy pontot a vonalon/területen, és az egész elemre hat (pl. Eltolás).
+A kijelölés lehet „tételenkénti”, azaz a teljes tétel is.
+Ebben az esetben kiválasztunk egy pontot a vonalon/területen, és az egész elemen tevékenykedünk (pl. eltolás).
 <br><p>
 
 <div style = "font-size: 90%">
@@ -121,8 +124,8 @@ Körülbelül 5-ös érték működhet lapos tollal. A nagyobb értékek összek
 
 
 <a href="page_sketch_station.htm"> Vázlat mérési pont szerkesztése</a><br>
-<a href="page_tools.htm"> Rajzeszközök</a><br>
-<a href="page_walls.htm"> Automatikus falak</a><br>
+<a href="page_tools.htm"> Rajzeszköz</a> váltó<br>
+<!-- a href="page_walls.htm"> Automatikus falak</a><br -->
 <p>
 <a href="manual09.htm"> &lt; Vázlatablak</a> |
 <a href="manual11.htm"> Keresztmetszetek &gt;</a>

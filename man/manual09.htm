@@ -3,7 +3,7 @@
 
 Az <u>adatablak</u> <i>vázlat</i> gombja megnyitja a vázlatok listáját tartalmazó párbeszédpanelt az <i>Új vázlat</i> gombbal. Érintsd meg ezt a gombot egy új felmérési vázlat létrehozásához.<br><p>
 
-Mindegyik vázlat két vázlatfájlból készül: az egyik az alaprajzhoz, a másik az oldalnézethez (akár kiterített, akár vetített). Az keresztmetszetek mindeggyikének csak egy fájlja van. Az új vázlat alaprajz nézetben nyílik meg. Utána a vázlat párbeszédpanel két oszlopot mutat, az egyik az alaprajz, a másik az oldalnézet, és kiválaszthatod, melyiket nyissa meg.<br>
+Mindegyik vázlat két vázlatfájlból készül: az egyik az alaprajzhoz, a másik az oldalnézethez (akár kiterített, akár vetített). Az keresztmetszetek mindegyikének csak egy fájlja van. Az új vázlat alaprajz nézetben nyílik meg. Utána a vázlat párbeszédpanel két oszlopot mutat, az egyik az alaprajz, a másik az oldalnézet, és kiválaszthatod, melyiket nyissa meg.<br>
 Minden vázlat több szintet tartalmazhat.<br><p>
 
 A <u>kiterített</u> oldalnézet megjeleníti a poligon-vonalat a balra, jobbra vagy függőlegesen rajzolt poligonokkal, azok "kiterítésének" megfelelően. Ha egy poligonnál nincs beállítva a "kiterítés", akkor a poligon-vonal nem jelenik meg attól a poligon-ponttól kezdve.
@@ -119,19 +119,20 @@ Az utolsó letöltött mérések kék színnel kiemelhetők, hogy megkülönböz
 <li><img src = "btn_refresh.png" width="36" border="1"> frissítse a poligont</li>
 </ul><br><p>
 
-A <b>rajz</b> módban a zöldeken kívül négy gomb található:
+A <b>rajz</b> módban a zöldeken kívül öt gomb található:
 <ul style = "margin-top = 0">
 <li><img src = "btn_undo.png" width="36" border="1"> egyenként eltávolítja az utolsó rajzolt elemeket.</li>
 <li><img src = "btn_redo.png" width="36" border="1"> az eltávolított elemet egyenként helyezi vissza a vázlatba. Az eltávolított elemek listája kiürül, ha valami újat rajzol. A pontszerű szerkesztési műveletek szintén befolyásolhatják az átdolgozás listáját.</li>
-<li><img src = "btn_tools.png" width="36" border="1"> <a href="page_tools_list.htm">Rajzeszköz</a> váltó / választó</li>
+<!-- li><img src = "btn_tools.png" width="36" border="1"> <a href="page_tools_list.htm">Rajzeszköz</a> váltó / választó</li -->
+<li><img src = "btn_tools.png" width="36" border="1"> Rajzeszköz váltó</li>
 <li><img src="btn_splay_display_mode.png" width="36" border="1"> sün képernyő mód: vonal vagy pont.</li>
-<li><img src = "btn_cont.png" width="36" border="1"> <i>vonal csatlakozás</i> vagy folytatás</li>
+<!-- li><img src = "btn_cont.png" width="36" border="1"> <i>vonal/terület csatlakozás</i> vagy folytatás</li -->
 </ul><br><p>
 
 A <b>törlés</b> módban a zöldeken kívül három gomb található:
 <ul style = "margin-top = 0">
-<li><img src = "btn_undo.png" width="36" border="1"> <i>undo</i></li>
-<li><img src = "btn_redo.png" width="36" border="1"> <i>redo</i></li>
+<li><img src = "btn_undo.png" width="36" border="1"> <i>undo - visszavonás</i></li>
+<li><img src = "btn_redo.png" width="36" border="1"> <i>redo - megismétlés</i></li>
 <li><img src = "btn_erase_all.png" width="36" border="1"> törölhető elemek típusa: minden, pont, vonal, terület</li>
 <li><img src = "btn_size.png" width="36" border="1"> radír mérete [S, M, L]</li>
 </ul><br><p>
@@ -162,7 +163,7 @@ Ennek megfelelően a rajzhivatkozások párbeszédpanelen nincs doboz a sünökh
  grafikusan szerkeszthető lesz az ujjadat a kijelzőn csúsztatva. A gomb zöldre vált. [S].</li>
 <li> A kiterített oldalnézetben a <i>megjelenítési mód</i> gomb hosszú megérintésével megfordíthatja a vázlatot [N].</li>
 <li> A keresztmetszeteknél átválthatja a sünök megjelenítését, amelyek a metszetsíkon kívül vannak [T].</li>
-<li> Az <i>eszközök</i> gomb hosszú megérintésével visszaáll az alsó eszköztár forgási sorrendje. A háromszoros eszköztárra hatástalan.</li>
+<li>Az <i>eszközök</i> gomb hosszú érintésével be- és kikapcsolhatod a vonalcserét (csak vonal és terület esetén) [A]</li>
 <li> A <i>törlés</i> gomb hosszú megérintésével eltávolítja a kijelölt vonalat/területpontot [N].</li>
 <li>Ha hosszan érinted az elem <i>tulajdonságok szerkesztése</i> gombját, amikor a kiválasztott elem egy metszet pont, megnyílik a keresztmetszet vázlat [T].</li>
 </ul><br><p>
@@ -226,7 +227,7 @@ Minden export két fájlt generál, az egyiket az alaprajzhoz másikat az oldaln
     <li><i>Kiválasztás</i> sugár a vázlat finom szerkesztéséhez; [16 px] [H]</li>
     <li> A <i>radír</i> alapmérete</li>
     <li><i>Váltási érzékenység</i>: maximális lépés a vázlat mozgatásakor [60 px] [S]. Növelje, ha a vázlatváltás szaggatott</li>
-    <li><i>Mutató sugara</i>: a kiválasztáshoz ennél többet nem szabad az újjat mozgatni [H]</li>
+    <li><i>Mutató sugara</i>: a kiválasztáshoz ennél többet nem szabad az újat mozgatni [H]</li>
     <li><i>A sün átlátszósága</i> átlátszatlansági szint [0: átlátszó, 100: átlátszatlan, alapértelmezett 80]</li>
     <!--
     <li><i>Sün alaprajz küszöb</i>: az e küszöb feletti dőlésszögű sünöket elrejti a alaprajznál [80 &deg;]</li>
@@ -276,36 +277,33 @@ A TopoDroid öt vonalstílust használ. A normál stílusban [alapértelmezett] 
 Az ötödik vonalstílussal a meghúzott vonalak egyszerűsödnek egy pont gyomláló algoritmus segítségével.
 Ha a rajzot dxf fájlban exportálja DXF 6-os verzióval, ne használjon spline-okat, mert vonalláncként exportálják őket.<br><p>
 
-<h4> Vonal csatlakozása</h4>
-A <i>csatlakozás</i> gomb többállapotú gomb.
-A vonalak összekapcsolása csak a szint más vonalaival hajtható végre.
-Az egyesített vonalaknak ugyanahhoz a csoporthoz kell tartozniuk. Ha különböző csoportok vonalainak két pontjára kell "csatlakoznia"
-az egyik pontot úgy kell áthelyeznie, hogy egybeessen a másikkal.<br>
-<ul>
-<li><img src="btn_line_join_off.png" width="36" border="1"> <i>ki</i>: az aktuális típusú vonalak nem kapcsolódnak össze</li>
-<li><img src="btn_line_join_none.png" width="36" border="1"> <i>nem</i>: a jelenlegi típusú vonal nem lesz összekapcsolva</li>
-<li><img src="btn_line_join_start.png" width="36" border="1"> <i>kezdő</i>: az aktuális típusú vonal csatlakozik egy vonalhoz, ha a kezdőpontja közel áll az adott vonal végpontok egyikéhez</li>
-<li><img src="btn_line_join_end.png" width="36" border="1"> <i>vége</i>: az aktuális típusú vonalat a végpontja fogja összekapcsolni egy vonallal</li>
-<li><img src="btn_line_join_both.png" width="36" border="1"> <i>mindkettő</i>: az aktuális típusú vonalat mind a kezdete, mind a végpontja összekapcsolja egy vonallal</li>
-<li><img src="btn_line_join_continue.png" width="36" border="1"> <i>folytatás</i>: az aktuális típusú vonal folytatja a vonalat, ha a kezdőpontja elég közel van az adott vonal végpontjához</li>
-</ul>
-<br>
+<h4> Vonal csere</h4>
+A vonal és a területek „vonalcsere” módban rajzolhatók.<br>
+Az <i>eszközök</i> gomb hosszú megérintésével be- és kikapcsolható a vonalcsere.
+Ha a vonalcsere aktív, a vonal/terület a megfelelő <i>eszközök</i> gombon fehér.<br><p>
 
-Ha az összekapcsolás "folytatásra" van állítva, az utolsó megrajzolt vonal <i>módosítható</i>, mint az Adobe Illustratorban,
- azaz a vonal egy darabjának visszakövetése a kezdőponttól.<br>
-A "folytatás" hatással van a verem visszavonására, mivel a folytatott vonal áthelyeződik a verem tetejére.
+A vonal egy részének cseréjéhez rajzolj egy olyan vonalat, amely az eredeti közelében kezdődik és/vagy végződik.
+A "metszet" típusú vonalak nem módosíthatók.
+<br><p>
+A területek „újra rajzolhatók” egy vonal cserével, amely a terület határához közel kezdődik és végződik.
+Ennek a szegélynek a két darabja közötti rövidebb helyére az újonnan rajzolt vonal lép.<br>
+A terület nagyítható vagy zsugorítható, és egy homorú rész kitölthető (lásd az alábbi ábra).
 <br><p>
 
+A vonal csere visszavonható és újra elvégezhető.<br><p>
+
+<img src="area_concavity.png" width="360" border="1">
+<br><p>
 <div style = "font-size: 90%">
 <h4> Kompozit műveletek [T]</h4>
 Az összetett műveletek pontonként hosszan érinthető műveletek.<br>
 Jelenleg az egyetlen hosszan koppintható művelet az, ha <i>beilleszt egy pontot</i> egy vonalhoz/területhez, és egyidejűleg rápattan egy közeli pontra.
 A kiválasztott pontot először a közeli pontra helyezzük, majd megismételjük, és az új pont utána kerül a vonalon/területen.
-Ez lehetővé teszi az útvonal visszakeresését az utolsó pont kiválasztásával és a pontok hátrafelé történő beszúrásával.<br>
+Ez lehetővé teszi az útvonal kis szakaszának visszakeresését az utolsó pont kiválasztásával és a pontok hátrafelé történő beszúrásával.<br>
 Az előre vezető út visszakereséséhez minden beillesztés után váltson a kiválasztott pontra.
 </div><br><p>
 
-<h4> Álló / fekvő bemutatás</h4>
+<h4> Álló/fekvő bemutatás</h4>
 Az álló tájolásnál a mágneses északi irány és a függőleges felfelé néznek az alaprajzban és az oldalnézetében. Ha a felmérési deklináció be van állítva, a valódi észak a mágneses északhoz viszonyított szögként jelenik meg.<br>
 Fekvőnél balra néznek, így a Kelet  van felfelé alaprajzban, a Jobb pedig oldalnézetben.<br>
 Alaprajzban a pont szimbólumok úgy vannak elforgatva, hogy természetesnek tűnjenek, miközben álló módban tartják a készüléket.<br><p>
@@ -339,7 +337,7 @@ A menük a következők:<br>
 </ul><br><p>
 
 <i>mozgatás</i> módban csak a három zöld gomb van a többi módhoz.<br>
-A <i>rajzolás</i> mód a következő gombokkal rendelkezik: <i>visszavonás</i>, <i>újra</i>, <i>eszközök</i> és <i>sor folytatása</i> >.<br>
+A <i>rajzolás</i> mód a következő gombokkal rendelkezik: <i>visszavonás</i>, <i>újra</i>, <i>eszközök</i> és <i>vonal/terület folytatása</i> >.<br>
 A <i>törlés</i> és <i>szerkesztés</i> mód a szokásos gombokkal rendelkezik.<br><p>
 
 A th2 fájl egynél több bejegyzést is tartalmazhat.
