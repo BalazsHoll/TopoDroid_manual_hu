@@ -1,66 +1,79 @@
 <html>
 <body>
 
-<h3>3D VÁZLAT</h3>
+<h3>3D VÁZLATKÉSZÍTÉS</h3>
 
-A 3D vázlat készítése egyszerre egy mérés körül történik.
-Ezért a kijelző az aktuális mérés középpontjában áll.
+A 3D-s vázlatkészítés egyszerre egy poligon mérés körül történik.
+Ezért a kijelzőn a kiválasztott poligon van középen.
 <br><p>
 
-A <u> 3D-vázlat ablaknak</u> három módja van (és három különböző gombsáv):
+A 3D <u>Vázlat ablak</u> három üzemmóddal (és három különböző gombsorral) rendelkezik:
 <ul>
-<li>mozgás</li>
-<li>rajzolás</li>
-<li>kiválasztás</li>
+<li>mozgatás</li>
+<li>rajzol</li>
+<li>kiválasztás (csak a "poligon" nézethez)</li>
 </ul>
 
-Ahogy a 2D <u> vázlatablakban</u>, itt is a bal szélső zöld gombok jelzik az aktuális módot.<br>
-A <i> mozgás</i> mód további gombjai:
+A 2D <u>Rajz ablak</u> esetében a bal szélső zöld gombok jelzik az aktuális módot.<br>
+Az <i>mozgatás</i> mód többi gombja:
 <ul>
-<li>felszín megjelenítési mód</li>
-<li>felület létrehozása</li>
-<li>adatletöltés</li>
+<li>megjelenítési mód</li>
 <li>jegyzetek</li>
-<li>információ</li>
+<li>falak</li>
+<li>frissítés</li>
 </ul>
 
-<b>Felületi megjelenítési mód</b>
-A felületi megjelenítési mód lehet,
-<ul>
-<li>csak az aktuális mérés felülete</li>
-<li>az aktuális és a közeli mérések felületei</li>
-<li>az összes felület</li>
-<li>nincs felület.</li>
-</ul><br>
 
-Ha nem jelenik meg felület, a mérés kiválasztásával léphet a közeli mérésekre.<br><p>
+A <i>rajz</i> módban nyomon követheti a kontúrvonalakat.
+A "poligon" nézet kontúrvonala a poligonnal együtt dőlő 3D síkban fekszik.
+A metszetnézetek a metszetsíkban helyezkednek el.<br><p>
 
-A <i> rajzolás</i> módban pont szimbólumokat, valamint vonal szimbólumokat helyezhet el a felületen.
+Gombok:
 <ul>
 <li>visszavonás</li>
 <li>újra</li>
-<li>paletta (elemválasztó)</li>
 </ul>
 
-A <i> select</i> módhoz:
+A <i>törlés</i> módban gombok találhatók
 <ul>
-<li>mód kiválasztása</li>
-<li>méret kiválasztása</li>
-<li>előző elem (nincs megvalósítva)</li>
-<li>következő elem (nincs megvalósítva)</li>
-</ul>
+<li>visszavonás</li>
+<li>újra</li>
+<li>radírméret</li>
+</ul><br><p>
+
+A <i>kiválasztás</i> módhoz:
+<ul>
+<li>kiválasztási mód: kontúrpontok vagy szomszédos poligon pontok</li>
+<li>méretet választás</li>
+<li>törlés</li>
+<li>nézet: metszet vagy szomszédos "poligon" nézet</li>
+<lI>kijelölés törlése</li>
+</ul><br>
+
+A "poligon" nézet a csatlakoztatott poligonokat is tartalmazza.
+Ha megérinti valamelyik szomszédos pontot, a „poligon” nézet az adott pont poligonjára kerül.<br><p>
+
+Metszet akkor hozható létre, ha a kontúr vonalakon két pont van kiválasztva.
+A metszetsík lehet „függőleges” vagy „vízszintes”.
+Ha függőleges, akkor a két kiválasztott pontot tartalmazza, az Y tengely pedig a függőlegest.
+Ha vízszintes, akkor átmegy a felezőpontjukon, és az Y tengely a poligon azimutja.
+A két pont (vagy vetületük) megjelenik a kijelzőn.<br>
+
+Egy menüvel lehet váltani a „függőleges” és a „vízszintes” lehetőségek között.<br><p>
+
+
 
 <b>Menük</b><br>
 <ul>
-<li>Exportálás (támogatott formátumok: Therion 3D, DXF)</li>
-<li>Paletta</li>
-<li>Nagyítás</li>
-<li>fej: a modell tájolása az Androidos eszköz segítségével</li>
-<li>Törölje a 3D-s modellt</li>
-<li>Tiszta: távolítsa el az összes felületet</li>
+<li>Bezárás</li>
+<li>Exportálás (azaz mentés)</li>
+<li>A nagyítás illeszkedése </li>
+<li>Szakasz típusa</li>
+<li>Törlés</li>
 <li>Beállítások</li>
 <li>Súgó</li>
 </ul>
+
 
 
 </body>
