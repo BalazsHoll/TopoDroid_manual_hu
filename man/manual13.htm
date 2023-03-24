@@ -52,9 +52,26 @@ A külső fájlok következő formátumai támogatottak:
 
 A fájlimportálás sikertelen, ha az azonos nevű felmérés már szerepel a TopoDroidban.<br><p>
 
-A zip importálása sikertelen, ha a zip adatbázis-verziója túl régi, vagy újabb, mint a TopoDroidban.<br><p>
-
 BJFL értékű fájlformátumokból történő importáláskor ezeket keresztmetszet sünökké alakítják (zöld színnel jelennek meg).<br><p>
+
+<b>Zip-importálás</b><br>
+A zip-importálás sikertelen, ha a zip adatbázis-verzió túl régi, vagy újabb, mint a TopoDroidban.
+A hibakódok a következők
+<ul>
+<li>1: IO hiba</li>
+<li>2: A zip TopoDroid verzió túl régi</li>
+<li>3: A zip adatbázis-verzió túl régi</li>
+<li>4: A zip adatbázis-verzió túl új</li>
+<li>5: a felmérés neve eltér a fájlnévtől</li>
+<li>6: már jelen van a felmérés</li>
+<li>7: nem sikerült megnyitni az adatbázist</li>
+<li>8: zip SQL hiba</li>
+<li>9: számformátum hiba</li>
+<li>10: manifest formátum-hiba</li>
+<li>11: manifest nem található</li>
+<li>12: manifest IO-hiba</li>
+<li>13: váratlan hiba</li>
+</ul><br><p>
 
 <b>Therion importálás</b><br>
 Csak azok a Therion felmérési fájlok importálhatók, amelyek adatai "normál" adatmódban vannak.<br>

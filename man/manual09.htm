@@ -201,21 +201,22 @@ Minden export két fájlt generál, az egyiket az alaprajzhoz másikat az oldaln
   <li><i>Kiterítés ellenőrzése</i>: ellenőrizze, hogy az összes poligonnál meg van-e határozva a "kiterítés" [engedélyezve]</li>
   <li><i>Eszköztár mérete</i>: a rajzelemek eszköztárának mérete [alapértelmezett 8]</li>
   <!-- li><i>xtherion területek</i> th2 fájlok vázlatainak mentése egy plusz ponttal a terület határaiban</ li -->
-  <li><i>PONT ESZKÖZÖK</i>
+  <li><i>PONT BEÁLLÍTÁSOK</i>
     <ul style = "margin-top: 0; margin-bottom: 0">
     <li><i>Nem nagyított pont</i>: a pontok a nagyításkor rögzített méretűek maradnak</li>
     <li><i>Pont eszközök</i> skála a pontszimbólumokhoz</li>
     <li> Címke <i>szövegméret</i> [24 pt]</li>
    </ul>
-  <li><i>VONALI ESZKÖZÖK</i>
+  <li><i>VONAL BEÁLLÍTÁSOK</i>
     <ul style = "margin-top: 0; margin-bottom: 0">
     <li> Vonal <i>tollszélesség</i> (az NB falvonalak kétszer olyan szélesek) [1 px]</li>
     <li><i>Egységek rajzolása</i> az "úthatású" vonalakhoz</li>
     <li> Vonal <i>stílus</i>: finom, normál, durva, "spline" (interpolált görbe), ritkított</li>
+	<li><i>Zárás</i>: be kell-e zárni a "zárt" típusú vonalakat. [igen]</li>
     <li> Vonal <i>pontok távolsága</i>: a vonalpontok távolsága normál stílusban [5 px]</li>
     <li><i>Irány pipa hossza</i> az keresztmetszet vonalakhoz [5 px]</li>
     <li><i>Metszetpontok</i>: hozzáadja-e a "metszet" pontot automatikusan a "metszet" vonalakhoz [alapértelmezett igen]</li>
-    <li> Vonal <i>alapértelmezett csatlakozási mód</i>: nincs, kezdet, vég, mindkettő, "folytatás"</li>
+    <!--li> Vonal <i>alapértelmezett csatlakozási mód</i>: nincs, kezdet, vég, mindkettő, "folytatás"</li -->
     <li> Terület <i>határ</i> alapértelmezett láthatóság</li>
    </ul>
  </li>
@@ -280,7 +281,8 @@ Ha a rajzot dxf fájlban exportálja DXF 6-os verzióval, ne használjon spline-
 <h4> Vonal csere</h4>
 A vonal és a területek „vonalcsere” módban rajzolhatók.<br>
 Az <i>eszközök</i> gomb hosszú megérintésével be- és kikapcsolható a vonalcsere.
-Ha a vonalcsere aktív, a vonal/terület a megfelelő <i>eszközök</i> gombon fehér.<br><p>
+Ha a vonalcsere aktív, a vonal/terület a megfelelő <i>eszközök</i> gombon fehér.<br>
+A vonal/terület cserélt része nem transzformálódik (Bezier spline, gyomlálás, tizedelés stb.).<br><p>
 
 A vonal egy részének cseréjéhez rajzolj egy olyan vonalat, amely az eredeti közelében kezdődik és/vagy végződik.
 A "metszet" típusú vonalak nem módosíthatók.
