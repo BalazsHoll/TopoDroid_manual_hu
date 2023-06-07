@@ -9,7 +9,7 @@ A hivatalos felhasználói kézikönyvek a következő címen érhetők el: http
 
 A BRIC4 bekapcsolásához nyomja meg egymás után háromszor a külső gombot.
 A kikapcsoláshoz tartsa lenyomva a külső gombot.
-A BRIC4 90 másodperces inaktivitás után magától kikapcsol.
+A Bric4 magától kikapcsol az <i>Idle off (Üresjárati kikapcsolás)</i> beállításnál meghatározott tétlenségi idő után.
 <br><p>
 
 <b>Belső gombok</b><br>
@@ -39,8 +39,9 @@ Opciók:
 <li><i>Dist</i>: méter vagy láb</li>
 <li><i>Temp</i>: Celcius vagy Fahrenheit</li>
 <li><i>Shot delay</i>: <u>0</u> és 5 másodperc között</li>
-<li><i>Change curr(ent)</i>: 100 mA vagy <u>500</u> mA</li>
+<li><i>Charge current</i>: 100 mA vagy <u>500</u> mA</li>
 <li><i>Err(or) sens(itivity)</i>: 0.2&deg;-tól 2.8&deg;-ig  0.2&deg;-os lépésekben [1.0&deg;]</li>
+<li><i>Idle off</i>: mennyi ideig kell a Bric4-nek inaktívnak lennie, mielőtt kikapcsolná magát. 30 mp-től 1800 mp-ig terjedő lépésekben.</li>
 </ul><br><p>
 
 Hibainformációk: az elmúlt tíz mérés hibainformációit közli.<br><p>
@@ -60,7 +61,7 @@ Calibráció:
 <ul>
 <li><i>Year</i>: év</li>
 <li><i>Month</i>: hónap 01 és 12 között</li>
-<li><i>Date</i>: nap 00 és 31 között</li>
+<li><i>Date</i>: nap 01 és 31 között</li>
 <li><i>Hour</i>: óra 00 és 23 között</li>
 <li><i>Minute</i>: perc 00 és 59 között</li>
 <li><i>Second</i>: másodperc 00 és 59 között</li>
@@ -72,17 +73,17 @@ Bluetooth
 <li><i>MAC address</i>: pl.: D52FDE2E98DE</li>
 <li><i>Connected to</i>: fogadó MAC address</li>
 <li><i>Reset BLE</i>: BLE újraindítás</li>
-<li><i>Advanced</i>: bővített</li>
+<li><i>Advanced Menu</i>: megnyitja a <u>BLE Advanced</u> menüt</li>
 </ul><br><p>
 
-Három bővített bluetooth lehetőség van:
+Három bővített <u>BLE Advanced</u> menü lehetőség van:
 <ul>
 <li><i>RST to AT mode</i></li>
 <li><i>RST to Run Mode</i></li>
 <li><i>Curr Comm</i>: CPU</li>
 </ul><br><p>
 
-A speciális <i>BLE menü</i>-ben:
+A speciális <u>BLE Advanced</u> menüben:
 <ul>
 <li>a BLE küldi és fogadja a számokat</li>
 <li>az adatok szinkronizálási állapota: az összes elküldött mérési hálózat és BT-üzenetek</li>
@@ -98,14 +99,15 @@ Kijelző
 
 Speciális menü
 <ul>
-<li><i>Memory clear</i>: visszaállítja az adatindexet 0-ra (törli a kijelzőt)</li> 
+<li><i>Memory clear</i>: megnyitja a <i>Memory clear</i> képernyőt</li> 
 <li><i>Sersor Raw Data</i>: nyers szenzor adatok</li>
 <li><i>Firmware CPU</i>: firmware és hardware verzió - <i>Bootloader mode</i> opció</li>
 <li><i>Firmware BLE</i>: firmware verzió - <i>Update</i> opció</li>
+<li><i>Cal Settings</i>: a kalibrációs folyamatokhoz kapcsolódó számos beállítás</li>
 <li><i>Reprocess full Cal(ibration)</i>: teljes kalibráció újrafeldolgozás</li>
 <li><i>Reprocess AZM Cal(ibration)</i>: irány kalibráció újrafeldolgozás</li>
-<li><i>Backlight Manual</i>: háttérszín váltás Red, Green, Blue között</li>
-<li><i>Charger info</i>: töltési információk (debug)</li>
+<!-- li><i>Backlight Manual</i>: háttérszín váltás Red, Green, Blue között</li>
+<li><i>Charger info</i>: töltési információk (debug)</li -->
 </ul><br><p>
 
 A <i>Memória törlése</i> képernyő az összes mérést és a BT által küldött üzeneteket mutatja.

@@ -146,14 +146,17 @@ Ha a 3D modellezés engedélyezve van, akkor egy gomb is létrehozhat egy új 3D
     <li><i>Poligon tűrés</i>: a poligon egymás utáni mérései közötti szögtűrés (százalék) [alapértelmezett 0,05, min 0]. A hossztűrés a szögtűrés és a hossz szorzata.</li>
     <li><i>Maximális méréshossz</i>: a hosszabb méréseket "törölt" jelzéssel látja el [alapértelmezett 50 m, min 20 m]</li>
     <li><i>Min. poligonhossz</i>: a rövidebb poligonnak narancssárga háttérrel vannak kiemelve [alapértelmezett 0 m]</li>
-    <li><i>Min. poligonmérések</i>: a legközelebbi egymás utáni mérések minimális száma egy poligonon. [alapértelmezett 3, min 2, max 4]</li>
+    <li><i>Min. poligonmérések</i>: a legközelebbi egymás utáni mérések minimális száma egy poligonon. [alapértelmezett 3, min 2, max 4] [S]</li>
     <li><i>Backshot DistoX</i>: DistoX "visszamérés" módban [alapértelmezett nem]</li>
-    <li><i>A Segédmérések függőleges küszöbe</i> meghatározza, hogy a <a href="page_azimuth.htm"> sün "kiterítése"</a> hogyan legyen beállítva [alapértelmezett 10, min 0, max 90]</li>
+    <li><i>A mérések függőleges küszöbe</i>: a referencia azimutra merőleges körüli tartománya ahhoz, hogy a <a href="page_azimuth.htm">mérés "kiterítése"</a> függőleges legyen [ alapértelmezett 10, min 0, max 90] (poligonokhoz és sünökhöz egyaránt használatos) [N]</li>
     <li><i>Mérés NyKÉD küszöbérték</i> (Therion "vthresold"): a manuálisan bevitt mérések BJFL-jét nyugat-kelet-észak-délnek tekintjük, ha a mérés dőlése meghaladja a függőleges küszöböt [alapértelmezett 80, min 0, max 90]</li>
     <li><i>Mérés kiterítése</i>: rögzített vagy a <a href="page_azimuth.htm"> kiterítési referencia</a> irány [alapértelmezett relatív]</li>
     <li><i>Hurokzárás</i> hibajavítás. Célszerű a kompenzációt nem megtenni, mivel ez lehetővé teszi a hibás bezárások grafikus megtekintését és az esetleges felmérési hibák észlelését [alapértelmezett "nincs"]. A "háromszögeken" alapuló speciális hurokkompenzáció <a href="page_trilateration.htm"> háromszögelésre</a> [E] vonatkozik.</li>
     <li>az <i>előző / következő</i> gombok megjelenítése a mérés szerkesztése párbeszédpanelen [alapértelmezett igen]</li>
     <li><i>Visszamérés</i> mezők a mérés kézi beviteli párbeszédablakában [N] [alapértelmezett nem]</li>
+	<li><i>Poligon-mérés-visszajelzés</i>: visszajelzés a poligon-felismerésről: "nincs", "hang" vagy "érintős" [alapértelmezett "nincs"] [N]</li>
+    <li><i>Visszamérés DistoX</i>: DistoX "backshot" módban [alapértelmezett nem] [N]</li>
+	<li><i>Hurokzárás</i> hibakompenzáció. Javasoljuk, hogy a kompenzációt ne végezze el, mert így grafikusan láthatja a hibás lezárásokat, és kiszűrheti az esetleges felmérési hibákat [alapértelmezett "nincs"] [N]</li>
     <li><i>Időzítő</i>: másodperc késleltetés az irányok Android-érzékelőkkel történő mérése előtt [alapértelmezett 10, min 0]</li>
     <li><i>Hangjelzés hangereje</i>: időzítő hangjelzése [N] [alapértelmezett 50, min 10, max 100]</li>
    </ul>

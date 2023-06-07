@@ -8,19 +8,24 @@ A TopoDroid kezelőfelület aktivitási szintekkel rendelkezik, amelyek különb
 <li> A <b>normál</b> szint [N] tartalmazza a részletes barlangfelmérés összes funkcióját.</li>
 <li> A <b>haladó</b> szint [H] fejlett funkciókkal is rendelkezik.</li>
 <li> A <b>szakértői</b> [S] szint rendelkezik minden funkcióval.</li>
-<li> A <b>tesztelő</b> szint [T] csak teszthez használható. A teszteletlen funkciók engedélyezve vannak. Ezek a funkciók részben hibakeresés alatt állnak, és összeomolhatnak az alkalmazással. Kérjük, jelezd a velük kapcsolatos problémákat.</li>
-<!-- li>Van még egy <b>fejlesztői</b> szint [D] a nem teljesen kifejlesztett kódhoz, amely csak az alkalmazás hibakereső buildjében van lefordítva.</li -->
+<li>A <b>tesztelő</b> szint [T] csak tesztelésre szolgál. Teszteletlen funkciókat tartalmaz, amelyek részben hibajavítottak, és összeomlaszthatják az alkalmazást.</li>
+<li>A [D] <b>fejlesztői</b> szintű funkciók csak az alkalmazás hibakereső összeállításában engedélyezettek.</li>
 </ul><br>
-Alapértelmezés szerint a TopoDroid csak a <b> normál</b> funkciókat engedélyezi, de az igényeinek megfelelően válthat szintet anélkül, hogy kilépne a programból. Ez a kézikönyv a teljes TopoDroid leírását tartalmazza. Az "alapszint" feletti funkciókat kezdő, [N], [H], [S] vagy [T] szinttel jelöljük.<br>
-A <u>beállítások ablakban</u> megjelenő beállítások a tevékenység szintjétől függenek.<br><p>
+
+A TopoDroid alapértelmezés szerint csak a <b>normál</b> funkciókat engedélyezi, de válthatsz szintet,
+ igényeid szerint, a programból való kilépés nélkül.
+Ez a kézikönyv a teljes TopoDroidot írja le.
+ Az „alap” feletti szintű funkciókat (általában) a kezdőszintű [N], [H], [S] vagy [T] szint jelzi.<br><p>
 
 <h4>Képernyők</h4>
 A TopoDroid rendelkezik egy <u>főablakkal</u>, amelyről az alkalmazás egyéb tevékenységeire léphet. A fő tevékenységek a következők:
 <ul style = "margin-top = 0">
 <li><b>Felmérés</b> adatkezelés (felmérési <u>információ</u> és <u>adatok</u> ablakok).</li>
 <li><b>Vázlat</b> rajzolás, a <u>vázlatablak</u> a Felmérés tevékenység egyik al-tevékenysége.</li>
+<li><b>3D megjelenítő</b>.</li>
 <li><b>Műszer</b> funkciók, <u>eszközablak</u></li>
 <li> A DistoX <b>kalibrálása</b> (kalibrációs <u>információ</u> és <u>adatok</u> ablakok) az eszköz tevékenységének egy al-tevékenysége.</li>
+<li><b>Barlang projektek</b>.</li>
 </ul><br>
 
 <img src = "windows.png"><br><p>
@@ -49,14 +54,23 @@ A kissé sötétebb színű műveletgomb sorával rendelkező párbeszédablakok
 A TopoDroid számos beállítással rendelkezik.
  Ezeket kategóriákra és alkategóriákra osztják:
 <ul>
-<li> Általános</li>
-<li> Felmérési adatok</li>
-<li> vázlatok</li>
-<li> Műszerek és kalibrálás</li>
-<li> Import/Export</li>
+<li>Általános</li>
+<li>Import/Export</li>
+<li>Felmérési adatok</li>
+<li>Vázlatkészítés</li>
+<li>Műszerek és kalibrálás</li>
+<li>3D megjelenítő</li>
 </ul><p>
 
-A "Beállítások" felületen megjelenített beállítások száma a tevékenység szintjétől függ.<br><p>
+A <u>Beállítások ablakban</u> megjelenő beállítások az aktivitási szinttől függenek.<br><p>
+
+A numerikus beállításoknak lehet minimum és maximum értéke.
+ Ha a megadott érték kívül esik a határokon, akkor a korlát értéke hozzárendelődik a beállításhoz.<br><p>
+
+Az alkalmazás beállításai egyszerű szöveges formátumban exportálhatók a "settings.txt" fájlba.
+ A fájl az alkalmazás privát Fájlok mappájában található.
+ A beállítások később visszaállíthatók az értékek importálásával ebből a fájlból.<br><p>
+
 
 <div style = "font-size: 90%">
 További ezoterikus beállításokat (<a href="page_geek.htm">Geek</a>) [G] jelöli.
@@ -67,7 +81,7 @@ További ezoterikus beállításokat (<a href="page_geek.htm">Geek</a>) [G] jel�
 
 <h4> Szöveg és gombok mérete</h4>
 A "Szövegméret" beállítás megadja a listaszövegek betűméretét, különösen a felmérések listáját, a mérések listáját és a kalibrációs adatokat.<br>
-Öt választási lehetőség van a gombok méretére: "kicsi", "normál", "közepes", "nagy" és "hatalmas". A "normál" méret mobiltelefonokra alkalmas (5' képernyő), és ez az alapértelmezett. A "nagy" méret tablet (7' képernyő).<br><p>
+Öt választási lehetőség van a gombok méretére: "kicsi", "normál", "közepes", "nagy" és "hatalmas". A "normál" méret mobiltelefonokra alkalmas (5" képernyő), és ez az alapértelmezett. A "nagy" méret tablet (7" képernyő).<br><p>
 
 <h4> Rajzeszközök (paletta)</h4>
 A TopoDroid jelentős számú rajzeszközt tartalmaz.
@@ -76,7 +90,7 @@ A TopoDroid jelentős számú rajzeszközt tartalmaz.
  Ez azt jelenti, hogy egyszerre kicsit megszokhatja a TopoDroid "ikonográfiáját".
 <br><p>
 
-További rajzeszköz-készletek telepíthetők a palettára.
+További rajzeszköz-készletek telepíthetők a palettára [G].
  Egyéni eszközök is létrehozhatók és hozzáadhatók a palettához, és a használaton kívüli eszközök eltávolíthatók.<br><p>
 
 

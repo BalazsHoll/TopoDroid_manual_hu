@@ -69,7 +69,7 @@ Néhány gombnak hosszú érintés funkciója van:
 <li><i>DEM csökkentés</i>: hogyan csökkenthető a DEM, ha túl nagy (ritkítás vagy vágás) [ritkítás].</li>
 <li><i>Összes sün</i>: Az összes sünt használja-e a falakhoz</li>
 <li><i>Osztott háromszögek</i>: Fel kell-e osztani a metsző fal háromszögeket</li>
-<li><i>Pontok randomizálása</i>: Hozzá ad egy kis véletlenszerű vektort a sünhöz</li>
+<li><i>Pontok véletlenné tétele</i>: Hozzá ad egy kis véletlenszerű vektort a sünhöz</li>
 <li><i>Feszített falak</i>: A fal pontjait kis mértékben eltolja a poligon mentén</li>
 <li><i>Powercrust</i>: algoritmus "delta" paramétere</li>
 <li><i>Bluetooth-eszköz</i>: a Bluetooth-eszköz neve.</li>
@@ -90,9 +90,12 @@ A modell exportálható DXF, KML, STL vagy STL bináris, CGAL, LAS bináris és 
 Az exportált fájl az aktuális munkakönyvtár "c3export" mappájába kerül mentésre.
 <br><p>
 
-Lehetőségek van a sünök, a falak, a pontok és a felszín exportálására.<br>
-A modell menthető egy szöveges fájlba is.
-<br><p>
+Az exportálási párbeszédpanelen lehetõség van a sünök, falak, mérési pontok és felületek kiválasztására.
+ (A falak és a felületek nem támogatottak minden exportálási formátumban.)<br>
+ A modell szöveges fájlban is menthető.<br><p>
+
+A projektek GPX-exportálása tartalmazhatja az összes projektfelmérést egyetlen trackben, vagy tartalmazhat egy trecket
+ minden felméréshez. A viselkedést a GXP "single-track" exportálási beállítása határozza meg.<br><p>
 
 <b>RÁCS/KERET</b><br>
 A rács/keretvonalak zöldek (nyugat-kelet), kékek (dél-észak) és piros (függőleges).<br>
@@ -117,7 +120,7 @@ A "felszíni", "duplikált" és "kizárt" poligonok be- és kikapcsolhatók a <i
 <b>FALAK</b><br>
 A falmodell nem kerül automatikusan kiszámításra a fájl megnyitásakor, de létrejön ha
  a felhasználó a "fal" menüben kéri.
- Három modell létezik: <i>egyszerű héj</i>, <i>pseudo conevx-héj</i> és <i>powercrust</i>.
+ Két modell létezik: <i>egyszerű héj</i>, <i>pseudo conevx-héj</i> és a "csak-hibakeresésre" <i>powercrust</i>.
  Az első kettő akkor alkalmas, ha a segédpontok nem sűrűk. A harmadik a sűrű sünökhöz való.<br>
 
 A falmodell a sünök számától és minőségétől függ.
@@ -126,7 +129,7 @@ A falmodell a sünök számától és minőségétől függ.
 A számítás a háttérben történik.
  Ha kész, a fal megjeleníthető a "fal" gombbal.<br><p>
 
-A Powercrust modell tartalmazza a falak vízszintes síkra (felülnézet) és függőleges függönyre vetítését is
+A [csak-hibakeresésre] Powercrust modell tartalmazza a falak vízszintes síkra (felülnézet) és függőleges függönyre vetítését is
  a felmérés mentén (profilnézet). Megjelenítésük a "falak" menüben engedélyezett.
 <br><p>
 
