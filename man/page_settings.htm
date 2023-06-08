@@ -222,8 +222,8 @@ Egyéni adatbeállítások
 <li>Búvár mód</li>
 <li>A legutóbbi adatok kiemelése</li>
 <li>Legutóbbi adatidő túllépés</li>
-<li>Tört "kiterítés"</li>
-<li>A DistoX visszamérés. [nem]</li>
+<li>Arányos "kiterítés": engedélyezi-e az arányos kiterítést [nem]</li>
+<li>A DistoX visszamérés: fel kell-e cserélni az állomásokat DistoX visszaméréseknél. [nem]</li>
 <li>Síkinterpoláció</li>
 <li>Android-érzékelők [nem]</li>
 <li>Hurokzárás: nincs, normál, súlyozott, szelektív, háromszögelés. [nincs]</li>
@@ -365,18 +365,27 @@ Felületi DEM
 
 Fal modell
 <ul>
-<li>Sünök használata</li>
-<li>Minden sün</li>
-<li>Vetített sünök</li>
-<li>Sün küszöb</li>
-<li>Osztott háromszögek</li>
-<li>Véletlenszerű felosztás</li>
-<li>Nyújtó felosztás</li>
-<li>Powercrust delta paraméter</li>
+A <li><i>Sünök</i> a következőket használják: {nincs, normál, keresztmetszet} [normál]</li>
+<li>Héj modell<ul>
+   <li><i>A projekt sünök</i> a normál síkon [nem]</li>
+   <li>Sün <i>küszöbe</i>: csak a felvételen kívülre eső sünöket használjon (szög koszinusz) [0.5 azaz 30&deg;]</li>
+</ul></li>
+<li>Konvex héj falmodell<ul>
+   <li>Minden sün [igen]</li>
+   <li>A metsző <i>háromszögek</i> felosztása [igen]</li>
+   <li>Véletlenszerű <i>ponteltolás</i> [0,1 m]</li>
+   <li><i>Poligon</i> nyújtás [0,1 m]</li>
+</ul></li>
+<li>Powercrust falmodell<ul>
+   <li><i>Delta</i> paraméter</li>
+</ul></li>
+</ul><p>
+
+3D modellezés
+<ul>
+<li>3D modell engedélyezve [nem]</li>
+<li>Sün <i>puffer</i> (nem használt) [2]</li>
 </ul><br><p>
-
-<!-- 3D modeling -->
-
 <!-- =========================================== -->
 
 <b>Eszköz</b><br>
