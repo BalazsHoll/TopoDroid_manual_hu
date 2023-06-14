@@ -8,9 +8,16 @@ A 3D modell megnyitható az <i>Adatablak</i> menüjéből, vagy a
  <i>Felmérési információs ablak</i> gombjával.<br>
 A barlangprojekt 3D-s modellje a <i>Projektablak</i> gombjával nyitható meg.
 <br>
-A modellt egy referenciaráccsal (kék észak, zöld kelet) vagy tengelykereszt (piros felfelé) mutatja.<br>
-Ha az adatok (felmérés vagy barlangprojekt) fix pontokat tartalmaznak, akkor ezeket a modellben lévő pontok koordinátáinak kiszámításához használják. Ha a fixpont koordinátákat   térképészeti (vetített) koordináta-rendszerré alakítottuk át, akkor ezt használjuk. Ellenkező esetben a fix pont az egyenlítőtől és a főmeridiántól egyenlő távolságra van beállítva,  amely egyenlő a szélességi fok szorzata a meridián sugarával, a hosszúság pedig a párhuzamos sugárral.<br>
-A térképészeti referencia-rendszerekben a koordináták nem veszik figyelembe a meridiánkonvergenciát. Ezért az észak nem a térképészeti észak, hanem a meridián iránya.
+A modellen egy derékszögű referencia rács (kék észak, zöld kelet) vagy koordináta-kereszt (felfelé rózsaszínű) látható.
+Az észak földrajzi, ha a mágneses deklináció be van állítva.<br>
+
+Ha az adatok (felmérés vagy barlangprojekt) rögzített pontokat tartalmaznak, akkor ezeket a modellben lévő pontok koordinátáinak kiszámításához használják.
+ Ha a rögzített pontok térképészeti (vetített) koordinátákkal rendelkeznek, a derékszögű rács a vetített koordinátarendszerben van.
+ A térképészeti referenciarendszerekben a koordináták nem veszik figyelembe a meridiánkonvergenciát.
+Ezért az észak nem a térképészeti észak, hanem a meridián iránya.<br>
+Ha a rögzített pontoknak csak földrajzi (WGS84) koordinátái vannak,
+ a koordinátákat az egyenlítőre és a főmeridiánra vonatkoztatjuk, és az első rögzített ponttól való eltérések felhasználásával számítjuk ki:
+ a szélesség szorozva a meridián sugarával, a hosszúság pedig a parelellkör sugárral.<br>
 <br><p>
 Nincs koordináta-átalakítás. Ezért egy barlangprojektben minden felmérésnek ugyan olyannak kell lennie, ugyanabban a koordináta-rendszerben georeferáltnak.
 <br><p>
@@ -61,8 +68,8 @@ Néhány gombnak hosszú érintés funkciója van:
 <li><i>Kiválasztási sugár</i>: a pontok kiválasztási sugara [1.0]</li>
 <li><i>pont párbeszédpanel</i>: megnyitja-e a kiválasztott pont párbeszédpaneljét [n].</li>
 <li><i>mérési pontok</i>: a mérési pontok megjelenítése mindig (zöld) [n].</li>
-<li><i>Felső rács</i>: A rács megjelenítése felül [n].</li>
-<li><i>Rács kiterjedése</i>: a felmérés körüli rács kiterjedése [10 cella].</li>
+<li><i>Felső rács</i>: A térképészeti rács megjelenítése felül [n].</li>
+<li><i>Rács kiterjedése</i>: a felmérés körüli térképészeti rács kiterjedése [10 cella].</li>
 <li><i>A horizont alatti nézet</i>: engedélyezi-e a horizont alatti nézőpontokat [n].</li>
 <li><i>DEM puffer</i>: A felszíni modell kiterjedése a felmérés körül a felületi modell DEM fájlból történő betöltésekor.</li>
 <li><i>DEM maximális méret</i>: a felszíni DEM maximális mérete minden irányban [400 cella].</li>
@@ -98,10 +105,10 @@ A projektek GPX-exportálása tartalmazhatja az összes projektfelmérést egyet
  minden felméréshez. A viselkedést a GXP "single-track" exportálási beállítása határozza meg.<br><p>
 
 <b>RÁCS/KERET</b><br>
-A rács/keretvonalak zöldek (nyugat-kelet), kékek (dél-észak) és piros (függőleges).<br>
+A térképészeti rács/keretvonalak zöldek (nyugat-kelet), kékek (dél-észak) és piros (függőleges).<br>
 Perspektíva szerint a rács zöldesnek tűnik északra/délre, mert a zöld vonalak közelebb állnak egymáshoz,
  nyugatra/keletre kékesnek tűnik.
- A kardinális irányok megkülönböztetése érdekében a rács enyhén vöröses lesz a nyugati-déli sarokban.<br>
+ A kardinális irányok megkülönböztetése érdekében a rács vonalak enyhén vöröses lesz a nyugati-déli sarokban.<br>
 Alapértelmezés szerint a rács a felmérés alatt van, de beállítható felette is (opcionálisan).
 <br><p>
 

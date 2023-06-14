@@ -114,7 +114,8 @@ Ezenkívül exportálja a felmérés adatait
 <li><a href="#dxf">DXF</a></li>
 <li><a href="#kml">KML</a></li>
 <li><a href="#geojson">GeoJSON</a></li>
-<li><a href="#plt">trackfile</a></li>
+<!-- li><a href="#plt">trackfile</a></li -->
+<li><a href="#gpx">GPS track</a></li>
 <li><a href="#shp">shapefile</a></li>
 </ul>
 formátumokba is exportálhatod. Ha a felmérés nem georeferált, a felmérés adata nem exportálható az utolsó négy exportálási formátumba.
@@ -226,6 +227,15 @@ Beállítások: <ul style="margin-top=0">
 <b id="walls">Walls</b> (.srv)<br>
 A felmérés adatai exportálhatók <i>Walls</i> fájlként (részben tesztelve).<br>
 Az adategységek követik a felhasználói beállításokat.<br><p>
+Ha a "Walls Splays" beállítás be van állítva, akkor a felvételek "elnevezett" splayekként exportálódnak (mint az iránytű esetében).
+Ellenkező esetben "névtelen pontfelvételként" exportálják őket, a hossza a vetített hossz.
+Ezeknek a felvételeknek a függőleges komponense visszaállítható a dőlésszögből. Lásd a <i>Walls</i> kézikönyvet.<br>
+<p>
+
+Beállítások:<ul style="margin-top=0">
+<li><u>Compass sünök</u>: „12 12-1” vagy „12 -” formátumban exportálja-e a sünöket.</li>
+</ul>
+<br><p>
 
 <b id="winkarst"> WinKarst</b> (.sur)<br>
 A felmérés adatai exportálhatók <i>WinKarst</i> fájlként (nincs tesztelve).<br><p>
@@ -271,7 +281,7 @@ Az pontok profilját úgy számolják, hogy a sün felvételeket egy a poligonra
 A felmérés adatai exportálhatók <i>Topo</i> fájlként.<br><p>
 
 Beállítások (a "Survex" beállítások alatt): <ul style="margin-top=0">
-<li><u>sorvég</u> lehet Unix vagy Windows</li>
+<li><u>sorvég</u> lehet Linux vagy Windows</li>
 </ul><p>
 
 
@@ -298,7 +308,7 @@ A nyers adatok exportálásakor a poligonméréseket nem átlagoljuk, hanem kül
 Beállítások: <ul style="margin-top=0">
 <li><u>nyers adatok</u>: a nyers adatok exportálása</li>
 <li><u>elválasztó</u>: mezők elválasztója (vessző, pipe | vagy tabulátor)</li>
-<li><u>EOL</u>: rekordelválasztó (lf vagy cr + lf)</li>
+<li><u>EOL</u>: rekordelválasztó (lf vagy cr+lf)</li>
 </ul><br><p>
 
 
@@ -315,10 +325,12 @@ Beállítások: <ul style="margin-top=0">
 <li>Sün <u>végpontok</u>: ha engedélyezve vannak, akkor keresztekkel vannak jelölve</li>
 </ul><br><p>
 
+<!--
 <b id="plt"> PLT</b> (.plt)<br>
 A felmérés adatai exportálhatók track fájlként (<i>OziExplorer</i>), ha georeferenciát adott egy pontról.
 Ha a felmérés szétválasztott darabokat tartalmaz, a track fájl tartalmazza az összes darabot egy georeferált ponttal.
 Az adatokat a mágneses deklinációval korrigáljuk.<br><p>
+-->
 
 <b id="kml"> KML</b> (.kml)<br>
 A felmérés adatai exportálhatók KML fájlként (<i>Keyhole Markup Language</i>), ha legalább egy pont georeferált.
@@ -341,6 +353,11 @@ Beállítások: <ul style="margin-top=0">
 <li><u>pontok</u></li>
 <li><u>sünök</u></li>
 </ul>
+<br><p>
+
+<b id="gpx">GPS track</b> (.gpx)<br>
+A GPX export tartalmazza az mérési pontokat (útpontokként) és a poligont (nyomvonalként).<br>
+Az adatok WGS84 füldrajzi koordináta-rendszerben vannak.
 <br><p>
 
 
@@ -461,13 +478,13 @@ A terület határai fekete színűek.
 A pontikonok egyszerűsített módon kerülnek megjelenítésre.
 A címkézés csak a latin karaktereket és számokat, valamint néhány karaktert támogat ('+', '-', '/', '_', '&gt;', '&lt;', '?').
 A többi karaktert egy "rombusz" váltja fel.<br>
-A rács cellája 1 m.
+A vázlat rács cella mérete 1 m.
 <br><p>
 
 Az XVI beállítások a Therion-beállítások között találhatók: <ul style="margin-top=0">
 <li>Rajz <u>metszet-pont</u>: ha a metszetek automatikusan hozzáadódnak a metszet vonalához,
 a metszetrajz beillesztésre kerül az xvi fájlba, a "metszet" pontba</li>
-<li><u>rács</u> sorok hozzáadva az exportáláshoz (cellaméret a jelenlegi rácsegységekben). Alapértelmezett nem</li>
+<li><u>rács</u> sorok hozzáadva az exportáláshoz (cellaméret a jelenlegi vázlat rácse gységekben). Alapértelmezett nem</li>
 <li><u>skála</u> exportálása. Alapértelmezett 1: 100</li>
 </ul><p>
 
@@ -515,9 +532,9 @@ A vázlat PDF fájlként exportálható.
  olyan formátumban, amelyet bárki megnyithat.<br><p>
 
 A PDF-fájl egyetlen oldala van fehér háttérrel, és
- csak a képernyőn megjelenő referenciaelemeket tartalmazza (mérési pontok, sünök, rács stb.).<br>
+ csak a képernyőn megjelenő referenciaelemeket tartalmazza (mérési pontok, sünök, vázlat rács stb.).<br>
 A címkék szövege, a skálaérték és a mérési pontok mérete 1/4-ére csökken.
- Az 1m-es rács nem rajzolódik ki ha a méretarány 1:100-nál kisebb.
+ Az 1m-es vázlat rács nem rajzolódik ki ha a méretarány 1:100-nál kisebb.
  Bizonyos elemek (pl. címkék) színe a láthatóság érdekében invertált.<br><p>
 <!--
 Beállítások:<ul style="margin-top=0">
@@ -578,7 +595,7 @@ A "shot" DBF alábbi mezőket tartalmazza:
 
 <b id="svg">SVG</b> (.svg)<br>
 A vázlatok SVG fájlként exportálhatók.<br>
-Az elemek rétegekbe vannak rendezve: <i>rácsok</i>, <i>pontok</i>, <i>poligonok</i>, <i>sünök</i>,
+Az elemek rétegekbe vannak rendezve: <i>vázlat rácsok</i>, <i>pontok</i>, <i>poligonok</i>, <i>sünök</i>,
 <i>pontok</i>, <i>vonalak</i> és <i>területek</i>.<br>
 Ezek a rétegek egy globális <i>vászon</i> réteg alatt vannak.<br>
 Minden "szintnek" megvan a <i>pont</i>, a <i>vonal</i> és a <i>terület</i> rétege.
@@ -606,9 +623,9 @@ a metszetrajz beillesztésre kerül az exportálásba, a "metszet" pontba</li>
 egyébként csak a felhasználó által kiválasztott pontok szerepelnek</li>
 <li><u>pontok távolsága</u> az interpolációs pontok közötti maximális távolság a sima vonalakon</li>
 <li><u>round-trip</u>: a vázlatok exportálása a Walls/Compass round-trip módban. [nem]</li>
-<li><u>rács</u> sorok hozzáadva az exportáláshoz (cellaméret a jelenlegi rácsegységekben). [nem]</li>
+<li><u>rács</u> sorok hozzáadva az exportáláshoz (cellaméret a jelenlegi vázlat rács egységekben). [nem]</li>
 <li><u>vonal iránya</u> jel. [nem]</li>
-<li><u>vonalak szélessége</u>: címkék, ikonok, vonalak (és területhatárok), rácsvonalak, felvételek, tájolásvonal</li>
+<li><u>vonalak szélessége</u>: címkék, ikonok, vonalak (és területhatárok), vázlat rácsvonalak, felvételek, tájolásvonal</li>
 <li><u>pontméret</u>: a pont megnevezés a szöveg méret. Alapértelmezett 20</li>
 </ul><p>
 
@@ -617,69 +634,91 @@ egyébként csak a felhasználó által kiválasztott pontok szerepelnek</li>
 
 A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importálni CSV fájlként (.ccsv) lehet.<br><p>
 
-<h4> IMPORT / EXPORT BEÁLLÍTÁSOK</h4>
-<ul style="margin-top=0">
-<li><b>PocketTopo</b> <i>színtérkép importálása</i>: PocketTopo színek térképe az elemtípusok vázlatához.</li>
-<li><i>Becsülje az BJ kiterítést</i>: <b>Compass/VisualTopo</b> fájlok importálásakor [igen]</li>
-<li><i>Alapértelmezett adatexportálási formátum</i>: meghatározza az exportálási párbeszédpanelen megjelenítendő alapértelmezett adatexportálási formátumot. [ nincs ]</li>
-<li><i>Alapértelmezett vázlatexportálási formátum</i>: meghatározza az exportálási párbeszédpanelen megjelenítendő alapértelmezett vázlatexportálási formátumot. [ nincs ]</li>
-<li><i>Vázlat automatikus exportálása</i>. Ha a beállított vázlatok a kiválasztott formátumban kerülnek exportálásra, amikor bezárják őket. Az exportált fájlok a felmérés mappa "out" almappájában tárolódnak. A Vázlat automatikus exportálása extra terhelést jelent az alkalmazásra, és alapértelmezés szerint nincs beállítva.[G]</li>
-<li><b>Therion</b> <i>térképparancsok</i> a poligon blokk előtt vagy után [után]</li>
-<li><b>Therion</b> <i>auto-pontok</i>: automatikusan hozzáadnak poligon pontokat a Therion vázlatfájl(ok) hoz [igen]. Ha a vázlatfájlokat használni szeretné, méretarányuk meghatározásához poligon pontokkal kell rendelkezniük. Manuálisan kiválaszthatja, melyik pontot adja hozzá (a vázlatrajz szerkesztésével), vagy hagyhatja, hogy a TopoDroid hozzáadja az pontokat. A program hozzáadja az összes pontot, amely a rajzon belül van (a rajz domború testén belül).</li>
-<li><b>Therion</b> <i>splays</i> sorokat a Therion-szintekben [igen]</li>
-<li><b>cSurvey</b> <i>felmérés előtag</i> a pontokhoz [nem]</li>
-<li><b>Compass / TopoRobot / WinKarst / Polygon / VisualTopo</b>
-  <ul>
-  <li>minimális <i>töredezett poligonszög</i> az BJFL számításához [0.0] Ezt a <b>Survex / Therion</b> -ban is használják, ha BJFL-ra van szükség.</li>
-  <li>az BJFL felfelé / lefelé történő felhasználásához használt minimális dőlés a sablonokhoz [0]</li>
-  <li>a bal / jobb oldali BJFL-hez használt sablonok maximális lejtése [90]</li>
- </ul>
+
+<h4> IMPORT/EXPORT BEÁLLÍTÁSOK</h4>
+<ul>
+   <li><i>Adat alapértelmezett exportálása</i>: az exportálási párbeszédpanelen megjelenítendő alapértelmezett adatexportálási formátum [alapértelmezett nincs]</li>
+   <li><i>Vázlat alapértelmezett exportálása</i>: az exportálási párbeszédpanelen megjelenítendő alapértelmezett vázlatexportálási formátum [alapértelmezett nincs]</li>
+   <li><i>Vázlat automatikus exportálása</i>: ha a bezárt vázlatok a kiválasztott formátumban kerülnek exportálásra. Az exportált fájlok a felmérés mappa "out" almappájában tárolódnak. A vázlat automatikus exportálása extra terhelést jelent az alkalmazásra, és alapértelmezés szerint nincs beállítva.</li>
+<li><b>Compass</b>:
+   <ul>
+     <li><i>BJ csere</i>: B és J felcserélése az Compass exportálásakor</li>
+   </ul>
 </li>
-<li><b>Compass swap BJ</b>: Csere B és J az Compass exportálásakor.</li>
-<li><b>Survex / Topo</b> <i>sorvég</i>: Unix vagy Windows [Unix]</li>
-<li><b>Survex</b> exportálás a <i>elnevezett sünnel</i> VÉG pontokra [nem]</li>
-<li><b>Survex / Therion</b> exportálás <i>BJFL</i> sorokkal [nem]</li>
-<li><b>SVG</b> cél <i>program</i> [Inkscape]</li>
-<li><b>SVG</b> exportálás <i>rács</i> használatával [nem]</li>
-<li><b>SVG</b> exportálja a vonal irányát [nem]</li>
-<li><b>SVG</b> vonalvastagságok (címkék, ikonok, vonalak, rácsok, mérések, irány pipák)</li>
-<li><b>KML / GeoJSON</b> exportálás <i>pontokkal</i> [igen]</li>
-<li><b>KML / GeoJSON</b> exportálás <i>sünökkel</i> [nem]</li>
-<!-- li><b>PNG</b><i>felbontás</i> [1.5]. Lehet 1 és 10 közötti szám. Minél nagyobb, annál nagyobb a kép (ha túl magasra állítja, akkor a rendszer nem biztos, hogy elegendő memóriával rendelkezik a PNG létrehozásához).</li>
-<li><b>PNG</b><i>háttérszín</i>: beállíthatja a PNG képek háttérszínét az RGB-értékek megadásával (három egész szám 0 és 255 között).</li -->
-<li><b>DXF</b> vázlat exportálás <i>méretarány</i> [1.0]</li>
-<li><b>DXF</b> exportálás <i>sün végpontokkal</i> [nem]</li>
-<li><i>DXF verzió</i> a DXF exportáláshoz: 6, 12 vagy 16. A 6. változatban a DXF export bezier görbéit vonalláncok helyettesítik, és a területeken nincsenek sraffozás. A DXF 12. és 16. verziója spline-okat és sraffozásokat használ, de még mindig hibásak.</li>
+<li><b>Irtű/VisualTopo</b>:
+   <ul>
+     <li><i>Becsült BJ-kiterjesztés</i>: <b>Compass/VisualTopo</b> fájlok importálásakor [igen]</li>
+   </ul>
+</li>
+<li><b>Compass/cSurvey/WinKarst</b>:
+   <ul>
+     <li><i>felmérési előtag</i> az állomásokhoz [nem]</li>
+   </ul>
+</li>
+<li><b>Compass/TopoRobot/WinKarst/Polygon/VisualTopo</b>:
+   <ul>
+     <li>minimális <i>kitörési szög</i> az BJFL számításhoz [0.0] Ezt a <b>Survex/Therion</b> is használja, ha BJFL szükséges.</li>
+     <li>az fel/le BJFL-hoz használt splayek minimális száma [0]</li>
+     <li>a bal/jobb BJFL-hoz használt splayek maximális száma [90]</li>
+   </ul>
+</li>
+<li><b>Therion</b>:
+   <ul>
+     <li><i>térképparancsok</i> a középvonal blokk előtt vagy után [után]</li>
+     <li><i>auto-állomások</i>: állomáspontok automatikus hozzáadása a therion vázlatfájl(ok)hoz [igen]. Ha a vázlatfájlokat a Therionban akarja használni, azoknak állomáspontokkal kell rendelkezniük a léptékük meghatározásához. Manuálisan kiválaszthatja, hogy melyik pontot kívánja hozzáadni (a vázlatrajz szerkesztésével), vagy hagyhatja, hogy a TopoDroid hozzáadja az állomásokat. A program hozzáadja az összes olyan állomást, amely "belül" van a rajzon (a rajz konvex héjon belül).</li>
+     <li><i>megjeleníti</i> sorokat a Therionban [igen]</li>
+   </ul>
+</li>
+<li><b>Therion/Survex</b>:
+   <ul>
+     <li>exportálás az <i>BJFL</i> sorokkal [nem]</li>
+   </ul>
+</li>
+<li><b>Survex</b>:
+   <ul>
+     <li>exportálás <i>elnevezett sün</i> VÉG pontokkal [nem]</li>
+   </ul>
+</li>
+<li><b>Survex/Topo</b>:
+   <ul>
+     <li><i>sorvég</i>: Linux vagy Windows [Linux]</li>
+   </ul>
+</li>
+<li><b>PocketTopo</b>:
+   <ul>
+     <li><i>színtérkép importálása</i>: a PocketTopo színeinek térképe elemtípusok vázolásához.</li>
+   </ul>
+</li>
+<li><b>SVG</b>:
+   <ul>
+     <li>cél <i>program</i> [Inkscape]</li>
+     <li>exportálás a <i>vázlat rács</i> segítségével [nem]</li>
+     <li>exportálási vonaltájolás pipák [nem]</li>
+     <li>vonásszélességek (címkék, ikonok, vonalak, vázlat rácsok, felvételek, tájolási pipák)</li>
+   </ul>
+</li>
+<li><b>DXF</b>:
+   <ul>
+     <li>exportálás <i>megjelenítési végpontokkal</i> [nem]</li>
+     <li><i>DXF-verzió</i> a DXF-exporthoz: 6, 12 vagy 16. A 6-os verzióban a DXF-exportálási bezier-görbéket vonalláncok váltják fel, és a területeken nincs sraffozás. A 12-es és 16-os verziójú DXF-exportok spline-eket és sraffozásokat használnak, de még mindig hibásak.</li>
+   </ul>
+</li>
+<li><b>KML/GeoJSON</b>:
+   <ul>
+     <li>exportálás <i>mérési pontokkal</i> [igen]</li>
+     <li>exportálás <i>sünökkel</i> [nem]</li>
+   </ul>
+</li>
 </ul>
 <br><p>
 
-<h4>3D MODELL EXPORT</h4>
-
-A 3D-s exportálás párbeszédpanelt a 3D-s megtekintő ablak „Export” menüje nyitja meg.<br><p>
-
-A 3D modell exportálható:
-<ul>
-<li>glTF (GL átviteli formátum)</li>
-<li>CGAL</li>
-<li>STL, bináris vagy ascii</li>
-<li>LAS, bináris</li>
-<li>DXF</li>
-<li>KML (ha a modell georeferált)</li>
-<li>Shape (ha a modell georeferenciával rendelkezik)</li>
-</ul><br><p>
-
-Ha a formátum támogatja, az exportált fájl tartalmazhat:
-<ul>
-<li>Poligon pontok</li>
-<li>Sünök</li>
-<li>Falak (ha keletkeztek)</li>
-<li>Felszíni DEM (ha van betöltve)</li>
-</ul><br><p>
-
-<a href="page_finalmap.htm"> A végső térkép</a><br>
+<a href="page_finalmap.htm">A végső térkép</a><br>
+<a href="page_3d_export.htm">3D modell exportálása</a><br>
+<a href="page_tdm_export.htm">A barlangprojekt exportálása</a><br>
+<a href="page_calib_import.htm">Kalibrálások</a> importálás/exportálás<br>
 <p>
 
-<a href="manual12.htm"> &lt; Áttekintő ablak</a> |
-<a href="manual14.htm"> Barlangprojektek &gt;</a>
+<a href="manual12.htm">&lt; Áttekintő ablak</a> |
+<a href="manual14.htm">Barlangprojektek &gt;</a>
 
 </body></html>
