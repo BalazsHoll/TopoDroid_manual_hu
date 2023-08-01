@@ -14,24 +14,24 @@ A TopoDroid a következő műszereket támogatja:
 Minden eszközt párosítani kell az Androiddal.<br><p>
 
 Normál esetben a TopoDroid csak egy eszközzel működik.
-Az adatok folyamatosan (<i>folyamatos</i> módban) vagy kötegelten (<i>igény szerinti</i> módban) tölthetők le.
-A két mód közötti különbség az, hogy a <i>folyamatos</i> mód aktív marad az adatok letöltésekor
-befejeződött, vagy megszakadt a kapcsolat az eszközzel, miközben a <i>on-demand</i> mód zárva van.<br><p>
+ Az adatok folyamatosan (<i>folyamatos</i> módban) vagy kötegelten (<i>igény szerinti</i> módban) tölthetők le.
+ A két mód közötti különbség az, hogy a <i>folyamatos</i> mód aktív marad az adatok letöltésekor
+ befejeződött, vagy megszakadt a kapcsolat az eszközzel, miközben a <i>on-demand</i> mód zárva van.<br><p>
 
 Az SAP5 és a BRIC4 csak folyamatos módban tölti le az adatokat.<br><p>
 
 A DistoX segítségével a TopoDroid egyszerre több eszközzel is képes dolgozni
-az adatokat továbbra is csak egy eszközről töltik le egyszerre.<br>
+ az adatokat továbbra is csak egy eszközről töltik le egyszerre.<br>
 Az <i>adatletöltési módot</i> <i>multi</i> értékre kell állítani.
-Ha ilyen hosszan megérinti a <i>letöltés</i> gombot, megjelenik egy párbeszédpanel, amelyből kiválaszthatja, melyik DistoX töltse le az adatokat.<br><p>
+ Ha ilyen hosszan megérinti a <i>letöltés</i> gombot, megjelenik egy párbeszédpanel, amelyből kiválaszthatja, melyik DistoX töltse le az adatokat.<br><p>
 
 <b>Shetland Attack Pony</b><br>
 
 A TopoDroid bluetooth-tal támogatja a Shetland Attack Pony 5. verziójának (SAP5) modelljét.<br>
 Az eszközt előzőleg "párosítani" kellett az Androiddal, a <i>Beállítások</i> alkalmazás használatával.
-A PIN: "000000" (hat nulla).<br>
+ A PIN: "000000" (hat nulla).<br>
 Ezután az SAP az ismert eszközök között szerepel az <i>Eszközablak</i> részben.
-"SAP XX MAC-cím" néven jelenik meg, ahol az "XX" az SAP kétbetűs kódja, például "HG".<br>
+ "SAP XX MAC-cím" néven jelenik meg, ahol az "XX" az SAP kétbetűs kódja, például "HG".<br>
 Az SAP aktuális eszközként való kiválasztásához érintse meg a bejegyzést a listában.<br><p>
 
 Csatlakozás közben az SAP5 átveszi a mérés eredményeit az alkalmazásba, függetlenül attól, hogy a mérést tárolja vagy eldobja az eszközön.<br><p>
@@ -44,7 +44,7 @@ Az SAP5 adatátviteli protokoll nem tartalmazza az adatok vételének nyugtázá
 <br><p>
 
 Az SAP belső memóriájában tárolja a "tárolt" adatokat.
-Ezeket Survex fájlként lehet letölteni az SAP PonyTrainer program segítségével.<br><p>
+ Ezeket Survex fájlként lehet letölteni az SAP PonyTrainer program segítségével.<br><p>
 
 Az SAP5 kalibrálását az eszköz végzi, és nem igényel külső programot.<br><p>
 
@@ -53,14 +53,14 @@ Az SAP5 kalibrálását az eszköz végzi, és nem igényel külső programot.<b
 A TopoDroid támogatja a BRIC 4. verzióját.<br>
 Az eszköznek előzőleg "párosítva" kell lennie az Androiddal a <i>Beállítások</i> alkalmazás használatával.<br>
 Ezután a BRIC4 szerepel az ismert eszközök között az <i>Eszközablak</i>ban.
-"BRIC4 kód MAC-cím" néven jelenik meg, ahol a kód a BRIC4 négyjegyű kódja, például "0039".<br>
+ "BRIC4 kód MAC-cím" néven jelenik meg, ahol a kód a BRIC4 négyjegyű kódja, például "0039".<br>
 A BRIC4 aktuális eszközként való kiválasztásához érintse meg a bejegyzést a listában.<br><p>
 
 Miután csatlakozott egy ügyfélhez, a BRIC4 emlékszik a kapcsolatra, még akkor is, ha ki van kapcsolva, ezért marad
-"mindig kapcsolódva".<br>
+ "mindig kapcsolódva".<br>
 Ha a TopoDroid csatlakozik, a mérések értékei azonnal átkerülnek az Androidra.
-Ha a TopoDroid nincs csatlakoztatva, akkor az adatokat a memóriában tárolja, és akkor továbbítja az alkalmazásba
-amikor legközelebb csatlakozik.<br><p>
+ Ha a TopoDroid nincs csatlakoztatva, akkor az adatokat a memóriában tárolja, és akkor továbbítja az alkalmazásba
+ amikor legközelebb csatlakozik.<br><p>
 
 A Bric4 adatátviteli protokoll tartalmazza az Android általi nyugtázást, de <u>nem</u> tartalmazza az adatok alkalmazás általi fogadásának nyugtázását.
  A protokollnak néhány másodperces késleltetése van a kapcsolat és az első adatátvitel között, a TopoDroid pedig egy másodperces késleltetéssel rendelkezik az utolsó adatok után, a kapcsolat lezárása előtt.
