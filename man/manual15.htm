@@ -145,11 +145,12 @@ Ha a (Therion vagy Loch) modell felszín adatokat tartalmaz (Digital Elevation M
  a textúrázott (ha rendelkezésre áll).<br>
 A felület párbeszédpanelen van egy gomb, amellyel betölthet egy DEM fájlt. A támogatott formátumok az ascii (.asc vagy .ascii) és a Therion rács (.grid).
  A DEM fájlnak csak a megfelelő része van betöltve.<br>
+A DEM kiterjedésének le kell fednie a modell területét.<br><p> 
+
 A felmérésnek és a DEM adatfájlnak ugyanabban a (térképészeti) koordináta-rendszerben kell lennie.
- Ha a felmérés rögzített pont koordinátáit másik referenciarendszerré alakították át,
- a transzformált koordinátákat használjuk a modell hivatkozására, és a DEM adatoknak abban a modellben kell lenniük.
-Ha a felmérés csak hosszúság-szélesség (WGS84) koordinátákkal rendelkezik, akkor a WGS-84 rendszert használjuk.<br>
-A DEM kiterjedésének le kell fednie a modell területét.<br><p>
+ Ha a felmérés fixpont koordinátáit egy másik referenciarendszerbe transzformálták, akkor a transzformált koordinátákat használja a modell hivatkozására, és a DEM adatoknak ebben a referenciarendszerben kell lenniük.<br>
+Ha a felmérés csak hosszúság-szélesség (WGS84) koordinátákkal rendelkezik, akkor a  WGS-84 rendszert használjuk, és a DEM adatoknak WGS-84-ben kell lenniük, azaz a bal  alsó sarok koordinátái és a (négyzet) cella mérete decimális fokban kell legyen, hat  vagy több tizedesjegygel.
+ Alternatív megoldásként a sarokkoordináták és a cella mérete méterben is megadható, legfeljebb egy tizedesjegyig.<br><p>
 
 A felület átlátszósága állítható. Ha teljesen átlátszatlan, akkor mások mögött a felület egyes részei el vannak rejtve.<br>
 A felmérési középvonal vetülete a felületen megjeleníthető (kék).<br>
