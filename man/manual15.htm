@@ -141,16 +141,43 @@ A [csak-hibakeresésre] Powercrust modell tartalmazza a falak vízszintes síkra
 <br><p>
 
 <b>FELSZÍN</b><br>
-Ha a (Therion vagy Loch) modell felszín adatokat tartalmaz (Digital Elevation Model), akkor a felület szürke vagy
- a textúrázott (ha rendelkezésre áll).<br>
-A felület párbeszédpanelen van egy gomb, amellyel betölthet egy DEM fájlt. A támogatott formátumok az ascii (.asc vagy .ascii) és a Therion rács (.grid).
- A DEM fájlnak csak a megfelelő része van betöltve.<br>
-A DEM kiterjedésének le kell fednie a modell területét.<br><p> 
+Topodroid modellekhez felületet (Digital Elevation Model) lehet hozzáadni egy DEM fájlból.
+ Ha a külsőleg betöltött Therion vagy Loch modellek felületadatokat (digitális magassági modellt és opcionálisan textúrát) tartalmaznak, a felület szürkén vagy a textúrával együtt jeleníthető meg.<br>
+A felület párbeszédablakban van egy gomb a DEM fájlból való betöltésére. A támogatott formátumok az ascii (.asc vagy .ascii) és a Therion grid (.grid).<br>
+A DEM-fájlnak csak a megfelelő része töltődik be. A DEM kiterjedésének le kell fednie a modell területét.<br>
 
-A felmérésnek és a DEM adatfájlnak ugyanabban a (térképészeti) koordináta-rendszerben kell lennie.
- Ha a felmérés fixpont koordinátáit egy másik referenciarendszerbe transzformálták, akkor a transzformált koordinátákat használja a modell hivatkozására, és a DEM adatoknak ebben a referenciarendszerben kell lenniük.<br>
-Ha a felmérés csak hosszúság-szélesség (WGS84) koordinátákkal rendelkezik, akkor a  WGS-84 rendszert használjuk, és a DEM adatoknak WGS-84-ben kell lenniük, azaz a bal  alsó sarok koordinátái és a (négyzet) cella mérete decimális fokban kell legyen, hat  vagy több tizedesjegygel.
- Alternatív megoldásként a sarokkoordináták és a cella mérete méterben is megadható, legfeljebb egy tizedesjegyig.<br><p>
+<p>
+Az Esri ASCII formátumnak a következő példához hasonló fejlécet kell használnia:<br>
+<pre>
+  ncols 374<br>
+  nrows 225<br>
+  xllcorner 7.444608<br>
+  yllcorner 46.947922<br>
+  cellsize 0.000213<br>
+  NODATA_value -99.00<br>
+  567.1 567.2 ...<br>
+  ...
+  </pre>
+A Therion rácsfájlnak a következő példához hasonló fejlécet kell használnia, és megjegyzéseket is tartalmazhat a „#” karakterrel kezdődő sorokhoz:<br>
+<pre>
+  grid 7.444608 46.947922 0.000213 0.000213 374 225<br>
+  567.1 567.2 ...<br>
+   ...
+</pre>
+
+<p>Koordináta-referenciarendszerek (CRS):</p>
+<p>
+A felmérés rögzített pontjainak és a DEM adatállománynak ugyanabban a (kartográfiai) koordináta-referenciarendszerben kell lennie.<br>
+Alapértelmezés szerint a WGS84 használatos, így a koordinátákat és a cellaméretet fokban kell megadni (hat vagy több tizedesjegygel a jó pontosság érdekében).<br>
+</p>
+<p>
+Egy másik CRS használatához az összes rögzített állomást át kell alakítani a másik CRS-be a megfelelő "Geo-Points" párbeszédpanel "Convert" gombjával.
+ Megjegyzés: a külön elérhető "Proj4" alkalmazást is telepíteni kell (ne a Play Áruház verzióját használja, hanem a Topodroid webhelyről elérhető frissebbet).
+ Ellenőrizd a 3D Viewer INFO párbeszédablakát, hogy megbizonyosodjon arról, hogy a szükséges CRS hatékonyan használatban van.<br>
+A DEM adatoknak a WGS-84 helyett ebben a referenciarendszerben kell lenniük (a használt CRS-től függően a cellaméret méterben is megadható).
+</p>
+
+<p>
 
 A felület átlátszósága állítható. Ha teljesen átlátszatlan, akkor mások mögött a felület egyes részei el vannak rejtve.<br>
 A felmérési középvonal vetülete a felületen megjeleníthető (kék).<br>

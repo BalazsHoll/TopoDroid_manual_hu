@@ -1,8 +1,7 @@
 <html><body>
 <h4>3D MEGJELENÍTŐ – Felszín DEM</h4>
 
-Felületi DEM (Digital Elevation Model) akkor jeleníthető meg, ha be van illesztve a modellfájlba (pl. egy lox fájlba),
- vagy hozzá lett adva a modellhez.<br><p>
+Felületi DEM (Digital Elevation Model) hozzáadható a TopoDroid modellekhez, vagy megjeleníthető, ha egy betöltött modellfájlba van zárva (pl. egy lox fájlba)<br><p>
 
 A <i>3D-s megtekintő</i> ablak <i>Felszín</i> gombja be- és kikapcsolja a DEM megjelenítést.<br><p>
 
@@ -12,7 +11,7 @@ A DEM betöltésére, egy felületi textúra betöltésére szolgál, amely ráb
 Tartalmaz
 <ul>
 <li>egy DEM-fájl kiválasztására szolgáló gomb</li>
-<li>egy textúrafájl kiválasztására szolgáló gomb, ha a modell rendelkezik DEM-mel</li>
+<li>egy textúrafájl kiválasztására szolgáló gomb a DEM betöltése után (vagy ha a modell már rendelkezik DEM-mel)</li>
 <li>csúszka az átlátszatlanság beállításához</li>
 <li>egy jelölőnégyzet a modell vetületének DEM-en való megjelenítésének aktiválásához</li>
 <li>jelölőnégyzet a felületi textúra megjelenítésének aktiválásához (ha van ilyen)</li>
@@ -20,13 +19,13 @@ Tartalmaz
 
 <b>DEM-fájl</b><br>
 
-A 3D-s megtekintő támogatja az ASCII vagy Therion grid formátumú DEM fájlokat.<br><p>
+A 3D-s megtekintő támogatja az ASCII formátumú DEM fájlokat vagy a Therion grid formátumot (a fájlformátumokkal és koordináta-referenciarendszerekkel kapcsolatos részletekért lásd a kézikönyvet).<br><p>
 
 <b>Textúrafájl</b><br>
 
 A 3D-s megtekintő támogatja a textúra GeoTIFF képfájlokat és az OSM térképfájlokat.<br><p>
 
-A DEM és a textúra X-Y koordinátáinak szerepelniük kell a modell koordináta-referenciarendszerében,
+A DEM és a textúra X-Y koordinátáinak szerepelniük kell a modell koordináta-referenciarendszerében (amely megváltoztatható a fixpont párbeszédablakban),
  mert a 3D-s megtekintő nem végez koordinátakonverziót.<br><p>
 
 Az OSM fájlok WGS84 földrajzi koordinátákkal vannak megadva. Az értékek modellekkel használhatók
