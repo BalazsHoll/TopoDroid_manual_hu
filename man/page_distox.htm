@@ -31,7 +31,7 @@ Fő funkciók:<br>
 </ul>
 <br><p>
 
-<h3>DistoX2 - X310</h3>
+<h3>DistoX2 /DistoXBLE - X310</h3>
 
 <ul>
 <li>TIMER (lézer be van kapcsolva): indítási időzítő (automatikus mérés)</li>
@@ -41,37 +41,37 @@ Fő funkciók:<br>
 </ul>
 <br><p>
 
-Két másodperc:<br>
+Két másodperc (a gombok egyszerre lenyomva):<br>
 <ul>
 <li>DIST (lézer be van kapcsolva): mérés</li>
 <li>CLR: kikapcsolás</li>
-<li>CLR + SMART: a kalibrációs mód váltása</li>
-<li>CLR + MEM: az el nem küldött memória törlése</li>
-<li>CLR + FUNC: a Bluetooth átkapcsolása</li>
-<li>CLR + MINUS: rögzíti a kikapcsolást</li>
+<li>CLR-SMART: a kalibrációs mód váltása</li>
+<li>CLR-MEM: az el nem küldött memória törlése</li>
+<li>CLR-FUNC: a Bluetooth átkapcsolása</li>
+<li>CLR-MINUS: rögzíti a kikapcsolást</li>
 <li>REF: elülső vonatkoztatási pont</li>
-<li>REF + FUNC: hátsó vonatkoztatási pont</li>
-<li>REF + PLUS: a kijelző fényváltása</li>
-<li>REF + MINUS: a hangjelzés váltása</li>
+<li>REF-FUNC: hátsó vonatkoztatási pont</li>
+<li>REF-PLUS: a kijelző fényváltása</li>
+<li>REF-MINUS: a hangjelzés váltása</li>
 <li>MEM: távolság mértékegység</li>
-<li>MEM + SMART: szög mértékegység (fok / újfok)</li>
-<li>MEM + FUNC: a néma üzemmód váltása (a mérést nem küldi át)</li>
-<li>MEM + MINUS: váltás a visszamérés módra [2.4]</li>
-<li>SMART + MINUS: kapcsolja be a három mérés ellenőrzését [2.4]</li>
-<li>DIST + PLUS: folyamatos mérés, CLEAR kikapcsolja [2.6]</li>
+<li>MEM-SMART: szög mértékegység (fok / újfok)</li>
+<li>MEM-FUNC: a néma üzemmód váltása (a mérést nem küldi át)</li>
+<li>MEM-MINUS: váltás a visszamérés módra [2.4]</li>
+<li>SMART-MINUS: kapcsolja be a három mérés ellenőrzését [2.4]</li>
+<li>DIST-PLUS: folyamatos mérés, CLEAR kikapcsolja [2.6]</li>
 </ul>
 <br><p>
 
-Öt másodperc:<br>
+Öt másodperc (a gombok egyszerre lenyomva):<br>
 <ul>
-<li>FUNC + SMART: az akkumulátor típusának módosítása</li>
-<li>FUNC + CLR + MEM: gyári visszaállítás</li>
-<li>DIST + PLUS + MINUS (bekapcsolás): bootloader mód</li>
+<li>FUNC-SMART: az akkumulátor típusának módosítása</li>
+<li>FUNC-CLR-MEM: gyári visszaállítás</li>
+<li>DIST-PLUS-MINUS (bekapcsolás): bootloader mód</li>
 </ul>
 <br> <p>
 
 
-Bővebb mérési adatok: <br>
+Bővebb mérési adatok (SMART gomb): <br>
 <ol>
 <li>irányszög, H távolság, V távolság, ferde távolság</li>
 <li>elforgatás, inklináció</li>
@@ -88,9 +88,10 @@ Bővebb mérési adatok: <br>
 <li>panel gyorsulás x, y, z (*)</li>
 <li>külön gyorsulás x, y, z (*)</li>
 </ol>
-<br><p>
+<br>
+(*) csak az utolsó adat, nem memória adat<br><p>
 
-Műszeradatok:<br>
+Műszeradatok (FUNC gomb):<br>
 <ol>
 <li>akkumulátor</li>
 <li>hw / fw verzió, sorozatszám</li>
@@ -105,9 +106,10 @@ Műszeradatok:<br>
 <ul>
 <li>AREA (hátsó ref.): irány + lejtés folyamatos megjelenítése (*)</li>
 <li>REF (első ref.) , AREA: a roll + dip folyamatos megjelenítése (*)</li>
-<li>AREA*2: firmware verzió és sorozatszám</li>
+<li>AREA+AREA: firmware verzió és sorozatszám</li>
 <li>UNITS: a kijelző fényváltása</li>
-<li>AREA*2 , REF*2 , CLR: a néma mód váltása</li>
+<li>AREA+AREA+REF+REF+CLR: a néma mód váltása</li>
+<li>MEM[10-szer]+UNITS: kalibrációs mód váltása</li>
 </ul>
 (*) Ebben a módban ne végezz méréseket
 <br><p>
@@ -116,17 +118,16 @@ Két másodperc:<br>
 <ul>
 <li>UNITS (hátsó ref.): távolság mértékegység</li>
 <li>UNITS (első ref.): ciklusosan szög és távolság mértékegység / BT</li>
-<li>MEM*10 , UNITS: a kalibrációs mód váltása</li>
 </ul>
 <br>
 
-Öt másodperc: <br>
+Öt másodperc (a gombok egyszerre lenyomva): <br>
 <ul>
-<li>CLR + PLUS: a hangjelzés váltása (leállítja a mérést!)</li>
+<li>CLR-PLUS: a hangjelzés váltása (leállítja a mérést!)</li>
 </ul>
 <br>
 
-"Szög mértékegység / BT" ciklus <br>
+"Szög mértékegység / Bluetooth" ciklus (UNITS gomb)<br>
 <ul>
 <li>iránytű ki, BT ki </li>
 <li>iránytű be (fok), BT ki </li>

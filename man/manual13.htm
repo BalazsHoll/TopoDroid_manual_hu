@@ -73,6 +73,9 @@ A hibakódok a következők
 <li>13: váratlan hiba</li>
 </ul><br><p>
 
+Ne feledje, hogy a színek megjelenítése nem importálható, hacsak nincs engedélyezve a megfelelő beállítás.
+<br><p>
+
 <b>Therion importálás</b><br>
 Csak azok a Therion felmérési fájlok importálhatók, amelyek adatai "normál" adatmódban vannak.<br>
 A "deklináció" parancsot figyelembe vesszük: a beolvasott azimutot korrigáljuk a deklináció értékével.<br>
@@ -101,10 +104,7 @@ A TopoDroid a felmérés adatait a következő barlang-program formátumokba exp
 <li><a href="#trobot">TopoRobot</a></li>
 <li><a href="#vtopo">VisualTopo</a></li>
 <li><a href="#walls">Walls</a></li>
-<li><a href="#winkarst">WinKarst</a></li>
 <li><a href="#ghtopo">GHTopo</a></li>
-<li><a href="#grottolf">Grottolf</a></li>
-<li><a href="#ptopo">PocketTopo</a></li>
 <li><a href="#polygon">Polygon</a></li>
 <li><a href="#topo">Topo</a></li>
 </ul>
@@ -114,9 +114,7 @@ Ezenkívül exportálja a felmérés adatait
 <li><a href="#csv">CSV</a></li>
 <li><a href="#dxf">DXF</a></li>
 <li><a href="#kml">KML</a></li>
-<li><a href="#geojson">GeoJSON</a></li>
-<!-- li><a href="#plt">trackfile</a></li -->
-<li><a href="#gpx">GPS track</a></li>
+<li><a href="#gpx">GPX track</a></li>
 <li><a href="#shp">shapefile</a></li>
 </ul>
  formátumba. Ha a felmérés nem georeferált, a felmérés adata nem exportálható az utolsó négy exportálási formátumba.
@@ -125,6 +123,15 @@ Ezenkívül exportálja a felmérés adatait
 A georeferencia pontokat szélességi hosszúság [tizedes fok] és a átlagos tengerszint feletti magasság [m] koordinátákkal exportálják.<br>
 A H/V-segédponokat az exportban normál segédponként kezeljük.<br><p>
 
+A következő export formátumo tovább nem támogatottak:
+<ul>
+<li><a href="">WinKarst</a></li>
+<li><a href="">Grottolf</a></li>
+<li><a href="">PocketTopo</a></li>
+<li><a href="">PLT file (OziExplorer)</a></li>
+<li><a href="">GeoJSON</a></li>
+</ul>
+<br><p>
 
 <b id="compass">Compass</b> (.dat)<br>
 A <i>Compass</i> adatfájlok importálásakor és exportálásakor egyaránt támogatottak.<br>
@@ -211,6 +218,11 @@ A fix pontokat ("fix") elemezzük, de nem vesszük figyelembe, mivel a "cs" nem 
 A felmérés adatai exportálhatók <i>TopoRobot</i> fájlként. A <i>TopoRobot</i> pontok elnevezési házirendjét
 ki kell választani. Ha az pontnevek a TopoRobot "series.number" konvencióját követik, akkor azokat használják.<br><p>
 
+A TopoRobot exportálásához a fájlnevet a kiterjesztéssel együtt az exportálási párbeszédpanelen lehet megadni.
+ A fájlnév csak alfabetikus karaktereket (a-z és A-Z), valamint számokat (0-9) tartalmazhat.
+ Ha 8 karakternél hosszabb, akkor az első nyolc karakterre csonkolódik.
+ A felmérés neve a fájlban a fájlnév kiterjesztés nélkül.<br><p>
+
 <b id="vtopo"> VisualTopo</b> (.tro, .trox)<br>
 A <i>VisualTopo</i> adatfájlok importálásakor és exportálásakor egyaránt támogatottak.<br>
 A VisualTopo sablonok szerepelnek benne, ha engedélyezve vannak.<br>
@@ -237,6 +249,7 @@ Beállítások:<ul style="margin-top=0">
 </ul>
 <br><p>
 
+<!--
 <b id="winkarst"> WinKarst</b> (.sur)<br>
 A felmérés adatai exportálhatók <i>WinKarst</i> fájlként (nincs tesztelve).<br><p>
 
@@ -244,14 +257,17 @@ Beállítások:<ul style="margin-top=0">
 <li><u>Pont előtag</u>: ha meg van adva, akkor a mérési pont neve elé kerül.</li>
 </ul>
 <br><p>
+-->
 
 <b id="ptopo"> PocketTopo</b> (.top)<br>
-A TopoDroid mind az importálás, mind az exportálás során támogatja a <i>PocketTopo</i> t.<br><p>
+A TopoDroid csak az importálás során támogatja a <i>PocketTopo</i>-t.<br><p>
 
+<!--
 A PocketTopo export csak a felmérés adatait tartalmazza.<br><p>
 Ha az pontok elnevezési házirendje "TopoRobot" értékre van állítva, és az pontnevek a "sorozat.szám" TopoRobot konvenciót követik
 ezeket használják az exportálás során, különben a neveket számokká konvertálják.
 Az ábécés karakterek minden karaktert két számjeggyel helyettesítenek. Pontosabban az „a” a „00”, a „b” a „01” és így tovább, „A” az „50”, a „B” az „51” stb. Minden más karakter (azaz nem alfanumerikus) a 99-re kerül.<br><p>
+-->
 
 A PocketTopo fájlok importálásának vagy ".top" vagy ".TOP" kiterjesztéssel kell rendelkeznie.<br>
 A "outline" és a "profile" vázlatok importálva vannak.
@@ -270,12 +286,12 @@ A fix pontokat lat-long formátumban exportálják.<br><p>
 <b id="ghtopo"> GHTopo</b> (.gtx)<br>
 A TopoDroid a felmérés adatait exportálhatja <i>GHTopo</i> formátumban (részben tesztelve).<br><p>
 
-
+<!--
 <b id="grottolf"> Grottolf</b> (.grt)<br>
 A TopoDroid felmérési adatokat exportálhat <i>Grottolf</i> formátumban (nem tesztelt).
 Ha az első pont földrajzi koordinátákkal rendelkezik, ezeket exportáljuk, különben helyi koordinátákat használunk.
 Az pontok profilját úgy számolják, hogy a sün felvételeket egy a poligonra merőleges függőleges síkra vetítik.<br><p>
-
+-->
 
 <b id="topo"> Topo</b> (.cav)<br>
 A felmérés adatai exportálhatók <i>Topo</i> fájlként.<br><p>
@@ -355,7 +371,7 @@ Beállítások: <ul style="margin-top=0">
 </ul>
 <br><p>
 
-<b id="gpx">GPS track</b> (.gpx)<br>
+<b id="gpx">GPX track</b> (.gpx)<br>
 A GPX export tartalmazza az mérési pontokat (útpontokként) és a poligont (nyomvonalként).<br>
 Az adatok WGS84 füldrajzi koordináta-rendszerben vannak.
 <br><p>
@@ -398,16 +414,20 @@ A TopoDroid a felmérési vázlatokat a következő formátumokba exportálja:
 <ul>
 <li><a href="#csx">cSurvey</a></li>
 <li><a href="#th2">Therion</a></li>
-<li><a href="#tunnel">Tunnel</a></li>
 <li><a href="#xvi">xtherion</a></li>
-<li><a href="#cave3d">Cave3D</a></li>
 <li><a href="#dxf2">DXF</a></li>
-<!-- li><a href="#png">PNG image</a></li -->
+<li><a href="#svg">SVG</a></li>
 <li><a href="#pdf">PDF file</a></li>
 <li><a href="#shp2">shapefile</a></li>
-<li><a href="#svg">SVG</a></li>
+<li><a href="#tunnel">Tunnel</a></li>
 </ul>
 
+A következő export formátumok a későbbiekben nem támogatottak:
+<ul>
+<li><a href="">PNG image</a></li>
+<li><a href="">Cave3D</a></li>
+</ul>
+<br><p>
 
 <b id="csx">cSurvey</b> (.csx)<br>
 A cSurvey export fájlokhoz cSurvey 1.20 vagy újabb verzió szükséges.<br>
@@ -488,9 +508,11 @@ a metszetrajz beillesztésre kerül az xvi fájlba, a "metszet" pontba</li>
 <li><u>skála</u> exportálása. Alapértelmezett 1: 100</li>
 </ul><p>
 
+<!--
 <b id="cave3d"> Cave3D</b> (.c3d)<br>
 A "c3d" formátumban exportált vázlat megjeleníthető a 3D-s modellben a Cave3D-ben.<br>
 <br><p>
+-->
 
 <b id="dxf2"> DXF</b> (.dxf)<br>
 A vázlatok 2D DXF fájlként exportálhatók. Rétegeket az egyes szimbólum (pont, vonal, terület) típusokhoz vagy a szintekhez rendelhet.
