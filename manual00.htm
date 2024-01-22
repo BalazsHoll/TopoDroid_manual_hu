@@ -1,0 +1,176 @@
+<html><body>
+<h2>TopoDroid FELHASZNÁLÓI KÉZIKÖNYV</h2>
+<!-- NOW -->
+<i>marco.corvi@gmail.com</i><br><p>
+
+<img src="icon4.png"><br>
+TopoDroid a barlangok felméréshez készült Android-alkalmazás. Az alkalmazás beolvassa a mérési adatokat, segít azok rendezésében, és még a helyszínen ábrázolja a felmérés poligonját. A felmérés során a poligon köré vázlatokat készíthetsz. A barlangban készített vázlat sokkal pontosabb lesz és az esetleges mérési hibák is időben feltárhatók, javíthatók. A TopoDroid számos funkcióval rendelkezik, amelyek segítségével a lehető leghatékonyabb lehet a barlangban végzett munka és a felméréssel töltött idő. Ennek köszönhetően a felmérés végeztével közel kész térképpel hagyhatod el a helyszínt.<br><p>
+
+A TopoDroid hatékonyabbá teszi a barlangban végzett felméréssel töltött időt.
+ A TopoDroid célja, hogy segítse a térkép készítőjét az adatok pontosabb összegyűjtésében és a felmérés elkészítésében.
+ Nem célja a barlang végleges térképének elkészítése. Erre a feladatra már kiváló PC programok érhetők el.<br><p>
+
+A TopoDroidnak öt különböző „aktivitási szintje” van. A legalacsonyabb szinteken már megvannak
+ a funkciók az adatok letöltéséhez, a mérési pontok rendezéséhez és egyszerű vázlatok rajzolásához.
+ A magasabb szintek használhatók az adatok és vázlatok előkészítésére a PC-n végzett munka megkönnyítéséhez.<br><p>
+
+A TopoDroidot úgy tervezték, hogy egyszerre egy felmérést kezeljen, nem pedig összetett, több különböző felmérést tartalmazó barlangkutatási projektet.
+ Mindazonáltal tartalmaz egy <i>Cave Project Manager</i>-et, amellyel barlang-/karsztprojektekké alakíthatók a felmérések,
+ és egy <i>3D Viewer</i>, amellyel a felmérések és barlangprojektek 3D-s képét tekintheti meg.<br><p>
+
+A TopoDroidot a DistoX, a Sap5 és a Bric4 térképező műszerek használatára tervezték. Emellett a felmérési adatokat a felhasználó külön, egyedileg is megadhatja.<br>
+Ügyeljen arra, hogy az Android-eszközök (és az aktív toll) befolyásolhatják az elektronikus eszközzel végzett méréseket, ha azok túl közel vannak.<br><p>
+
+<i>
+Az Android robotot a Google által létrehozott és megosztott munkából reprodukálják vagy módosítják, és a feltételeknek megfelelően használják
+ a Creative Commons 3.0 Attribution Licence-ben leírtak szerint.
+</i><br><p>
+
+<b><a href="page_quick.htm"> TopoDroid gyors útmutató </a></b><br><br><p>
+
+<img src="map_sample.png" alt = "ICON" /><br><p>
+
+<b>NYILATKOZAT</b><br>
+<i>A TopoDroid egy nyílt forráskódú ingyenes és hirdetésmentes alkalmazás, amihez a fejlesztők nem biztosítanak garanciát. Felhasználók a program használatával elfogadják azt, hogy a fejlesztők nem vállalnak semmilyen felelősséget adatvesztésért vagy sérülésért, különös tekintettel a TopoDroiddal használt földmérő eszközökre. Bár a fejlesztők mindent megtesznek az alkalmazás hibamentes működéséért, ezt nem tudják garantálni.</i>
+<hr><br><p>
+
+<h4>Adatvédelmi irányelvek</h4>
+<a href="http://marcocorvi.altervista.org/policy/TopoDroid-PrivacyPolicy.txt">http://marcocorvi.altervista.org/policy/TopoDroid-PrivacyPolicy.txt</a>
+<br><p>
+
+<h4>TopoDroid privát mappa</h4>
+A TopoDroid privát mappa, "Android/data/com.topodroid.TDX/files",
+ tartalmazza a rajzeszközök mappáit, "point", "line" és "area", valamint az
+ eszközadatbázist "device10.sqlite" a kalibrációs adatokkal,
+ az exportált kalibrációs fájlokat ("ccsv" mappa), a DistoX2 és DistoXBLE firmware fájlokat ("bin" mappa),
+ és a DistoX memóriamentést ("dump" mappa).
+ A privát mappa egy almappát is tartalmaz a kézikönyv oldalak fordításához.
+<br><p>
+
+Ez a mappa és annak tartalma törlődik az alkalmazás eltávolításakor.
+<br><p>
+
+<h4>TopoDroid felmérési mappák</h4>
+A TopoDroid alapkönyvtár a "Documents/TDX", az <i>elsődleges külső tárhely</i>en.
+ Ez tartalmazza a "TopoDroid" projekt mappát. A projekt mappában van az
+ adatbázis "distox14.sqlite", a "zip" mappa, a "tmp" mappa az ideiglenes fájlokhoz,
+ és minden létrehozott felméréshez tartozik egy mappa.
+<br><p>
+
+Ez a mappa és almappái nem törlődnek az alkalmazás eltávolításakor.
+<br><p>
+
+<img src="folders.png" alt="MAPPÁK" /><br><p>
+
+<h4>Felmérési adatok</h4>
+A felmérési adatok és vázlatok a TDX "TopoDroid" almappájába kerülnek mentésre.<br>
+Minden felmérésnek van egy almappája a "TopoDroid" alatt.
+ A felmérési mappák nem törlődnek, ha egy felmérést törlünk a TopoDroidból.<br>
+A "TopoDroid" mappa tartalmazza a "distox14.sqlite" adatbázist, a felmérés mappáit,
+ és a barlangprojektek "thconfig" mappáját.<br><p>
+
+<h4>Hozzáférési engedélyek megadása</h4>
+Előfordulhat, hogy Android 11 és újabb rendszereken a TopoDroid nem tudja létrehozni a "TDX" alapmappát, vagy abban néhány almappát vagy fájlt,
+ mert nincs elegendő engedélye az <i>elsődleges külső tárhely</i> eléréséhez.<br>
+Ebben az esetben az "adb" (Android Debug Bridge) használatával add meg az engedélyeket.<br>
+<ol>
+<li>töltsd le az "adb" programot a számítógépedre</li>
+<li>Androidon engedélyezd a "Fejlesztői beállítások" lehetőséget (menj a beállításokban "A telefonról" részbe és koppints hétszer a "Build-szám"-ra)</li>
+<li>engedélyezd az "USB-hibakeresést" a "Fejlesztői beállítások" részben</li>
+<li>indítsd el az adb-kiszolgálót a számítógépen. Írd be az "adb start-server" parancsot</li>
+<li>csatlakoztasd az Androidot a számítógéphez USB-kábellel. Lehetséges, hogy engedélyezned kell az adb-kapcsolatot a számítógépről az Android-on</li>
+<li>a számítógépen írd be a három parancsot:
+<ul>
+<li>adb shell appops set com.topodroid.TDX READ_EXTERNAL_STORAGE allow</li>
+<li>adb shell appops set com.topodroid.TDX WRITE_EXTERNAL_STORAGE allow</li>
+<li>adb shell appops set com.topodroid.TDX MANAGE_EXTERNAL_STORAGE allow</li>
+</ul>
+</li>
+</ol>
+<br><p>
+
+<h4>Régi felmérések importálása</h4>
+A TopoDroidX (v.6) a régi 5.1.40-es verzióval együtt telepíthető, mert különböző alapmappákat használnak.<br>
+A régi, 5.1.40-es verziójú felmérések a 6-os verzióba importálhatók a régi TopoDroiddal létrehozott zip-archívumaikból.<br>
+Ezek létrehozhatók a
+ <a href="http://marcocorvi.altervista.org/caving/speleoapps/speleoapks/TopoDroidZipScript.html">zip_script</a>-el is.
+<br><p>
+
+<b>Megjegyzés</b> A TopoDroid v.5.1.40 nem tudja importálni a v.6 zip archívumokat az adatbázisban bekövetkezett változások miatt.<br><p>
+
+<h4>Hardverfunkciók</h4>
+A TopoDroid a következő hardverfunkciókat használja: "bluetooth", "camera", "mikrofon", "GNSS", "multitouch".
+ A TopoDroid azon funkciói, amelyek nem szerepelnek az adott Android-eszközön, automatikusan kikapcsolódnak.
+<br>
+Az internetkapcsolatot csak a felhasználói kézikönyv fordításainak telepítésére és az új verzió elérhetőségének ellenőrzésére használják.<br>
+<a href="page_perms.htm"> Android-engedélyek</a>
+<br><p>
+
+<h4>Natív könyvtárak</h4>
+A TopoDroid tartalmaz néhány natív könyvtárat, amelyek csak bizonyos architektúrákhoz vannak fordítva (arm64_v8a, armeabi-v7a és x86_64).
+Ezek a könyvtárak a következők:<i>station-nameing</i>, <i>powercrust</i> és egy <i>tiff</i> kezelő a <i>libtiffhez</i>.
+Ez utóbbi a <i>libjpeg</i> és a <i>libpng</i> statikus linket tartalmazza.<br><p>
+
+<h4>Hibák és összeomlások</h4>
+A korlátozott erőforrások miatt a teljes programcsomag (apk. application package file) nem tesztelhető teljes mértékben. Készíts mentést az alkalmazásról és a mérési adatokról mielőtt frissíted.
+<ul style = "margin-top = 0">
+<li> Kérjük, állítsd be az Androidot az összeomlások automatikus jelentésére (részletek weboldalakon).</li>
+<li> A nyelvi opciók választása után történt összeomlások a lista hiányos fordításainak tudhatók be.
+ Futtasd az alkalmazást angol nyelven, ha az összeomlás megszűnik, vedd fel a kapcsolatot a fordítás fenntartóival.
+<li> Ha hibát találsz, vagy az alkalmazás nem úgy viselkedik mint vártad, küldj egy e-mailt a hibáról, amely <b>tartalmazza az alkalmazás verzió számát</b> is.</li>
+<li> Általános jellegű kérdéseid vagy szolgáltatás kérésed van, küldj egy e-mailt a TopoDroid levelezőlistára: <i>&lt;topodroid@googlegroups.com&gt;</i>.</li>
+</ul><br><p>
+
+<hr>
+<h4>Alkalmazásfordítások:</h4>
+<ul>
+<li>H.J. Luo (kínai)</li>
+<li>G. Chardin - D. Ros (francia)</li>
+<li>Holl B. (magyar)</li>
+<li>F. Toso (olasz)</li>
+<li>R. Severo (portugál)</li>
+<li>A. Kozhenkov (orosz)</li>
+<!-- li>A. Pologea (román)</li -->
+<!-- li>K. Borgiel (lengyel)</li -->
+<li>M. Keller (német)</li>
+<!-- li>V. Georgiev (bolgár)</li -->
+<!-- li>M. Jurecka - Hetesi J. (szlovák)</li -->
+<!-- li>M. Guerrero - J. Pardo (spanyol)</li -->
+<!-- li>V. Kozly (ukrán)</li -->
+</ul>
+<br><p>
+
+Webhely: https://sites.google.com/site/speleoapps/<br>
+Források: https://github.com/marcocorvi/topodroid<br><p>
+
+<h4>Felhasználói kézikönyv fordításai</h4>
+<ul>
+<li>A. Kozhenkov - orosz: https://github.com/akozhenkov/TD_manual_RU</li>
+<li>F. Toso - olasz: https://github.com/fato63/TopoItMan/blob/master</li>
+<li>D. Ros - francia: http://souterweb.free.fr/</li>
+<li>Holl B. - magyar: https://github.com/BalazsHoll/TopoDroid_manual_hu</li>
+<li>R. Severo - Portugál: https://github.com/rsevero/Topodroid_Manual_PT</li>
+<li>M. Guerrero - spanyol: https://github.com/xguerrero/Topodroid_manual_es</li>
+<li>S. Tian - kínai: https://github.com/tswcmpass/topodroid_man_cn</li>
+</ul>
+<p>
+
+A felhasználói kézikönyv fordításai meglehetősen régiek lehetnek, ha nem tartják karban őket.<br>
+Telepítésük a fordítási nyelv kiválasztásával történik a <u>főablak</u> megfelelő beállításában.
+ (internetkapcsolat szükséges).<br><p>
+
+Ha a kézikönyv fordítást már telepítetted és a fordításnak van egy frissített változata, az alkalmazás frissítésekor a rendszer kéri a felhasználót telepítse az új kézikönyv fordítását is.
+<br><p>
+
+<h4>TopoDroid weblap</h4>
+
+https://sites.google.com/site/speleoapps<br><p>
+
+<a href="page_distox.htm"> DistoX referencia;</a><br>
+<a href="page_calib_howto.htm"> DistoX kalibrálási útmutató;</a><br>
+
+<a href="manual_hu.htm"> Kiegészítés a magyar fordításhoz &gt;</a><br>
+<a href="manual01.htm"> Bevezetés &gt;</a>
+
+
+</body></html>
