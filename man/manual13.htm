@@ -90,6 +90,10 @@ A leképezés egy beállítással módosítható.<br><p>
 <b>Compass importálása</b><br>
 A TopoDroid átalakítja az importált Compass felmérést a <i>normál</i> adatmódról <i>búvár</i> adatmódra [T], ha a relatív beállítás engedélyezve van [G].<br><p>
 
+<b>VisualTopo importálás</b><br>
+A TopoDroid a VisualTopo felméréseket is képes importálni a <i>Prof</i> helyett <i>Clino</i> "trox" formátumban.
+Az adatok <i>búvár</i> adatmódban tárolódnak.<br><p>
+
 <b>Megjegyzés:</b>
 Az importálás meghiúsulhat (és összeomolhat az alkalmazással) az adatbázis hibája miatt, amelyet a TopoDroid nem tud elfogadni.
 Ebben az esetben törölje a részben importált felmérést, és próbálja meg újra importálni.<br><p>
@@ -104,6 +108,7 @@ A TopoDroid a felmérés adatait a következő barlang-program formátumokba exp
 <li><a href="#trobot">TopoRobot</a></li>
 <li><a href="#vtopo">VisualTopo</a></li>
 <li><a href="#walls">Walls</a></li>
+<li><a href="#winkarst">WinKarst</a></li>
 <li><a href="#ghtopo">GHTopo</a></li>
 <li><a href="#polygon">Polygon</a></li>
 <li><a href="#topo">Topo</a></li>
@@ -123,9 +128,10 @@ Ezenkívül exportálja a felmérés adatait
 A georeferencia pontokat szélességi hosszúság [tizedes fok] és a átlagos tengerszint feletti magasság [m] koordinátákkal exportálják.<br>
 A H/V-segédponokat az exportban normál segédponként kezeljük.<br><p>
 
+<i>Az exportált adatokat/fájlt befolyásoló beállítások minden exportálási formátumnál megtalálhatók.</i><br><p>
+
 A következő export formátumo tovább nem támogatottak:
 <ul>
-<li><a href="">WinKarst</a></li>
 <li><a href="">Grottolf</a></li>
 <li><a href="">PocketTopo</a></li>
 <li><a href="">PLT file (OziExplorer)</a></li>
@@ -227,10 +233,11 @@ A TopoRobot exportálásához a fájlnevet a kiterjesztéssel együtt az export�
 A <i>VisualTopo</i> adatfájlok importálásakor és exportálásakor egyaránt támogatottak.<br>
 A VisualTopo sablonok szerepelnek benne, ha engedélyezve vannak.<br>
 Alapértelmezés szerint az BJFL a CÉL ponton van, de a KEZDŐ pont beállítható.<br>
-Az adategységek „méterek” és „fokok”.<br><p>
+Az adategységek „méterek” és „fokok”.<br>
+A <i>búvár</i> adatmódban végzett felmérések "trox" formátumban kerülnek exportálásra.<br><p>
 
 Beállítások: <ul style="margin-top=0">
-<li><u>Trox</u> formátumban mentés. Alapértelmezés szerint az adatok "tro" formátumban kerülnek mentésre</li>
+<li><u>Tro</u> régi formátumban mentés. Alapértelmezés szerint az adatok "trox" formátumban kerülnek mentésre</li>
 <li><u>Sünök</u></li>
 <li><u>BJFL a Kezdő</u></li> oldalon
 <li><u>Pont utótag</u>: ha meg van adva, akkor a mérési pont nevéhez fűződik.</li>
@@ -249,7 +256,6 @@ Beállítások:<ul style="margin-top=0">
 </ul>
 <br><p>
 
-<!--
 <b id="winkarst"> WinKarst</b> (.sur)<br>
 A felmérés adatai exportálhatók <i>WinKarst</i> fájlként (nincs tesztelve).<br><p>
 
@@ -257,7 +263,6 @@ Beállítások:<ul style="margin-top=0">
 <li><u>Pont előtag</u>: ha meg van adva, akkor a mérési pont neve elé kerül.</li>
 </ul>
 <br><p>
--->
 
 <b id="ptopo"> PocketTopo</b> (.top)<br>
 A TopoDroid csak az importálás során támogatja a <i>PocketTopo</i>-t.<br><p>
@@ -318,6 +323,7 @@ A felmérés nyers adatai CSV formátumban exportálhatók. Ebben az esetben min
 <li>gyorsulás, mágneses tér, inklináció</li>
 <li>időbélyeg, típus (műszer vagy kézi), eszközcím</li>
 <li>kiterítés, megjelölés, poligon_típus, állapot, megjegyzés</li>
+<li>nyers adatok</li>
 </ul><br>
 A nyers adatok exportálásakor a poligonméréseket nem átlagoljuk, hanem külön-külön exportáljuk.<br><p>
 
@@ -428,6 +434,9 @@ A következő export formátumok a későbbiekben nem támogatottak:
 <li><a href="">Cave3D</a></li>
 </ul>
 <br><p>
+
+A vázlatablak és az áttekintő ablak képernyőképeit a hangerő növelő gombbal lehet készíteni.
+A képernyőképeket a rendszer a felmérés "out" mappájába menti.<br><p>
 
 <b id="csx">cSurvey</b> (.csx)<br>
 A cSurvey export fájlokhoz cSurvey 1.20 vagy újabb verzió szükséges.<br>
