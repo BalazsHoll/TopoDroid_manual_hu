@@ -22,6 +22,7 @@ Egyéni Általános beállítások
 <li>További paletták menü</li>
 <li>Csomagnaplózás</li>
 <li>Therion th2 szerkesztése</li>
+<!-- li>Developer mode</li -->
 </ul>
 </div><br><p>
 
@@ -44,13 +45,15 @@ Egyes felületbeállításokhoz (például a gombok méretéhez) újra kell ind�
   <li>Fel/Le minimális Sün lejtés. [0&deg;]</li>
   <li>Bal/Jobb maximális elosztási lejtés. [90&deg;]</li>
   <li>Vonalpont távolság: a vonalpontok közötti távolság</li>
+  <li>Engedélyezett adat export formátumok: Compass (DAT), cSurvey (CSX), GHTopo (GTX), Polygon (CAVE), Survex (SVX), Therion (TH), Topo (CAV), TopoRobot (TAB), 
+      VisualTopo (TRO, TROX), Walls (SRV), Winkarst (SUR), CSV, DXF, KML, GPX</li>
   </ul>
 </li>
 <li>Importálás:<br>
   <ul>
   <li><a href="page_pt_cmap.htm">PocketTopo színtérkép</a> A PocketTopo színeinek térképe TopoDroid típusokra</li>
   <li>Becsülje meg az LR kiterjesztést a Compass és a VisualTopo fájlok importálásakor. [igen]</li>
-  <li>Adatmód importálása: normál vagy búvárkodás. A búvárkodás csak az Compass-ra vonatkozik. [normál] </li>
+  <!-- li>Adatmód importálása: normál vagy búvárkodás. A búvárkodás csak az Compass-ra vonatkozik. [normál] </li -->
   </ul>
 </li>
 <li>cSurvey export:<br>
@@ -109,9 +112,10 @@ Egyes felületbeállításokhoz (például a gombok méretéhez) újra kell ind�
 <li>DXF export:<br>
   <ul>
   <li>DXF sün végpontok. [igen]</li>
-  <li>DXF verzió: {6,12,16}. [6] </li>
+  <li>DXF verzió: {R12, R13, R14}. [R12] </li>
   <li>Használjon spline-t Bezier-szegmensekhez</li>
   <li>DXF referencia</li>
+  <li>Szint rétrgek</li>
   </ul>
 </li>
 <!-- li>PNG:<br>
@@ -123,10 +127,15 @@ Egyes felületbeállításokhoz (például a gombok méretéhez) újra kell ind�
   <li>mérési pontok: mérési pontok hozzáadása</li>
   </ul>
 </li -->
-<li>KML/GeoJSON export:<br>
+<li>KML export:<br><!-- GeoJSON -->
   <ul>
-  <li>Adjon mérési pontokat a KML/GeoJSON exporthoz. [igen]</li>
-  <li>Sünök hozzáadása a KML/GeoJSON exporthoz. [nem]</li>
+  <li>Adjon mérési pontokat a KML exporthoz. [igen]</li>
+  <li>Sünök hozzáadása a KML exporthoz. [nem]</li>
+  </ul>
+</li>
+<li>GPX export:<br>
+  <ul>
+  <li>GPX egyszerű track export [igen]</li>
   </ul>
 </li>
 <li>Shapefile export:<br>
@@ -136,7 +145,7 @@ Egyes felületbeállításokhoz (például a gombok méretéhez) újra kell ind�
 </li>
 <li>CSV-exportálás:<br>
   <ul>
-  <li>Nyers adatok: nyers adatok exportálása csv-be. [nem]</li>
+  <li>Teljes adatok: összes adat exportálása csv-be. [nem]</li>
   <li>mezőelválasztó [pipe]</li>
   <li>sorelválasztó [soremelés]</li>
   </ul>
@@ -154,14 +163,19 @@ Egyéni importálási/exportálási beállítások
 <li>Keresztmetszetek beszúrása a vázlat exportálásba</li>
 <li>Mérési pontok felvétele a vázlat exportálásba</li>
 <li>BJFL-szám: az BJFL-hoz használt splayek száma [alapértelmezett hamis]</li>
+<li>Kategorizált zip-megosztás [alapértelmezett hamis]</li> 
 </ul><br>
 Ha az BJFL-szám hamis, minden (tűréshatáron belüli) sünt-t használ az BJFL kiszámításához. 
-A keresztirányú méret a sün vetületek maximális értékére van beállítva a vízszintes vagy függőleges tengelyeken.
+ A keresztirányú méret a sün vetületek maximális értékére van beállítva a vízszintes vagy függőleges tengelyeken.
  A tűréshatáron belüli sün vízszintes és függőleges méreteknél is figyelembe vehető.<br>
 Ha az BJFL-szám igaz, akkor csak az első négy sünt használjuk, amelyek kielégítik a tűréseket, és a tűréshatáron belüli sünt csak a függőleges vagy a vízszintes méreteknél használjuk.
  Minden irány az első elfogadható sün értékére van beállítva.
  Egy irány nulla értékkel hagyható, ha egy sün egy már beállított irányba mér.
- Alapértelmezés szerint a tűréshatárok nagyon megengedők: 0&deg; függőleges irányokhoz és 90&deg; vízszinteshez.</ul>
+ Alapértelmezés szerint a tűréshatárok nagyon megengedők: 0&deg; függőleges irányokhoz és 90&deg; vízszinteshez.<br><p>
+ 
+ A zip megosztás kategorizálható, hogy a kezelését bizonyos alkalmazásokra korlátozza.
+<!-- A TopoDRoid kategória "com.topodroid.TDX.CATEGORY_SURVEY" -->
+Ha nincs olyan alkalmazás, amely képes lenne kezelni a megosztást, a művelet meghiúsul.<br>
 </div><br><p>
 
 <!-- =========================================== -->
@@ -206,7 +220,11 @@ Helymegadás
 <ul>
 <li>Helyformátum {ddmmss, dec.deg}. [ddmmss]</li>
 <li>CRS. A CRS neve a Proj4-ben használt módon. [Long-Lat, azaz földrajzi WGS84]</li>
-</ul><br>Poligononkénti
+<li>Negatív magasságok</li>
+<li>Szerkeszthető magasság</li>
+<li>Finom-pozíció idő</li>
+<li>Preferált GNSS app (Mobile Topographer, GPX Recorder, GPS Position, GPSTest, GPS Logger)</li>
+</ul><br>
 
 Pontosság
 <ul>
@@ -274,11 +292,12 @@ Vonaleszközök
 <li>A vonalak szélessége (N.B. a falvonal ennek kétszerese). [1 px]</li>
 <li>Vonalstílus léptéktényező</li>
 <li>Vonalstílus {Bezier, finom, normál, durva, egyszerűsített}. [normál] </li>
-<li>Vonal zárása. Be kell-e zárni a "zárt" típusú vonalakat. [igen]</li>
 <li>Vonalpont távolság. Minimális távolság a vonalpontok között. [10 px]</li>
+<li>Vonal zárása. Be kell-e zárni a "zárt" típusú vonalakat. [igen]</li>
 <li>A metszetvonalak "irány pipa" mérete [1,20]. Alapértelmezett 8 [x egység]</li>
 <li>Szakaszpontok. Adja hozzá a Therion szakaszpontot a szakaszvonalhoz. [igen]</li>
 <!-- li>A vonal alapértelmezett csatlakozása {none, start, end, both, folytatás}. [nincs] </li -->
+<li>Vonal csatlakozás</li>
 <li>A terület határának alapértelmezett láthatósága. [igen]</li>
 </ul><br>
 
@@ -294,6 +313,8 @@ Egyéni vázlatbeállítások
 <li>Teljes affin vázlatátalakítások</li>
 <li>Rétegek. [nem]</li>
 <li>Milliméterpapír léptéke</li>
+<li>Döntött keresztmetszetek</li>
+<li>Ferde vetített oldalnézet</li>
 </ul>
 </div><br>
 
@@ -309,13 +330,14 @@ Egyedi sün beállítások
 <li>A sün szaggatás szögének küszöbértéke metszeteknél. [60&deg;]</li>
 <li>Szaggatott sün színe</li>
 <li>Pontozott sün színe</li>
+<li>Utolsó sünök színe</li>
 </ul>
 </div><br>
 
 <div style="font-size:90%">
 Automatikus falak
 <ul>
-<li>Faltípus. [nincs]</li>
+<li>Faltípus [nincs]</li>
 <li>Alaprajz sün lejtés</li>
 <li>Sün clino profil</li>
 <li>Minimális távolság a mérés mentén</li>
@@ -329,7 +351,7 @@ Egyéni vonal beállításai
 <ul>
 <li>Egyenesítő szög</li>
 <li>Interpolációs pontosság (Bezier)</li>
-<li>Kornet küszöb (Bezier)</li>
+<li>Sarok küszöb (Bezier)</li>
 <li>Maximális pont/szegmens távolság a gyomláláshoz. [0,5 m]</li>
 <li>Maximális szegmenshossz a gyomláláshoz. [2,0 m]</li>
 <li>Pont gyomlálás szegmens puffer</li>
@@ -350,7 +372,7 @@ Egyéni vonal beállításai
 <li>A mérési pontok mérete</li>
 <li>A mérési pont szövegének mérete</li>
 <li>Kiválasztási sugár</li>
-<li>Mérés párbeszédpanel</li>
+<li>Mérés párbeszédpanel vagy üzenet</li>
 <li>A mérési pont üzenete</li>
 <li>Rács a 3D modell felett vagy alatt</li>
 <li>Rács kiterjedése</li>
@@ -398,6 +420,7 @@ A <li><i>Sünök</i> a következőket használják: {nincs, normál, keresztmets
 <li>A Z6 megoldása. [igen]</li>
 <li>Automatikus párosítás. [igen]</li>
 <li>Kapcsolat állapotáról szóló visszajelzések</li>
+<li>Kézi műszer hozzáadás</li>
 </ul><br>
 
 <div style="font-size:90%">
@@ -412,6 +435,7 @@ Egyéni eszközbeállítások
 <li>Firmware-ellenőrzés</li>
 <li>BRIC4 adatmód</li>
 <li>BRIC4 nulla hosszúságú felvételek</li>
+<li>SAP5 bit-16 hiba</li>
 </ul>
 </div><br><p>
 

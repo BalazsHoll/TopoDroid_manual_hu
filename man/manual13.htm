@@ -311,11 +311,11 @@ A felmérés adatai exportálhatók vesszővel elválasztott mezőkkel ellátott
 <ul style="margin-top=0">
 <li>kezdő és vég pont</li>
 <li>távolság, irány, lejtés</li>
-<li>flag</li>
+<li>flag (L duplikált, S felszín, C kizárt)</li>
 </ul><br>
 A mérés megjegyzéseket nem exportáljuk. Az adatlista rövid fejlécet tartalmaz.<br>
 
-A felmérés nyers adatai CSV formátumban exportálhatók. Ebben az esetben minden rekordnak (sornak) van
+A felmérés teljes adatai CSV formátumban exportálhatók. Ebben az esetben minden rekordnak (sornak) van
 <ul style="margin-top=0">
 <li>mérés azonosítója</li>
 <li>mérés kezdő és vég pontok</li>
@@ -323,12 +323,12 @@ A felmérés nyers adatai CSV formátumban exportálhatók. Ebben az esetben min
 <li>gyorsulás, mágneses tér, inklináció</li>
 <li>időbélyeg, típus (műszer vagy kézi), eszközcím</li>
 <li>kiterítés, megjelölés, poligon_típus, állapot, megjegyzés</li>
-<li>nyers adatok</li>
+<li>nyers értékek</li>
 </ul><br>
-A nyers adatok exportálásakor a poligonméréseket nem átlagoljuk, hanem külön-külön exportáljuk.<br><p>
+Az összes adat exportálásakor a poligonméréseket nem átlagoljuk, hanem külön-külön exportáljuk.<br><p>
 
 Beállítások: <ul style="margin-top=0">
-<li><u>nyers adatok</u>: a nyers adatok exportálása</li>
+<li><u>összes adat</u>: az összes adat exportálása</li>
 <li><u>elválasztó</u>: mezők elválasztója (vessző, pipe | vagy tabulátor)</li>
 <li><u>EOL</u>: rekordelválasztó (lf vagy cr+lf)</li>
 </ul><br><p>
@@ -734,7 +734,7 @@ A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importál
      <li><i>DXF-verzió</i> a DXF-exporthoz: 6, 12 vagy 16. A 6-os verzióban a DXF-exportálási bezier-görbéket vonalláncok váltják fel, és a területeken nincs sraffozás. A 12-es és 16-os verziójú DXF-exportok spline-eket és sraffozásokat használnak, de még mindig hibásak.</li>
    </ul>
 </li>
-<li><b>KML/GeoJSON</b>:
+<li><b>KML</b>:<!-- GeoJSON -->
    <ul>
      <li>exportálás <i>mérési pontokkal</i> [igen]</li>
      <li>exportálás <i>sünökkel</i> [nem]</li>
