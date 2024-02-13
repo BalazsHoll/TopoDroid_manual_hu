@@ -69,23 +69,38 @@ Minden felmérésnek van egy almappája a "TopoDroid" alatt.
 A "TopoDroid" mappa tartalmazza a "distox14.sqlite" adatbázist, a felmérés mappáit,
  és a barlangprojektek "thconfig" mappáját.<br><p>
 
+<h4>Hardverfunkciók</h4>
+A TopoDroid a következő hardverfunkciókat használja: "bluetooth", "camera", "mikrofon", "GNSS", "multitouch".
+ A TopoDroid azon funkciói, amelyek nem szerepelnek az adott Android-eszközön, automatikusan kikapcsolódnak.
+<br>
+Az internetkapcsolatot csak a felhasználói kézikönyv fordításainak telepítésére és az új verzió elérhetőségének ellenőrzésére használják.<br>
+<a href="page_perms.htm"> Android-engedélyek</a>
+<br><p>
+
 <h4>Hozzáférési engedélyek megadása</h4>
 Előfordulhat, hogy Android 11 és újabb rendszereken a TopoDroid nem tudja létrehozni a "TDX" alapmappát, vagy abban néhány almappát vagy fájlt,
  mert nincs elegendő engedélye az <i>elsődleges külső tárhely</i> eléréséhez.<br>
 Ebben az esetben az "adb" (Android Debug Bridge) használatával add meg az engedélyeket.<br>
 <ol>
-<li>töltsd le az "adb" programot a számítógépedre</li>
-<li>Androidon engedélyezd a "Fejlesztői beállítások" lehetőséget (menj a beállításokban "A telefonról" részbe és koppints hétszer a "Build-szám"-ra)</li>
+<li>Töltsd le az "adb" programot a számítógépedre</li>
+<li>Androidon:
+<ul>
+<li>engedélyezd a "Fejlesztői beállítások" lehetőséget (menj a beállításokban "A telefonról" részbe és koppints hétszer a "Build-szám"-ra)</li>
 <li>engedélyezd az "USB-hibakeresést" a "Fejlesztői beállítások" részben</li>
-<li>indítsd el az adb-kiszolgálót a számítógépen. Írd be az "adb start-server" parancsot</li>
-<li>csatlakoztasd az Androidot a számítógéphez USB-kábellel. Lehetséges, hogy engedélyezned kell az adb-kapcsolatot a számítógépről az Android-on</li>
-<li>a számítógépen írd be a három parancsot:
+</ul></li>
+<li>PC-n: írd be az "adb start-server" parancsot</li>
+<li>Csatlakoztasd az Androidot a számítógéphez USB-kábellel.
+<ul>
+<li>Androidon, ha kéri engedélyezd az adb-kapcsolatot a PC-vel</li>
+</ul></li>
+<li>A számítógépen írd be a három parancsot:
 <ul>
 <li>adb shell appops set com.topodroid.TDX READ_EXTERNAL_STORAGE allow</li>
 <li>adb shell appops set com.topodroid.TDX WRITE_EXTERNAL_STORAGE allow</li>
 <li>adb shell appops set com.topodroid.TDX MANAGE_EXTERNAL_STORAGE allow</li>
 </ul>
 </li>
+</ul></li>
 </ol>
 <br><p>
 
@@ -97,14 +112,6 @@ Ezek létrehozhatók a
 <br><p>
 
 <b>Megjegyzés</b> A TopoDroid v.5.1.40 nem tudja importálni a v.6 zip archívumokat az adatbázisban bekövetkezett változások miatt.<br><p>
-
-<h4>Hardverfunkciók</h4>
-A TopoDroid a következő hardverfunkciókat használja: "bluetooth", "camera", "mikrofon", "GNSS", "multitouch".
- A TopoDroid azon funkciói, amelyek nem szerepelnek az adott Android-eszközön, automatikusan kikapcsolódnak.
-<br>
-Az internetkapcsolatot csak a felhasználói kézikönyv fordításainak telepítésére és az új verzió elérhetőségének ellenőrzésére használják.<br>
-<a href="page_perms.htm"> Android-engedélyek</a>
-<br><p>
 
 <h4>Natív könyvtárak</h4>
 A TopoDroid tartalmaz néhány natív könyvtárat, amelyek csak bizonyos architektúrákhoz vannak fordítva (arm64_v8a, armeabi-v7a és x86_64).

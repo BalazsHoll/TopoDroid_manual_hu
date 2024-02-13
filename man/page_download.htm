@@ -30,11 +30,12 @@ Ebben az esetben kapcsolja ki, majd be a DistoXBLE-t, és próbálja újra letö
 Az adatok letöltése a <i>BRIC4</i>-ről csak a lényeges értékekre korlátozható (távolság, irányszög, dőlésszög és még néhány), vagy
  a teljes, a BRIC4 protokoll által továbbított összes információ.<br><p>
  
-A teljes protokoll tartalmazza a mérés "indexét". Alapértelmezés szerint a TopoDroid a <i>BRIC4 indexet</i> használja adatindexként
- az adatbázistáblában, ha megkapja. Mivel az adatindexnek egyedinek kell lennie, ha a TopoDroid olyan indexű mérést kap, amely
- már szerepel az adatbázisban, a rendszer egy új értéket használ a <i>BRIC4 index</i> helyett.<br><p>
+A teljes protokoll tartalmazza a mérés "indexét". A TopoDroid a <i>BRIC4 indexet</i> használja adatindexként az adatbázistáblában, ha megkapja, és a <i>Bric</i> adatmód úgy van beállítva, hogy az indexet is használja.
+ Mivel az adatindexnek egyedinek kell lennie, ha a TopoDroid olyan indexű felvételt kap, amely
+ már szerepel az adatbázisban, a <i>Bric4 index</i> helyett új értéket használ az adatindexhez.<br> 
 
-A Bric4 index alaphelyzetbe állítható a <i>Speciális menü | Memória törlése</i> BRIC4 parancs.<br>
+
+A Bric4 index alaphelyzetbe állítható a <i>Speciális menü | Memória törlése</i> BRIC4 paranccsal.<br>
 
 Letiltható a <i>BRIC4 index</i> [G] használata, és a TopoDroid növekményes értékeket rendelhet az adatindexhez.<br><p>
 

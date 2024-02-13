@@ -45,8 +45,10 @@ A külső fájlok következő formátumai támogatottak:
 <li>Survex</li>
 <li>Therion. Csak adat</li>
 <li>VisualTopo</li>
+<li>Walls</li>
 <li>CaveSniper</li>
 <li>PocketTopo, vázlatokkal együtt</li>
+<li>TopoRobot</li>
 <li>TopoDroid zip archívum</li>
 </ul>
 
@@ -221,13 +223,15 @@ A fix pontokat ("fix") elemezzük, de nem vesszük figyelembe, mivel a "cs" nem 
 
 
 <b id="trobot">TopoRobot</b> (.trb)<br>
+A <i>TopoRobot</i> adatfájl import és exportálás során egyaránt támogatott.<br>
 A felmérés adatai exportálhatók <i>TopoRobot</i> fájlként. A <i>TopoRobot</i> pontok elnevezési házirendjét
-ki kell választani. Ha az pontnevek a TopoRobot "series.number" konvencióját követik, akkor azokat használják.<br><p>
+ki kell választani. Ha az pontnevek a <i>TopoRobot</i> "series.number" konvencióját követik, akkor azokat használják.<br><p>
 
-A TopoRobot exportálásához a fájlnevet a kiterjesztéssel együtt az exportálási párbeszédpanelen lehet megadni.
+A <i>TopoRobot</i> exportálásához a <u>fájlnevet</u> a kiterjesztéssel együtt az exportálási párbeszédpanelen lehet megadni.
  A fájlnév csak alfabetikus karaktereket (a-z és A-Z), valamint számokat (0-9) tartalmazhat.
  Ha 8 karakternél hosszabb, akkor az első nyolc karakterre csonkolódik.
- A felmérés neve a fájlban a fájlnév kiterjesztés nélkül.<br><p>
+ A felmérés neve a fájlban a fájlnév kiterjesztés nélkül.<br>
+Az exportálás az adatok utolsó részére is korlátozható az <u>első mérés</u> index megadásával.<br><p>
 
 <b id="vtopo"> VisualTopo</b> (.tro, .trox)<br>
 A <i>VisualTopo</i> adatfájlok importálásakor és exportálásakor egyaránt támogatottak.<br>
@@ -245,9 +249,10 @@ Beállítások: <ul style="margin-top=0">
 <br><p>
 
 <b id="walls">Walls</b> (.srv)<br>
+A <i>Walls</i> adatfájl import és exportálás során egyaránt támogatott.<br>
 A felmérés adatai exportálhatók <i>Walls</i> fájlként (részben tesztelve).<br>
 Az adategységek követik a felhasználói beállításokat.<br><p>
-Ha a "Walls Splays" beállítás be van állítva, akkor a felvételek "elnevezett" splayekként exportálódnak (mint az iránytű esetében).
+Ha a "Walls Splays" beállítás be van állítva, akkor a felvételek "elnevezett" splayekként exportálódnak (mint a Compass esetében).
 Ellenkező esetben "névtelen pontfelvételként" exportálják őket (wall-shots).
 <p>
 
