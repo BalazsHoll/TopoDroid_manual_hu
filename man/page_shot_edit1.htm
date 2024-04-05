@@ -9,6 +9,7 @@ Az ablakban megjelenik:
 <ul>
 <li><b>hossz, irány, lejtés</b>. Szerkeszthető a kézzel beírt méréseknél; nem szerkeszthető a letöltött adatoknál. DistoX visszamérés csillaggal '*' jelölve.</li>
 <li>a gyorsulás, a mágneses tér és a mágneses inklináció különbségei a vonatkozó átlagértékektől. Csak DistoX2 méréseknél.</li>
+<li>a mérés ideje</li>
 <li><b>pontok</b></li>
 <li><b>balra nyíl</b>: az előző poligon betöltése</li>
 <li><b>visszamérés</b>: pontok cseréje</li>
@@ -31,7 +32,7 @@ Gombok:
 <li><img src = "btn_xsplay.png" width="36" border="1"> törölje (vagy állítsa be) a sün osztályt, és esetleg az előző sünöket. [H]</li>
 <li><b>OK</b>: mentse a módosításokat és zárja be a párbeszédpanelt</li>
 <li><b>Mentés</b>: a módosítások mentése a párbeszédpanel bezárása nélkül</li>
-<li><b>Több</b>: váltson a másodlagos <a href="page_shot_edit2.htm"> szerkesztési párbeszédpanelre [H]</a></li>
+<li><b>Több/Kevesebb</b>: további műveletek megjelenítése/elrejtése [H]</a></li>
 <li><b>Mégse</b>: mentés nélkül zárja be a párbeszédpanelt</li>
 </ul>
 <br><p>
@@ -101,6 +102,71 @@ sün csoport gombbal.
 Először meg kell mérni a keresztmetszet sablonokat, amelyek +90&deg;-al kezdődnek és körbe mennek. 
 Ezután vegye a H-sünöket. Végül a függőleges síkban lévő oszlopokat vesszük újra +90&deg;-al kezdve.<br><p> 
 </div>
+
+<b>További műveletek</b><br>
+<!-- 
+Ez a párbeszédpanel az első mérés szerkesztése párbeszédpanel <i>Több</i> gombjával nyílik meg.<br><p>
+
+Megmutatja a mérés pontjait és adatait (hossz, irány, lejtés).<br><p>
+-->
+
+"Alap" vagy "Normál" tevékenységi szinten ennek a párbeszédpanelnek csak egy gombja van a mérés <i>törléséhez</i>.<br><p>
+
+Magasabb aktivitási szinten hat vagy hét gombja van: <p>
+
+<ul>
+<li><img src = "btn_photo.png" width="36" border="1"><a href="page_photo_dialog.htm"> fotó</a></li>
+<li><img src = "btn_audio.png" width="36" border="1"><a href="page_audio.htm"> hang</a> megjegyzés</li>
+<li><img src = "btn_sensor.png" width="36" border="1"><a href="page_sensors.htm"> Érzékelő mérések</a></li>
+<li><img src = "btn_shot.png" width="36" border="1"> adjon hozzá mérést előtte (az adatok manuális megadása)</li>
+<li><img src = "btn_split.png" width="36" border="1"> a felmérés felosztása ezen a mérésen (új felmérés létrehozása vagy csatolás egy másik felméréshez)</li>
+<li><img src = "btn_delete.png" width="36" border="1"> törölje a mérést</li>
+<li><img src = "btn_calib_check.png" width="36" border="1"> jelölje meg a mérést kalibrációs ellenőrzésként</li>
+</ul>
+<br><p>
+
+A <b>törlés</b> gomb nem távolítja el a mérést az adatbázisból.
+A mérés "töröltnek" lesz jelölve, és később a
+<a href="./page_undelete.htm"> Helyreállítás</a> párbeszédpanel segítségével visszaállítható.
+Ha a mérés egy poligon első mérése, akkor a poligon összes mérését is törölheti ha
+ bejelöli a jelölőnégyzetet a gombok mellett.
+<br><p>
+
+A poligonméréseknél van egy <b>kalibrálás</b> gomb is. Ez a gomb a mérést "kalibrálás-ellenőrzés" -ként jelöli.
+Ezeket a méréseket nem használják a felmérésben, és adataikat különböző forgatási szögben kell elkészíteni.
+Ezeket rögzítik az adatbázisban, és rögzítik az eszköz kalibrálásának megbízhatóságát
+amikor elkészült a felmérés. Megjeleníthetők a
+<a href="./page_undelete.htm"> Helyreállítás</a> párbeszédpanellel.
+<br><p>
+
+<b>Felmérés felosztása</b><br>
+Ez a gomb megnyit egy párbeszédablakot az új felmérési információkhoz.
+Ezután a felmérés adatait hozzáadjuk az új felméréshez, kezdve ezzel a méréssel.
+Ezt követően a program folytatódik az új felméréssel.
+Előfordulhat, hogy fel kell osztania a felméréseket, ha a műszerben két (külön) felmérésből van adat:
+ezeket egyetlen felmérésbe tölti le, amelyet ezt követően fel kell osztani.<br>
+
+Tesztelői szinten arra is lehetősége van, hogy <b>áthelyezd</b> az adatokat egy másik felmérésbe.
+Válaszd ki a célfelmérést a legördülő opciókészletből, és érintsd meg az "Áthelyezés" gombot.
+<br><p>
+
+<b>Figyelmeztetés</b>. Célszerű egy zip archívumot készíteni, mielőtt a
+felmérést felosztod/áthelyezed, és elmenteni egy biztonságos helyre.<br><p>
+
+<b>+BJFL</b><br>
+Az BJFL mérések a KEZDŐ vagy a CÉL ponton a négy BJFL szerkesztő mező kitöltésével kerülnek hozzáadásra
+ha megérinted az <i>+BJFL</i> gombot.<br>
+Lehetőség van olyan "köztes" BJFL hozzáadására is, amelynél beírod a távolságot (a jelenlegi egységekben) a mérés mentén,
+az BJFL pont és a KEZDŐ pont között.<br>
+A mérésekhez csak a KEZDŐ pont van.<br>
+A "köztes" BJFL-t az adatlistához csatolja, a többit a mérés előtt adja hozzá.<br>
+A kézi BJFL-t "keresztmetszet" -ként jelöli.<br>
+<br><p>
+
+<b>Sün szín</b><br>
+Sünöknél van egy gomb is, amellyel színt rendelhet a méréshez.<br>
+A mérések listája nem frissül azonnal a színekkel.
+A sün színek megjelenítéséhez nyomja meg a "Frissítés" gombot.<br><p>
 
 </body>
 </html>
