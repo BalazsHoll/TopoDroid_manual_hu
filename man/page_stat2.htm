@@ -1,56 +1,66 @@
 <html><body>
 
-<h4>VÁZLAT STATISZTIKA</h4>
+<h4>VÁZLATSTATISZTIKA</h4>
 
-Ez a párbeszédpanel a <u>vázlatablak</u> (alaprajz vagy oldalnézet) <i>Statisztika</i> menüjéből nyílik meg.
-Megjeleníti az adat statisztikákat és a vázlat adat statisztikákat is.<br><p>
+Ez a párbeszédpanel a <u>Rajz ablak</u> <i>Statisztika</i> menüjéből nyílik meg (alaprajz vagy oldalnézet).
+Mind az adatfeldolgozási statisztikákat, mind a vázlatokkal kapcsolatos statisztikákat jeleníti meg.<br><p>
 
-
-A felmérés statisztikája
+Az adatfeldolgozási statisztikák a
 <ul>
-<li>a (szabályos) mérések száma, a vázlat mérések száma, teljes, oldalnézeti és alaprajzi hossza</li>
-<li>az ismétlődő mérések és vázlat kettős mérések száma és teljes hossza</li>
-<li>a felszíni mérések és vázlat felszíni mérések száma és teljes hossza</li>
-<li>a részletpont mérések (sünök) és vázlat sünök száma</li>
-<li>mérési pontok és vázlat pontok száma</li>
-<li>a vázlathoz nem csatolt mérések száma és teljes hossza. Ha megérinti ezt a sort, megnyílik a párbeszédpanel
-a csatolatlan felvételek listájával.</li>
-<li>a ciklusok száma (beleértve a visszamérési ciklusokat is).</li>
-<li>leválasztott felmérési összetevők száma, ha nagyobb, mint 1.
-(Ez 1, ha a mérések mindegyike össze van kötve egy felmérésben)</li>
+<li><i>Alappont mérések</i>: (normál) mérések száma, vázlat mérések, teljes, profil- és alaprajzi hosszuk.</li>
+<li><i>Duplikált mérések</i>: az ismétlődő mérések száma és teljes hossza.</li>
+<li><i>Surface shots</i>: a felszíni mérések száma és teljes hossza.</li>
+<li><i>Sünök (részletpont mérések)</i>: a sünök száma és a vázlat sünök száma.</li>
+<li><i>Mérési pontok</i>: az mérési pontok száma és a vázlat mérési pontok száma.</li>
+<li><i>Mérés szigma</i>: átlagos pozícióhiba az ismételt mérések között.</li>
+<li>
+   <i>Lógó mérések</i>: a vázlathoz nem csatolt mérések száma, ha vannak, és teljes hossza.
+   Ennek a sornak a megérintésével megnyílik a párbeszédpanel a nem csatolt mérések listájával.</li>
+<li>
+   <i>Zárások</i>: a zárások száma (beleértve a visszamérés zárásokat is), ha vannak.
+   Ez az elem csak akkor jelenik meg, ha legalább egy hurok definiálva van.
+</li>
+<li>
+   <i>Összetevők</i>: a leválasztott felmérési összetevők száma, ha nagyobb, mint 1.
+   Ez 1, ha a mérések egy felmérésben össze vannak kapcsolva.
+</li>
+<li><i>Vázlat kezdőpontja</i>: vázlat kezdőpontja (nulla pont).</li>
+<li><i>Vázlat hossza</i>: a poligon hossza.</li>
+<li><i>3D hossz</i>: profilnézet (3D) poligon hossza.</li>
+<li><i>Alaprajz hossza</i>: alaprajzi poligon hossza.</li>
+<li><i>Ny K É D</i>: a vázlatkiterjedés (nyugat, kelet, észak és dél).</li>
+<li><i>Vázlat szintkülönbsége</i>: a vázlatok pozitív és negatív szintkülönbségei a vázlat középpontjához viszonyítva.</li>
+<li><i>A barlang szintkülönbsége</i>: a barlang szintkülönbsége a vázlat kezdőpontjához viszonyítva.</li>
+<li><i>Szöghibák</i>: átlagos szöghiba az ugyanazon a poligonon végzett mérések között [fok].</li>
+<li>a hurkok száma, a záráskompenzációhoz használt és a fel nem használt hurkok száma</li>
 </ul>
 
-A vázlattal kapcsolatos egyéb statisztikák
-<ul>
-<li>vázlat kezdőpont (nulla állomás)</li>
-<li>a poligon hossza</li>
-<li>kiterített oldalnézet (3D) poligon hossza</li>
-<li>alaprajz poligon hossza</li>
-<li>a vázlat kiterjedése (nyugat, kelet, észak és dél)</li>
-<li>a vázlat szintkülönbség, pozitívak és negatívak egyaránt, a vázlat kezdőpontjához viszonyítva</li>
-<li>átlagos szöghiba ugyanazon poligon mérései között [fok]</li>
-<li>a hurkok száma, a záráskompenzációban használtak és a nem használtak</li>
-</ul>
-<br><p>
+<p>
+Ha két érték van számjellel (#) elválasztva, az első érték a felmérés teljes értéke,
+a második pedig az adatfeldolgozási érték, azaz az azt tartalmazó csatlakoztatott komponens értéke
+a vázlat referenciaállomása.
+Ez a két érték különbözik, ha a felmérés poligoni adatai egynél több összekapcsolt komponenst tartalmaznak.
+</p>
 
-Minden hurok esetében:
+Minden ciklushoz:
 <ul>
-<li>záró mérés</li>
+<li>zárókép</li>
 <li>hurokmérések száma</li>
-<li>zárási hiba: 3d hosszúság a teljes hurokhossz felett</li>
-<li>vízszintes és függőleges hibahossz</li>
-<li>százalékos hiba: hiba és a hurok hossza aránya</li>
-<li>becsült szög hiba [fok]. Az érték a hiba szorozva a mérések számának négyzetgyökével és elosztva a hosszával. Az eredmény radiánban van, ez konvertálódik fokra.</li>
+<li>zárási hiba: 3d hossz a teljes hurokhosszon</li>
+<li>vízszintes és függőleges hibahosszok</li>
+<li>hibaszázalék: a hiba és a hurokhossz aránya</li>
+<li>becsült felvételi szög hiba [fok]. Ez a hiba szorzata a lövések számának négyzetgyökével és osztva a hosszával.
+A radiánban megadott eredményt átváltjuk fokokra. </li>
 </ul>
 <br><p>
 
-A hurokzárás bejegyzés megérintésével a szöveg átkapcsol a zárási hiba és a hurokállomások listája között.<br><p>
+A hurokzárás bejegyzés megérintésével a szöveg átkapcsol a zárási hiba és a hurokmérési pontok listája között.<br><p> 
 
-A hossz az alkalmazás beállításaiban megadott egységekben van megadva.<br><p>
+A hossz az alkalmazás beállításaiban megadott mértékegységekben van megadva.<br><p>
 
 <b>Szintkülönbségek</b><br>
-A vázlat középpontja a vázlat kiindulópontja, kivéve, ha a vázlatot frissítették.<br><p>
+A vázlat középpontja a vázlat kiindulópontja, kivéve, ha a vázlatot újból megismételték.<br><p>
 A barlang szintkülönbsége tartalmazza azokat a felmérési adatokat, amelyek nem „felszíni”, „másodlagos” vagy „megjegyzéssel ellátottak”.
-Tartalmazza a sünöket, ezért ha "felszíni" sünöket vettél fel, meg kell jelölni őket "felszínként".<br><p>
+Tartalmazza a sünöket, ezért ha "felszíni" sünöket vettél fel, azokat "felszíniként" kell megjelölni.<br><p>
 
 </body></html>
