@@ -32,6 +32,15 @@ Ha az alapértelmezett felmérési adatok exportálási formátuma be van állí
 Ha az alapértelmezett vázlatexportálási formátum be van állítva, akkor a vázlatokat ebben a formátumban exportálják, amikor bezárják a <u>vázlatablakból</u>.
 A cSurvey esetében az x metszetek PNG-képekként kerülnek mentésre.<br><p>
 -->
+<h4> ZIP-ARCHÍVUM</h4>
+A biztonság kedvéért készítsen egy TopoDroid zip archívumot, és vigye át számítógépére.
+A zip-archívum a felmérés teljes biztonsági másolata, és az
+tartalmazza a parancsot a felmérési adatok és egyéb információk visszaállítására az adatbázisban.
+Segítségével átviheti a felmérést egy másik Android rendszerű TopoDroidba.<br><p>
+
+A ZIP-archívumok a <u>Felmérés információi ablakából</u>, az „Exportálás” menüből exportálhatók.<br>
+Zip archívumokat exportálásakor ellenőrizheti, hogy utána azonnal megosztja. Ha rendelkezik egyéni alkalmazással az exportált zip-archívumok kezelésére, felülbírálhatja az alapértelmezett rendszermegosztó alkalmazásokat, és meghívhatja azokat a „kategória” meghatározására.<br><p>
+A zip-archívumok importálása a <u>főablakból</u> az „Importálás” gombbal történik.<br><p>
 
 <h4> FELMÉRÉS ADAT IMPORTÁLÁSA</h4>
 A TopoDroid importálja a felmérési adatokat a TopoDroid zip archívumából vagy külső fájlokból.<br>
@@ -46,9 +55,10 @@ A külső fájlok következő formátumai támogatottak:
 <li>Therion. Csak adat</li>
 <li>VisualTopo</li>
 <li>Walls</li>
-<li>CaveSniper</li>
-<li>PocketTopo, vázlatokkal együtt</li>
 <li>TopoRobot</li>
+<li>PocketTopo, vázlatokkal együtt</li>
+<li>CaveSniper</li>
+<li>BRIC csv</li>
 <li>TopoDroid zip archívum</li>
 </ul>
 
@@ -56,7 +66,6 @@ A fájlimportálás sikertelen, ha az azonos nevű felmérés már szerepel a To
 
 BJFL értékű fájlformátumokból történő importáláskor ezeket keresztmetszet sünökké alakítják (zöld színnel jelennek meg).<br><p>
 
-<b>Zip-importálás</b><br>
 A zip-importálás sikertelen, ha a zip adatbázis-verzió túl régi, vagy újabb, mint a TopoDroidban.
 A hibakódok a következők
 <ul>
@@ -95,6 +104,10 @@ A TopoDroid átalakítja az importált Compass felmérést a <i>normál</i> adat
 <b>VisualTopo importálás</b><br>
 A TopoDroid a VisualTopo felméréseket is képes importálni a <i>Prof</i> helyett <i>Clino</i> "trox" formátumban.
 Az adatok <i>búvár</i> adatmódban tárolódnak.<br><p>
+
+<b>BRIC csv fájl</b><br>
+A BRIC csv-fájlokból importált felmérési adatok csak távolságot, irányszöget és dőlést tartalmaznak.<br>
+A felmérés adatait az importálás után szerkeszteni kell a többi információ hozzáadásához.<br><p>
 
 <b>Megjegyzés:</b>
 Az importálás meghiúsulhat (és összeomolhat az alkalmazással) az adatbázis hibája miatt, amelyet a TopoDroid nem tud elfogadni.

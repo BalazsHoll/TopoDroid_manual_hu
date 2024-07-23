@@ -68,8 +68,8 @@ Egy vázlat (alaprajz vagy oldalnézet) leválasztható a poligonról, ha a refe
 <li>a mérés adatainak megérintésével megnyílik a mérés <a href="page_shot_edit1.htm"> szerkesztési párbeszédpanel</a></li>
 <li>adatok hozzsú érintésével többes kiválasztás indul</li>
 <!-- li> érintse meg a mérés lejtszögét: mérés <a href="page_shot_edit2.htm"> másodlagos műveletek</a></li-->
-<li>duplán érintse meg az pontot: mutassa/rejtse el a ponton lévő sünöket (csak ha nem láthatók)</li>
-<li>hosszan érintse meg az pontot: jelölje ki/törölje az <a href="page_current.htm"> "aktív" pontot</a></li>
+<li>duplán érintsd meg az pontot: mutassa/rejtse el a ponton lévő sünöket (csak ha nem láthatók)</li>
+<li>hosszan érintsd meg a pont nevet: jelölje ki/törölje az <a href="page_current.htm"> "aktív" pontot</a></li>
 </ul><br><p>
 
 <h4>GOMBOK</h4>
@@ -101,10 +101,14 @@ Többválasztásos lehetőségek:<br>
 <li><img src="btn_multishot_flip_extend.png" width="36" border="1"> kiterítések megfordítása</li>
 <li><img src="btn_right.png" width="36" border="1"> kiterítések <i>jobbra</i></li>
 <li><img src="btn_multishot_special_actions.png" width="36" border="1"> különleges műveletek [T]</li>
-<li><img src="btn_delete.png" width="36" border="1"> <i>törli</i> a méréseket, és beteszi a mérés pufferbe</li>
+<li><img src="btn_delete.png" width="36" border="1"> <i>törli</i> a méréseket, és beteszi a mérés-pufferbez. A rejtett ismételt mérések törlődnek, és a megfelelő poligon mérés törlésekor hozzáadódnak a mérés-pufferhez.</li>
 <li><img src="btn_copy.png" width="36" border="1"> <i>másolja</i> a méréseket a mérés pufferbe</li>
 <li><img src="btn_clear.png" width="36" border="1"> <i>bezárja</i> a többes választást</li>
 </ul><br><p>
+
+<b>Figyelmeztetés</b>
+Ha törörlsz méréseket a felmérésből, akkor lógó vázlatok (azaz származási pont nélküli vázlatok) és média (hang/fénykép) fájlok maradhatnak hibás hivatkozással egy mérésre.
+<br><p>
 
 <h4> Vázlat párbeszédpanel</h4>
 A "vázlat" párbeszédpanelen létrehozhat egy új vázlatot, vagy megnyit egy meglévőt. Van egy gomb új vázlat létrehozásához, és egy két oszlopos lista az aktuális felmérési vázlatokhoz. A bal oldali oszlop elemei vázlatot nyitnak meg felülnézetben, a jobb oldali oszlopban lévő elemek pedig oldalnézetben. A vázlatok között a <u>vázlatablakban</u> is válthat.<br><p>
@@ -137,7 +141,7 @@ Ha a 3D modellezés engedélyezve van, akkor egy gomb is létrehozhat egy új 3D
   <li><i>Megosztott keresztmetszetek</i>: meg kell-e osztani alapértelmezés szerint az ponton lévő keresztmetszeteket [alapértelmezett nem]</li>
   <li><i>ADAT MÉRTÉKEGYSÉGEK</i>
     <ul style = "margin-top: 0; margin-bottom: 0">
-    <li><i>Hosszegységek</i>: méter, vagy láb [alapértelmezett méter]</li>
+    <li><i>Hosszegységek</i>: méter, vagy láb (0.3048 m) [alapértelmezett méter]</li>
     <li><i>Szögegységek</i>: fok vagy újfok [alapértelmezett fok]</li>
     <li><i>Rácscella egység</i>: méter, yard, 2 láb vagy 0,1 méter [alapértelmezett méter]</li>
    </ul>

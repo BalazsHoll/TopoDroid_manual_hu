@@ -69,7 +69,7 @@ Néhány gombnak hosszú érintés funkciója van:
 <li><i>pont párbeszédpanel</i>: megnyitja-e a kiválasztott pont párbeszédpaneljét [n].</li>
 <li><i>mérési pontok</i>: a mérési pontok megjelenítése mindig (zöld) [n].</li>
 <li><i>Felső rács</i>: A térképészeti rács megjelenítése felül [n].</li>
-<li><i>Rács kiterjedése</i>: a felmérés körüli térképészeti rács kiterjedése [10 cella].</li>
+<li><i>Rács kiterjedése</i>: a felmérés körüli térképészeti rács kiterjedése [10 cella].Ez a 3D-s megtekintő következő megnyitásakor lép életbe.</li>
 <li><i>A horizont alatti nézet</i>: engedélyezi-e a horizont alatti nézőpontokat [n].</li>
 <li><i>DEM puffer</i>: A felszíni modell kiterjedése a felmérés körül a felületi modell DEM fájlból történő betöltésekor.</li>
 <li><i>DEM maximális méret</i>: a felszíni DEM maximális mérete minden irányban [400 cella].</li>
@@ -221,8 +221,7 @@ A kiválasztott pont és egy másik pont közötti távolság méréséhez ellen
  és érintse meg a másik pontot.
  A két pont, a keleti, az északi és a függőleges komponensek közötti 3D távolság és a síkbeli 2D távolság
  párbeszédpanelen jelenik meg.
- Ha a két pont a poligonvonal mentén csatlakozik, akkor a "barlang" távolság is megjelenik
- és a köztük lévő barlang zöld színnel van kiemelve.<br>
+ Ha a két pont a poligonvonal mentén csatlakozik, akkor a két pont közötti pozitív és negatív "barlang" magasságkülönbségek összege, valamint a "barlang" távolság is megjelenik, és a közöttük lévő barlangút zöld színnel van kiemelve.<br>
 Opcionálisan az értékek párbeszédablak helyett rövid üzenetmezőben jeleníthetők meg.<br><p>
 
 <img style="border:1px solid black" width="36" height="36" src="btn_3d_measure_station_off.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_measure_station_on.png"> Ha az alsó pont "pont" gombja be van jelölve, az pont pozíciója a képernyőn
