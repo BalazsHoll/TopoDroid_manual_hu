@@ -92,11 +92,15 @@ vagy vonalakra (kivéve a "keresztmetszet" vonalakat) [V] vagy területekre [F].
 <h4> Többválasztási mód [T]</h4>
 Ez az üzemmód lehetővé teszi több azonos típusú objektum (pont/vonal/terület) kiválasztását és mindegyikre való hatást:
 <ul style = "margin-top = 0">
-<li><i>Törölje</i> a kijelölt elemeket [P,V,F]</li>
+<li><i>Törli</i> a kijelölt elemeket [P,V,F]</li>
 <li><i>Csökkentse</i> a kijelölt elemek pontjainak számát [V,F]</li>
 <li><i>Kapcsolja</i> a kijelölt elemeket [V,F]</li>
+<li><i>Tárolja</i> a kijelölt elemeket, hogy áthelyezhesse őket egy másik szintre</li>
 <li><i>Kilépés</i> többes választás módból</li>
-</ul><br><p>
+</ul><br>
+A többszörös kijelölésű elemek implicit módon tárolásra kerülnek, ha többszörös kijelölés módban váltod át a szintet. 
+ Ha át szeretnél helyezni elemeket egy másik szintre, akkor ki kell választani a cél szintet és meg kell nyomni a "Visszaállítás" menüt mielőtt bármely pontot kiválasztanál.
+<br><p>
 
 <h4> Tartományválasztás</h4>
 A vonalak és területek pontjai választhatók külön-külön (pontválasztási mód) vagy tartományként is.
@@ -117,11 +121,18 @@ Ebben az esetben kiválasztunk egy pontot a vonalon/területen, és az egész el
 
 <div style = "font-size: 90%">
 <h4> Csak toll rajzolás [T]</h4>
+Ez a funkció akkor hasznos, ha érintőceruzával rajzol.
+<b>Az érintés méretét biztosító eszközökön kell használni</b>.<br>
+Más eszközökön a csak ceruzával történő rajzolás trükkös, mert a vonal "lassú" követését igényli, kezdve a töréssel. Hasznos lehet a „Vonalvégek ledobása” beállítás.<br>
+A követhető pontokat először enyhén az ellenkező irányba kell "nyomozni", majd a kívánt irányba kell berajzolni.
+<br><p>
 A csak toll rajzolás lehetővé teszi, hogy ujját tartsa a képernyőn, miközben tollal rajzol.<br>
 A funkció engedélyezéséhez pozitív "tollméretet" kell beállítani.
  A képpontban kifejezett méretnek az érintőceruza hegyével megérintett megjelenítési terület mérete és az ujjheggyel megérintett terület közötti köztes értéknek kell lennie.<br>
-A csak érintőceruzával történő nyomkövetés nem működik, ha a vonalpontköz túl kicsi.<br>
-Ez a funkció csak akkor hasznos, ha finom hegyű tollal rajzol.
+A csak érintőceruzával történő nyomkövetés nem működik, ha a vonalpontköz túl kicsi.<br><p>
+
+Csak ceruzával történő rajzolás esetén a többujjas műveletek le vannak tiltva.
+A zoom-vezérlők engedélyezve vannak, és nem tilthatók le.
 </div><br><p>
 
 

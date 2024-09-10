@@ -8,8 +8,13 @@ A kalibrációs együtthatók kiszámítása előtt a kalibrálási adatokat fel
 Vigyázz, hogy egy helytelen csoport hozzárendelés a kalibrációs együtthatók kiszámításának hibájához vezethet (általában az algoritmus túl sok iterációja miatt).<br><p>
 
 A csoportokat egész számmal azonosítjuk, 1-el kezdődően.<br>
-A 0-as adatok fel vannak sorolva, de ki vannak zárva az együtthatók számításából.<br>
-A törölt adatok negatív csoportszámmal rendelkeznek, ezért a -1-es csoport úgy állítja be az adatokat, hogy "törölt".<br><p>
+0-s vagy negatív számmal rendelkező adat szerepel a listában,
+a negatív csoportok adatai azonban ki vannak zárva a kalibrációs együtthatók számításából.<br><p>
+
+A páratlan csoportokat tartalmazó adatok kék színnel, a páros csoportok narancssárgával jelennek meg.
+A 0-val vagy negatív csoporttal rendelkező adatok szürkén jelennek meg.<br><p>
+
+A "törölve" megjelölt adatok általában nem szerepelnek a listában, és még ha szerepelnek is, ki vannak zárva a csoportok hozzárendeléséből és az együtthatók kiszámításából.<br><p>
 
 Az egyes kalibrálási adatokhoz kézzel rendelhetsz a csoport számot (a <i>Kalibrációs adatok szerkesztése</i> párbeszédpanellel),
 vagy hagyd, hogy a TopoDroid hozzárendelje a csoportszámokat.
