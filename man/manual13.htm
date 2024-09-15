@@ -67,7 +67,7 @@ A fájlimportálás sikertelen, ha az azonos nevű felmérés már szerepel a To
 BJFL értékű fájlformátumokból történő importáláskor ezeket keresztmetszet sünökké alakítják (zöld színnel jelennek meg).<br><p>
 
 A zip-importálás sikertelen, ha a zip adatbázis-verzió túl régi, vagy újabb, mint a TopoDroidban.
-A hibakódok a következők
+ A hibakódok a következők
 <ul>
 <li>1: IO hiba</li>
 <li>2: A zip TopoDroid verzió túl régi</li>
@@ -90,20 +90,21 @@ Ne feledje, hogy a színek megjelenítése nem importálható, hacsak nincs enge
 <b>Therion importálás</b><br>
 Csak azok a Therion felmérési fájlok importálhatók, amelyek adatai "normál" adatmódban vannak.<br>
 A "deklináció" parancsot figyelembe vesszük: a beolvasott azimutot korrigáljuk a deklináció értékével.<br>
-A felmérési útvonal hozzáfűzhető az állomásnevekhez [T].<br>
+Ha a mérési pontok rövid nevei között nincs ütközés, a fájl importálható "rövid nevekkel".
+ Ellenkező esetben teljes névvel kell importálni, azaz a felmérési útvonal által minősített nevekkel.<br>
 A TopoDroid nem importálja a Therion szinteket.<br><p>
 
 <b>PocketTopo importálás</b><br>
 A TopoDroid mind a felmérés adatait, mind a vázlatokat importálja.
-Ez az import a PocketTopo színeket hozzárendeli a TopoDroid rajzeszközökhöz (pontok és vonalak).
-A leképezés egy beállítással módosítható.<br><p>
+ Ez az import a PocketTopo színeket hozzárendeli a TopoDroid rajzeszközökhöz (pontok és vonalak).
+ A leképezés egy beállítással módosítható.<br><p>
 
 <b>Compass importálása</b><br>
 A TopoDroid átalakítja az importált Compass felmérést a <i>normál</i> adatmódról <i>búvár</i> adatmódra [T], ha a relatív beállítás engedélyezve van [G].<br><p>
 
 <b>VisualTopo importálás</b><br>
 A TopoDroid a VisualTopo felméréseket is képes importálni a <i>Prof</i> helyett <i>Clino</i> "trox" formátumban.
-Az adatok <i>búvár</i> adatmódban tárolódnak.<br><p>
+ Az adatok <i>búvár</i> adatmódban tárolódnak.<br><p>
 
 <b>BRIC csv fájl</b><br>
 A BRIC csv-fájlokból importált felmérési adatok csak távolságot, irányszöget és dőlést tartalmaznak.<br>
@@ -111,7 +112,7 @@ A felmérés adatait az importálás után szerkeszteni kell a többi informáci
 
 <b>Megjegyzés:</b>
 Az importálás meghiúsulhat (és összeomolhat az alkalmazással) az adatbázis hibája miatt, amelyet a TopoDroid nem tud elfogadni.
-Ebben az esetben törölje a részben importált felmérést, és próbálja meg újra importálni.<br><p>
+ Ebben az esetben törölje a részben importált felmérést, és próbálja meg újra importálni.<br><p>
 
 <h4> FELMÉRÉSI ADAT EXPORTÁLÁS</h4>
 A TopoDroid a felmérés adatait a következő barlang-program formátumokba exportálja:
