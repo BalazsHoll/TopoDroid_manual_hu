@@ -42,30 +42,6 @@ A ZIP-archívumok a <u>Felmérés információi ablakából</u>, az „Exportál
 Zip archívumokat exportálásakor ellenőrizheti, hogy utána azonnal megosztja. Ha rendelkezik egyéni alkalmazással az exportált zip-archívumok kezelésére, felülbírálhatja az alapértelmezett rendszermegosztó alkalmazásokat, és meghívhatja azokat a „kategória” meghatározására.<br><p>
 A zip-archívumok importálása a <u>főablakból</u> az „Importálás” gombbal történik.<br><p>
 
-<h4> FELMÉRÉS ADAT IMPORTÁLÁSA</h4>
-A TopoDroid importálja a felmérési adatokat a TopoDroid zip archívumából vagy külső fájlokból.<br>
-Fájlok vagy zip-archívumok importálásához érintse meg az „Importálás” gombot.
-A fájlok és a zip-archívumok kiválasztása a rendszer fájlkezelőn keresztül történik.<br>
-A fájl neve nem tartalmazhat kettőspontot ':'.<br><p>
-
-A külső fájlok következő formátumai támogatottak:
-<ul>
-<li>Compass</li>
-<li>Survex</li>
-<li>Therion. Csak adat</li>
-<li>VisualTopo</li>
-<li>Walls</li>
-<li>TopoRobot</li>
-<li>PocketTopo, vázlatokkal együtt</li>
-<li>CaveSniper</li>
-<li>BRIC csv</li>
-<li>TopoDroid zip archívum</li>
-</ul>
-
-A fájlimportálás sikertelen, ha az azonos nevű felmérés már szerepel a TopoDroidban.<br><p>
-
-BJFL értékű fájlformátumokból történő importáláskor ezeket keresztmetszet sünökké alakítják (zöld színnel jelennek meg).<br><p>
-
 A zip-importálás sikertelen, ha a zip adatbázis-verzió túl régi, vagy újabb, mint a TopoDroidban.
  A hibakódok a következők
 <ul>
@@ -87,32 +63,7 @@ A zip-importálás sikertelen, ha a zip adatbázis-verzió túl régi, vagy úja
 Ne feledje, hogy a színek megjelenítése nem importálható, hacsak nincs engedélyezve a megfelelő beállítás.
 <br><p>
 
-<b>Therion importálás</b><br>
-Csak azok a Therion felmérési fájlok importálhatók, amelyek adatai "normál" adatmódban vannak.<br>
-A "deklináció" parancsot figyelembe vesszük: a beolvasott azimutot korrigáljuk a deklináció értékével.<br>
-Ha a mérési pontok rövid nevei között nincs ütközés, a fájl importálható "rövid nevekkel".
- Ellenkező esetben teljes névvel kell importálni, azaz a felmérési útvonal által minősített nevekkel.<br>
-A TopoDroid nem importálja a Therion szinteket.<br><p>
-
-<b>PocketTopo importálás</b><br>
-A TopoDroid mind a felmérés adatait, mind a vázlatokat importálja.
- Ez az import a PocketTopo színeket hozzárendeli a TopoDroid rajzeszközökhöz (pontok és vonalak).
- A leképezés egy beállítással módosítható.<br><p>
-
-<b>Compass importálása</b><br>
-A TopoDroid átalakítja az importált Compass felmérést a <i>normál</i> adatmódról <i>búvár</i> adatmódra [T], ha a relatív beállítás engedélyezve van [G].<br><p>
-
-<b>VisualTopo importálás</b><br>
-A TopoDroid a VisualTopo felméréseket is képes importálni a <i>Prof</i> helyett <i>Clino</i> "trox" formátumban.
- Az adatok <i>búvár</i> adatmódban tárolódnak.<br><p>
-
-<b>BRIC csv fájl</b><br>
-A BRIC csv-fájlokból importált felmérési adatok csak távolságot, irányszöget és dőlést tartalmaznak.<br>
-A felmérés adatait az importálás után szerkeszteni kell a többi információ hozzáadásához.<br><p>
-
-<b>Megjegyzés:</b>
-Az importálás meghiúsulhat (és összeomolhat az alkalmazással) az adatbázis hibája miatt, amelyet a TopoDroid nem tud elfogadni.
- Ebben az esetben törölje a részben importált felmérést, és próbálja meg újra importálni.<br><p>
+<a href="page_import.htm">Mérési adat import</a><br><p>
 
 <h4> FELMÉRÉSI ADAT EXPORTÁLÁS</h4>
 A TopoDroid a felmérés adatait a következő barlang-program formátumokba exportálja:
@@ -192,6 +143,7 @@ Beállítások: <ul style="margin-top=0">
 <li><u>sorvég</u> lehet Unix vagy Windows</li>
 <li><u>CÉL pontok nevei</u> a segédpontok készítéséhez (a CÉL név a KEZDŐ pont neve a mellékelt betűvel)</li>
 <li>adja hozzá az <u>BJFL</u> t az exportáláshoz</li>
+<li>"cs out" <u>EPSG</u> szám</li>
 </ul><p>
 
 <b id="therion"> Therion</b> (.th)<br>

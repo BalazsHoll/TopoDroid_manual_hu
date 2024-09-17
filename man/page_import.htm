@@ -5,29 +5,72 @@
 
 Ez a párbeszédpanel a <u>főablak</u> <i>Import</i> gombjának megérintésével nyílik meg.<br><p>
 
-Megjeleníti a támogatott import fájlformátumok listáját:
- dat (Compass), svx (Survex), th (Therion), tro és trox (VisualTopo),
- csn (CaveSniper), top (PocketTopo) és TopoDroid zip archívumok.<br>
-Ha hosszan koppint az <i>Importálás</i> gombra, akkor gyorsan elérheti a zip archívumokat.<br>
-Az importfájlt a rendszer tartalomszolgáltatója választja ki.<br><p>
+A TopoDroid importálja a felmérési adatokat a TopoDroid zip archívumából vagy külső fájlokból.<br>
+Fájlok vagy zip-archívumok importálásához érintse meg az „Importálás” gombot.
+A fájlok és a zip-archívumok kiválasztása a rendszer fájlkezelőn keresztül történik.<br>
+A fájl neve nem tartalmazhat kettőspontot ':'.<br><p>
 
-<b>Megjegyzés</b>
-Az importálás meghiúsulhat (és összeomolhat az alkalmazással) az adatbázis hibája miatt, amelyet a TopoDroid nem tud elfogadni.
- Ebben az esetben törölje a részben importált felmérést, és próbálja meg újra importálni.<br><p>
+A párbeszédpanelen megjelenik a támogatott import fájlformátumok listája a "zip" archívumok mellett:
+<ul>
+<li>Compass (dat)</li>
+<li>Survex (svx)</li>
+<li>Therion. Csak adat (th)</li>
+<li>VisualTopo (tro and trox)</li>
+<li>Walls (srv)</li>
+<li>TopoRobot </li>
+<li>PocketTopo, vázlatokkal együtt (top)</li>
+<li>CaveSniper (csn)</li>
+<li>BRIC csv (csv)</li>
+</ul>
 
-Egyes formátumok esetében az importálás személyre szabható néhány beállítással.<br><p>
+Egyes formátumok esetében az importálás személyre szabható néhány beállítással.<br>
 
-<b>Compass (dat) importálási lehetőségek</b>
+A fájlimportálás sikertelen, ha az azonos nevű felmérés már szerepel a TopoDroidban.<br><p>
+A fájlok kiválasztása a rendszer tartalomszolgáltatón keresztül történik.<br><p>
+
+BJFL tartalmú fájlformátumokból történő importáláskor ezeket keresztmetszet sünökké alakítják (zöld színnel jelennek meg).<br><p>
+
+<b>Survex importálás</b><br>
+Survex adat syntaxisa csak részben támogatott.<br><p>
+
+<b>Therion importálás</b><br>
+Csak azok a Therion felmérési fájlok importálhatók, amelyek adatai "normál" adatmódban vannak.<br>
+A "deklináció" parancsot figyelembe vesszük: a beolvasott azimutot korrigáljuk a deklináció értékével.<br>
+Ha a mérési pontok rövid nevei között nincs ütközés, a fájl importálható "rövid nevekkel".
+ Ellenkező esetben teljes névvel kell importálni, azaz a felmérési útvonal által minősített nevekkel.<br>
+A TopoDroid nem importálja a Therion szinteket.<br><p>
+
+<b>PocketTopo importálás</b><br>
+A TopoDroid mind a felmérés adatait, mind a vázlatokat importálja.
+ Ez az import a PocketTopo színeket hozzárendeli a TopoDroid rajzeszközökhöz (pontok és vonalak).
+ A leképezés egy beállítással módosítható.<br><p>
+
+<b>Compass importálása</b><br>
 <ul>
 <li><i>LRUD</i> ha engedélyezett akkor az LRUD értékeket importálja és átváltja sün mérésekké</li>
 <li><i>Poligon az első</i> ha engedélyezett LRUD sünt-t helyeznek a poligon után</li>
 <li><i>Búvár adatmód</i> engedélyezi az merülési adat módot az Compass fájlban [T]</li>
 </ul><br><p>
 
+A TopoDroid átalakítja az importált Compass felmérést a <i>normál</i> adatmódról <i>búvár</i> adatmódra [T], ha a relatív beállítás engedélyezve van [G].<br><p>
 
-<b>VisualTopo (tro, trox) importálási lehetőségek</b>
+
+<b>VisualTopo importálás</b><br>
+VisualTopo (tro, trox) importálási lehetőségek:
 <ul>
 <li><i>LRUD</i> ha engedélyezett akkor az LRUD értékeket importálja és átváltja sün mérésekké</li>
 <li><i>Poligon az első</i> ha engedélyezett LRUD sünt-t helyeznek a poligon után</li>
-</ul>
+</ul><br>
+A TopoDroid a VisualTopo felméréseket is képes importálni a <i>Prof</i> helyett <i>Clino</i> "trox" formátumban.
+ Az adatok <i>búvár</i> adatmódban tárolódnak.<br><p>
+
+<b>BRIC csv fájl</b><br>
+A BRIC csv-fájlokból importált felmérési adatok csak távolságot, irányszöget és dőlést tartalmaznak.<br>
+A felmérés adatait az importálás után szerkeszteni kell a többi információ hozzáadásához.<br><p>
+
+<b>Megjegyzés</b>
+Az importálás meghiúsulhat (és összeomolhat az alkalmazással) az adatbázis hibája miatt, amelyet a TopoDroid nem tud elfogadni.
+ Ebben az esetben törölje a részben importált felmérést, és próbálja meg újra importálni.<br><p>
+
+
 </body></html>
