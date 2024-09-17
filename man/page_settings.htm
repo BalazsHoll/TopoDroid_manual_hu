@@ -34,7 +34,7 @@
    <li><a href="#custom_main">Szakértői főoldal</a>
      <ul>
        <li><a href="#custom_survey_data">Szakértői felmérési adatok</a></li>
-       <li><a href="#custom_splay_data">Szakértői sün adatok</a></li>
+       <li><a href="#custom_sün_data">Szakértői sün adatok</a></li>
        <li><a href="#custom_sketching">Szakértői vázlatkészítés</a></li>
        <li><a href="#custom_lines">Szakértői vonalak</a></li>
        <li><a href="#custom_devices">Szakértői műszerek</a></li>
@@ -68,9 +68,9 @@
      <li><i>Adatexportálási formátum</i>: alapértelmezett adatexportálási típus: {cave,cav,csv,csx,dat,dxf,grt,gtx,srv,sur,svg,svx,th,top,tro} [ egyik sem]</li>
      <li><i>Vázlat exportálási formátum</i>: alapértelmezett vázlatexportálási típus: {none,th,csx,dxf,svg,xvi} [nincs]</li>
      <li><i>Vázlat automatikus exportálási formátuma</i> [nincs]</li>
-     <li>Compass <i>LRUD szöge</i>. Az LRUD minimális kinyúlási szöge.</li>
-     <li><i>UD splay clinó</i>: Fel/le minimális splay clinó. [0&deg;]</li>
-     <li><i>LR splay clinó</i>: Bal/Jobb maximális splay clinó. [90&deg;]</li>
+     <li>Compass <i>BJFL szöge</i>. Az BJFL minimális kinyúlási szöge.</li>
+     <li><i>UD sün lejtszög</i>: Fel/le minimális sün lejtszög. [0&deg;]</li>
+     <li><i>LR sün lejtszög</i>: Bal/Jobb maximális sün lejtszög. [90&deg;]</li>
      <li><i>Ponttávolság</i>: a vonalpontok közötti távolság</li>
    </ul>
 </li>
@@ -104,16 +104,16 @@
 <li>Survex export:
    <ul>
      <li><i>Survex/Topo sorlezárás</i>: sor vége {Linux, Windows}. [Linux] </li>
-     <li><i>Survex splays állomás</i>: splayek hozzáadása az állomáshoz. [nem]</li>
-     <li><i>Survex/Therion LRUD</i>: LRUD hozzáadása az exporthoz. [nem]</li>
+     <li><i>Survex süns állomás</i>: sünek hozzáadása az állomáshoz. [nem]</li>
+     <li><i>Survex/Therion BJFL</i>: BJFL hozzáadása az exporthoz. [nem]</li>
    </ul>
 </li>
 <li>Therion export:
    <ul>
      <li><i>Therion config</i>: thconfig létrehozása [no]</li>
      <li><i>Először a Therion térképek</i>: helyezze a Therion térképparancsokat a felmérési adatok elé. [nem]</li>
-     <li><i>Sünek</i>: játékvonalak hozzáadása a Therion-bejegyzésekhez. [igen]</li>
-     <li><i>Survex/Therion LRUD</i>: LRUD hozzáadása az exporthoz. [nem]</li>
+     <li><i>Sünök</i>: segédmérések hozzáadása a Therion-bejegyzésekhez. [igen]</li>
+     <li><i>Survex/Therion BJFL</i>: BJFL hozzáadása az exporthoz. [nem]</li>
      <li><i>Therion skála</i>: export skála. [1:100]</li>
      <li><i>xvi-kép</i>: hivatkozás beszúrása az xvi-képre a th2-fájlokba</li>
    </ul>
@@ -126,20 +126,20 @@
 <li>Compass exportálása:
    <ul>
      <li>Compass <i>állomás előtagja</i>. [nem]</li>
-     <li><i>Compass splays</i>: splayek hozzáadása a Compass fájlokhoz</li>
+     <li><i>Compass süns</i>: sünek hozzáadása a Compass fájlokhoz</li>
      <li><i>Compass csere LR</i>: cserélje balra és jobbra az Compass exportálásakor. [nem]</li>
    </ul>
 </li>
 <li>VisualTopo exportálás:
    <ul>
-     <li><i>VisualTopo-megjelenítések</i>: Sünek hozzáadása VisualTopo-fájlokhoz</li>
-     <li><i>LRUD a FROM</i> állomáson</li>
+     <li><i>VisualTopo-megjelenítések</i>: Sünök hozzáadása VisualTopo-fájlokhoz</li>
+     <li><i>BJFL a FROM</i> állomáson</li>
      <li><i>Trox formátum</i>: fájlformátum, tro vagy trox</li>
    </ul>
 </li>
 <li>Walls exportálása:
    <ul>
-     <li><i>Walls Süns</i>: a fali fájlok szerepeltetése a fali fájlokban</li>
+     <li><i>Walls sünök</i>: segédmérések szerepeltetése a Walls fájlokban</li>
    </ul>
 </li>
 <li>SVG-exportálás:
@@ -178,14 +178,14 @@
    <li>Képfelbontás [0,5, 100]. Alapértelmezett 1,5 [x200 px]</li>
    <li>Háttérszín (RGB 0-100 között). [0 0 0, azaz fekete]</li>
    <li>Rács: metrikus vázlatrács hozzáadása</li>
-   <li>Sünek: osztásvonalak hozzáadása</li>
+   <li>sünök: osztásvonalak hozzáadása</li>
    <li>Mérési pontok: mérési pontok hozzáadása</li>
    </ul>
 </li -->
 <li>KML-exportálás:
    <ul>
      <li><i>KML-mérési pontok</i>: mérési pontok hozzáadása a KML-exportáláshoz. [igen]</li>
-     <li><i>KML-megjelenítések</i>: Sünek hozzáadása a KML-exportáláshoz. [nem]</li>
+     <li><i>KML-megjelenítések</i>: sünök hozzáadása a KML-exportáláshoz. [nem]</li>
    </ul>
 </li>
 <li>GPX-exportálás:<br>
@@ -207,10 +207,10 @@
 <h2 id="survey_data">Felmérés adatai</h2>
 <ul>
    <li><i>Csapat</i>: alapértelmezett felmérési csapat. Alapértelmezés szerint nincs beállítva. Új felmérés létrehozásakor be kell lépnie a csapatba.</li>
-   <li><i>Mérési pontok házirendje</i>: a felmérési mérési pontok nevének hozzárendelési szabályzata {nincs, sün+előre, play+back, fore+splay, back+splay, back+splay+fore, tripod, magn.anomaly}.
+   <li><i>Mérési pontok házirendje</i>: a felmérési mérési pontok nevének hozzárendelési szabályzata {nincs, sün+előre, play+back, fore+sün, back+sün, back+sün+fore, tripod, magn.anomaly}.
      A választási lehetőségek száma az aktivitási szinttől függően változik.
-     Alapértelmezett „splay+fore”.</li>
-   <li><i>Mérési pontok nevei</i>: {alphanumerikus,szám}. [alfanumerikus]</li>
+     Alapértelmezett „sün+fore”.</li>
+   <li><i>Mérési pontok nevei</i>: {alfanumerikus,szám}. [alfanumerikus]</li>
    <li><i>Kezdő állomásnév</i>: alapértelmezés szerint nincs beállítva, és a program „0”-t használ.</li>
    <li><i>Indexképek mérete</i>: a fotók indexképeinek mérete [80 400]. [200 px] </li>
    <li><i>Szerkeszthető mérési pontok</i>: soron belül szerkeszthető mérési pontok [nem]</li>
@@ -222,7 +222,7 @@
 
 <h3 id="units">Egységek</h3>
 <ul>
-   <li><i>Hosszság mértékegységei</i>: {m, ft}. [m] </li>
+   <li><i>Hosszúság mértékegységei</i>: {m, ft}. [m] </li>
    <li><i>Szög mértékegységei</i>: {deg, grad}. [deg]</li>
    <li><i>Vázlat mértékegységei</i>: vázlat rács egységei {m, yd, 2ft, dm}. [m] </li>
    <li><i>Vonalzó mértékegységei</i>: {cella, m, ft} vonalzó egységeinek mérése.</li>
@@ -235,10 +235,10 @@
    <li><i>Poligon tűrés</i>: tolerancia az ugyanazon a poligonon végzett mérések között &gt; 0%. [0,05, azaz 5%]</li>
    <li><i>Mérés maximális hossza</i> [50 m]</li>
    <li><i>Poligon minimális hossza</i> [30 cm]</li>
-   <li><i>Poligon minimum Mérések</i>: lábonkénti minimális Mérések száma. [3] </li>
+   <li><i>Poligon minimum mérések</i>: poligononkénti minimális mérések száma. [3] </li>
    <li><i>Mérés függőleges kiterjesztése</i>: függőleges küszöb. 90° körüli régió, ahol a felvételek „függőlegesen” vannak kiterjesztve [0,90]. [10&deg;]</li>
-   <li><i>Poligon WENS küszöb</i>: a láb függőleges küszöbértéke [0,90]. [80&deg;]</li>
-   <li><i>Rögzített kiterjesztési hivatkozás</i>: "kiterjesztés" hivatkozás. Beállítható vagy fix kiterjesztett bal/jobb referencia. [nem]</li>
+   <li><i>Poligon WENS küszöb</i>: a poligon függőleges küszöbértéke [0,90]. [80&deg;]</li>
+   <li><i>Rögzített kiterítési hivatkozás</i>: "kiterítés" hivatkozás. Beállítható vagy fix kiterített bal/jobb referencia. [nem]</li>
    <li><i>Előző/Következő gombok</i>: az előző/következő gombok a képszerkesztő párbeszédpanelen. [igen]</li>
    <li><i>Visszalátás</i>: a visszatekintés a felhasználó által beírt Mérés párbeszédablakban. [nem]</li>
    <li><i>Poligon Mérés visszajelzése</i>: poligon azonosító visszajelzés {nincs, hang, tapintható} [nem]</li>
@@ -260,10 +260,10 @@
 
 <h3 id="accuracy">Pontosság</h3>
 <ul>
-   <li><i>Gyorsulási tűrés</i>: százalékos tolerancia a Mérések gyorsulásához &gt; 0. [1%] </li>
+   <li><i>Gyorsulási tűrés</i>: százalékos tolerancia a mérések gyorsulásához &gt; 0. [1%] </li>
    <li><i>Mágneses mező tűrése</i>: százalékos tolerancia a felvételek mágneses terének &gt; 0. [1%] </li>
    <li><i>Mágneses merülés tűrése</i>: a felvételek tűrés mágneses merülés &gt; 0. [2,0&deg;]</li>
-   <li><i>Testvérek küszöbe</i>: a testvérMérések toleranciájának küszöbértéke &gt; 0. [5%]</li>
+   <li><i>Testvérek küszöbe</i>: a testvérmérések toleranciájának küszöbértéke &gt; 0. [5%]</li>
 </ul>
 
 <hr style="height:2px;background-color:black;">
@@ -379,7 +379,7 @@
    <li><i>Sün használat</i>: melyik játékot kell használni {skip, normal, xsection} [normal]</li>
    <li><i>Minden kivágás</i>: használja-e az összes terítést a Wallshoz.</li>
    <li><i>Vetített falak</i>: használjon-e normál síkra vetített réseket.</li>
-   <li><i>Lejátszási küszöb</i>: a Mérésön kívüli ütések megtartása.</li>
+   <li><i>Lejátszási küszöb</i>: a mérésen kívüli ütések megtartása.</li>
    <li><i>Háromszögek felosztása</i>: fel kell-e osztani az egymást metsző falháromszögeket.</li>
    <li><i>Pontok véletlenszerűvé tétele</i>: kis véletlenszerű vektor hozzáadva a játékokhoz.</li>
    <li><i>Falak nyújtása</i>: a falpontokat kis mértékben eltolja a poligon mentén</li>
@@ -435,14 +435,14 @@
    <li><i>Android Compass</i>: az Android compass/clino engedélyezése</li>
    <li><i>Mérésirány időzítő</i>: Mérésirány időzítő visszaszámlálás. [10 s]</li>
    <li><i>Időzítő hangereje</i>: felvétel iránya, időzítő hangereje [10 100]. [50%] </li>
-   <li><i>BallóMérések</i>: a lábbalMérések kihagyása</li>
+   <li><i>Baklövések</i>: a hibás poligon mérések kihagyása</li>
    <li><i>Lejátszási mérési pontok újbóli hozzárendelése</i>: a hozzárendelt lejátszási mérési pontok fenntartása az újraszámozáskor</li>
    <li><i>Sün csoport átnevezése</i>: Play group-station hozzárendelés csak előre</li>
 </ul>
 
 <hr style="height:1px;background-color:black;">
 
-<h3 id="custom_splay_data">Szakértői sün adatok</h3>
+<h3 id="custom_sün_data">Szakértői sün adatok</h3>
 <ul>
    <li>Sün osztályok</li>
    <li>Színezés megjelenítése</li>
@@ -484,7 +484,7 @@
    <li><i>Bézier sarok küszöb</i>: Bezier sarok észlelési küszöb</li>
    <li><i>Gyomlálási pont távolság</i>: max. pont/szegmens távolság a gyomláláshoz. [0,5 m]</li>
    <li><i>Gyomlálási szegmens hossza</i>: a szegmens maximális hossza a gyomláláshoz méterben. [2,0 m]</li>
-   <li><i>Gyomlálási szegmens puffer</i>: puffer egy vonalszakasz körül pixbenels.</li>
+   <li><i>Gyomlálási szegmens puffer</i>: puffer egy vonalszakasz körül pixelben.</li>
    <li><i>Vonal/terület raszter</i> [nem]</li>
    <li><i>Szegmensek simítása/kiegyenesítése</i></li>
    <li><i>Vonalak kiegyenesítése</i></li>
@@ -496,7 +496,7 @@
 
 <h3 id="custom_devices">Szakértői műszerek</h3>
 <ul>
-   <li><i>BT-álnevek</i>: BT-álnevek manuális beállítása a mérőműszerekhöz.</li>
+   <li><i>BT-álnevek</i>: BT-álnevek manuális beállítása a mérőműszerekhez.</li>
    <li><i>Kapcsolódási késleltetés</i></li>
    <li><i>Két-DistoX felmérés</i>: felmérések engedélyezése két DistoX-szel</li>
    <li><i>Adatszünet</i>: szünet az adatok letöltése után.</li>
@@ -518,15 +518,15 @@
    <li><i>Adatmód importálása</i></li>
    <li><i>Automatikus X-szelvények</i>: X-metszetek beszúrása a vázlatexportálásba</li>
    <li><i>Mérési pontok</i>: mérési pontok felvétele a vázlatexportálásba</li>
-   <li><i>LRUD-játékok száma</i>: az LRUD-hoz használt lejátszások száma [alapértelmezett hamis]</li>
+   <li><i>BJFL-játékok száma</i>: az BJFL-hoz használt lejátszások száma [alapértelmezett hamis]</li>
    <li><i>Zip-share kategória</i>: kategorizált zip-share [alapértelmezett hamis]</li>
 </ul>
 
-Ha az LRUD-szám hamis, minden (tűréshatáron belüli) splay-t használ az LRUD kiszámításához. A keresztirányú
+Ha az BJFL-szám hamis, minden (tűréshatáron belüli) sünt használ az BJFL kiszámításához. A keresztirányú
 dimenzió a vízszintes vagy függőleges tengelyen lévő kinyúlások maximális értékére van állítva.
 A tűréshatáron belüli eltérés vízszintes és függőleges méreteknél is figyelembe vehető.<br>
-Ha az LRUD-szám igaz, csak az első négy tűrést alkalmazza, és egy tűréshatárt.
-A splay csak a függőleges vagy vízszintes méretekhez használható. Minden dimenzió a
+Ha az BJFL-szám igaz, csak az első négy tűrést alkalmazza, és egy tűréshatárt.
+A sün csak a függőleges vagy vízszintes méretekhez használható. Minden dimenzió a
 az első elfogadható kihagyás értéke. Egy dimenzió nulla értékkel hagyható el, ha kidobja a játékot
 már beállított irányban.<br>
 Alapértelmezés szerint a tűréshatárok nagyon megengedők: 0&deg; függőleges irányokhoz és 90&deg; vízszinteshez.<br><p>
@@ -551,7 +551,7 @@ hatékonnyá válik.<br><p>
 Automatikus Walls
 <ul>
 <li>Faltípus. [nincs] </li>
-<li>Sün clinó megtervezése</li>
+<li>Sün lejtszög megtervezése</li>
 <li>Sün clino profil</li>
 <li>Minimális távolság a felvétel mentén</li>
 <li>Homolyság</li>

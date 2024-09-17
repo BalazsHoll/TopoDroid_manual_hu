@@ -148,7 +148,7 @@ A felmérési adatok exportálására szolgáló párbeszédpanel csak azt a for
 
 <i>Az exportált adatokat/fájlt befolyásoló beállítások minden exportálási formátumnál megtalálhatók.</i><br><p>
 
-A következő export formátumo tovább nem támogatottak:
+A következő export formátumok tovább nem támogatottak:
 <ul>
 <li><a href="">Grottolf</a></li>
 <li><a href="">PocketTopo</a></li>
@@ -400,7 +400,7 @@ Beállítások: <ul style="margin-top=0">
 
 <b id="gpx">GPX track</b> (.gpx)<br>
 A GPX export tartalmazza az mérési pontokat (útpontokként) és a poligont (nyomvonalként).<br>
-Az adatok WGS84 füldrajzi koordináta-rendszerben vannak.
+Az adatok WGS84 földrajzi koordináta-rendszerben vannak.
 <br><p>
 
 
@@ -413,7 +413,7 @@ Minden alakfájl három fájlból áll: az adatfájlból (shp), az indexfájlbó
 A fájlok tömörítve vannak, és a zip az "shp" mappába kerül. ".Shz" kiterjesztéssel.
 <br><p>
 
-Ha legalábbb egy pont georeferált, és az exportálás párbeszédpanelen bejelölte a megfelelő jelölőnégyzetet,
+Ha legalább egy pont georeferált, és az exportálás párbeszédpanelen bejelölte a megfelelő jelölőnégyzetet,
 az adatokat a WGS84 referenciarendszerbe exportáljuk, és a mágneses deklinációval korrigáljuk.<br>
 Ellenkező esetben az adatokat helyi koordinátákban exportáljuk, és a mágneses deklinációs korrekciót nem alkalmazzuk.<br><p>
 
@@ -534,7 +534,7 @@ A vázlat rács cella mérete 1 m.
 Az XVI beállítások a Therion-beállítások között találhatók: <ul style="margin-top=0">
 <li>Rajz <u>metszet-pont</u>: ha a metszetek automatikusan hozzáadódnak a metszet vonalához,
 a metszetrajz beillesztésre kerül az xvi fájlba, a "metszet" pontba</li>
-<li><u>rács</u> sorok hozzáadva az exportáláshoz (cellaméret a jelenlegi vázlat rácse gységekben). Alapértelmezett nem</li>
+<li><u>rács</u> sorok hozzáadva az exportáláshoz (cellaméret a jelenlegi vázlat rács egységekben). Alapértelmezett nem</li>
 <li><u>skála</u> exportálása. Alapértelmezett 1: 100</li>
 </ul><p>
 
@@ -711,8 +711,8 @@ A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importál
 <li><b>Compass/TopoRobot/WinKarst/Polygon/VisualTopo</b>:
    <ul>
      <li>minimális <i>kitörési szög</i> az BJFL számításhoz [0.0] Ezt a <b>Survex/Therion</b> is használja, ha BJFL szükséges.</li>
-     <li>az fel/le BJFL-hoz használt splayek minimális száma [0]</li>
-     <li>a bal/jobb BJFL-hoz használt splayek maximális száma [90]</li>
+     <li>a fel/le BJFL-hoz használt sünök minimális lejtszöge [0]</li>
+     <li>a bal/jobb BJFL-hoz használt sünök maximális lejtszöge [90]</li>
    </ul>
 </li>
 <li><b>Therion</b>:
