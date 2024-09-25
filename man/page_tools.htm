@@ -1,58 +1,98 @@
 <html><body>
 
-<h4>RAJZESZKÖZ PALETTA</h4>
+<h4>RAJZESZKÖZÖK PALETTA</h4>
 
-A programba csomagolt rajzeszközök körülbelül 9 területet, 16 vonalat és 46 pontot tartalmaznak.<br><p>
+A programban található rajzeszközök (rajzi szimbólumok) körülbelül 9 területet, 16 vonalat és 46 pontot tartalmaznak.<br><p>
 
-Amikor az alkalmazás először elindul, a rajzeszközök fájljait a "symbol" könyvtárba telepíti. Vannak fájlok pontokhoz (ikonikus szimbólumok, például "bejárat" vagy "sztalagmit"), vonalakhoz (például "fal" vagy "gödör") és területekhez (átlátszó színnel, mintázattal jelölt régiók).<br><p>
+Amikor az alkalmazás először indul, telepíti a rajzeszközök fájljait a "symbol" könyvtárban. Vannak fájlok pontokhoz (ikonikus szimbólumok, például "bejárat" vagy "sztalagmit"), vonalakhoz (például "fal" vagy "gödör") és területekhez (átlátszó színnel jelölt régiók).<br><p>
 
-A rajzeszközök új verziói nincsenek automatikusan telepítve, de van egy gomb a frissítéshez.
-Az elkövetkező párbeszédablak megmondja a telepített és az aktuális verziót, és megkérdezi, hogy frissíteni kell-e a rajzeszközöket.<br><p>
+A rajzeszközök új verziói nem települnek automatikusan, de van gomb a frissítésükhöz.
+A következő párbeszédablak közli a telepített és az aktuális verziót, és megkérdezi, hogy frissítse-e a rajzeszközöket.<br><p>
 
-Valószínűleg nincs szükségük sokra, esetleg másokra van szükségük. A rajzeszközöket és azok kiválasztásának módját négyféleképpen testre szabhatja:
+Valószínűleg nincs szükséged belőlük sokra, vagy esetleg másra van szükséged. Négyféleképpen testreszabhatja a rajzeszközöket és a kiválasztási módot:
 <ul>
-<li>a rajzeszköz kiválasztásával párbeszédpanellel</li>
-<li>a vázlat szintjén</li>
+<li>a fő rajzeszközök kiválasztásával (párbeszéd)</li>
+<li>a felmérés/vázlat szintjén</li>
 <li>a projekt szintjén (könyvtár)</li>
 <li>a fájlrendszeren</li>
 </ul>
 
-<b>Rajzeszköz párbeszédpanel</b><br>
+A rajzeszközök az alkalmazás privát mappájában lévő fájlokból töltődnek be.<br>
+A rajzeszközök fájljainak frissítésekor a TopoDroid nem telepíti automatikusan az új eszközöket.<br><p>
 
-Az eszközök gombsávja csak hat rajzeszközt tartalmaz (minden típushoz).
-Ha más eszközre van szükséged, lépjél a <a href="page_tools_list.htm">rajzeszköz párbeszédpanelére</a>, amely megjeleníti a
-rajzeszközöket, három lapra osztva: Pont, Vonal és Terület.<br>
-
-Minden eszköznél megjelenik az ikon szimbólum, az eszköz neve és az eszközcsoport, ha van ilyen.
-<br><p>
-
-<b>Vázlat paletta</b><br>
-
-Minden vázlathoz saját paletta tartozik. Amikor bezárod a vázlatot, egy fejléc menti a palettáját. Amikor újra megnyitja, a paletta a vázlatok palettájára lesz állítva. Ha a vázlat olyan elemeket tartalmaz, amelyek nincsenek a palettán, azokat hozzáadják. Ha egy elem nem szerepel a rajzeszközök között, akkor a "felhasználói" eszközzel helyettesíti. A "felhasználói" eszközök (pont, vonal és terület) mindig a palettán vannak.<br><p>
-
-A vázlat palettát a <u>vázlatablak</u> <i>PALETTA</i> menüjében lehet megadni. Ez megnyit egy párbeszédablakot, amely lehetővé teszi annak eldöntését, hogy melyik eszköz legyen engedélyezve a vázlat palettán. Be- és kikapcsolja az eszközöket az igényeinek megfelelően, majd bezárja a párbeszédpanelt (a <i>VISSZA</i> gombbal) a változtatások mentéséhez. Ezt önállóan kell megtennie a pontok, vonalak és területek esetében.<br><p>
 
 <b>Globális paletta</b><br>
 
-A "rendszer" eszközök kivételével a TopoDroid a rajzeszközt az alap "TopoDroid" könyvtár "symbol" alkönyvtárában tárolt fájlokból tölti be. A rendszereszközök a "felhasználó" és a "címke" pontok, a "felhasználó" és a "fal" vonalak, a "felhasználó" és a "víz" területek. Ezek mindig engedélyezve vannak.<br><p>
+A "rendszer" eszközök kivételével a TopoDroid a "symbol" alkönyvtárában tárolt fájlokból tölti be a rajzeszközt.
+az alkalmazás privát mappáját.<br>
+A rendszer eszközei a "felhasználó", "címke" és "szakasz" pontok, "felhasználó", "fal" és "szakasz" vonalak, "felhasználó" és "víz" területek.
+Ezek mindig engedélyezve vannak.<br><p>
 
-A <u>főablak</u> <i>paletta</i> gombja határozza meg a betöltendő rajzeszköz-fájlokat. A következő párbeszédpanelen válassza ki a betöltött eszközöket. A betöltendő fájlok listája a projekt adatbázisba kerül. Ami a vázlatszintű palettát illeti, ezt egymástól függetlenül kell elvégeznie a pontok, vonalak és területek esetében<br><p>
+A <u>Fő ablak</u> <i>eszközök</i> gombja megnyitja a párbeszédpanelt a rajzeszközök engedélyezéséhez.<br>
+Ezt egymástól függetlenül kell elvégeznie a pontok, vonalak és területek esetében<br><p>
 
-A rajzeszközök frissítésekor a TopoDroid nem telepíti automatikusan az új eszközöket.<br><p>
-
-<b>Egyéni rajzeszközök</b><br>
+Új vázlat létrehozásakor a paletta a globális paletta engedélyezett eszközeivel inicializálódik.<br><p>
 
 
-Még magasabb szinten testreszabhatja az eszközfájlokat, és megírhatja saját eszközfájljait.<br>
-Az eszközfájlok egyszerű szöveges fájlok, amelyek az alkalmazás privát mappájában tárolnak a „/sdcard/Android/data” alatt.
-Az eszközfájlok szintaxisa a TopoDroid webhely egyik oldalán található. <a href="https://code.google.com/archive/p/topolinux/wikis/TopoDroidSymbols.wiki">https://code.google.com/archive/p/topolinux/wikis/TopoDroidSymbols.wiki</a> <br><p>
+<b>Felmérési rajzeszközök</b><br>
 
-Még ha a TopoDroid számos rajzeszközzel is előtelepítve érkezik, előfordulhat, hogy nem tartalmazza a szükséges eszközöket (vagy nem tetszenek a mellékelt eszközök).
+A felmérés szintjén engedélyezett rajzeszközök alapértelmezés szerint a globális paletta.<br>
+
+Ha megnyit egy régi vázlatot, amely alapértelmezés szerint nem engedélyezett eszközöket tartalmaz, akkor ezek hozzáadódnak a felmérési palettához.<br><p>
+
+
+<b>Vázlatrajzoló eszközök párbeszédpanel</b><br>
+
+Az eszközök alsó sávja csak hat rajzeszközt tartalmaz (minden típushoz).
+Ha más eszközt kell használnia, nyissa meg a <a href="page_tools_list.htm">rajzeszközök párbeszédpanelt</a>
+amelyek megjelenítik a rajzeszközök listáját, három lapra osztva: Pont, Vonal és Terület.<br>
+
+Minden eszközben megjelenik az ikonikus szimbólum, az eszköz neve és az eszközcsoport, ha van ilyen.
+<br>
+
+Amikor új vázlatot indít, az megkapja a felmérési palettán konfigurált eszközöket.<br><p>
+
+<b>Vázlatpaletta</b><br>
+
+Minden vázlatnak saját palettája van. Amikor bezárja a vázlatot, a program a palettáját felsoroló fejléccel együtt menti.
+Amikor újra megnyitja, a paletta egyesül a felmérés palettával.
+Ha a vázlat olyan elemeket tartalmaz, amelyek nincsenek engedélyezve a felmérési palettán, ezek hozzáadódnak a felmérési palettához.
+Ha egy elem eszköz nem szerepel a fő rajzeszközök között, akkor a „felhasználói” eszközzel helyettesíti.
+A "felhasználói" eszközök (pont, vonal és terület) mindig a palettán vannak.<br><p>
+
+A vázlatpaletta a <u>Rajz ablak</u> <i>PALETTA</i> menüjében adható meg.
+Ezzel megnyílik egy párbeszédpanel, amely lehetővé teszi, hogy eldöntse, melyik eszköz legyen engedélyezve a vázlatpalettán.
+Igény szerint be- és kikapcsolhatja az eszközöket, majd bezárja a párbeszédpanelt (a <i>VISSZA</i> gombbal) a módosítások mentéséhez.
+Ezt egymástól függetlenül kell megtennie pontok, vonalak és területek esetében.<br><p>
+
+
+<b>Egyedi rajzeszközök</b><br>
+
+Még magasabb szinten testreszabhatja a eszközfájlokat, és megírhatja saját eszközfájljait.<br>
+Az eszközfájlok egyszerű szöveges fájlok, amelyeket az alkalmazás privát mappájában tárolnak a „/sdcard/Android/data” alatt.
+Az eszközfájlok szintaxisa a következő oldalon található: <a href="https://code.google.com/archive/p/topolinux/wikis/TopoDroidSymbols.wiki">https://code.google.com/ archív/p/topolinux/wikis/TopoDroidSymbols.wiki</a><br><p>
+
+Még ha a TopoDroid számos rajzeszközzel előtelepítve is érkezik, előfordulhat, hogy nem tartalmazza a szükséges eszközöket (vagy nem tetszenek a mellékelt eszközök).
 Módosíthatja őket, törölheti azokat, amelyekre nincs szüksége, és újakat írhat és hozzáadhat (a programban nem szereplő eszközökhöz).
 Hideg újraindítás után a TopoDroid látni fogja és használni fogja őket.<br><p>
 
 Ha módosít egy eszközfájlt, vagy olyan új eszközfájlt ír, amely hasznos lehet más felhasználók számára, fontolja meg a lekérési kérelmet a TopoDroid github tárolójában.<br><p>
 
-A "rendszer" rajzeszközök nem módosíthatók, és nem is törölhetők.<br><p>
+A "rendszer" rajzeszközök nem módosíthatók és nem törölhetők.<br><p>
+
+<b>További szimbólumkészletek</b><br>
+A TopoDroid a következő kiegészítő szimbólumkészletekkel érkezik:
+<ul>
+<li>Extra barlangi szimbólumok</li>
+<li>Bányászati ​​szimbólumok</li>
+<li>Geológiai szimbólumok</li>
+<li>Régészeti szimbólumok</li>
+<li>Antropogén szimbólumok</li>
+<li>Őslénytani szimbólumok</li>
+<li>Biológiai szimbólumok</li>
+<li>Karszt szimbólumok</li>
+</uL><br>
+
+További szimbólumkészletek telepítéséhez engedélyezni kell a "Palette" egyéni beállítást.<br><p>
 
 </body></html>

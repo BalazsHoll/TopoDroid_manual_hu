@@ -31,7 +31,11 @@ A fájlok kiválasztása a rendszer tartalomszolgáltatón keresztül történik
 BJFL tartalmú fájlformátumokból történő importáláskor ezeket keresztmetszet sünökké alakítják (zöld színnel jelennek meg).<br><p>
 
 <b>Survex importálás</b><br>
-Survex adat syntaxisa csak részben támogatott.<br><p>
+A Survex szintaxis részben támogatott.<br>
+Csak a „normál”, „topofil” és „passage” adatmódok kerülnek kezelésre bizonyos mértékig.
+ Különösen az "passage" adatmódban a "bal" és a "jobb" értékek nem használatosak, mivel nem konvertálhatók sünökké.<br>
+A TopoDroid csak egyetlen felmérési munkamenettel rendelkezik. Ezért a több munkamenetes fájlok adatai egyetlen munkamenetben egyesülnek.
+<br><p>
 
 <b>Therion importálás</b><br>
 Csak azok a Therion felmérési fájlok importálhatók, amelyek adatai "normál" adatmódban vannak.<br>
