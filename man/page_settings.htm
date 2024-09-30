@@ -48,7 +48,7 @@
 
 <h2 id="main">Fő</h2>
 <ul>
-   <li><a href="page_cwd.htm">Munkakönyvtár.</a> Alapértelmezett "nem beállított" (azaz "TopoDroid")</li>
+   <!-- li><a href="page_cwd.htm">Munkakönyvtár.</a> Alapértelmezett "nem beállított" (azaz "TopoDroid")</li -->
    <li><i>Szöveg mérete</i>: a szöveg mérete a listákban. &gt;= 1. [14]</li>
    <li><i>A gombok mérete</i> {kicsi, normál, közepes, nagy, hatalmas}. [normál] </li>
    <li><i>Tevékenységi szint</i> {alap, normál, haladó, szakértő, tesztelő}. [normál] </li>
@@ -68,7 +68,7 @@
      <li><i>Adatexportálási formátum</i>: alapértelmezett adatexportálási típus: {cave,cav,csv,csx,dat,dxf,grt,gtx,srv,sur,svg,svx,th,top,tro} [ egyik sem]</li>
      <li><i>Vázlat exportálási formátum</i>: alapértelmezett vázlatexportálási típus: {none,th,csx,dxf,svg,xvi} [nincs]</li>
      <li><i>Vázlat automatikus exportálási formátuma</i> [nincs]</li>
-     <li>Compass <i>BJFL szöge</i>. Az BJFL minimális kinyúlási szöge.</li>
+     <li>Compass <i>BJFL szöge</i>. A BJFL minimális kinyúlási szöge.</li>
      <li><i>UD sün lejtszög</i>: Fel/le minimális sün lejtszög. [0&deg;]</li>
      <li><i>LR sün lejtszög</i>: Bal/Jobb maximális sün lejtszög. [90&deg;]</li>
      <li><i>Ponttávolság</i>: a vonalpontok közötti távolság</li>
@@ -97,8 +97,8 @@
 <li>Importálás:
    <ul>
      <li><a href="page_pt_cmap.htm">PocketTopo színtérkép</a>: a PocketTopo színeinek térképe TopoDroid típusokhoz</li>
-     <li><i>Becsülje meg az LR kiterjesztést</i> a Compass és VisualTopo fájlok importálásakor. [igen]</li>
-     <!-- li>Adatimportálási mód: normál vagy merülés. A búvárkodás csak az Compassre vonatkozik. [normál] </li -->
+     <li><i>Becsülje meg a BJ kiterjesztést</i> a Compass és VisualTopo fájlok importálásakor. [igen]</li>
+     <!-- li>Adatimportálási mód: normál vagy merülés. A búvárkodás csak a Compassra vonatkozik. [normál] </li -->
    </ul>
 </li>
 <li>Survex export:
@@ -127,7 +127,7 @@
    <ul>
      <li>Compass <i>állomás előtagja</i>. [nem]</li>
      <li><i>Compass süns</i>: sünek hozzáadása a Compass fájlokhoz</li>
-     <li><i>Compass csere LR</i>: cserélje balra és jobbra az Compass exportálásakor. [nem]</li>
+     <li><i>Compass csere BJ</i>: balra és jobbra felcserélése Compass exportálásakor. [nem]</li>
    </ul>
 </li>
 <li>VisualTopo exportálás:
@@ -274,7 +274,7 @@
    <li><i>Sarok húzása</i>: a sarokhúzás engedélyezése a <u>Rajz ablakban</u> és az <u>Áttekintő ablakban</u>. [nem]</li>
    <li><i>Nagyításvezérlők</i> {off,temporary,permanent}. [ki] </li>
    <li><i>X-szelvény H-küszöb</i>: x-szelvényű vízszintes küszöb</li>
-   <li><i>Középvonali ellenőrzés</i>: ellenőrizze, hogy az mérési pontok a középvonalhoz vannak-e kapcsolva. [igen]</li>
+   <li><i>Középvonali ellenőrzés</i>: ellenőrizze, hogy a mérési pontok a középvonalhoz vannak-e kapcsolva. [igen]</li>
    <li><i>Lábnyújtás ellenőrzése</i>: ellenőrizze, hogy a lábnyújtás be van-e állítva [igen]</li>
    <li><i>Eszköztár mérete</i>: legutóbbi eszközszám: {3, 4, 5, 6}. [4] </li>
 </ul>
@@ -353,8 +353,8 @@
 <h2 id="3d_viewer">3D-s megtekintő</h2>
 <ul>
    <li><i>Horizont alatti nézetek</i>: horizont alatti nézetek engedélyezése.</li>
-   <li><i>Mérési pontok</i>: mindig jelenítse meg az mérési pontokat.</li>
-   <li><i>Mérési pont mérete</i>: az mérési pontok mérete.</li>
+   <li><i>Mérési pontok</i>: mindig jelenítse meg a mérési pontokat.</li>
+   <li><i>Mérési pont mérete</i>: a mérési pontok mérete.</li>
    <li><i>Az állomás szövegének mérete</i>: az állomás szövegének mérete.</li>
    <li><i>Kiválasztási sugár</i></li>
    <li><i>Távolságüzenet</i>: a távolságüzenet megjelenítése a mező helyett.</li>
@@ -427,12 +427,12 @@
    <li><i>Poligonutóbbi felvételek</i>: a legutóbbi adatok kiemelése.</li>
    <li><i>A legutóbbi adatok időtúllépése</i></li>
    <li><i>Törtkiterjesztés</i>: engedélyezi-e a töredékes kiterjesztést. [nem]</li>
-   <li><i>Backshot DistoX</i>: fel kell-e cserélni az mérési pontokat DistoX backshotokra. [nem]</li>
+   <li><i>Backshot DistoX</i>: fel kell-e cserélni a mérési pontokat DistoX backshotokra. [nem]</li>
    <li><i>Sík illesztés</i>: a rések síkbeli illesztésének engedélyezése</li>
    <li><i>Érzékelők</i>: Android-érzékelők engedélyezése [nem]</li>
    <li><i>Hurokzárás</i>: nincs, normál, súlyozott, szelektív, háromszögelés [nem]</li>
    <li><i>Hurokküszöb</i>: a hurok szelektív lezárásának küszöbértéke (a hurok hosszának százaléka)</li>
-   <li><i>Android Compass</i>: az Android compass/clino engedélyezése</li>
+   <li><i>Android compass</i>: az Android compass/clino engedélyezése</li>
    <li><i>Mérésirány időzítő</i>: Mérésirány időzítő visszaszámlálás. [10 s]</li>
    <li><i>Időzítő hangereje</i>: felvétel iránya, időzítő hangereje [10 100]. [50%] </li>
    <li><i>Baklövések</i>: a hibás poligon mérések kihagyása</li>
@@ -518,14 +518,14 @@
    <li><i>Adatmód importálása</i></li>
    <li><i>Automatikus kereszmetszetek</i>: keresztmetszetek beszúrása a vázlatexportálásba</li>
    <li><i>Mérési pontok</i>: mérési pontok felvétele a vázlatexportálásba</li>
-   <li><i>BJFL-sünök száma</i>: az BJFL-hoz használt segédmérések száma [alapértelmezett hamis]</li>
+   <li><i>BJFL-sünök száma</i>: a BJFL-hoz használt segédmérések száma [alapértelmezett hamis]</li>
    <li><i>Zip-share kategória</i>: kategorizált zip-share [alapértelmezett hamis]</li>
 </ul>
 
-Ha az BJFL-szám hamis, minden (tűréshatáron belüli) sünt használ az BJFL kiszámításához. A keresztirányú
+Ha a BJFL-szám hamis, minden (tűréshatáron belüli) sünt használ a BJFL kiszámításához. A keresztirányú
 dimenzió a vízszintes vagy függőleges tengelyen lévő kinyúlások maximális értékére van állítva.
 A tűréshatáron belüli eltérés vízszintes és függőleges méreteknél is figyelembe vehető.<br>
-Ha az BJFL-szám igaz, akkor csak az első négy, a tűréseket kielégítő sünt használjuk, és a tűréshatáron belüli sünöket csak a függőleges vagy a vízszintes méretekhez használjuk. Minden dimenzió az első elfogadható sün értékére van beállítva. Egy dimenzió nulla értékkel hagyható, ha a már beállított irányban létezik sün.<br>
+Ha a BJFL-szám igaz, akkor csak az első négy, a tűréseket kielégítő sünt használjuk, és a tűréshatáron belüli sünöket csak a függőleges vagy a vízszintes méretekhez használjuk. Minden dimenzió az első elfogadható sün értékére van beállítva. Egy dimenzió nulla értékkel hagyható, ha a már beállított irányban létezik sün.<br>
 Alapértelmezés szerint a tűréshatárok nagyon megengedők: 0&deg; függőleges irányokhoz és 90&deg; vízszinteshez.<br><p>
   
    A zip megosztás kategorizálható, hogy a kezelését bizonyos alkalmazásokra korlátozza.

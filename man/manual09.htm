@@ -3,7 +3,7 @@
 
 Az <u>adatablak</u> <i>vázlat</i> gombja megnyitja a vázlatok listáját tartalmazó párbeszédpanelt az <i>Új vázlat</i> gombbal. Érintsd meg ezt a gombot egy új felmérési vázlat létrehozásához.<br><p>
 
-Mindegyik vázlat két vázlatfájlból készül: az egyik az alaprajzhoz, a másik az oldalnézethez (akár kiterített, akár vetített). Az keresztmetszetek mindegyikének csak egy fájlja van. Az új vázlat alaprajz nézetben nyílik meg. Utána a vázlat párbeszédpanel két oszlopot mutat, az egyik az alaprajz, a másik az oldalnézet, és kiválaszthatod, melyiket nyissa meg.<br>
+Mindegyik vázlat két vázlatfájlból készül: az egyik az alaprajzhoz, a másik az oldalnézethez (akár kiterített, akár vetített). A keresztmetszetek mindegyikének csak egy fájlja van. Az új vázlat alaprajz nézetben nyílik meg. Utána a vázlat párbeszédpanel két oszlopot mutat, az egyik az alaprajz, a másik az oldalnézet, és kiválaszthatod, melyiket nyissa meg.<br>
 Minden vázlat több szintet tartalmazhat.<br><p>
 
 A <u>kiterített</u> oldalnézet megjeleníti a poligon-vonalat a balra, jobbra vagy függőlegesen rajzolt poligonokkal, azok "kiterítésének" megfelelően. Ha egy poligonnál nincs beállítva a "kiterítés", akkor a poligon-vonal nem jelenik meg attól a poligon-ponttól kezdve.
@@ -60,14 +60,14 @@ ha a sün hajlása meghaladja az alaprajzi küszöböt [alapértelmezett 80&deg;
 <li> a keresztmetszetek (BJFL) zöld</li>
 <li> a többi sün kék: sötét a CÉL ponton, világos a KEZDŐ ponton</li>
 <li> végül, ha a sün-szaggatás engedélyezve van, akkor pontozottak vagy szaggatottak
- ha a sün és az keresztmetszetsík közötti normál szöge a szaggatott szögküszöb alatt van
+ ha a sün és a keresztmetszetsík közötti normál szöge a szaggatott szögküszöb alatt van
  [alapértelmezett 60&deg;] (pontozott, ha a normál irányába, szaggatott, ha ellentétes).</li>
 </ul><br>
 
 A pontozott és szaggatott vonal színei a megfelelő beállításokkal változtathatók [G].<br><p>
 
 <b>Pontok</b><br>
-Az pontok színei
+A pontok színei
 <ul>
 <li> ibolya: alapértelmezett</li>
 <li> zöld: aktív állomás</li>
@@ -129,7 +129,7 @@ A <b>rajz</b> módban a zöldeken kívül öt gomb található:
 <li><img src = "btn_cont.png" width="36" border="1"> vonal <i>csatlakozás</i> (csak vonalaknál és ha engedélyezett)</li>
 </ul><br><p>
 Az <i>eszközök</i> gomb ikonja a rajzeszközök aktuális típusát tükrözi: pontokat, vonalakat vagy területeket.<br>
-Az vonal <i>csatlakoztatás</i> csak azoknál a vonalaknál jelenik meg, amikor a visszakövetés nem aktív. Ha aktív, egy új vonal kezdődik és/vagy végződik ugyanazon csoport vonala közelében.<br>
+A vonal <i>csatlakoztatás</i> csak azoknál a vonalaknál jelenik meg, amikor a visszakövetés nem aktív. Ha aktív, egy új vonal kezdődik és/vagy végződik ugyanazon csoport vonala közelében.<br>
 A "Vonalkötés" nincs hatással azokra a vonalakra, amelyeket nem lehet összekapcsolni (pl. "metszet" vonal).<br><p>
 
 A <b>törlés</b> módban a zöld gombokon kívül található:
@@ -152,7 +152,7 @@ A <b>szerkesztés</b> [H] mód a zöld gombok mellett:
 Ha vannak kiválasztott elemek, akkor az első két gomb <i>előző/következő</i> navigációs gomb lesz a készletben
  a kijelölt elemek közül.<br><p>
 
-A gombok némileg eltérnek az keresztmetszet vázlatoknál.
+A gombok némileg eltérnek a keresztmetszet vázlatoknál.
 <b>Mozgatás</b> módban a "letöltés", "bluetooth", "kapcsoló" és "azimut" gombok nem jelennek meg, de ott
  egy gomb, amellyel kiválaszthatja, hogy melyik sünök jelenjenek meg. Négy állapotot vált ki: "mindkettő", "megtekintett állomás", "állomás mögött", "nincs".
  Ennek megfelelően a rajzhivatkozások párbeszédpanelen nincs doboz a sünökhöz.
@@ -218,7 +218,7 @@ Minden export két fájlt generál, az egyiket az alaprajzhoz másikat az oldaln
     <li> Vonal <i>stílus</i>: finom, normál, durva, "spline" (interpolált görbe), ritkított</li>
 	<li><i>Zárás</i>: be kell-e zárni a "zárt" típusú vonalakat. [igen]</li>
     <li> Vonal <i>pontok távolsága</i>: a vonalpontok távolsága normál stílusban [10 px]</li>
-    <li><i>Irány pipa hossza</i> az keresztmetszet vonalakhoz [5 px]</li>
+    <li><i>Irány pipa hossza</i> a keresztmetszet vonalakhoz [5 px]</li>
     <li><i>Metszetpontok</i>: hozzáadja-e a "metszet" pontot automatikusan a "metszet" vonalakhoz [alapértelmezett igen]</li>
     <!--li> Vonal <i>alapértelmezett csatlakozási mód</i>: nincs, kezdet, vég, mindkettő, "folytatás"</li -->
     <li> Terület <i>határ</i> alapértelmezett láthatóság</li>
@@ -355,7 +355,7 @@ A <i>törlés</i> és <i>szerkesztés</i> mód a szokásos gombokkal rendelkezik
 
 A th2 fájl egynél több bejegyzést is tartalmazhat.
  Mivel a vázlat nincs felméréshez kötve, nincs mérés hivatkozás, azaz nincsenek poligonok és nincsenek sünök.
- Az poligon pontok csak akkor jelennek meg, ha a th2 fájl "állomás" pontokat tartalmaz.
+ A poligon pontok csak akkor jelennek meg, ha a th2 fájl "állomás" pontokat tartalmaz.
  Ebben az esetben pontokként jelennek meg az állomás nevével a közelben.<br><p>
 
 A vázlaton a rács csak akkor jelenik meg, ha a grafikonpapír mérete be van állítva (a <i>nagyítás-illesztés</i> párbeszédpanelen).<br><p>

@@ -9,7 +9,7 @@ Ez a párbeszédablak akkor jelenik meg, ha megérinted a <i>Tulajdonságok szer
 Műveletek:
 <ul>
 <li>írd be vagy szerkeszd a poligon-pont megjegyzését, és mentsd el [T]</li>
-<li>tegyed ezt poligon-pontot "aktívvá", azaz folytasd a felmérést erről az poligon-pontról.</li>
+<li>tegyed ezt poligon-pontot "aktívvá", azaz folytasd a felmérést erről a poligon-pontról.</li>
 <li>mutasd meg a rejtett poligont (ha van ilyen)</li>
 <li>pontról felvett sünök megjelenítése/elrejtése</li>
 <li>poligon-pont metszet gombjai</li>
@@ -22,9 +22,9 @@ Az "aktív" poligon-ponthoz csatolják a következő letöltött méréseket. Eg
 <b>Poligon-vonal elrejtése</b><br>
 A Poligonvonal részek elrejtése akkor hasznos, ha a felmérés bonyolult vagy túlmutat önmagán.
  Ebben az esetben hasznos a középvonalnak csak a megfelelő részét látni, elrejtve azt, ami egy poligon-ponton túl van.
- Ha az poligon-ponton túl található középvonal el van rejtve, az poligon-pont ki van emelve:
+ Ha a poligon-ponton túl található középvonal el van rejtve, a poligon-pont ki van emelve:
  ibolya színű, ha a rejtett poligonvonal köztük és a vázlat kiinduló poligon-pont között fekszik, különben piros.
- Azokat az poligon-pontokat, amelyek a poligonvonalban egy "piros" poligonpont mögött vannak, nem menti automatikusan a Therion poligon-pontként. Ezért, ha a szint belsejében lévő vázlat eredetű poligon-pontot választod, és a poligon-pontokat akadályként jelölöd meg, elkerülheted a scrap fájlban található hamis poligon-pontokat.
+ Azokat a poligon-pontokat, amelyek a poligonvonalban egy "piros" poligonpont mögött vannak, nem menti automatikusan a Therion poligon-pontként. Ezért, ha a szint belsejében lévő vázlat eredetű poligon-pontot választod, és a poligon-pontokat akadályként jelölöd meg, elkerülheted a scrap fájlban található hamis poligon-pontokat.
 <br>
 A poligon-vonal megjelenítése a poligon mérések tulajdonságszerkesztő párbeszédpanelén keresztül korlátozható.
 Ha a poligonponton túl található poligonvonal el van rejtve, van egy gomb a visszaállításhoz és a poligonpont szerkesztés párbeszédpanelen való megjelenítéshez.<br><p>
@@ -32,19 +32,19 @@ Ha a poligonponton túl található poligonvonal el van rejtve, van egy gomb a v
 <img src = "hiding_stations.png" alt = "poligonpontok elrejtése"><br><p>
 
 <b>A poligon-pont sünök</b></br>
-Az poligon-pont sünök megjelenítése kényszeríthető a vázlat globális beállításának felülírására.
+A poligon-pont sünök megjelenítése kényszeríthető a vázlat globális beállításának felülírására.
  Ha a megjelenítés kényszerített, akkor a sünök akkor is megjelennek, ha globálisan el vannak rejtve.
  Ha a rejtőzést kényszerítik, akkor a sünök akkor sem jelennek meg, ha globálisan megjelennének.<br>
 Ez a jelölés NEM befolyásolja a sünök szerkesztését-kiválasztását; a kijelölés zöld pontjai mindig megjelennek
  a globális beállítás szerint.<br><p>
 
-<b>Az poligon-pont keresztmetszet</b><br>
+<b>A poligon-pont keresztmetszet</b><br>
 Keresztmetszetek poligon-pontokon is létrehozhatók.
  Alaprajzban a függőleges síkban vannak (síkjukat a poligonok iránya határozza meg).
  Oldalnézetben az metszetnek lehet dőlése. Ha azonban az "poligon-pontok" jelölőnégyzeteken keresztül jelölte be akkor függőlegesek, ha a poligonnak dőlése egy megadott érték (egy beállítás) alatt van, ellenkező esetben vízszintes.
 <br>
 
-Ha az poligon-pontnak csak két poligonja van rögzítve, a keresztmetszet síkját a TopoDroid következtetheti ki
+Ha a poligon-pontnak csak két poligonja van rögzítve, a keresztmetszet síkját a TopoDroid következtetheti ki
  (a két poligon közötti szög felezője, vagy a poligonjára merőleges, ha csak egy).
  Csak az a kétértelműség marad, hogy melyik oldalról nézzük
  a keresztmetszetet. Ez feloldható két olyan gombbal, amely meghatározza az irányt
@@ -57,23 +57,23 @@ Az utolsó gombbal kiválaszthatod a keresztmetszet irányát az
 <br><p>
 
 A poligon-pont keresztmetszetei lehetnek „privátak” ahhoz a vázlathoz, amelyben definiálták vagy megosztották őket
- az összes vázlat között. Ez utóbbi esetben az összes vázlaton megnyílik az poligon-pont szerkesztési párbeszédablaka
+ az összes vázlat között. Ez utóbbi esetben az összes vázlaton megnyílik a poligon-pont szerkesztési párbeszédablaka
  ugyanahhoz a keresztmetszethez. Az előbbi esetben egy poligon-pont keresztmetszet szerkesztése párbeszédpanelt csak azon a vázlaton lehet  megnyitni ahol az meg van adva.<br><p>
 
 Mindkét esetben a keresztmetszet szakasz csak abban a vázlatban kerül exportálásra, amely tartalmazza a szakasz pontját,
  azaz a vázlatban ahol meg van adva.<br><p>
 
 A felmérés létrehozásakor a "privát" és a "megosztott" poligon-pont keresztmetszetei között lehet választani
- és utólag nem módosítható. Ha az poligon-pont keresztmetszetei privátak, akkor becenevet adhat meg a következőnek:
+ és utólag nem módosítható. Ha a poligon-pont keresztmetszetei privátak, akkor becenevet adhat meg a következőnek:
  különböző vázlatokban különböztesse meg ugyanazon poligon-ponton a keresztmetszeteket.
 <br><p>
 
-Az poligon-pont keresztmetszet neve az alaprajzban a "felmérés_neve", "xs", "poligon-pontnév".
+A poligon-pont keresztmetszet neve az alaprajzban a "felmérés_neve", "xs", "poligon-pontnév".
  és ha a keresztmetszetek privátak, akkor a "vázlat-név". Például: "survey-xs-0-1p".
  Az oldalnézetben egy poligon-ponton lévő keresztmetszet neve "xh" helyett "xs".
 <br><p>
 
-Az poligon-ponton lévő keresztmetszeteknél hasonló megjegyzések lehetnek, mint a poligon-vonali keresztmetszeteknél.<br><p>
+A poligon-ponton lévő keresztmetszeteknél hasonló megjegyzések lehetnek, mint a poligon-vonali keresztmetszeteknél.<br><p>
 
 
 </body></html>

@@ -142,7 +142,7 @@ Az adategységek követik a felhasználói beállításokat.<br><p>
 Beállítások: <ul style="margin-top=0">
 <li><u>sorvég</u> lehet Unix vagy Windows</li>
 <li><u>CÉL pontok nevei</u> a segédpontok készítéséhez (a CÉL név a KEZDŐ pont neve a mellékelt betűvel)</li>
-<li>adja hozzá az <u>BJFL</u> t az exportáláshoz</li>
+<li>adja hozzá a <u>BJFL</u> t az exportáláshoz</li>
 <li>"cs out" <u>EPSG</u> szám</li>
 </ul><p>
 
@@ -157,7 +157,7 @@ a vezetéknévvel esetleg a keresztnév kezdőbetű(k) előtt. Például
 az "A.W. Smith, B. Ford" csapatszövegből <i>team "A.W. Smith"</i> és <i>team "B. Ford"</i> lesz.<br><p>
 
 A poligon pont megjegyzései és jelei (rögzített, festett) megelőzik a poligon adatait.<br>
-Az keresztmetszet segédpontok "-" (kötőjel) mérési ponttal exportálva, a többi "." (pont) mérési ponttal.<br>
+A keresztmetszet segédpontok "-" (kötőjel) mérési ponttal exportálva, a többi "." (pont) mérési ponttal.<br>
 A megjegyzéseket a megjegyzés (#) alatt exportáljuk.<br><p>
 
 A kiterjesztéshez a "extend &lt;flag&gt;" szintaxist minden poligon előtt használják, a zászló flag "left", "right",
@@ -193,7 +193,7 @@ A fix pontokat ("fix") elemezzük, de nem vesszük figyelembe, mivel a "cs" nem 
 <b id="trobot">TopoRobot</b> (.trb)<br>
 A <i>TopoRobot</i> adatfájl import és exportálás során egyaránt támogatott.<br>
 A felmérés adatai exportálhatók <i>TopoRobot</i> fájlként. A <i>TopoRobot</i> pontok elnevezési házirendjét
-ki kell választani. Ha az pontnevek a <i>TopoRobot</i> "series.number" konvencióját követik, akkor azokat használják.<br><p>
+ki kell választani. Ha a pontnevek a <i>TopoRobot</i> "series.number" konvencióját követik, akkor azokat használják.<br><p>
 
 A <i>TopoRobot</i> exportálásához a <u>fájlnevet</u> a kiterjesztéssel együtt az exportálási párbeszédpanelen lehet megadni.
  A fájlnév csak alfabetikus karaktereket (a-z és A-Z), valamint számokat (0-9) tartalmazhat.
@@ -204,7 +204,7 @@ Az exportálás az adatok utolsó részére is korlátozható az <u>első méré
 <b id="vtopo"> VisualTopo</b> (.tro, .trox)<br>
 A <i>VisualTopo</i> adatfájlok importálásakor és exportálásakor egyaránt támogatottak.<br>
 A VisualTopo sablonok szerepelnek benne, ha engedélyezve vannak.<br>
-Alapértelmezés szerint az BJFL a CÉL ponton van, de a KEZDŐ pont beállítható.<br>
+Alapértelmezés szerint a BJFL a CÉL ponton van, de a KEZDŐ pont beállítható.<br>
 Az adategységek „méterek” és „fokok”.<br>
 A <i>búvár</i> adatmódban végzett felmérések "trox" formátumban kerülnek exportálásra.<br><p>
 
@@ -242,7 +242,7 @@ A TopoDroid csak az importálás során támogatja a <i>PocketTopo</i>-t.<br><p>
 
 <!--
 A PocketTopo export csak a felmérés adatait tartalmazza.<br><p>
-Ha az pontok elnevezési házirendje "TopoRobot" értékre van állítva, és az pontnevek a "sorozat.szám" TopoRobot konvenciót követik
+Ha a pontok elnevezési házirendje "TopoRobot" értékre van állítva, és a pontnevek a "sorozat.szám" TopoRobot konvenciót követik
 ezeket használják az exportálás során, különben a neveket számokká konvertálják.
 Az ábécés karakterek minden karaktert két számjeggyel helyettesítenek. Pontosabban az „a” a „00”, a „b” a „01” és így tovább, „A” az „50”, a „B” az „51” stb. Minden más karakter (azaz nem alfanumerikus) a 99-re kerül.<br><p>
 -->
@@ -268,7 +268,7 @@ A TopoDroid a felmérés adatait exportálhatja <i>GHTopo</i> formátumban (rés
 <b id="grottolf"> Grottolf</b> (.grt)<br>
 A TopoDroid felmérési adatokat exportálhat <i>Grottolf</i> formátumban (nem tesztelt).
 Ha az első pont földrajzi koordinátákkal rendelkezik, ezeket exportáljuk, különben helyi koordinátákat használunk.
-Az pontok profilját úgy számolják, hogy a sün felvételeket egy a poligonra merőleges függőleges síkra vetítik.<br><p>
+A pontok profilját úgy számolják, hogy a sün felvételeket egy a poligonra merőleges függőleges síkra vetítik.<br><p>
 -->
 
 <b id="topo"> Topo</b> (.cav)<br>
@@ -351,14 +351,14 @@ Beállítások: <ul style="margin-top=0">
 <br><p>
 
 <b id="gpx">GPX track</b> (.gpx)<br>
-A GPX export tartalmazza az mérési pontokat (útpontokként) és a poligont (nyomvonalként).<br>
+A GPX export tartalmazza a mérési pontokat (útpontokként) és a poligont (nyomvonalként).<br>
 Az adatok WGS84 földrajzi koordináta-rendszerben vannak.
 <br><p>
 
 
 <b id="shp">Shapefile</b> (.shp .shx .dbf)<br>
 A felmérés adatai exportálhatók shape fájlként.
-Van egy shape fájl az pontokhoz és egy a mérésekhez (mind a poligonok, mind a sünök).
+Van egy shape fájl a pontokhoz és egy a mérésekhez (mind a poligonok, mind a sünök).
 Ha a felmérés szétválasztott darabokat tartalmaz, akkor egy-egy georeferált ponttal egy-egy alakzatot exportálunk.
 Az adatokat a mágneses deklinációval korrigáljuk.
 Minden alakfájl három fájlból áll: az adatfájlból (shp), az indexfájlból (shx) és az attribútumfájlból (dbf).
@@ -425,7 +425,7 @@ Ha a felmérésnek több vázlata van, akkor minden vázlatot külön kell expor
 A vázlatelemek megfelelő <i>cSurvey</i> rétegeken vannak elosztva.<br><p>
 
 Beállítások: <ul style="margin-top=0">
-<li><u>pont előtag</u> adjon-e előtagot az pontnevekhez</li>
+<li><u>pont előtag</u> adjon-e előtagot a pontnevekhez</li>
 <li><u>vonalpontok távolsága</u> az interpolációs pontok közötti maximális távolság a sima vonalakon</li>
 </ul><p>
 
@@ -465,10 +465,10 @@ A 4.1.2 verziótól a TopoDroid nem tölt be több vázlatot Therion formátumba
 
 <b id="tunnel">Tunnel</b> (.xml)<br>
 A vázlat exportálható Tunnel XML formátumban. A fájlokat a "tnl" alkönyvtárba menti.<br>
-A következő vonalak vannak feltérképezve az Tunnel vonalaihoz: fal, feltételezett, gödör, kémény és lejtő.
-Az összes többi vonal az Tunnel vonalának részleteihez van hozzárendelve.<br>
-A terület határai az Tunnel vonalához vannak feltöltve. "
-Az Tunnel pontjaihoz a következő pontok vannak hozzárendelve: huzat, archeo, tömbök, agyag, oszlop, függöny, cseppkő, lejtő
+A következő vonalak vannak feltérképezve a Tunnel vonalaihoz: fal, feltételezett, gödör, kémény és lejtő.
+Az összes többi vonal a Tunnel vonalának részleteihez van hozzárendelve.<br>
+A terület határai a Tunnel vonalához vannak feltöltve. "
+A Tunnel pontjaihoz a következő pontok vannak hozzárendelve: huzat, archeo, tömbök, agyag, oszlop, függöny, cseppkő, lejtő
 guano, iszap, kavics, borsókő, homok, szalmacseppkő, sztalaktit, sztalagmit, víz, vízfolyás.
 Az összes többi pont az "Tunnel point" alapkőzethez van hozzárendelve.<br>
 <p>
@@ -548,7 +548,7 @@ Beállítások:<ul style="margin-top=0">
 -->
 <b id="shp2">Shapefile</b> (.shp)<br>
 A vázlatok shape fájlként exportálhatók pontokkal, mérésekkel és vonalakkal.
-Minden elemnek három fájlja van: az shape adatfájl, az shape index és az adatbázis fájl.
+Minden elemnek három fájlja van: a shape adatfájl, a shape index és az adatbázis fájl.
 A shapefile exportot tartalmazó fájlok tömörítve vannak, a zip fájlok a
 "shp" mappában ".shz" kiterjesztéssel.<br><p>
 
@@ -647,7 +647,7 @@ A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importál
 <li><i>ENGEDÉLYEZÉS</i>: beállítások az adatexportálási formátumok engedélyezéséhez.</li>   
 <li><b>Compass</b>:
    <ul>
-     <li><i>BJ csere</i>: B és J felcserélése az Compass exportálásakor</li>
+     <li><i>BJ csere</i>: B és J felcserélése Compass exportálásakor</li>
    </ul>
 </li>
 <li><b>Compass/VisualTopo</b>:
@@ -662,7 +662,7 @@ A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importál
 </li>
 <li><b>Compass/TopoRobot/WinKarst/Polygon/VisualTopo</b>:
    <ul>
-     <li>minimális <i>kitörési szög</i> az BJFL számításhoz [0.0] Ezt a <b>Survex/Therion</b> is használja, ha BJFL szükséges.</li>
+     <li>minimális <i>kitörési szög</i> a BJFL számításhoz [0.0] Ezt a <b>Survex/Therion</b> is használja, ha BJFL szükséges.</li>
      <li>a fel/le BJFL-hoz használt sünök minimális lejtszöge [0]</li>
      <li>a bal/jobb BJFL-hoz használt sünök maximális lejtszöge [90]</li>
    </ul>
@@ -676,7 +676,7 @@ A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importál
 </li>
 <li><b>Therion/Survex</b>:
    <ul>
-     <li>exportálás az <i>BJFL</i> sorokkal [nem]</li>
+     <li>exportálás a <i>BJFL</i> sorokkal [nem]</li>
    </ul>
 </li>
 <li><b>Survex</b>:
