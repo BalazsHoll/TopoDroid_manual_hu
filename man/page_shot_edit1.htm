@@ -10,17 +10,20 @@ Az ablakban megjelenik:
 <li><b>hossz, irány, lejtés</b>. Szerkeszthető a kézzel beírt méréseknél; nem szerkeszthető a letöltött adatoknál. DistoX visszamérés csillaggal '*' jelölve.</li>
 <li>a gyorsulás, a mágneses tér és a mágneses inklináció különbségei a vonatkozó átlagértékektől. Csak DistoX2 méréseknél.</li>
 <li>a mérés ideje</li>
-<li><b>pontok</b></li>
+<li><b>pontok</b> és
+<ul>
 <li><b>balra nyíl</b>: az előző poligon betöltése</li>
-<li><b>visszamérés</b>: pontok cseréje</li>
+<li><b>visszamérés</b> gomb: pontok cseréje</li>
 <li><b>jobbra nyíl</b>: a következő poligon betöltése</li>
+</ul>
+</li>
 <li>mérés <b>megjegyzés</b></li>
 <li>oldalnézet <b>kiterítése</b>: "bal", "függőleges", "jobb". A kiterítés "nem beállított", ha egyik sincs bejelölve</li>
 </ul><br><p>
 
-Gombok:
+Tulajdonság gombok:
 <ul>
-<li><img src = "btn_duplicate.png" width="36" border="1"> "duplikátum" zászló [H]</li>
+<li><img src = "btn_duplicate.png" width="36" border="1"> "duplikált" zászló [H]</li>
 <li><img src = "btn_surface.png" width="36" border="1"> "felszíni" zászló [H]</li>
 <li><img src = "btn_comment.png" width="36" border="1"> "kizárt" zászló [H]</li>
 <li><img src = "btn_leg_after.png" width="36" border="1"> a mérés a közvetlenül megelőző poligonhoz tartozik.</li>
@@ -30,22 +33,28 @@ Gombok:
 <li><img src="btn_splays_no.png" width="36" border="1"> alkalmazza a pont módosítást a felvétel csoportjában lévő összes sünre.</li>
 <li><img src = "btn_plan_profile.png" width="36" border="1"> elrejti a sünöket az alaprajzban, az oldalnézetben, vagy mindkettőben (csak a sünöket) [H]</li>
 <li><img src = "btn_xsplay.png" width="36" border="1"> törölje (vagy állítsa be) a sün osztályt, és esetleg az előző sünöket. [H]</li>
-<li><b>OK</b>: mentse a módosításokat és zárja be a párbeszédpanelt</li>
-<li><b>Mentés</b>: a módosítások mentése a párbeszédpanel bezárása nélkül</li>
-<li><b>Több/Kevesebb</b>: további műveletek megjelenítése/elrejtése [H]</a></li>
+</ul>
+
+Művelet gombok:
+<ul>
 <li><b>Mégse</b>: mentés nélkül zárja be a párbeszédpanelt</li>
+<li><b>Több/Kevesebb</b>: további műveletek megjelenítése/elrejtése [H]</a></li>
+<li><b>Mentés</b>: a módosítások mentése a párbeszédpanel bezárása nélkül</li>
+<li><b>OK</b>: mentse a módosításokat és zárja be a párbeszédpanelt</li>
 </ul>
 <br><p>
 
-A beállított zászlók, a "duplikátum", a "felület" és a "megjegyzések" kölcsönösen kizárják egymást.
-A zászlóval felvett mérések nem számítanak bele a felmérés statisztikájába.
-A mérés exportálását a mérés zászlója is befolyásolja, akár zászlóval, ha a formátum támogatja, akár megjegyzésként.<br><p>
+A BRIC méréseknél a dátum és az idő a műszerről a mérési adatokkal együtt letöltött értékek.
+ Más műszerek és manuálisan beírt mérések esetén ez a letöltés/beillesztés ideje.<br><p>
+
+A "duplikált", "felszíni" és a "kizárt" jelzők kölcsönösen kizárják egymást.
+ A felmérés adatai figyelembe veszik ezeket a jelzőket.
+ A mérés exportálását a mérés jelzője is befolyásolja, akár jelzővel, ha a formátum támogatja, akár megjegyzésként.<br><p>
 
 Figyelmeztetés kapsz, ha egy poligon-mérés szerkesztésekor a hossz negyedénél vagy a szögek 15&deg;-nál többel különböznek azonos pontok közötti más poligonoktól.<br><p>
 
 <b>Pont kivág-beilleszt</b><br>
-A pontnevek „kivághatók”, „másolhatók” és „beilleszthetők” az alkalmazásban, minden olyan párbeszédablakban, ahol van pontbejegyzés
-mező.<br><p>
+A pontnevek „kivághatók”, „másolhatók” és „beilleszthetők” az alkalmazásban, minden olyan párbeszédablakban, ahol van pontbejegyzés mező.<br><p>
 
 A pontbeviteli mező hosszú megérintésével megnyílik a legördülő menü a három lehetőséggel
 <ul>
@@ -57,8 +66,8 @@ A pontbeviteli mező hosszú megérintésével megnyílik a legördülő menü a
 <div style="font-size=90%">
 <b>Pont áthelyezése</b><br>
 A pont átcsoportosítása csak poligon mérésről kezdeményezhető.
-Alapértelmezés szerint az átcsoportosítás a szakaszt követő összes mérést a végéig érinti.
-Ha a <i>Sün pont újbóli hozzárendelése</i> egyéni beállítás le van tiltva, a sün kezdőpontok nem kerülnek kiosztásra.
+ Alapértelmezés szerint az átcsoportosítás a szakaszt követő összes mérést a végéig érinti.
+ Ha a <i>Sün pont újbóli hozzárendelése</i> egyéni beállítás le van tiltva, a sün kezdőpontok nem kerülnek kiosztásra.
 <br><p>
 
 A normál átcsoportosítást csak az utolsó néhány poligonnál szabad használni, abban az esetben, ha egy poligon
@@ -72,8 +81,8 @@ A „többmérés” kiválasztásával nagyobb irányítás érhető el az újr
 <div style="font-size=90%">
 <b>Sün csoport</b><br>
 A sünök csoportja a két poligon közötti összes sünből áll.
-A sün csoport pont váltása csak a szerkesztett poligonnal azonos ponttal rendelkező, egymást követő sorozatokra vonatkozik.
-Csak a KEZDŐ pontot kell megadni.
+ A sün csoport pont váltása csak a szerkesztett poligonnal azonos ponttal rendelkező, egymást követő sorozatokra vonatkozik.
+ Csak a KEZDŐ pontot kell megadni.
 <br><p>
 
 Ha a "Sün csoport" egyéni beállítás be van állítva, akkor csak a szerkesztési mérés utáni sünök módosulnak.
@@ -91,16 +100,15 @@ A sün osztályok engedélyezése "egyedi beállítással" lehetséges. Négy os
 </ul>
 
 A <i>sün osztály</i> gomb végiglépteti ezt a négy osztályt. 
-Az adatok mentésekor a mérés a kiválasztott osztályra van állítva. 
-Ha bejelöli az "minden sün" gombot, akkor az osztály az összes előző összefüggő "normális" sünre is beállítódik.<br><p>
+ Az adatok mentésekor a mérés a kiválasztott osztályra van állítva. 
+ Ha bejelöli az "minden sün" gombot, akkor az osztály az összes előző összefüggő "normális" sünre is beállítódik.<br><p>
 
 A sün osztályok a "többméréses" kiválasztással is beállíthatók. 
-A többméréses kiválasztásban bejelölheted azokat a sünöket, amelyek nem szomszédosak, és mindegyikhez sün osztályt rendelhetsz.<br><p>
+ A többméréses kiválasztásban bejelölheted azokat a sünöket, amelyek nem szomszédosak, és mindegyikhez sün osztályt rendelhetsz.<br><p>
 
-Ha következetes méréseket készítesz, akkor a sün osztályok beállíthatók a poligon mérés szerkesztésével és a 
-sün csoport gombbal. 
-Először meg kell mérni a keresztmetszet sablonokat, amelyek +90&deg;-al kezdődnek és körbe mennek. 
-Ezután vegye a H-sünöket. Végül a függőleges síkban lévő oszlopokat vesszük újra +90&deg;-al kezdve.<br><p> 
+Ha következetes méréseket készítesz, akkor a sün osztályok beállíthatók a poligon mérés szerkesztésével és a sün csoport gombbal. 
+ Először meg kell mérni a keresztmetszet sablonokat, amelyek +90&deg;-al kezdődnek és körbe mennek. 
+ Ezután vegye a H-sünöket. Végül a függőleges síkban lévő oszlopokat vesszük újra +90&deg;-al kezdve.<br><p> 
 </div>
 
 <b>További műveletek</b><br>
@@ -127,28 +135,28 @@ a mérést kalibrációs ellenőrzésként jelöli meg</li>
 <br><p>
 
 A <b>törlés</b> gomb nem távolítja el a mérést az adatbázisból.
-A mérés "töröltnek" lesz jelölve, és később a
-<a href="./page_undelete.htm"> Helyreállítás</a> párbeszédpanel segítségével visszaállítható.
-Ha a mérés egy poligon első mérése, akkor a poligon összes mérését is törölheti ha
+ A mérés "töröltnek" lesz jelölve, és később a
+ <a href="./page_undelete.htm"> Helyreállítás</a> párbeszédpanel segítségével visszaállítható.
+ Ha a mérés egy poligon első mérése, akkor a poligon összes mérését is törölheti ha
  bejelöli a jelölőnégyzetet a gombok mellett.
 <br><p>
 
 A poligonméréseknél van egy <b>kalibrálás</b> gomb is. Ez a gomb a mérést "kalibrálás-ellenőrzés" -ként jelöli.
-Ezeket a méréseket nem használják a felmérésben, és adataikat különböző forgatási szögben kell elkészíteni.
-Ezeket rögzítik az adatbázisban, és rögzítik az eszköz kalibrálásának megbízhatóságát
-amikor elkészült a felmérés. Megjeleníthetők a
+ Ezeket a méréseket nem használják a felmérésben, és adataikat különböző forgatási szögben kell elkészíteni.
+ Ezeket rögzítik az adatbázisban, és rögzítik az eszköz kalibrálásának megbízhatóságát
+ amikor elkészült a felmérés. Megjeleníthetők a
 <a href="./page_undelete.htm"> Helyreállítás</a> párbeszédpanellel.
 <br><p>
 
 <b>Felmérés felosztása</b><br>
 Ez a gomb megnyit egy párbeszédablakot az új felmérési információkhoz.
-Ezután a felmérés adatait hozzáadjuk az új felméréshez, kezdve ezzel a méréssel.
-Ezt követően a program folytatódik az új felméréssel.
-Előfordulhat, hogy fel kell osztania a felméréseket, ha a műszerben két (külön) felmérésből van adat:
-ezeket egyetlen felmérésbe tölti le, amelyet ezt követően fel kell osztani.<br>
+ Ezután a felmérés adatait hozzáadjuk az új felméréshez, kezdve ezzel a méréssel.
+ Ezt követően a program folytatódik az új felméréssel.
+ Előfordulhat, hogy fel kell osztania a felméréseket, ha a műszerben két (külön) felmérésből van adat:
+ ezeket egyetlen felmérésbe tölti le, amelyet ezt követően fel kell osztani.<br>
 
 Tesztelői szinten arra is lehetősége van, hogy <b>áthelyezd</b> az adatokat egy másik felmérésbe.
-Válaszd ki a célfelmérést a legördülő opciókészletből, és érintsd meg az "Áthelyezés" gombot.
+ Válaszd ki a célfelmérést a legördülő opciókészletből, és érintsd meg az "Áthelyezés" gombot.
 <br><p>
 
 <b>Figyelmeztetés</b>. Célszerű egy zip archívumot készíteni, mielőtt a
@@ -156,18 +164,18 @@ felmérést felosztod/áthelyezed, és elmenteni egy biztonságos helyre.<br><p>
 
 <b>+BJFL</b><br>
 A BJFL mérések a KEZDŐ vagy a CÉL ponton a négy BJFL szerkesztő mező kitöltésével kerülnek hozzáadásra
-ha megérinted az <i>+BJFL</i> gombot.<br>
-Lehetőség van olyan "köztes" BJFL hozzáadására is, amelynél beírod a távolságot (a jelenlegi egységekben) a mérés mentén,
-a BJFL pont és a KEZDŐ pont között.<br>
-A mérésekhez csak a KEZDŐ pont van.<br>
-A "köztes" BJFL-t az adatlistához csatolja, a többit a mérés előtt adja hozzá.<br>
-A kézi BJFL-t "keresztmetszet" -ként jelöli.<br>
+ ha megérinted az <i>+BJFL</i> gombot.<br>
+ Lehetőség van olyan "köztes" BJFL hozzáadására is, amelynél beírod a távolságot (a jelenlegi egységekben) a mérés mentén,
+ a BJFL pont és a KEZDŐ pont között.<br>
+ A mérésekhez csak a KEZDŐ pont van.<br>
+ A "köztes" BJFL-t az adatlistához csatolja, a többit a mérés előtt adja hozzá.<br>
+ A kézi BJFL-t "keresztmetszet" -ként jelöli.<br>
 <br><p>
 
 <b>Sün szín</b><br>
 Sünöknél van egy gomb is, amellyel színt rendelhet a méréshez.<br>
-A mérések listája nem frissül azonnal a színekkel.
-A sün színek megjelenítéséhez nyomja meg a "Frissítés" gombot.<br><p>
+ A mérések listája nem frissül azonnal a színekkel.
+ A sün színek megjelenítéséhez nyomja meg a "Frissítés" gombot.<br><p>
 
 </body>
 </html>
