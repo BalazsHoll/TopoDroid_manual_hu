@@ -83,7 +83,7 @@ A TopoDroid a felmérés adatait a következő barlang-program formátumokba exp
 <li><a href="#vtopo">VisualTopo</a></li>
 <li><a href="#walls">Walls</a></li>
 <li><a href="#winkarst">WinKarst</a></li>
-<li><a href="#ghtopo">GHTopo</a></li>
+<!-- li><a href="#ghtopo">GHTopo</a></li -->
 <li><a href="#polygon">Polygon</a></li>
 <li><a href="#topo">Topo</a></li>
 </ul>
@@ -109,6 +109,7 @@ A felmérési adatok exportálására szolgáló párbeszédpanel csak azt a for
 A következő export formátumok tovább nem támogatottak:
 <ul>
 <li><a href="">Grottolf</a></li>
+<li><a href="">GHTopo</a></li>
 <li><a href="">PocketTopo</a></li>
 <li><a href="">PLT file (OziExplorer)</a></li>
 <li><a href="">GeoJSON</a></li>
@@ -150,7 +151,7 @@ Beállítások: <ul style="margin-top=0">
 <li><u>sorvég</u> lehet Unix vagy Windows</li>
 <li><u>CÉL pontok nevei</u> a segédpontok készítéséhez (a CÉL név a KEZDŐ pont neve a mellékelt betűvel)</li>
 <li>adja hozzá a <u>BJFL</u> t az exportáláshoz</li>
-<li>"cs out" <u>EPSG</u> szám</li>
+<li>Survex "cs out" <u>EPSG</u> szám</li>
 </ul><p>
 
 <b id="therion"> Therion</b> (.th)<br>
@@ -158,10 +159,8 @@ A felmérés adatait exportálni tudjuk <i>Therion</i> formátumban, "normál" a
 A TopoDroid felmérés nevét használják a Therion barlang nevére, az "_" aláhúzást szóköz helyettesíti.<br>
 Az adategységek követik a felhasználói beállításokat. <br><p>
 
-A csapatnevek fel vannak sorolva, de a parancs megjegyzésbe kerül.<br>
-A TopoDroid csapat karakterlánc a Therion <i>team</i> parancsokra oszlik: a csapat személyeit fel kell tüntetni
-a vezetéknévvel esetleg a keresztnév kezdőbetű(k) előtt. Például
-az "A.W. Smith, B. Ford" csapatszövegből <i>team "A.W. Smith"</i> és <i>team "B. Ford"</i> lesz.<br><p>
+A TopoDroid csapat karakterlánca alapértelmezés szerint megjegyzésként jelenik meg.<be>
+Ha a „Therion-csapat” beállítás be van állítva, a TopoDroid elemzi a csapatot, és felosztja a Therion <i>team</i> parancsaira.<br><p>
 
 A poligon pont megjegyzései és jelei (rögzített, festett) megelőzik a poligon adatait.<br>
 A keresztmetszet segédpontok "-" (kötőjel) mérési ponttal exportálva, a többi "." (pont) mérési ponttal.<br>
@@ -267,9 +266,10 @@ Előfordulhat, hogy az importált vázlat nincs összehangolva a felmérés adat
 A TopoDroid felmérési adatokat exportálhat <i>Polygon</i> formátumban.
 A fix pontokat lat-long formátumban exportálják.<br><p>
 
-
+<!--
 <b id="ghtopo"> GHTopo</b> (.gtx)<br>
 A TopoDroid a felmérés adatait exportálhatja <i>GHTopo</i> formátumban (részben tesztelve).<br><p>
+-->
 
 <!--
 <b id="grottolf"> Grottolf</b> (.grt)<br>
@@ -405,7 +405,7 @@ A TopoDroid a felmérési vázlatokat a következő formátumokba exportálja:
 <li><a href="#svg">SVG</a></li>
 <li><a href="#pdf">PDF file</a></li>
 <li><a href="#shp2">shapefile</a></li>
-<li><a href="#tunnel">Tunnel</a></li>
+<!-- li><a href="#tunnel">Tunnel</a></li -->
 </ul>
 
 A következő export formátumok a későbbiekben nem támogatottak:
@@ -469,7 +469,7 @@ A korábbi verziók a Therion formátumot használták.
 A Therionról binárisra történő átalakítás "automatikus", amikor megnyílik egy vázlat: ha a TopoDroid nem találja a bináris fájlt, akkor megkeresi a Therion fájlt.<br>
 A 4.1.2 verziótól a TopoDroid nem tölt be több vázlatot Therion formátumban.<br>
 -->
-
+<!--
 <b id="tunnel">Tunnel</b> (.xml)<br>
 A vázlat exportálható Tunnel XML formátumban. A fájlokat a "tnl" alkönyvtárba menti.<br>
 A következő vonalak vannak feltérképezve a Tunnel vonalaihoz: fal, feltételezett, gödör, kémény és lejtő.
@@ -479,7 +479,7 @@ A Tunnel pontjaihoz a következő pontok vannak hozzárendelve: huzat, archeo, t
 guano, iszap, kavics, borsókő, homok, szalmacseppkő, sztalaktit, sztalagmit, víz, vízfolyás.
 Az összes többi pont az "Tunnel point" alapkőzethez van hozzárendelve.<br>
 <p>
-
+-->
 <b id="xvi"> Xtherion</b> (.xvi)<br>
 Az "xvi" export háttérképként beilleszthető az xtherionba.<br>
 A "fal" típusú vonalak pirosak, a "lejtés" narancssárga, a "metszet" szürke, az összes többi barna.
