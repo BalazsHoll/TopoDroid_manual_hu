@@ -12,26 +12,27 @@ A fájl neve nem tartalmazhat kettőspontot ':'.<br><p>
 
 A párbeszédpanelen megjelenik a támogatott import fájlformátumok listája a "zip" archívumok mellett:
 <ul>
-<li>Compass (dat)</li>
-<li>Survex (svx)</li>
-<li>Therion. Csak adat (th)</li>
-<li>VisualTopo (tro and trox)</li>
-<li>Walls (srv)</li>
-<li>TopoRobot</li>
-<li>PocketTopo, vázlatokkal együtt (top)</li>
-<li>CaveSniper (csn)</li>
-<li>BRIC csv (csv)</li>
+<li>Compass ".dat"</li>
+<li>Survex ".svx"</li>
+<li>Therion. Only data ".th"</li>
+<li>VisualTopo ".tro" and ".trox"</li>
+<li>Walls ".srv"</li>
+<li>TopoRobot ".text"</li>
+<li>PocketTopo, including sketches ".top"</li>
+<li>CaveSniper ".csn"</li>
+<li>BRIC and Cavway csv ".csv"</li>
 </ul>
 
 Egyes formátumok esetében az importálás személyre szabható néhány beállítással.<br>
 
 A fájlimportálás sikertelen, ha az azonos nevű felmérés már szerepel a TopoDroidban.<br><p>
-A fájlok kiválasztása a rendszer tartalomszolgáltatón keresztül történik.<br><p>
+Az importfájlt a rendszer tartalom-szolgáltató választja ki.<br>
+A fájl importálása sikertelen, ha a fájl kiterjesztése nem a fent felsoroltak közül való<br><p>
 
 Fájlból történő importáláskor a BJFL értékeket keresztmetszet sünökké konvertálják (zöld színnel jelennek meg).<br><p>
 
 
-<b>Compass importálása</b><br>
+<b>Compass importálása</b> ".dat"<br>
 <ul>
 <li><i>BJFL</i>, ha engedélyezett akkor a BJFL értékeket importálja és átváltja sün mérésekké</li>
 <li><i>Először a ploigon</i>, ha az engedélyezett BJFL sünöket a poligon után helyezik el</li>
@@ -39,14 +40,14 @@ Fájlból történő importáláskor a BJFL értékeket keresztmetszet sünökk�
 </ul><br><p>
 A TopoDroid az importált Compass felmérést <i>normál</i> adatmódból <i>búvár</i> adatmódba [T] konvertálja, ha a relatív beállítás engedélyezve van [G].<br><p>
 
-<b>Survex importálás</b><br>
+<b>Survex importálás</b> ".svx"<br>
 <u>A Survex szintaxis részben támogatott.</u><br>
 Csak a „normál”, „topofil” és „passage” adatmódok kerülnek kezelésre bizonyos mértékig.
  Különösen az "passage" adatmódban a "bal" és a "jobb" értékek nem használatosak, mivel nem konvertálhatók sünökké.<br>
 A TopoDroid csak egyetlen felmérési munkamenettel rendelkezik. Ezért a több munkamenetes fájlok adatai egyetlen munkamenetben egyesülnek.
 <br><p>
 
-<b>Therion importálás</b><br>
+<b>Therion importálás</b> ".th"<br>
 <u>A Therion szintaxis részben támogatott.</u><br>
 Csak azok a Therion felmérési fájlok importálhatók, amelyek adatai "normál" adatmódban vannak.<br>
 A "deklináció" parancsot figyelembe vesszük: a beolvasott azimutot korrigáljuk a deklináció értékével.<br>
@@ -54,7 +55,7 @@ Ha a mérési pontok rövid nevei között nincs ütközés, a fájl importálha
  Ellenkező esetben teljes névvel kell importálni, azaz a felmérési útvonal által minősített nevekkel.<br>
 A TopoDroid nem importálja a Therion szinteket.<br><p>
 
-<b>Compass importálása</b><br>
+<b>Compass importálása</b> ".dat"<br>
 <ul>
 <li><i>BJFL</i> ha engedélyezett akkor a BJFL értékeket importálja és átváltja sün mérésekké</li>
 <li><i>Poligon az első</i> ha engedélyezett BJFL sünt-t helyeznek a poligon után</li>
@@ -64,7 +65,7 @@ A TopoDroid nem importálja a Therion szinteket.<br><p>
 A TopoDroid átalakítja az importált Compass felmérést a <i>normál</i> adatmódról <i>búvár</i> adatmódra [T], ha a relatív beállítás engedélyezve van [G].<br><p>
 
 
-<b>VisualTopo importálás</b><br>
+<b>VisualTopo importálás</b> ".tro" and ".trox"<br>
 <u>VisualTopo szintaxis részben támogatott.</u><br>
 VisualTopo (tro, trox) importálási lehetőségek:
 <ul>
@@ -74,27 +75,29 @@ VisualTopo (tro, trox) importálási lehetőségek:
 A TopoDroid a VisualTopo felméréseket is képes importálni a <i>Prof</i> helyett <i>Clino</i> "trox" formátumban.
  Az adatok <i>búvár</i> adatmódban tárolódnak.<br><p>
  
-<b>Walls importálása</b><br>
+<b>Walls importálása</b> ".srv"<br>
 <u>A Walls szintaxisa részben támogatott</u>.<br>
 
 Ha adatokat importál egy Walls-fájlból, akkor a felmérés megszakadhat.<br><p>
 
-<b>TopoRobot importálás</b><br>
+<b>TopoRobot importálás</b> ".text"<br>
 A TopoRobot importálása nagyon kísérleti jellegű.<br><p>
 
-<b>PocketTopo import</b><br>
+<b>PocketTopo import</b> ".top"<br>
 A TopoDroid importálja a felmérési adatokat és a vázlatokat is.
  Ez az import leképezi a PocketTopo színeit a TopoDroid rajzeszközökhöz (pontok és vonalak).
  A leképezés egy beállításon keresztül módosítható.<br><p>
 
-<b>CaveSniper import</b><br>
+<b>CaveSniper import</b> ".csn"<br>
 <br><p>
 
-<b>BRIC csv fájl</b><br>
-A BRIC csv importálása kísérleti jellegű.<br>
+<b>BRIC és Cavway csv import</b> ".csv"<br>
+A BRIC és Cavway csv importálása kísérleti jellegű.<br>
 
 A BRIC csv-fájlokból importált felmérési adatok csak távolságot, irányszöget és dőlést tartalmaznak.<br>
 A felmérés adatait az importálás után szerkeszteni kell a többi információ hozzáadásához.<br><p>
+
+A Cavway felmérés adatai a CavwayAssistant programmal készült csv fájlokból importálhatók<br><p>
 
 <!--
 <b>Megjegyzés</b>

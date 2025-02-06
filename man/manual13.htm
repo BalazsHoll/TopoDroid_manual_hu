@@ -32,11 +32,10 @@ Ha az alapértelmezett felmérési adatok exportálási formátuma be van állí
 Ha az alapértelmezett vázlatexportálási formátum be van állítva, akkor a vázlatokat ebben a formátumban exportálják, amikor bezárják a <u>vázlatablakból</u>.
 A cSurvey esetében az x metszetek PNG-képekként kerülnek mentésre.<br><p>
 -->
-<h4> ZIP-ARCHÍVUM</h4>
-A biztonság kedvéért készítsen egy TopoDroid zip archívumot, és vigye át számítógépére.
-A zip-archívum a felmérés teljes biztonsági másolata, és az
-tartalmazza a parancsot a felmérési adatok és egyéb információk visszaállítására az adatbázisban.
-Segítségével átviheti a felmérést egy másik Android rendszerű TopoDroidba.<br><p>
+<h4> ZIP ARCHÍVUM ".zip"</h4>
+A biztonság kedvéért készíts egy TopoDroid zip archívumot, és vidd át a számítógépére.
+ A zip-archívum a felmérés teljes biztonsági másolata, és tartalmazza a mérési adatok és az adatbázisban lévő egyéb információk visszaállításának parancsát.
+ Segítségével átviheted a felmérést egy másik Android rendszerű TopoDroidba.<br><p>
 
 A ZIP-archívumok a <u>Felmérés információi ablakából</u>, az „Exportálás” menüből exportálhatók.<br>
 Zip archívumokat exportálásakor ellenőrizheti, hogy utána azonnal megosztja. Ha rendelkezik egyéni alkalmazással az exportált zip-archívumok kezelésére, felülbírálhatja az alapértelmezett rendszermegosztó alkalmazásokat, és meghívhatja azokat a „kategória” meghatározására.<br><p>
@@ -75,26 +74,26 @@ Ne feledje, hogy a színek megjelenítése nem importálható, hacsak nincs enge
 <h4> FELMÉRÉSI ADAT EXPORTÁLÁS</h4>
 A TopoDroid a felmérés adatait a következő barlang-program formátumokba exportálja:
 <ul>
-<li><a href="#compass">Compass</a></li>
-<li><a href="#csurvey">cSurvey</a></li>
-<li><a href="#survex">Survex</a></li>
-<li><a href="#therion">Therion</a></li>
-<li><a href="#trobot">TopoRobot</a></li>
-<li><a href="#vtopo">VisualTopo</a></li>
-<li><a href="#walls">Walls</a></li>
-<li><a href="#winkarst">WinKarst</a></li>
+<li><a href="#compass">Compass</a> ".dat"</li>
+<li><a href="#csurvey">cSurvey</a> ".csx"</li>
+<li><a href="#survex">Survex</a> ".svx"</li>
+<li><a href="#therion">Therion</a> ".th"</li>
+<li><a href="#trobot">TopoRobot</a> ".text"</li>
+<li><a href="#vtopo">VisualTopo</a> ".tro", ".trox"</li>
+<li><a href="#walls">Walls</a> ".srv"</li>
+<li><a href="#winkarst">WinKarst</a> ".sur"</li>
 <!-- li><a href="#ghtopo">GHTopo</a></li -->
-<li><a href="#polygon">Polygon</a></li>
-<li><a href="#topo">Topo</a></li>
+<li><a href="#polygon">Polygon</a> ".cave"</li>
+<li><a href="#topo">Topo</a> ".cav"</li>
 </ul>
 
 Ezenkívül exportálja a felmérés adatait
 <ul>
-<li><a href="#csv">CSV</a></li>
-<li><a href="#dxf">DXF</a></li>
-<li><a href="#kml">KML</a></li>
-<li><a href="#gpx">GPX track</a></li>
-<li><a href="#shp">shapefile</a></li>
+<li><a href="#csv">CSV</a> ".csv"</li>
+<li><a href="#dxf">DXF</a> ".dxf"</li>
+<li><a href="#kml">KML</a> ".kml"</li>
+<li><a href="#gpx">GPX track</a> ".gpx"</li>
+<li><a href="#shp">shapefile</a> ".shz"</li>
 </ul>
  formátumba. Ha a felmérés nem georeferált, a felmérés adata nem exportálható az utolsó négy exportálási formátumba.
 <br><p>
@@ -116,7 +115,7 @@ A következő export formátumok tovább nem támogatottak:
 </ul>
 <br><p>
 
-<b id="compass">Compass</b> (.dat)<br>
+<b id="compass">Compass</b> ".dat"<br>
 A <i>Compass</i> adatfájlok importálásakor és exportálásakor egyaránt támogatottak.<br>
 A támogatott adatformátum a "normal" és a "diving".<br>
 Az adategységek „poligon” és „fok” (méterekre és fokra konvertálva a TopoDroid belsejében).<br><p>
@@ -128,7 +127,7 @@ Beállítások: <ul style="margin-top=0">
 </ul>
 <br><p>
 
-<b id="csurvey">cSurvey</b> (.csx)<br>
+<b id="csurvey">cSurvey</b> ".csx"<br>
 A cSurvey export fájlokhoz cSurvey 1.20 vagy újabb verzió szükséges.<br>
 A <i>cSurvey</i> exportálás a felmérés <u>információs ablakából</u> csak a
 felmérési adatokat tartalmazza, nem tartalmaz semmi vázlatot.<br>
@@ -143,7 +142,7 @@ Beállítások: <ul style="margin-top=0">
 </ul><p>
 
 
-<b id="survex"> Survex</b> (.svx)<br>
+<b id="survex"> Survex</b> ".svx"<br>
 A felmérés adatai exportálhatók <i>Survex</i> fájlként.<br>
 Az adategységek követik a felhasználói beállításokat.<br><p>
 
@@ -157,7 +156,7 @@ Beállítások: <ul style="margin-top=0">
 <li>Survex "cs out" <u>EPSG</u> szám</li>
 </ul><p>
 
-<b id="therion"> Therion</b> (.th)<br>
+<b id="therion"> Therion</b> ".th"<br>
 A felmérés adatait exportálni tudjuk <i>Therion</i> formátumban, "normál" adat formában.<br>
 A TopoDroid felmérés nevét használják a Therion barlang nevére, az "_" aláhúzást szóköz helyettesíti.<br>
 Az adategységek követik a felhasználói beállításokat. <br><p>
@@ -199,7 +198,7 @@ A TopoDroid <i>Therion</i> feldolgozás adatszintaxisa nagyon korlátozott. Csak
 A fix pontokat ("fix") elemezzük, de nem vesszük figyelembe, mivel a "cs" nem támogatott.<br><p>
 
 
-<b id="trobot">TopoRobot</b> (.trb)<br>
+<b id="trobot">TopoRobot</b> ".text"<br>
 A <i>TopoRobot</i> adatfájl import és exportálás során egyaránt támogatott.<br>
 A felmérés adatai exportálhatók <i>TopoRobot</i> fájlként. A <i>TopoRobot</i> pontok elnevezési házirendjét
 ki kell választani. Ha a pontnevek a <i>TopoRobot</i> "series.number" konvencióját követik, akkor azokat használják.<br><p>
@@ -210,7 +209,7 @@ A <i>TopoRobot</i> exportálásához a <u>fájlnevet</u> a kiterjesztéssel egy�
  A felmérés neve a fájlban a fájlnév kiterjesztés nélkül.<br>
 Az exportálás az adatok utolsó részére is korlátozható az <u>első mérés</u> index megadásával.<br><p>
 
-<b id="vtopo"> VisualTopo</b> (.tro, .trox)<br>
+<b id="vtopo"> VisualTopo</b> ".tro", ".trox"<br>
 A <i>VisualTopo</i> adatfájlok importálásakor és exportálásakor egyaránt támogatottak.<br>
 A VisualTopo sablonok szerepelnek benne, ha engedélyezve vannak.<br>
 Alapértelmezés szerint a BJFL a CÉL ponton van, de a KEZDŐ pont beállítható.<br>
@@ -226,7 +225,7 @@ Beállítások: <ul style="margin-top=0">
 </ul>
 <br><p>
 
-<b id="walls">Walls</b> (.srv)<br>
+<b id="walls">Walls</b> ".srv"<br>
 A <i>Walls</i> adatfájl import és exportálás során egyaránt támogatott.<br>
 A felmérés adatai exportálhatók <i>Walls</i> fájlként (részben tesztelve).<br>
 Az adategységek követik a felhasználói beállításokat.<br><p>
@@ -239,7 +238,7 @@ Beállítások:<ul style="margin-top=0">
 </ul>
 <br><p>
 
-<b id="winkarst"> WinKarst</b> (.sur)<br>
+<b id="winkarst"> WinKarst</b> ".sur"<br>
 A felmérés adatai exportálhatók <i>WinKarst</i> fájlként (nincs tesztelve).<br><p>
 
 Beállítások:<ul style="margin-top=0">
@@ -247,7 +246,7 @@ Beállítások:<ul style="margin-top=0">
 </ul>
 <br><p>
 
-<b id="ptopo"> PocketTopo</b> (.top)<br>
+<b id="ptopo"> PocketTopo</b> ".top"<br>
 A TopoDroid csak az importálás során támogatja a <i>PocketTopo</i>-t.<br><p>
 
 <!--
@@ -266,23 +265,23 @@ Előfordulhat, hogy az importált vázlat nincs összehangolva a felmérés adat
 <u>vázlatablak</u>, hogy illeszkedjen a poligonhoz.<br><p>
 
 
-<b id="polygon">Polygon</b> (.cave)<br>
+<b id="polygon">Polygon</b> ".cave"<br>
 A TopoDroid felmérési adatokat exportálhat <i>Polygon</i> formátumban.
 A fix pontokat lat-long formátumban exportálják.<br><p>
 
 <!--
-<b id="ghtopo"> GHTopo</b> (.gtx)<br>
+<b id="ghtopo"> GHTopo</b> ".gtx"<br>
 A TopoDroid a felmérés adatait exportálhatja <i>GHTopo</i> formátumban (részben tesztelve).<br><p>
 -->
 
 <!--
-<b id="grottolf"> Grottolf</b> (.grt)<br>
+<b id="grottolf"> Grottolf</b> ".grt"<br>
 A TopoDroid felmérési adatokat exportálhat <i>Grottolf</i> formátumban (nem tesztelt).
 Ha az első pont földrajzi koordinátákkal rendelkezik, ezeket exportáljuk, különben helyi koordinátákat használunk.
 A pontok profilját úgy számolják, hogy a sün felvételeket egy a poligonra merőleges függőleges síkra vetítik.<br><p>
 -->
 
-<b id="topo"> Topo</b> (.cav)<br>
+<b id="topo"> Topo</b> ".cav"<br>
 A felmérés adatai exportálhatók <i>Topo</i> fájlként.<br><p>
 
 Beállítások (a "Survex" beállítások alatt): <ul style="margin-top=0">
@@ -290,7 +289,7 @@ Beállítások (a "Survex" beállítások alatt): <ul style="margin-top=0">
 </ul><p>
 
 
-<b id="csv"> CSV</b> (.csv)<br>
+<b id="csv"> CSV</b> ".csv"<br>
 A felmérés adatai exportálhatók vesszővel elválasztott mezőkkel ellátott rekordok listájaként:
 <ul style="margin-top=0">
 <li>kezdő és vég pont</li>
@@ -318,7 +317,7 @@ Beállítások: <ul style="margin-top=0">
 </ul><br><p>
 
 
-<b id="dxf"> DXF</b> (.dxf)<br>
+<b id="dxf"> DXF</b> ".dxf"<br>
 A felmérés adatait 3D DXF formátumban (<i>LibreCAD</i>) exportálják rétegekkel
 <ul style="margin-top=0">
 <li>pontok</li>
@@ -332,13 +331,13 @@ Beállítások: <ul style="margin-top=0">
 </ul><br><p>
 
 <!--
-<b id="plt"> PLT</b> (.plt)<br>
+<b id="plt"> PLT</b> ".plt"<br>
 A felmérés adatai exportálhatók track fájlként (<i>OziExplorer</i>), ha georeferenciát adott egy pontról.
 Ha a felmérés szétválasztott darabokat tartalmaz, a track fájl tartalmazza az összes darabot egy georeferált ponttal.
 Az adatokat a mágneses deklinációval korrigáljuk.<br><p>
 -->
 
-<b id="kml"> KML</b> (.kml)<br>
+<b id="kml"> KML</b> ".kml"<br>
 A felmérés adatai exportálhatók KML fájlként (<i>Keyhole Markup Language</i>), ha legalább egy pont georeferált.
 Ha a felmérés szétválasztott darabokat tartalmaz, akkor a KML export tartalmazza az összes darabot georeferált ponttal.
 Az adatokat a mágneses deklinációval korrigáljuk.<br><p>
@@ -349,7 +348,7 @@ Beállítások: <ul style="margin-top=0">
 </ul>
 <br><p>
 
-<b id="geojson"> GeoJSON</b> (.json)<br>
+<b id="geojson"> GeoJSON</b> ".json"<br>
 A felmérés adatai exportálhatók GeoJSON fájlként (<i>RFC 7946</i>), ha legalább egy pont georeferált.
 A mérések exportálása <i>LineString</i>, a pontok <i>Point</i>.
 Ha a felmérés különálló darabokat tartalmaz, akkor a GeoJSON export tartalmazza az összes darabot egy georeferált ponttal.
@@ -361,13 +360,13 @@ Beállítások: <ul style="margin-top=0">
 </ul>
 <br><p>
 
-<b id="gpx">GPX track</b> (.gpx)<br>
+<b id="gpx">GPX track</b> ".gpx"<br>
 A GPX export tartalmazza a mérési pontokat (útpontokként) és a poligont (nyomvonalként).<br>
 Az adatok WGS84 földrajzi koordináta-rendszerben vannak.
 <br><p>
 
 
-<b id="shp">Shapefile</b> (.shp .shx .dbf)<br>
+<b id="shp">Shapefile</b> ".shz"<br>
 A felmérés adatai exportálhatók shape fájlként.
 Van egy shape fájl a pontokhoz és egy a mérésekhez (mind a poligonok, mind a sünök).
 Ha a felmérés szétválasztott darabokat tartalmaz, akkor egy-egy georeferált ponttal egy-egy alakzatot exportálunk.
@@ -402,13 +401,13 @@ Beállítások: <ul style="margin-top=0">
 
 A TopoDroid a felmérési vázlatokat a következő formátumokba exportálja:
 <ul>
-<li><a href="#csx">cSurvey</a></li>
-<li><a href="#th2">Therion</a></li>
-<li><a href="#xvi">xtherion</a></li>
-<li><a href="#dxf2">DXF</a></li>
-<li><a href="#svg">SVG</a></li>
-<li><a href="#pdf">PDF file</a></li>
-<li><a href="#shp2">shapefile</a></li>
+<li><a href="#csx">cSurvey</a> ".csx"</li>
+<li><a href="#th2">Therion</a> ".th2"</li>
+<li><a href="#xvi">xtherion</a> ".xvi"</li>
+<li><a href="#dxf2">DXF</a> ".dxf"</li>
+<li><a href="#svg">SVG</a> ".svg"</li>
+<li><a href="#pdf">PDF file</a> ".pdf"</li>
+<li><a href="#shp2">shapefile</a> ".shz"</li>
 <!-- li><a href="#tunnel">Tunnel</a></li -->
 </ul>
 
@@ -422,7 +421,7 @@ A következő export formátumok a későbbiekben nem támogatottak:
 A vázlatablak és az áttekintő ablak képernyőképeit a hangerő növelő gombbal lehet készíteni.
 A képernyőképeket a rendszer a felmérés "out" mappájába menti.<br><p>
 
-<b id="csx">cSurvey</b> (.csx)<br>
+<b id="csx">cSurvey</b> ".csx"<br>
 A cSurvey export fájlokhoz cSurvey 1.20 vagy újabb verzió szükséges.<br>
 Ezek az exportok tartalmazzák a alaprajz- és oldalnézet vázlatokat, valamint a felmérés adatait.
 A "section" pontok megadásakor határozza meg a metszetrajzokat.<br>
@@ -440,7 +439,7 @@ Beállítások: <ul style="margin-top=0">
 <li><u>vonalpontok távolsága</u> az interpolációs pontok közötti maximális távolság a sima vonalakon</li>
 </ul><p>
 
-<b id="th2">Therion</b> (.th2)<br>
+<b id="th2">Therion</b> ".th2"<br>
 A vázlatok Therion formátumban vázlatonként egy fájlként kerülnek exportálásra, ha a <u>vázlatablakból</u> exportálják őket,
 vagy egy fájlként, amely tartalmazza az összes vázlatot ugyanazzal a nézettel, alaprajzzal vagy oldalnézettel, ha exportálják
 az <u>áttekintő ablakból</u>. Ez utóbbiban van egy szint az egyes vázlatokhoz, és a keresztmetszet vázlatok
@@ -474,7 +473,7 @@ A Therionról binárisra történő átalakítás "automatikus", amikor megnyíl
 A 4.1.2 verziótól a TopoDroid nem tölt be több vázlatot Therion formátumban.<br>
 -->
 <!--
-<b id="tunnel">Tunnel</b> (.xml)<br>
+<b id="tunnel">Tunnel</b> ".xml"<br>
 A vázlat exportálható Tunnel XML formátumban. A fájlokat a "tnl" alkönyvtárba menti.<br>
 A következő vonalak vannak feltérképezve a Tunnel vonalaihoz: fal, feltételezett, gödör, kémény és lejtő.
 Az összes többi vonal a Tunnel vonalának részleteihez van hozzárendelve.<br>
@@ -484,7 +483,7 @@ guano, iszap, kavics, borsókő, homok, szalmacseppkő, sztalaktit, sztalagmit, 
 Az összes többi pont az "Tunnel point" alapkőzethez van hozzárendelve.<br>
 <p>
 -->
-<b id="xvi"> Xtherion</b> (.xvi)<br>
+<b id="xvi"> Xtherion</b> ".xvi"<br>
 Az "xvi" export háttérképként beilleszthető az xtherionba.<br>
 A "fal" típusú vonalak pirosak, a "lejtés" narancssárga, a "metszet" szürke, az összes többi barna.
 A terület határai fekete színűek.
@@ -502,12 +501,12 @@ a metszetrajz beillesztésre kerül az xvi fájlba, a "metszet" pontba</li>
 </ul><p>
 
 <!--
-<b id="cave3d"> Cave3D</b> (.c3d)<br>
+<b id="cave3d"> Cave3D</b> ".c3d"<br>
 A "c3d" formátumban exportált vázlat megjeleníthető a 3D-s modellben a Cave3D-ben.<br>
 <br><p>
 -->
 
-<b id="dxf2"> DXF</b> (.dxf)<br>
+<b id="dxf2"> DXF</b> ".dxf"<br>
 A vázlatok 2D DXF fájlként exportálhatók. Rétegeket az egyes szimbólum (pont, vonal, terület) típusokhoz vagy a szintekhez rendelhet.
 A Z koordinátát a szintek (scraps) vagy a rétegek (level) elkülönítésére használja. A DXF fájl csak néhány alap vonaltípust tartalmaz.<br><p>
 
@@ -527,7 +526,7 @@ a metszet rajza beillesztésre kerül az exportálásba, a "metszet" pontba Alap
 <li><u>Szint réteg</u>: DXF rétegek szint vagy típus szerint. Alapértelmezett "szint"</li>
 </ul><p>
 
-<!-- b id="png">PNG</b> (.png)<br>
+<!-- b id="png">PNG</b> ".png"<br>
 A PNG formátumú képfájl csak a vázlatok exportálásához használható.<br>
 A "szint" beállítás hatással van a PNG-exportra: szintek használata esetén az export csak látható elemeket tartalmaz.<br><p>
 
@@ -541,7 +540,7 @@ Ha a rendszer nem rendelkezik elegendő memóriával a kép elkészítéséhez a
 </ul><p>
 <br><p -->
 
-<b id="pdf">PDF</b> (.pdf)<br>
+<b id="pdf">PDF</b> ".pdf"<br>
 A vázlat PDF fájlként exportálható.
  A vázlat PDF-fájlok célja a felmérés gyors megosztása a nem felmérőkkel
  olyan formátumban, amelyet bárki megnyithat.<br><p>
@@ -557,15 +556,15 @@ Beállítások:<ul style="margin-top=0">
 <li><u>sünök</u>: belekerüljön vagy nem [ne használja]</li>
 </ul><p>
 -->
-<b id="shp2">Shapefile</b> (.shp)<br>
+<b id="shp2">Shapefile</b> ".shp"<br>
 A vázlatok shape fájlként exportálhatók pontokkal, mérésekkel és vonalakkal.
-Minden elemnek három fájlja van: a shape adatfájl, a shape index és az adatbázis fájl.
-A shapefile exportot tartalmazó fájlok tömörítve vannak, a zip fájlok a
-"shp" mappában ".shz" kiterjesztéssel.<br><p>
+ Minden elemnek három fájlja van: a shape adatfájl, a shape index és az adatbázis fájl.
+ A shapefile exportot tartalmazó fájlok tömörítve vannak, a zip fájlok az
+ "shp" mappában ".shz" kiterjesztéssel.<br><p>
 
 Ha legalább egy poligon pont georeferált, és az exportálás párbeszédpanelen bejelölöd a megfelelő jelölőnégyzetet,
-az adatokat a WGS84 referenciarendszerbe exportáljuk, és a mágneses deklinációval korrigáljuk.<br>
-Ellenkező esetben az adatokat helyi koordinátákban exportáljuk, és a mágneses deklinációs korrekciót nem alkalmazzuk.<br><p>
+ az adatokat a WGS84 referenciarendszerbe exportáljuk, és a mágneses deklinációval korrigáljuk.<br>
+ Ellenkező esetben az adatokat helyi koordinátákban exportáljuk, és a mágneses deklinációs korrekciót nem alkalmazzuk.<br><p>
 
 A "point" DBF alábbi mezőket tartalmazza:
 <ul style="margin-top=0">
@@ -608,7 +607,7 @@ A "shot" DBF alábbi mezőket tartalmazza:
 </ul><br>
 
 
-<b id="svg">SVG</b> (.svg)<br>
+<b id="svg">SVG</b> ".svg"<br>
 A vázlatok SVG fájlként exportálhatók.<br>
 Az elemek rétegekbe vannak rendezve: <i>vázlat rácsok</i>, <i>pontok</i>, <i>poligonok</i>, <i>sünök</i>,
 <i>pontok</i>, <i>vonalak</i> és <i>területek</i>.<br>
@@ -646,9 +645,9 @@ egyébként csak a felhasználó által kiválasztott pontok szerepelnek</li>
 </ul><p>
 
 
-<h4>KALIBRÁLÁSI EXPORT</h4>
+<!-- h4>KALIBRÁLÁSI EXPORT</h4>
 
-A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importálni CSV fájlként (.ccsv) lehet.<br><p>
+A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importálni CSV fájlként ".c!csv" lehet.<br><p -->
 
 
 <h4> IMPORT/EXPORT BEÁLLÍTÁSOK</h4>

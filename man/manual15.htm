@@ -13,8 +13,7 @@ Az észak földrajzi, ha a mágneses deklináció be van állítva.<br>
 
 Ha az adatok (felmérés vagy barlangprojekt) rögzített pontokat tartalmaznak, akkor ezeket a modellben lévő pontok koordinátáinak kiszámításához használják.
  Ha a rögzített pontok térképészeti (vetített) koordinátákkal rendelkeznek, a derékszögű rács a vetített koordinátarendszerben van.
- A térképészeti referenciarendszerekben a koordináták nem veszik figyelembe a meridiánkonvergenciát.
-Ezért az észak nem a térképészeti észak, hanem a meridián iránya.<br>
+ A térképészeti referenciarendszerekben a koordináták figyelembe veszik a meridiánkonvergenciát.<br>
 Ha a rögzített pontoknak csak földrajzi (WGS84) koordinátái vannak,
  a koordinátákat az egyenlítőre és a főmeridiánra vonatkoztatjuk, és az első rögzített ponttól való eltérések felhasználásával számítjuk ki:
  a szélesség szorozva a meridián sugarával, a hosszúság pedig a parelellkör sugárral.<br>
@@ -23,15 +22,15 @@ Nincs koordináta-átalakítás. Ezért egy barlangprojektben minden felmérésn
 <br><p>
 
 <h4>GOMBOK</h4>
-<ul style = "margin-top: 0">
-<li><i>Mozgatás - Fény</i>: A modell vagy a fény mozgatása. A kétujjas érintés mindig méretezi és eltolja a modellt.</li>
-<li><i>Nézet</i>: perspektív vagy merőleges.</li>
-<li><i>Poligon pontok</i>: a pontszámok megjelenítése/elrejtése. Zöld pontként vagy névvel.</li>
-<li><i>Sünök</i>: Segédmérések megjelenítése/elrejtése. Vonalakkal vagy végpontokkal.</li>
-<li><i>Falak</i>: Falak megjelenítése/elrejtése (ha létrejött).</li>
-<li><i>Felület</i>: Felületi DEM megjelenítése/elrejtése (ha van).</li>
-<li><i>Szín</i>: poligon színkódolása. Fehér, felmérés vagy szintkülönbség.</li>
-<li><i>Keret</i>: Váltás a rács és az XYZ tengely között.</li>
+<ul style="margin-top:0">
+<li><img style="border:1px solid black" width="36" height="36" src="btn_3d_turn.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_move.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_light.png"> <i>Mód</i>: a modell vagy a fény mozgatása. A kétujjas érintés mindig méretezi és eltolja a modellt..</li>
+<li><img style="border:1px solid black" width="36" height="36" src="btn_3d_orthogonal.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_perspective.png"> <i>Nézet</i>: perspektív vagy merőleges.</li>
+<li><img style="border:1px solid black" width="36" height="36" src="btn_3d_station_no_dot.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_station_point_dot.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_station_name_dot.png"> <i>Poligon pontok</i>: a pontszámok megjelenítése/elrejtése, zöld pontként vagy névvel.</li>
+<li><img style="border:1px solid black" width="36" height="36" src="btn_3d_splays_none.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_splays_line.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_splays_point.png"> <i>Sünök</i>: segédmérések megjelenítése/elrejtése, vonalakkal vagy végpontokkal.</li>
+<li><img style="border:1px solid black" width="36" height="36" src="btn_3d_wall_no.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_wall.png"> <i>Falak</i>: falak megjelenítése/elrejtése (ha létrejött).</li>
+<li><img style="border:1px solid black" width="36" height="36" src="btn_3d_surface_off.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_surface_on.png"> <i>Felszín</i>: felszíni DEM megjelenítése/elrejtése (ha van).</li>
+<li><img style="border:1px solid black" width="36" height="36" src="btn_3d_color.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_color_survey.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_color_depth.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_color_surface.png"> <i>Szín</i>: poligon színkódolása. Fehér, felmérés, szintkülönbség vagy felszíntől mért távolság.</li>
+<li><img style="border:1px solid black" width="36" height="36" src="btn_3d_frame_grid.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_frame_axes.png"><img style="border:1px solid black" width="36" height="36" src="btn_3d_frame_no.png"> <i>Keret</i>: XY háló függőleges vonallal vagy XYZ tengelyek vagy kikapcsolt.</li>
 </ul><br>
 A gombok ikonjai a program állapotához vannak igazítva.
 <br><p>
@@ -41,7 +40,7 @@ Néhány gombnak hosszú érintés funkciója van:
 <li><i>Nézet</i>: Perspektíva fókuszparaméter beállítása.</li>
 <li><i>Poligon pontok</i>: A pontválasztás be-kikapcsolása.</li>
 <!-- <li><i>Sünök</i>: Poligon kézi behelyezése.</li> -->
-<li><i>Szín</i>: Változtasd meg a mérés színét és válaszd ki a megjelenítendő vagy elrejtendő felméréseket.</li>
+<li><i>Szín</i>: Változtasd meg a mérés színét és válaszd ki a megjelenítendő vagy elrejtendő felméréseket. Android-9-ig az állomások nevei akkor is megjelennek, ha a felmérés el van rejtve.</li>
 <li><i>Keret</i>: Megnyitja a <i>poligon párbeszédpanelt</i> a felülszíni/ismétlődő/kizárt poligonok megjelenítéséhez.</li>
 </ul>
 <br><p>
@@ -119,8 +118,8 @@ Alapértelmezés szerint a rács a felmérés alatt van, de beállítható felet
 <br><p>
 
 <b>FELMÉRÉS</b><br>
-A felmérési adatok elrejthetők, vonalak vagy végpontok formájában jeleníthetők meg.<br>
-A felmérő poligonok színezetlenek vagy színezettek lehetnek felmérés szerint, mélység szerint (vöröstől a kékig) vagy
+A sünök elrejthetők, vonalak vagy végpontok formájában jeleníthetők meg.<br>
+A poligonok színezetlenek vagy színezettek lehetnek felmérés szerint, mélység szerint (vöröstől a kékig) vagy
  a felszín alatt szintkülönbség szerint (kéktől a vörösig) ha van a modellben DEM felszín.<br>
 
 Színezés nélkül a felmérési poligonok fehérek, a felszíni részek zöldek, az ismétlődő poligonok narancssárgák,
@@ -133,7 +132,7 @@ A "felszíni", "duplikált" és "kizárt" poligonok be- és kikapcsolhatók a <i
 <b>FALAK</b><br>
 A falmodell nem kerül automatikusan kiszámításra a fájl megnyitásakor, de létrejön ha
  a felhasználó a "fal" menüben kéri.
- Két modell létezik: <i>egyszerű héj</i>, <i>pseudo conevx-héj</i> és a "csak-hibakeresésre" <i>powercrust</i>.
+ Több modell létezik: <i>egyszerű héj</i>, <i>pseudo conevx-héj</i> és a "csak-hibakeresésre" <i>powercrust</i>.
  Az első kettő akkor alkalmas, ha a segédpontok nem elég sűrűk. A harmadik a sűrű sünökhöz való.<br>
 
 A falmodell a sünök számától és minőségétől függ.
