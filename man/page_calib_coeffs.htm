@@ -11,7 +11,18 @@ Három különböző helyzetben használják:
 <li>A <u>kalibrációs adatablak</u> <i>Számítás</i> gombja a kiszámított együtthatókat jeleníti meg</li>
 </ul>
 
-Utóbbi esetben a párbeszédablak megjeleníti a kalibrációs adatok maradék hibáinak hisztogramját, az átlagos hibát (és az eredeti algoritmus "deltáját"), a hibaeloszlás szórását, a maximális hibát, az iterációk számát. a kalibrációs számítás, a mágneses mező és a függőleges közötti átlagos szög, valamint a forgatási szögek közötti átlagos különbség, amelyet az egyes csoportok adatainak G vektorával és M vektorral számítottunk ki.<br><p>
+Az utolsó esetben a párbeszédablakban megjelenik
+<ul>
+<li>a kalibrációs adatok maradék hibáinak hisztogramja,</li>
+<li>az átlagos hiba [fok]</li>
+<li>az eredeti algoritmus „deltája”</li>
+<li>a hibaeloszlás szórása [fok]</li>
+<li>a maximális hiba [fok],</li>
+<li>a kalibrációs számítás által végrehajtott iterációk száma,</li>
+<li>a mágneses mező és a függőleges közötti átlagos szög [fok]</li>
+<li>a gforgatási szögek közötti átlagos különbség, amelyet az egyes csoportok adatainak G vektorával és M vektorral számítottunk ki [fok]</li>
+<li>csak a kettős érzékelős eszközök esetében a statisztika (átlag, std-dev és max [degrees]) a két érzékelő eszközirányának különbségeiről.</li>
+</ul><br><p>
 
 Feltételezve, hogy az irány-lejtés hibaeloszlás normális, a hibák szórásának valamivel többnek kell lennie az átlagérték felénél.<br><p>
 A kalibrációs adatok hibája az adatirány és annak a csoportnak az átlagos iránya közötti szög, amelyhez az adatok tartoznak, miután figyelembe vették a kalibrálási korrekciót. A hibákat fokban adják meg.<br><p>
@@ -25,7 +36,7 @@ Az eredeti algoritmus "delta" értéke a kalibrált G-M vektorok és a minimaliz
 
 <li>A párbeszédablak megjeleníti a mágneses lehajlást [fokban], amit a kalibrációs algoritmus kiszámolt</li>
 
-Ebben a párbeszédpanelen van egy gomb az együtthatók <b>beírásához</b> a DistoX-be.<br>
+A kalibrációs együtthatók kiszámítása után a párbeszédpanelen található egy gomb, amellyel <b>beírhatja</b> az együtthatókat a DistoX-be.<br>
 Figyelmeztetés történik, ha az adatirány eloszlás 95% alatt van, vagy ha a kalibrálási átlaghiba meghaladja 0.5&deg;-ot.
 <br><p>
 
