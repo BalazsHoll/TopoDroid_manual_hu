@@ -73,6 +73,7 @@ Néhány gombnak hosszú érintés funkciója van:
 <li><i>DEM puffer</i>: A felszíni modell kiterjedése a felmérés körül a felületi modell DEM fájlból történő betöltésekor.</li>
 <li><i>DEM maximális méret</i>: a felszíni DEM maximális mérete minden irányban [400 cella].</li>
 <li><i>DEM csökkentés</i>: hogyan csökkenthető a DEM, ha túl nagy (ritkítás vagy vágás) [ritkítás].</li>
+<li><i>textúra gyökér</i>: a fájlrendszer tárolómappa elérési útja. ["/sdcard/"]</li>
 <li><i>Összes sün</i>: Az összes sünt használja-e a falakhoz</li>
 <li><i>Osztott háromszögek</i>: Fel kell-e osztani a metsző fal háromszögeket</li>
 <li><i>Pontok véletlenné tétele</i>: Hozzá ad egy kis véletlenszerű vektort a sünhöz</li>
@@ -200,6 +201,10 @@ A GeoTiff fájlnak ugyanabban a térképészeti koordináta-referencia-rendszerb
 Az OSM textúra (WGS84) csak a TopoDroidból megnyitott felmérésekhez és barlangprojektekhez tölthető be.
  A textúra az OSM vonalakat jeleníti meg.
 <br><p>
+
+<b>Megjegyzés</b>. A textúra GeoTiff fájlokat natív kód olvassa be, ezért a tárolási útvonal nevét (általában ':'-re végződő) kell
+helyére a fájlrendszer elérési útja (általában "/sdcard/"): ha ez nincs megfelelően megadva, a GeoTiff textúra
+nem sikerül betölteni. A GeoTiff fájlnév "tárhely" előtaggal egy pirítós üzenet.<br><p>
 
 Lehetőség van egy pont (sárga pont) vizualizálására a felületen, ha beírja a keleti/északi koordinátákat a modell CRS-ébe.<br>
 
