@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- mod HB HBX -->
+<!-- ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:keepScreenOn="true">  <!-- HBX scrON -->
+
+    <EditText
+        android:id="@+id/station"
+        style="@style/edit_text_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margintiny"
+        android:hint="@string/station"
+        android:imeActionId="6"
+        android:imeActionLabel="OK"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/comment"
+        style="@style/edit_text_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/station"
+        android:layout_marginTop="@dimen/marginv"
+        android:hint="@string/comment"
+        android:imeActionId="6"
+        android:imeActionLabel="OK"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:singleLine="true" />
+
+    <LinearLayout
+        android:id="@+id/help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comment"
+        android:layout_marginTop="@dimen/marginvbig"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_help"
+            style="@style/button_empty"
+            android:text="@string/button_help" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end">
+            <!-- Button android:id="@+id/button_cancel"
+          style="@style/button_default"
+          android:text="@string/button_cancel"
+          / -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_loc"
+                    style="@style/button_default"
+                    android:layout_gravity="start"
+                    android:text="@string/button_gps_start" />
+
+                <Button
+                    android:id="@+id/button_view"
+                    style="@style/button_default"
+                    android:layout_gravity="start"
+                    android:text="@string/button_view" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_add"
+                    style="@style/button_default"
+                    android:layout_gravity="end"
+                    android:text="@string/button_save" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/help"
+        android:layout_marginTop="@dimen/marginv"
+        android:text="@string/longitude" />
+
+    <TextView
+        android:id="@+id/latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/longitude"
+        android:layout_marginTop="@dimen/marginsmall"
+        android:text="@string/latitude" />
+
+    <!-- TextView android:id="@+id/h_ellipsoid"
+        android:layout_below="@id/latitude"
+        android:layout_marginTop="@dimen/marginsmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:text="@string/h_ellipsoid"
+        / -->
+
+    <TextView
+        android:id="@+id/h_geoid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/latitude"
+        android:layout_marginTop="@dimen/marginsmall"
+        android:text="@string/h_geoid" />
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/h_geoid"
+        android:layout_marginTop="@dimen/marginsmall"
+        android:text="@string/error_m" />
+
+    <!-- HBX_gps-->
+    <TextView
+        android:id="@+id/adatok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/error"
+        android:layout_marginTop="@dimen/margintiny"
+        android:text="Adatok: " />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/adatok"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/marginvbig"
+        android:orientation="vertical">
+        <!--  700dp 1500px tablet 1300px N8 telefon 1200px S21 telefon-->
+        <ImageView
+            android:id="@+id/pozicio1"
+            android:layout_width="match_parent"
+            android:layout_height="1200px"
+            android:layout_gravity="fill_horizontal"
+            android:layout_marginBottom="0dp"
+            android:contentDescription="@string/error_distribution" />
+
+        <TextView
+            android:id="@+id/skala"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/pozicio1"
+            android:layout_marginTop="-30dp"
+            android:gravity="center_horizontal|top"
+            android:text="10m" />
+
+        <TextView
+            android:id="@+id/j1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/pozicio1"
+            android:layout_marginTop="5dp"
+            android:gravity="left|top"
+            android:text="XY"
+            android:textColor="#FFEB3B" />
+
+        <TextView
+            android:id="@+id/j1a"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/pozicio1"
+            android:layout_marginTop="-30dp"
+            android:gravity="left|top"
+            android:text="       XYa"
+            android:textColor="#03A9F4" />
+
+        <TextView
+            android:id="@+id/j2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/pozicio1"
+            android:layout_marginTop="-30dp"
+            android:gravity="left|top"
+            android:text="                 XZ"
+            android:textColor="#B872F6" />
+
+        <TextView
+            android:id="@+id/j3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/pozicio1"
+            android:layout_marginTop="-30dp"
+            android:gravity="left|top"
+            android:text="                         ZY"
+            android:textColor="#FF9800" />
+
+        <TextView
+            android:id="@+id/j4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/pozicio1"
+            android:layout_marginTop="-30dp"
+            android:gravity="left|top"
+            android:text="                                 ZA"
+            android:textColor="#F44336" />
+
+        <TextView
+            android:id="@+id/j5"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/pozicio1"
+            android:layout_marginTop="-30dp"
+            android:gravity="left|top"
+            android:text="                                         E"
+            android:textColor="#4CAF50" />
+        <!-- ListView
+            android:id="@+id/list"
+            style="@style/list_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/skala"
+            android:layout_marginTop="-3dp" / -->
+    </LinearLayout>
+    <!-- HBX_gps -->
+
+    <!-- TextView android:id="@+id/accuracy"
+        android:layout_below="@id/error"
+        android:layout_marginTop="@dimen/marginsmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:text="@string/accuracy_m"
+        / -->
+
+    <!-- ListView android:id="@+id/list"
+      style="@style/list_top"
+      android:layout_below="@id/error"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      / -->
+
+
+    <android.inputmethodservice.KeyboardView
+        android:id="@+id/keyboardview"
+        style="@style/keyboard" />
+
+
+</RelativeLayout>
+<!-- /ScrollView -->
