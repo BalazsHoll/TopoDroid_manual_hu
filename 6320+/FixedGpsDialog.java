@@ -94,6 +94,8 @@ class FixedGpsDialog extends MyDialog
   private Button   mBtnLoc;
   private Button   mBtnAdd;
   private Button   mBtnView;
+  private Button   mHBtnUpd; // HBX_gps
+
 
   private Button   mBtnStatus;
   // private Button   mBtnCancel;
@@ -132,13 +134,14 @@ class FixedGpsDialog extends MyDialog
   private TextView mHBadat; // HBX_gps
   private TextView mHBskala; // HBX_gps
   private ImageView mPoz1; // HBX_gps
-  private int GPSx,GPSy,GPSz,GPSva, GPSha, GPSni=0, GPSerr2, hbWx; //HBX_gps
+  private int GPSx,GPSy,GPSz,GPSva, GPSha, GPSni=0, GPSni2=0, GPSni3=0, GPSerr2, hbWx; //HBX_gps
   //private long GPSx,GPSy,GPSz,GPSva, GPSha;
   private int GPSbmX= 1000, GPSbmY=GPSbmX;
   private Bitmap GPSbitmap = Bitmap.createBitmap( GPSbmX+1, GPSbmY+1, Bitmap.Config.ARGB_8888 ); // HBX_gps
   //Bitmap GPSbitmap = Bitmap.createBitmap( 401, 401, Bitmap.Config.ARGB_8888 ); // HBX_gps
   int[][] GPShistogr= new int[3][GPSbmX+1];
   private boolean GPSftp=false,GPSfp=false; // HBX_gps
+  private boolean mHBupd = false; // HBX_gps
   // HBX_gps
 
   @SuppressLint("MissingPermission")
@@ -204,10 +207,12 @@ class FixedGpsDialog extends MyDialog
     mBtnStatus = mBtnLoc;
     mBtnAdd = (Button) findViewById(R.id.button_add );
     mBtnView = (Button) findViewById( R.id.button_view );
+    mHBtnUpd = (Button) findViewById( R.id.button_update ); // HBX_gps
 
     mBtnLoc.setOnClickListener( this );
     mBtnAdd.setOnClickListener( this );
     mBtnView.setOnClickListener( this );
+    mHBtnUpd.setOnClickListener( this ); // HBX_gps
 
     mLocating = false;
     mWMM = new WorldMagneticModel( mContext );
@@ -338,6 +343,13 @@ class FixedGpsDialog extends MyDialog
       } else {
         do_toast = true;
       }
+    } else if ( b == mHBtnUpd ) {
+      if ( mHasLocation ) {
+        mHBupd = true; // HBX_gps
+        //loc.requestLocationUpdates();
+      } else {
+        do_toast = true;
+      }
     } else if ( b == mBtnLoc ) {
       // TDLog.v("GNSS locating " + mLocating );
       if ( mLocating ) {
@@ -367,7 +379,18 @@ class FixedGpsDialog extends MyDialog
 
   private void displayLocation( Location loc /*, boolean do_error*/ )
   {
-    GPSni++;if (GPSni>GPSbmX) GPSni=GPSbmX; // HBX_gps
+    GPSni++; // HBX_gps
+    GPSni2++;if (GPSni2>GPSbmX) GPSni2=GPSbmX; // HBX_gps
+    if (mHBupd) { // HBX_gps
+      mHBupd = false; // HBX_gps
+      mLocStarted = false;
+      //fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.getMainLooper());
+      //loc.reset();// nem változik a koordinata
+      //mLocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0, this );// nem változik a koordinata
+      //setGPSoff();setGPSon();// tul geves az ido
+      loc.setSpeed(1.0F); // ez sem segit a beragado koordinatakon
+      return;
+    }
     double err3 = 0;
     mErrH = -1;
     mErrV = -1;
@@ -540,17 +563,19 @@ class FixedGpsDialog extends MyDialog
       if (GPSbitmap.getPixel(GPSbmX - GPShistogr[2][GPSz], GPSbmY - GPSz) == 0)
         GPSbitmap.setPixel(GPSbmX - GPShistogr[2][GPSz], GPSbmY - GPSz, TDColor.DARK_VIOLET);
 
-      GPSbitmap.setPixel(GPSni, (int) GPSerr2, TDColor.FULL_GREEN);
+      GPSbitmap.setPixel(GPSni2, GPSni3, TDColor.FULL_GREEN);
+      GPSbitmap.setPixel(GPSni2, (int) (loc.getAccuracy())+5, TDColor.FULL_RED);
       GPSx = (int) ((mLng - GPScentX) * GPSlngsc * GPSscale + GPSbmX / 2);
       if (GPSx < 0) GPSx = 0;
       if (GPSx > GPSbmX) GPSx = GPSbmX;
       GPSy = (int) ((mLat - GPScentY) * GPSlatsc * GPSscale + GPSbmY / 2);
       if (GPSy < 0) GPSy = 0;
       if (GPSy > GPSbmY) GPSy = GPSbmY;
-      GPSbitmap.setPixel(GPSx, GPSy, TDColor.BLUE);
+      GPSbitmap.setPixel(GPSx, GPSy, TDColor.WHITE); //TDColor.BLUE
       mPoz1.setImageBitmap(GPSbitmap); // HBX_gps
-      if (GPSni == GPSbmX) { // saját átlagolás nullázás
-        GPSni = 0;
+      if (GPSni2 == GPSbmX) { // saját átlagolás nullázás
+        GPSni2 = 0;
+        GPSni3++;
         //mErr2 = -1;
       }
     }
@@ -567,6 +592,7 @@ class FixedGpsDialog extends MyDialog
     // mTVh_ell.setText( String.format(Locale.US, mContext.getResources().getString( R.string.fmt_h_ellipsoid ), mHEll ) );
     mTVh_geo.setText( String.format(Locale.US, mContext.getResources().getString( R.string.fmt_h_geoid ), mHGeo )
                     + String.format(" Alt %1$.2f ", loc.getAltitude()) // HBX_gps
+             //       + String.format(" Sp %1$.2f ", loc.getSpeed()) // HBX_gps
             //      + " xxx " + stringFromJNI()
     ); // HBX_gps
     // String aa=stringFromJNI();

@@ -77,6 +77,11 @@
                     style="@style/button_default"
                     android:layout_gravity="start"
                     android:text="@string/button_view" />
+                <Button
+                    android:id="@+id/button_update"
+                    style="@style/button_default"
+                    android:layout_gravity="start"
+                    android:text="Update" /> <!-- HBX_gps -->
             </LinearLayout>
 
             <LinearLayout
