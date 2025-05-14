@@ -7,8 +7,9 @@ A TopoDroid a következő műszereket támogatja:
 <li> DistoX (első verzió)</li>
 <li> DistoX2 (második verzió)</li>
 <li> DistoXBLE (harmadik verzió)</li>
-<li> SAP5 (Shetland Attack Pony), csak bluetoothos modellek</li>
-<LI> BRIC4 (Bluetooth Ruggerized Integrated Cartographer)</li>
+<li> Sap5 és Sap6 (Shetland Attack Pony), csak bluetooth-os modellek</li>
+<lI> Bric4 és Bric5 (Bluetooth Ruggerized Integrated Cartographer)</li>
+<lI>Cavway X1</li>
 </ul>
 
 Minden eszközt párosítani kell az Androiddal.<br><p>
@@ -18,23 +19,23 @@ Normál esetben a TopoDroid csak egy eszközzel működik.
  A két mód közötti különbség az, hogy a <i>folyamatos</i> mód aktív marad az adatok letöltésekor
  befejeződött, vagy megszakadt a kapcsolat az eszközzel, miközben a <i>on-demand</i> mód zárva van.<br><p>
 
-A SAP5 és a BRIC4 csak folyamatos módban tölti le az adatokat.<br><p>
+A SAP és a BRIC modellek csak folyamatos módban tölti le az adatokat.<br><p>
 
 A DistoX segítségével a TopoDroid egyszerre több eszközzel is képes dolgozni
  az adatokat továbbra is csak egy eszközről töltik le egyszerre.<br>
 Az <i>adatletöltési módot</i> <i>multi</i> értékre kell állítani.
  Ha ilyen hosszan megérinti a <i>letöltés</i> gombot, megjelenik egy párbeszédpanel, amelyből kiválaszthatja, melyik DistoX töltse le az adatokat.<br><p>
 
-<b>Shetland Attack Pony</b><br>
+<b>Shetland Attack Pony (SAP)</b><br>
 
-A TopoDroid bluetooth-tal támogatja a Shetland Attack Pony 5. verziójának (SAP5) modelljét.<br>
+A TopoDroid bluetooth-tal támogatja a Shetland Attack Pony 5 (Sap5) és 6 (Sap6) verziójának modelljét.<br>
 Az eszközt előzőleg "párosítani" kellett az Androiddal, a <i>Beállítások</i> alkalmazás használatával.
  A PIN: "000000" (hat nulla).<br>
 Ezután a SAP az ismert eszközök között szerepel az <i>Eszközablak</i> részben.
  "SAP XX MAC-cím" néven jelenik meg, ahol az "XX" a SAP kétbetűs kódja, például "HG".<br>
 A SAP aktuális eszközként való kiválasztásához érintse meg a bejegyzést a listában.<br><p>
 
-Csatlakozás közben a SAP5 átveszi a mérés eredményeit az alkalmazásba, függetlenül attól, hogy a mérést tárolja vagy eldobja az eszközön.<br><p>
+Csatlakozás közben a SAP átveszi a mérés eredményeit az alkalmazásba, függetlenül attól, hogy a mérést tárolja vagy eldobja az eszközön.<br><p>
 
 A SAP5 adatátviteli protokoll nem tartalmazza az adatok vételének nyugtázását. Ezért
 <ul>
@@ -43,43 +44,56 @@ A SAP5 adatátviteli protokoll nem tartalmazza az adatok vételének nyugtázás
 </ul>
 <br><p>
 
-A SAP belső memóriájában tárolja a "tárolt" adatokat.
+Az Sap6 adatátviteli protokoll tartalmazza a nyugtázást.<br><p>
+
+Az SAP a belső memóriájában őrzi a „tárolt” adatokat.
  Ezeket Survex fájlként lehet letölteni a SAP PonyTrainer program segítségével.<br><p>
 
-A SAP5 kalibrálását az eszköz végzi, és nem igényel külső programot.<br><p>
+A SAP kalibrálását az eszköz végzi, és nem igényel külső programot.<br><p>
 
-<b>BRIC4</b><br>
+<b>BRIC</b><br>
 
-A TopoDroid támogatja a BRIC 4. verzióját.<br>
+A TopoDroid támogatja a BRIC 4 és 5 verzióját.<br>
 Az eszköznek előzőleg "párosítva" kell lennie az Androiddal a <i>Beállítások</i> alkalmazás használatával.<br>
-Ezután a BRIC4 szerepel az ismert eszközök között az <i>Eszközablak</i>ban.
- "BRIC4 kód MAC-cím" néven jelenik meg, ahol a kód a BRIC4 négyjegyű kódja, például "0039".<br>
-A BRIC4 aktuális eszközként való kiválasztásához érintse meg a bejegyzést a listában.<br><p>
+Ezután a BRIC szerepel az ismert eszközök között az <i>Eszközablak</i>ban.
+ "BRICX kód MAC-cím" néven jelenik meg,('X' lehet 4 vagy 5) ahol a kód a BRIC négyjegyű kódja, például "0039".<br>
+A BRIC aktuális eszközként való kiválasztásához érintse meg a bejegyzést a listában.<br><p>
 
-Miután csatlakozott egy ügyfélhez, a BRIC4 emlékszik a kapcsolatra, még akkor is, ha ki van kapcsolva, ezért marad
+Miután csatlakozott egy ügyfélhez, a BRIC emlékszik a kapcsolatra, még akkor is, ha ki van kapcsolva, ezért marad
  "mindig kapcsolódva".<br>
 Ha a TopoDroid csatlakozik, a mérések értékei azonnal átkerülnek az Androidra.
  Ha a TopoDroid nincs csatlakoztatva, akkor az adatokat a memóriában tárolja, és akkor továbbítja az alkalmazásba
  amikor legközelebb csatlakozik.<br><p>
 
-A Bric4 adatátviteli protokoll tartalmazza az Android általi nyugtázást, de <u>nem</u> tartalmazza az adatok alkalmazás általi fogadásának nyugtázását.
+A BRIC adatátviteli protokoll tartalmazza az Android általi nyugtázást, de <u>nem</u> tartalmazza az adatok alkalmazás általi fogadásának nyugtázását.
  A protokollnak néhány másodperces késleltetése van a kapcsolat és az első adatátvitel között, a TopoDroid pedig egy másodperces késleltetéssel rendelkezik az utolsó adatok után, a kapcsolat lezárása előtt.
  Ezáltal általában egyetlen mérés sem vész el, bár ez nem garantált, és a mérések <u>elvesznek</u>
  ha az alkalmazást nem értesíti az Android a következő mérés megérkezése előtt.<br><p>
 
-A BRIC4 az adatokat a belső memóriában tárolja CSV fájlokban. Ha USB-n keresztül csatlakozik a számítógéphez, az eszközt
+A BRIC az adatokat a belső memóriában tárolja CSV fájlokban. Ha USB-n keresztül csatlakozik a számítógéphez, az eszközt
  külső memóriaként jelenik meg, és a CSV fájlok átmásolhatók a számítógépre.<br><p>
 
-A BRIC4 kalibrálását az eszköz végzi, és nem igényel külső programot.<br><p>
+A BRIC kalibrálását az eszköz végzi, és nem igényel külső programot.<br><p>
 
-A BRIC4 az alkalmazásból vezérelhető. Különösen lehetőség van a lézer be- és kikapcsolására és mérésre. A BRIC4 rendelkezik egy "szkennelési üzemmóddal" is, amelyben a méréseket folyamatosan, másodpercenként kb. kétszer végzi.<br><p>
+A BRIC az alkalmazásból vezérelhető. Különösen lehetőség van a lézer be- és kikapcsolására és mérésre. A BRIC4 rendelkezik egy "szkennelési üzemmóddal" is, amelyben a méréseket folyamatosan, másodpercenként kb. kétszer végzi.<br><p>
 
 A TopoDroid három különböző adatprotokollt követhet (az "egyéni" készlet beállításának megfelelően).
  Az első csak az elsődleges adatokat (távolság, irányszög és lejtés) kapja meg, amelyek nem tartalmazzák a Bric4 által hozzárendelt adatazonosító számot.
  A másik kettő megkapja a teljes adatot. Különböznek abban, hogy a TopoDroid a megadott azonosítószámot használja, vagy saját számokat rendel hozzá.
 <br>
 
-A teljes adatok beérkezésekor a TopoDroid rögzíti a BRIC4 hibakódokat és értékeket a mérés megjegyzésében.
+A teljes adatok beérkezésekor a TopoDroid rögzíti a BRIC hibakódokat és értékeket a mérés megjegyzésében.
 <br><p>
 
+<b>Cavway</b><br>
+
+A TopoDroid támogatja a Cavway X1 verzióját.<br>
+Az eszközt korábban „párosítani” kell az Android rendszerrel a <i>Beállítások</i> alkalmazás segítségével.<br>
+Ezután a Cavway az ismert eszközök között szerepel az <i>Eszköz ablakban</i>.
+ "CVWYn kód MAC-címként" jelenik meg ("n" 1, "X1" esetén), ahol a kód a Cavway négyjegyű kódja, például "0002".<br>
+A Cavway jelenlegi eszközként való kiválasztásához érintse meg annak bejegyzését a listában.<br><p>
+
+A Cavway kalibrálását a készülék végzi, és nem igényel külső programot.
+ A kalibrációs adatok azonban letölthetők az alkalmazásból, és a kalibráció a TopoDroidban kiszámítható és feltölthető
+ a készülékhez. A Cavway a és a TopoDdroid kalibrációs számítása megegyezik.<br><p>
 </body></html>

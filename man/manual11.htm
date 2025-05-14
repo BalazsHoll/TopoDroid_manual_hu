@@ -10,7 +10,7 @@ Az alaprajz keresztmetszet síkja mindig függőleges és a rajz Y tengelye füg
 Megjegyzést rendelhet egy keresztmetszethez.<br><p>
 
 
-<b>Poligon keresztmetszetek</b><p>
+<b>Poligon keresztmetszet</b><p>
 Ha a TopoDroiddal keresztmetszetet szeretnél rajzolni, akkor a "metszet" vonalat kell rajzolnod, akár az alaprajzban, akár az oldalnézetben. A metszetvonal meghatározza a keresztmetszet helyzetét és tájolását.<br><p>
 
 A keresztmetszet a barlang elmetszése egy síkkal. A keresztmetszet iránya ennek a síknak az iránya, azaz a síkra merőleges és a nézet irányába mutató egyenes iránya. A keresztmetszet tájolását úgy határozza meg, hogy az követi a metszet-vonal irányát. Indikátorként a metszet vonalának pipája a vonaltól A keresztmetszet nézésirányába mutat.<br>
@@ -71,13 +71,6 @@ A poligon keresztmetszet párbeszédablakban megjelenik
 Többes poligon keresztmetszet esetén a poligon pontjai helyett a párbeszédablak a keresztmetszet által keresztezett poligonok azonosítóit jeleníti meg.
 <br><p>
 
-<b>keresztmetszet fájlok</b><br>
-Minden keresztmetszet külön fájlba kerül a "tdr" almappába. A fájlok egymás után következő neveket kapnak: "MySurvey-xx0.tdr", "MySurvey-xx1.tdr" stb. Egy szakasz létrehozásakor vagy szerkesztésekor metszet párbeszéd ablak jelenik meg.<br>
-A fájl törlődik, amikor egy keresztmetszet törölsz.<br><p>
-
-A keresztmetszetek más formátumban is exportálhatók, csakúgy, mint a többi vázlat, kivéve a <i>cSurvey</i> formátumot.
- A keresztmetszetek szerepelnek a DXF, SVG, <i>cSurvey</i> vázlatexportálásában, feltéve, hogy van hozzá társított szakaszpont.<br><p>
-
 <b>Mérési pontok keresztmetszetei</b> [S]<br>
 Ez egy másik módszer a keresztmetszetek beszúrására.
 A "Mérési pont" párbeszédpanelen, amelyet egy mérési pont megérintésével érhet el <i>Szerkesztés</i> módban, megjelennek a pont koordinátái
@@ -92,10 +85,30 @@ A "Mérési pont" párbeszédpanelen, amelyet egy mérési pont megérintéséve
 Ha a mérési ponton a poligonok átlagos lejtése kisebb, mint a "függőleges küszöb", akkor a mérési pont keresztmetszetét a mérési ponton áthaladó függőleges síkban rajzoljuk meg, különben vízszintes.
  A mérési pont keresztmetszete akkor hasznos, ha több mérést készít a mérési pont körül, hogy leírja a járat alakját.
  A keresztmetszetsík a <i>iránytű</i> gombbal orientálható.
- Ha a mérési pontnak csak két poligonja van, akkor a sík a poligonok (vízszintes vetületei) által képzett szögek felezőpontja mentén orientálható. Ha csak egy poligon van, akkor az arra merőleges lehet. Ha kettőnél több poligon van, akkor használd az
+ Ha a mérési pontnak csak két poligonja van, akkor a sík a poligonok (vízszintes vetületei) által képzett szögek felezője mentén helyezkedik el. Ha csak egy poligon van, akkor az arra merőleges lehet. Ha kettőnél több poligon van, akkor használd az
  <i>iránytű</i> gombot.<br><p>
 
 A keresztmetszetek újból megnyithatók és módosíthatók úgy, hogy "szerkesztés" módban kiválasztod a mérési pontot vagy a metszetpontot, és megérinted a <i>szerkesztés</i> gombot.<br><p>
+
+<b>Metszetpontok</b><br>
+Amikor keresztmetszetet illeszt be, akár metszetvonal rajzolásával, akár egy mérési pontra való beillesztéssel, egy kapcsolódó metszetpont kerül hozzáadásra a vázlathoz.
+
+Ez a pont jelöli a keresztmetszet helyét a vázlaton.
+
+A metszetpontok egy fehér kis keresztként és egy narancssárga vonalként jelennek meg, amely összeköti őket a relatív metszetvonallal vagy állomással.<br>
+Ha a keresztmetszetet törli, a megfelelő metszetpont is törlődik.<br><p>
+
+A keresztmetszet körvonala a metszetpontnál jelenik meg.<br>
+A körvonal mozgatható a metszetpont kiválasztásával (szerkesztési módban) és húzásával.<br>
+Ha a "tulajdonságok" gombra koppint, amikor egy metszetpont ki van választva, megnyílik a keresztmetszet vázlata a rajzoláshoz.<br><p>
+
+<b>Keresztmetszetfájlok</b><br>
+Minden keresztmetszet külön fájlban kerül mentésre a "tdr" almappában. A fájlok egymást követő neveket kapnak: "MySurvey-xx0.tdr", "MySurvey-xx1.tdr" stb. A név "xx0" számozási része a metszet létrehozásakor vagy szerkesztésekor felugró metszet párbeszédpanelen is megjelenik.<br>
+
+A fájl törlődik, ha egy keresztmetszetet törölnek.<br><p>
+
+A keresztmetszetek más formátumokban is exportálhatók, akárcsak a többi vázlat, kivéve a <i>cSurvey</i> formátumot.
+A keresztmetszetek szerepelnek a DXF, SVG, <i>cSurvey</i> vázlatexportokban, feltéve, hogy létezik a társított metszetpont.<br><p>
 
 Lásd még<br>
 <a href="page_sketch_station.htm"> Vázlatmérési pont szerkesztési párbeszédpanel</a>,<br>

@@ -1,24 +1,50 @@
 <html>
 <body>
 
-<h4>VÁZLAT ÁTNEVEZÉS/TÖRLÉS/FELOSZTÁS</h4>
+<h4>VÁZLAT MŰVELETEK</h4>
 
 <div style = "font-size = 90%">
-Ezzel a párbeszédpanellel megváltoztathatja a vázlat nevét.
-A <u>vázlatablak</u> <i>Átnevezése</i> menüjéből nyílik meg.<br><p>
+Ezzel a párbeszédpanellel karbantartási műveleteket hajthat végre a vázlaton:
+ <ul>
+ <li>töröld a vázlatot</li>
+ <li>módosítsd a vázlat nevét</li>
+ <li>módosítsd a vázlat kezdőállomását [T]</li>
+ <li>oszd fel a vázlatot, és hozz létre egy új vázlatot a rajzelemek áthelyezésével vagy másolásával.</li>
+ <li>a rajzelemek áthelyezése vagy másolása a vázlat új szintbe (töredékébe)</li>
+ <li>rajzelemek áthelyezése vagy másolása pufferbe</li>
+ <li>törölje az elemek pufferét, vagy illessze be azokat egy bejegyzésbe</li>
+ <li>válasszon ki egy másik vázlatot, és adja hozzá az aktuális vázlat körvonalaihoz</li>
+ <li>összevonja a körvonalvázlatok elemeit az aktuális vázlatban</li>
+ </ul><br><p>
 
-Van egy mezője a vázlat új nevének,
+ A párbeszédpanel a <u>Rajz ablak</u> <i>Műveletek</i> menüjéből nyílik meg.<br><p>
+
+ Van egy mezője a vázlat új nevének (vagy "felosztás" esetén az új vázlat nevének)
  és egy szövegdoboz a vázlat referencia állomással (Vázlat kezdőpontja).<br>
 <!-- A referenciaállomás csak "Tesztelő" szinten módosítható.<br --><p>
 
-Írja be az új vázlat nevét a szerkesztő mezőbe, és a megerősítéshez koppintson az <i>Alkalmaz</i> gombra. <br> <p>
+Írb be a vázlat új nevét a szerkesztő mezőbe, és a megerősítéshez koppints az <i>Átnevez</i> gombra. <br><p>
 
-A <i>Felosztás</i> gomb [T] segítségével kivághatja a vázlat egy részét, és új vázlatként elmentheti.
+A <i>Törlés</i> gomb „törölt”-ként jelöli meg a vázlatot. A <u>Felmérésadatok ablak</u> segítségével állítható vissza
+ <i>helyreállítás</i> menü.<br><p>
+ 
+A <i>vázlat</i> gomb [T] segítségével kivághatod a vázlat egy részét, és új vázlatként elmentheted.
  A szerkesztő mezőbe be kell írnia az új vázlat nevét.
- Ezután válassza ki a vázlat egy részét úgy, hogy egy vonalat húz körülötte.<br>
-A jelölőnégyzet segítségével válassza ki, hogy másolja-e vagy áthelyezi-e a kijelölt elemeket az új vázlatba.<br><p>
+ Az új vázlat bázisállomása megegyezik a jelenlegi vázlatéval.<br>
+A jelölőnégyzet segítségével kiválaszthatod, hogy a kiválasztott elemeket átmásolja vagy áthelyezi az új vázlatba.<br>
+Miután megnyomod a <i>vázlat</i> gombot, ki kell választanod a vázlat mozgatandó/másolandó elemeit úgy, hogy egy vonalal körbekeríted.<br><p>
 
-Az új vázlat bázisállomása megegyezik a jelenlegi vázlattal.<br>
+ A <i>Szint</i> gombbal [T] a kiválasztott elemek egy pufferbe kerülnek, hogy később a <i>Beillesztés</i> gombbal beillesszék őket egy másik selejtbe.<br><p>
+ A <i>Szint</i> gombbal [T] a kiválasztott elemeket másolja vagy áthelyezi egy új szintre.<br><p>
+
+ A <i>puffer</i> gombbal egy pufferbe kerülnek.<br>
+ A pufferelemeket a <i>Beillesztés</i> gombbal lehet beilleszteni egy szintbe.<br>
+ A <i>Törlés</i> gomb kiüríti a puffert.<br><p>
+
+<b>Körvonalak</b><br>
+ A <i>Kiválasztás</i> gombbal megnyílik egy párbeszédpanel, ahol kiválaszthat egy másik vázlatot, és referenciaként hozzáadhatja annak körvonalát.
+ A körvonalak nem lesznek mentve a vázlattal, és a vázlat bezárásakor elvesznek.<br>
+ Az <i>Egyesítés</i> gomb lemásolja az aktuális vázlatban vázlatosan látható vázlatok elemeit.<br><p>
 
 A <i>Törlés</i> gomb a vázlatot "töröltnek" jelöli. A felmérés <u>adatablak</u> segítségével helyreállítható
 <i>helyreállítás</i> menüvel.<br><p>
