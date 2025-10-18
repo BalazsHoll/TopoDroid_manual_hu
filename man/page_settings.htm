@@ -103,17 +103,17 @@
 </li>
 <li>Survex export:
    <ul>
-     <li><i>Survex/Topo sorlezárás</i>: sor vége {Linux, Windows}. [Linux] </li>
-     <li><i>Survex süns állomás</i>: sünek hozzáadása az állomáshoz. [nem]</li>
-     <li><i>Survex/Therion BJFL</i>: BJFL hozzáadása az exporthoz. [nem]</li>
+     <li><i>Sor elválasztás</i>: sor vége karakterek {Linux, Windows}. [Linux] </li>
+     <li><i>Survex sün pont</i>: sünök hozzáadása a cél mérési ponthoz. [nem]</li>
+     <li><i>BJFL</i>: BJFL hozzáadása az exporthoz. [nem]</li>
    </ul>
 </li>
 <li>Therion export:
    <ul>
-     <li><i>Therion config</i>: thconfig létrehozása [no]</li>
-     <li><i>Először a Therion térképek</i>: helyezze a Therion térképparancsokat a felmérési adatok elé. [nem]</li>
+     <li><i>Config</i>: Therion thconfig fájl létrehozása [nem]</li>
+     <li><i>Először a térképek</i>: helyezze a Therion térképparancsokat a felmérési adatok elé. [nem]</li>
      <li><i>Sünök</i>: segédmérések hozzáadása a Therion-bejegyzésekhez. [igen]</li>
-     <li><i>Survex/Therion BJFL</i>: BJFL hozzáadása az exporthoz. [nem]</li>
+     <li><i>BJFL</i>: BJFL hozzáadása az exporthoz. [nem]</li>
      <li><i>Therion skála</i>: export skála. [1:100]</li>
      <li><i>xvi-kép</i>: hivatkozás beszúrása az xvi-képre a th2-fájlokba</li>
    </ul>
@@ -127,20 +127,25 @@
 <li>Compass exportálása:
    <ul>
      <li>Compass <i>állomás előtagja</i>. [nem]</li>
-     <li><i>Compass süns</i>: sünek hozzáadása a Compass fájlokhoz</li>
-     <li><i>Compass csere BJ</i>: balra és jobbra felcserélése Compass exportálásakor. [nem]</li>
-   </ul>
+     <li><i>Sünök</i>: sünök hozzáadása a Compass fájlokhoz</li>
+     <li><i>BJ csere</i>: balra és jobbra felcserélése Compass exportálásakor. [nem]</li>
+  </ul>
+</li>
+<li>Polygon export:
+  <ul>
+    <li><i>BJFL</i>: BJFL hozzáadása</li>
+    <li><i>Sünök</i>: sünök hozzáadása a Polygon fájlokhoz </li>   </ul>
 </li>
 <li>VisualTopo exportálás:
    <ul>
-     <li><i>VisualTopo-megjelenítések</i>: Sünök hozzáadása VisualTopo-fájlokhoz</li>
-     <li><i>BJFL a FROM</i> állomáson</li>
+     <li><i>Sünök</i>: Sünök hozzáadása VisualTopo fájlokhoz</li>
+     <li><i>BJFL a kezdő</i> ponton</li>
      <li><i>Trox formátum</i>: fájlformátum, tro vagy trox</li>
    </ul>
 </li>
 <li>Walls exportálása:
    <ul>
-     <li><i>Walls sünök</i>: segédmérések szerepeltetése a Walls fájlokban</li>
+     <li><i>Sünök</i>: segédmérések szerepeltetése a Walls fájlokban</li>
    </ul>
 </li>
 <li>SVG-exportálás:
@@ -148,7 +153,7 @@
      <li><i>SVG oda-vissza</i>: oda-vissza útra kész SVG export [nem]</li>
      <li><i>Rács</i>: vázlatrács hozzáadása az SVG exporthoz. [nem]</li>
      <li><i>Vonaltájolás</i> [nem]</li>
-     <li><i>SVG-lejátszások</i>: a lejátszásokat tartalmazza. [nem]</li>
+     <li><i>Sünök</i>: a sünöket is tartalmazza. [nem]</li>
      <li><i>Pontvonal</i> [0,5]</li>
      <li><i>Címke körvonala</i> [1.5]</li>
      <li><i>Vonalvonás</i> [2.5]</li>
@@ -169,8 +174,8 @@
    <ul>
      <li><i>DXF lejátszási végpontok</i> [igen]</li>
      <li><i>DXF verzió</i> {6,12,16}. [6] </li>
-     <li><i>DXF spline</i>: használjon spline-t Bezier-szegmensekhez</li>
-     <li><i>DXF hivatkozás</i>: Az X-Y tengelyek DXF vázlatexportálások</li>
+     <li><i>Splineok</i>: használjon spline-t Bezier-szegmensekhez</li>
+     <li><i>Referencia</i>: Az X-Y tengelyek DXF vázlatexportálások</li>
      <li><i>Rétegek törlése</i>: DXF-rétegek töredékenként</li>
    </ul>
 </li>
@@ -191,14 +196,14 @@
 </li>
 <li>GPX-exportálás:<br>
    <ul>
-     <li><i>GPX single track</i> export [igen]</li>
+     <li><i>Single track</i> adat export egy GPX track-ban [igen]</li>
    </ul>
 </li>
 <li>CSV-exportálás:<br>
    <ul>
      <li><i>Teljes CSV</i>: a teljes adat exportálása csv-be. [nem]</li>
-     <li><i>CSV-elválasztó</i>: mezőelválasztó [cső]</li>
-     <li><i>CSV eol</i>: sorelválasztó [line-feed]</li>
+     <li><i>Elválasztó</i>: mezőelválasztó [pipe]</li>
+     <li><i>Sor elválasztó</i>: sorelválasztó [line-feed]</li>
    </ul>
 </li>
 </ul>
@@ -289,6 +294,7 @@
    <li><i>A ponteszközök skálája</i> [1.2]</li>
    <li><i>Címkék mérete</i> [24 px]</li>
    <li><i>Feliratok skálázása</i> [nem]</li>
+   <li><i>Metszet pont eltolás</i> [20 px]</li>
 </ul>
 
 <hr style="height:1px;background-color:black;">
