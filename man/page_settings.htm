@@ -80,7 +80,7 @@
      <li>Compass (DAT)</li>
      <li>cSurvey (CSX)</li>
      <li>GHTopo (GTX)</li>
-     <li>Sokszög (CAVE)</li>
+     <li>Polygon (CAVE)</li>
      <li>Survex (SVX)</li>
      <li>Therion (TH)</li>
      <li>Topo (CAV)</li>
@@ -172,11 +172,11 @@
 </li>
 <li>DXF export:
    <ul>
-     <li><i>DXF lejátszási végpontok</i> [igen]</li>
+     <li><i>DXF sün végpontok</i> [igen]</li>
      <li><i>DXF verzió</i> {6,12,16}. [6] </li>
      <li><i>Splineok</i>: használjon spline-t Bezier-szegmensekhez</li>
-     <li><i>Referencia</i>: Az X-Y tengelyek DXF vázlatexportálások</li>
-     <li><i>Rétegek törlése</i>: DXF-rétegek töredékenként</li>
+     <li><i>Referencia</i>: Az X-Y tengelyek a DXF vázlatba</li>
+     <li><i>Szint rétegek</i>: DXF-rétegek szinteknek (scraps)</li>
    </ul>
 </li>
 <!-- li>PNG:<br>
@@ -213,9 +213,9 @@
 <h2 id="survey_data">Felmérés adatai</h2>
 <ul>
    <li><i>Csapat</i>: alapértelmezett felmérési csapat. Alapértelmezés szerint nincs beállítva. Új felmérés létrehozásakor be kell lépnie a csapatba.</li>
-   <li><i>Mérési pontok házirendje</i>: a felmérési mérési pontok nevének hozzárendelési szabályzata {nincs, sün+előre, play+back, fore+sün, back+sün, back+sün+fore, tripod, magn.anomaly}.
-     A választási lehetőségek száma az aktivitási szinttől függően változik.
-     Alapértelmezett „sün+fore”.</li>
+   <li><i>Mérési pontok házirendje</i>: a felmérési mérési pontok nevének hozzárendelési szabályzata {nincs, sün+előre, sün+hátra, előre+sün, hátra+sün, hátra+sün+előre, állvány, mágn.anomalia}.
+     A választási lehetőségek száma az használati profiltól függően változik.
+     Alapértelmezett „sün+előre”.</li>
    <li><i>Mérési pontok nevei</i>: {alfanumerikus,szám}. [alfanumerikus]</li>
    <li><i>Kezdő állomásnév</i>: alapértelmezés szerint nincs beállítva, és a program „0”-t használ.</li>
    <li><i>Indexképek mérete</i>: a fotók indexképeinek mérete [80 400]. [200 px] </li>
