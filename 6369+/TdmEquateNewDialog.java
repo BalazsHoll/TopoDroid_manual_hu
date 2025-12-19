@@ -8,7 +8,6 @@
  *  Copyright This software is distributed under GPL-3.0 or later
  *  See the file COPYING.
  * --------------------------------------------------------
- * mod HB
  */
 package com.topodroidHB2.tdm;
 
@@ -53,10 +52,11 @@ class TdmEquateNewDialog extends MyDialog
 
   private Button mBTok;
   private Button mBTback;
-    private Button mBTall; // HB EQ all
-    private Button mBTsearch; // HB EQ all
-    int j0=0; // HB EQ all
-    int l0=0; // HB EQ all
+  private Button mBTall; // HB EQ all
+  private Button mBTsearch; // HB EQ all
+  private Button mBTone; // HB EQ all
+  int j0=0; // HB EQ all
+  int l0=0; // HB EQ all
 
   TdmEquateNewDialog( Context context, TdmViewActivity parent, ArrayList< TdmViewCommand > commands )
   {
@@ -84,10 +84,12 @@ class TdmEquateNewDialog extends MyDialog
     mBTok.setOnClickListener( this );
     mBTback = (Button) findViewById( R.id.button_back );
     mBTback.setOnClickListener( this );
-      mBTall = (Button) findViewById( R.id.button_all ); // HB EQ all
-      mBTall.setOnClickListener( this ); // HB EQ all
-      mBTsearch = (Button) findViewById( R.id.button_search ); // HB EQ all
-      mBTsearch.setOnClickListener( this ); // HB EQ all
+    mBTall = (Button) findViewById( R.id.button_all ); // HB EQ all
+    mBTall.setOnClickListener( this ); // HB EQ all
+    mBTsearch = (Button) findViewById( R.id.button_search ); // HB EQ all
+    mBTsearch.setOnClickListener( this ); // HB EQ all
+    mBTone = (Button) findViewById( R.id.button_one ); // HB EQ all
+    mBTone.setOnClickListener( this ); // HB EQ all
 
     LinearLayout layout4 = (LinearLayout) findViewById( R.id.layout4 );
     LinearLayout.LayoutParams lp1 = new LinearLayout.LayoutParams( 
@@ -129,22 +131,22 @@ class TdmEquateNewDialog extends MyDialog
         TdmViewCommand vc = mCommands.get( k );
         String survey = vc.name();
         int len = survey.length();
-        while ( len > 0 && survey.charAt( len - 1 ) == '.' ) -- len;
+        //while ( len > 0 && survey.charAt( len - 1 ) == '.' ) -- len;
         String station = mEdit[k].getText().toString();
         if ( !station.equals("-") ) {// HB EQ all
-            if (station != null && station.length() > 0) {
-                if (vc.getViewStation(station) != null) {
-                    sts.add(station + "@" + survey.substring(0, len));
-                    TDLog.v("added station: " + sts.size());
-                } else {
-                    bad_station = station + "@" + survey.substring(0, len);
-                    TDLog.v("Bad station: " + bad_station);
-                    break;
-                }
+          if ( station != null && station.length() > 0 ) {
+            if ( vc.getViewStation( station ) != null ) {
+              sts.add( station + "@" + survey.substring(0,len) );
+              TDLog.v("added station: " + sts.size() );
             } else {
-                mEdit[k].setError(mContext.getResources().getString(R.string.error_name_required));
-                return;
+              bad_station = station + "@" + survey.substring(0,len);
+              TDLog.v("Bad station: " + bad_station );
+              break;
             }
+          } else {
+            mEdit[k].setError( mContext.getResources().getString( R.string.error_name_required ) );
+            return;
+          }
         }
       }
       if ( bad_station == null ) {
@@ -153,140 +155,182 @@ class TdmEquateNewDialog extends MyDialog
         TDToast.makeWarn( String.format( mContext.getResources().getString( R.string.bad_station ), bad_station ) );
         return;
       }
-    }
-//--------------------------------------------------------------------------------------------------HB jó!
-      if ( b == mBTall ) { // HB EQ all
+        //-------------------------------------------------------------------------------HB EQ all
+    } else if ( b == mBTall ) { // HB EQ all
           ArrayList<String> stations = new ArrayList<>();
           if (size > 1) {
-              for (int j = 0; j < ( size - 1 ) ; ++j) { // minden mérésre az utolsó előttig
-                  int good_station = 0;
-                  //ArrayList<String> sts = new ArrayList<>();
+              for (int j = 0; j < ( size - 1 ) ; ++j) {
+                  // int good_station = 0; FIXME moved inside and replaced with a boolean
                   TdmViewCommand vc0 = mCommands.get(j);
                   String survey0 = vc0.name();
-                  TDLog.v("HBEQ mérés: " + j + " " + vc0.name());
-                  for (TdmViewStation st : vc0.mStations) { // minden mérési pontra
-                      if (st.mEquated) break;
+                  for (TdmViewStation st : vc0.mStations) {
+                      if (st.mEquated) continue; //break; // FIXME break or continue ? it depends on the semantics of "all"
                       String station = st.name();
-                      TDLog.v("HBEQ mérés0 st: " + "x" + " " + station);
-                      boolean old = false;
-                      for ( String st0 : stations ) {
-                          if ( st0.equals( station ) ) old = true; // ha van már ilyen név
-                      }
-                      if (!old) {
+                      // boolean old = false;
+                      // for ( String st0 : stations ) {
+                      //     if ( st0.equals( station ) ) old = true;
+                      // }
+                      // if (!old)  
+                      // FIXME the above can be condensed as below
+                      if ( ! stations.contains( station ) ) {
+                          boolean good_station = false;
                           ArrayList<String> sts = new ArrayList<>();
                           int len0 = survey0.length();
-                          while (len0 > 0 && survey0.charAt(len0 - 1) == '.') --len0; // ?
+                          //while (len0 > 0 && survey0.charAt(len0 - 1) == '.') --len0;
                           sts.add(station + "@" + survey0.substring(0, len0));
-                          for (int k = ( j + 1 ); k < size; ++k) { // minden következő mérésre az utolsóig
-                              TDLog.v("HBEQ mérés: " + j + " " + k);
+                          for (int k = ( j + 1 ); k < size; ++k) {
                               TdmViewCommand vc = mCommands.get(k);
-                              TDLog.v("HBEQ mérés: " + k + " " + vc.name());
                               String survey = vc.name();
                               int len = survey.length();
-                              while (len > 0 && survey.charAt(len - 1) == '.') --len; // ?
+                              //while (len > 0 && survey.charAt(len - 1) == '.') --len; // ?
                               //String station = station0;
-                              if (station != null && station.length() > 0) {
+                              if (station != null && station.length() > 0) { // FIXME this is guaranteed - or the test should be done when station is assigned
+                                                                             // use TDSting.isNullOrEmpty( station )
                                   if (vc.getViewStation(station) != null) {
-                                      sts.add(station + "@" + survey.substring(0, len)); //
-                                      good_station++;
-                                      TDLog.v("HBEQ added station: " + sts.size() + sts);
+                                    sts.add(station + "@" + survey.substring(0, len)); //
+                                    good_station = true; // good_station++;
                                   } else {
-                                      TDLog.v("Bad station: " + good_station + survey);
-                                      //break; // ne álljon meg
+                                    // TDLog.v("Good station: " + good_station + survey);
                                   }
                               } else {
                                   //mEdit[k].setError(mContext.getResources().getString(R.string.error_name_required));
                                   //return;
                               }
                           }
-                          if (good_station > 0) {
-                              mParent.makeEquate(sts); // does nothing if sts.size() <= 1
-                              stations.add(station);
+                          if (good_station ) { // if (good_station > 0) 
+                            mParent.makeEquate(sts); // does nothing if sts.size() <= 1
+                            stations.add(station);
                           }
                       }
-
                   }
               }
-              TDToast.makeWarn(String.format("ez itt a keresés %d", size)); // size=hány mérés van
+              //TDToast.makeWarn(String.format("size %d", size));
           }
-          //return;
-      }
+    } else if ( b == mBTone ) { // HB EQ all one equation - no loop
+        ArrayList<String> stations = new ArrayList<>(); // kapcsolódási pont lista
 
+        int eq_group_nr = 0; // nincs még csoport
+        int eq_group_nr_max = 0; // nincs még csoport
+        int[] eq_group = new int[size];
+        for (int j = 0; j < ( size ) ; ++j ) eq_group[j]=-1; // nem tertoznak a felmérések semmilyen csoportba
+        
+        if (size > 1) {
+            for (int j = 0; j < ( size - 1 ) ; ++j) { // minden felmérésre az utolsó előttig
+                TdmViewCommand vc0 = mCommands.get(j);
+                String survey0 = vc0.name(); // a felmérés neve
+                for (TdmViewStation st : vc0.mStations) { // minden mérési pontra
+                    if (st.mEquated) break; // ha a mérési pont már része kapcsolódásnak kiugrik
+                    String station = st.name(); // a mérési pont neve
+                    if ( ! stations.contains( station ) ) { // ha a pontra még nincs kapcsolat
+                        boolean good_station = false; // nincs még jó mp
+                        ArrayList<String> sts = new ArrayList<>(); // mérési pontok listája
+                        int len0 = survey0.length(); // a felmérés nevének hossza
+                        //while (len0 > 0 && survey0.charAt(len0 - 1) == '.') --len0; // FIXME ! It should also be prohibited when creating the survey! It is allowed there.
+                        sts.add(station + "@" + survey0.substring(0, len0)); // hozzáadja az alap felmérést és pontot a mérési pont listához
+                        for (int k = ( j + 1 ); k < size; ++k) { // minden felmérésre a következőtől
+                            TdmViewCommand vc = mCommands.get(k);
+                            String survey = vc.name(); // a kapcsolódó felmérés neve
+                            int len = survey.length();
+                            //while (len > 0 && survey.charAt(len - 1) == '.') --len; // ? FIXME ! It should also be prohibited when creating the survey! It is allowed there.
+                            if (station != null && station.length() > 0) { // FIXME this is guaranteed - or the test should be done when station is assigned
+                                if (vc.getViewStation(station) != null) { // ha van ilyen pont a következő mérésben FIXME ha mindkettő szerepel az előzőekben akkor nem
+                                    if ((eq_group[j] == eq_group[k]) && (eq_group[j] != -1) ) { // hurok
+                                        // loop
+                                    } else {
+                                        sts.add(station + "@" + survey.substring(0, len));
+                                        good_station = true; // van jó kapcsolódás
+                                        if (eq_group[j] == -1 && eq_group[k] == -1) { // ha nincs még kapcsolata egyik felmérésnek sem
+                                            eq_group_nr++;
+                                            eq_group_nr_max++;
+                                            eq_group[j] = eq_group_nr;
+                                            eq_group[k] = eq_group_nr;
+                                        } else if (eq_group[j] == -1) {
+                                            eq_group[j] = eq_group[k];
+                                        } else if (eq_group[k] == -1) {
+                                            eq_group[k] = eq_group[j];
+                                        } else { // két csoport összekapcsolása
+                                            for (int l = 0; l < ( size ) ; ++l ) if (eq_group[l]==eq_group[k]) eq_group[l]=eq_group[j]; // k átírása j-re
+                                            eq_group_nr_max--;
+                                        }
+                                    }
+                                } else {
+                                    // TDLog.v("Good station: " + good_station + survey);
+                                }
+                            } else {
+                                //mEdit[k].setError(mContext.getResources().getString(R.string.error_name_required));
+                                //return;
+                            }
+                        }
+                        if (good_station ) { // if (good_station > 0)
+                            mParent.makeEquate(sts); // does nothing if sts.size() <= 1
+                            stations.add(station); // station exist equate a mérési pont hozzáadása a kapcsolódási pont listához
+                        }
+                    }
+                }
+            }
+            TDToast.makeWarn(String.format("Group %d", eq_group_nr_max));
+        }
 
-
-
-
-      if ( b == mBTsearch ) { // HB EQ all talán jó, tesztelni kell!
+    } else if ( b == mBTsearch ) {
           ArrayList<String> stations = new ArrayList<>();
           for (int k = 0; k < size ; ++k) mEdit[k].setText("-");
-          TDLog.v("HBEQ indit j0l0=" + j0 + " " + l0);
           if (size > 1) {
-              for (int j = j0; j < ( size - 1 ) ; ++j) { // minden mérésre az utolsó előttig
-                  int good_station = 0;
-                  //ArrayList<String> sts = new ArrayList<>();
+              for (int j = j0; j < ( size - 1 ) ; ++j) {
+                  // int good_station = 0; FIXME same as above
                   TdmViewCommand vc0 = mCommands.get(j);
                   String survey0 = vc0.name();
-                  TDLog.v("HBEQ mérés: j=" + j + " " + vc0.name());
-                  for (int l=l0;l<vc0.mStations.size(); ++l ){//(TdmViewStation st : vc0.mStations) { // minden mérési pontra
+                  for (int l=l0;l<vc0.mStations.size(); ++l ){
                       TdmViewStation st = vc0.mStations.get(l);
-                      TDLog.v("HBEQ pont: l=" + l + " " + st.mStation.mName);
-                      if (st.mEquated) break; //st.mStation.mName
+                      if (st.mEquated) break; // FIXME break or continue ?
                       String station = st.name();
-                      TDLog.v("HBEQ mérés0 st: " + l + " " + station);
-                      boolean old = false;
-                      for ( String st0 : stations ) {
-                          if ( st0.equals( station ) ) old = true; // ha van már ilyen név
-                      }
-                      if (!old) {
+                      // boolean old = false;
+                      // for ( String st0 : stations ) {
+                      //     if ( st0.equals( station ) ) old = true;
+                      // }
+                      // if (!old) 
+                      if ( ! stations.contains( station ) ) {
+                          boolean good_station = false;
                           ArrayList<String> sts = new ArrayList<>();
                           int len0 = survey0.length();
-                          while (len0 > 0 && survey0.charAt(len0 - 1) == '.') --len0; // ?
-                          for (int k = j+1; k < size; ++k) { // minden következő mérésre az utolsóig
-                              TDLog.v("HBEQ mérés2: jk=" + j + " " + k);
+                          //while (len0 > 0 && survey0.charAt(len0 - 1) == '.') --len0; // ?
+                          for (int k = j+1; k < size; ++k) {
                               TdmViewCommand vc = mCommands.get(k);
-                              TDLog.v("HBEQ mérés2: k=" + k + " " + vc.name());
                               String survey = vc.name();
                               int len = survey.length();
-                              while (len > 0 && survey.charAt(len - 1) == '.') --len; // ?
+                              //while (len > 0 && survey.charAt(len - 1) == '.') --len; // ?
                               //String station = station0;
                               if (station != null && station.length() > 0) {
                                   if (vc.getViewStation(station) != null) {
                                       sts.add(station + "@" + survey.substring(0, len)); //
                                       mEdit[j].setText(station);
                                       mEdit[k].setText(station);
-                                      good_station++;
-                                      TDLog.v("HBEQ added station: " + sts.size() + " " + sts);
+                                      good_station = true; // ++;
                                   } else {
-                                      TDLog.v("HBEQ Bad station: " + good_station + survey);
-                                      //break; // ne álljon meg
+                                      //TDLog.v("HBEQ Bad station: " + good_station + survey);
                                   }
                               } else {
                                   //mEdit[k].setError(mContext.getResources().getString(R.string.error_name_required));
                                   //return;
                               }
                           }
-                          if (good_station > 0) {
-                              //mParent.makeEquate(sts); // does nothing if sts.size() <= 1
-                              //stations.add(station);
+                          if (good_station ) { // if (good_station > 0) 
                               j0=j;
                               l0=l+1;
                               if (l0>=vc0.mStations.size()) {
                                   j0=j+1;
                                   l0=0;
                               }
-                              good_station = 0;
+                              // good_station = 0; // FIXME why reset the local variable ?
                               return;
                           }
                       }
                   }
               }
-              TDToast.makeWarn(String.format("ez itt a keresés %d", size)); // size=hány mérés van
+              //TDToast.makeWarn(String.format("size %d", size));
               l0=0;
           }
-          //return;
       }
-
-//-------------------------------------------------------------------------------HB
+//-------------------------------------------------------------------------------HB EQ all
     dismiss();
   }
 }
