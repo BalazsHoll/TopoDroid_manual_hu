@@ -1,25 +1,14 @@
 <html><body>
 <h3>[3] MŰSZER ablak</h3>
 
-<b>FONTOS</b>.
-Ahhoz, hogy támogatott eszközt használhasson a TopoDroiddal, az eszközt először <b>csatlakoztassa</b> és <b>párosítsa</b> az Android rendszerrel.<br>
-Ezt a <i>Beállítások</i> alkalmazással teheti meg.<br>
-Ha automatikusan nem párosul, a <i>DistoX</i> PIN-kód "0000", négy nulla.<br>
-Ha automatikusan nem párosul, a <i>SAP</i> PIN-kód "000000", hat nulla.<br><p>
-
 Érintse meg a <i>Műszer</i> gombot a <u>főablakban</u> a <i>Műszerablak</i> megnyitásához.
 Az ismert műszerek listája alul látható.<br><p>
 
-A támogatott műszerek a következők: <i>DistoX</i>, <i>DistoX2</i>, <i>DistoXBLE</i>, <i>SAP5</i>, <i>SAP6</i>,
-<i>BRIC4</i>, <i>BRIC5</i>, <i>Cavway X1</i>, és <i>DiscoX</i>.<br>
-<b>A TopoDroid nem ismeri fel azokat a műszereket, amelyek neve nem tartozik ezek közé.</b><br>
 <img src="btn_devices.png" height="36" border="1"><br><p>
 
 A TopoDroid egyszerre csak egy műszerrel működik.
 Kiválasztásához érintse meg a bejegyzést a listán. A kiválasztott műszer neve fent látható, közvetlenül a gombok alatt.
 Ha nincs kiválasztva műszer, piros üzenet jelenik meg, amely "A műszer nincs kiválasztva".<br><p>
-
-Ha a műszerlista üres, vagy a műszer nem jelenik meg a MAC-címével, akkor csatlakoztatni kell és/vagy párosítani kell az Androiddal.<br><p>
 
 <b>Támogatott műszerek</b><br>
 A TopoDroid csak az Android rendszerhez csatlakoztatott és párosított műszereket használja.
@@ -37,18 +26,21 @@ A következő műszerek támogatottak vagy támogatás alatt állnak:
 <tr><td>Cavway X1</td><td>Cavway</td><td>teljes</td></tr>
 <tr><td>DiscoX</td><td>DiscoX</td><td>tesztelés alatt [T]</td></tr>
 </table>
-<br><p>
+<br>
+A TopoDroid nem ismeri fel azokat a műszereket, amelyek neve nem tartozik ezek közé.<br><p>
 
-<b>Műszer beceneve</b><br>
-Alapértelmezés szerint a TopoDroid a Bluetooth MAC-címet használja a műszer neveként.
-A műszereknek beceneveket lehet adni, hogy könnyebben meg lehessen különböztetni őket több műszer között.<br><p>
-
-<i>Megjegyzés. A [*] -gal jelölt gombok és menük a DistoX-re vonatkoznak, és a műszernek bekapcsolva kell lenni.</i><br><p>
+<b>Műszer tulajdonságai</b><br>
+Alapértelmezés szerint a TopoDroid a Bluetooth MAC-címet használja műszernévként.
+A műszereknek <b>beceneveket</b> lehet adni, hogy több eszközt könnyebben meg lehessen különböztetni egymástól.<br>
+Bár a TopoDroid egyszerre csak egy műszerrel működik, lehetővé teszi egy második működő műszer beállítását is.
+Ez a beállítás felgyorsítja a két műszer közötti váltást a felmérés során.<br>
+Végül lehetőség van egy műszer „elfelejtésére” is: ez gyakorlatilag eltávolítja az eszközt a TopoDroid adatbázisából
+és az Androidhoz csatlakoztatott műszerek közül (ha össze volt kötve).<br><p>
 
 <h4>AKCIÓK</h4>
 <ul style = "margin-top = 0">
 <li>megérintve a műszer bejegyzését, az az aktív műszer lesz</li>
-<li>a műszer bejegyzésének hosszú megérintésével beállíthatod a <a href="page_device_name.htm"> becenevet </a> vagy beállíthatod a "második" DistoX-et</li>
+<li>a műszer bejegyzésének hosszú megérintésével megnyílik egy <a href="page_device_name.htm"> párbeszéd ablak </a> amivel szerkesztheted a műszer tulajdonságokat</li>
 </ul><br><p>
 
 <h4>GOMBOK</h4>
@@ -75,7 +67,7 @@ Ez akkor fordulhat elő, ha a <u>műszer ablak</u> megnyílik a <u>mérés ablak
 
 <h4>MENÜ</h4>
 <ul style = "margin-top = 0">
-<!-- li><u>Keresés</u> új DistoX műszerek keresésére [N, *]. Lehet, hogy kétszer vagy háromszor meg kell próbálnia, mielőtt a DistoX megtalálható</ li -->
+<li><u>Keresés</u> új műszerek keresésére [N, *].</ li>
 <!-- li><u>BLE keresés</u> új BLE műszerekhöz [N, *].</ li-->
 <!-- li><u>Párosítsa</u> az aktív DistoX-et az Androiddal, ha még nincs párosítva [N, *]</ li -->
 <li><u>Szétkapcsolás</u> törli az aktív eszközt [H]</li>
@@ -84,6 +76,17 @@ Ez akkor fordulhat elő, ha a <u>műszer ablak</u> megnyílik a <u>mérés ablak
 <li><u>Beállítások</u></li>
 <li><u>Súgó</u></li>
 </ul><br>
+
+<b>Bluetooth-keresés</b><br>
+Ha egy BLE-eszköz nem jelenik meg a MAC-címével, akkor a „BT-keresés” menüvel kereshető meg.
+BLE-eszközök hozzáadásához elegendő BT-keresést végezni bekapcsolt eszközzel.
+Android-11-ig az eszköz nem található meg, hacsak a „Helyszín” aktív.
+A keresés néhány másodpercig tart, és a megtalált eszközök megjelennek a listában.
+A keresés során a „Bluetooth” gomb narancssárgára vált, és a megnyomásával befejeződik a keresés.<br><p>
+
+A klasszikus Bluetooth-eszközöket (DistoX v. 1 és 2) a rendszerbeállítások alkalmazás segítségével kell csatlakoztatni és párosítani az Androidhoz.<br>
+A <i>DistoX</i> PIN-kódja „0000”, négy nulla.<br>
+A <i>SAP</i> PIN-kódja „000000”, hat nulla.<br><p>
 
 <h4>ESZKÖZBEÁLLÍTÁSOK</h4>
 <ul style = "margin-top = 0">
@@ -118,7 +121,7 @@ A csatlakozási mód csak az adatok letöltésére vonatkozik. A DistoX egyéb f
 
 A <i>SAP</i>, <i>BRIC</i>, és <i>DiscoX</i> mindig <i>folyamatos</i> módban van összekapcsolva.<br><p>
 
-<a href="page_geek.htm"> Egyéni beállítások</a>: <i>Csatlakozási késleltetés</i>, <i>Második DistoX</i>, <i>Adatszünet</i>, <i>Adatkész várakozás</i>, <i>Lézer-be szünet</i>, <i>Mérés szünet</i>.<br><p>
+<a href="page_geek.htm"> Másodlagos beállítások</a>: <i>Csatlakozási késleltetés</i>, <i>Második DistoX</i>, <i>Adatszünet</i>, <i>Adatkész várakozás</i>, <i>Lézer-be szünet</i>, <i>Mérés szünet</i>.<br><p>
 
 <a href="page_device_select.htm">Műszerek</a><br>
 <a href="page_trouble.htm">DistoX hibaelhárítás</a><br>
