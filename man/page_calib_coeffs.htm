@@ -1,12 +1,12 @@
 <html><body>
 
-<h4>DistoX KALIBRÁLÁSI EGYÜTTHATÓK</h4>
+<h4>KALIBRÁLÁSI EGYÜTTHATÓK</h4>
 
 Ez a párbeszédpanel megjeleníti a kalibrációs lineáris transzformáció 24 együtthatóját a <b>G</b> és a <b>M</b> vektorokhoz (egyenként 12 együtthatót) és a nemlineáris tagok 3 együtthatóját (csak a DistoX2 v. 2.3 vagy újabb).<br><p>
 
 Három különböző helyzetben használják:
 <ul>
-<li>Az <u>műszerablak</u> <i>Olvas</i> gombja megjeleníti a DistoX-ból kiolvasott együtthatókat.</li>
+<li>Az <u>műszerablak</u> <i>Olvas</i> gombja megjeleníti a DistoX/Cavway-ból kiolvasott együtthatókat.</li>
 <li>A <u>kalibrációs ablak</u> <i>Olvas</i> gombja megjeleníti az adatbázisban tárolt együtthatókat</li>
 <li>A <u>kalibrációs adatablak</u> <i>Számítás</i> gombja a kiszámított együtthatókat jeleníti meg</li>
 </ul>
@@ -20,7 +20,7 @@ Ha a kalibrációs információk (hibák, iterációk, lejtések) elérhetők, a
 <li>a maximális hiba [fok],</li>
 <li>a kalibrációs számítás által végrehajtott iterációk száma,</li>
 <li>a mágneses mező és a függőleges közötti átlagos szög [fok]</li>
-<li>a gforgatási szögek közötti átlagos különbség, amelyet az egyes csoportok adatainak G vektorával és M vektorral számítottunk ki [fok]</li>
+<li>a forgatási szögek közötti átlagos különbség, amelyet az egyes csoportok adatainak G vektorával és M vektorral számítottunk ki [fok]</li>
 <li>csak a kettős érzékelős eszközök esetében a statisztika (átlag, std-dev és max [degrees]) a két érzékelő eszközirányának különbségeiről.</li>
 </ul><br><p>
 
@@ -38,9 +38,13 @@ Az eredeti algoritmus "delta" értéke a kalibrált G-M vektorok és a minimaliz
 
 <li>A párbeszédablak megjeleníti a mágneses lehajlást [fokban], amit a kalibrációs algoritmus kiszámolt</li>
 
-A kalibrációs együtthatók kiszámítása után a párbeszédpanelen található egy gomb, amellyel <b>beírhatja</b> az együtthatókat a DistoX-be.<br>
+A kalibrációs együtthatók kiszámítása után a párbeszédpanelen található egy gomb, amellyel <b>beírhatja</b> az együtthatókat a DistoX/Cavway-be.<br>
 Figyelmeztetés történik, ha az adatirány eloszlás 95% alatt van, vagy ha a kalibrálási átlaghiba meghaladja 0.5&deg;-ot.
 <br><p>
 
+A <b>Cavway</b> esetében van egy gomb, amellyel válthat az első és a második érzékelőkészlet kalibrációs együtthatói között.<br>
+A jelentett hibák az első érzékelőkészlet kalibrálásából származnak. A panel elrendezése miatt az első érzékelőkészletnek kisebb a mágneses hatása.
+
+Mindazonáltal a két érzékelőkészlet adatai közötti iránykülönbségek nagyon kicsik, ami jó kalibrálást tesz lehetővé.<br><p>
 
 </body></html>

@@ -49,8 +49,8 @@ Végül lehetőség van egy műszer „elfelejtésére” is: ez gyakorlatilag e
 <li><img src = "btn_info.png" width="36" border="1"> eszközinformációk [N,*]</li>
 <li><img src = "btn_memory.png" width="36" border="1"> <a href="page_memory.htm">DistoX</a> , <a href="page_bric_memory.htm">BRIC4</a>, vagy <a href="page_cavway_memory.htm">Cavway</a> memória funkciók [*]</li>
 <li><img src = "btn_toggle.png" width="36" border="1"> be- és kikapcsolhatja a DistoX kalibrációs módot [*](csak a DistoX-nél)</li>
-<li><img src = "btn_compute.png" width="36" border="1"> a DistoX <a href="page_calib_dialog.htm"> kalibrációi</a>.</li>
-<li><img src = "btn_read.png" width="36" border="1"> beolvassa és megjeleníti a DistoX kalibrációs együtthatóit [H,*]</li>
+<li><img src = "btn_compute.png" width="36" border="1"> a <a href="page_calib_dialog.htm"> kalibrációk listája</a>.</li>
+<li><img src = "btn_read.png" width="36" border="1"> beolvassa és megjeleníti a DistoX/Cavway kalibrációs együtthatóit [H,*]</li>
 </ul><br><p>
 
 [*] Ezek a műveletek kommunikációt igényelnek a műszerrel.<br><p>
@@ -67,12 +67,12 @@ Ez akkor fordulhat elő, ha a <u>műszer ablak</u> megnyílik a <u>mérés ablak
 
 <h4>MENÜ</h4>
 <ul style = "margin-top = 0">
-<li><u>Keresés</u> új műszerek keresésére [N, *].</ li>
+<li><u>Keresés</u> új BLE műszerek keresésére [N,*].</ li>
 <!-- li><u>BLE keresés</u> új BLE műszerekhöz [N, *].</ li-->
 <!-- li><u>Párosítsa</u> az aktív DistoX-et az Androiddal, ha még nincs párosítva [N, *]</ li -->
 <li><u>Szétkapcsolás</u> törli az aktív eszközt [H]</li>
 <li>Lementeni és feltölteni a <a href="page_firmware.htm"> firmware-eket</a> a DistoX2-re [S, *]</li>
-<li>A DistoX adatcsomagok naplójának megjelenítése [T]</li>
+<li>A Bluetooth adatcsomagok naplójának megjelenítése [T]</li>
 <li><u>Beállítások</u></li>
 <li><u>Súgó</u></li>
 </ul><br>
@@ -104,30 +104,31 @@ A következő beállítások csak a DistoX-ra vonatkoznak (amely a klasszikus bl
 </ul><br><p>
 
 <b>Csatlakozási módok</b><br>
-Három csatlakozási mód van a DistoX számára.
+Három csatlakozási mód van a DistoX/Cavway számára.
 <ul>
 <li><i>igény szerint</i> módban az adatok sorozatban kerülnek letöltésre, és amikor nincs több adat letöltésére, a kapcsolat le van zárva.</li>
-<li><i>folyamatos</i> módban a TopoDroid kapcsolatban marad a DistoX-el, és a mérések azonnal letöltődnek.
-Amikor a DistoX és az Android kapcsolata megszakad, a TopoDroid ismételten megpróbálja újracsatlakozni.
+<li><i>folyamatos</i> módban a TopoDroid kapcsolatban marad a műszerrel, és a mérések azonnal letöltődnek.
+Amikor a műszer és az Android kapcsolata megszakad, a TopoDroid ismételten megpróbálja újracsatlakozni.
 Ellenkező esetben a bluetooth kapcsolat bezáródik.</li>
-<li>a <i>több</i> mód olyan, mint az „igény szerinti” mód, de hosszú érintés a „letöltés” gombra, a <i>Mérés</i> ablakban vagy a <i>Vázlat</i> ablakban,
-megváltoztatja a DistoX-et. Ha beállítottál egy "második" DistoX-et (a <i>Műszer</i> ablakban), akkor felcseréli az aktuális DistoX-el.
-Ellenkező esetben párbeszédpanelt kapsz, hogy kiválassz egyet a párosított DistoX-ek közül.</li>
+<li>a <i>több</i> mód olyan, mint az „igény szerinti” mód, de hosszú érintés a „letöltés” gombra, a <i>Mérés</i> ablakban vagy a <i>Vázlat</i> ablakban, 
+megváltoztatja a műszert. Ha beállítottál egy "második" DistoX/Cavway-t (a <i>Műszer</i> ablakban), akkor felcseréli az aktuális ismert műszerrel. 
+Ellenkező esetben párbeszédpanelt kapsz, hogy kiválassz egyet a párosított műszerek közül.</li>
 </ul>
 <br>
-A "több" módban az aktuális DistoX a <i>Mérés</i> és a <i>Vázlat</i> ablakok címében jelenik meg.<br>
-A csatlakozási mód csak az adatok letöltésére vonatkozik. A DistoX egyéb funkciói egylépéses lekérdezési módot használnak.
+A "több" módban az aktuális műszer a <i>Mérés</i> és a <i>Vázlat</i> ablakok címében jelenik meg.<br>
+A csatlakozási mód csak az adatok letöltésére vonatkozik. A műszer egyéb funkciói egylépéses lekérdezési módot használnak.
 <br><p>
 
 A <i>SAP</i>, <i>BRIC</i>, és <i>DiscoX</i> mindig <i>folyamatos</i> módban van összekapcsolva.<br><p>
 
-<a href="page_geek.htm"> Másodlagos beállítások</a>: <i>Csatlakozási késleltetés</i>, <i>Második DistoX</i>, <i>Adatszünet</i>, <i>Adatkész várakozás</i>, <i>Lézer-be szünet</i>, <i>Mérés szünet</i>.<br><p>
+<a href="page_geek.htm"> Másodlagos beállítások</a>: <i>Csatlakozási késleltetés</i>, <i>dupla-műszeres mérés</i>, <i>Adatszünet</i>, <i>Adatkész várakozás</i>, <i>Lézer szünet</i>, <i>Mérés szünet</i>.<br><p>
 
 <a href="page_device_select.htm">Műszerek</a><br>
 <a href="page_trouble.htm">DistoX hibaelhárítás</a><br>
 <a href="page_distox.htm">DistoX funkciók</a><br>
 <a href="page_bric.htm">BRIC funkciók</a><br>
 <a href="page_sap.htm">SAP funkciók</a><br>
+<a href="page_cavway.htm">Cavway funkciók</a><br>
 <p>
 
 <a href="manual02.htm"> &lt; Főablak</a> |
