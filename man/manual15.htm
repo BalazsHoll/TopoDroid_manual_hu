@@ -47,7 +47,7 @@ Néhány gombnak hosszú érintés funkciója van:
 
 <h4>MENÜ</h4>
 <ul style = "margin-top: 0">
-<li><i>Fájl megnyitása</i>: Válassz ki egy felmérési fájlt a munka mappából.</li>
+<li><i>Fájl megnyitása</i>: Nyissa meg egy felmérési fájl 3D modelljét.</li>
 <li><i>Exportálás</i>: Exportálás párbeszédpanel.</li>
 <li><i>Információ</i>: Felmérési statisztikák.</li>
 <li><i>3D-Rózsa diagram</i>: 3D irányok eloszlása.</li>
@@ -61,25 +61,55 @@ Néhány gombnak hosszú érintés funkciója van:
 <li><i>Súgó</i></li>
 </ul><br><p>
 
+<b>Fájl bemenet</b><br>
+A bemeneti fájlok formátumai: <i>Therion</i>, <i>Loch</i>, <i>Compass</i> (dat), <i>Survex</i> (3d) és <i>VisualTopo</i> (tro, trox)<br>
+Mindenesetre ezen formátumok szintaxisának korlátozott a támogatása.<br><p>
+
+A <i>Therion</i> adatformátumnak "normálnak" kell lennie.
+
+Az "input" parancs támogatott, ezért lehetséges teljes <i>Therion</i> projektek betöltése a legfelső fájltól kezdve.<br><p>
+
+A <i>Loch</i> fájlok önálló 3D fájlok, amelyeket a <i>Therion</i> készített. Tartalmazhatják a DEM-et és a felületi textúrát is.<br><p>
+
+A <i>Compass</i> és a <i>VisualTopo</i> fájlok felmérési adatfájlok.<br><p>
+
 <h4>BEÁLLÍTÁSOK</h4>
-<ul style = "margin-top: 0">
-<li><i>Alap könyvtár</i>: A felmérési fájlokat tartalmazó mappa</li>
-<li><i>Kiválasztási sugár</i>: a pontok kiválasztási sugara [1.0]</li>
-<li><i>pont párbeszédpanel</i>: megnyitja-e a kiválasztott pont párbeszédpaneljét [n].</li>
-<li><i>mérési pontok</i>: a mérési pontok megjelenítése mindig (zöld) [n].</li>
-<li><i>Felső rács</i>: A térképészeti rács megjelenítése felül [n].</li>
-<li><i>Rács kiterjedése</i>: a felmérés körüli térképészeti rács kiterjedése [10 cella].Ez a 3D-s megtekintő következő megnyitásakor lép életbe.</li>
-<li><i>A horizont alatti nézet</i>: engedélyezi-e a horizont alatti nézőpontokat [n].</li>
-<li><i>DEM puffer</i>: A felszíni modell kiterjedése a felmérés körül a felületi modell DEM fájlból történő betöltésekor.</li>
-<li><i>DEM maximális méret</i>: a felszíni DEM maximális mérete minden irányban [400 cella].</li>
-<li><i>DEM csökkentés</i>: hogyan csökkenthető a DEM, ha túl nagy (ritkítás vagy vágás) [ritkítás].</li>
-<li><i>textúra gyökér</i>: a fájlrendszer tárolómappa elérési útja. ["/sdcard/"]</li>
-<li><i>Összes sün</i>: Az összes sünt használja-e a falakhoz</li>
-<li><i>Osztott háromszögek</i>: Fel kell-e osztani a metsző fal háromszögeket</li>
-<li><i>Pontok véletlenné tétele</i>: Hozzá ad egy kis véletlenszerű vektort a sünhöz</li>
-<li><i>Feszített falak</i>: A fal pontjait kis mértékben eltolja a poligon mentén</li>
-<li><i>Powercrust</i>: algoritmus "delta" paramétere</li>
-<li><i>Bluetooth-eszköz</i>: a Bluetooth-eszköz neve.</li>
+<ul style="margin-top:0">
+<!-- li><i>Munkakönyvtár</i>: A felmérési fájlokat tartalmazó mappa</li -->
+<li>
+<u>3D-s megtekintő</u>:
+<ul>
+<li><i>Horizont alatti nézet</i>: engedélyezve vannak-e a horizont alatti nézőpontok [n].</li>
+<li><i>Állomáspontok</i>: mindig megjelenítve legyenek-e az állomáspontok (zöld) [n].</li>
+<li><i>Állomáspont mérete</i>: az állomáspontok sugara [8 pxl].</li>
+<li><i>Állomás szövegmérete</i>: az állomásnevek mérete [20 pt].</li>
+<li><i>Kijelölési sugár</i>: Az állomások kiválasztásának sugara [1.0]</li>
+<li><i>Távolságüzenet</i>: távolságüzenet megjelenítése párbeszédablak helyett [n]</li>
+<li><i>Állomás párbeszédablak</i>: megnyitva legyen-e az állomás a kiválasztott állomás párbeszédablaka a mező helyett. [n]</li>
+<li><i>Felső rács</i>: A derékszögű rács megjelenítése a tetején. [n]</li>
+<li><i>Rács kiterjedése</i>: a derékszögű rács kiterjedésének mértéke a felmérés körül [10 cella]. Ez a 3D-s megtekintő következő megnyitásakor lép életbe.</li>
+<li><u>DEM</u>:
+<ul>
+<li><i>DEM puffer</i>: A felszínmodell kiterjedése a felmérés körül a felszínmodell DEM fájlból történő betöltésekor.</li>
+<li><i>DEM max. méret</i>: a felszíni DEM maximális mérete mindkét irányban [400 cella].</li>
+<li><i>DEM csökkentés</i>: hogyan csökkenthető a DEM, ha túl nagy (alminta vagy vágás) [alminta].</li>
+<li><i>textúra gyökér</i>: a tárolómappa fájlrendszeri elérési útja ["/sdcard/"].</li>
+</ul>
+</li>
+<li><u>Falmodell</u> (egyes beállítások csak bizonyos falmodellekre vonatkoznak):
+<ul>
+<li><i>Kiosztás használata</i>: Melyik kiosztást kell használni (nincs, normál, x-metszetek) [normál]</li>
+<li><i>Összes kiterjesztés</i>: Hogy az összes kiterjesztés használható-e a falakhoz</li>
+<li><i>Vetített kiterjesztés</i>: Hogy a normál síkra vetített kiterjesztéseket használják-e [n]</li>
+<li><i>Sün küszöbérték</i>: A méréseken kívüli sünök megtartása érdekében [0,5]</li>
+<li><i>Háromszögek felosztása</i>: Hogy a metsző falháromszögek fel legyenek-e osztva</li>
+<li><i>Pontok véletlenszerűsítése</i>: Kis véletlenszerű vektor hozzáadása a sünökhöz</li>
+<li><i>Falak nyújtása</i>: Falpontok kis mértékű eltolása a poligon mentén</li>
+<li><i>Powercrust</i>: Algoritmus "delta" paraméter</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul><br><p>
 
 <b>CÍM SOR</b><br>
