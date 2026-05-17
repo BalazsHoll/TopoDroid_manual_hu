@@ -1,7 +1,7 @@
 <html><body>
 <h4>JedEye</h4>
 
-A <i>JedEye</i> egy Arduino-alapú kézi műszer, amelyet száraz barlangfelmérésre terveztek. Méri azimutot (iránytű), dőlést, elfordulást és közvetlen távolságot (lidar). A teljes felhasználói kézikönyv a <a href="https://sebkister.github.io/JedEye-Documentation/">https://sebkister.github.io/JedEye-Documentation/</a> címen található.
+A <i>JedEye</i> egy Arduino-alapú kézi műszer, amelyet száraz barlangfelmérésre terveztek. Méri az azimutot (iránytű), dőlést, elfordulást és közvetlen távolságot (lidar). A teljes felhasználói kézikönyv a <a href="https://sebkister.github.io/JedEye-Documentation/">https://sebkister.github.io/JedEye-Documentation/</a> címen található.
 <br><p>
 
 A készüléket két, a készüléken található gombbal lehet vezérelni, ezek a <i>Tovább</i> (a menü kurzor mozgatása) és a <i>Kiválasztás</i> (aktiválás).<br><p>
@@ -15,11 +15,11 @@ A TopoDroidban nyissa meg az <i>Eszköz</i> képernyőt, és futtassa a <i>BT Sc
 <b>Mérés készítése</b><br>
 A <i>Távolságmérő</i> képernyőn az OLED valós időben mutatja az aktuális lidar távolságot, az aktuális irányt és a dőlést. Egy kis Bluetooth ikon a jobb alsó sarokban jelzi, hogy a BLE hirdetések aktívak.<br><p>
 
-A mérés rögzítéséhez az eszközön irányítsa a célpontra, és hívja meg a <i>Mérés</i> funkciót a <i>Következő</i> / <i>Kiválasztás</i> gombokkal.
+A mérés rögzítéséhez a műszert irányítsa a célpontra, és hívja meg a <i>Mérés</i> funkciót a <i>Következő</i> / <i>Kiválasztás</i> gombokkal.
 A rögzített értékek egyetlen felvételként streamelődnek a TopoDroidba. Ha a TopoDroid felvételi ablaka meg van nyitva, az új felvétel azonnal megjelenik a listában, és automatikusan állomásnevet kap, mint bármely más szakaszfelvétel.
 <br><p>
 
-A TopoDroid távolról is képes vezérelni a <i>JedEye</i>-t. Csatlakozás közben a felvételi ablakban található Bluetooth gombra koppintva megnyílik egy felugró ablak a <i>lézer be</i>, <i>lézer ki</i>, <i>felvétel</i> és <i>eszköz ki</i> opciókkal. A <i>Shot</i> (Fotó) parancs utasítja a <i>JedEye</i>-t, hogy rögzítse és küldje el a mérést az eszköz érintése nélkül – ez kényelmes, ha az állványra van szerelve, vagy más módon elérhetetlen helyen van.<br><p>
+A TopoDroid távolról is képes vezérelni a <i>JedEye</i>-t. Csatlakozás közben a felvételi ablakban található Bluetooth gombra koppintva megnyílik egy felugró ablak a <i>lézer be</i>, <i>lézer ki</i>, <i>felvétel</i> és <i>eszköz ki</i> opciókkal. A <i>Shot</i> (Mérés) parancs utasítja a <i>JedEye</i>-t, hogy rögzítse és küldje el a mérést az eszköz érintése nélkül – ez kényelmes, ha az állványra van szerelve, vagy más módon elérhetetlen helyen van.<br><p>
 
 <b>Csatlakozási mód</b><br>
 A <i>JedEye</i> mindig <i>folyamatos</i> módban csatlakozik. Minden mérés a TopoDroidra azonnal átkerül, amint elkészült. A készülék csatlakoztatása nélkül készített felvételek <i>nem</i> kerülnek pufferelésre vagy újraküldésre később – a <i>JedEye</i>-t a legjobb olyan munkamenetekben használni, ahol végig csatlakoztatva maradhat az Androidhoz.<br><p>
