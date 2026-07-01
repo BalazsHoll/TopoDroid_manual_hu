@@ -55,6 +55,7 @@ A pontnevek háttérszíne:
 <li>[sötétzöld] legutóbb letöltött mérések</li>
 <li>[szürke] mérés "többmérés" választás készletben</li>
 <li>[sötét sárga] DistoX fordított mérés adatok</li>
+<li>[lila] visszamérő-ellenőrzés sün (hiba esetén)</li>
 </ul><p>
 
 <img src = "shots_list.png" alt = "mérések listája" /><p>
@@ -125,7 +126,7 @@ Ha a 3D modellezés engedélyezve van, akkor egy gomb is létrehozhat egy új 3D
 <h4>MENÜK</h4>
 <ul style = "margin-top: 0">
 <li><u>Felmérési információk</u>: felmérési információs ablak</li>
-<li><u>Helyreállítás</u>: törölt elem (mérés vagy vázlat) <a href="page_undelete.htm"> helyreállítása</a></li>
+<li><u>Visszaállítás | beillesztés</u>: törölt elem (mérés vagy vázlat) <a href="page_undelete.htm">helyreállítás</a>, vagy méréspuffer beillesztése [N]/[E]</li>
 <li><u>Fotó</u>: ehhez a felméréshez készített képek</li>
 <li><u>Hang</u>: ehhez a felméréshez felvett hang jegyzetek</li>
 <li><u>3D</u>: 3D felmérés megjelenítése (<a href="manual15.htm"> 3D megjelenítővel</a>)</li>
@@ -133,6 +134,9 @@ Ha a 3D modellezés engedélyezve van, akkor egy gomb is létrehozhat egy új 3D
 <li><u>Beállítások</u></li>
 <li><u>Súgó</u></li>
 </ul><br><p>
+
+Egy rövid koppintással a <u>Visszaállítás/beillesztés</u> menü megnyitja a <a href="page_undelete.htm"><i>Visszaállítás párbeszédpanelt</i></a>.
+Egy hosszú koppintással megnyílik a <a href="page_shot_paste.htm"><i>Mérés beillesztése párbeszédpanel</i></a>.<br><p>
 
 <h4> FELMÉRÉS BEÁLLÍTÁSAI</h4>
 <ul style = "margin-top: 0">
@@ -157,7 +161,7 @@ Ha a 3D modellezés engedélyezve van, akkor egy gomb is létrehozhat egy új 3D
     <li><i>Poligon tűrés</i>: a poligon egymás utáni mérései közötti szögtűrés (százalék) [alapértelmezett 0,05, min 0]. A hossztűrés a szögtűrés és a hossz szorzata.</li>
     <li><i>Maximális méréshossz</i>: a hosszabb méréseket "túlmérés" és "törölt" jelzéssel látja el [alapértelmezett 50 m, min 20 m]</li>
     <li><i>Min. poligonhossz</i>: a rövidebb poligonnak narancssárga háttérrel vannak kiemelve [alapértelmezett 0 m]</li>
-    <li><i>Min. poligonmérések</i>: a legközelebbi egymás utáni mérések minimális száma egy poligonon. [alapértelmezett 3, min 2, max 4] [S]</li>
+    <li><i>Poligonmérések száma</i>: egymás utáni mérések minimális száma egy pontra amit poligon mérésnek tekint. [alapértelmezett 3, min 2, max 4] [S]</li>
     <li><i>A mérések függőleges küszöbe</i>: a referencia azimutra merőleges körüli tartománya ahhoz, hogy a <a href="page_azimuth.htm">mérés "kiterítése"</a> függőleges legyen [ alapértelmezett 10, min 0, max 90] (poligonokhoz és sünökhöz egyaránt használatos) [N]</li>
     <li><i>Mérés NyKÉD küszöbérték</i> (<i>Therion</i> "vthresold"): a manuálisan bevitt mérések BJFL-jét nyugat-kelet-észak-délnek tekintjük, ha a mérés dőlése meghaladja a függőleges küszöböt [alapértelmezett 80, min 0, max 90]</li>
     <li><i>Mérés kiterítése</i>: kézi J/B vagy a <a href="page_azimuth.htm"> kiterítési referencia</a> irány [alapértelmezett relatív]</li>
@@ -165,11 +169,15 @@ Ha a 3D modellezés engedélyezve van, akkor egy gomb is létrehozhat egy új 3D
     <li>az <i>előző / következő</i> gombok megjelenítése a mérés szerkesztése párbeszédpanelen [alapértelmezett igen]</li>
     <li><i>Visszamérés</i> mezők a mérés kézi beviteli párbeszédablakában [N] [alapértelmezett nem]</li>
 	<li><i>Poligon-mérés-visszajelzés</i>: visszajelzés a poligon-felismerésről: "nincs", "hang" vagy "érintős" [alapértelmezett "nincs"] [N]</li>
-    <li><i>Fordított mérés DistoX</i>: DistoX "fordított mérés" módban [alapértelmezett nem] [N]</li>
-	<li><i>Hurokzárás</i> hibakompenzáció. Javasoljuk, hogy a kompenzációt ne végezze el, mert így grafikusan láthatja a hibás lezárásokat, és kiszűrheti az esetleges felmérési hibákat [alapértelmezett "nincs"] [N]</li>
-<li><i>Időzítő</i>: a késleltetés száma másodpercben az irányok mérése előtt az Android érzékelőkkel [alapértelmezett 10, min. 0] [E]</li>
-<li><i>Sípolás hangereje</i>: sípolás hangereje a manuális mérésidőzítőhöz és a poligon mérés visszajelzéséhez [alapértelmezett 50, min. 10, max. 100%] [E]</li>
-<li><i>Sípolás hossza</i>: sípolás időtartama a poligon mérés visszajelzéséhez [alapértelmezett 500 ms] [E]</li>   </ul>
+    <li><i>További beállítások</i>
+      <ul style="margin-top:0; margin-bottom:0">
+	    <li><i>Fordított mérés DistoX</i>: DistoX "fordított mérés" módban [alapértelmezett nem] [N]</li>
+	    <li><i>Hurokzárás</i> hibakompenzáció. Javasoljuk, hogy a kompenzációt ne végezze el, mert így grafikusan láthatja a hibás lezárásokat, és kiszűrheti az esetleges felmérési hibákat [alapértelmezett "nincs"] [N]</li>
+        <li><i>Időzítő</i>: a késleltetés száma másodpercben az irányok mérése előtt az Android érzékelőkkel [alapértelmezett 10, min. 0] [E]</li>
+        <li><i>Sípolás hangereje</i>: sípolás hangereje a manuális mérésidőzítőhöz és a poligon mérés visszajelzéséhez [alapértelmezett 50, min. 10, max. 100%] [E]</li>
+        <li><i>Sípolás hossza</i>: sípolás időtartama a poligon mérés visszajelzéséhez [alapértelmezett 500 ms] [E]</li>
+	  </ul>
+	</ul>
  </li>
   <li><i>HELY <a href="page_fixed_list.htm"> beállítások</a></i></li>
   <li><i>PONTOSSÁG <a href="page_accuracy.htm"> beállítások</a></i></li>
