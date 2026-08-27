@@ -166,7 +166,7 @@ A <b>szerkesztés</b> [H] mód a zöld gombok mellett:
 <li><img src = "btn_size.png" width="36" border="1"> a kiválasztó eszköz <i>méret</i>e [S, M, L]</li>
 <li><img src = "btn_delete.png" width="36" border="1"> <i>töröl</i>je az elemet a vázlatból (megerősítést kér, és visszavonható).</li>
 <li><img src = "btn_item.png" width="36" border="1"> elem <i>tulajdonság</i>ainak szerkesztése. A „metszet” pontnál megnyílik a keresztmetszet vázlatrajza.</li>
-<li><img src = "btn_point.png" width="36" border="1"> pontok <i>speciális művelet</i>ei. A metszetpontoknál ez a gomb megnyitja a keresztmetszet vázlatát.</li>
+<li><img src = "btn_point.png" width="36" border="1"> pontok <i>speciális művelet</i>ei. A metszetpont elemeknél ez a gomb megnyitja a keresztmetszet vázlatát.</li>
 <li><img src = "btn_range.png" width="36" border="1"> <i>tartomány</i>választás: akár pontonként, akár lokálisan (csak vonalakhoz és területekhez).
 </ul><br><p>
 Ha vannak kiválasztott elemek, akkor az első két gomb <i>előző/következő</i> navigációs gomb lesz a készletben
@@ -256,14 +256,15 @@ A következő műveletek hosszú koppintással indíthatók el:
  </li>
   <li><i>VÁZLAT</i>
     <ul style = "margin-top: 0; margin-bottom: 0">
-    <li>Poligonvonal <i>szélessége</i> (poligon/sün)</li>
+    <li>Mérési vonal <i>szélessége</i> (poligon/sün)</li>
     <li>Pont neve <i>szövegméret</i> [18 pt] [N]</li>
     <li> A <b>szerkesztés</b> módban megjelenített <i>zöld pontok</i> mérete [5 px] [H]</li>
-    <li><i>Kiválasztás</i> sugár a vázlat finom szerkesztéséhez; [16 px] [H]</li>
-    <li> A <i>radír</i> alapmérete</li>
-    <li><i>Váltási érzékenység</i>: maximális lépés a vázlat mozgatásakor [60 px] [S]. Növelje, ha a vázlatváltás szaggatott</li>
-    <li><i>Mutató sugara</i>: a kiválasztáshoz ennél többet nem szabad az újat mozgatni [H]</li>
-    <li><i>A sün átlátszósága</i> átlátszatlansági szint [0: átlátszó, 100: átlátszatlan, alapértelmezett 80]</li>
+	<li><i>Átlátszóság megjelenítése</i>: átlátszósági szint [0: átlátszó, 100: átlátszatlan, alapértelmezett 80]</li>
+    <!-- li><i>Kiválasztás</i> sugár a vázlat finom szerkesztéséhez; [16 px] [H]</li -->
+    <!-- li> A <i>radír</i> alapmérete</li -->
+    <!-- li><i>Váltási érzékenység</i>: maximális lépés a vázlat mozgatásakor [60 px] [S]. Növelje, ha a vázlatváltás szaggatott</li -->
+    <!-- li><i>Mutató sugara</i>: a kiválasztáshoz ennél többet nem szabad az újat mozgatni [H]</li -->
+    <!-- li><i>A sün átlátszósága</i> átlátszatlansági szint [0: átlátszó, 100: átlátszatlan, alapértelmezett 80]</li -->
     <!--
     <li><i>Sün alaprajz küszöb</i>: az e küszöb feletti dőlésszögű sünöket elrejti a alaprajznál [80 &deg;]</li>
     <li><i>Keresztmetszet H-küszöb</i>: az a dőlésszög, amely felett egy keresztmetszet vízszintes. (Alatta a keresztmetszet függőleges).</li>
@@ -286,7 +287,7 @@ A következő műveletek hosszú koppintással indíthatók el:
  <li>Affin transzformáció</li>
  <li>Rétegek</li>
  <li>mm papír skála</li>
- <li>Döntött metszetek</li>
+ <li>Döntött keresztmetszetek</li>
  <li>Ferde vetítés</li>
  <li>Vonal vég levágása</li>
  

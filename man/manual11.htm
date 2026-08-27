@@ -102,10 +102,16 @@ A keresztmetszet körvonala a metszetpontnál jelenik meg.<br>
 A körvonal mozgatható a metszetpont kiválasztásával (szerkesztési módban) és húzásával.<br>
 Ha a "tulajdonságok" gombra koppint, amikor egy metszetpont ki van választva, megnyílik a keresztmetszet vázlata a rajzoláshoz.<br><p>
 
+A <i>metszetpont</i> törlése nem távolítja el a keresztmetszetet. Ez csak a <i>metszetvonal</i> törlésével törlődik a poligon-metszetei esetén, vagy a mérési pont párbeszédablakban pont-metszetei esetén.<br><p>
+
 <b>Keresztmetszetfájlok</b><br>
 Minden keresztmetszet külön fájlban kerül mentésre a "tdr" almappában. A fájlok egymást követő neveket kapnak: "MySurvey-xx0.tdr", "MySurvey-xx1.tdr" stb. A név "xx0" számozási része a metszet létrehozásakor vagy szerkesztésekor felugró metszet párbeszédpanelen is megjelenik.<br>
-
+<!--
 A fájl törlődik, ha egy keresztmetszetet törölnek.<br><p>
+-->
+A <i>Keresztmetszet-pont</i> elemek nem törölhetők közvetlenül.
+ A keresztmetszet törlésekor törlődnek.
+ A keresztmetszet csak a <i>keresztmetszet-vonal</i> törlésével törlődik a poligon-keresztmetszet esetében, vagy a mérési pont párbeszédpanelen a pont-keresztmetszet esetében.<br><p>
 
 A keresztmetszetek más formátumokban is exportálhatók, akárcsak a többi vázlat, kivéve a <i>cSurvey</i> formátumot.
 A keresztmetszetek szerepelnek a DXF, SVG, <i>cSurvey</i> vázlatexportokban, feltéve, hogy létezik a társított metszetpont.<br><p>
