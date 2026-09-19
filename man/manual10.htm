@@ -75,9 +75,48 @@ A Bezier-vonalak szakaszainak két kontrollpontja van. Ezeket a szegmens végpon
 A kijelölés törléséhez koppints valahol másutt a rajzfelületre. Az elem törölhető (eltávolítható), vagy annak <a href="page_item_edit.htm"> tulajdonságai</a> megváltozhatnak ("tulajdonságok" gomb). A szerkesztés a mérésekre és a poligon pontokra is vonatkozik.
 <br><p>
 
-Forgatható pont szerkesztésekor az ikont a felső sarkok húzásával is el lehet forgatni (ha a sarok vonszolás engedélyezve van).<br><p>
+Irányított pont vagy terület szerkesztésekor a szimbólum, illetve a minta elforgatható a rajzvászon felső (sárga) sarkaitól indított húzómozdulattal.<br><p>
 
 Egy felmérési vonal (poligon vagy sün) közepén egy zöld pont látható. Ha egy poligont választunk, akkor egy vízszintes sárga szegmens is megjelenik a poligonnal szemben lévő oldalon "kinyúl", vagy mindkét oldalon, ha a poligont függőlegesen terítjük ki. A poligon kiterítést úgy állíthatjuk be, hogy megérintjük a szegmens bal vagy jobb végét, vagy a közepét.<br><p>
+
+
+<h4> Vonalstílus</h4>
+A TopoDroid öt vonalstílust használ. A normál stílusban [alapértelmezett] a vonalak vonalláncként vannak megrajzolva. A finom stílusnál a vonalláncok rövidebbek, míg a durva stílusnál hosszabbak. A negyedik stílusban a vonaldarabok interpoláltak, a szegmenseket köbös Bezier-görbékkel (spline-okkal) helyettesítve. Ezek a szegmensek áthaladnak a két végponton, és két szabályozási pontjuk van, amelyek meghatározzák a görbületet.
+ Az ötödik vonalstílussal a meghúzott vonalak egyszerűsödnek egy pont gyomláló algoritmus segítségével.
+ Ha a rajzot dxf fájlban exportálja DXF 6-os verzióval, ne használjon spline-okat, mert vonalláncként exportálják őket.<br><p>
+
+<h4>Vonalvágás</h4>
+Ha a <i>Vonalvágás</i> beállítás engedélyezve van, a vonalak a vázlat körvonalához vághatók.<br>
+Csak a "clipping"-et támogató típusú vonalak vágódnak a körvonalhoz.<br>
+A "clipping" típus attribútuma határozza meg, hogy a vonal a végén,
+vagy a végén és az elején is vágódik-e, vagy nem (ami az alapértelmezett beállítás).
+Ha mindkét oldalon vágódik, a megtartott vonalrész
+középről indul, és mindkét vége felé növekszik, amíg egy körvonalvonalat nem talál.
+Ellenkező esetben a megtartott vonalrész az egyik végén kezdődik, és a másik felé növekszik.<br>
+A vágás sikertelen lehet, különösen harmadfokú (Bézier) görbék jelenlétében.<br><p>
+
+A vágás nem vonatkozik területekre.<br><p>
+
+<h4> Vonal csere</h4>
+Ha a vonal alakzat nem bonyolult (Bezier vagy ritkított) a vonal és a területek „vonalcsere” módban rajzolhatók.<br>
+Az <i>eszközök</i> gomb hosszú megérintésével be- és kikapcsolható a vonalcsere.
+ Ha a vonalcsere aktív, a vonal/terület a megfelelő <i>eszközök</i> gombon fehér.<br>
+A vonal/terület cserélt része nem transzformálódik (Bezier spline, gyomlálás, tizedelés stb.).<br><p>
+
+A vonal egy részének cseréjéhez rajzolj egy olyan vonalat, amely az eredeti közelében kezdődik és/vagy végződik.
+ A "metszet" típusú vonalak nem módosíthatók.
+<br><p>
+A területek „újra rajzolhatók” egy vonal cserével, amely a terület határához közel kezdődik és végződik.
+ Ennek a szegélynek a két darabja közötti rövidebb helyére az újonnan rajzolt vonal lép.<br>
+A terület nagyítható vagy zsugorítható, és egy homorú rész kitölthető (lásd az alábbi ábra).
+<br><p>
+
+A vonal csere visszavonható és újra elvégezhető.<br><p>
+
+<img src="area_concavity.png" width="360" border="1">
+<br><p>
+
+
 
 <h4> Precíz szerkesztési műveletek [H]</h4>
 

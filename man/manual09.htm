@@ -104,13 +104,23 @@ A <u>vázlatablak</u> négy interakciós móddal rendelkezik:
 </ul><br><p>
 
 A váltás és a zoom még <b>rajzolás</b>ban és <b>törlés</b> módban is lehetséges két ujjal.
- Ha a "sarok húzás" engedélyezve van, akkor a vázlat a vászon sarkairól "húzva" eltolható.
+ <!-- Ha a "sarok húzás" engedélyezve van, akkor a -->A vázlat a vászon sarkairól "húzva" eltolható.
  A sarkok átlátszó szürke színnel jelennek meg.<br>
 A zoom vezérlés engedélyezhető (akár ideiglenesen, akár véglegesen). Ha ideiglenesek, akkor jelennek meg amikor megérinti a képernyő alját
  a közepén.<br>
-A „rajz módban” van egy alsó eszköztár a legutóbb használt eszközökkel, valamint egy „nyíl” gomb a többi eszköz kiválasztásához.<br>
-"Szerkesztési módban", amikor a kiválasztott elem egy pont, van egy alsó csúszka a pontskálához. Ha a sarok vonszolás engedélyezett
- és a pont jel elforgatható, akkor annak forgatását az óramutató járásának irányába a jobb felső sarok lefelé vonszolásával, ellenkező irányban a bal felső sarok lefelé vonszolásával lehet elérni.<br><p>
+„Rajzolás” módban alul egy <b>eszköztár</b> található a legutóbb használt eszközökkel, valamint egy „nyíl” gomb további eszközök kiválasztásához.
+<br><p>
+
+„Rajzolás” és „szerkesztés” módban alul egy <b>méretsáv</b> látható, amellyel beállítható az elem mérete (XS, S, M, L vagy XL).<br>
+A méretbeállítás hatással van a pontszimbólum nagyságára, a vonalak vastagságára, a vonaleffektusok méretére,
+valamint a területek színének átlátszóságára.
+<br><p>
+
+<!-- Ha a „sarokból történő húzás” engedélyezve van, -->
+Az irányítható pont- és területjellegű elemek esetében
+kiválasztáskor a kijelző felső sarkai sárgás árnyalatot vesznek fel,
+és a szimbólum vagy minta az óramutató járásával megegyező irányba forgatható a jobb felső sarokból kiinduló lefelé húzással,
+illetve az óramutató járásával ellentétes irányba a bal felső sarokból kiinduló lefelé húzással.<br><p>
 
 
 <h4>GOMBOK</h4>
@@ -227,7 +237,7 @@ A következő műveletek hosszú koppintással indíthatók el:
 <ul style = "margin-top = 0">
   <!-- li><i>Rajzeszközválasztó</i>: lista, rács vagy háromrácsos nézet [alapértelmezett: lista]</li -->
   <!-- li><i>Alsó eszköztár</i>: egy vagy háromsoros [alapértelmezett: egy]</li -->
-  <li><i>Sarok vonszolás</i>: engedélyezze a mozgatást sarokhúzással</li>
+  <!-- li><i>Sarok vonszolás</i>: engedélyezze a mozgatást sarokhúzással</li -->
   <li><i>Zoomvezérlők</i>: meghatározza, hogy a zoomvezérlők hogyan jelenjenek meg többérintéses eszközökön [H]. A zoom vezérlők elrejthetők, csak rövid időtartamra jeleníthetők meg, amikor a felhasználó a képernyő alsó részét megérinti középen, vagy állandóan megjeleníti őket</li>
   <li><i>Vízszintes keresztmetszetek</i> poligon-lejtés küszöb a vízszintes keresztmetszetekhez (oldalnézet).</li>
   <li><i>Poligon ellenőrzése</i>: ellenőrizze, hogy az összes poligon csatlakozik-e a felméréshez [letiltva]</li>
@@ -248,6 +258,7 @@ A következő műveletek hosszú koppintással indíthatók el:
     <li> Vonal <i>stílus</i>: finom, normál, durva, "spline" (interpolált görbe), ritkított</li>
 	<li><i>Zárás</i>: be kell-e zárni a "zárt" típusú vonalakat. [igen]</li>
     <li> Vonal <i>pontok távolsága</i>: a vonalpontok távolsága normál stílusban [10 px]</li>
+	<li><i>Vonal levágás</i>: vágja-e a vonalakat a falnál [nem] </li>
     <li><i>Irány pipa hossza</i> a keresztmetszet vonalakhoz [5 px]</li>
     <li><i>Metszetpontok</i>: hozzáadja-e a "metszet" pontot automatikusan a "metszet" vonalakhoz [alapértelmezett igen]</li>
     <!--li> Vonal <i>alapértelmezett csatlakozási mód</i>: nincs, kezdet, vég, mindkettő, "folytatás"</li -->
@@ -321,31 +332,8 @@ Ehhez érintse meg a kívánt pont közelében. Ha azonban több pont van közel
 <p><img src="btn_multiselection_previous.png" width="36" border="1"><img src="btn_multiselection_next.png" width="36" border="1">
 </p>
 
-<h4> Vonalstílus</h4>
-A TopoDroid öt vonalstílust használ. A normál stílusban [alapértelmezett] a vonalak vonalláncként vannak megrajzolva. A finom stílusnál a vonalláncok rövidebbek, míg a durva stílusnál hosszabbak. A negyedik stílusban a vonaldarabok interpoláltak, a szegmenseket köbös Bezier-görbékkel (spline-okkal) helyettesítve. Ezek a szegmensek áthaladnak a két végponton, és két szabályozási pontjuk van, amelyek meghatározzák a görbületet.
- Az ötödik vonalstílussal a meghúzott vonalak egyszerűsödnek egy pont gyomláló algoritmus segítségével.
- Ha a rajzot dxf fájlban exportálja DXF 6-os verzióval, ne használjon spline-okat, mert vonalláncként exportálják őket.<br><p>
-
-<h4> Vonal csere</h4>
-Ha a vonal alakzat nem bonyolult (Bezier vagy ritkított) a vonal és a területek „vonalcsere” módban rajzolhatók.<br>
-Az <i>eszközök</i> gomb hosszú megérintésével be- és kikapcsolható a vonalcsere.
- Ha a vonalcsere aktív, a vonal/terület a megfelelő <i>eszközök</i> gombon fehér.<br>
-A vonal/terület cserélt része nem transzformálódik (Bezier spline, gyomlálás, tizedelés stb.).<br><p>
-
-A vonal egy részének cseréjéhez rajzolj egy olyan vonalat, amely az eredeti közelében kezdődik és/vagy végződik.
- A "metszet" típusú vonalak nem módosíthatók.
-<br><p>
-A területek „újra rajzolhatók” egy vonal cserével, amely a terület határához közel kezdődik és végződik.
- Ennek a szegélynek a két darabja közötti rövidebb helyére az újonnan rajzolt vonal lép.<br>
-A terület nagyítható vagy zsugorítható, és egy homorú rész kitölthető (lásd az alábbi ábra).
-<br><p>
-
-A vonal csere visszavonható és újra elvégezhető.<br><p>
-
-<img src="area_concavity.png" width="360" border="1">
-<br><p>
-<div style = "font-size: 90%">
-<!-- h4> Kompozit műveletek [T]</h4>
+<!-- div style = "font-size: 90%">
+<h4> Kompozit műveletek [T]</h4>
 Az összetett műveletek pontonként hosszan érinthető műveletek.<br>
  Jelenleg az egyetlen hosszan koppintható művelet az, ha <i>beilleszt egy pontot</i> egy vonalhoz/területhez, és egyidejűleg rápattan egy közeli pontra.
  A kiválasztott pontot először a közeli pontra helyezzük, majd megismételjük, és az új pont utána kerül a vonalon/területen.
