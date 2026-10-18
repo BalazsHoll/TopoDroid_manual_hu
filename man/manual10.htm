@@ -85,9 +85,11 @@ A TopoDroid öt vonalstílust használ. A normál stílusban [alapértelmezett] 
  Az ötödik vonalstílussal a meghúzott vonalak egyszerűsödnek egy pont gyomláló algoritmus segítségével.
  Ha a rajzot dxf fájlban exportálja DXF 6-os verzióval, ne használjon spline-okat, mert vonalláncként exportálják őket.<br><p>
 
-<h4>Vonalvágás</h4>
-Ha a <i>Vonalvágás</i> beállítás engedélyezve van, a vonalak a vázlat körvonalához vághatók.<br>
-Csak a "clipping"-et támogató típusú vonalak vágódnak a körvonalhoz.<br>
+<h4>Vonal/Terület vágás</h4>
+Ha a <i>Vonal/terület vágás</i> beállítás engedélyezve van, a vonalak a vázlat határvonalához vághatók.<br>
+Csak azok a vonalak és területek vághatók a határvonalhoz, amelyek típusa támogatja a "clipping" „vágást”.<br>
+Alapértelmezés szerint a vonalak és területek nem vághatók.<br><p>
+
 A "clipping" típus attribútuma határozza meg, hogy a vonal a végén,
 vagy a végén és az elején is vágódik-e, vagy nem (ami az alapértelmezett beállítás).
 Ha mindkét oldalon vágódik, a megtartott vonalrész
@@ -95,7 +97,11 @@ középről indul, és mindkét vége felé növekszik, amíg egy körvonalvonal
 Ellenkező esetben a megtartott vonalrész az egyik végén kezdődik, és a másik felé növekszik.<br>
 A vágás sikertelen lehet, különösen harmadfokú (Bézier) görbék jelenlétében.<br><p>
 
-A vágás nem vonatkozik területekre.<br><p>
+A területek csak akkor kerülnek levágásra, ha egyetlen körvonalvonalat metszenek.
+A területek levágásához a határvonalat úgy kell megrajzolni, hogy az a körvonalon kívülről induljon, és ismét a körvonalon kívül végződjön.
+A területek esetében a „levágható” („clippable”) attribútum határozza meg, hogy az adott terület levágásra kerüljön-e alaprajzi nézetekben, metszeti (profil) nézetekben, vagy mindkettőben.<br>
+Ha a terület határvonala úgy kerül megrajzolásra, hogy többször is keresztezi a körvonalvonalat, akkor a terület a középső részre lesz levágva.
+<br><p>
 
 <h4> Vonal csere</h4>
 Ha a vonal alakzat nem bonyolult (Bezier vagy ritkított) a vonal és a területek „vonalcsere” módban rajzolhatók.<br>

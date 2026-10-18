@@ -16,26 +16,26 @@ A TopoDroid a következő műszereket támogatja:
 
 Minden eszközt párosítani kell az Androiddal.<br><p>
 
-Normál esetben a TopoDroid csak egy eszközzel működik.
- Az adatok folyamatosan (<i>folyamatos</i> módban) vagy kötegelten (<i>igény szerinti</i> módban) tölthetők le.
- A két mód közötti különbség az, hogy a <i>folyamatos</i> mód aktív marad az adatok letöltésekor
- befejeződött, vagy megszakadt a kapcsolat az eszközzel, miközben a <i>on-demand</i> mód zárva van.<br><p>
+A TopoDroid egyszerre csak egy eszközzel működik, ellenkező esetben a különböző eszközökről érkező adatok összekeverednének. 
+Az adatok letöltése történhet folyamatosan (<u>folyamatos</u> mód) vagy kötegelten (<u>igény szerinti</u> mód).
+A két mód közötti különbség az, hogy a <u>folyamatos</u> mód aktív marad az adatletöltés befejezése vagy az eszközzel való kapcsolat megszakadása után is, míg az <u>igény szerinti</u> mód lezárul. <br><p>
 
-A <i>SAP</i>, <i>BRIC</i> és a <i>JedEye</i></li> modellek csak folyamatos módban tölti le az adatokat.<br><p>
+Az <i>SAP</i>, a <i>BRIC</i>, a <i>DiscoX</i> és a <i>JedEye</i> kizárólag folyamatos módban tölti le az adatokat.<br><p>
 
-A DistoX segítségével a TopoDroid egyszerre több eszközzel is képes dolgozni
- az adatokat továbbra is csak egy eszközről töltik le egyszerre.<br>
-Az <i>adatletöltési módot</i> <i>multi</i> értékre kell állítani.
- Ha ilyen hosszan megérinti a <i>letöltés</i> gombot, megjelenik egy párbeszédpanel, amelyből kiválaszthatja, melyik DistoX töltse le az adatokat.<br><p>
+<i>DistoX</i> és <i>Cavway</i> esetén a TopoDroid egyszerre több eszközzel is képes együttműködni (<u>több-köteges</u> mód), 
+bár az adatok letöltése továbbra is egyszerre csak egy eszközről történik.<br>
+Ha a <i>második DST</i> beállítás engedélyezve van, a <i>letöltés</i> gomb hosszan tartó megnyomásával átválthatunk a második DST eszközre 
+(amennyiben azt beállítottuk). Ellenkező esetben megnyílik az <a href="page_device_select.htm">Eszközválasztás</a> párbeszédablak. 
+Ha a <i>második DST</i> nincs engedélyezve, de az <i>adatletöltési mód</i> <i>több-köteges</i> módra van állítva, 
+akkor a <i>letöltés</i> gomb hosszan tartó megnyomása megjeleníti az <a href="page_device_select.htm">Eszközválasztás</a> párbeszédablakot, 
+ahol kiválaszthatjuk, melyik DST eszközről töltsük le az adatokat.<br><p>
 
 <b>Shetland Attack Pony (SAP)</b><br>
 
-A TopoDroid bluetooth-tal támogatja a Shetland Attack Pony 5 (<i>SAP5</i>) és 6 (<i>SAP6</i>) verziójának modelljét.<br>
-Az eszközt előzőleg "párosítani" kellett az Androiddal, a <i>Beállítások</i> alkalmazás használatával.
- A PIN: "000000" (hat nulla).<br>
-Ezután a <i>SAP</i> az ismert eszközök között szerepel az <i>Eszközablak</i> részben.
- "SAP XX MAC-cím" néven jelenik meg, ahol az "XX" a <i>SAP</i> kétbetűs kódja, például "HG".<br>
-A <i>SAP</i> aktuális eszközként való kiválasztásához érintse meg a bejegyzést a listában.<br><p>
+A TopoDroid támogatja a Shetland Attack Pony 5 bluetooth (<i>SAP5</i>) és 6 (<i>SAP6</i>) verziójának modelljét.<br>
+Ha az SAP-ot a <i>Beállítások</i> alkalmazás segítségével már „párosította” Androiddal (a PIN-kód „000000”, azaz hat darab nulla), akkor az SAP megjelenik az ismert eszközök listáján az <i>Eszközablakban</i>. 
+"SAP XX MAC-cím" néven jelenik meg, ahol az "XX" a <i>SAP</i> kétbetűs kódja, például "HG".<br>
+A <i>SAP</i> aktuális eszközként való kiválasztásához érintsd meg a bejegyzést a listában.<br><p>
 
 Csatlakozás közben a <i>SAP</i> átveszi a mérés eredményeit az alkalmazásba, függetlenül attól, hogy a mérést tárolja vagy eldobja az eszközön.<br><p>
 
@@ -56,10 +56,10 @@ A <i>SAP</i> kalibrálását az eszköz végzi, és nem igényel külső program
 <b>BRIC</b><br>
 
 A TopoDroid támogatja a <i>BRIC</i> 4 és 5 verzióját.<br>
-Az eszköznek előzőleg "párosítva" kell lennie az Androiddal a <i>Beállítások</i> alkalmazás használatával.<br>
-Ezután a <i>BRIC</i> szerepel az ismert eszközök között az <i>Eszközablak</i>ban.
- "BRICX kód MAC-cím" néven jelenik meg,('X' lehet 4 vagy 5) ahol a kód a <i>BRIC</i> négyjegyű kódja, például "0039".<br>
-A <i>BRIC</i> aktuális eszközként való kiválasztásához érintse meg a bejegyzést a listában.<br><p>
+A többi BLE-eszközhöz hasonlóan a BRIC-et sem kell párosítani az Androiddal, de felderíthető a <i>Műszerablak</i> (Device Window) menüjéből. 
+Ha szerepel az alkalmazás adatbázisában, a <i>BRIC</i> megjelenik az ismert műszerek listáján az <i>Műszerablak</i>ban. 
+"BRICX kód MAC-cím" néven jelenik meg,('X' lehet 4 vagy 5) ahol a kód a <i>BRIC</i> négyjegyű kódja, például "0039".<br>
+A <i>BRIC</i> aktuális eszközként való kiválasztásához érintsed meg a bejegyzést a listában.<br><p>
 
 Miután csatlakozott egy ügyfélhez, a <i>BRIC</i> emlékszik a kapcsolatra, még akkor is, ha ki van kapcsolva, ezért marad
  "mindig kapcsolódva".<br>
@@ -90,23 +90,26 @@ A teljes adatok beérkezésekor a TopoDroid rögzíti a <i>BRIC</i> hibakódokat
 <b>Cavway</b><br>
 
 A TopoDroid támogatja a <i>Cavway</i> X1 verzióját.<br>
-Az eszközt korábban „párosítani” kell az Android rendszerrel a <i>Beállítások</i> alkalmazás segítségével.<br>
-Ezután a <i>Cavway</i> az ismert eszközök között szerepel az <i>Eszköz ablakban</i>.
- "CVWYn kód MAC-címként" jelenik meg ("n" 1, "X1" esetén), ahol a kód a <i>Cavway</i> négyjegyű kódja, például "0002".<br>
-A <i>Cavway</i> jelenlegi eszközként való kiválasztásához érintse meg annak bejegyzését a listában.<br><p>
+Mint minden BLE-eszközt, a <i>Cavway</i>-t sem kell párosítani az Androiddal, de felfederíthető a <i>Műszerablak</i> menüjéből. 
+Ha szerepel az alkalmazás adatbázisában, a <i>Cavway</i> megjelenik az ismert műszerek listáján a <i>Műszerablak</i>-ban. 
+"CVWYn kód MAC-címként" jelenik meg ("n" 1, "X1" esetén), ahol a kód a <i>Cavway</i> négyjegyű kódja, például "0002".<br>
+A <i>Cavway</i> jelenlegi eszközként való kiválasztásához érintsed meg annak bejegyzését a listában.<br><p>
 
 A <i>Cavway</i> kalibrálását a készülék végzi, és nem igényel külső programot.
  A kalibrációs adatok azonban letölthetők az alkalmazásból, és a kalibráció a TopoDroidban kiszámítható és feltölthető
  a készülékhez. A <i>Cavway</i> a és a TopoDdroid kalibrációs számítása megegyezik.<br><p>
- 
-<!--
+
+ <b>DiscoX</b><br>
+
+A <i>DiscoX</i> úgy viselkedik, mint az <i>SAP6</i>.<br>
+
 <b>JedEye</b><br>
 
-Csatlakozás közben a <i>JedEye</i> az összes felvételi értéket átviszi az alkalmazásba.<br>
-A csatlakozás nélkül készített felvételek a kapcsolat létrejötte után nem kerülnek továbbításra.<br><p>
+<i>JedEye</i> kapcsolat hasonló a <i>SAP</i>-hoz.<br>
+Csatlakoztatva a <i>JedEye</i> az összes mérést átviszi az alkalmazásba.<br>
+A csatlakozás nélkül készített mérések a kapcsolat létrejötte után nem kerülnek továbbításra.<br><p>
 
 A <i>JedEye</i> adatátviteli protokoll nem tartalmazza a visszaigazolást.<br><p>
 
--->
 
 </body></html>

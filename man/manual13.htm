@@ -1,5 +1,5 @@
 <html><body>
-<!-- ezt újra kell fordítani! -->
+<!-- ezt újra kell fordítani! kellene... -->
 
 <h3> [13] IMPORT EXPORT</h3>
 Ha végeztél, exportáld a felmérési adatokat és a vázlatokat kedvenc formátumodba, és vidd át a
@@ -43,8 +43,8 @@ Zip archívumokat exportálásakor ellenőrizheti, hogy utána azonnal megosztja
 A ZIP-archívumok az aktuális TopoDroid munkamappa <i>zip</i> almappájában tárolódnak.<br>
 A zip-archívum neve a felmérés neve.<br>
 Alapértelmezés szerint a zip fájl felülírásra kerül az archívum újbóli exportálásakor.
-Ha a felhasználó törli a jelet a <i>Felülírás</i> jelölőnégyzetből, a zip-fájlok nem kerülnek felülírásra, és
-a zip fájlnév a felmérés neve, amelyet egy szám követ<br><p>
+ Ha a felhasználó törli a jelet a <i>Felülírás</i> jelölőnégyzetből, a zip-fájlok nem kerülnek felülírásra, és
+ a zip fájlnév a felmérés neve, amelyet egy szám követ<br><p>
 
 A zip-archívumok importálása a <u>főablakból</u> az „Importálás” gombbal történik.<br><p>
 
@@ -120,19 +120,25 @@ A következő export formátumok tovább nem támogatottak:
 <b id="compass">Compass</b> ".dat"<br>
 A <i>Compass</i> adatfájlok importálásakor és exportálásakor egyaránt támogatottak.<br>
 A támogatott adatformátum a "normal" és a "diving".<br>
-Az adategységek „poligon” és „fok” (méterekre és fokra konvertálva a TopoDroid belsejében).<br><p>
+Az adatok mértékegysége a „láb” és a „fok” (amelyeket a TopoDroid méterre és fokra konvertál át).<br>
+Az importált irányszögeket a „dat” fájlban megadott mágneses deklináció alapján korrigáljuk,
+ a TopoDroid-felmérés deklinációját pedig 0-ra állítjuk.<br><p>
 
 Beállítások: <ul style="margin-top=0">
 <li><u>Pont előtag</u>: ha meg van adva, akkor a mérési pont neve elé kerül.</li>
-<li><u>Részletpontok (sünök)</u></li>
-<li><u>B/J csere</u></li>
+<li><u>Részletpontok (sünök)</u>: szerepeljenek-e a sünök az exportban</li>
+<li><u>B/J csere</u>: felcserélje-e a BAL és JOBB oldalakat</li>
 </ul>
+<br><p>
+
+Az állomásprefix tetszőleges karaktersorozat lehet. 
+Alapértelmezés szerint a felmérés neve.
 <br><p>
 
 <b id="csurvey">cSurvey</b> ".csx"<br>
 A <i>cSurvey</i> export fájlokhoz <i>cSurvey</i> 1.20 vagy újabb verzió szükséges.<br>
 A <i>cSurvey</i> exportálás a felmérés <u>információs ablakából</u> csak a
-felmérési adatokat tartalmazza, nem tartalmaz semmi vázlatot.<br>
+ felmérési adatokat tartalmazza, nem tartalmaz semmi vázlatot.<br>
 A <u>rajzablakból</u> kell <i>cSurvey</i> exportot készíteni vázlattal (alaprajz és oldalnézet egyaránt).
 <br><p>
 
@@ -148,6 +154,10 @@ Beállítások: <ul style="margin-top=0">
 
 
 <b id="survex"> Survex</b> ".svx"<br>
+A <i>Survex</i> adatfájlok támogatottak mind importálás, mind exportálás során.<br>
+Az importált irányszögeket a Survex-fájlban megadott mágneses deklináció alapján korrigáljuk,
+ a TopoDroid felmérés deklinációját pedig 0-ra állítjuk.<br><p>
+
 A felmérés adatai exportálhatók <i>Survex</i> fájlként.<br>
 Az adategységek követik a felhasználói beállításokat.<br><p>
 
@@ -162,6 +172,10 @@ Beállítások: <ul style="margin-top=0">
 </ul><p>
 
 <b id="therion"> Therion</b> ".th"<br>
+A <i>Therion</i> adatfájlok támogatottak mind importálás, mind exportálás során.<br>
+Az importált irányszögeket a Therion-fájlban megadott mágneses deklináció alapján korrigáljuk,
+ a TopoDroid felmérés deklinációját pedig 0-ra állítjuk.<br><p>
+
 A felmérés adatait exportálni tudjuk <i>Therion</i> formátumban, "normál" adat formában.<br>
 A TopoDroid felmérés nevét használják a <i>Therion</i> barlang nevére, az "_" aláhúzást szóköz helyettesíti.<br>
 Az adategységek követik a felhasználói beállításokat. <br><p>
@@ -174,14 +188,14 @@ A keresztmetszet segédpontok "-" (kötőjel) mérési ponttal exportálva, a t�
 A megjegyzéseket a megjegyzés (#) alatt exportáljuk.<br><p>
 
 A kiterjesztéshez a "extend &lt;flag&gt;" szintaxist minden poligon előtt használják, a zászló flag "left", "right",
-vagy "vert" lehet. A kiterjesztés nélküli sünökhöz a TopoDroid megjegyzést ír "# extend auto" mert ez nem
-érvényes <i>Therion</i> parancs.<br><p>
+ vagy "vert" lehet. A kiterjesztés nélküli sünökhöz a TopoDroid megjegyzést ír "# extend auto" mert ez nem
+ érvényes <i>Therion</i> parancs.<br><p>
 
 A töredékes kiterjesztést a <i>Therion</i> támogatja az 5.2.2 verzió óta, és exportálva van, ha be van állítva. <br> <p>
 
 
 A rögzített pontok koordinátáit (hosszúsági szélesség és magasság tszf.) exportálják és megjegyzéssel ellátják.
-Ha a pontnak egyedi CRS-koordinátái vannak, akkor ezek is szerepelnek, előtte a CRS neve.<br><p>
+ Ha a pontnak egyedi CRS-koordinátái vannak, akkor ezek is szerepelnek, előtte a CRS neve.<br><p>
 
 Ezenkívül a végén hozzáadódik a th2 fájlok "input" és az egyes szintek térképeinek meghatározása, de megjegyzésbe téve.
  A rajzoknak a <i>Therion</i> <i>PDF</i> kimenetében való megjelenítéséhez megjegyzés nélkül kell lenniük.<br><p>
@@ -205,8 +219,11 @@ A fix pontokat ("fix") elemezzük, de nem vesszük figyelembe, mivel a "cs" nem 
 
 <b id="trobot">TopoRobot</b> ".text"<br>
 A <i>TopoRobot</i> adatfájl import és exportálás során egyaránt támogatott.<br>
+Az importált irányszögeket a TopoRobot-fájlban megadott mágneses deklinációval korrigáljuk,
+ a TopoDroid-felmérés deklinációját pedig 0-ra állítjuk.<br><p>
+
 A felmérés adatai exportálhatók <i>TopoRobot</i> fájlként. A <i>TopoRobot</i> pontok elnevezési házirendjét
-ki kell választani. Ha a pontnevek a <i>TopoRobot</i> "series.number" konvencióját követik, akkor azokat használják.<br><p>
+ ki kell választani. Ha a pontnevek a <i>TopoRobot</i> "series.number" konvencióját követik, akkor azokat használják.<br><p>
 
 A <i>TopoRobot</i> exportálásához a <u>fájlnevet</u> a kiterjesztéssel együtt az exportálási párbeszédpanelen lehet megadni.
  A fájlnév csak alfabetikus karaktereket (a-z és A-Z), valamint számokat (0-9) tartalmazhat.
@@ -214,28 +231,38 @@ A <i>TopoRobot</i> exportálásához a <u>fájlnevet</u> a kiterjesztéssel egy�
  A felmérés neve a fájlban a fájlnév kiterjesztés nélkül.<br>
 Az exportálás az adatok utolsó részére is korlátozható az <u>első mérés</u> index megadásával.<br><p>
 
+Beállítások:<ul style="margin-top=0">
+<li><i>Pont előtag</i>: ha be van állítva, a mérési pont neve elé a felmérés neve kerül</li>
+</ul><br><p>
+
 <b id="vtopo"> VisualTopo</b> ".tro", ".trox"<br>
 A <i>VisualTopo</i> adatfájlok importálásakor és exportálásakor egyaránt támogatottak.<br>
-A VisualTopo sablonok szerepelnek benne, ha engedélyezve vannak.<br>
+Az importált irányszögeket a VisualTopo-fájlban megadott mágneses deklinációval korrigáljuk,
+ a TopoDroid-felmérés deklinációját pedig 0-ra állítjuk.<br><p>
+
+A VisualTopo sünök szerepelnek benne, ha engedélyezve vannak.<br>
 Alapértelmezés szerint a BJFL a CÉL ponton van, de a KEZDŐ pont beállítható.<br>
 Az adategységek „méterek” és „fokok”.<br>
 A <i>búvár</i> adatmódban végzett felmérések "trox" formátumban kerülnek exportálásra.<br><p>
 
 Beállítások: <ul style="margin-top=0">
 <li><u>Tro</u> régi formátumban mentés. Alapértelmezés szerint az adatok "trox" formátumban kerülnek mentésre</li>
-<li><u>Sünök</u></li>
-<li><u>BJFL a Kezdő</u></li> oldalon
-<li><u>Pont series</u>: ha meg van adva, akkor a mérési pont nevéhez fűződik.</li>
+<li><u>Sünök</u>: szerepeljenek-e a sün mérések az exportban</li>
+<li><u>BJFL a Kezdő</u> pontnál</li> 
+<li><u>Pont prefix</u>: ha be van állítva, az állomásnevek az előtaggal egészíthetők ki. Alapértelmezés szerint az előtag a felmérés neve.</li>
 <li><u>Faverjon</u>, hogy a sorozat előtag-e utótag helyett.</li>
 </ul>
 <br><p>
 
 <b id="walls">Walls</b> ".srv"<br>
 A <i>Walls</i> adatfájl import és exportálás során egyaránt támogatott.<br>
+Az importált irányszögeket a Walls-fájlban megadott mágneses deklinációval korrigáljuk,
+ a TopoDroid-felmérés deklinációját pedig 0-ra állítjuk.<br><p>
+
 A felmérés adatai exportálhatók <i>Walls</i> fájlként (részben tesztelve).<br>
 Az adategységek követik a felhasználói beállításokat.<br><p>
 Ha a "Walls Splays" beállítás be van állítva, akkor a felvételek "elnevezett" splayekként exportálódnak (mint a <i>Compass</i> esetében).
-Ellenkező esetben "névtelen pontfelvételként" exportálják őket (wall-shots).
+ Ellenkező esetben "névtelen pontfelvételként" exportálják őket (wall-shots).
 <p>
 
 Beállítások:<ul style="margin-top=0">
@@ -247,19 +274,24 @@ Beállítások:<ul style="margin-top=0">
 A felmérés adatai exportálhatók <i>WinKarst</i> fájlként (nincs tesztelve).<br><p>
 
 Beállítások:<ul style="margin-top=0">
-<li><u>Pont előtag</u>: ha meg van adva, akkor a mérési pont neve elé kerül.</li>
+<li><u>Pont előtag</u>: ha meg van adva a mérési pont előtag, akkor a mérési pont neve elé kerül.</li>
 </ul>
 <br><p>
 
+A mérési pontnév-előtag tetszőleges karaktersorozat lehet. 
+Alapértelmezés szerint ez a felmérés neve.
+<br><p>
+
+<!--
 <b id="ptopo"> PocketTopo</b> ".top"<br>
 A TopoDroid csak az importálás során támogatja a <i>PocketTopo</i>-t.<br><p>
 
-<!--
+
 A <i>PocketTopo</i> export csak a felmérés adatait tartalmazza.<br><p>
 Ha a pontok elnevezési házirendje "TopoRobot" értékre van állítva, és a pontnevek a "sorozat.szám" TopoRobot konvenciót követik
 ezeket használják az exportálás során, különben a neveket számokká konvertálják.
 Az ábécés karakterek minden karaktert két számjeggyel helyettesítenek. Pontosabban az „a” a „00”, a „b” a „01” és így tovább, „A” az „50”, a „B” az „51” stb. Minden más karakter (azaz nem alfanumerikus) a 99-re kerül.<br><p>
--->
+
 
 A <i>PocketTopo</i> fájlok importálásának vagy ".top" vagy ".TOP" kiterjesztéssel kell rendelkeznie.<br>
 A "outline" és a "profile" vázlatokat importálja.
@@ -268,11 +300,12 @@ Ezért <a href="page_pt_cmap.htm"> leképezést</a> alkalmaznak a színektől a 
 
 Előfordulhat, hogy az importált vázlat nincs összehangolva a felmérés adataival. Ebben az esetben áthelyezheti a vázlatot a
 <u>vázlatablak</u>, hogy illeszkedjen a poligonhoz.<br><p>
+-->
 
 
 <b id="polygon">Polygon</b> ".cave"<br>
 A TopoDroid felmérési adatokat exportálhat <i>Polygon</i> formátumban.
-A fix pontokat lat-long formátumban exportálják.<br>
+ A fix pontokat lat-long formátumban exportálják.<br>
 Az exportáláskor választható, hogy a sünöket alakítsa át BJFL adatokká vagy számozza be S_x formátumban vagy egy - jelet tegyen a mérési végpont nevébe. A - jelet a Polygon program elfogadja, de nem támogatja (valódi pontnévként kezeli és a hurokzárásnál minden végpontot összeköt).<br><p>
 
 <!--
@@ -283,8 +316,8 @@ A TopoDroid a felmérés adatait exportálhatja <i>GHTopo</i> formátumban (rés
 <!--
 <b id="grottolf"> Grottolf</b> ".grt"<br>
 A TopoDroid felmérési adatokat exportálhat <i>Grottolf</i> formátumban (nem tesztelt).
-Ha az első pont földrajzi koordinátákkal rendelkezik, ezeket exportáljuk, különben helyi koordinátákat használunk.
-A pontok profilját úgy számolják, hogy a sün felvételeket egy a poligonra merőleges függőleges síkra vetítik.<br><p>
+ Ha az első pont földrajzi koordinátákkal rendelkezik, ezeket exportáljuk, különben helyi koordinátákat használunk.
+ A pontok profilját úgy számolják, hogy a sün felvételeket egy a poligonra merőleges függőleges síkra vetítik.<br><p>
 -->
 
 <b id="topo"> Topo</b> ".cav"<br>
@@ -345,8 +378,8 @@ Az adatokat a mágneses deklinációval korrigáljuk.<br><p>
 
 <b id="kml"> KML</b> ".kml"<br>
 A felmérés adatai exportálhatók KML fájlként (<i>Keyhole Markup Language</i>), ha legalább egy pont georeferált.
-Ha a felmérés szétválasztott darabokat tartalmaz, akkor a KML export tartalmazza az összes darabot georeferált ponttal.
-Az adatokat a mágneses deklinációval korrigáljuk.<br><p>
+ Ha a felmérés szétválasztott darabokat tartalmaz, akkor a KML export tartalmazza az összes darabot georeferált ponttal.
+ Az adatokat a mágneses deklinációval korrigáljuk.<br><p>
 
 Beállítások: <ul style="margin-top=0">
 <li><u>pontok</u></li>
@@ -356,9 +389,9 @@ Beállítások: <ul style="margin-top=0">
 
 <b id="geojson"> GeoJSON</b> ".json"<br>
 A felmérés adatai exportálhatók GeoJSON fájlként (<i>RFC 7946</i>), ha legalább egy pont georeferált.
-A mérések exportálása <i>LineString</i>, a pontok <i>Point</i>.
-Ha a felmérés különálló darabokat tartalmaz, akkor a GeoJSON export tartalmazza az összes darabot egy georeferált ponttal.
-Az adatokat a mágneses deklinációval korrigáljuk.<br><p>
+ A mérések exportálása <i>LineString</i>, a pontok <i>Point</i>.
+ Ha a felmérés különálló darabokat tartalmaz, akkor a GeoJSON export tartalmazza az összes darabot egy georeferált ponttal.
+ Az adatokat a mágneses deklinációval korrigáljuk.<br><p>
 
 Beállítások: <ul style="margin-top=0">
 <li><u>pontok</u></li>
@@ -374,15 +407,15 @@ Az adatok <i>WGS84</i> földrajzi koordináta-rendszerben vannak.
 
 <b id="shp">Shapefile</b> ".shz"<br>
 A felmérés adatai exportálhatók shape fájlként.
-Van egy shape fájl a pontokhoz és egy a mérésekhez (mind a poligonok, mind a sünök).
-Ha a felmérés szétválasztott darabokat tartalmaz, akkor egy-egy georeferált ponttal egy-egy alakzatot exportálunk.
-Az adatokat a mágneses deklinációval korrigáljuk.
-Minden elem három fájlból áll: az adatfájlból (shp), az indexfájlból (shx) és az attribútumfájlból (dbf).
-A fájlok tömörítve vannak, és a zip az "shp" mappába kerül. ".shz" kiterjesztéssel.
+ Van egy shape fájl a pontokhoz és egy a mérésekhez (mind a poligonok, mind a sünök).
+ Ha a felmérés szétválasztott darabokat tartalmaz, akkor egy-egy georeferált ponttal egy-egy alakzatot exportálunk.
+ Az adatokat a mágneses deklinációval korrigáljuk.
+ Minden elem három fájlból áll: az adatfájlból (shp), az indexfájlból (shx) és az attribútumfájlból (dbf).
+ A fájlok tömörítve vannak, és a zip az "shp" mappába kerül. ".shz" kiterjesztéssel.
 <br><p>
 
 Ha legalább egy pont georeferált, és az exportálás párbeszédpanelen bejelölte a megfelelő jelölőnégyzetet,
-az adatokat a <i>WGS84</i> referenciarendszerbe exportáljuk, és a mágneses deklinációval korrigáljuk.<br>
+ az adatokat a <i>WGS84</i> referenciarendszerbe exportáljuk, és a mágneses deklinációval korrigáljuk.<br>
 Ellenkező esetben az adatokat helyi koordinátákban exportáljuk, és a mágneses deklinációs korrekciót nem alkalmazzuk.<br><p>
 
 Az "stations" <i>DBF</i> csak a "name" mezőt tartalmazza.<br><p>
@@ -425,15 +458,15 @@ A következő export formátumok a későbbiekben nem támogatottak:
 <br><p>
 
 A vázlatablak és az áttekintő ablak képernyőképeit a hangerő növelő gombbal lehet készíteni.
-A képernyőképeket a rendszer a felmérés "out" mappájába menti.<br><p>
+ A képernyőképeket a rendszer a felmérés "out" mappájába menti.<br><p>
 
 <b id="csx">cSurvey</b> ".csx"<br>
 A <i>cSurvey</i> export fájlokhoz <i>cSurvey</i> 1.20 vagy újabb verzió szükséges.<br>
 Ezek az exportok tartalmazzák a alaprajz- és oldalnézet vázlatokat, valamint a felmérés adatait.
-A "section" pontok megadásakor határozza meg a metszetrajzokat.<br>
+ A "section" pontok megadásakor határozza meg a metszetrajzokat.<br>
 
 A <i>cSurvey</i> "cave" attribútumot a felmérés nevével és az "branch" attribútumot a vázlat nevével állítják be ("p" vagy "s" utótag nélkül).
-A poligonok és sünök, valamint a vázlat elemek megosztják ezeket az attribútumokat.<br><p>
+ A poligonok és sünök, valamint a vázlat elemek megosztják ezeket az attribútumokat.<br><p>
 
 Ha a felmérésnek csak egy vázlata van, akkor ez a munka teljes exportálása (kivéve a keresztmetszeteket).
 Ha a felmérésnek több vázlata van, akkor minden vázlatot külön kell exportálnia, és egyesítenie kell az exportot a <i>cSurvey</i> szolgáltatással.<br><p>
@@ -447,9 +480,9 @@ Beállítások: <ul style="margin-top=0">
 
 <b id="th2">Therion</b> ".th2"<br>
 A vázlatok <i>Therion</i> formátumban vázlatonként egy fájlként kerülnek exportálásra, ha a <u>vázlatablakból</u> exportálják őket,
-vagy egy fájlként, amely tartalmazza az összes vázlatot ugyanazzal a nézettel, alaprajzzal vagy oldalnézettel, ha exportálják
-az <u>áttekintő ablakból</u>. Ez utóbbiban van egy szint az egyes vázlatokhoz, és a keresztmetszet vázlatok
-ha az automatikus "metszet" pontok engedélyezve vannak.
+ vagy egy fájlként, amely tartalmazza az összes vázlatot ugyanazzal a nézettel, alaprajzzal vagy oldalnézettel, ha exportálják
+ az <u>áttekintő ablakból</u>. Ez utóbbiban van egy szint az egyes vázlatokhoz, és a keresztmetszet vázlatok
+ ha az automatikus "metszet" pontok engedélyezve vannak.
 <br><p>
 
 A <i>Therion</i> <i>scrap</i> nevek a felmérés nevéből, a vázlat nevéből és egy utótagból állnak, vagy „p”, a alaprajzhoz, vagy „s”, a profilhoz.<br>
@@ -632,12 +665,12 @@ Az alapértelmezett export méretaránya 1:100.
 <br><p>
 
 Ha a sün osztályok engedélyezve vannak, akkor a segédpontok színe: a normál sün szürke,
-vízszintesen világos tengerzöld, függőlegesen világos acélkék és a keresztmetszet világos égkék.
-A Sün-osztályok nem támogatottak az "round-trip" exportálás során.
+ vízszintesen világos tengerzöld, függőlegesen világos acélkék és a keresztmetszet világos égkék.
+ A Sün-osztályok nem támogatottak az "round-trip" exportálás során.
 <br><p>
 
 A vonaleffektusok, mint például az eséstüskék a gödörvonalakban, nem exportálódnak, hanem a vonal irányt jelenítik meg 
-a „Vonal irány” beállítás engedélyezésével.<br><p>
+ a „Vonal irány” beállítás engedélyezésével.<br><p>
 
 <u>Megjegyzés</u>. A <i>SVG</i> vázlat exportálását a <i>Inkscape</i> és a <i>Firefox</i> használatával ellenőriztük.
 <br><p>
@@ -647,7 +680,7 @@ Beállítások: <ul style="margin-top=0">
 <!-- li>Rajz <u>metszet-pont</u>: ha a metszetek automatikusan hozzáadódnak a metszetek vonalához,
 a metszetrajz beillesztésre kerül az exportálásba, a "metszet" pontba</li -->
 <li>automatikus <u>poligon-pontok</u>: ha engedélyezve van, akkor az összes pont szerepel az exportálásban,
-egyébként csak a felhasználó által kiválasztott pontok szerepelnek</li>
+ egyébként csak a felhasználó által kiválasztott pontok szerepelnek</li>
 <li><u>elem csoportosítás</u> típus szerint (pl. <i>Therion</i> név)</li>
 <li><u>pontok távolsága</u> az interpolációs pontok közötti maximális távolság a sima vonalakon</li>
 <li><u>round-trip</u>: a vázlatok exportálása a <i>Walls</i>/<i>Compass</i> round-trip módban. [nem]</li>
@@ -694,7 +727,7 @@ A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importál
 </li>
 <li><b>Therion</b>:
    <ul>
-     <li><i>térképparancsok</i> a poligonvonal blokk előtt vagy után [után]</li>
+     <li><i>térkép parancsok</i> a poligonvonal blokk előtt vagy után [után]</li>
      <li><i>auto-mérési pontok</i>: mérési pontok automatikus hozzáadása a <i>Therion</i> vázlatfájl(ok)hoz [igen]. Ha a vázlatfájlokat a Therionban akarja használni, azoknak mérési pontokkal kell rendelkezniük a léptékük meghatározásához. Manuálisan kiválaszthatja, hogy melyik pontot kívánja hozzáadni (a vázlatrajz szerkesztésével), vagy hagyhatja, hogy a TopoDroid hozzáadja a pontokat. A program hozzáadja az összes olyan pontot, amely "belül" van a rajzon (a rajz konvex héjon belül).</li>
      <li><i>megjeleníti</i> sorokat a Therionban [igen]</li>
    </ul>
@@ -714,11 +747,11 @@ A <a href="page_calib_import.htm"> kalibrációkat</a> exportálni és importál
      <li><i>sorvég</i>: Linux vagy Windows [Linux]</li>
    </ul>
 </li>
-<li><b>PocketTopo</b>:
+<!-- li><b>PocketTopo</b>:
    <ul>
      <li><i>színtérkép importálása</i>: a <i>PocketTopo</i> színeinek térképe elemtípusok vázolásához.</li>
    </ul>
-</li>
+</li -->
 <li><b>SVG</b>:
    <ul>
      <li>cél <i>program</i> [Inkscape]</li>

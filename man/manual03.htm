@@ -10,6 +10,8 @@ A TopoDroid egyszerre csak egy műszerrel működik.
 Kiválasztásához érintse meg a bejegyzést a listán. A kiválasztott műszer neve fent látható, közvetlenül a gombok alatt.
 Ha nincs kiválasztva műszer, piros üzenet jelenik meg, amely "A műszer nincs kiválasztva".<br><p>
 
+Ha meg van adva, az alternatív eszköz neve sárga színnel jelenik meg alább, amennyiben a kapcsolat módja nem „folyamatos”.<br><p>
+
 <b>Támogatott műszerek</b><br>
 A TopoDroid csak az Android rendszerhez csatlakoztatott és párosított műszereket használja.
 A műszereket a rendszer az Androiddal párosított műszerek listájából választja ki a Bluetooth-nevük alapján.<br>
@@ -40,9 +42,17 @@ Végül lehetőség van egy műszer „elfelejtésére” is: ez gyakorlatilag e
 
 <h4>AKCIÓK</h4>
 <ul style = "margin-top = 0">
-<li>megérintve a műszer bejegyzését, az az aktív műszer lesz</li>
+<li>megérintve a műszer bejegyzését, az a jelenleg aktív műszer lesz</li>
 <li>a műszer bejegyzésének hosszú megérintésével megnyílik egy <a href="page_device_name.htm"> párbeszéd ablak </a> amivel szerkesztheted a műszer tulajdonságokat</li>
 </ul><br><p>
+
+<b>Műszer tulajdonságai</b><br>
+Alapértelmezés szerint a TopoDroid a műszer Bluetooth MAC-címét használja a műszer neveként.
+ A műszereknek <u>becenevet</u> is adhatunk, hogy könnyebben megkülönböztethetők legyenek egymástól.<br><p>
+Bár a TopoDroid egyszerre csak egy műszerrel dolgozik, lehetővé teszi egy <u>másodlagos műszer</u> beállítását is.
+ Ez a funkció felgyorsítja a két műszer közötti váltást a felmérés során.<br><p>
+Végezetül lehetőség van a műszer <u>elfelejtésére</u> is: ez ténylegesen eltávolítja a műszert a TopoDroid adatbázisából,
+ valamint az Android csatlakoztatott eszközei közül (amennyiben párosítva voltak).<br><p>
 
 <h4>GOMBOK</h4>
 <ul style = "margin-top = 0">
@@ -98,7 +108,7 @@ A <i>SAP</i> PIN-kódja „000000”, hat nulla.<br><p>
 
 A következő beállítások csak a DistoX-ra vonatkoznak (amely a klasszikus bluetooth-ot használja).
 <ul style = "margin-top = 0">
-<li><i>Csatlakozási mód</i>: "igény szerint", "folyamatos" vagy "több" [alapértelmezett "igény szerint"]</li>
+<li><i>Csatlakozási mód</i>: "igény szerint", "folyamatos" vagy "több-kötegelt" [alapértelmezett "igény szerint"]</li>
 <!-- li><i>Automatikus újracsatlakozás</i>: automatikusan újracsatlakozik, ha a kapcsolat megszakad "folyamatos" adatletöltési módban [alapértelmezett "nem"]</li -->
 <li>DistoX <i>Socket</i> típus: "alapbeállítás" vagy "nem biztonságos" [az alapértelmezett "nem biztonságos"]</li>
 <!-- li>DistoX <i>Z6-megkerülő megoldás</i>: a letöltés időkorlátját egy Z6-os telefonon és esetleg más műszerekön. Nyugodtan hagyhatja ezt engedélyezve [alapértelmezett "be"]</li -->
@@ -110,14 +120,13 @@ Három csatlakozási mód van a DistoX/Cavway számára.
 <ul>
 <li><i>igény szerint</i> módban az adatok sorozatban kerülnek letöltésre, és amikor nincs több adat letöltésére, a kapcsolat le van zárva.</li>
 <li><i>folyamatos</i> módban a TopoDroid kapcsolatban marad a műszerrel, és a mérések azonnal letöltődnek.
-Amikor a műszer és az Android kapcsolata megszakad, a TopoDroid ismételten megpróbálja újracsatlakozni.
-Ellenkező esetben a bluetooth kapcsolat bezáródik.</li>
-<li>a <i>több</i> mód olyan, mint az „igény szerinti” mód, de hosszú érintés a „letöltés” gombra, a <i>Mérés</i> ablakban vagy a <i>Vázlat</i> ablakban, 
-megváltoztatja a műszert. Ha beállítottál egy "második" DistoX/Cavway-t (a <i>Műszer</i> ablakban), akkor felcseréli az aktuális ismert műszerrel. 
-Ellenkező esetben párbeszédpanelt kapsz, hogy kiválassz egyet a párosított műszerek közül.</li>
+ Amikor a műszer és az Android kapcsolata megszakad, a TopoDroid ismételten megpróbálja újracsatlakozni.
+ Ellenkező esetben a bluetooth kapcsolat bezáródik.</li>
+<li>A <i>több-kötegelt</i> mód olyan, mint az „igény szerinti” mód, de hosszú érintés a „letöltés” gombra, a <i>Mérés</i> ablakban vagy a <i>Vázlat</i> ablakban, megváltoztatja a műszert. Ha beállítottál egy "második" DistoX/Cavway-t (a <i>Műszer</i> ablakban), akkor felcseréli az aktuális ismert műszerrel. 
+ Ellenkező esetben párbeszédpanelt kapsz, hogy kiválassz egyet a párosított műszerek közül.</li>
 </ul>
 <br>
-A "több" módban az aktuális műszer a <i>Mérés</i> és a <i>Vázlat</i> ablakok címében jelenik meg.<br>
+A "több-kötegelt" módban az aktuális műszer a <i>Mérés</i> és a <i>Vázlat</i> ablakok címében jelenik meg.<br>
 A csatlakozási mód csak az adatok letöltésére vonatkozik. A műszer egyéb funkciói egylépéses lekérdezési módot használnak.
 <br><p>
 
