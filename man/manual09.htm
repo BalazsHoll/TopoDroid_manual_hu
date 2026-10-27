@@ -158,7 +158,8 @@ A <b>rajz</b> módban a zöldeken kívül öt gomb található:
 <li><img src="btn_text.png"  width="36" border="1"> <i>Szöveg</i> beillesztése</li>
 <li><img src = "btn_cont.png" width="36" border="1"> vonal <i>csatlakozás</i> (csak vonalaknál és ha engedélyezett)</li>
 </ul><br><p>
-Az <i>eszközök</i> gomb ikonja a rajzeszközök aktuális típusát tükrözi: pontokat, vonalakat vagy területeket.<br>
+Az <i>eszközök</i> gomb ikonja a rajzeszközök aktuális típusát jelzi: pontok, vonalak vagy területek.
+Vonalak és területek esetén a rajzolási módot is mutatja: normál, nyomvonal-követő vagy vágó mód.<br>
 A <i>szöveg</i> gomb lehetővé teszi egy „címke” típusú pont beszúrását a „címke” ponteszközök párbeszédpanelje nélkül.<br>
 A vonal <i>csatlakoztatás</i> csak azoknál a vonalaknál jelenik meg, amikor a visszakövetés nem aktív. Ha aktív, egy új vonal kezdődik és/vagy végződik ugyanazon csoport vonala közelében.<br>
 A "Vonalkötés" nincs hatással azokra a vonalakra, amelyeket nem lehet összekapcsolni (pl. "metszet" vonal).<br><p>
@@ -199,7 +200,13 @@ A gombok némileg eltérnek a keresztmetszet vázlatoknál.
 <li> A kiterített oldalnézetben a <i>alaprajz/oldalnézet</i> gomb hosszú megérintésével megfordíthatod a vázlatot [N].
  Ha a referencia párbeszédpanel <I>Fix kiterítések</i> jelölőnégyzete nincs beállítva, a mérések "kiterítése" is megfordul.</li>
 <li> A keresztmetszeteknél átválthatja a sünök megjelenítését, amelyek a metszetsíkon kívül vannak [T].</li>
-<li>Az <i>eszközök</i> gomb hosszú érintésével be- és kikapcsolhatod a vonalcserét (csak vonal és terület esetén) [A]</li>
+<li>Az <i>eszközök</i> A gomb váltogat az üzemmódok között: normál, visszakövető, vágó. (csak vonal és terület esetén) [A]</li>
+<img src="btn_tools_line.png" width="36" border="1">
+<img src="btn_tools_line_cont.png" width="36" border="1">
+<img src="btn_tools_line_clip.png" width="36" border="1">
+<img src="btn_tools_area.png" width="36" border="1">
+<img src="btn_tools_area_cont.png" width="36" border="1">
+<img src="btn_tools_area_clip.png" width="36" border="1">
 <li> A <i>törlés</i> gomb hosszú megérintésével eltávolítja a kijelölt pontot a vonalon vagy területen [N].</li>
 <!-- li>Ha hosszan érinted az elem <i>tulajdonságok szerkesztése</i> gombját, amikor a kiválasztott elem egy metszet pont, megnyílik a keresztmetszet vázlat [T].</li -->
 </ul><br><p>
@@ -225,8 +232,8 @@ Minden export két fájlt generál, az egyiket az alaprajzhoz másikat az oldaln
 <li><u>Súgó</u></li>
 </ul><br><p>
 
-<b>Hosszú koppintások</b><br>
-A következő műveletek hosszú koppintással indíthatók el:
+<b>Hosszú érintések</b><br>
+A következő műveletek hosszú érintéssel indíthatók el:
 <ul>
 <li><u>Bezárás/Váltás</u> átvált egy másik vázlatra.</li>
 <li><u>Újratöltés</u> visszaállítja az elemszimbólumokat.</li>
@@ -259,7 +266,7 @@ A következő műveletek hosszú koppintással indíthatók el:
     <li> Vonal <i>stílus</i>: finom, normál, durva, "spline" (interpolált görbe), ritkított</li>
 	<li><i>Zárás</i>: be kell-e zárni a "zárt" típusú vonalakat. [igen]</li>
     <li> Vonal <i>pontok távolsága</i>: a vonalpontok távolsága normál stílusban [10 px]</li>
-	<li><i>Vonal levágás</i>: vágja-e a vonalakat/területeket a falnál (határvonal) [nem] </li>
+	<!-- li><i>Vonal levágás</i>: vágja-e a vonalakat/területeket a falnál (határvonal) [nem] </li -->
     <li><i>Irány pipa hossza</i> a keresztmetszet vonalakhoz [5 px]</li>
     <li><i>Metszetpontok</i>: hozzáadja-e a "metszet" pontot automatikusan a "metszet" vonalakhoz [alapértelmezett igen]</li>
     <!--li> Vonal <i>alapértelmezett csatlakozási mód</i>: nincs, kezdet, vég, mindkettő, "folytatás"</li -->
