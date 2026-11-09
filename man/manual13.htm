@@ -15,7 +15,7 @@ A felmérési vázlatok a <u>vázlatablakból</u> (egyetlen vázlat) és az <u>�
 
 A TopoDroid zip archívumok a "TopoDroid" <i>zip</i> almappában tárolódnak.<br><p>
 
-Az exportált adatok és vázlatfájlok a felmérés mappa "out" almappájában tárolódnak.<br><p>
+Az exportált adatok és vázlatfájlok a felmérés mappa <i>out</i> almappájában tárolódnak.<br><p>
 
 A 3D modellek exportálásának célfájlját a rendszer fájlkezelővel kell kiválasztani.<br><p>
 <!-- 
@@ -408,10 +408,11 @@ Az adatok <i>WGS84</i> földrajzi koordináta-rendszerben vannak.
 <b id="shp">Shapefile</b> ".shz"<br>
 A felmérés adatai exportálhatók shape fájlként.
  Van egy shape fájl a pontokhoz és egy a mérésekhez (mind a poligonok, mind a sünök).
- Ha a felmérés szétválasztott darabokat tartalmaz, akkor egy-egy georeferált ponttal egy-egy alakzatot exportálunk.
+ Ha a felmérés egymással össze nem függő részeket tartalmaz, akkor minden egyes részhez – amely egy georeferált állomáspontot is magában foglal – külön shapefile készül.
  Az adatokat a mágneses deklinációval korrigáljuk.
- Minden elem három fájlból áll: az adatfájlból (shp), az indexfájlból (shx) és az attribútumfájlból (dbf).
- A fájlok tömörítve vannak, és a zip az "shp" mappába kerül. ".shz" kiterjesztéssel.
+ Minden shapefile négy fájlból áll: az adatfájlból ".shp" kiterjesztéssel, az indexfájlból ".shx", az attribútumfájlból ".dbf", és a karakter-kódolást megadó ".cpg" fájlból.
+ Ha a georeferált pont koordináták WGS84 földrajzi koordináták, vagy UTM-rendszerbe vannak átszámítva, akkor minden shapefile-hoz tartozik egy „.prj” fájl is.
+ A fájlok tömörítve vannak, és a zip az <i>out</i> mappába kerül. ".shz" kiterjesztéssel.
 <br><p>
 
 Ha legalább egy pont georeferált, és az exportálás párbeszédpanelen bejelölte a megfelelő jelölőnégyzetet,
@@ -458,7 +459,7 @@ A következő export formátumok a későbbiekben nem támogatottak:
 <br><p>
 
 A vázlatablak és az áttekintő ablak képernyőképeit a hangerő növelő gombbal lehet készíteni.
- A képernyőképeket a rendszer a felmérés "out" mappájába menti.<br><p>
+ A képernyőképeket a rendszer a felmérés <i>out</i> mappájába menti.<br><p>
 
 <b id="csx">cSurvey</b> ".csx"<br>
 A <i>cSurvey</i> export fájlokhoz <i>cSurvey</i> 1.20 vagy újabb verzió szükséges.<br>
@@ -601,9 +602,10 @@ Beállítások:<ul style="margin-top=0">
 -->
 <b id="shp2">Shapefile</b> ".shp"<br>
 A vázlatok shape fájlként exportálhatók pontokkal, mérésekkel és vonalakkal.
- Minden elemnek három fájlja van: a shape adatfájl, a shape index és az adatbázis fájl.
+ Minden shapefile négy fájlból áll: az adatfájlból ".shp" kiterjesztéssel, az indexfájlból ".shx", az attribútumfájlból ".dbf", és a karakter-kódolást megadó ".cpg" fájlból.
+ Ha a georeferált pont koordináták WGS84 földrajzi koordináták, vagy UTM-rendszerbe vannak átszámítva, akkor minden shapefile-hoz tartozik egy „.prj” fájl is.
  A <i>shapefile</i> exportot tartalmazó fájlok tömörítve vannak, a zip fájlok az
- "shp" mappában ".shz" kiterjesztéssel.<br><p>
+ "out" mappában ".shz" kiterjesztéssel.<br><p>
 
 Ha legalább egy poligon pont georeferált, és az exportálás párbeszédpanelen bejelölöd a megfelelő jelölőnégyzetet,
  az adatokat a <i>WGS84</i> referenciarendszerbe exportáljuk, és a mágneses deklinációval korrigáljuk.<br>

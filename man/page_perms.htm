@@ -1,14 +1,12 @@
 <html><body>
 <h4>Android-ENGEDÉLYEK</h4>
 
+A <i>tárhely-hozzáférés</i> és a <i>Bluetooth</i> kötelező engedélyek.
+Ezek nélkül az alkalmazás nem működik.<br>
+
 <b>Tárolás</b><br>
 A TopoDroid a felmérési adatokat és vázlatokat, valamint a kalibrációkat az <i>elsődleges külső tárhely</i>re menti.<br>
 Nem tud működni a tároló olvasási/írási hozzáférése nélkül.
-<br><p>
-
-<b>Internet</b><br>
-A hálózati kapcsolat szükséges a felhasználói kézikönyv fordításának telepítéséhez, valamint a mesterséges intelligencia által nyújtott súgó és beállítási asszisztensek használatához.<br>
-A TopoDroid semmilyen más módon nem használja a hálózatot, és biztonságosan letilthatja ezt az engedélyt, ha nem szeretné használni a mesterséges intelligencia által nyújtott segítséget, vagy telepíteni a felhasználói kézikönyv fordításait.
 <br><p>
 
 <b>Bluetooth</b><br>
@@ -16,25 +14,32 @@ A TopoDroid Bluetooth-hozzáférést igényel a műszerekkel való kommunikáci�
 Ha a felmérés adatait kézzel adják meg, akkor bluetooth nélkül is használhatók.<br>
 A TopoDroid bluetooth párosítást is használ az újonnan felfedezett eszközök párosításához.
 A DistoX2 felderítése és párosítása a „beállítások” alkalmazással végezhető el.<br>
-A BLE eszközök felderítését maga a TopoDroid végzi.
+A BLE-eszközök felderítését maga a TopoDroid végzi, amihez <i>Helymeghatározási</i> engedély szükséges.
+<br><p>
+
+<b>Helymeghatározás</b><br>
+A helymeghatározás megadása nem kötelező, de a BLE-eszközök kereséséhez elengedhetetlen.<br>
+A TopoDroid az eszköz GNSS-rendszerét használja egy pont földrajzi helyzetének meghatározására, de az adatok <a href="page_fixed_import.htm">külső alkalmazásokból</a> is importálhatók.<br>
+A GNSS emellett arra is szolgál, hogy a 3D-s megjelenítőben nyomon kövessen egy pontot a digitális magasságmodell (DEM) felületén.
 <br><p>
 
 <b>Kamera</b><br>
+A kamera-engedély nem kötelező.<br>
 A TopoDroid használhatja a kamerát képek készítésére.<br>
-A TopoDroid kamera kezelése nem annyira funkciókban gazdag, mint egy "kamera" alkalmazásé, de tárolja
-a képek tájolását (irány és lejtés). <br>
-Biztonságosnak kell lennie a TopoDroid ezen engedély nélkül történő használatának.
+A TopoDroid kamera kezelése nem annyira funkciókban gazdag, mint egy "kamera" alkalmazásé, de tárolja a képek tájolását (irány és lejtés).
 <br><p>
 
 <b>Hang</b><br>
-A TopoDroid a mikrofon segítségével hangjegyzeteket rögzít (mérésekhez és hangpontokhoz). <br>
+A hangengedély nem kötelező.<br>
+A TopoDroid a mikrofon segítségével hangjegyzeteket rögzít (mérésekhez és hangpontokhoz).<br>
 Ha ezt az engedélyt nem kapják meg, akkor a hangfelvétel le van tiltva. <br>
 Biztonságosnak kell lennie a TopoDroid ezen engedély nélkül történő használatának.
 <br><p>
 
-<b>Hely</b><br>
-A TopoDroid a GNSS (GPS) készülék segítségével rögzíti a pont földrajzi helyzetét, de importálni is tudja azt egy <a href="page_fixed_import.htm">külső alkalmazásból</a>.<br>
-Biztonságosan működik a TopoDroid enélkül az engedély nélkül is.
+<b>Internet</b><br>
+A felhasználói kézikönyv fordításának telepítéséhez hálózati kapcsolat szükséges.<br>
+A TopoDroid a hálózati hozzáférést a funkciók használati gyakoriságára vonatkozó adatok továbbítására is felhasználja.
+Erre havonta mindössze egyszer kerül sor, és az adatforgalom mértéke igen csekély.
 <br><p>
 
 
