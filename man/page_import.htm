@@ -51,16 +51,33 @@ A <i>TopoDroid</i> csak egyetlen felmérési munkamenettel rendelkezik. Ezért a
 <br><p>
 
 <b>Therion importálás</b> ".th"<br>
-<u>A <i>Therion</i> szintaxis részben támogatott.</u><br>
+<u>A <i>Therion</i> szintaxis nem teljesen támogatott.</u><br>
 Csak azok a <i>Therion</i> felmérési fájlok importálhatók, amelyek adatai "normál" adatmódban vannak.<br>
-A "deklináció" parancsot figyelembe vesszük: a beolvasott azimutot korrigáljuk a deklináció értékével.<br>
+Az első talált "dátum" kerül felhasználásra az importáláshoz.
+ Ha nincs megadva "dátum", a felmérés dátuma az aktuális dátumra lesz állítva.<br>
+A "team" nevek és szerepek nincsenek megfelelően kezelve.<br>
+A "declination" parancsot figyelembe veszi, de ha dátummal rendelkezik, akkor a dátumot nem kezeli.
+ Az adatok azimutjait a deklináció értékével korrigálják.<br>
+A „grid-angle” parancs figyelmen kívül marad.<br>
+A felismert állomásjelek ("mark") a következők: „fixed”, „painted” és „temporary”.<br>
+A mérés „flag” a következő lehet: „duplicate”, „surface”, „surface” és „approximate”.<br>
 Ha a mérési pontok rövid nevei között nincs ütközés, a fájl importálható "rövid nevekkel".
  Ellenkező esetben teljes névvel kell importálni, azaz a felmérési útvonal által minősített nevekkel.<br>
-A <i>TopoDroid</i> nem importálja a <i>Therion</i> szinteket.<br><p>
+A „centerline” blokkon belüli „grade” parancs figyelmen kívül marad.
+ Ha a „centerline” blokkon kívül található, akkor a „grade” és az „endgrade” közötti teljes tartalom elvetésre kerül.<br>
+A „comment” és az „endcomment” közötti teljes tartalom elvetésre kerül.<br>
+A „scan” és az „endscan” közötti teljes tartalom elvetésre kerül.<br>
+A TopoDroid nem importálja a „map” és a „scrap” elemeket; minden rajzi elem figyelmen kívül marad.<br><p>
 
-A TopoDroid támogatja a Therion „input” parancsát. Ezért a teljes Therion projektek importálhatók egyetlen felmérésként, a legfelső Therion fájlból kiindulva.<br>
+A TopoDroid támogatja az „input” parancsot, de a fájlnévnek „.th” végződésűnek kell lennie.
+Ennek köszönhetően teljes Therion-projektek importálhatók egyetlen felmérésként, a legfelső szintű Therion-fájlból kiindulva.<br>
+
 Az állomások teljes neveit kell használni.<br>
-A felmérési fájlokban szerepelnie kell a „deklináció” parancsnak, ha a dátumok hosszú időszakot ölelnek fel.<br><p>
+A felmérési fájlokban szerepelnie kell a „declination” parancsnak, ha a dátumok hosszú időszakot ölelnek fel.<br><p>
+
+A feldolgozással kapcsolatos parancsok (<i>layout</i>, <i>source</i>, <i>export</i> stb.) nem támogatottak.<br><p>
+
+A <i>Therion</i>-importálási párbeszédablakban található egy gomb, amely lehetővé teszi, hogy a fájlútvonal és a felmérési útvonal (survey path) bekerüljön az állomások nevébe. Egyszerű importálás esetén nyugodtan hagyhatjuk kikapcsolva ezt a funkciót.<br><p>
 
 <b>VisualTopo importálás</b> ".tro" és ".trox"<br>
 <u><i>VisualTopo</i> szintaxis részben támogatott.</u><br>
