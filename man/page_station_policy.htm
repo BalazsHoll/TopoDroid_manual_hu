@@ -1,6 +1,6 @@
 <html><body>
 
-<h1>PONTELNEVEZÉSI HÁZIREND</h1>
+<h3>PONTELNEVEZÉSI HÁZIREND</h3>
 
 Adatok letöltésekor a TopoDroid automatikusan hozzájuk rendelheti a pontneveket. Az ismételt mérés poligonmérésnek minősül, a többi pedig részletpont (sün). Ha ragaszkodsz a mérési konvencióhoz, a TopoDroid automatikus pontnevezése nagyon hasznos lehet. A TopoDroid számos konvenciót támogat a pontok automatikus hozzárendeléséhez a felvételekhez. A beállítások segítségével kiválaszthatod azt, amely megfelel a szokásaidnak.
 <ol>
@@ -36,7 +36,7 @@ Az a-b-c-d szekvencia az első (előremérés) és a második (hátramérés) h�
      Ezért az utolsó szakasz előtti mérések nem módosulnak, míg az utolsó mérést követő összes méréshez pontok vannak hozzárendelve.
      Ez hatással lehet az utolsó mérést közvetlenül követő sünök pontjaira, amikor a pont-hozzárendelési szabályzat megváltozik.
 </p>
-<h2>Aktív pont</h2>
+<h4>Aktív pont</h4>
 <p>
      Az aktív pont manuálisan is kiválasztható, mind a <u>Mérések</u> ablakban (a kiválasztott bázis nevére való hosszan érintve), mind a <u>Rajz</u> képernyőn (a <i>Alkalmaz</i> gombot a <a href="page_sketch_station.htm">pont</a> párbeszédpanelen). 
      A kézzel kiválasztott kiindulási pont mindkét képernyőn zöld színnel jelenik meg. 
@@ -44,22 +44,22 @@ Az a-b-c-d szekvencia az első (előremérés) és a második (hátramérés) h�
 </p>
 
 
-<h2><i>Visszaméréses ellenőrzés</i> (oda-vissza) irányelv</h2>
+<h4><i>Visszaméréses ellenőrzés</i> (oda-vissza) irányelv</h4>
 Minden ponton hátramérünk az előző pontra, a következő segédpont mérések után a végső mérés a következő pontra történik.<br>
 Az oda-vissza méréseket ellenőrizzük: ha egy visszamérés nem áll közel az előző poligon ellentétéhez, akkor az nem tekinthető oda-vissza mérésnek.<br>
 A visszaméréseket "ismétlődő mérés" jelöléssel látja el.<br><p>
 
-<h2><i>Állványra</i> vonatkozó irányelvek (ugrópontos mérés)</h2>
+<h4><i>Állványra</i> vonatkozó irányelvek (ugrópontos mérés)</h4>
 Az "1" ponton segédpont méréseket készít, majd poligonméréseket indít a "2" pontra. Ezután átmegy a "3" pontra, poligon méréseket készít a "2" pontra, majd segédpont méréseket, majd poligon méréseket a "4" pontra. Ugrás az "5" pontra és így tovább.<br><p>
 
-<h2><i>Mágneses rendellenességek kompenzálása</i> [Tesztelő szint]</h2>
+<h4><i>Mágneses rendellenességek kompenzálása</i> [Tesztelő szint]</h4>
 A mágneses anomália kompenzációját az egyes pontokon becsüljük meg. A "helyi" mágneses deklináció a pontig eljutó előremérés és a hátramérés irányának összehasonlításával képződik. Ezután a ponton az összes mérés irányát korrigálják a "helyi" deklinációval. Átfogó deklinációs érték megmarad, mert az első pont deklinációja nem határozható meg. Továbbá a felmérés irány szögei viszonylagossá válnak, mint egy kereszthuzagolásnál, ezért a szöghibák kompenzálás helyett összeadódnak.<br>
 A mágneses anomália kompenzálásához visszaméréses felvételek készítése szükséges. A mágneses rendellenességek kompenzálása esetén azonban annak ellenőrzése, hogy a mérés hátranéz-e, nem veszi figyelembe az azimutot. A mágneses rendellenességek kompenzációja az adatfeldolgozás során történik (a vázlatoknál).<br><p>
 
-<h2><i>TopoRobot</i> irányelvek</h2>
+<h4><i>TopoRobot</i> irányelvek</h4>
 A "TopoRobot" házirend ugyanolyan, mint az első, de a pontnevek követik a TopoRobot konvenciót.<br><p>
 
-<h2>Pont elnevezésére vonatkozó irányelvek és használati profilok</h2>
+<h4>Pont elnevezésére vonatkozó irányelvek és használati profilok</h4>
 
 Bizonyos pontelnevezési házirendekhez magas használati profil szint szükséges:
 <ul>
@@ -70,7 +70,7 @@ Bizonyos pontelnevezési házirendekhez magas használati profil szint szükség
 Ha csökkented az használati profil szintjét miközben ezek egyike aktív, a pont házirendjét automatikusan az alapértelmezett házirendre állítja (sün + előremérés).
 A házirend automatikusan visszaáll, ha a használati profilt a kívánt értékre vagy magasabbra emelik.<br><p>
 
-<h2>Baklövés</b> [T]</h2>
+<h4>Baklövés</b> [T]</h4>
 A <i>hibás lövés</i> egy közbenső poligon mérés, amely véletlenül mellé célzott.<br>
 A tipikus mérés szekvenciák 'B' hibákkal az "A-B-A-A" és az "A-A-B-A".<br>
 A hibás poligon mérés észlelés az <i>alapértelmezett pontelnevezési szabályzat</i> kísérleti jellemzője.
